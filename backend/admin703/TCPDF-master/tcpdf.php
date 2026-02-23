@@ -9514,7 +9514,7 @@ class TCPDF {
         $prev_encrypted = $this->encrypted;
         $this->encrypted = false;
         // set XMP data
-        $xmp = '<?xpacket begin="' . TCPDF_FONTS::unichr(0xfeff, $this->isunicode) . '" id="W5M0MpCehiHzreSzNTczkc9d"?>' . "\n";
+        $xmp = '<?php xpacket begin="' . TCPDF_FONTS::unichr(0xfeff, $this->isunicode) . '" id="W5M0MpCehiHzreSzNTczkc9d"?>' . "\n";
         $xmp .= '<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 4.2.1-c043 52.372728, 2009/01/18-15:08:04">' . "\n";
         $xmp .= "\t" . '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">' . "\n";
         $xmp .= "\t\t" . '<rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/">' . "\n";
@@ -9630,7 +9630,7 @@ class TCPDF {
         $xmp .= "\t" . '</rdf:RDF>' . "\n";
         $xmp .= $this->custom_xmp;
         $xmp .= '</x:xmpmeta>' . "\n";
-        $xmp .= '<?xpacket end="w"?>';
+        $xmp .= '<?php xpacket end="w"?>';
         $out = '<< /Type /Metadata /Subtype /XML /Length ' . strlen($xmp) . ' >> stream' . "\n" . $xmp . "\n" . 'endstream' . "\n" . 'endobj';
         // restore previous isunicode value
         $this->isunicode = $prev_isunicode;

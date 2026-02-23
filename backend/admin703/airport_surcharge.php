@@ -180,7 +180,7 @@ $db_vehicle = $obj->MySQLSelect($query);
                                                     $VehicleType=$db_vehicle[$ii]['vVehicleType'];
                                                 ?> 
 						 <option value ="<?php echo $VehicleTypeId; ?>" 
-						 <?php if ($VehicleTypeId == "$searchVehicleType") { ?>selected<? } ?>><?php echo $VehicleType; ?></option>
+						 <?php if ($VehicleTypeId == "$searchVehicleType") { ?>selected<?php } ?>><?php echo $VehicleType; ?></option>
                                     <?php } ?>
                                 </select>
                             </td>

@@ -297,11 +297,11 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                         <tr class="gradeA">
                                                             <td align="center" style="text-align:center;"><input type="checkbox" id="checkbox" name="checkbox[]" value="<?php echo $data_drv[$i]['lPage_id']; ?>" />&nbsp;</td>
                                                             <td align="center">						
-                                                                <? if ($data_drv[$i]['vScreenImage'] != '') { ?>                     
+                                                                <?php if ($data_drv[$i]['vScreenImage'] != '') { ?>                     
                                                                     <img src="<?= $tconfig['tsite_upload_manage_app_screen'] . "/" . $data_drv[$i]['vScreenImage']; ?>" style="width:35px;height:35px;">
-                                                                <? } ?>										
+                                                                <?php } ?>										
                                                             </td>
-                                                            <td align="center"><? echo $data_drv[$i]['vScreenName']; ?></td>	
+                                                            <td align="center"><?php echo $data_drv[$i]['vScreenName']; ?></td>	
                                                            
                                                              <?php if ($userObj->hasPermission('view-app-screen-label')) { ?> 
                                                               <td align="center">
@@ -377,7 +377,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                                 </div>
                                                             </td>
                                                         </tr>
-                                                        <?
+                                                        <?php
                                                     }
                                                 } else {
                                                     ?>

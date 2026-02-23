@@ -197,7 +197,7 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 		
-        <? include_once('global_files.php');?>         
+        <?php include_once('global_files.php');?>         
 	</head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
@@ -205,8 +205,8 @@
 		
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
 			
             <!--PAGE CONTENT -->
             <div id="content">
@@ -299,7 +299,7 @@
 																			<th width="20%">Trips Taken</th>
 																			<th width="40%">Last Trip Location</th>
 																		</tr>
-																	<?
+																	<?php
 																		$sql="select iMemberId,dDateTime,vIP from member_log where iMemberId = '".$db_log_report[$i]['iMemberId']."' $ssql order by dDateTime ASC";
 																		$data_drv = $obj->MySQLSelect($sql);
 																		
@@ -309,7 +309,7 @@
 																			<td><?=date('d\<\s\u\p\>S</\s\u\p\> M  \a\t H:i',strtotime($data_drv[$j]['dDateTime']));?></td>
 																			<td><?=$data_drv[$j]['vIP'];?></td>
 																			<td>
-																				<?
+																				<?php
 																					$trip_data = get_trips_taken_today($db_log_report[$i]['iMemberId'],$db_log_report[$i]['eMemberType'],$data_drv[$j]['dDateTime'],$data_drv[$j+1]['dDateTime']);
 																					
 																					echo $trip_data['Total_Trip'];
@@ -317,7 +317,7 @@
 																				?>
 																			</td>
 																			<td>
-																				<?
+																				<?php
 																					$str = "---";
 																					if(isset($trip_data['LAST_ADD'])){
 																						$str = $trip_data['LAST_ADD'];
@@ -326,13 +326,13 @@
 																				?>
 																			</td>
 																		</tr>
-																	<? } ?>
+																	<?php } ?>
 																	</table>
 															</td>
 														</tr>
 													</tbody>
 												</table>
-											<? }  ?>
+											<?php }  ?>
 											
 											<?php } else {?>
 											<table class="table table-striped table-bordered table-hover" id="dataTables-example1">
@@ -368,7 +368,7 @@
 			<input type="hidden" name="vStatus" value="<?php echo $vStatus; ?>" >
 			<input type="hidden" name="method" id="method" value="" >
 		</form>
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 		<link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css" />
 		<link rel="stylesheet" href="css/select2/select2.min.css" />
 		<script src="js/plugins/select2.min.js"></script>

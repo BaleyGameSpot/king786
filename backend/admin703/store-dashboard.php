@@ -34,7 +34,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<![endif]-->
 		<!-- GLOBAL STYLES -->
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/new_main.css" />
 		<link rel="stylesheet" href="css/adminLTE/AdminLTE.min.css" />
@@ -59,9 +59,9 @@
 	<body class="padTop53">
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
+			<?php include_once('header.php'); ?>
 			
-			<? include_once('left_menu.php'); ?>
+			<?php include_once('left_menu.php'); ?>
 			<!--PAGE CONTENT -->
 			<div id="content">
 				<div class="inner" style="min-height:700px;">
@@ -299,17 +299,17 @@
 												<ul class="chat">
 													<?php if($n%2==0){ ?>
 														<?php if($userObj->hasPermission('view-invoice')){ ?>
-													 		<a href=<? echo "order_invoice.php?iOrderId=".$db_finished_orders[$i]['iOrderId'];?> target="_blank"> 
+													 		<a href=<?php echo "order_invoice.php?iOrderId=".$db_finished_orders[$i]['iOrderId'];?> target="_blank"> 
 													 	<?php } ?>
 														<li class="left clearfix">
 
 															<span class="chat-img pull-left">
-																<? if($db_finished_orders[$i]['vImage']!='' && $db_finished_orders[$i]['vImage']!="NONE" && file_exists( "../webimages/upload/Company/".$db_finished_orders[$i]['iCompanyId']."/".$db_finished_orders[$i]['vImage'])){?>
+																<?php if($db_finished_orders[$i]['vImage']!='' && $db_finished_orders[$i]['vImage']!="NONE" && file_exists( "../webimages/upload/Company/".$db_finished_orders[$i]['iCompanyId']."/".$db_finished_orders[$i]['vImage'])){?>
 																	<img src="../webimages/upload/Company/<?php echo $db_finished_orders[$i]['iCompanyId']."/".$db_finished_orders[$i]['vImage'];?>" alt="User Avatar" class="img-circle"  height="50" width="50"/>
-																<? }else{?>
+																<?php }else{?>
 
 																<img src="../assets/img/profile-user-img.png" alt="" class="img-circle"  height="50" width="50">
-																<?}?>
+																<?php }?>
 															</span>
 
 															<div class="chat-body clearfix">
@@ -372,20 +372,20 @@
 														<li class="right clearfix">
 
 															<?php if($userObj->hasPermission('view-invoice')){ ?>
-															 	<a href=<?echo "order_invoice.php?iOrderId=".$db_finished_orders[$i]['iOrderId'];?> target="_blank"> 
+															 	<a href=<?php echo "order_invoice.php?iOrderId=".$db_finished_orders[$i]['iOrderId'];?> target="_blank"> 
 															<?php } ?>
 															<span class="chat-img pull-right">
 
-																<? if($db_finished_orders[$i]['vImage']!='' && $db_finished_orders[$i]['vImage']!="NONE"){?>
+																<?php if($db_finished_orders[$i]['vImage']!='' && $db_finished_orders[$i]['vImage']!="NONE"){?>
 																	<?php if(file_exists( "../webimages/upload/Company/".$db_finished_orders[$i]['iCompanyId']."/".$db_finished_orders[$i]['vImage'])){ ?>
 																	<img src="../webimages/upload/Company/<?php echo $db_finished_orders[$i]['iCompanyId']."/".$db_finished_orders[$i]['vImage'];?>" alt="User Avatar" class="img-circle"  height="50" width="50"/>
 																<?php  } else {?>
 																	<img src="../assets/img/profile-user-img.png" alt="" class="img-circle"  height="50" width="50">
 																<?php } ?>
-																<? }else{?>
+																<?php }else{?>
 
 																<img src="../assets/img/profile-user-img.png" alt="" class="img-circle"  height="50" width="50">
-																<?}?>
+																<?php }?>
 															</span>
 															<div class="chat-body clearfix">
 																<div class="header">
@@ -508,7 +508,7 @@
 														}
 														?>
 														<?php if($userObj->hasRole(1)){ ?>
-															<a href="<?=$url;?>?id=<?echo $id;?>&action=edit" class="list-group-item" target="_blank">
+															<a href="<?=$url;?>?id=<?php echo $id;?>&action=edit" class="list-group-item" target="_blank">
 														<?php } ?>
 															<i class=" icon-comment"></i>
 															<?=$msg ;?>
@@ -560,7 +560,7 @@
 
 														</div>
 
-													<?} }
+													<?php } }
 													else
 													{
 														echo "No Notification";
@@ -581,11 +581,11 @@
 			<!--END PAGE CONTENT -->
 		</div>
 
-		<? include_once('footer.php'); ?>
+		<?php include_once('footer.php'); ?>
 
 	</body>
 	<!-- END BODY-->
-	<?
+	<?php
 		// if(SITE_TYPE=='Demo'){
 			// remove_unwanted();
 		  // }

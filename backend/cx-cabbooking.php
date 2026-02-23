@@ -245,9 +245,9 @@ $driverDatas = $obj->MySQLSelect($driverSql1);
 					<th><?=$langage_lbl['LBL_COMPANY_TRIP_RIDER']; ?> / <?=$langage_lbl['LBL_COMPANY_TRIP_DRIVER']; ?></th>
 					<th><?=$langage_lbl['LBL_COMPANY_TRIP_Trip_Date']; ?></th>
 					<th><?=$langage_lbl['LBL_Pick_Up']; ?>  
-						<? if($APP_TYPE != "UberX"){ ?>
+						<?php if($APP_TYPE != "UberX"){ ?>
 						/<?=$langage_lbl['LBL_ADMIN_DROPOFF']; ?>
-						<? } ?>
+						<?php } ?>
 					</th>
 
 					<th><?=$langage_lbl['LBL_TRIP_DETAILS']; ?></th>
@@ -298,7 +298,7 @@ $driverDatas = $obj->MySQLSelect($driverSql1);
                            ?>
                         	<tr>
                            		<?php if($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery'){ ?> 
-		                        <td><? echo $trip_type; ?></td>
+		                        <td><?php echo $trip_type; ?></td>
 		                        <?php } ?>
                             	<td><?= $data_drv[$i]['vBookingNo']; ?></td>
 								<td class="lableCombineData">
@@ -311,9 +311,9 @@ $driverDatas = $obj->MySQLSelect($driverSql1);
 							  	<?php if ($data_drv[$i]['eAutoAssign'] == "Yes" && $data_drv[$i]['iRentalPackageId'] > 0  ) { ?>
 								
 									<?=$langage_lbl['LBL_DRIVER_TXT_ADMIN'];?> : <?=$langage_lbl['LBL_AUTO_ASSIGN_WEB'];?> </b><br />( <?=$langage_lbl['LBL_Car_Type'];?> : <?= $data_drv[$i]['vRentalVehicleTypeName']; ?>)<br/>
-									<? if($rental_data[0]['pkgName'] != ''  ) { ?>
+									<?php if($rental_data[0]['pkgName'] != ''  ) { ?>
 									(<?=$langage_lbl['LBL_VEHICLE_TYPE_RENTAL_TXT'];?> : <?= $rental_data[0]['pkgName'];?>)
-									<? } ?>
+									<?php } ?>
 								
                             	<?php } else if ($data_drv[$i]['eAutoAssign'] == "Yes" && $data_drv[$i]['eType'] == "Deliver" && $data_drv[$i]['iDriverId'] == 0 && $data_drv[$i]['eStatus'] != 'Cancel' && $APP_DELIVERY_MODE == "Multi") { ?>
 								<?=$langage_lbl['LBL_DRIVER_TXT_ADMIN'];?> :  <?=$langage_lbl['LBL_AUTO_ASSIGN_WEB'];?> </b><br />( <?= ucfirst(strtolower($langage_lbl['LBL_VEHICLE_TYPE_TXT']));?> : <?= $data_drv[$i]['vVehicleType']; ?>)<br/><?php if(strtotime($data_drv[$i]['dBooking_date'])>strtotime(date('Y-m-d'))){ ?><a class="gen-btn small-btn" href="javascript:void(0);" onclick="assignDriver('<?= $data_drv[$i]['iCabBookingId']; ?>');" data-tooltip="tooltip" title="Edit"> <?=$langage_lbl['LBL_ASSIGN_DRIVER_BUTTON'];?></a><?php } ?>
@@ -323,24 +323,24 @@ $driverDatas = $obj->MySQLSelect($driverSql1);
                                 	<a class="gen-btn small-btn" href="userbooking.php?userType1=company&booking_id=<?= $data_drv[$i]['iCabBookingId']; ?>" data-tooltip="tooltip" title="Edit"><i class="icon-edit icon-flip-horizontal icon-white"></i></a>
                               		<?php } else { ?>
                                		<a class="gen-btn small-btn" href="create_request.php?booking_id=<?= $data_drv[$i]['iCabBookingId']; ?>" data-tooltip="tooltip" title="Edit"><i class="icon-edit icon-flip-horizontal icon-white"></i></a>
-                              		<? }
+                              		<?php }
                             		} ?>
                             	
                             	<?php } else if ($data_drv[$i]['eStatus'] == "Pending" && (strtotime($data_drv[$i]['dBooking_date'])>strtotime(date('Y-m-d'))) && $data_drv[$i]['iDriverId'] == 0) { ?>
 								
-	                                <? if($_SESSION['SessionUserType'] != 'hotel') {?>
+	                                <?php if($_SESSION['SessionUserType'] != 'hotel') {?>
 	                                <a class="gen-btn small-btn" href="userbooking.php?userType1=company&booking_id=<?= $data_drv[$i]['iCabBookingId']; ?>"><i class="icon-shield icon-flip-horizontal icon-white"></i> <?=$langage_lbl['LBL_ASSIGN_DRIVER_BUTTON'];?></a>
-	                                <? } else { ?>
+	                                <?php } else { ?>
 	                                <a class="gen-btn small-btn" href="create_request.php?booking_id=<?= $data_drv[$i]['iCabBookingId']; ?>"><i class="icon-shield icon-flip-horizontal icon-white"></i> <?=$langage_lbl['LBL_ASSIGN_DRIVER_BUTTON'];?></a>
-	                                <? } ?>
+	                                <?php } ?>
                                 <br>( <?=$service_type;?> : <?= $data_drv[$i]['vVehicleType']; ?>)
                                 <?php } else if($data_drv[$i]['eCancelBy'] == "Driver" && $data_drv[$i]['eStatus'] == "Cancel" && $data_drv[$i]['iDriverId'] == 0) { ?>
 								
-	                                <? if($_SESSION['SessionUserType'] != 'hotel') {?> 
+	                                <?php if($_SESSION['SessionUserType'] != 'hotel') {?> 
 	                                <a class="gen-btn small-btn" href="userbooking.php?userType1=company&booking_id=<?= $data_drv[$i]['iCabBookingId']; ?>"><i class="icon-shield icon-flip-horizontal icon-white"></i> <?=$langage_lbl['LBL_ASSIGN_DRIVER_BUTTON'];?></a>
-	                                <? } else { ?>
+	                                <?php } else { ?>
 	                                <a class="gen-btn small-btn" href="create_request.php?booking_id=<?= $data_drv[$i]['iCabBookingId']; ?>"><i class="icon-shield icon-flip-horizontal icon-white"></i> <?=$langage_lbl['LBL_ASSIGN_DRIVER_BUTTON'];?></a>
-	                                <? } ?><br>( <?=$service_type;?> : <?= $data_drv[$i]['vVehicleType']; ?>)
+	                                <?php } ?><br>( <?=$service_type;?> : <?= $data_drv[$i]['vVehicleType']; ?>)
 	                            
 	                            <?php } else if ($data_drv[$i]['driver'] != "" && $data_drv[$i]['driver'] != "0") { ?>
 								<b><?= clearName($data_drv[$i]['driver']); ?></b><br>( <?=$service_type;?> : <?= $data_drv[$i]['vVehicleType']; ?>) 
@@ -369,9 +369,9 @@ $driverDatas = $obj->MySQLSelect($driverSql1);
 							  	<td>
 							  		<div class="lableCombineData ">
 								  		<label><?= ($data_drv[$i]['eType']=='UberX') ? $langage_lbl['LBL_JOB_LOCATION_TXT'] : $langage_lbl['LBL_Pick_Up'] ?></label><span><?= $data_drv[$i]['vSourceAddresss']; ?></span>
-									  	<?if($APP_TYPE != "UberX" && $data_drv[$i]['eType']!='UberX'){?>
+									  	<?php if($APP_TYPE != "UberX" && $data_drv[$i]['eType']!='UberX'){?>
 									  	<label><?= $langage_lbl['LBL_DROP_AT'] ?></label><span><?= $data_drv[$i]['tDestAddress']; ?></span>
-									  	<? } ?>
+									  	<?php } ?>
 								  	</div>
 							  	</td>
 
@@ -456,11 +456,11 @@ $driverDatas = $obj->MySQLSelect($driverSql1);
 							}
 						}
 						?>
-													<?
+													<?php
 														if ($data_drv[$i]['eStatus'] == "Cancel") {
 													?>
 														<br /><a href="javascript:void(0);" class="gen-btn btn-info" data-toggle="modal" data-target="#uiModal_<?=$data_drv[$i]['iCabBookingId'];?>"><?php echo $langage_lbl['LBL_CANCEL_REASON'];?></a>
-													<?           
+													<?php           
 														}
                             if(($bookingdatecmp >  time()) && ($data_drv[$i]['eStatus'] == 'Pending' || $data_drv[$i]['eStatus'] == "Assign" || $data_drv[$i]['eStatus'] == "Accepted") ) {
 													?>
@@ -518,7 +518,7 @@ $driverDatas = $obj->MySQLSelect($driverSql1);
 										<ul class="value-listing">
         								<?php if(!empty($data_drv[$i]['eCancelBy'])) { ?> 
 
-									  	<li><b><?= $langage_lbl['LBL_CANCEL_BY'] ?> </b> <span><? /*if($APP_TYPE != "UberX"){
+									  	<li><b><?= $langage_lbl['LBL_CANCEL_BY'] ?> </b> <span><?php /*if($APP_TYPE != "UberX"){
 										
 										echo $data_drv[$i]['eCancelBy'];
 										

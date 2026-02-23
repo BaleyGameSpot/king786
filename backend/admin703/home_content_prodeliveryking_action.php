@@ -508,7 +508,7 @@ $db_master = $obj->MySQLSelect($sql);
     <title>Admin | Manage Web Home Page</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -624,8 +624,8 @@ $db_master = $obj->MySQLSelect($sql);
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -661,19 +661,19 @@ $db_master = $obj->MySQLSelect($sql);
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div>
                         <br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <form method="post" name="_home_content_form" id="_home_content_form" action=""
                           enctype='multipart/form-data'>
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
@@ -719,10 +719,10 @@ $db_master = $obj->MySQLSelect($sql);
                                         <label>First Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($general_section['img_sec'] != '') { ?>
+                                        <?php if ($general_section['img_sec'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $general_section['img_sec']; ?>"
                                                  class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader"
                                                name="general_section_img_sec" id="general_section_img_sec"
                                                accept=".png,.jpg,.jpeg,.gif">
@@ -807,9 +807,9 @@ $db_master = $obj->MySQLSelect($sql);
                                             <label>Image #1</label>
                                         </div>
                                         <div class="col-lg-11">
-                                            <? if ($lServiceSection['img_first'] != '') { ?>
+                                            <?php if ($lServiceSection['img_first'] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=100&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $lServiceSection['img_first']; ?>" class="service_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control" name="lServiceSection_img_first" value="<?= $lServiceSection['img_first']; ?>">
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 360px X 360px.]</span>
                                         </div>
@@ -837,9 +837,9 @@ $db_master = $obj->MySQLSelect($sql);
                                             <label>Image #2</label>
                                         </div>
                                         <div class="col-lg-11">
-                                            <? if ($lServiceSection['img_sec'] != '') { ?>
+                                            <?php if ($lServiceSection['img_sec'] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=100&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $lServiceSection['img_sec']; ?>" class="service_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control" name="lServiceSection_img_sec" value="<?= $lServiceSection['img_sec']; ?>">
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 360px X 360px.]</span>
                                         </div>
@@ -867,9 +867,9 @@ $db_master = $obj->MySQLSelect($sql);
                                             <label>Image #3</label>
                                         </div>
                                         <div class="col-lg-11">
-                                            <? if ($lServiceSection['img_third'] != '') { ?>
+                                            <?php if ($lServiceSection['img_third'] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=100&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $lServiceSection['img_third']; ?>" class="service_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control" name="lServiceSection_img_third" value="<?= $lServiceSection['img_third']; ?>">
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 360px X 360px.]</span>
                                         </div>
@@ -897,9 +897,9 @@ $db_master = $obj->MySQLSelect($sql);
                                             <label>Image #4</label>
                                         </div>
                                         <div class="col-lg-11">
-                                            <? if ($lServiceSection['img_third'] != '') { ?>
+                                            <?php if ($lServiceSection['img_third'] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=100&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $lServiceSection['img_four']; ?>" class="service_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control" name="lServiceSection_img_four" value="<?= $lServiceSection['img_four']; ?>">
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 360px X 360px.]</span>
                                         </div>
@@ -974,7 +974,7 @@ $db_master = $obj->MySQLSelect($sql);
 
                                                             <img src="<?= $tconfig["tsite_url"].'resizeImg.php?w=70&h=70&src='.$tconfig["tsite_upload_home_page_service_images"] . '/' . $vcatdata_main[$i]['vServiceHomepageBanner'] ?>"  style="width:35px;height:35px;">
 
-                                                        <? } ?>                                                     
+                                                        <?php } ?>                                                     
                                                     </td>
                                                     <td>
                                                         <?= $vcatdata_main[$i]['vCatName']; ?>
@@ -985,20 +985,20 @@ $db_master = $obj->MySQLSelect($sql);
                                                                 <div class="social show-moreOptions for-five openPops_<?= $data_drv[$i]['iDriverId']; ?> openHoverDetails openHoverDetailsNew">
                                                                     <ul>
                                                                         <li class="entypo-twitter entypo-twitter-new" data-network="twitter"><a href="<?php echo $tconfig["tsite_url_main_admin"]."vehicle_category_action.php?id=".$vcatdata_main[$i]['iVehicleCategoryId']."&homepage=1"; ?>">Edit Details</a></li>
-                                                                        <? if(ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
+                                                                        <?php if(ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
                                                                         <li class="entypo-twitter entypo-twitter-new" data-network="twitter"><a href="<?php echo $tconfig["tsite_url_main_admin"].$urlCat[$vcatdata_main[$i]['iVehicleCategoryId']]."?id=".$iLanguageMasId; ?>">
-                                                                        <? if($common_page == 1) { ?>
+                                                                        <?php if($common_page == 1) { ?>
                                                                             Edit Common Page 
-                                                                        <? } else { ?>
+                                                                        <?php } else { ?>
                                                                             Edit Inner Page
-                                                                        <? } ?></a></li>
-                                                                        <? } else { ?>
+                                                                        <?php } ?></a></li>
+                                                                        <?php } else { ?>
                                                                         <li class="entypo-twitter entypo-twitter-new" data-network="twitter"><a href="<?php echo $tconfig["tsite_url_main_admin"].$urlCat[$vcatdata_main[$i]['iVehicleCategoryId']]."?id=".$iLanguageMasId; ?>">Edit Inner Page
                                                                         </a></li>
-                                                                        <? } if(!empty($inner_page_url) && ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
+                                                                        <?php } if(!empty($inner_page_url) && ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
                                                                         <li class="entypo-twitter entypo-twitter-new" data-network="twitter"><a href="<?php echo $tconfig["tsite_url_main_admin"].$inner_page_url."?iVehicleCategoryId=".$vcatdata_main[$i]['iVehicleCategoryId']."&id=".$iLanguageMasId; ?>">Add/Edit Page
                                                                         </a></li>
-                                                                        <? } ?>
+                                                                        <?php } ?>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -1092,10 +1092,10 @@ $db_master = $obj->MySQLSelect($sql);
                                                         <label>Block Image <?php echo $i; ?></label>
                                                     </div>
                                                     <div class="col-lg-11">
-                                                        <? if ($how_it_work_section['hiw_img' . $i . '_' . $vCode] != '') { ?>
+                                                        <?php if ($how_it_work_section['hiw_img' . $i . '_' . $vCode] != '') { ?>
                                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=200&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['hiw_img' . $i . '_' . $vCode]; ?>"
                                                                  class="innerbg_image"/ style="max-height:100px;">
-                                                        <? } ?>
+                                                        <?php } ?>
                                                         <input type="file" class="form-control FilUploader"
                                                                name="how_it_work_section_hiw_img<?php echo $i; ?>"
                                                                id="how_it_work_section_hiw_img<?php echo $i; ?>"
@@ -1258,10 +1258,10 @@ $db_master = $obj->MySQLSelect($sql);
                                         <label>Image 1</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($register_section['img_first'] != '') { ?>
+                                        <?php if ($register_section['img_first'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_first']; ?>"
                                                  class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader"
                                                name="register_section_img_first" id="register_section_img_first"
                                                accept=".png,.jpg,.jpeg,.gif">
@@ -1297,10 +1297,10 @@ $db_master = $obj->MySQLSelect($sql);
                                         <label>Image 2</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($register_section['img_sec'] != '') { ?>
+                                        <?php if ($register_section['img_sec'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_sec']; ?>"
                                                  class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader"
                                                name="register_section_img_sec" id="register_section_img_sec"
                                                accept=".png,.jpg,.jpeg,.gif">
@@ -1350,7 +1350,7 @@ $db_master = $obj->MySQLSelect($sql);
 </div>
 
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script type="text/javascript" src="js/fancybox.umd.js"></script>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script src="../assets/plugins/ckeditor/ckeditor.js"></script>

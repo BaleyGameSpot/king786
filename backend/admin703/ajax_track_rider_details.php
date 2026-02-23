@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("../common.php");
 
 
@@ -67,7 +67,7 @@ if($data_user[0]['vAvgRating'] > 0){
 						<td class="text_design">Email</td>
 						<td><?=clearEmail($data_user[0]['vEmail'])?></td>
 					</tr>
-					<? if($data_user[0]['vPhone'] != ""){ ?>
+					<?php if($data_user[0]['vPhone'] != ""){ ?>
 					<tr>
 						<td class="text_design">Phone Number</td>
 						<td>
@@ -81,7 +81,7 @@ if($data_user[0]['vAvgRating'] > 0){
 							?>
 						</td>
 					</tr>
-					<? } ?>
+					<?php } ?>
 					<tr>
 						<td class="text_design">Rating</td>
 						<td><?=$Rating?></td>
@@ -89,7 +89,7 @@ if($data_user[0]['vAvgRating'] > 0){
 					<tr>
 						<td class="text_design">Status</td>
 						<td>
-							<?
+							<?php
 								$class="";
 								if($data_user[0]['eStatus'] == "Active"){
 									$class = "btn-success";
@@ -106,20 +106,20 @@ if($data_user[0]['vAvgRating'] > 0){
 				</table>
 			</td>
 		</tr><tr></tr><tr></tr><tr></tr>
-		<? if($data_user[0]['country'] != ""){ ?>
+		<?php if($data_user[0]['country'] != ""){ ?>
 		<tr>
 			<td class="text_design">Country</td>
 			<td>
 				<?=$data_user[0]['country'];?>	
 			</td>
 		</tr>
-		<? } ?>
-		 <? if($reg_date != ""){?>
+		<?php } ?>
+		 <?php if($reg_date != ""){?>
 					<tr>
 						<td width="150px" class="text_design">Registration Date</td>
 						<td><?=$reg_date?></td>
 					</tr>
-					<? } ?> 
+					<?php } ?> 
 		 
 		</tbody>
 	</table>

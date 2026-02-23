@@ -81,7 +81,7 @@ $endRecord = scount($data_drv);
     <title><?= $SITE_NAME; ?> | <?= $langage_lbl_admin['LBL_PARKING_VEHICLE_SIZE_TXT']; ?> Info</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
@@ -175,7 +175,7 @@ $endRecord = scount($data_drv);
                                                 <td><?= $vehiclesizename['vSizeName_' . $default_lang]; ?></td>
                                                 <td style="text-align: center;"><?= $data_drv[$i]['iDisplayOrder'] ?></td>
                                                 <td align="center">
-                                                    <?
+                                                    <?php
                                                     if ($data_drv[$i]['eStatus'] == 'Active') {
                                                         $dis_img = "img/active-icon.png";
                                                     } else if ($data_drv[$i]['eStatus'] == 'Inactive') {
@@ -233,7 +233,7 @@ $endRecord = scount($data_drv);
 
                                                 <?php } ?>
                                             </tr>
-                                            <?
+                                            <?php
                                         }
                                     } else {
                                         ?>

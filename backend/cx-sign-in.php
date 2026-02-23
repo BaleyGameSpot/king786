@@ -229,7 +229,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                             data-id="user" data-desc="<?= $loginpage_title['user_pages'] ?>">
                             <a href="JavaScript:void(0);"><?= $langage_lbl['LBL_SIGNIN_RIDER'] ?></a>
                         </li>
-                        <? if ($msiteVar == 'No') { ?>
+                        <?php if ($msiteVar == 'No') { ?>
                             <li <?php if (isset($_REQUEST['type']) && ($_REQUEST['type'] == 'provider' || $_REQUEST['type'] == 'driver' || $_REQUEST['type'] == 'carrier')) { ?>class="active" <?php } ?>
                                 data-id="provider" data-desc="<?= $loginpage_title['provider_pages'] ?>">
                                 <a href="JavaScript:void(0);"><?= $langage_lbl['LBL_SIGNIN_DRIVER'] ?></a>
@@ -247,7 +247,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                     </li>
                                 <?php }
                             } ?>
-                            <? if (
+                            <?php if (
                                 strtoupper(ONLYDELIVERALL) != "YES" && $cubeDeliverallOnly == false && !in_array($APP_TYPE, [
                                     'Delivery',
                                     'UberX'
@@ -257,13 +257,13 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                     data-id="company_accounts">
                                     <a href="JavaScript:void(0);"><?= $langage_lbl['LBL_COMPANY_SIGNIN'] ?></a>
                                 </li>
-                            <? }
+                            <?php }
                             if (!empty($become_restaurant) && $cubeDeliverallOnly) { ?>
                                 <!--  <li <?php /*if (isset($_REQUEST['type']) && ($_REQUEST['type'] == 'restaurant' || $_REQUEST['type'] == 'store')) { */?>class="active" <?php /*} */?>
-                                    data-id="restaurant" data-desc="<?/*= $loginpage_title['restaurant_pages'] */?>">
-                                    <a href="JavaScript:void(0);"><?/*= $become_restaurant */?></a>
+                                    data-id="restaurant" data-desc="<?php /*= $loginpage_title['restaurant_pages'] */?>">
+                                    <a href="JavaScript:void(0);"><?php /*= $become_restaurant */?></a>
                                 </li>-->
-                            <? }
+                            <?php }
                             if ($hotelPanel > 0) { ?>
                             <li <?php if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'hotel') { ?>class="active" <?php } ?>
                                 data-id="hotel" data-desc="<?= $loginpage_title['hotel_pages'] ?>">
@@ -387,8 +387,8 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                         </div>
 
                         <div class="login-data-inner">
-                            <!-- <h1><?//= $pagesubtitle_lang ?></h1> -->
-                            <!-- <p><?//= $loginpage_title['user_pages']; ?></p> -->
+                            <!-- <h1><?php //= $pagesubtitle_lang ?></h1> -->
+                            <!-- <p><?php //= $loginpage_title['user_pages']; ?></p> -->
                             <div class="form-err">
                                 <span style="display:none;" id="msg_close" class="msg_close error-login-v">&#10005;</span>
                                 <p id="errmsg" style="display:none;"
@@ -756,7 +756,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
 <?php include_once('top/footer_script.php'); ?>
 <!-- End: Footer Script -->
 <?php if (strtolower($MOBILE_NO_VERIFICATION_METHOD) == 'firebase' && $SIGN_IN_OPTION == 'OTP') {  ?>
-    <? include_once('firebasephoneverify.php'); ?>
+    <?php include_once('firebasephoneverify.php'); ?>
 <?php } ?>
 
 
@@ -1277,22 +1277,22 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                 window.location = "profile"; // New Profile design URL
                             else if (login_type == 'rider') {
                                 var url = getCookie('ManualBookingURL');
-                                <? if(isset($_SESSION['is_msite']) && $_SESSION['is_msite'] == 'Yes') { ?>
+                                <?php if(isset($_SESSION['is_msite']) && $_SESSION['is_msite'] == 'Yes') { ?>
                                 window.location = "msite";
-                                <? } else { ?>
+                                <?php } else { ?>
                                 if (url != null) {
                                     setCookie('ManualBookingURL', "");
                                     window.location = url;
                                 } else {
 
-                                    <? if(isset($_SESSION['fareestimate_redirect']) && $_SESSION['fareestimate_redirect'] == "Yes" && ONLY_MEDICAL_SERVICE != 'Yes'){ ?>
+                                    <?php if(isset($_SESSION['fareestimate_redirect']) && $_SESSION['fareestimate_redirect'] == "Yes" && ONLY_MEDICAL_SERVICE != 'Yes'){ ?>
                                         window.location = "userbooking";
-                                    <? } else { ?>
+                                    <?php } else { ?>
                                         window.location = "profile-user";
-                                    <? } ?>
+                                    <?php } ?>
 
                                 }
-                                <? } ?>
+                                <?php } ?>
                             } else if (login_type == 'organization') {
                                 window.location = "organization-profile";
                             } else if (login_type == 'hotel') {
@@ -1435,7 +1435,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
         if(isvalidate) {
             $('.error-login-v').hide();
             $("#btn_submit").val("<?= addslashes($langage_lbl['LBL_PLEASE_WAIT']) ?> ...").attr('disabled', 'disabled');
-            var site_type = '<? echo SITE_TYPE; ?>';
+            var site_type = '<?php echo SITE_TYPE; ?>';
             var id = document.getElementById("femail").value;
             if (id == '') {
                 document.getElementById("errmsg").style.display = '';
@@ -1736,20 +1736,20 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                             window.location = "profile"; // New Profile design URL
                         else if (login_type == 'rider') {
                             var url = getCookie('ManualBookingURL');
-                            <? if(isset($_SESSION['is_msite']) && $_SESSION['is_msite'] == 'Yes') { ?>
+                            <?php if(isset($_SESSION['is_msite']) && $_SESSION['is_msite'] == 'Yes') { ?>
                             window.location = "msite";
-                            <? } else { ?>
+                            <?php } else { ?>
                             if (url != null) {
                                 setCookie('ManualBookingURL', "");
                                 window.location = url;
                             } else {
-                                <? if($_SESSION['fareestimate_redirect'] == "Yes" ){ ?>
+                                <?php if($_SESSION['fareestimate_redirect'] == "Yes" ){ ?>
                                 window.location = "userbooking";
-                                <? }else{ ?>
+                                <?php }else{ ?>
                                 window.location = "profile-user";
-                                <? } ?>
+                                <?php } ?>
                             }
-                            <? } ?>
+                            <?php } ?>
                         } else if (login_type == 'organization') {
                             window.location = "organization-profile";
                         } else if (login_type == 'hotel') {

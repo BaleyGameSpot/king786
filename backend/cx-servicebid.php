@@ -149,7 +149,7 @@ $tMessage_link2 = str_replace($key_arr, $val_arr, $tMessage_link2);
     </div>
 </section>
 
-<? } else {
+<?php } else {
 $benefit_section = $LANG_OBJ->checkOtherLangDataExist(json_decode($ride_data[0]['lBenefitSection'],true),$vCode,$inner_key);
 
 $menutitleBenefit = !empty($benefit_section['menu_title_'.$vCode]) ? $benefit_section['menu_title_'.$vCode] : $benefit_section['title_'.$vCode];
@@ -421,4 +421,4 @@ $tMessage_link2 = str_replace($key_arr, $val_arr, $tMessage_link2);
 <!-- End: Footer Script -->
 </body>
 </html>
-<? } ?>
+<?php } ?>

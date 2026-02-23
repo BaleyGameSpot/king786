@@ -264,7 +264,7 @@ echo $row_tDescription;
 
                                                         </td>
                                                     </tr>
-    <? } ?>
+    <?php } ?>
                                             </tbody>
                                             <!--   21-12-2019 bug id  2256  Update code by PM -->
     <!--   <tfoot>
@@ -278,11 +278,11 @@ echo $row_tDescription;
     <td rowspan="1" colspan="1" align="center" class="center"><?=$final;?></td>
     </tr>
     </tfoot> -->
-                                        <? } else { ?>
+                                        <?php } else { ?>
     <!--  <tr class="odd">
     <td class="center" align="center" colspan="7">No Details found</td>
     </tr>	 -->
-<? } ?>
+<?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -296,7 +296,7 @@ echo $row_tDescription;
                         </div>
 
                         <!-- -->
-<? //if(SITE_TYPE=="Demo"){  ?>
+<?php //if(SITE_TYPE=="Demo"){  ?>
                         <!-- <div class="record-feature"> <span><strong>“Edit / Delete Record Feature�?</strong> has been disabled on the Demo Admin Version you are viewing now.
                           This feature will be enabled in the main product we will provide you.</span> </div>
 <?php //}  ?> -->
@@ -335,15 +335,15 @@ echo $row_tDescription;
 
                             <div class="input-append" >
                                 <h5><?=$langage_lbl['LBL_WALLET_ACCOUNT_HOLDER_NAME'];?></h5>
-                                <input type="text" name="vHolderName" id="vHolderName" class="form-control vHolderName"  <? if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBankAccountHolderName'];?>"<? } ?>>
+                                <input type="text" name="vHolderName" id="vHolderName" class="form-control vHolderName"  <?php if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBankAccountHolderName'];?>"<?php } ?>>
                                 <h5><?=$langage_lbl['LBL_WALLET_NAME_OF_BANK'];?></h5>
-                                <input type="text" name="vBankName" id="vBankName" class="form-control vBankName" <? if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBankName'];?>"<? } ?>>
+                                <input type="text" name="vBankName" id="vBankName" class="form-control vBankName" <?php if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBankName'];?>"<?php } ?>>
                                 <h5><?=$langage_lbl['LBL_WALLET_ACCOUNT_NUMBER'];?></h5>
-                                <input type="text" name="iBankAccountNo" id="iBankAccountNo" class="form-control iBankAccountNo" <? if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vAccountNumber'];?>"<? } ?>>
+                                <input type="text" name="iBankAccountNo" id="iBankAccountNo" class="form-control iBankAccountNo" <?php if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vAccountNumber'];?>"<?php } ?>>
                                 <h5><?=$langage_lbl['LBL_WALLET_BIC_SWIFT_CODE'];?></h5>
-                                <input type="text" name="BICSWIFTCode" id="BICSWIFTCode" class="form-control BICSWIFTCode" <? if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBIC_SWIFT_Code'];?>"<? } ?>>
+                                <input type="text" name="BICSWIFTCode" id="BICSWIFTCode" class="form-control BICSWIFTCode" <?php if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBIC_SWIFT_Code'];?>"<?php } ?>>
                                 <h5><?=$langage_lbl['LBL_WALLET_BANK_LOCATION'];?></h5>
-                                <input type="text" name="vBankBranch" id="vBankBranch" class="form-control vBankBranch" <? if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBankLocation'];?>"<? } ?>>
+                                <input type="text" name="vBankBranch" id="vBankBranch" class="form-control vBankBranch" <?php if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBankLocation'];?>"<?php } ?>>
                                 <h5><?=$langage_lbl['LBL_ENTER_AMOUNT'];?></h5>
                                 <input type="text" name="fAmount" id="fAmount" class="form-control fAmount" value="">
                                 <!-- <span class="input-group-addon add-on"><i class="icon-calendar"></i></span> -->

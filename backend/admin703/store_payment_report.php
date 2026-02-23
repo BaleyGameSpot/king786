@@ -271,8 +271,8 @@ if (strtoupper($CARD_AVAILABLE) == 'No') {
                             <div class="col-lg-3">
                                 <select class="form-control" name='searchPaymentType' data-text="Select <?php echo $langage_lbl_admin['LBL_PASSANGER_TXT_ADMIN']; ?>">
                                     <option value="">Select Payment Type</option>
-                                    <option value="Cash" <? if ($searchPaymentType == "Cash") { ?>selected <? } ?>>Cash</option>
-                                    <option value="Card" <? if ($searchPaymentType == "Card") { ?>selected <? } ?>><?= $cardText; ?></option>
+                                    <option value="Cash" <?php if ($searchPaymentType == "Cash") { ?>selected <?php } ?>>Cash</option>
+                                    <option value="Card" <?php if ($searchPaymentType == "Card") { ?>selected <?php } ?>><?= $cardText; ?></option>
                                 </select>
                             </div>
                             <div class="col-lg-3">
@@ -282,7 +282,7 @@ if (strtoupper($CARD_AVAILABLE) == 'No') {
                                     <option value="Unsettled" <?php if ($searchRestaurantPayment == "Unsettled") { ?>selected <?php } ?>>Unsettled</option>
                                 </select>
                             </div>
-                            <? if (scount($allservice_cat_data) > 1) { ?>
+                            <?php if (scount($allservice_cat_data) > 1) { ?>
                                 <div class="col-lg-2 select001" style="padding-right:15px;">
                                     <select class="form-control filter-by-text" name = "searchServiceType" data-text="Select Serivce Type" id="searchServiceType">
                                         <option value="">Select <?php echo $langage_lbl_admin['LBL_RIDER_NAME_TXT_ADMIN']; ?></option>
@@ -293,7 +293,7 @@ if (strtoupper($CARD_AVAILABLE) == 'No') {
                                         <?php } ?>
                                     </select>
                                 </div>
-                            <? } ?>
+                            <?php } ?>
                         </div>
                         <div class="tripBtns001"><b>
                                 <input type="submit" value="Search" class="btnalt button11" id="Search" name="Search" title="Search" />
@@ -314,9 +314,9 @@ if (strtoupper($CARD_AVAILABLE) == 'No') {
                                         <table class="table table-bordered" id="dataTables-example123" >
                                             <thead>
                                                 <tr>
-                                                    <? if (scount($allservice_cat_data) > 1) { ?>
+                                                    <?php if (scount($allservice_cat_data) > 1) { ?>
                                                         <th>Service Type</th>
-                                                            <? } ?>
+                                                            <?php } ?>
                                                     <th width="6%"><?php echo $langage_lbl_admin['LBL_RIDE_NO_ADMIN_DL']; ?># </th>
                                                     <th><a href="javascript:void(0);" onClick="Redirect(1,<?php if ($sortby == '1') {
                                                                 echo $order;
@@ -359,7 +359,7 @@ if (strtoupper($CARD_AVAILABLE) == 'No') {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?
+                                                <?php
                                                 $set_unsetarray = array();
                                                 if (scount($db_trip) > 0) {
                                                     $serverTimeZone = date_default_timezone_get();
@@ -404,13 +404,13 @@ if (strtoupper($CARD_AVAILABLE) == 'No') {
                                                         $time_zone_difference_text = "<br>(UTC:".DateformatCls::getUTCDiff($db_trip[$i]['vTimeZone'],$date_format_data_array['tdate']).")";
                                                         ?>
                                                         <tr class="gradeA <?= $class_setteled ?>">
-                                                                <? if (scount($allservice_cat_data) > 1) { ?>
-                                                                <td><? echo $db_trip[$i]['vServiceName']; ?></td>
-                                                                <? } ?>
+                                                                <?php if (scount($allservice_cat_data) > 1) { ?>
+                                                                <td><?php echo $db_trip[$i]['vServiceName']; ?></td>
+                                                                <?php } ?>
                                                                 <?php if ($userObj->hasPermission('view-invoice')) { ?>
-                                                                <td align="center"><a href="order_invoice.php?iOrderId=<?= $db_trip[$i]['iOrderId'] ?>" target="_blank"><? echo $db_trip[$i]['vOrderNo']; ?></a></td>
+                                                                <td align="center"><a href="order_invoice.php?iOrderId=<?= $db_trip[$i]['iOrderId'] ?>" target="_blank"><?php echo $db_trip[$i]['vOrderNo']; ?></a></td>
                                                                 <?php } else { ?>
-                                                                <td align="center"><? echo $db_trip[$i]['vOrderNo']; ?></td>
+                                                                <td align="center"><?php echo $db_trip[$i]['vOrderNo']; ?></td>
                                                                 <?php } ?>
                                                             <td>
                                                                 <?php    if ($db_trip[$i]['resturant_phone'] != '') {   ?>
@@ -517,12 +517,12 @@ if (strtoupper($CARD_AVAILABLE) == 'No') {
                                                             <?= $ePaymentOption; ?></td>
                                                             <td align="center"><?= $db_trip[$i]['eRestaurantPaymentStatus']; ?></td>
                                                             <td align="center">
-                                                                <? if ($db_trip[$i]['eRestaurantPaymentStatus'] == 'Unsettled') { ?>
+                                                                <?php if ($db_trip[$i]['eRestaurantPaymentStatus'] == 'Unsettled') { ?>
                                                                     <input class="validate[required]" type="checkbox" value="<?= $db_trip[$i]['iOrderId'] ?>" id="iOrderId_<?= $db_trip[$i]['iOrderId'] ?>" name="iOrderId[]">
-                                                                <? } ?>
+                                                                <?php } ?>
                                                             </td>
                                                         </tr>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <tr class="gradeA">
                                                         <td colspan="15" align="right">Total Fare</td>
                                                         <td align="center" colspan="2"><?= formateNumAsPerCurrency($tot_order_amount,''); ?></td>
@@ -555,7 +555,7 @@ if (strtoupper($CARD_AVAILABLE) == 'No') {
                                                                 <a onClick="PaytoRestaurant()" href="javascript:void(0);" class="btn btn-primary">Mark As Settled</a>
                                                             </td>
                                                         </tr>
-                                                    <? } } else { ?>
+                                                    <?php } } else { ?>
                                                     <tr class="gradeA">
                                                         <td colspan="17" style="text-align:center;">No Payment Details Found.</td>
                                                     </tr>

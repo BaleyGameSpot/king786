@@ -1205,12 +1205,12 @@ if (empty($currencycode)){
                                         </span>
                                         </a>
                                         <?php /*if($iServiceId==1 || $iServiceId==2) {
-                                        if($Data[$i]['eSafetyPractices']=='Yes') { ?><a href="<?= $safetyurl.'&id='.$iCompanyId; ?>" class="who-txt" target="new"><? } else { ?><span class="who-txt" style="border:none"><? } ?>
-                                        <? if($Data[$i]['eSafetyPractices']=='Yes') { ?>
+                                        if($Data[$i]['eSafetyPractices']=='Yes') { ?><a href="<?= $safetyurl.'&id='.$iCompanyId; ?>" class="who-txt" target="new"><?php } else { ?><span class="who-txt" style="border:none"><?php } ?>
+                                        <?php if($Data[$i]['eSafetyPractices']=='Yes') { ?>
                                         <img src="<?= $safetyimgurl ?>" alt="">
                                         <?= $languageLabelsArr['LBL_SAFETY_NOTE_TITLE_LIST'] ?>
-                                        <? } ?>
-                                    <?php if($Data[$i]['eSafetyPractices']=='Yes') { ?></a><? } else { ?></span><? } }*/ ?>
+                                        <?php } ?>
+                                    <?php if($Data[$i]['eSafetyPractices']=='Yes') { ?></a><?php } else { ?></span><?php } }*/ ?>
                                         <?php //if($iServiceId==1 || $iServiceId==2)
                                         //{
                                         if (($Data[$i]['eSafetyPractices'] == 'Yes' && $MODULES_OBJ->isEnableStoreSafetyProcedure()) || $MODULES_OBJ->isEnableStorePhotoUploadFacility() && $banner_images == 1){ ?>

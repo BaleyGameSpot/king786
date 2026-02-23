@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("common.php");
 
 $meta_arr = $STATIC_PAGE_OBJ->FetchSeoSetting(2);

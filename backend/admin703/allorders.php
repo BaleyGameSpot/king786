@@ -922,11 +922,11 @@ $driverId = $Datadriver[0]['iDriverId'];
                                                                 class="btn btn-info" data-id="<?= $iOrderId; ?>"
                                                                 type="button">View
                                                             Cancelled <?= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?></button>
-                                                    <? } else {
+                                                    <?php } else {
                                                     if (!empty($DBProcessingOrders[$i]['driverName']) && !empty($DBProcessingOrders[$i]['driver_phone'])) {  ?>
 
                                                     <?php if ($userObj->hasPermission('view-providers')) { ?><a href="javascript:void(0);" onClick="show_driver_details('<?= $DBProcessingOrders[$i]['iDriverId']; ?>')" style="text-decoration: underline;"><?php } ?><?= clearName($DBProcessingOrders[$i]['driverName']); ?><?php if ($userObj->hasPermission('view-providers')) { ?></a> <?php } ?><br>
-                                                    <? }
+                                                    <?php }
                                                     if (!empty($DBProcessingOrders[$i]['driver_phone'])) {
                                                         echo clearPhone($DBProcessingOrders[$i]['driver_phone']);
                                                         }
@@ -991,7 +991,7 @@ $driverId = $Datadriver[0]['iDriverId'];
                                 data-drivertype="<?= $DBProcessingOrders[$i]['eDriverOption']; ?>"
                                 type="button"
                                 style="margin-top: 10px"><?= $langage_lbl_admin['LBL_RESET_DRIVER']; ?></button>
-                                                    <? }
+                                                    <?php }
                                                     if ($iOrderStatusCode==2 && $DBProcessingOrders[$i]['eTakeaway'] == "No" && $DBProcessingOrders[$i]['eCancelledbyDriver'] == "No" && $manualAssignDriver==0) { ?>
                                                             <br>
                                 <button href="#" onclick="openDriverModal(this);"
@@ -1001,7 +1001,7 @@ $driverId = $Datadriver[0]['iDriverId'];
                                 data-drivertype="<?= $DBProcessingOrders[$i]['eDriverOption']; ?>"
                                 type="button" style="margin-top: 10px">Assign to
                                  the <?= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?></button>
-                                                    <? }
+                                                    <?php }
                                                     } ?>
                                                 </td>
                                                 <td class="text-right"><?= formateNumAsPerCurrency(($DBProcessingOrders[$i]['fTotalGenerateFare']), ''); ?></td>

@@ -418,12 +418,12 @@ $vMenu_store =array();
                 <div class="profile-section-inner ">
                     <!-- login in page -->
                     <div class="food-action-page" style="width:100%">
-                        <? if ($success == 1) {?>
+                        <?php if ($success == 1) {?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl['LBL_Record_Updated_successfully']; ?>
                         </div>
-                        <?} else if($success == 2){ ?>
+                        <?php } else if($success == 2){ ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -471,7 +471,7 @@ $vMenu_store =array();
                                     <select name="iCompanyId" id="iCompanyId" required  onchange="changeDisplayOrderCompany(this.value,'<?php  echo $id; ?>')">
                                         <option value="" >Select Restaurant</option>
                                         <?php foreach($db_company as $dbc) { ?>
-                                        <option value="<?php echo $dbc['iCompanyId']; ?>"<?if($dbc['iCompanyId'] == $iCompanyId){?>selected<? } ?>><?php echo $dbc['vCompany'] ?></option>
+                                        <option value="<?php echo $dbc['iCompanyId']; ?>"<?php if($dbc['iCompanyId'] == $iCompanyId){?>selected<?php } ?>><?php echo $dbc['vCompany'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -667,7 +667,7 @@ $vMenu_store =array();
         <script type="text/javascript" src="<?php echo $tconfig["tsite_url_main_admin"]?>js/validation/jquery.validate.min.js" ></script>
         <?php if($lang != 'en') { ?>
         <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-        <? include_once('otherlang_validation.php');?>
+        <?php include_once('otherlang_validation.php');?>
         <?php } ?>
         <script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
         <script>

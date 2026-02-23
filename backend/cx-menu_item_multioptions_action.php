@@ -940,12 +940,12 @@ $menuItemFieldArr = array(
         <div class="profile-section-inner">
             <!-- login in page -->
             <div class="food-action-page">
-                <? if ($success == 1) { ?>
+                <?php if ($success == 1) { ?>
                     <div class="alert alert-success alert-dismissable">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                         <?php echo $langage_lbl['LBL_Record_Updated_successfully']; ?>
                     </div>
-                <? } else if ($success == 2) { ?>
+                <?php } else if ($success == 2) { ?>
                     <div class="alert alert-danger alert-dismissable">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                         <?php echo $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -955,7 +955,7 @@ $menuItemFieldArr = array(
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                 <?php echo  !empty($_REQUEST['var_msg']) ? $_REQUEST['var_msg'] : $_SESSION['var_msg']; ?>
                             </div><br/>
-                        <? } ?>
+                        <?php } ?>
                 <div style="clear:both;"></div>
                 <form id="menuItem_form" name="menuItem_form" class="menuItemFormFront general-form" method="post"
                       action="" enctype="multipart/form-data">
@@ -973,7 +973,7 @@ $menuItemFieldArr = array(
                                 <option value=""><?php echo ucwords($langage_lbl['LBL_SELECT_CATEGORY']); ?></option>
                                 <?php foreach ($db_menu as $dbmenu) { ?>
                                     <option value="<?= $dbmenu['iFoodMenuId'] ?>" <?= ($dbmenu['iFoodMenuId'] == $iFoodMenuId) ? 'selected' : ''; ?> ><?= $dbmenu['vMenu_' . $_SESSION['sess_lang']]; ?></option>
-                                <? } ?>
+                                <?php } ?>
                             </select>
                         </div>
 
@@ -1219,13 +1219,13 @@ $menuItemFieldArr = array(
                                 <select name="eFoodType"
                                         id="eFoodType" <?php if ($iServiceId == '1') { ?> required <?php } ?>>
                                     <option value=""><?= $langage_lbl['LBL_SELECT_TXT'] ?></option>
-                                    <option value="Veg" <?
+                                    <option value="Veg" <?php
                                     if ($eFoodType == 'Veg') {
 
                                         echo 'selected';
                                     }
                                     ?>><?= $langage_lbl['LBL_VEG_FOOD'] ?></option>
-                                    <option value="NonVeg" <?
+                                    <option value="NonVeg" <?php
                                     if ($eFoodType == 'NonVeg') {
 
                                         echo 'selected';
@@ -1273,19 +1273,19 @@ $menuItemFieldArr = array(
                                                                                        data-original-title="Set the tag name to this item. Like, Best Seller, Most Popular"></i></strong>
                             <select name="vHighlightName" id="vHighlightName">
                                 <option value=""><?= $langage_lbl['LBL_SELECT_TXT'] ?></option>
-                                <option value="LBL_BESTSELLER" <?
+                                <option value="LBL_BESTSELLER" <?php
                                 if ($vHighlightName == 'LBL_BESTSELLER') {
 
                                     echo 'selected';
                                 }
                                 ?>><?php echo $langage_lbl['LBL_BESTSELLER'] ?></option>
-                                <option value="LBL_NEWLY_ADDED" <?
+                                <option value="LBL_NEWLY_ADDED" <?php
                                 if ($vHighlightName == 'LBL_NEWLY_ADDED') {
 
                                     echo 'selected';
                                 }
                                 ?>><?php echo $langage_lbl['LBL_NEWLY_ADDED'] ?></option>
-                                <option value="LBL_PROMOTED" <?
+                                <option value="LBL_PROMOTED" <?php
                                 if ($vHighlightName == 'LBL_PROMOTED') {
 
                                     echo 'selected';
@@ -1851,7 +1851,7 @@ $menuItemFieldArr = array(
                             </div>
                         </div>
                     </div>
-                    <?
+                    <?php
                     if ($action == "Add") {
                         $actionbtn = $langage_lbl['LBL_ACTION_ADD'];
                     } else {
@@ -2081,7 +2081,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
 </style>
 
 <?php if ($lang != 'en') { ?>
-    <? //include_once('otherlang_validation.php');?>
+    <?php //include_once('otherlang_validation.php');?>
     <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
 <?php } ?>
 <?php
@@ -2153,15 +2153,15 @@ $_SESSION['var_msg'] = "";
 
 
 
-    <? if (scount($db_optionsdata) > 0) { ?>
+    <?php if (scount($db_optionsdata) > 0) { ?>
 
     var optionid = '<?= scount($db_optionsdata) ?>';
 
-    <? } else { ?>
+    <?php } else { ?>
 
     var optionid = 0;
 
-    <? } ?>
+    <?php } ?>
 
     var category_id;
 
@@ -2477,11 +2477,11 @@ $_SESSION['var_msg'] = "";
             $('.removeclass' + rid).remove();
         }
     }
-    <? if (scount($db_addonsdata) > 0) { ?>
+    <?php if (scount($db_addonsdata) > 0) { ?>
     var addonid = '<?= scount($db_addonsdata) ?>';
-    <? } else { ?>
+    <?php } else { ?>
     var addonid = 0;
-    <? } ?>
+    <?php } ?>
     function addon_fields(category_id = "") {
         $('#option_addon_title').html("<?= addslashes($langage_lbl['LBL_ADD_ADDON_TOPPING']) ?>");
         $('#option_addon_type').val("addons");

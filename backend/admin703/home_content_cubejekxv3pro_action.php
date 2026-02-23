@@ -618,7 +618,7 @@ if($THEME_OBJ->isProKXThemeActive() == "Yes") {
     <title>Admin | Manage Web Home Page</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -727,8 +727,8 @@ if($THEME_OBJ->isProKXThemeActive() == "Yes") {
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -768,19 +768,19 @@ if($THEME_OBJ->isProKXThemeActive() == "Yes") {
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div>
                         <br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <form method="post" name="_home_content_form" id="_home_content_form" action=""
                           enctype='multipart/form-data'>
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
@@ -821,16 +821,16 @@ if($THEME_OBJ->isProKXThemeActive() == "Yes") {
                                                   placeholder="Description"><?= $general_section['desc']; ?></textarea>
                                     </div>
                                 </div>
-                                <? if ($THEME_OBJ->isCubeJekXv3ThemeActive() != 'Yes' && $THEME_OBJ->isCubeJekXv3ProThemeActive() != 'Yes' && $hide_element == "No") { ?>
+                                <?php if ($THEME_OBJ->isCubeJekXv3ThemeActive() != 'Yes' && $THEME_OBJ->isCubeJekXv3ProThemeActive() != 'Yes' && $hide_element == "No") { ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <label>First Image(Background image)</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($general_section['img'] != '') { ?>
+                                            <?php if ($general_section['img'] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $general_section['img']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader"
                                                    name="general_section_img" id="general_section_img"
                                                    accept=".png,.jpg,.jpeg,.gif">
@@ -844,10 +844,10 @@ if($THEME_OBJ->isProKXThemeActive() == "Yes") {
                                         <label>First Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($general_section['img_sec'] != '') { ?>
+                                        <?php if ($general_section['img_sec'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $general_section['img_sec']; ?>"
                                                  class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader"
                                                name="general_section_img_sec" id="general_section_img_sec"
                                                accept=".png,.jpg,.jpeg,.gif">
@@ -916,13 +916,13 @@ if($THEME_OBJ->isProKXThemeActive() == "Yes") {
                                                placeholder="Service Section Title" required>
                                     </div>
                                 </div>
-                                <? if ($THEME_OBJ->isCubeJekXv3ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv3ProThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCJXDoctorv2ThemeActive() == 'Yes') { ?>
+                                <?php if ($THEME_OBJ->isCubeJekXv3ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv3ProThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCJXDoctorv2ThemeActive() == 'Yes') { ?>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <input type="text" class="form-control" name="lSafeSection" id="lSafeSection" value="<?= $lSafeSection; ?>"  placeholder="Service Section SubTitle" required>
                                         </div>
                                     </div>
-                                <? } ?>
+                                <?php } ?>
                             </div>
                             <input type="hidden" class="form-control" name="lServiceSection_vehicleCategory_Ordering"
                                    id="lServiceSection_vehicleCategory_Ordering" value=""
@@ -959,7 +959,7 @@ if($THEME_OBJ->isProKXThemeActive() == "Yes") {
                                                required>
                                     </div>
                                 </div>
-                                <? if ($THEME_OBJ->isCubeJekXv3ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv3ProThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCJXDoctorv2ThemeActive() == 'Yes') { ?>
+                                <?php if ($THEME_OBJ->isCubeJekXv3ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv3ProThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCJXDoctorv2ThemeActive() == 'Yes') { ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <label>SubTitle <span class="red"> *</span> </label>
@@ -971,7 +971,7 @@ if($THEME_OBJ->isProKXThemeActive() == "Yes") {
                                                    placeholder="SubTitle" required>
                                         </div>
                                     </div>
-                                <? } ?>
+                                <?php } ?>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <label>Description</label>
@@ -1012,10 +1012,10 @@ if($THEME_OBJ->isProKXThemeActive() == "Yes") {
                                                         <label>Block Image <?php echo $i; ?></label>
                                                     </div>
                                                     <div class="col-lg-11">
-                                                        <? if ($how_it_work_section['hiw_img' . $i . '_' . $vCode] != '') { ?>
+                                                        <?php if ($how_it_work_section['hiw_img' . $i . '_' . $vCode] != '') { ?>
                                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=200&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['hiw_img' . $i . '_' . $vCode]; ?>"
                                                                  class="innerbg_image"/ style="max-height:100px;">
-                                                        <? } ?>
+                                                        <?php } ?>
                                                         <input type="file" class="form-control FilUploader"
                                                                name="how_it_work_section_hiw_img<?php echo $i; ?>"
                                                                id="how_it_work_section_hiw_img<?php echo $i; ?>"
@@ -1036,16 +1036,16 @@ if($THEME_OBJ->isProKXThemeActive() == "Yes") {
                                         <?php } ?>
                                     </div>
                                 </div>
-                                <? if ($THEME_OBJ->isCubeJekXv3ThemeActive() != 'Yes' && $THEME_OBJ->isCubeJekXv3ProThemeActive() != 'Yes' && $hide_element == "No") { ?>
+                                <?php if ($THEME_OBJ->isCubeJekXv3ThemeActive() != 'Yes' && $THEME_OBJ->isCubeJekXv3ProThemeActive() != 'Yes' && $hide_element == "No") { ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <label>Image</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($how_it_work_section['img'] != '') { ?>
+                                            <?php if ($how_it_work_section['img'] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader"
                                                    name="how_it_work_section_img" id="how_it_work_section_img"
                                                    accept=".png,.jpg,.jpeg,.gif">
@@ -1053,7 +1053,7 @@ if($THEME_OBJ->isProKXThemeActive() == "Yes") {
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 493px * 740px. <br> <?= IMAGE_INSTRUCTION_NOTES ?>]</span>
                                         </div>
                                     </div>
-                                <? } ?>
+                                <?php } ?>
                             </div>
                         </div>
                         <div class="body-div innersection">
@@ -1119,9 +1119,9 @@ if($THEME_OBJ->isProKXThemeActive() == "Yes") {
                                             <label><?php echo $rs['image']; ?></label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($rs['image_value'] != ''){ ?>
+                                            <?php if ($rs['image_value'] != ''){ ?>
                                                 <img src="<?=$tconfig["tsite_url"].'resizeImg.php?h=200&src='.$tconfig["tsite_upload_apptype_page_images"].$template.'/'.$rs['image_value'];?>" class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader" name="<?php echo $rs['field_image'] ?>" id="<?php echo $rs['field_image'] ?>" accept=".png,.jpg,.jpeg,.gif">
                                             <br/>
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 740px * 740px. <br> <?=IMAGE_INSTRUCTION_NOTES?> ]</span>
@@ -1244,7 +1244,7 @@ if (!empty($vcatdata)) {
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script type="text/javascript" src="js/fancybox.umd.js"></script>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script src="../assets/plugins/ckeditor/ckeditor.js"></script>

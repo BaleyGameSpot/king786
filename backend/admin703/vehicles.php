@@ -579,7 +579,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                     <div class="col-lg-12">
 
-                        <?
+                        <?php
 
                         $drv_text = ($drv_name != "") ? "Vehicles of " . clearName($drv_name) : $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'];
 
@@ -629,15 +629,15 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                 </option>
 
-                                <? if (ONLYDELIVERALL != 'Yes') { ?>
+                                <?php if (ONLYDELIVERALL != 'Yes') { ?>
 
                                     <option value="c.vCompany" <?php if ($option == 'c.vCompany') {
 
                                         echo "selected";
 
-                                    } ?> ><? if ($MODULES_OBJ->isStorePersonalDriverAvailable() > 0) { ?>Company/Store<? } else { ?>Company <? } ?></option>
+                                    } ?> ><?php if ($MODULES_OBJ->isStorePersonalDriverAvailable() > 0) { ?>Company/Store<?php } else { ?>Company <?php } ?></option>
 
-                                <? } ?>
+                                <?php } ?>
 
                                 <option value="CONCAT(rd.vName,' ',rd.vLastName)" <?php if ($option == "CONCAT(rd.vName,' ',rd.vLastName)" || ($iDriverId != "" && $drv_name != "")) {
 
@@ -645,7 +645,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                 } ?> ><?php echo $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?></option>
 
-                                <? if ( ( $APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') && ONLYDELIVERALL != 'Yes') { ?>
+                                <?php if ( ( $APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') && ONLYDELIVERALL != 'Yes') { ?>
 
                                     <option value="dv.eType" <?php if ($option == 'dv.eType') {
 
@@ -655,7 +655,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                     </option>
 
-                                <? } ?>
+                                <?php } ?>
 
                                 <!-- <option value="dv.eStatus" <?php if ($option == 'dv.eStatus') {
 
@@ -681,13 +681,13 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                 <option value="">Select Status</option>
 
-                                <? if ($MODULES_OBJ->isRideFeatureAvailable()) { ?>
+                                <?php if ($MODULES_OBJ->isRideFeatureAvailable()) { ?>
 
                                 <option value='Ride' <?php if ($eType == 'Ride') {
 
                                     echo "selected";
 
-                                } ?> >Ride</option><? }
+                                } ?> >Ride</option><?php }
 
                                 if ($MODULES_OBJ->isDeliveryFeatureAvailable()) { ?>
 
@@ -889,7 +889,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                         </th>
 
-                                        <? if (ONLYDELIVERALL != 'Yes') { ?>
+                                        <?php if (ONLYDELIVERALL != 'Yes') { ?>
 
                                             <th width="20%">
 
@@ -899,7 +899,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                                        echo $order;
 
-                                                   } else { ?>0<?php } ?>)"><? if ($MODULES_OBJ->isStorePersonalDriverAvailable() > 0) { ?>Company/Store<? } else { ?>Company <? } ?> <?php if ($sortby == 2) {
+                                                   } else { ?>0<?php } ?>)"><?php if ($MODULES_OBJ->isStorePersonalDriverAvailable() > 0) { ?>Company/Store<?php } else { ?>Company <?php } ?> <?php if ($sortby == 2) {
 
                                                         if ($order == 0) { ?>
 
@@ -917,7 +917,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                             </th>
 
-                                        <? } ?>
+                                        <?php } ?>
 
                                         <th width="20%">
 
@@ -971,7 +971,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                         } else { ?><i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a></th>  -->
 
-                                        <? //}  ?>
+                                        <?php //}  ?>
 
                                         <th width="8%" class="align-center">
 
@@ -1045,11 +1045,11 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                                 <td><?= $vname; ?></td>
 
-                                                <? if (ONLYDELIVERALL != 'Yes') { ?>
+                                                <?php if (ONLYDELIVERALL != 'Yes') { ?>
 
                                                     <td><?= clearCmpName($data_drv[$i]['vCompany']); ?></td>
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <td><?= clearName($data_drv[$i]['driverName']); ?></td>
 
@@ -1085,7 +1085,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                                     <!-- <td><?= $data_drv[$i]['eType']; ?></td> -->
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <td align="center">
 

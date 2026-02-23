@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 include_once('common.php');
 ?>
 <!DOCTYPE html>
@@ -24,15 +24,15 @@ include_once('common.php');
         <link rel="stylesheet" href="assets/plugins/datepicker/css/datepicker.css" />
         <link rel="stylesheet" href="assets/plugins/timepicker/css/bootstrap-timepicker.min.css" />
         <link rel="stylesheet" href="assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
     </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
     <body class="padTop53 " >
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner" id="page_height" style="">
@@ -188,7 +188,7 @@ include_once('common.php');
             <!--END PAGE CONTENT -->
         </div>
         <!--END MAIN WRAPPER -->
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <script src="assets/plugins/dataTables/jquery.dataTables.js"></script>
         <script src="assets/plugins/dataTables/dataTables.bootstrap.js"></script>
         <script>

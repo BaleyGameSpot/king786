@@ -122,26 +122,26 @@ if($action = "Edit") {
     <div class="page-contant">
 	    <div class="page-contant-inner page-trip-detail">
 	      	<h2 class="header-page trip-detail driver-detail1"><?=$langage_lbl['LBL_MY_AVAILABILITY'];?>
-				<? if(($APP_TYPE == "UberX" || $APP_TYPE == "Ride-Delivery-UberX") && $_SESSION['sess_user'] == "company"){?>
+				<?php if(($APP_TYPE == "UberX" || $APP_TYPE == "Ride-Delivery-UberX") && $_SESSION['sess_user'] == "company"){?>
 					<a href="providerlist">
 						<img src="assets/img/arrow-white.png" alt="">
 						<?=$langage_lbl['LBL_BACK_To_Listing_WEB']; ?>
 					</a>
-				<? }?>
+				<?php }?>
 			</h2>
 	      	<!-- trips detail page -->
 	      	<div class="driver-add-vehicle">
-	      		<? if($success == 1) { ?>
+	      		<?php if($success == 1) { ?>
 					<div class="alert alert-success alert-dismissable">
 						<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 						<?=$langage_lbl['LBL_Record_Updated_successfully']; ?>
 					</div>
-					<? }else if($success == 2){?>
+					<?php }else if($success == 2){?>
 					<div class="alert alert-danger alert-dismissable">
 						<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 						<?= isset($_REQUEST['error_msg']) ? $_REQUEST['error_msg'] : ' '; ?>
 					</div>
-				<?} ?>
+				<?php } ?>
 				<form name="frm1" method="post" action="">
 					<input type="hidden" name="iDriverId" value="<?= $iDriverId; ?>"/>
 	    			<div class="car-type add-car-services-hatch add-services-hatch add-services-taxi colums-view">   

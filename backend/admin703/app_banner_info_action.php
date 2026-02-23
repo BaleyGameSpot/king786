@@ -180,7 +180,7 @@ $ServiceData = $obj->MySQLSelect("SELECT iVehicleCategoryId,iParentId,vCategory_
     <title>Admin | App Banner Info <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -190,8 +190,8 @@ $ServiceData = $obj->MySQLSelect("SELECT iVehicleCategoryId,iParentId,vCategory_
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -206,27 +206,27 @@ $ServiceData = $obj->MySQLSelect("SELECT iVehicleCategoryId,iParentId,vCategory_
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
+                    <?php if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <? echo $_REQUEST['var_msg']; ?>
+                            <?php echo $_REQUEST['var_msg']; ?>
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if ($success == 1) { ?>
+                    <?php } ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if ($success == 2) { ?>
+                    <?php } ?>
+                    <?php if ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <form method="post" action="" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                         <input type="hidden" name="vImage_old" value="<?= $vImage ?>">
@@ -235,13 +235,13 @@ $ServiceData = $obj->MySQLSelect("SELECT iVehicleCategoryId,iParentId,vCategory_
                                 <label>Image<?= ($vImage == '') ? '<span class="red"> *</span>' : ''; ?></label>
                             </div>
                             <div class="col-lg-6">
-                                <? if ($vImage != '') { ?>
+                                <?php if ($vImage != '') { ?>
                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=400&h=200&src=' . $tconfig['tsite_upload_app_banner_images'] . $vImage; ?>"
                                          style="width:200px;height:100px;">
                                     <input type="file" name="vImage" id="vImage" value="<?= $vImage; ?>"/>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <input type="file" name="vImage" id="vImage" value="<?= $vImage; ?>" required/>
-                                <? } ?>
+                                <?php } ?>
                                 <b>[Note: Recommended dimension is 2880 * 1620.]</b>
                             </div>
                         </div>
@@ -700,7 +700,7 @@ $ServiceData = $obj->MySQLSelect("SELECT iVehicleCategoryId,iParentId,vCategory_
                                 <label>Order</label>
                             </div>
                             <div class="col-lg-6">
-                                <?
+                                <?php
                                 $temp = 1;
                                 $dataArray = array();
                                 $query1 = "SELECT DISTINCT iDisplayOrder FROM " . $tbl_name . " ORDER BY iDisplayOrder";
@@ -712,16 +712,16 @@ $ServiceData = $obj->MySQLSelect("SELECT iVehicleCategoryId,iParentId,vCategory_
                                 ?>
                                 <input type="hidden" name="temp_order" id="temp_order" value="<?= $temp ?>">
                                 <select name="iDisplayOrder" class="form-control">
-                                    <? foreach ($dataArray as $arr): ?>
+                                    <?php foreach ($dataArray as $arr): ?>
                                         <option <?= $arr == $temp ? ' selected="selected"' : '' ?> value="<?= $arr; ?>">
                                             -- <?= $arr ?> --
                                         </option>
-                                    <? endforeach; ?>
-                                    <? if ($action == "Add") { ?>
+                                    <?php endforeach; ?>
+                                    <?php if ($action == "Add") { ?>
                                         <option value="<?= $temp; ?>">
                                             -- <?= $temp ?> --
                                         </option>
-                                    <? } ?>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>
@@ -750,7 +750,7 @@ $ServiceData = $obj->MySQLSelect("SELECT iVehicleCategoryId,iParentId,vCategory_
         <span>Language Translation is in Process. Please Wait...</span>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script type="text/javascript">
     function editTitle(action) {

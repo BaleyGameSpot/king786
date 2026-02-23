@@ -1,4 +1,4 @@
-<?
+<?php
 	include_once('common.php');
 	$cpass =isset($_REQUEST['cpass'])?$_REQUEST['cpass']:'';
 	

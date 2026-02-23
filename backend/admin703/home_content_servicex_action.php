@@ -517,7 +517,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
     <title>Admin | Home Content <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -544,8 +544,8 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -563,17 +563,17 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div><br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div><br/>
-                    <? } ?>
+                    <?php } ?>
                     <form method="post" name="_home_content_form" id="_home_content_form" action=""
                           enctype='multipart/form-data'>
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
@@ -639,10 +639,10 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#1</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                    <? if ($how_it_work_section['img_first'] != '') { ?>
+                                                    <?php if ($how_it_work_section['img_first'] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_first']; ?>"
                                                              class="innerbg_image"/>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="how_it_work_img_first"
                                                            value="<?= $how_it_work_section['img_first']; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px.]</span>
@@ -674,11 +674,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#2</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                    <? if ($how_it_work_section['img_sec'] != '') { ?>
+                                                    <?php if ($how_it_work_section['img_sec'] != '') { ?>
                                                         <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_sec']; ?>" class="innerbg_image"/> -->
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_sec']; ?>"
                                                              class="innerbg_image"/>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="how_it_work_img_sec"
                                                            value="<?= $how_it_work_section['img_sec']; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px.]</span>
@@ -712,11 +712,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#3</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                    <? if ($how_it_work_section['img_third'] != '') { ?>
+                                                    <?php if ($how_it_work_section['img_third'] != '') { ?>
                                                         <!--  <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_third_' . $vCode]; ?>" class="innerbg_image"/> -->
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_third']; ?>"
                                                              class="innerbg_image"/>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="how_it_work_img_third"
                                                            value="<?= $how_it_work_section['img_third']; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px.]</span>
@@ -749,11 +749,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#4</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                    <? if ($how_it_work_section['img_third'] != '') { ?>
+                                                    <?php if ($how_it_work_section['img_third'] != '') { ?>
                                                         <!--  <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_four_' . $vCode]; ?>" class="innerbg_image"/> -->
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_four']; ?>"
                                                              class="innerbg_image"/>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="how_it_work_img_four"
                                                            value="<?= $how_it_work_section['img_four']; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px.]</span>
@@ -815,11 +815,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>Background Image</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($download_section['img'] != '') { ?>
+                                            <?php if ($download_section['img'] != '') { ?>
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $download_section['img']; ?>" class="innerbg_image"/> -->
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $download_section['img']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader"
                                                    name="download_section_img" id="download_section_img"
                                                    accept=".png,.jpg,.jpeg,.gif">
@@ -832,11 +832,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>First Image</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($download_section['img_first'] != '') { ?>
+                                            <?php if ($download_section['img_first'] != '') { ?>
                                                 <!--  <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $download_section['img_first']; ?>" class="innerbg_image"/> -->
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $download_section['img_first']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader"
                                                    name="download_section_img_first" id="download_section_img_first"
                                                    accept=".png,.jpg,.jpeg,.gif">
@@ -849,11 +849,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>Second Image</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($download_section['img_sec'] != '') { ?>
+                                            <?php if ($download_section['img_sec'] != '') { ?>
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $download_section['img_sec']; ?>" class="innerbg_image"/> -->
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $download_section['img_sec']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader"
                                                    name="download_section_img_sec" id="download_section_img_sec"
                                                    accept=".png,.jpg,.jpeg,.gif">
@@ -866,11 +866,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>Third Image</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($download_section['img_third'] != '') { ?>
+                                            <?php if ($download_section['img_third'] != '') { ?>
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $download_section['img_third']; ?>" class="innerbg_image"/> -->
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $download_section['img_third']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader"
                                                    name="download_section_img_third" id="download_section_img_third"
                                                    accept=".png,.jpg,.jpeg,.gif">
@@ -910,11 +910,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>Image</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($secure_section['img'] != '') { ?>
+                                            <?php if ($secure_section['img'] != '') { ?>
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $secure_section['img']; ?>" class="innerbg_image" /> -->
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $secure_section['img']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader"
                                                    name="secure_section_img" id="secure_section_img"
                                                    accept=".png,.jpg,.jpeg,.gif">
@@ -954,11 +954,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>Image</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($call_section['img'] != '') { ?>
+                                            <?php if ($call_section['img'] != '') { ?>
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $call_section['img']; ?>" class="innerbg_image"/> -->
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $call_section['img']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader" name="call_section_img"
                                                    id="call_section_img" accept=".png,.jpg,.jpeg,.gif">
                                             <br/>
@@ -1003,7 +1003,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                             <?php if ($learnServiceCatSection['vHomepageLogo'] != '') { ?>
                                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=70&h=70&src=' . $tconfig["tsite_upload_home_page_service_images"] . '/' . $learnServiceCatSection['vHomepageLogo'] ?>"  style="width:35px;height:35px;">
 
-                                                            <? } ?>                                                     
+                                                            <?php } ?>                                                     
                                                         </td>
                                                         <td>
                                                             <?= $learnServiceCatSection['vCatNameHomepage']; ?>
@@ -1044,7 +1044,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                             <?php if ($vcatdata[$i]['vHomepageLogo'] != '') { ?>
                                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=70&h=70&src=' . $tconfig["tsite_upload_home_page_service_images"] . '/' . $vcatdata[$i]['vHomepageLogo'] ?>"  style="width:35px;height:35px;">
 
-                                                            <? } ?>                                                     
+                                                            <?php } ?>                                                     
                                                         </td>
                                                         <td>
                                                             <?= $vcatdata[$i]['vCategory_EN']; ?>
@@ -1098,10 +1098,10 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>First Image(Background image)</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($general_section['img_first'] != '') { ?>
+                                            <?php if ($general_section['img_first'] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $general_section['img_first']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader"
                                                    name="general_section_img" id="general_section_img"
                                                    accept=".png,.jpg,.jpeg,.gif">
@@ -1118,10 +1118,10 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <?php } ?>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($general_section['img_first'] != '') { ?>
+                                            <?php if ($general_section['img_first'] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $general_section['img_first']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader"
                                                    name="general_section_img_sec" id="general_section_img_sec"
                                                    accept=".png,.jpg,.jpeg,.gif">
@@ -1193,10 +1193,10 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image 1</label>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <? if ($register_section['img_first'] != '') { ?>
+                                                    <?php if ($register_section['img_first'] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_first']; ?>"
                                                              class="innerbg_image"/>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control FilUploader"
                                                            name="register_section_img_first"
                                                            id="register_section_img_first"
@@ -1222,10 +1222,10 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image 2</label>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <? if ($register_section['img_sec'] != '') { ?>
+                                                    <?php if ($register_section['img_sec'] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_sec']; ?>"
                                                              class="innerbg_image"/>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control FilUploader"
                                                            name="register_section_img_sec" id="register_section_img_sec"
                                                            accept=".png,.jpg,.jpeg,.gif">
@@ -1260,9 +1260,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                 <tr>
                                                     <th>Icon</th>
                                                     <th>Name</th>
-                                                    <? if (ENABLE_DYNAMIC_CREATE_PAGE == "Yes") { ?>
+                                                    <?php if (ENABLE_DYNAMIC_CREATE_PAGE == "Yes") { ?>
                                                         <th style="text-align:center">Edit Inner page</th>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <th style="text-align:center">Upload Icon</th>
                                                     <th style="text-align:center">Remove Icon</th>
                                                 </tr>
@@ -1282,7 +1282,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                         <td>
                                                             <?= $vcatdata[$i]['vCategory_EN']; ?>
                                                         </td>
-                                                        <? if (ENABLE_DYNAMIC_CREATE_PAGE == "Yes") { ?>
+                                                        <?php if (ENABLE_DYNAMIC_CREATE_PAGE == "Yes") { ?>
                                                             <td>
                                                                 <center>
                                                                     <?php if ($THEME_OBJ->isServiceXv2ThemeActive() == "Yes") {
@@ -1302,7 +1302,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                                     <?php } ?>
                                                                 </center>
                                                             </td>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                         <td align="center">
                                                             <center>
                                                                 <button type="button" class="btn btn-primary"
@@ -1382,11 +1382,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image</label>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <? if ($book_section['img'] != '') { ?>
+                                                    <?php if ($book_section['img'] != '') { ?>
                                                         <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $call_section['img']; ?>" class="innerbg_image"/> -->
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $book_section['img']; ?>"
                                                              class="innerbg_image"/>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control FilUploader"
                                                            name="book_section_img" id="book_section_img"
                                                            accept=".png,.jpg,.jpeg,.gif">
@@ -1495,7 +1495,7 @@ if (!empty($vcatdata)) {
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script src="../assets/plugins/ckeditor/ckeditor.js"></script>
 <script src="../assets/plugins/ckeditor/config.js"></script>

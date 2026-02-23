@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("../common.php");
 $iUserId = isset($_REQUEST['iUserId']) ? $_REQUEST['iUserId'] : '';
 $trackingCompany = isset($_REQUEST['trackingCompany']) ? $_REQUEST['trackingCompany'] : '';
@@ -80,7 +80,7 @@ else {
                     <td class="text_design">Email</td>
                     <td><?= clearEmail($data_user[0]['vEmail']) ?></td>
                 </tr>
-                <? if ($data_user[0]['vPhone'] != "") { ?>
+                <?php if ($data_user[0]['vPhone'] != "") { ?>
                     <tr>
                         <td class="text_design">Phone Number</td>
                         <td>
@@ -95,7 +95,7 @@ else {
                             ?>
                         </td>
                     </tr>
-                <? } ?>
+                <?php } ?>
                 <tr>
                     <td class="text_design">Rating</td>
                     <td><?= $Rating ?></td>
@@ -103,7 +103,7 @@ else {
                 <tr>
                     <td class="text_design">Status</td>
                     <td>
-                        <?
+                        <?php
                         $class = "";
                         if ($data_user[0]['eStatus'] == "Active") {
                             $class = "btn-success";
@@ -125,41 +125,41 @@ else {
     <tr></tr>
     <tr></tr>
     <tr></tr>
-    <? if ($data_user[0]['country'] != "") { ?>
+    <?php if ($data_user[0]['country'] != "") { ?>
         <tr>
             <td class="text_design">Country</td>
             <td>
                 <?= $data_user[0]['country']; ?>
             </td>
         </tr>
-    <? } ?>
-    <? if ($reg_date != "") { ?>
+    <?php } ?>
+    <?php if ($reg_date != "") { ?>
         <tr>
             <td width="150px" class="text_design">Registration Date</td>
             <td><?= $reg_date ?></td>
         </tr>
-    <? } ?>
+    <?php } ?>
 
     <!--	<tr>
 			<td class="text_design">Registration Details</td>
 			<td>
 				<table  border="0" width="100%" cellspacing="2" cellpadding="8">
-					<? if ($reg_date != "") { ?>
+					<?php if ($reg_date != "") { ?>
 					<tr>
 						<td width="150px" class="text_design">Date</td>
 						<td><?= $reg_date ?></td>
 					</tr>
-					<? } ?>
+					<?php } ?>
 					<tr>
 						<td class="text_design">Type</td>
 						<td><?= $data_user[0]['eSignUpType'] ?></td>
 					</tr>
-					<? if ($data_user[0]['eGender'] != "") { ?>
+					<?php if ($data_user[0]['eGender'] != "") { ?>
 					<tr>
 						<td class="text_design">Gender</td>
 						<td><?= $data_user[0]['eGender'] ?></td>
 					</tr>
-					<? } ?>
+					<?php } ?>
 				</table>
 			</td>
 		</tr>
@@ -183,7 +183,7 @@ else {
 				</table>
 			</td>
 		</tr>
-		<? if (!empty($data_referral)) { ?>
+		<?php if (!empty($data_referral)) { ?>
 		<tr>
 			<td class="text_design">Referee Details</td>
 			<td>
@@ -207,7 +207,7 @@ else {
 				</table>
 			</td>
 		</tr>
-		<?
+		<?php
     }
     if ($RIDER_PHONE_VERIFICATION == "Yes" || $RIDER_EMAIL_VERIFICATION == "Yes") {
         ?>
@@ -215,28 +215,28 @@ else {
 				<td class="text_design">Verifications</td>
 				<td>
 					<table  border="0" width="100%" cellspacing="2" cellpadding="8">
-						<? if ($RIDER_EMAIL_VERIFICATION == "Yes") { ?>
+						<?php if ($RIDER_EMAIL_VERIFICATION == "Yes") { ?>
 						<tr>
 							<td width="160px" class="text_design">Email Verification</td>
 							<td>
-								<? echo ($data_user[0]['eEmailVerified'] == "Yes") ? "Verified" : "Not Verified"; ?>
+								<?php echo ($data_user[0]['eEmailVerified'] == "Yes") ? "Verified" : "Not Verified"; ?>
 							</td>
 						</tr>
-						<?
+						<?php
         }
         if ($RIDER_PHONE_VERIFICATION == "Yes") {
             ?>
 						<tr>
 							<td class="text_design">Phone Verification</td>
 							<td>
-								<? echo ($data_user[0]['ePhoneVerified'] == "Yes") ? "Verified" : "Not Verified"; ?>
+								<?php echo ($data_user[0]['ePhoneVerified'] == "Yes") ? "Verified" : "Not Verified"; ?>
 							</td>
 						</tr>
-						<? } ?>
+						<?php } ?>
 					</table>
 				</td>
 			</tr>
-		<? } ?>
+		<?php } ?>
 		<tr>
 			<td class="text_design">Trip Details</td>
 			<td>
@@ -261,21 +261,21 @@ else {
 </table>
 </div>
 <div class="modal-footer">
-    <? if (!empty($_REQUEST['editTrip'])) {
+    <?php if (!empty($_REQUEST['editTrip'])) {
         if ($_REQUEST['editTrip'] == "Yes") { ?>
             <a href="<?= $LOCATION_FILE_ARRAY['TRIP']; ?>?action=search&searchRider=<?= $iUserId; ?>" class="btn btn-primary btn-ok" target="blank">View <?= $langage_lbl_admin['LBL_TRIP_DETAILS_TXT'] ?></a>
-        <? }
+        <?php }
     }
     else if (!empty($_REQUEST['editOrder'])) {
         if ($_REQUEST['editOrder'] == "Yes") { ?>
             <a href="allorders.php?action=search&type=allorders&searchRider=<?= $iUserId; ?>"
                class="btn btn-primary btn-ok" target="blank">View Order Details</a>
-        <? }
+        <?php }
     } else if ($_SESSION['SessionUserType'] != 'hotel') {
         ?>
         <a id = "rider_edit_btn"  href="<?= $LOCATION_FILE_ARRAY['RIDER_ACTION']; ?>?id=<?= $iUserId; ?>" class="btn btn-primary btn-ok"
            target="blank">Edit <?php echo $langage_lbl_admin['LBL_RIDER']; ?></a>
-    <? } ?>
+    <?php } ?>
     <button type="button" class="btn btn-danger btn-ok" data-dismiss="modal">Close</button>
 </div>
 		

@@ -61,7 +61,7 @@
 		<div class="tab-content">
 			<div id="login" class="tab-pane active">
 				<form action="" class="form-signin" method = "post" id="login_box">
-					<input type="hidden" name="action" value="<?echo $action?>"/>
+					<input type="hidden" name="action" value="<?php echo $action?>"/>
 					<p class="text-muted text-center btn-block btn btn-danger btn-rect" style="display:none;" id="errmsg" >
 						<?=$langage_lbl['LBL_ENTER _YOUR_USERNAME_AND_PASSWORD']; ?>
 					</p>

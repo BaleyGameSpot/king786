@@ -121,7 +121,7 @@ if (!empty($search_keyword)) {
         <div class="button-block justify-left">
             <input type="submit" class="save-vehicle gen-btn" name="submitbid" id="submitbid" value="<?= $langage_lbl['LBL_SUBMIT_BUTTON_TXT']; ?>" > 
         </div>
-        <? } ?>
+        <?php } ?>
         <?php if ($emptySubCatData == '0') { ?>
             <div> <?= $langage_lbl['LBL_NO_SERVICE_AVAIL_WEB']; ?></div>
         <?php } ?>

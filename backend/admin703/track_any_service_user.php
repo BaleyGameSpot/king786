@@ -380,11 +380,11 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                 <td>
                                                     <?php if ($userObj->hasPermission('view-users')) { ?><a href="track_any_service_user_action.php?id=<?= $data_drv[$i]['iTrackServiceUserId']; ?>" style="text-decoration: underline;"><?php } ?><?= clearName($data_drv[$i]['name']); ?><?php if ($userObj->hasPermission('view-users')) { ?></a><?php } ?> 
                                                 </td>
-                                                <? if ($data_drv[$i]['vEmail'] != '') { ?>
-                                                    <td><? echo clearEmail($data_drv[$i]['vEmail']); ?></td>
-                                                <? } else { ?>
+                                                <?php if ($data_drv[$i]['vEmail'] != '') { ?>
+                                                    <td><?php echo clearEmail($data_drv[$i]['vEmail']); ?></td>
+                                                <?php } else { ?>
                                                     <td>--</td>
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <td>
                                                     <?php if($data_drv[$i]['LinkedMembers'] > 0) { ?>
@@ -393,14 +393,14 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                         <?= $data_drv[$i]['LinkedMembers']; ?>
                                                     <?php } ?>
                                                 </td>
-                                                <td  style="text-align:center;" data-order="<?= $data_drv[$i]['iTrackServiceUserId']; ?>"><? echo $get_tRegistrationDate_format['tDisplayDate'];//DateTime($data_drv[$i]['tRegistrationDate']) ?></td>
+                                                <td  style="text-align:center;" data-order="<?= $data_drv[$i]['iTrackServiceUserId']; ?>"><?php echo $get_tRegistrationDate_format['tDisplayDate'];//DateTime($data_drv[$i]['tRegistrationDate']) ?></td>
                                                 <td class="center">
                                                     <?php if (!empty($data_drv[$i]['mobile'])) { ?>
                                                         (+<?= $data_drv[$i]['vPhoneCode'] ?>) <?= clearPhone($data_drv[$i]['mobile']); ?><?php } ?>
                                                 </td>
                                                 
                                                 <td width="10%" align="center">
-                                                    <?
+                                                    <?php
                                                     if ($data_drv[$i]['eStatus'] == 'Active') {
                                                         $dis_img = "img/active-icon.png";
                                                     }
@@ -450,7 +450,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <?
+                                            <?php
                                         }
                                     }
                                     else {
@@ -526,7 +526,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
     </div>
 </div>
 <?php include_once('footer.php'); ?>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script src="../assets/js/jquery-ui.min.js"></script>
 <script src="../assets/js/modal_alert.js"></script>
 <script>

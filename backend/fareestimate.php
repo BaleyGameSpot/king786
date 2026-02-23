@@ -42,7 +42,7 @@ $db_def_con = $obj->MySQLSelect($sql);
             <?php include_once("top/header_topbar.php"); ?>
             <!-- End: Top Menu-->
             <!-- contact page-->
-            <? if ($APP_TYPE == "Ride" || $APP_TYPE == "Ride-Delivery" || $APP_TYPE == "Ride-Delivery-UberX" || $APP_TYPE == "Delivery") { ?>
+            <?php if ($APP_TYPE == "Ride" || $APP_TYPE == "Ride-Delivery" || $APP_TYPE == "Ride-Delivery-UberX" || $APP_TYPE == "Delivery") { ?>
                 <!-- -->
                 <div class="get-fare-estimation">
                     <div class="get-fare-estimation-inner">
@@ -61,7 +61,7 @@ $db_def_con = $obj->MySQLSelect($sql);
                                         <input type="hidden" name="to_long" id="to_long" value="" >
                                         <input type="hidden" name="location_found" id="location_found" value="" >
 										<input type="hidden" value="KMs" id="eUnit" name="eUnit" >
-                                        <? if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') { ?>
+                                        <?php if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') { ?>
                                             <div class="col-lg-12 get-fare-estimation1">
                                                 <div class="col-lg-4 input-av">
                                                     <strong><input type="radio" name="eType" value="Ride" checked id="eType_1" onchange="get_details()" class="input-av-a" ><label for="eType_1"></label></strong><?php echo $langage_lbl['LBL_RIDE_TXT']; ?>
@@ -71,7 +71,7 @@ $db_def_con = $obj->MySQLSelect($sql);
                                                 </div>
                                             </div>
                                             <br/><br/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <b><input name="vPickup" type="text" id="from" placeholder="<?= $langage_lbl['LBL_HOME_ADD_PICKUP_LOC']; ?>" class="trip-start" /></b>
                                         <b><input name="vDest" type="text" id="to" placeholder="<?= $langage_lbl['LBL_ADD_DESTINATION_LOCATION_TXT']; ?>" class="trip-end" /><button type="button"><i aria-hidden="true" class="fa fa-arrow-right"></i></button></b>
                                     </form>
@@ -91,7 +91,7 @@ $db_def_con = $obj->MySQLSelect($sql);
                         <div style="clear:both;"></div>
                     </div>
                 </div>
-            <? } ?>
+            <?php } ?>
             <!-- footer part -->
             <?php include_once('footer/footer_home.php'); ?>
             <!-- footer part end -->
@@ -476,7 +476,7 @@ $db_def_con = $obj->MySQLSelect($sql);
                                 // if (results) {
 // <?php // if ($APP_TYPE == 'Ride-Delivery' || $APP_TYPE == 'Ride-Delivery-UberX') { ?>
                                         // var eType = $("input[name='eType']:checked").val();
-    // <?
+    // <?php
 // } else {
     // if ($APP_TYPE == 'Delivery') {
         // $eTYPE = 'Deliver';
@@ -485,7 +485,7 @@ $db_def_con = $obj->MySQLSelect($sql);
     // }
     // ?>
                                         // var eType = '<?= $eTYPE; ?>';
-// <? //} ?>
+// <?php //} ?>
                                     // // console.log(results);
                                     // for (var i = 0; i < results.rows.length; i++) {
                                         // var elements = results.rows[i].elements;

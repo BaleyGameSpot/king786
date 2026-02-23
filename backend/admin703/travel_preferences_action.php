@@ -133,7 +133,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -161,8 +161,8 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -177,19 +177,19 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
             <hr />
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div><br/>
-                    <? } ?>
+                    <?php } ?>
 
-                    <? if ($success == 2) { ?>
+                    <?php if ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div><br/>
-                    <? } ?>
+                    <?php } ?>
 
                     <form method="post" name="_travel_preferences_form" id="_travel_preferences_form" action="" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
@@ -342,17 +342,17 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                 <div class="col-md-6 col-sm-6">
 
                                     <input type="hidden" name="temp_order" id="temp_order" value="<?= ($action == 'Edit') ? $iDisplayOrder_db : '1'; ?>">
-                                    <?
+                                    <?php
                                     $display_numbers = ($action == "Add") ? $iDisplayOrder_max : $iDisplayOrder;
                                     ?>
                                     <select name="iDisplayOrder" class="form-control">
-                                        <? for ($i = 1; $i <= $display_numbers; $i++) { ?>
-                                            <option value="<?= $i ?>" <?
+                                        <?php for ($i = 1; $i <= $display_numbers; $i++) { ?>
+                                            <option value="<?= $i ?>" <?php
                                             if ($i == $iDisplayOrder_db) {
                                                 echo "selected";
                                             }
                                             ?>> -- <?= $i ?> --</option>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
 
                                 </div>
@@ -367,9 +367,9 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                     <a href="travel_preferences.php" class="btn btn-default back_link">Cancel</a>
                                 </div>
                             </div>
-                        <? } else { ?>
+                        <?php } else { ?>
                             Please enter Travel Preferences Catgory
-                        <? } ?>
+                        <?php } ?>
                     </form>
                 </div>
             </div>
@@ -386,7 +386,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
     </div>
 </div>
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 
 <!-- GLOBAL SCRIPTS -->

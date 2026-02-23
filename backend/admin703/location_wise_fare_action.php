@@ -100,7 +100,7 @@ $db_location = $obj->MySQLSelect($query);
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="css/bootstrap-select.css" rel="stylesheet"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -110,8 +110,8 @@ $db_location = $obj->MySQLSelect($query);
 <body class="padTop53">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -124,20 +124,20 @@ $db_location = $obj->MySQLSelect($query);
                 </div>
             </div>
             <hr/>
-            <? if ($success == 2) { ?>
+            <?php if ($success == 2) { ?>
                 <div class="alert alert-danger alert-dismissable msgs_hide">
                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                 </div><br/>
-            <? } ?>
+            <?php } ?>
             <div class="body-div">
                 <div class="form-group location-wise-box">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable msgs_hide">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             Location wise fare updated successfully.
                         </div><br/>
-                    <? } ?>
+                    <?php } ?>
                     <form method="post" action="" enctype="multipart/form-data" id="locationfareForm">
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                         <input type="hidden" name="previousLink" id="previousLink"
@@ -245,7 +245,7 @@ $db_location = $obj->MySQLSelect($query);
     <!--END PAGE CONTENT -->
 </div>
 <!--END MAIN WRAPPER -->
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script src="js/bootstrap-select.js"></script>
 <script>

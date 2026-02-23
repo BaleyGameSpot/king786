@@ -1,4 +1,4 @@
-<?
+<?php
 	include_once('../common.php');
 	
 	
@@ -210,7 +210,7 @@
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 		<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 		
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 		<!-- On OFF switch -->
 		<link href="../assets/css/jquery-ui.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -234,8 +234,8 @@
 		
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>       
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>       
 			<!--PAGE CONTENT -->
 			<div id="content">
 				<div class="inner">
@@ -245,7 +245,7 @@
 								<h2><?=$action;?> Home Page Store / Restaurant</h2>
 							<?php } else { ?>
 								<h2><?=$action;?> Home Page <?=$langage_lbl_admin["LBL_DRIVER_TXT_ADMIN"];?></h2>
-							<? } ?>
+							<?php } ?>
 							<a href="home_driver.php">
 								<input type="button" value="Back to Listing" class="add-btn">
 							</a>
@@ -254,26 +254,26 @@
 					<hr />	
 					<div class="body-div">
 						<div class="form-group">
-						<? if ($success == 0 && $_REQUEST['var_msg'] != "") {?>
+						<?php if ($success == 0 && $_REQUEST['var_msg'] != "") {?>
 							<div class="alert alert-danger alert-dismissable">
 							<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-								<? echo $_REQUEST['var_msg']; ?>
+								<?php echo $_REQUEST['var_msg']; ?>
 							</div><br/>
-						<?} ?>
+						<?php } ?>
 						
-							<? if($success == 1) { ?>
+							<?php if($success == 1) { ?>
 								<div class="alert alert-success alert-dismissable">
 									<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 									<?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
 								</div><br/>
-							<? } ?>
+							<?php } ?>
 							
-							<? if ($success == 2) {?>
+							<?php if ($success == 2) {?>
                  <div class="alert alert-danger alert-dismissable">
                       <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                       <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                  </div><br/>
-               <?} ?>
+               <?php } ?>
 
 							<form method="post" action="" enctype="multipart/form-data" id="home_driver_action" name="home_driver_action">
 								<input type="hidden" name="id" value="<?=$id;?>"/>
@@ -285,9 +285,9 @@
 										<label>Image</label>
 									</div>
 									<div class="col-lg-6">
-										<? if($vImage != '') { ?>
+										<?php if($vImage != '') { ?>
 											<img src="<?=$tconfig['tsite_upload_images'].$vImage;?>" style="height:100px;">
-										<? } ?>
+										<?php } ?>
 										<input type="file" name="vImage" id="vImage" value="<?=$vImage;?>"/>
 										<br/>
 										[Note: Upload only png image size of 290px * 270px.]
@@ -303,13 +303,13 @@
 											</div>
 									</div>
 								</div>
-								<? /*if($action == 'Edit') {*/ ?>
+								<?php /*if($action == 'Edit') {*/ ?>
 								<div class="row">
 									<div class="col-lg-12">
 										<label>Order</label>
 									</div>
 									<div class="col-lg-6">
-										<?
+										<?php
 											$temp = 1;
 											$query1	= $obj->MySQLSelect("SELECT max(iDisplayOrder) as maxnumber FROM ".$tbl_name." ORDER BY iDisplayOrder");
 											$maxnum	= isset($query1[0]['maxnumber']) ? $query1[0]['maxnumber'] : 0;
@@ -326,27 +326,27 @@
 										?>
 										<input type="hidden" name="temp_order" id="temp_order" value="<?=$temp?>">
 										<select name="iDisplayOrder" class="form-control">
-											<? foreach($dataArray as $arr):?>
+											<?php foreach($dataArray as $arr):?>
 											<option <?= $arr == $temp ? ' selected="selected"' : '' ?> value="<?=$arr;?>" >
 												-- <?= $arr ?> --
 											</option>
-											<? endforeach; ?>
-											<?if($action=="Add") {?>
+											<?php endforeach; ?>
+											<?php if($action=="Add") {?>
 												<option value="<?=$temp;?>" >
 													-- <?= $temp ?> --
 												</option>
-											<? }?>
+											<?php }?>
 										</select>
 										
 									</div>
 								</div>
-								<? /*} else{*/ ?>
+								<?php /*} else{*/ ?>
 <!-- 								<div class="row">
 									<div class="col-lg-12">
 										<label>Order</label>
 									</div>
 									<div class="col-lg-6">
-										<?
+										<?php
 										$temp = 1;
 										
 										$dataArray = array();
@@ -406,7 +406,7 @@
 												<textarea class="form-control wysihtml5" name="<?=$tAnswer_val;?>"  id="<?=$tAnswer_val;?>" placeholder="Text" <?=$required;?>><?=$$tAnswer_val;?></textarea>
 											</div>
 										</div>
-										<? } 
+										<?php } 
 									} ?>
 									<div class="row">
 									
@@ -435,7 +435,7 @@
 		<!--END MAIN WRAPPER -->
 		
 		
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 		<script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 		
 		<!-- PAGE LEVEL SCRIPTS -->

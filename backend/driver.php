@@ -125,12 +125,12 @@ if ($action == 'view'){
             </h2>
             <!-- driver list page -->
             <div class="trips-page trips-page1">
-                <? if ($_REQUEST['success'] == 1){ ?>
+                <?php if ($_REQUEST['success'] == 1){ ?>
                     <div class="alert alert-success alert-dismissable">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                         <?=$var_msg?>
                     </div>
-                <? }else if ($_REQUEST['success'] == 2){ ?>
+                <?php }else if ($_REQUEST['success'] == 2){ ?>
                     <div class="alert alert-danger alert-dismissable">
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                         <?=$langage_lbl['LBL_EDIT_DELETE_RECORD'];?>
@@ -141,7 +141,7 @@ if ($action == 'view'){
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                         <?=$var_msg?>
                     </div>
-                <? }
+                <?php }
                 ?>
                 <div class="trips-table trips-table-driver trips-table-driver-res trips-table-new">
                     <div class="trips-table-inner trips-table-inner-new">
@@ -159,7 +159,7 @@ if ($action == 'view'){
                                     <!--<th>Service Location</th>-->
                                     <th width="10%"><?=$langage_lbl['LBL_MOBILE_NUMBER_HEADER_TXT'];?></th>
                                     <th width="15%" style="width: 67px;">
-                                        <?
+                                        <?php
                                         if ($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX"){
                                             echo $langage_lbl['LBL_SHORT_LANG_TXT'];
                                         }else{
@@ -180,7 +180,7 @@ if ($action == 'view'){
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <? for ($i = 0;$i < scount($data_drv);$i++){ ?>
+                                <?php for ($i = 0;$i < scount($data_drv);$i++){ ?>
                                     <tr class="gradeA gradeA-a">
                                         <?php /* We has conditon commented because Issues To Be Fixed - #201
                                                     if ($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX") {*/ ?>
@@ -194,7 +194,7 @@ if ($action == 'view'){
                                             <?php } ?>
                                         </td>
                                         <td valign="top">
-                                            <?
+                                            <?php
                                             if ($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX"){
                                                 echo $data_drv[$i]['vLang'];
                                             }else{
@@ -211,7 +211,7 @@ if ($action == 'view'){
                                                         <img src="<?=$tconfig["tsite_url_main_admin"]?>img/active-icon-c.png" alt="">
                                                     <?php } ?></div>
 
-                                                <?
+                                                <?php
                                             }
                                             ?>
                                         </td>
@@ -261,7 +261,7 @@ if ($action == 'view'){
                                             </form>
                                         </td>
                                     </tr>
-                                <? } ?>
+                                <?php } ?>
                                 </tbody>
                             </table>
                         </div>

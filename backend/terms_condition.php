@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("common.php");
 
 $PagesData = $obj->MySQLSelect("SELECT iPageId FROM `pages` WHERE iPageId = 4 AND eStatus = 'Active' ");

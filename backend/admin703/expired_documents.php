@@ -389,7 +389,7 @@ $dDocStatus = $CONFIG_OBJ->getConfigurations("configurations", "SET_DRIVER_OFFLI
 
                                     <br>
 
-                                <? } ?>
+                                <?php } ?>
 
 
                                 <h2><?php echo $langage_lbl_admin['LBL_EXPIRED_DOCUMETS']; ?></h2>

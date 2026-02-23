@@ -687,7 +687,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
 
                                                             </button>
 
-                                                        <? } else if ($db_trip[$i]['eStatus'] == "Cancelled" && ($db_trip[$i]['iCancelReasonId'] > 0 || $db_trip[$i]['vCancelReason'] != '')) { ?>
+                                                        <?php } else if ($db_trip[$i]['eStatus'] == "Cancelled" && ($db_trip[$i]['iCancelReasonId'] > 0 || $db_trip[$i]['vCancelReason'] != '')) { ?>
 
                                                             <a href="javascript:void(0);" class="btn btn-info"
 
@@ -701,7 +701,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
 
                                                             </a>
 
-                                                        <? } else if ($db_trip[$i]['eStatus'] == "Accepted" && in_array($db_trip[$i]['vTaskStatus'], ['Ongoing'])) {
+                                                        <?php } else if ($db_trip[$i]['eStatus'] == "Accepted" && in_array($db_trip[$i]['vTaskStatus'], ['Ongoing'])) {
                                                             ?>
 
                                                             <a href="javascript:void(0);"
@@ -721,7 +721,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
 
                                                     </td>
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                             </tr>
 
@@ -1034,7 +1034,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
 
 </div>
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 
@@ -1042,7 +1042,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
 
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
 
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 
 <script>
 

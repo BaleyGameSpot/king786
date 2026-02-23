@@ -106,7 +106,7 @@
 		<link href="css/bootstrap-select.css" rel="stylesheet" />
 		<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 		<!-- On OFF switch -->
 		<link href="../assets/css/jquery-ui.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -117,8 +117,8 @@
 
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>
 			<!--PAGE CONTENT -->
 			<div id="content">
 				<div class="inner">
@@ -133,17 +133,17 @@
 					<hr />
 					<div class="body-div">
 						<div class="form-group">
-							<? if($success == 1) { ?>
+							<?php if($success == 1) { ?>
 								<div class="alert alert-success alert-dismissable">
 									<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 									<?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
 								</div><br/>
-								<? }elseif ($success == 2) { ?>
+								<?php }elseif ($success == 2) { ?>
 									<div class="alert alert-danger alert-dismissable">
 											 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 											 <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
 									</div><br/>
-								<? }?>
+								<?php }?>
 								<form id="_restricted_form" name="_restricted_form" method="post" action="">
 								<input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
 								<input type="hidden" name="backlink" id="backlink" value="restricted_area.php"/>
@@ -247,7 +247,7 @@
 		</div>
 		<!--END MAIN WRAPPER -->
 
-<? include_once('footer.php');?>
+<?php include_once('footer.php');?>
 
 <!-- <script src="https://maps.google.com/maps/api/js?sensor=true&key=<?= $GOOGLE_SEVER_API_KEY_WEB ?>&libraries=places" type="text/javascript"></script> -->
 

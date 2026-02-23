@@ -306,9 +306,9 @@ $defaultImage = $tconfig['tsite_url'].'/webimages/upload/DefaultImg/defaultImage
                                                 } else { ?>
                                                     <i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a>
                                         </th>
-                                        <? if (scount($service_cat_data) > 1) { ?>
+                                        <?php if (scount($service_cat_data) > 1) { ?>
                                             <th width="15%">Service Category</th>
-                                        <? } ?>
+                                        <?php } ?>
                                         <th width="8%">
                                             <a href="javascript:void(0);"
                                                onClick="Redirect(5,<?php if ($sortby == '5') {
@@ -377,14 +377,14 @@ $defaultImage = $tconfig['tsite_url'].'/webimages/upload/DefaultImg/defaultImage
 
                                                 </td>
                                                 <td><?= $data_drv[$i]['cuisineName_' . $default_lang]; ?></td>
-                                                <? if (scount($service_cat_data) > 1) { ?>
+                                                <?php if (scount($service_cat_data) > 1) { ?>
                                                     <td>
                                                         <?php foreach ($service_cat_data as $servicedata) { ?>
                                                             <?php if ($servicedata['iServiceId'] == $data_drv[$i]['iServiceId']) { ?>
                                                                 <span><?php echo(isset($servicedata['vServiceName']) ? $servicedata['vServiceName'] : ''); ?></span><?php } ?>
                                                         <?php } ?>
                                                     </td>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <td><?= ($data_drv[$i]['eDefault'] == "Yes") ? '--' : $data_drv[$i]['iDisplayOrder'] ?></td>
                                                 <td align="center" style="text-align:center;">
                                                     <?php if ($data_drv[$i]['eStatus'] == 'Active') {

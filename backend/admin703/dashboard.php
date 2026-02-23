@@ -61,7 +61,7 @@ $inaDrive = getDriverDetailsDashboard('inactive');
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
         <!-- GLOBAL STYLES -->
-        <?  include_once('global_files.php'); ?>
+        <?php  include_once('global_files.php'); ?>
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/new_main.css" />
         <link rel="stylesheet" href="css/adminLTE/AdminLTE.min.css" />
@@ -87,9 +87,9 @@ $inaDrive = getDriverDetailsDashboard('inactive');
 
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
+            <?php include_once('header.php'); ?>
             
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             
             <div id="content">
@@ -101,13 +101,13 @@ $inaDrive = getDriverDetailsDashboard('inactive');
                                 <?php if ($userObj->hasPermission('manage-store-dashboard')) { ?>
                                     <div style="text-align: right"><a class="btn btn-info ride-view-all001" href="store_dashboard.php">View Store Dashboard</a></div>
                                 <?php } ?>
-                            <? } ?>
+                            <?php } ?>
                         </div>
                     </div>
                     <hr />
 
                     <?php if (!$userObj->hasPermission(["dashboard-site-statistics", "dashboard-ride-job-statistics", "dashboard-ride-jobs", "dashboard-providers", "dashboard-latest-rides-jobs", "dashboard-notifications-alerts-panel"])) { ?>
-                        <h3 class="text-center" style="margin-top: 200px">Welcome to <? if ($_SESSION['SessionUserType'] == 'hotel') { ?>Hotel<? } else { ?>Admin<? } ?> panel</h3>
+                        <h3 class="text-center" style="margin-top: 200px">Welcome to <?php if ($_SESSION['SessionUserType'] == 'hotel') { ?>Hotel<?php } else { ?>Admin<?php } ?> panel</h3>
                     <?php } ?>
 
                     <?php 
@@ -373,7 +373,7 @@ $inaDrive = getDriverDetailsDashboard('inactive');
                                             <div class="panel-title-box">
                                                 <i class="icon-comments"></i> Latest <?= $langage_lbl_admin['LBL_RIDES_NAME_ADMIN']; ?>
                                                 <?php if ($userObj->hasPermission('manage-trip-jobs')) { ?>
-                                                    <a class="btn btn-info btn-sm ride-view-all001" href="trip.php">View All</a><?PHP } ?>
+                                                    <a class="btn btn-info btn-sm ride-view-all001" href="trip.php">View All</a><?php PHP } ?>
                                             </div>                                  
                                         </div>
                                         <?php
@@ -389,16 +389,16 @@ $inaDrive = getDriverDetailsDashboard('inactive');
                                                 <ul class="chat">
                                                     <?php if ($n % 2 == 0) { ?>
                                                         <?php if ($userObj->hasPermission('view-invoice')) { ?>
-                                                        <a href="<? echo "invoice.php?iTripId=" . $db_finished[$i]['iTripId']; ?>" target="_blank">
+                                                        <a href="<?php echo "invoice.php?iTripId=" . $db_finished[$i]['iTripId']; ?>" target="_blank">
                                                             <?php } ?>
                                                             <li class="left clearfix">
                                                                 <span class="chat-img pull-left">
-                                                                    <?
+                                                                    <?php
                                                                     if ($imgsize > 0) {
                                                                         if ($db_finished[$i]['vImage'] != '' && $db_finished[$i]['vImage'] != "NONE" && file_exists("../webimages/upload/Driver/" . $db_finished[$i]['iDriverId'] . "/" . $db_finished[$i]['vImage'])) {
                                                                             ?>
                                                                             <img src="../webimages/upload/Driver/<?= $db_finished[$i]['iDriverId'] . "/" . $db_finished[$i]['vImage']; ?>" alt="User Avatar" class="img-circle"  height="50" width="50"/>
-                                                                            <?
+                                                                            <?php
                                                                         } else {
                                                                             ?>
                                                                             <img src="../assets/img/profile-user-img.png" alt="" class="img-circle"  height="50" width="50">
@@ -406,7 +406,7 @@ $inaDrive = getDriverDetailsDashboard('inactive');
                                                                     } else {
                                                                         ?>
                                                                         <img src="../assets/img/profile-user-img.png" alt="" class="img-circle"  height="50" width="50">
-                                                                    <? } ?>
+                                                                    <?php } ?>
                                                                 </span>
                                                                 <div class="chat-body clearfix">
                                                                     <div class="header">
@@ -461,10 +461,10 @@ $inaDrive = getDriverDetailsDashboard('inactive');
                                                         <li class="right clearfix">
 
                                                             <?php if ($userObj->hasPermission('view-invoice')) { ?>
-                                                                <a href=<? echo "invoice.php?iTripId=" . $db_finished[$i]['iTripId']; ?> target="_blank">
+                                                                <a href=<?php echo "invoice.php?iTripId=" . $db_finished[$i]['iTripId']; ?> target="_blank">
                                                                 <?php } ?>
                                                                 <span class="chat-img pull-right">
-                                                                    <?
+                                                                    <?php
                                                                     if ($imgsize > 0) {
                                                                         if ($db_finished[$i]['vImage'] != '' && $db_finished[$i]['vImage'] != "NONE") {
                                                                             ?>
@@ -476,10 +476,10 @@ $inaDrive = getDriverDetailsDashboard('inactive');
                                                                             ?>
                                                                             <img src="../assets/img/profile-user-img.png" alt="" class="img-circle"  height="50" width="50">
                                                                         <?php } ?>
-                                                                    <? } else { ?>
+                                                                    <?php } else { ?>
 
                                                                         <img src="../assets/img/profile-user-img.png" alt="" class="img-circle"  height="50" width="50">
-                                                                    <? } ?>
+                                                                    <?php } ?>
                                                                 </span>
                                                                 <div class="chat-body clearfix">
                                                                     <div class="header">
@@ -585,7 +585,7 @@ $inaDrive = getDriverDetailsDashboard('inactive');
                                                         }
                                                         ?>
 
-                                                        <a href="<?= $url; ?>?id=<? echo $id; ?>&action=edit" class="list-group-item" target="_blank">
+                                                        <a href="<?= $url; ?>?id=<?php echo $id; ?>&action=edit" class="list-group-item" target="_blank">
 
                                                             <i class=" icon-comment"></i>
                                                             <?= $msg; ?>
@@ -624,7 +624,7 @@ $inaDrive = getDriverDetailsDashboard('inactive');
                                                             </span>
                                                         </a>
                                                     </div>
-                                                    <?
+                                                    <?php
                                                 }
                                             } else {
                                                 echo "No Notification";
@@ -641,7 +641,7 @@ $inaDrive = getDriverDetailsDashboard('inactive');
             </div>
             <!--END PAGE CONTENT -->
         </div>
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
     </body>
 </html>
 

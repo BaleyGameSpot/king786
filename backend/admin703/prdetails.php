@@ -150,8 +150,8 @@ $get_dEndDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner" id="page_height" style="">
@@ -471,7 +471,7 @@ $get_dEndDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="https://maps.google.com/maps/api/js?key=<?= $GOOGLE_SEVER_API_KEY_WEB ?>&libraries=places" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo $tconfig["tsite_url"] ?>assets/js/google_map_init.js"></script>
 

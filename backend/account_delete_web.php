@@ -1673,7 +1673,7 @@ $languageLabelsArr = $LANG_OBJ_WEB->FetchLanguageLabels($vLang, "1", $iServiceId
 <?php include_once('top/footer_script.php'); ?>
 
 <!--
-<script src="<? /*= $tconfig['tsite_url'] . "/templates/" . $template . "/assets/js/less.min.js" */ ?>"></script>-->
+<script src="<?php /*= $tconfig['tsite_url'] . "/templates/" . $template . "/assets/js/less.min.js" */ ?>"></script>-->
 <script>
     less = {
         env: 'development'

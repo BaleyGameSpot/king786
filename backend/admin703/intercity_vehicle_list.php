@@ -153,7 +153,7 @@ $LocationData = $obj->MySQLSelect($Lsql);
         <title><?= $SITE_NAME; ?> |Manage InterCity Packages</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
     </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
@@ -208,7 +208,7 @@ $LocationData = $obj->MySQLSelect($Lsql);
                                                 }
                                                 ?> ><?= $l['vLocationName'] ?></option>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                         </select>
 
@@ -278,7 +278,7 @@ $LocationData = $obj->MySQLSelect($Lsql);
                                                             </td>
 
                                                         </tr>    
-                                                    <?
+                                                    <?php
                                                     }
                                                 } else {
                                                     ?>

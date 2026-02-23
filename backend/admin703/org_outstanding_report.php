@@ -269,18 +269,18 @@ $db_tripAll = $obj->MySQLSelect($sqlAll);
                                                         </div>
                                                         </td>
                                                     </tr>
-                                            <? } ?>
+                                            <?php } ?>
                                                 <tr class="gradeA">
                                                     <td align="right"><b>Total</b></td>
                                                     <!--<td><?php formateNumAsPerCurrency(cleanNumber($AllTotalPending),""); ?></td>-->
                                                     <td align="center"><?= formateNumAsPerCurrency(cleanNumber($AllTotalRemainingPending),""); ?></td>
                                                     <td align="center">
-                                                        <? if($searchSettleUnsettle!=0) { ?>
+                                                        <?php if($searchSettleUnsettle!=0) { ?>
                                                             <a onClick="javascript:Paytouser(); return false;" href="javascript:void(0);"><button class="btn btn-primary">Mark As Settled</button></a>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
-                                            <? } else { ?>
+                                            <?php } else { ?>
                                                 <tr class="gradeA">
                                                     <td align="center" colspan="5">No Records Found.</td>
                                                 </tr>
@@ -290,7 +290,7 @@ $db_tripAll = $obj->MySQLSelect($sqlAll);
                                     </form>
                                     <?php include('pagination_n.php'); ?>
                                     <!-- ############ Summary ############ -->
-                                    <? if(scount($db_tripAll) > 0 ){ ?>
+                                    <?php if(scount($db_tripAll) > 0 ){ ?>
                                         <div class="row">
                                                 <div class="col-lg-6 col-lg-offset-6">
                                                     <div class="admin-notes">
@@ -301,7 +301,7 @@ $db_tripAll = $obj->MySQLSelect($sqlAll);
                                                     </div>
                                                 </div>
                                         </div>
-                                    <? } ?>
+                                    <?php } ?>
                                         <!-- ############ Summary ############ -->
                                 </div>
                             </div>

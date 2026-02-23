@@ -1762,7 +1762,7 @@
 
                                         </a>
 
-                                        <? $safetyimg = "/webimages/icons/DefaultImg/ic_safety.png";
+                                        <?php $safetyimg = "/webimages/icons/DefaultImg/ic_safety.png";
 
                                           $safetyimgurl = (file_exists($tconfig["tpanel_path"].$safetyimg)) ? $tconfig["tsite_url"].$safetyimg : "";
 
@@ -1772,17 +1772,17 @@
 
                 
 
-                                       <? if($Data[$i]['eSafetyPractices']=='Yes') { ?><a href="<?= $safetyurl; ?>" class="who-txt" target="new"><? } else { ?><span class="who-txt" style="border:none"><? } ?>
+                                       <?php if($Data[$i]['eSafetyPractices']=='Yes') { ?><a href="<?= $safetyurl; ?>" class="who-txt" target="new"><?php } else { ?><span class="who-txt" style="border:none"><?php } ?>
 
-                                       <? if($Data[$i]['eSafetyPractices']=='Yes') { ?>
+                                       <?php if($Data[$i]['eSafetyPractices']=='Yes') { ?>
 
                                        <img src="<?= $safetyimgurl ?>" alt="">
 
                                        <?= $languageLabelsArr['LBL_SAFETY_NOTE_TITLE_LIST'] ?>
 
-                                       <? } ?>
+                                       <?php } ?>
 
-                                       <? if($Data[$i]['eSafetyPractices']=='Yes') { ?></a><? } else { ?></span><? } ?>
+                                       <?php if($Data[$i]['eSafetyPractices']=='Yes') { ?></a><?php } else { ?></span><?php } ?>
 
                                        
 
@@ -1866,7 +1866,7 @@
 
                 <!-- <div class="static-page">
 
-                    <? // =$meta['page_desc']; 
+                    <?php // =$meta['page_desc']; 
 
                         ?>
 

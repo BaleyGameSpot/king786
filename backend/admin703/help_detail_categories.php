@@ -221,9 +221,9 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 							  } else { ?>
 							  <i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a>
 							  </th>
-                                                <? if (DELIVERALL == 'Yes') { ?>
+                                                <?php if (DELIVERALL == 'Yes') { ?>
                                                         <th width="10%"  style="text-align:center;">Help Category For</th>
-                                                <? } ?>
+                                                <?php } ?>
                                                     <th width="10%" class="align-center">
 						    <a href="javascript:void(0);" 
 						    onClick="Redirect(3,<?php if ($sortby == '3') {
@@ -281,9 +281,9 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                             							         <input type="checkbox" id="checkbox" name="checkbox[]" value="<?php echo $data_drv[$i]['iUniqueId']; ?>" />&nbsp;
                             							    </td>													
                                                             <td ><?= $vTitle; ?></td>
-                                                            <? if (DELIVERALL == 'Yes') { ?>
+                                                            <?php if (DELIVERALL == 'Yes') { ?>
                                                                 <td align="center"><?= $eSystem; ?></td>
-                                                            <? } ?>
+                                                            <?php } ?>
                                                             <td align="center">
                                                                             <?= $iDisplayOrder; ?>
                                                             </td>

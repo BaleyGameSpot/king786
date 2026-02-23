@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("common.php");
 $iCompanyId = isset($_REQUEST['company'])?$_REQUEST['company']:'';
 $iDriverId = isset($_REQUEST['iDriverId'])?$_REQUEST['iDriverId']:''; 

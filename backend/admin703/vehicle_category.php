@@ -636,7 +636,7 @@ $ufxEnable = $MODULES_OBJ->isUfxFeatureAvailable('Yes'); // Added By HJ On 28-11
                                                                             </ul>
                                                                         </label>
                                                                         <?php if ($eType == "UberX") { ?>
-                                                                         <div class="ufx-service-note" id="ufx-service-note_<?= $data_drv[$i]['iVehicleCategoryId']; ?>"  <?php if ($btnChecked > 0 && $SubCategoriescount == 0) { ?> style="display: block;" <? } else {?> style="display: none;" <?}?> >
+                                                                         <div class="ufx-service-note" id="ufx-service-note_<?= $data_drv[$i]['iVehicleCategoryId']; ?>"  <?php if ($btnChecked > 0 && $SubCategoriescount == 0) { ?> style="display: block;" <?php } else {?> style="display: none;" <?php }?> >
                                                                                 NOTE: To display categories in the app, subcategories must be added.
                                                                         </div>
                                                                         <?php } ?>

@@ -414,7 +414,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                 echo "selected";
                                             }
                                             ?>><?=$langage_lbl_admin['LBL_RIDE_TXT_ADMIN_SEARCH'];?> </option>
-                                            <? if (ENABLE_RENTAL_OPTION == 'Yes'){ ?>
+                                            <?php if (ENABLE_RENTAL_OPTION == 'Yes'){ ?>
                                                 <option value="RentalRide" <?php
                                                 if ($eType == "RentalRide"){
                                                     echo "selected";
@@ -450,7 +450,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                             }
                                             ?>>Multi-Delivery
                                             </option>
-                                        <? }
+                                        <?php }
                                         if ($ufxEnable == "Yes"){ ?>
                                             <option value="UberX" <?php
                                             if ($eType == "UberX"){
@@ -458,7 +458,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                             }
                                             ?>>Other Services
                                             </option>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                 </td>
                                 <?php
@@ -479,7 +479,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                 }
                                 ?> >Booking Source Location
                                 </option>
-                                <? if ($APP_TYPE != "UberX"){ ?>
+                                <?php if ($APP_TYPE != "UberX"){ ?>
                                     <option value="cb.tDestAddress" <?php
                                     if ($option == 'cb.tDestAddress'){
                                         echo "selected";
@@ -597,14 +597,14 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                         }
                                         ?>
 
-                                        <?
+                                        <?php
                                         if ($hotelPanel > 0 || $kioskPanel > 0){
                                             if ($userType != 'hotel'){
                                                 ?>
 
                                                 <th width="4%">Booked By</th>
 
-                                                <?
+                                                <?php
                                             }
                                         }
                                         ?>
@@ -668,7 +668,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                 }else{
                                                     ?><i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a></th>
 
-                                        <? if ($APP_TYPE != "UberX"){ ?>
+                                        <?php if ($APP_TYPE != "UberX"){ ?>
 
                                             <th width="14%"><a href="javascript:void(0);" onClick="Redirect(4,<?php
                                                 if ($sortby == '4'){
@@ -823,18 +823,18 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                     if ($userType != 'hotel'){
                                                         ?>
                                                         <td align="left">
-                                                            <? echo $trip_type; ?>
+                                                            <?php echo $trip_type; ?>
                                                         </td>
                                                         <?php
                                                     }
                                                 }
                                                 ?>
-                                                <?
+                                                <?php
                                                 if ($hotelPanel > 0 || $kioskPanel > 0){
                                                     if ($userType != 'hotel'){
                                                         ?>
-                                                        <td class="align-center"><? echo $eBookingFrom; ?></td>
-                                                        <?
+                                                        <td class="align-center"><?php echo $eBookingFrom; ?></td>
+                                                        <?php
                                                     }
                                                 }
                                                 ?>
@@ -863,7 +863,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
 
                                                 <td align="center"><?=$data_drv[$i]['vSourceAddresss'];?></td>
 
-                                                <? if ($APP_TYPE != "UberX"){ ?>
+                                                <?php if ($APP_TYPE != "UberX"){ ?>
 
                                                     <td align="center">
                                                         <?php if ($eType_new == 'Multi-Delivery') { ?>
@@ -878,7 +878,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                         <?php } ?>     
                                                     </td>
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <?php if ($data_drv[$i]['eAutoAssign'] == "Yes" && $data_drv[$i]['iRentalPackageId'] > 0){
                                                     if (($data_drv[$i]['iFromStationId'] > 0) && ($data_drv[$i]['iToStationId'] > 0)){
@@ -892,11 +892,11 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                         Assign </b><br/>( <?=$vehicleType?>
                                                         : <?=$data_drv[$i]['vRentalVehicleTypeName'];?>)<br/>
 
-                                                        <? if (!empty($rental_data[0]['pkgName'])){ ?>
+                                                        <?php if (!empty($rental_data[0]['pkgName'])){ ?>
 
                                                             (Rental Package : <?=$rental_data[0]['pkgName'];?>)
 
-                                                        <? } ?>
+                                                        <?php } ?>
 
                                                     </td>
 
@@ -951,7 +951,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                                    data-tooltip="tooltip" title="Edit">
                                                                     <i class="icon-edit icon-flip-horizontal icon-white"></i>
                                                                 </a> -->
-                                                            <?
+                                                            <?php
                                                         }
                                                         ?></td>
 
@@ -959,7 +959,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
 
                                                     <td>
 
-                                                        <? if ($userType != 'hotel'){ ?>
+                                                        <?php if ($userType != 'hotel'){ ?>
 
                                                             <a class="btn btn-info"
                                                                     href="add_booking.php?booking_id=<?=$data_drv[$i]['iCabBookingId'];?>"><i
@@ -967,7 +967,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                                 Assign <?=$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'];?>
                                                             </a>
 
-                                                        <? }else{ ?>
+                                                        <?php }else{ ?>
 
                                                             <a class="btn btn-info"
                                                                     href="create_request.php?booking_id=<?=$data_drv[$i]['iCabBookingId'];?>"><i
@@ -975,7 +975,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                                 Assign <?=$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'];?>
                                                             </a>
 
-                                                        <? } ?>
+                                                        <?php } ?>
 
                                                         <br>( <?=$service_type;?>
                                                         : <?=$data_drv[$i]['vVehicleType'];?>)
@@ -988,19 +988,19 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
 
                                                     <td>
 
-                                                        <? if ($userType != 'hotel'){ ?>
+                                                        <?php if ($userType != 'hotel'){ ?>
                                                             <a class="btn btn-info"
                                                                     href="add_booking.php?booking_id=<?=$data_drv[$i]['iCabBookingId'];?>">
                                                                 <i class="icon-shield icon-flip-horizontal icon-white"></i>
                                                                 Assign <?=$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'];?>
                                                             </a>
-                                                        <? }else{ ?>
+                                                        <?php }else{ ?>
                                                             <a class="btn btn-info"
                                                                     href="create_request.php?booking_id=<?=$data_drv[$i]['iCabBookingId'];?>">
                                                                 <i class="icon-shield icon-flip-horizontal icon-white"></i>
                                                                 Assign <?=$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'];?>
                                                             </a>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                         <br>
 
                                                         ( <?=$service_type;?> : <?=$data_drv[$i]['vVehicleType'];?>)
@@ -1073,8 +1073,8 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                                 ?>
 
                                                                 <!--<button class="btn btn-success"
-                                                                        data-trip="<? /*= $data_drv[$i]['vBookingNo']; */ ?>"
-                                                                        data-json='<? /*= $seriveJson; */ ?>'
+                                                                        data-trip="<?php /*= $data_drv[$i]['vBookingNo']; */ ?>"
+                                                                        data-json='<?php /*= $seriveJson; */ ?>'
                                                                         onclick="return showServiceModal(this);">
                                                                     <i class="fa fa-certificate icon-white">
                                                                         <b>View Service</b>
@@ -1088,7 +1088,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                                     </i>
                                                                 </a>
 
-                                                                <?
+                                                                <?php
                                                             }else{
                                                                 echo "---";
                                                             }
@@ -1103,8 +1103,8 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                         <?php }else if ($viewService == 1){
                                                             ?>
                                                             <!--<button class="btn btn-success"
-                                                                    data-trip="<? /*= $data_drv[$i]['vBookingNo']; */ ?>"
-                                                                    data-json='<? /*= $seriveJson; */ ?>'
+                                                                    data-trip="<?php /*= $data_drv[$i]['vBookingNo']; */ ?>"
+                                                                    data-json='<?php /*= $seriveJson; */ ?>'
                                                                     onclick="return showServiceModal(this);">
                                                                 <i class="fa fa-certificate icon-white">
                                                                     <b>View Service</b>
@@ -1117,7 +1117,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                                     <b>View Services</b>
                                                                 </i>
                                                             </a>
-                                                            <?
+                                                            <?php
                                                         }else{
                                                             echo "---";
                                                         }
@@ -1233,7 +1233,7 @@ if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                                     data-toggle="modal">Cancel Reason
                                                             </a>
                                                         <?php } ?>
-                                                        <?
+                                                        <?php
                                                     }
                                                     if ($userObj->hasPermission('Cancel-ride-job-later-bookings') && ($bookingdatecmp > time()) && ($data_drv[$i]['eStatus'] == 'Pending' || $data_drv[$i]['eStatus'] == "Assign" || $data_drv[$i]['eStatus'] == "Accepted")){
                                                         ?>

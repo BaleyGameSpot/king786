@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 
 $hdn_del_id = isset($_POST['hdn_del_id'])?$_POST['hdn_del_id']:'';
@@ -32,7 +32,7 @@ $db_data = $obj->MySQLSelect($sql);
 	<meta content="" name="keywords" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />	
-    <? include_once('global_files.php');?>
+    <?php include_once('global_files.php');?>
 	
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 	<script type="text/javascript">
@@ -50,8 +50,8 @@ $db_data = $obj->MySQLSelect($sql);
 
 <!-- MAIN WRAPPER -->
     <div id="wrap">
-		<? include_once('header.php'); ?>
-		<? include_once('left_menu.php'); ?>
+		<?php include_once('header.php'); ?>
+		<?php include_once('left_menu.php'); ?>
        
         <!--PAGE CONTENT -->
         <div id="content">
@@ -85,7 +85,7 @@ $db_data = $obj->MySQLSelect($sql);
 													</tr>
 												</thead>
 												<tbody>
-													<? 
+													<?php 
 													$count_all = scount($db_data);
 													if($count_all > 0) {
 														for($i=0;$i<$count_all;$i++) {
@@ -121,12 +121,12 @@ $db_data = $obj->MySQLSelect($sql);
 																	</form>
 																</td>
 															</tr>
-														<? } 
+														<?php } 
 													} else { ?>
 														<tr class="gradeA">
 															<td colspan="4"><?=$langage_lbl['LBL_NO_RECORDS_FOUND1']; ?>.</td>
 														</tr>
-													<? } ?>
+													<?php } ?>
 												</tbody>
 											</table>
 										</div>
@@ -143,7 +143,7 @@ $db_data = $obj->MySQLSelect($sql);
     </div>
     <!--END MAIN WRAPPER -->
 
-	<? include_once('footer.php');?>
+	<?php include_once('footer.php');?>
 	
     <script src="assets/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="assets/plugins/dataTables/dataTables.bootstrap.js"></script>

@@ -448,22 +448,22 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
             </div>		
 
             <div class="driver-add-vehicle-setting"> 
-                    <? if($_REQUEST['success'] == 1) { ?>
+                    <?php if($_REQUEST['success'] == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?=$langage_lbl['LBL_Record_Updated_successfully']; ?>
                         </div>
-                    <? } else if($_REQUEST['success'] == 2){?>
+                    <?php } else if($_REQUEST['success'] == 2){?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
-                    <?} else if(isset($_REQUEST['success']) && $_REQUEST['success']==0) {?>
+                    <?php } else if(isset($_REQUEST['success']) && $_REQUEST['success']==0) {?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> 
                                 <?= isset($_REQUEST['error_msg']) ? $_REQUEST['error_msg'] : ' '; ?>
                         </div> 
-                    <? } ?>
+                    <?php } ?>
 
                     <form method="post" action="" class="company_form general-form" id="company_form" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?=base64_encode(base64_encode($id)); ?>"/>
@@ -585,14 +585,14 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                     </div>
                                 </div>
                             </div>
-                            <? if($SHOW_CITY_FIELD=='Yes') { ?>
+                            <?php if($SHOW_CITY_FIELD=='Yes') { ?>
                             <div class="form-group half">
                                 <strong><?=$langage_lbl['LBL_CITY_TXT']; ?></strong>
                                 <select class="" name = 'vCity' id="vCity"  >
                                     <option value=""><?=$langage_lbl['LBL_SELECT_CITY']; ?></option>
                                 </select>
                             </div>
-							<? } ?>
+							<?php } ?>
                             <div class="half-column">
                                 <strong>&nbsp;</strong>
                                 <div class="form-group">
@@ -614,11 +614,11 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                     
                                     <select  class="" name = 'vLang' required>
                                         <option value="">--select--</option>
-                                        <? for ($i = 0; $i < scount($db_lang); $i++) { ?>
+                                        <?php for ($i = 0; $i < scount($db_lang); $i++) { ?>
                                         <option value = "<?= $db_lang[$i]['vCode'] ?>" <?= ($db_lang[$i]['vCode'] == $vLang) ? 'selected' : ''; ?>>
                                         <?= $db_lang[$i]['vTitle'] ?>
                                         </option>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                 <?php } ?>
                             </div>
@@ -652,9 +652,9 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                 <div class="form-group">
                                     <strong><?=$langage_lbl['LBL_OFFER_APPLY_ON_TXT']; ?><span class="red"> *</span></strong>
                                     <select class="form-control" name="fOfferAppyType"  id="fOfferAppyType" required>
-                                        <option value="None" <?if($fOfferAppyType == 'None'){echo 'selected';}?>><?=$langage_lbl['LBL_OPTION_NONE']; ?></option>
-                                        <option value="First" <?if($fOfferAppyType == 'First'){echo 'selected';}?>><?=$langage_lbl['LBL_FIRST_ORDER']; ?></option>
-                                        <option value="All" <?if($fOfferAppyType == 'All'){echo 'selected';}?>><?=$langage_lbl['LBL_ALL_ORDER']; ?></option>
+                                        <option value="None" <?php if($fOfferAppyType == 'None'){echo 'selected';}?>><?=$langage_lbl['LBL_OPTION_NONE']; ?></option>
+                                        <option value="First" <?php if($fOfferAppyType == 'First'){echo 'selected';}?>><?=$langage_lbl['LBL_FIRST_ORDER']; ?></option>
+                                        <option value="All" <?php if($fOfferAppyType == 'All'){echo 'selected';}?>><?=$langage_lbl['LBL_ALL_ORDER']; ?></option>
                                     </select>
                                     <small class="notes">[<?= $langage_lbl['LBL_OFFER_NOTE'] ?>]</small>
                                 </div>
@@ -662,8 +662,8 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                             <div class="form-group half" id="fOfferTypeDiv">
                                 <strong><?= $langage_lbl['LBL_OFFER_TYPE_WEB_TXT'] ?></strong>
                                 <select class="" name="fOfferType"  id="fOfferType">
-                                    <option value="Flat" <?if($fOfferType == 'Flat'){echo 'selected';}?>><?= $langage_lbl['LBL_FLAT_OFFER'] ?></option>
-                                    <option value="Percentage" <?if($fOfferType == 'Percentage'){echo 'selected';}?>><?= $langage_lbl['LBL_PERCENTAGE_OFFER'] ?></option>
+                                    <option value="Flat" <?php if($fOfferType == 'Flat'){echo 'selected';}?>><?= $langage_lbl['LBL_FLAT_OFFER'] ?></option>
+                                    <option value="Percentage" <?php if($fOfferType == 'Percentage'){echo 'selected';}?>><?= $langage_lbl['LBL_PERCENTAGE_OFFER'] ?></option>
                                 </select>
                             </div>
                             <div class="half-column" id="fOfferAmtDiv">

@@ -406,7 +406,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                     <div><span style="font-size: 11px;"><?= $langage_lbl['LBL_CANCELED_TXT']; ?></span>
                                     </div>
                                 </td>
-                            <? } else if ($db_trip[$i]['iActive'] == 'Finished') { ?>
+                            <?php } else if ($db_trip[$i]['iActive'] == 'Finished') { ?>
 
                                 <?php
                                 if ($APP_TYPE == 'UberX') {
@@ -422,7 +422,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                     src="<?php echo $invoice_icon; ?>"></strong></a>
 
                                 </td>
-                            <? }
+                            <?php }
                             else if ($db_trip[$i]['iActive'] == 'Canceled' && $db_trip[$i]['fTripGenerateFare'] <= 0) {
                                 if ($db_trip[$i]['iCancelReasonId'] > 0 || $db_trip[$i]['vCancelReason'] != '') {
                                     ?>
@@ -433,12 +433,12 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                  title="<?= $langage_lbl['LBL_MYTRIP_CANCELED_TXT']; ?>">
                                         </a>
                                     </td>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <td class="center">
                                         <img src="<?php echo $canceled_icon; ?>"
                                              title="<?= $langage_lbl['LBL_MYTRIP_CANCELED_TXT']; ?>">
                                     </td>
-                                <? } ?>
+                                <?php } ?>
 
                                 <div class="custom-modal-main" id="uiModal1_<?= $db_trip[$i]['iTripId']; ?>">
                                     <div class="custom-modal">
@@ -448,7 +448,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                         </div>
                                         <div class="model-body">
                                             <ul class="value-listing">
-                                                <li><b><?= $langage_lbl['LBL_CANCEL_REASON']; ?> : </b><span> <?
+                                                <li><b><?= $langage_lbl['LBL_CANCEL_REASON']; ?> : </b><span> <?php
                                                         if ($db_trip[$i]['iCancelReasonId'] > 0) {
                                                             $cancelreasonarray = getCancelReason($db_trip[$i]['iCancelReasonId'], $deafultLang);
                                                             $db_trip[$i]['vCancelReason'] = $cancelreasonarray['vCancelReason'];
@@ -488,12 +488,12 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                         <strong><?= $langage_lbl['LBL_DELIVERY_CONFIRMATION_CODE_TXT']; ?>: </strong>
                                         <p><?= clearName($db_trip[$i]['vDeliveryConfirmCode']); ?></p>
                                     </td>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <td align="center" width="10%">
                                        <!--  <?php echo base64_encode(base64_encode($db_trip[$i]['iTripId']));?> -->
                                        <a target="_blank" class="btn btn-info gen-btn"  href="cx-trip_tracking.php?iTripId=<?= base64_encode(base64_encode($db_trip[$i]['iTripId'])) ?>"><?= $langage_lbl['LBL_MANUAL_BOOKING_LIVE_TRACKING']; ?> </a>
                                 </td>
-                                <? } ?>
+                                <?php } ?>
                                 <!-- <a target="_blank"
                                        style="margin: 0 auto 10px auto;display: block;width: 120px;text-align: center;"
                                        class="btn btn-info gen-btn"
@@ -501,7 +501,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                           <?= $langage_lbl['LBL_MANUAL_BOOKING_LIVE_TRACKING']; ?>
                                         </strong></a>   -->  
 
-                            <? } else { ?>
+                            <?php } else { ?>
                                 <td class="center">
                                     <a target="_blank"
                                        href="<?= $link_page ?>?iTripId=<?= base64_encode(base64_encode($db_trip[$i]['iTripId'])) ?>"><strong><img
@@ -510,7 +510,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                 </td>
                             <?php } ?>
                         </tr>
-                    <? } ?>
+                    <?php } ?>
                     </tbody>
                 </table>
             </div>

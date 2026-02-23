@@ -302,11 +302,11 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                                     <img src="<?php echo $canceled_icon; ?>" title="<?= $langage_lbl['LBL_MYTRIP_CANCELED_TXT']; ?>">
                                                                 </a>
                                                             </td>
-                                                        <? } else { ?>
+                                                        <?php } else { ?>
                                                             <td class="center">
                                                                 <img src="<?php echo $canceled_icon; ?>" title="<?= $langage_lbl['LBL_MYTRIP_CANCELED_TXT']; ?>">
                                                             </td>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                 <div class="modal fade" role="dialog" id="uiModal1_<?= $db_trip[$i]['iTripId']; ?>" >
                                                     <div class="modal-dialog">
                                                         <!-- Modal content-->
@@ -316,7 +316,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                                 <h5 class="modal-title"><?= $langage_lbl['LBL_RIDE_TXT'] . " " . $langage_lbl['LBL_CANCEL_REASON']; ?> </h5>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <h5><b><?= $langage_lbl['LBL_CANCEL_REASON']; ?> : </b> <?
+                                                                <h5><b><?= $langage_lbl['LBL_CANCEL_REASON']; ?> : </b> <?php
                                                                     if ($db_trip[$i]['iCancelReasonId'] > 0) {
                                                                         $cancelreasonarray = getCancelReason($db_trip[$i]['iCancelReasonId'], $deafultLang);
                                                                         $db_trip[$i]['vCancelReason'] = $cancelreasonarray['vCancelReason'];
@@ -342,18 +342,18 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                     <a  target = "_blank" href="<?= $link_page ?>?iTripId=<?= base64_encode(base64_encode($db_trip[$i]['iTripId'])) ?>"><strong><img src="<?php echo $invoice_icon ?>"></strong></a>
                                                     <span style="font-size: 11px;"><?= $langage_lbl['LBL_CANCELED_TXT']; ?></span>
                                                 </td>
-                                                <? //} else if($db_trip[$i]['iActive'] == 'Active' || $db_trip[$i]['iActive'] == 'On Going Trip') {  ?>
-                                            <? } else if ($db_trip[$i]['iActive'] == 'Active' || $db_trip[$i]['iActive'] == 'On Going Trip' || $db_trip[$i]['iActive'] == 'Arrived') { ?>
+                                                <?php //} else if($db_trip[$i]['iActive'] == 'Active' || $db_trip[$i]['iActive'] == 'On Going Trip') {  ?>
+                                            <?php } else if ($db_trip[$i]['iActive'] == 'Active' || $db_trip[$i]['iActive'] == 'On Going Trip' || $db_trip[$i]['iActive'] == 'Arrived') { ?>
 
                                                 <a  target = "_blank" class="btn btn-info" style="float:none;margin-left:371px;" href="<?= $link_page ?>?iTripId=<?= base64_encode(base64_encode($db_trip[$i]['iTripId'])) ?>"><strong><!-- <img src="$invoice_icon"> --><?= $langage_lbl['LBL_MANUAL_BOOKING_LIVE_TRACKING']; ?></strong></a>
-                                            <? } else { ?>	
+                                            <?php } else { ?>	
                                                 <td class="center">
                                                     <a  target = "_blank" href="<?= $link_page ?>?iTripId=<?= base64_encode(base64_encode($db_trip[$i]['iTripId'])) ?>"><strong><img src="<?php echo $invoice_icon ?>"></strong></a>
 
                                                 </td>
                                             <?php } ?>
                                             </tr>
-                                        <? } ?>
+                                        <?php } ?>
                                         </tbody>
                                     </table>
                                 </div></div>

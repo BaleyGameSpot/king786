@@ -377,7 +377,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                    <?
+                                                    <?php
                                                     if (!empty($db_trip)) {
                                                         for ($i = 0; $i < scount($db_trip); $i++) {
                                                             $poolTxt  = "";
@@ -486,13 +486,13 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
                                                                 }
                                                                 ?>
                                                             <td align="center" width="10%">
-                                                                <? if ($db_trip[$i]['iFare'] != 0 OR $db_trip[$i]['iActive'] == 'Finished') { ?>
+                                                                <?php if ($db_trip[$i]['iFare'] != 0 OR $db_trip[$i]['iActive'] == 'Finished') { ?>
                                                                                 <!-- <a href="javascript:void(0);" onclick='javascript:window.open("invoice.php?iTripId=<?= $db_trip[$i]['iTripId'] ?>","_blank")';"> -->
                                                                     <button class="btn btn-primary" onclick='return !window.open("invoice.php?iTripId=<?= $db_trip[$i]['iTripId'] ?>", "_blank")';">
                                                                         <i class="icon-th-list  icon-white"><b>View Invoice</b></i>
                                                                     </button>
                                                                     </a>
-                                                                    <?
+                                                                    <?php
                                                                 } else {
                                                                     if ($db_trip[$i]['iActive'] == "Active" OR $db_trip[$i]['iActive'] == "On Going Trip") {
                                                                         echo "On Ride";
@@ -557,7 +557,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
             <input type="hidden" name="vStatus" value="<?php echo $vStatus; ?>" >
             <input type="hidden" name="method" id="method" value="" >
         </form>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
         <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css" />
         <link rel="stylesheet" href="css/select2/select2.min.css" />
         <script src="js/plugins/select2.min.js"></script>

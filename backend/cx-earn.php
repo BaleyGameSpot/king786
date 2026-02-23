@@ -327,7 +327,7 @@ if(ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
 
 </html>
 
-<? } else { ?>
+<?php } else { ?>
 
 <!DOCTYPE html>
 
@@ -833,4 +833,4 @@ $tMessage_link2 = str_replace($key_arr, $val_arr, $tMessage_link2);
 
 </html>
 
-<? } ?>
+<?php } ?>

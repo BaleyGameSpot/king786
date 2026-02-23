@@ -189,7 +189,7 @@ $driver_data = $obj->MySQLSelect($driver_query);
 	<!--<script type="text/javascript" src="assets/js/validation/jquery.validate.min.js" ></script>-->
         <?php if ($lang != 'en') { ?>
         <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-        <? //include_once('otherlang_validation.php');?>
+        <?php //include_once('otherlang_validation.php');?>
         <?php } ?>
 	<script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
     <script type="text/javascript">

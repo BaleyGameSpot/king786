@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 require_once(TPATH_CLASS."Imagecrop.class.php");
 
@@ -140,7 +140,7 @@ if($action == 'Edit') {
 	<meta content="" name="author" />
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-    <? include_once('global_files.php');?>
+    <?php include_once('global_files.php');?>
 	<!-- On OFF switch -->
 	<link href="assets/css/jquery-ui.css" rel="stylesheet" />
 	<link rel="stylesheet" href="assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />	
@@ -151,8 +151,8 @@ if($action == 'Edit') {
 
     <!-- MAIN WRAPPER -->
     <div id="wrap">
-		<? include_once('header.php'); ?>
-		<? include_once('left_menu.php'); ?>       
+		<?php include_once('header.php'); ?>
+		<?php include_once('left_menu.php'); ?>       
         <!--PAGE CONTENT -->
          <div id="content">
             <div class="inner">
@@ -167,12 +167,12 @@ if($action == 'Edit') {
 				<hr />	
                 <div class="body-div">
 					<div class="form-group">
-						<? if($success == 1) { ?>
+						<?php if($success == 1) { ?>
 						<div class="alert alert-success alert-dismissable">
 							<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 							Record Updated successfully.
 						</div><br/>
-						<? } ?>
+						<?php } ?>
 						<form method="post" action="" enctype="multipart/form-data">
 							<input type="hidden" name="id" value="<?=$id;?>"/>
 							<div class="row">
@@ -180,9 +180,9 @@ if($action == 'Edit') {
 									<label><?=$langage_lbl['LBL_IMAGE']; ?></label>
 								</div>
 								<div class="col-lg-6">
-									<? if($vImage != '') { ?>
+									<?php if($vImage != '') { ?>
 										<img src="<?=$tconfig['tsite_upload_images'].$vImage;?>" style="width:200px;height:100px;">
-									<? } ?>
+									<?php } ?>
 									<input type="file" name="vImage" id="vImage" value="<?=$vImage;?>"/>
 								</div>
 							</div>
@@ -201,7 +201,7 @@ if($action == 'Edit') {
 									<label><?=$langage_lbl['LBL_ORFER']; ?></label>
 								</div>
 								<div class="col-lg-6">
-									<?
+									<?php
 									$temp = 1;
 									$dataArray = array();
 
@@ -216,20 +216,20 @@ if($action == 'Edit') {
 									?>
 									<input type="hidden" name="temp_order" id="temp_order" value="<?=$temp?>">
 									<select name="iDisplayOrder" class="textbox">
-										<? foreach($dataArray as $arr):?>
+										<?php foreach($dataArray as $arr):?>
 											<option <?= $arr == $temp ? ' selected="selected"' : '' ?> value="<?=$arr;?>" >
 												-- <?= $arr ?> --
 											</option>
-										<? endforeach; ?>
-										<?if($action=="Add") {?>
+										<?php endforeach; ?>
+										<?php if($action=="Add") {?>
 											<option value="<?=$temp;?>" >
 												-- <?= $temp ?> --
 											</option>
-										<? }?>
+										<?php }?>
 									</select>
 								</div>
 							</div>
-							<? 
+							<?php 
 							if($count_all > 0) {
 								for($i=0;$i<$count_all;$i++) {
 									$vCode = $db_master[$i]['vCode'];
@@ -248,7 +248,7 @@ if($action == 'Edit') {
 											<input type="text" class="form-control" name="<?=$vTitle;?>"  id="<?=$vTitle;?>" value="<?=$$vTitle;?>" placeholder="FAQ Category" <?=$required;?>>
 										</div>
 									</div>
-								<? } 
+								<?php } 
 							} ?>
 							<div class="row">
 								<div class="col-lg-12">							
@@ -265,7 +265,7 @@ if($action == 'Edit') {
      <!--END MAIN WRAPPER -->
      
 
-	<? include_once('footer.php');?>
+	<?php include_once('footer.php');?>
 	<script src="assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 </body>
 	<!-- END BODY-->    

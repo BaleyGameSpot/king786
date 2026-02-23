@@ -445,7 +445,7 @@ $script = 'homecontent';
     <title>Admin | Manage Web Home Page</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -479,8 +479,8 @@ $script = 'homecontent';
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -517,19 +517,19 @@ $script = 'homecontent';
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div>
                         <br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <form method="post" name="_home_content_form" id="_home_content_form" action=""
                           enctype='multipart/form-data'>
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
@@ -567,10 +567,10 @@ $script = 'homecontent';
                                         <label>First Image(Background image)</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($general_section['img'] != '') { ?>
+                                        <?php if ($general_section['img'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $general_section['img']; ?>"
                                                  class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="general_section_img"
                                                id="general_section_img" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
@@ -645,10 +645,10 @@ $script = 'homecontent';
                                                     <label>Block Image <?php echo $i; ?></label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                    <? if ($how_it_work_section['hiw_img' . $i] != '') { ?>
+                                                    <?php if ($how_it_work_section['hiw_img' . $i] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=200&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['hiw_img' . $i]; ?>"
                                                              class="innerbg_image"/ style="max-height:100px;">
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control FilUploader"
                                                            name="how_it_work_section_hiw_img<?php echo $i; ?>"
                                                            id="how_it_work_section_hiw_img<?php echo $i; ?>"
@@ -695,10 +695,10 @@ $script = 'homecontent';
                                         <label>Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($travel_section['img'] != '') { ?>
+                                        <?php if ($travel_section['img'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $travel_section['img']; ?>"
                                                  class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="travel_section_img"
                                                id="travel_section_img" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
@@ -747,10 +747,10 @@ $script = 'homecontent';
                                         <label>Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($pool_section['img'] != '') { ?>
+                                        <?php if ($pool_section['img'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $pool_section['img']; ?>"
                                                  class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="pool_section_img"
                                                id="pool_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
                                         <br/>
@@ -825,10 +825,10 @@ $script = 'homecontent';
                                                     <label>Block Image <?php echo $i; ?></label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                    <? if ($lMainServiceSection['ms_img' . $i] != '') { ?>
+                                                    <?php if ($lMainServiceSection['ms_img' . $i] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=200&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $lMainServiceSection['ms_img' . $i]; ?>"
                                                              class="innerbg_image"/ style="max-height:100px;">
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control FilUploader"
                                                            name="lMainServiceSection_ms_img<?php echo $i; ?>"
                                                            id="lMainServiceSection_ms_img<?php echo $i; ?>"
@@ -869,10 +869,10 @@ $script = 'homecontent';
                                         <label>Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($lUseSeviceSection['img'] != '') { ?>
+                                        <?php if ($lUseSeviceSection['img'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $lUseSeviceSection['img']; ?>"
                                                  class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader"
                                                name="lUseSeviceSection_img" id="lUseSeviceSection_img"
                                                accept=".png,.jpg,.jpeg,.gif">
@@ -917,9 +917,9 @@ $script = 'homecontent';
                                                     <label>Block Image <?php echo $i; ?></label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                    <? if ($lUseSeviceSection['ms_img' . $i] != '') { ?>
+                                                    <?php if ($lUseSeviceSection['ms_img' . $i] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $lUseSeviceSection['ms_img' . $i]; ?>" / >
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control FilUploader"
                                                            name="lUseSeviceSection_ms_img<?php echo $i; ?>"
                                                            id="lUseSeviceSection_ms_img<?php echo $i; ?>"
@@ -968,10 +968,10 @@ $script = 'homecontent';
                                         <label>Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($safety_section['img'] != '') { ?>
+                                        <?php if ($safety_section['img'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $safety_section['img']; ?>"
                                                  class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader"
                                                name="safety_section_img" id="safety_section_img"
                                                accept=".png,.jpg,.jpeg,.gif">
@@ -1016,9 +1016,9 @@ $script = 'homecontent';
                                                     <label>Block Image <?php echo $i; ?></label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                    <? if ($safety_section['ms_img' . $i] != '') { ?>
+                                                    <?php if ($safety_section['ms_img' . $i] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $safety_section['ms_img' . $i]; ?>" / >
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control FilUploader"
                                                            name="safety_section_ms_img<?php echo $i; ?>"
                                                            id="safety_section_ms_img<?php echo $i; ?>"
@@ -1070,10 +1070,10 @@ $script = 'homecontent';
                                         <label>Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($call_section['img'] != '') { ?>
+                                        <?php if ($call_section['img'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $call_section['img']; ?>"
                                                  class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="call_section_img"
                                                id="call_section_img" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
@@ -1152,9 +1152,9 @@ $script = 'homecontent';
                                         <label><?php echo $rs['image']; ?></label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($rs['image_value'] != '') { ?>
+                                        <?php if ($rs['image_value'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=200&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $rs['image_value']; ?>" class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="<?php echo $rs['field_image'] ?>" id="<?php echo $rs['field_image'] ?>" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
                                         <span class="notes">[Note: For Better Resolution Upload only image size of 740px * 740px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
@@ -1183,7 +1183,7 @@ $script = 'homecontent';
     <!--END PAGE CONTENT -->
 </div>
 <!--END MAIN WRAPPER -->
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script src="../assets/plugins/ckeditor/ckeditor.js"></script>
 <script src="../assets/plugins/ckeditor/config.js"></script>

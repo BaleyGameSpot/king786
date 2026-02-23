@@ -421,7 +421,7 @@ if (isset($_POST['btnsubmitnew'])) {
                                                                     <i class="fa fa-sort"
                                                                        aria-hidden="true"></i> <?php } ?></a>
                                                         </th>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <th width="8%" class="align-center">
                                                         <a href="javascript:void(0);" onClick="Redirect(3,<?php
                                                         if ($sortby == '3') {
@@ -515,7 +515,7 @@ if (isset($_POST['btnsubmitnew'])) {
                                                                        onClick="show_driver_details('<?= $data_drv[$i]['iDriverId']; ?>')"
                                                                        style="text-decoration: underline;"><?php } ?><?= clearName($data_drv[$i]['driverName']); ?>
                                                                         <?php if ($userObj->hasPermission('view-providers')) { ?></a><?php } ?>
-                                                                    <? if (isset($data_drv[$i]['vAvgRating']) && $data_drv[$i]['vAvgRating'] > 0) {
+                                                                    <?php if (isset($data_drv[$i]['vAvgRating']) && $data_drv[$i]['vAvgRating'] > 0) {
                                                                         $vAvgRating = $data_drv[$i]['vAvgRating'];
                                                                     } ?></td>
 
@@ -538,7 +538,7 @@ if (isset($_POST['btnsubmitnew'])) {
                                                                        style="text-decoration: underline;"><?php } ?><?= clearName($data_drv[$i]['driverName']); ?>
                                                                         <?php if ($userObj->hasPermission('view-providers')) { ?></a><?php } ?>
                                                                 </td>
-                                                            <? } ?>
+                                                            <?php } ?>
 
                                                             <td align="center"> <?= $data_drv[$i]['fRating']; ?> </td>
 

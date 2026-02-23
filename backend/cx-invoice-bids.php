@@ -120,7 +120,7 @@ function remote_file_exists($url){
                             $printCategory = $db_trip_data['vServiceDetailTitle'];
                             $subclass = ($printCategory == "") ? 'subdata' : '';
                             ?>
-                            <div class="overview-data <? echo $subclass; ?> ">
+                            <div class="overview-data <?php echo $subclass; ?> ">
                                 <strong><?= $langage_lbl['LBL_MYTRIP_TRIP_TYPE']; ?></strong>
                                 <span><?php echo !empty($printCategory) ? $printCategory : '&nbsp;';?>
                                 </span>
@@ -139,22 +139,22 @@ function remote_file_exists($url){
                             <div>
                                 <?php if ($_SESSION['sess_user'] == "driver") { ?>
                                         <div class="profile-image">
-                                            <? if ($db_trip_data['PassengerDetails']['vImgName'] != '' && file_exists($tconfig["tsite_upload_images_passenger_path"] . '/' . $db_trip_data['PassengerDetails']['iUserId'] . '/2_' . $db_trip_data['PassengerDetails']['vImgName'])) {
+                                            <?php if ($db_trip_data['PassengerDetails']['vImgName'] != '' && file_exists($tconfig["tsite_upload_images_passenger_path"] . '/' . $db_trip_data['PassengerDetails']['iUserId'] . '/2_' . $db_trip_data['PassengerDetails']['vImgName'])) {
                                             ?>
                                                 <img src="<?= $tconfig["tsite_upload_images_passenger"] . '/' . $db_trip_data['PassengerDetails']['iUserId'] . '/2_' . $db_trip_data['PassengerDetails']['vImgName'] ?>" /><!-- style="height:150px;" -->
-                                            <? } else { ?>
+                                            <?php } else { ?>
                                                 <img src="assets/img/profile-user-img.png" alt="">
-                                            <? } ?>
+                                            <?php } ?>
                                         </div>
                                             <div class="inv-data">
                                                 <strong><?= $langage_lbl['LBL_You_ride_with']; ?> <?= clearName($db_trip_data['userName']); ?>
                                         <?php } else { ?>
                                             <div class="profile-image">
-                                                <? if (isset($db_trip_data['driverImage']) && $db_trip_data['driverImage'] != '' && remote_file_exists($db_trip_data['driverImage'])){ ?>
+                                                <?php if (isset($db_trip_data['driverImage']) && $db_trip_data['driverImage'] != '' && remote_file_exists($db_trip_data['driverImage'])){ ?>
                                                     <img src="<?= $db_trip_data['driverImage']; ?>" style="height:150px;" />
-                                                <? } else { ?>
+                                                <?php } else { ?>
                                                     <img src="assets/img/profile-user-img.png" alt="">
-                                                <? } ?>
+                                                <?php } ?>
                                             </div>
                                             <div class="inv-data">
                                                 <?php if (isset($db_trip_data['driverName'])) { ?>
@@ -163,7 +163,7 @@ function remote_file_exists($url){
                                         <?php } ?>
                                             </strong>
                                                 <ul>
-                                                    <?
+                                                    <?php
                                                     //added by SP for rounding off currency wise on 26-8-2019 start
                                                     $roundoff = 0;
                                                     if (array_key_exists($langage_lbl['LBL_ROUNDING_DIFF_TXT'], $db_trip_data['FareDetailsNewArr']) && !empty($db_trip_data['FareDetailsNewArr'][$langage_lbl['LBL_ROUNDING_DIFF_TXT']])) {
@@ -185,7 +185,7 @@ function remote_file_exists($url){
                                                             } else {
                                                             ?>
                                                                 <li><span><?= $k; ?></span><b><?php echo $val; ?></b></li>
-                                                            <?
+                                                            <?php
                                                             }
                                                         }
                                                     }
@@ -320,7 +320,7 @@ function remote_file_exists($url){
     $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
     ?>
     <?php if ($lang != 'en') { ?>
-        <? include_once('otherlang_validation.php'); ?>
+        <?php include_once('otherlang_validation.php'); ?>
     <?php } ?>
     <!-- home page end-->
 </body>

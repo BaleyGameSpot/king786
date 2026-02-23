@@ -1,4 +1,4 @@
-<?
+<?php
 	include_once('../common.php');
 	
 	
@@ -103,7 +103,7 @@
 		<meta content="" name="keywords" />
 		<meta content="" name="description" />
 		<meta content="" name="author" />	
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 		
 		<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 		<script type="text/javascript">
@@ -121,8 +121,8 @@
 		
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>
 			
 			<!--PAGE CONTENT -->
 			<div id="content">
@@ -141,12 +141,12 @@
 					<div class="table-list">
 						<div class="row">
 							<div class="col-lg-12">
-							   <? if ($_GET['success'] == 2) {?>
+							   <?php if ($_GET['success'] == 2) {?>
 				                   <div class="alert alert-danger alert-dismissable">
 				                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">�</button>
 				                        <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
 				                   </div><br/>
-			                   <? } ?>
+			                   <?php } ?>
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										Cancel Reason 
@@ -169,7 +169,7 @@
 													</tr>
 												</thead>
 												<tbody>
-													<? 
+													<?php 
 														$count_all = scount($db_data);
 														if($count_all > 0) {
 															for($i=0;$i<$count_all;$i++) {
@@ -202,19 +202,19 @@
 																</td>
 																<?php } ?>
 																<td width="10%" align="center">
-																	<? if($iDisplayOrder != 1) { ?>
+																	<?php if($iDisplayOrder != 1) { ?>
 																		<a href="cancel.php?id=<?=$iCancelReasonId;?>&flag=up">
 																			<button class="btn btn-warning">
 																				<i class="icon-arrow-up"></i> 
 																			</button>
 																		</a>
-																		<? } if($iDisplayOrder != $count_all) { ?>
+																		<?php } if($iDisplayOrder != $count_all) { ?>
 																		<a href="cancel.php?id=<?=$iCancelReasonId;?>&flag=down">
 																			<button class="btn btn-warning">
 																				<i class="icon-arrow-down"></i> 
 																			</button>
 																		</a>
-																	<? } ?>
+																	<?php } ?>
 																	
 																</td>
 																
@@ -237,12 +237,12 @@
 																	</td>
 																<?php } ?>
 															</tr>
-															<? } 
+															<?php } 
 														} else { ?>
 														<tr class="gradeA">
 															<td colspan="6">No Records found.</td>
 														</tr>
-													<? } ?>
+													<?php } ?>
 												</tbody>
 											</table>
 										</div>
@@ -259,7 +259,7 @@
 		</div>
 		<!--END MAIN WRAPPER -->
 		
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 		
 		<script src="../assets/plugins/dataTables/jquery.dataTables.js"></script>
 		<script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>

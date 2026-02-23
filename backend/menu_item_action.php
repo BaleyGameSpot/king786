@@ -420,12 +420,12 @@ if ($iServiceId > 1) {
                     </h2>
                     <!-- login in page -->
                     <div class="food-action-page">
-                        <? if ($success == 1) { ?>
+                        <?php if ($success == 1) { ?>
                             <div class="alert alert-success alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                 <?php echo $langage_lbl['LBL_Record_Updated_successfully']; ?>
                             </div>
-                        <? } else if ($success == 2) { ?>
+                        <?php } else if ($success == 2) { ?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                 <?php echo $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -449,7 +449,7 @@ if ($iServiceId > 1) {
                                                     <option value=""><?php echo $langage_lbl['LBL_SELECT_CATEGORY'] ?></option>
                                                     <?php foreach ($db_menu as $dbmenu) { ?>
                                                         <option value = "<?= $dbmenu['iFoodMenuId'] ?>" <?= ($dbmenu['iFoodMenuId'] == $iFoodMenuId) ? 'selected' : ''; ?> <?php if (scount($dbmenu['menuItems']) > 0) { ?> <?php } ?> ><?= $dbmenu['vMenu_' . $_SESSION['sess_lang']]; ?></option>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -485,7 +485,7 @@ if ($iServiceId > 1) {
                                                         <textarea class="form-control" name="<?= $vValue_desc; ?>" id="<?= $vValue_desc; ?>" ><?= $$vValue_desc; ?></textarea>
                                                     </div>
                                                 </div>
-                                                <?
+                                                <?php
                                             }
                                         }
                                         ?>
@@ -584,7 +584,7 @@ if ($iServiceId > 1) {
                                                     </div>
                                                     <div class="panel-body" style="padding: 25px;">
                                                         <div id="options_fields"> 
-                                                            <?
+                                                            <?php
                                                             if (scount($db_optionsdata) > 0) {
                                                                 $opt = 0;
                                                                 foreach ($db_optionsdata as $k => $option) {
@@ -631,7 +631,7 @@ if ($iServiceId > 1) {
                                                                             </div>
                                                                             <div class="clear"></div>
                                                                         </div>
-                                                                        <?
+                                                                        <?php
                                                                     }
                                                                 }
                                                             }
@@ -648,7 +648,7 @@ if ($iServiceId > 1) {
                                                     </div>
                                                     <div class="panel-body" style="padding: 25px;">
                                                         <div id="addon_fields">
-                                                            <?
+                                                            <?php
                                                             if (scount($db_addonsdata) > 0) {
                                                                 $a = 0;
                                                                 foreach ($db_addonsdata as $k => $addon) {
@@ -678,7 +678,7 @@ if ($iServiceId > 1) {
                                                                         </div>
                                                                         <div class="clear"></div>
                                                                     </div>
-                                                                    <?
+                                                                    <?php
                                                                 }
                                                             }
                                                             ?>
@@ -704,12 +704,12 @@ if ($iServiceId > 1) {
                                             <div class="col-lg-12">
                                                 <select class="form-control" name="eFoodType"  id="eFoodType">
                                                     <option value="">--Select--</option>										
-                                                    <option value="Veg" <?
+                                                    <option value="Veg" <?php
                                                     if ($eFoodType == 'Veg') {
                                                         echo 'selected';
                                                     }
                                                     ?>><?= $langage_lbl['LBL_VEG_FOOD'] ?></option>
-                                                    <option value="NonVeg" <?
+                                                    <option value="NonVeg" <?php
                                                     if ($eFoodType == 'NonVeg') {
                                                         echo 'selected';
                                                     }
@@ -746,17 +746,17 @@ if ($iServiceId > 1) {
                                             <div class="col-lg-12">
                                                 <select class="form-control" name="vHighlightName"  id="vHighlightName">
                                                     <option value="">Select Tag</option>
-                                                    <option value="LBL_BESTSELLER" <?
+                                                    <option value="LBL_BESTSELLER" <?php
                                                     if ($vHighlightName == 'LBL_BESTSELLER') {
                                                         echo 'selected';
                                                     }
                                                     ?>><?php echo $langage_lbl['LBL_BESTSELLER'] ?></option>
-                                                    <option value="LBL_NEWLY_ADDED" <?
+                                                    <option value="LBL_NEWLY_ADDED" <?php
                                                     if ($vHighlightName == 'LBL_NEWLY_ADDED') {
                                                         echo 'selected';
                                                     }
                                                     ?>><?php echo $langage_lbl['LBL_NEWLY_ADDED'] ?></option>
-                                                    <option value="LBL_PROMOTED" <?
+                                                    <option value="LBL_PROMOTED" <?php
                                                     if ($vHighlightName == 'LBL_PROMOTED') {
                                                         echo 'selected';
                                                     }
@@ -822,7 +822,7 @@ if ($iServiceId > 1) {
         <script type="text/javascript" src="<?php echo $tconfig["tsite_url_main_admin"] ?>js/validation/jquery.validate.min.js" ></script>
         <?php if ($lang != 'en') { ?>
             <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-            <? include_once('otherlang_validation.php');?>
+            <?php include_once('otherlang_validation.php');?>
         <?php } ?>
         <script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
         <script src="assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
@@ -866,11 +866,11 @@ if ($iServiceId > 1) {
             $(".remove_main").show();
         }
 
-        <? if (scount($db_optionsdata) > 0) { ?>
+        <?php if (scount($db_optionsdata) > 0) { ?>
                     var optionid = '<?= scount($db_optionsdata) ?>';
-        <? } else { ?>
+        <?php } else { ?>
                     var optionid = 0;
-        <? } ?>
+        <?php } ?>
 
         function options_fields() {
             var container_div = document.getElementById('options_fields');
@@ -917,11 +917,11 @@ if ($iServiceId > 1) {
         }
 
 
-        <? if (scount($db_addonsdata) > 0) { ?>
+        <?php if (scount($db_addonsdata) > 0) { ?>
                     var addonid = '<?= scount($db_addonsdata) ?>';
-        <? } else { ?>
+        <?php } else { ?>
                     var addonid = 0;
-        <? } ?>
+        <?php } ?>
         function addon_fields() {
             addonid++;
             var objTo = document.getElementById('addon_fields')

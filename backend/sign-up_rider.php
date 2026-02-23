@@ -104,14 +104,14 @@ if (!empty($_COOKIE['vUserDeviceTimeZone'])) {
                                     <strong id="emailCheck"><label><?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?><span class="red">*</span></label>
                                         <?php /* <input type="hidden" name="mobile_verification"  id="mobile_verification" value="<?=$Mobile;?>"> */ ?>
                                         <input type="text" placeholder="<?= $langage_lbl['LBL_PROFILE_RIDER_YOUR_EMAIL_ID']; ?>" name="vEmail" id="vEmail_verify" class="create-account-input"/></strong>
-                                <? } else {?>
+                                <?php } else {?>
                                     <strong id="emailCheck">
                                         <strong class="work-one"><label><?= $langage_lbl['LBL_777-777-7777']; ?><span class="red">*</span></label></strong>
                                         <strong class="ph_no" id="mobileCheck"><input type="text"  id="vPhone" placeholder="<?= $langage_lbl['LBL_777-777-7777']; ?>" class="create-account-input create-account-input1 vPhone_verify" name="vPhone" /></strong>
                                         <strong class="c_code"><input type="text"  name="vPhoneCode" readonly  class="create-account-input" id="code" /></strong>
                                         <!-- <strong id="mobileCheck"></strong> -->
                                     </strong>
-                                <? } ?>
+                                <?php } ?>
                                    <!--  <div class="relative_ele"> -->
                                         <strong>
                                             <label><?= $langage_lbl['LBL_PASSWORD']; ?><span class="red">*</span></label>
@@ -128,7 +128,7 @@ if (!empty($_COOKIE['vUserDeviceTimeZone'])) {
                                         <input type="hidden" placeholder="" name="iRefUserId" id="iRefUserId"  class="create-account-input" value="" />
                                         <input type="hidden" placeholder="" name="eRefType" id="eRefType" class="create-account-input" value=""  />
                                         <!--strong>
-                                        <input id="cpass" type="password" name="vConfirmPassword" placeholder="<? //=$langage_lbl['LBL_PASSWORD'];  ?>" class="create-account-input create-account-input1" value="" /></strong-->
+                                        <input id="cpass" type="password" name="vConfirmPassword" placeholder="<?php //=$langage_lbl['LBL_PASSWORD'];  ?>" class="create-account-input create-account-input1" value="" /></strong-->
                                     </span>  
                                 <?php }
                                 ?>
@@ -146,13 +146,13 @@ if (!empty($_COOKIE['vUserDeviceTimeZone'])) {
                                         <label><?= $langage_lbl['LBL_SELECT_CONTRY']; ?> <span class="red">*</span> </label>
                                         <select name="vCountry" class="custom-select-new" onChange="changeCode(this.value);" required>
 
-                                            <? for ($i = 0; $i < scount($db_code); $i++) { ?>
-                                                <option value="<?= $db_code[$i]['vCountryCode'] ?>"<? if ($db_code[$i]['vCountryCode'] == $DEFAULT_COUNTRY_CODE_WEB) {
+                                            <?php for ($i = 0; $i < scount($db_code); $i++) { ?>
+                                                <option value="<?= $db_code[$i]['vCountryCode'] ?>"<?php if ($db_code[$i]['vCountryCode'] == $DEFAULT_COUNTRY_CODE_WEB) {
                                                 echo 'selected';
                                             } ?>>
                                                 <?= $db_code[$i]['vCountry'] ?>
                                                 </option>
-<? } ?>
+<?php } ?>
                                         </select>
                                     </strong>
                                 </span> 
@@ -163,10 +163,10 @@ if (!empty($_COOKIE['vUserDeviceTimeZone'])) {
                                         <strong class="c_code"><input type="text"  name="vPhoneCode" readonly  class="create-account-input" id="code" /></strong>
                                         <!-- <strong id="mobileCheck"></strong> -->
                                     </span>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <span class="c_code_ph_no newrow"><label><?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?></label>
                                         <input type="text" placeholder="<?= $langage_lbl['LBL_PROFILE_RIDER_YOUR_EMAIL_ID']; ?>" name="vEmail" id="vEmail_verify" class="create-account-input"/></span>
-                                <? } ?>
+                                <?php } ?>
                                 <span class="newrow">
 <?php if (scount($db_lang) <= 1) { ?>
                                         <strong>
@@ -174,9 +174,9 @@ if (!empty($_COOKIE['vUserDeviceTimeZone'])) {
                                             <label><?= $langage_lbl['LBL_SELECT_CURRENCY']; ?></label>
                                             <select class="custom-select-new " name = 'vCurrencyPassenger'>
 
-                                                <? for ($i = 0; $i < scount($db_currency); $i++) { ?>
-                                                    <option value = "<?= $db_currency[$i]['vName'] ?>" <? if ($vCurrencyPassenger == $db_currency[$i]['vName']) { ?>selected<? } else if ($db_currency[$i]['eDefault'] == "Yes") { ?>selected<? } ?>><?= $db_currency[$i]['vName'] ?></option>
-    <? } ?>
+                                                <?php for ($i = 0; $i < scount($db_currency); $i++) { ?>
+                                                    <option value = "<?= $db_currency[$i]['vName'] ?>" <?php if ($vCurrencyPassenger == $db_currency[$i]['vName']) { ?>selected<?php } else if ($db_currency[$i]['eDefault'] == "Yes") { ?>selected<?php } ?>><?= $db_currency[$i]['vName'] ?></option>
+    <?php } ?>
                                             </select>
                                         </strong>
 
@@ -185,13 +185,13 @@ if (!empty($_COOKIE['vUserDeviceTimeZone'])) {
                                             <strong>
                                                 <label><?= $langage_lbl['LBL_SELECT_LANGUAGE']; ?></label>
                                                 <select name="vLang" class="custom-select-new ">
-                                                        <? for ($i = 0; $i < scount($db_lang); $i++) { ?>
-                                                        <option value="<?= $db_lang[$i]['vCode'] ?>" <? if ($db_lang[$i]['eDefault'] == 'Yes') {
+                                                        <?php for ($i = 0; $i < scount($db_lang); $i++) { ?>
+                                                        <option value="<?= $db_lang[$i]['vCode'] ?>" <?php if ($db_lang[$i]['eDefault'] == 'Yes') {
                                                     echo 'selected';
                                                 } ?>>
                                                 <?= $db_lang[$i]['vTitle'] ?>
                                                         </option>
-                                            <? } ?>
+                                            <?php } ?>
                                                 </select>
                                             </strong>
     <?php } ?>
@@ -200,9 +200,9 @@ if (!empty($_COOKIE['vUserDeviceTimeZone'])) {
                                                 <label><?= $langage_lbl['LBL_SELECT_CURRENCY']; ?></label>
                                                 <select class="custom-select-new " name = 'vCurrencyPassenger'>
 
-                                            <? for ($i = 0; $i < scount($db_currency); $i++) { ?>
-                                                        <option value = "<?= $db_currency[$i]['vName'] ?>" <? if ($vCurrencyPassenger == $db_currency[$i]['vName']) { ?>selected<? } else if ($db_currency[$i]['eDefault'] == "Yes") { ?>selected<? } ?>><?= $db_currency[$i]['vName'] ?></option>
-        <? } ?>
+                                            <?php for ($i = 0; $i < scount($db_currency); $i++) { ?>
+                                                        <option value = "<?= $db_currency[$i]['vName'] ?>" <?php if ($vCurrencyPassenger == $db_currency[$i]['vName']) { ?>selected<?php } else if ($db_currency[$i]['eDefault'] == "Yes") { ?>selected<?php } ?>><?= $db_currency[$i]['vName'] ?></option>
+        <?php } ?>
                                                 </select>
                                             </strong>
     <?php }
@@ -295,8 +295,8 @@ if (!empty($_COOKIE['vUserDeviceTimeZone'])) {
         <script type="text/javascript" src="assets/js/validation/jquery.validate.min.js" ></script>
 <?php if ($lang != 'en') { ?>
            <!--<script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script>--> 
-           <? include_once('otherlang_validation.php');?>
-        <? } ?>
+           <?php include_once('otherlang_validation.php');?>
+        <?php } ?>
         <script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
         <script>
                                             function recaptchaCallback() {
@@ -326,7 +326,7 @@ if (!empty($_COOKIE['vUserDeviceTimeZone'])) {
                                                     vEmail: {
                                                     <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>
                                                         required: true,
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     email: true,
                                                         /*remote: {
                                                          url: 'ajax_validate_email_new.php',

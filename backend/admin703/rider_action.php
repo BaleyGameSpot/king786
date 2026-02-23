@@ -341,7 +341,7 @@ if ($action == 'Edit') {
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=150&src=' . $tconfig["tsite_upload_images_passenger"] . '/' . $id . '/3_' . $oldImage; ?>"
                                                      style="height:150px;"/>
 
-                                            <? } else { ?>
+                                            <?php } else { ?>
                                                 <img src="../assets/img/profile-user-img.png" alt="">
                                                 <?php
                                             }
@@ -373,8 +373,8 @@ if ($action == 'Edit') {
 
                         <div class="row">
                             <div class="col-lg-12">
-                                <label>Email <? if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?><span
-                                            class="red"> *</span> <? } ?></label>
+                                <label>Email <?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?><span
+                                            class="red"> *</span> <?php } ?></label>
                             </div>
                             <div class="col-lg-6">
                                 <input type="text" class="form-control" name="vEmail" id="vEmail"
@@ -396,7 +396,7 @@ if ($action == 'Edit') {
                                        placeholder="Password" autocomplete="new-password">
                             </div>
                         </div>
-                        <? if (ONLYDELIVERALL != 'Yes' && APP_TYPE != "Delivery" && APP_TYPE != "UberX") { ?>
+                        <?php if (ONLYDELIVERALL != 'Yes' && APP_TYPE != "Delivery" && APP_TYPE != "UberX") { ?>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <label>Gender</label>
@@ -418,7 +418,7 @@ if ($action == 'Edit') {
                                     <label for="r5">Female</label>
                                 </div>
                             </div>
-                        <? } ?>
+                        <?php } ?>
                         <div class="row">
                             <div class="col-lg-12">
                                 <label>Profile Picture</label>
@@ -478,9 +478,9 @@ if ($action == 'Edit') {
                                 <div class="col-lg-6">
                                     <select class="form-control" name='vLang' id='vLang'>
                                         <option value="">--select--</option>
-                                        <? for ($i = 0; $i < scount($db_lang); $i++) { ?>
+                                        <?php for ($i = 0; $i < scount($db_lang); $i++) { ?>
                                             <option value="<?= $db_lang[$i]['vCode'] ?>" <?= ($db_lang[$i]['vCode'] == $vLang) ? 'selected' : ''; ?>><?= $db_lang[$i]['vTitle'] ?> </option>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                 </div>
                             </div>
@@ -488,7 +488,7 @@ if ($action == 'Edit') {
                         <?php if (scount($db_currency) <= 1) { ?>
                             <input name="vCurrencyPassenger" type="hidden" class="create-account-input"
                                    value="<?php echo $db_currency[0]['vName']; ?>"/>
-                        <? } else { ?>
+                        <?php } else { ?>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <label>Currency <span class="red"> *</span></label>
@@ -498,12 +498,12 @@ if ($action == 'Edit') {
                                         <option value="">--select--</option>
                                         <?php for ($i = 0; $i < scount($db_currency); $i++) { ?>
                                             <option value="<?= $db_currency[$i]['vName'] ?>"
-                                                    <? if ($vCurrencyPassenger == $db_currency[$i]['vName']) { ?>selected<? } ?>><?= $db_currency[$i]['vName'] ?></option>
+                                                    <?php if ($vCurrencyPassenger == $db_currency[$i]['vName']) { ?>selected<?php } ?>><?= $db_currency[$i]['vName'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                             </div>
-                        <? } ?>
+                        <?php } ?>
                         <!--<div class="row">
                                                  <div class="col-lg-12">
                                                       <label>Promotional Code</label>
@@ -570,9 +570,9 @@ if ($action == 'Edit') {
                 
             },
             vEmail: {
-                <? if($ENABLE_EMAIL_OPTIONAL != "Yes") {?>
+                <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") {?>
                     required: true,
-                <? } ?>
+                <?php } ?>
                     email: true
             },
             <?php if ($id == '') { ?>

@@ -65,15 +65,15 @@ if (isset($_REQUEST['reload'])) {
             | Language</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
     </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
     <body class="padTop53">
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -87,13 +87,13 @@ if (isset($_REQUEST['reload'])) {
                         <hr />
                     </div>
                     <div style="clear:both;"></div>
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div>
                         <br/>
-                        <?
+                        <?php
                     } else if ($success == 2) {
                         ?>
                         <div class="alert alert-danger alert-dismissable">
@@ -135,18 +135,18 @@ if (isset($_REQUEST['reload'])) {
                                         <td align="center"><?php echo $value['vCode'];?></td>
                                         <td align="center"><?php echo  $eDefault;?></td>
                                     <td width="10%" align="center">
-                                        <? if ($iDispOrder != 1 && $key > 0) { ?>
+                                        <?php if ($iDispOrder != 1 && $key > 0) { ?>
                                             <a href="language.php?id=<?= $value['iLanguageMasId']; ?>&flag=up" class="btn btn-warning">
                                                 <i class="icon-arrow-up"></i>
                                             </a>
-                                        <? } if ($iDispOrder != $count_all && $key < scount($db_languages) - 1) { ?>
+                                        <?php } if ($iDispOrder != $count_all && $key < scount($db_languages) - 1) { ?>
                                             <a href="language.php?id=<?= $value['iLanguageMasId']; ?>&flag=down" class="btn btn-warning">
                                                 <i class="icon-arrow-down"></i>
                                             </a>
-                                        <? } ?>
+                                        <?php } ?>
                                     </td>
                                     <td width="10%" align="center">
-                                        <? if ($eStatus == 'Active') {
+                                        <?php if ($eStatus == 'Active') {
                                             $dis_img = "img/active-icon.png";
                                         } else if ($eStatus == 'Inactive') {
                                             $dis_img = "img/inactive-icon.png";
@@ -206,7 +206,7 @@ if (isset($_REQUEST['reload'])) {
     <input type="hidden" name="iDispOrder" id="iDispOrder" value="<?php echo $iDispOrder; ?>">
     <input type="hidden" name="method" id="method" value="">
 </form>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/dataTables/jquery.dataTables.js"></script>
 <script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>
 <script type="text/javascript">

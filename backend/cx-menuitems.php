@@ -140,12 +140,12 @@ if ($action == 'view') {
 				<div class="table-holder">
 
 					<div class="trips-page trips-page1">
-						<? if (isset($_REQUEST['success']) && $_REQUEST['success'] == 1) { ?>
+						<?php if (isset($_REQUEST['success']) && $_REQUEST['success'] == 1) { ?>
 							<div class="alert alert-success alert-dismissable">
 								<button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
 								<?= $var_msg ?>
 							</div>
-						<? } else if (isset($_REQUEST['success']) &&  $_REQUEST['success'] == 2) { ?>
+						<?php } else if (isset($_REQUEST['success']) &&  $_REQUEST['success'] == 2) { ?>
 							<div class="alert alert-danger alert-dismissable">
 								<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 								<?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -156,7 +156,7 @@ if ($action == 'view') {
 								<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 								<?= $var_msg ?>
 							</div>
-						<? }
+						<?php }
 						?>
 
 

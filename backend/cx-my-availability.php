@@ -201,7 +201,7 @@
 		<script src="assets/plugins/jasny/js/bootstrap-fileupload.js"></script>
 		<script type="text/javascript" src="assets/js/validation/jquery.validate.min.js" ></script>
 		<?php if($lang != 'en') { ?>
-			<? include_once('otherlang_validation.php');?>
+			<?php include_once('otherlang_validation.php');?>
 		<!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
 		<?php } ?>
 		<script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>

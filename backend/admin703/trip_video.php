@@ -57,9 +57,9 @@ if($videoRecordingFound == "No") {
 <body class="padTop53">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
+    <?php include_once('header.php'); ?>
 
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner" id="page_height" style="">
@@ -71,7 +71,7 @@ if($videoRecordingFound == "No") {
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 </body>
 </html>
 <?php } ?>

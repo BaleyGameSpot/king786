@@ -71,11 +71,11 @@ $get_registration_date_format = DateformatCls::getNewDateFormat($date_format_dat
                                <?= clearEmail($data_admin[0]['vGroup']); ?>
                             </td>
                         </tr>
-                    <? } ?>
+                    <?php } ?>
                     <tr>
                         <td class="text_design">Status</td>
                         <td>
-                            <?
+                            <?php
                             $class = "";
                             if ($data_admin[0]['eStatus'] == "Active") {
                                 $class = "btn-success";
@@ -96,14 +96,14 @@ $get_registration_date_format = DateformatCls::getNewDateFormat($date_format_dat
         </tr><tr></tr><tr></tr><tr></tr>
 
           <?php if ($data_admin[0]['iGroupId'] == "4") { ?>
-			<? if ($data_admin[0]['country'] != "") { ?>
+			<?php if ($data_admin[0]['country'] != "") { ?>
 				<tr>
 					<td class="text_design">Country</td>
 					<td>
 						<?= $data_admin[0]['country']; ?>
 					</td>
 				</tr>
-			<? } ?>
+			<?php } ?>
 		  <tr>
             <td class="text_design">Address</td>
             <td>
@@ -114,7 +114,7 @@ $get_registration_date_format = DateformatCls::getNewDateFormat($date_format_dat
                 <td class="text_design">Registration Date</td>
             <td><?= $get_registration_date_format['tDisplayDate'];// DateTime($data_admin[0]['tRegistrationDate'], 7); ?></td>
         </tr>
-        <? } ?> 
+        <?php } ?> 
 	</tbody>
 </table>
 <div class="modal-footer"> 

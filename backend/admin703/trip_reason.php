@@ -200,7 +200,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
 
     </head>
 
@@ -632,7 +632,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                                         </tr>    
 
-                                                        <?
+                                                        <?php
 
                                                     }
 

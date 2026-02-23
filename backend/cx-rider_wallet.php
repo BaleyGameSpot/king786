@@ -191,7 +191,7 @@ if ($lang_ltr == "yes") {
                 </tr>
             </thead>
                 <tbody>
-                    <?
+                    <?php
 
                     // ==================================
                          
@@ -484,7 +484,7 @@ if ($lang_ltr == "yes") {
 									<td class="center"><?=$final = $WALLET_OBJ->MemberCurrencyWalletBalanceFront(0, ($db_trip[$i]['currentbal'] < 0 ? 0 : $db_trip[$i]['currentbal']), $currencyName);?>
                                     </td> 
                                 </tr>
-<? } ?>
+<?php } ?>
                         </tbody>
                         <tfoot>
                             <tr class="gradeA odd total_balance">
@@ -497,11 +497,11 @@ if ($lang_ltr == "yes") {
                                 <td rowspan="1" colspan="1" align="center" class="center"><?=$final;?></td>
                             </tr>
                         </tfoot>
-<? } else { ?>
+<?php } else { ?>
                            <!--  <tr class="odd">
                                 <td class="center" align="center" colspan="7">No Details found</td>
                             </tr>    -->
-                    <? } ?>
+                    <?php } ?>
                 </tbody>
         </table>
     </div>
@@ -538,32 +538,32 @@ if ($lang_ltr == "yes") {
                                 
                                 <div class="form-group newrow">
                                     <label><?=$langage_lbl['LBL_PAYMENT_EMAIL_TXT'];?></label>
-                                    <input type="text" name="vPaymentEmail" id="vPaymentEmail" class="form-control vHolderName"  <? if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vPaymentEmail'];?>"<? } ?>>
+                                    <input type="text" name="vPaymentEmail" id="vPaymentEmail" class="form-control vHolderName"  <?php if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vPaymentEmail'];?>"<?php } ?>>
                                 </div>
 
                                 <div class="form-group newrow">
                                     <label><?=$langage_lbl['LBL_WALLET_ACCOUNT_HOLDER_NAME'];?></label>
-                                    <input type="text" name="vHolderName" id="vHolderName" class="form-control vHolderName"  <? if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBankAccountHolderName'];?>"<? } ?>>
+                                    <input type="text" name="vHolderName" id="vHolderName" class="form-control vHolderName"  <?php if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBankAccountHolderName'];?>"<?php } ?>>
                                 </div>
 
                                 <div class="form-group newrow">
                                     <label><?=$langage_lbl['LBL_WALLET_NAME_OF_BANK'];?></label>
-                                    <input type="text" name="vBankName" id="vBankName" class="form-control vBankName" <? if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBankName'];?>"<? } ?>>
+                                    <input type="text" name="vBankName" id="vBankName" class="form-control vBankName" <?php if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBankName'];?>"<?php } ?>>
                                 </div>
 
                                 <div class="form-group newrow">
                                     <label><?=$langage_lbl['LBL_WALLET_ACCOUNT_NUMBER'];?></label>
-                                    <input type="text" name="iBankAccountNo" id="iBankAccountNo" class="form-control iBankAccountNo" <? if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vAccountNumber'];?>"<? } ?>>
+                                    <input type="text" name="iBankAccountNo" id="iBankAccountNo" class="form-control iBankAccountNo" <?php if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vAccountNumber'];?>"<?php } ?>>
                                 </div>
 
                                 <div class="form-group newrow">
                                     <label><?=$langage_lbl['LBL_WALLET_BIC_SWIFT_CODE'];?></label>
-                                    <input type="text" name="BICSWIFTCode" id="BICSWIFTCode" class="form-control BICSWIFTCode" <? if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBIC_SWIFT_Code'];?>"<? } ?>>
+                                    <input type="text" name="BICSWIFTCode" id="BICSWIFTCode" class="form-control BICSWIFTCode" <?php if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBIC_SWIFT_Code'];?>"<?php } ?>>
                                 </div>
 
                                 <div class="form-group newrow">
                                     <label><?=$langage_lbl['LBL_WALLET_BANK_LOCATION'];?></label>
-                                    <input type="text" name="vBankBranch" id="vBankBranch" class="form-control vBankBranch" <? if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBankLocation'];?>"<? } ?>>
+                                    <input type="text" name="vBankBranch" id="vBankBranch" class="form-control vBankBranch" <?php if ($type == 'Driver') { ?>value="<?=$db_driver[0]['vBankLocation'];?>"<?php } ?>>
                                 </div>
 
                                 <div class="form-group newrow">

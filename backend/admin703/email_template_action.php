@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('../common.php');
 
 $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : '';
@@ -104,7 +104,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
     <title>Admin | Email Template <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- PAGE LEVEL STYLES -->
     <link rel="stylesheet" href="../assets/plugins/Font-Awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="../assets/plugins/wysihtml5/dist/bootstrap-wysihtml5-0.0.2.css" />
@@ -128,8 +128,8 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 <body class="padTop53 " >
     <!-- MAIN WRAPPER -->
     <div id="wrap">
-        <? include_once('header.php'); ?>
-        <? include_once('left_menu.php'); ?>
+        <?php include_once('header.php'); ?>
+        <?php include_once('left_menu.php'); ?>
         <!--PAGE CONTENT -->
         <div id="content">
             <div class="inner">
@@ -144,17 +144,17 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                 <hr />
                 <div class="body-div">
                     <div class="form-group">
-                        <? if ($success == 1) { ?>
+                        <?php if ($success == 1) { ?>
                             <div class="alert alert-success alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                  <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                             </div><br/>
-                        <? } elseif ($success == 2) { ?>
+                        <?php } elseif ($success == 2) { ?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                 <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                             </div><br/>
-                        <? } ?> 
+                        <?php } ?> 
                         <form method="post" name="_email_template_form" id="_email_template_form" action=""  enctype="multipart/form-data">
                             <input type="hidden" name="id" value="<?= $id; ?>"/>
                             <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -347,7 +347,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                             </div>
                             <?php } ?>
 
-                            <?/*
+                            <?php /*
                             if ($count_all > 0) {
                                 for ($i = 0; $i < $count_all; $i++) {
                                     $vCode = $db_master[$i]['vCode'];
@@ -366,7 +366,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                             <input type="text" class="form-control " name="<?= $vSubject; ?>"  id="<?= $vSubject; ?>" value="<?= $$vSubject; ?>" placeholder="<?= $vLTitle; ?> Subject" <?= $required; ?>>
                                             <div class="text-danger" id="<?= $vSubject.'_error'; ?>" style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                         </div>
-                                        <? if($vCode == $default_lang  && scount($db_master) > 1){ ?>
+                                        <?php if($vCode == $default_lang  && scount($db_master) > 1){ ?>
                                         <div class="col-md-6 col-sm-6">
                                             <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('vSubject_', '<?= $default_lang ?>');">Convert To All Language</button>
                                         </div>
@@ -382,7 +382,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                         </div>
                                     </div>
                                     <!--- Editor -->
-                                <?
+                                <?php
                                 }
                             }*/
                             ?>
@@ -410,7 +410,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
             <span>Language Translation is in Process. Please Wait...</span>                       
         </div>
     </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
     <!-- PAGE LEVEL SCRIPTS -->
 <!--<script src="../assets/plugins/CLEditor1_4_3/jquery.cleditor.min.js"></script>
     <script src="../assets/plugins/wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>

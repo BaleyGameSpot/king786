@@ -498,11 +498,11 @@ $json_lang = json_encode($languageArr);
 
                     <p><?= $langage_lbl['LBL_YOU_HAVE_REGISTERED_AS_TRACKING_COMPANY']; ?></p>
 
-                    <? if ($UploadDocuments == 'No') { ?>
+                    <?php if ($UploadDocuments == 'No') { ?>
 
                         <p><?= $langage_lbl['LBL_KINDLY_PROVIDE_BELOW']; ?></p>
 
-                    <? } ?>
+                    <?php } ?>
 
                     <p><?= $langage_lbl['LBL_TRACK_SERVICE_ALSO_ADD_DRIVERS']; ?></p>
 
@@ -580,7 +580,7 @@ $json_lang = json_encode($languageArr);
 
                         <img src="assets/img/profile-user-img.png" alt="">
 
-                        <?
+                        <?php
 
                     } else { ?>
 
@@ -606,7 +606,7 @@ $json_lang = json_encode($languageArr);
 
 
 
-                        <? if ($db_user[0]['vEmail'] != "") { ?>
+                        <?php if ($db_user[0]['vEmail'] != "") { ?>
 
                             <div class="profile-column">
 
@@ -622,7 +622,7 @@ $json_lang = json_encode($languageArr);
 
                             </div>
 
-                        <? } ?>
+                        <?php } ?>
 
                         <div class="profile-column">
 
@@ -632,7 +632,7 @@ $json_lang = json_encode($languageArr);
 
                                 <strong><?= $langage_lbl['LBL_PHONE']; ?></strong>
 
-                                <span dir="ltr"><? if (!empty($db_user[0]['vPhone'])) { ?>(+<?= $db_user[0]['vCode'] ?>) <?= $db_user[0]['vPhone'] ?><?php } ?></span>
+                                <span dir="ltr"><?php if (!empty($db_user[0]['vPhone'])) { ?>(+<?= $db_user[0]['vCode'] ?>) <?= $db_user[0]['vPhone'] ?><?php } ?></span>
 
                             </div>
 
@@ -682,7 +682,7 @@ $json_lang = json_encode($languageArr);
 
                         </div>
 
-                    <? } else { ?>
+                    <?php } else { ?>
 
                         <div class="form-group half newrow phone-column">
 
@@ -694,7 +694,7 @@ $json_lang = json_encode($languageArr);
 
                         </div>
 
-                    <? } ?>
+                    <?php } ?>
 
                     <div class="form-group half newrow">
 
@@ -766,7 +766,7 @@ $json_lang = json_encode($languageArr);
 
                         <label><?= $langage_lbl['LBL_SELECT_CONTRY']; ?><?php if ($user == 'company') { ?>
 
-                                <span class="red">*</span><? } ?> </label>
+                                <span class="red">*</span><?php } ?> </label>
 
                         <?php
 
@@ -784,11 +784,11 @@ $json_lang = json_encode($languageArr);
 
 
 
-                            <? for ($i = 0; $i < scount($db_country); $i++) { ?>
+                            <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
 
-                                <option <? if ($db_user[0]['vCountry'] == $db_country[$i]['vCountryCode']) { ?>selected<? } ?> value="<?= $db_country[$i]['vCountryCode'] ?>"><?= $db_country[$i]['vCountry'] ?></option>
+                                <option <?php if ($db_user[0]['vCountry'] == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?> value="<?= $db_country[$i]['vCountryCode'] ?>"><?= $db_country[$i]['vCountry'] ?></option>
 
-                            <? } ?>
+                            <?php } ?>
 
                         </select>
 
@@ -902,7 +902,7 @@ $json_lang = json_encode($languageArr);
 
                                     ?>
 
-                                    <option value="<?= $db_lang[$i]['vCode'] ?>" <? if ($db_user[0]['vLang'] == $db_lang[$i]['vCode']) { ?> selected <? } ?>><? echo $db_lang[$i]['vTitle']; ?></option>
+                                    <option value="<?= $db_lang[$i]['vCode'] ?>" <?php if ($db_user[0]['vLang'] == $db_lang[$i]['vCode']) { ?> selected <?php } ?>><?php echo $db_lang[$i]['vTitle']; ?></option>
 
                                 <?php } ?>
 
@@ -1148,7 +1148,7 @@ $json_lang = json_encode($languageArr);
 
                                             <img class="imagename" src="assets/img/profile-user-img.png" alt="">
 
-                                            <?
+                                            <?php
 
                                         } else { ?>
 
@@ -1264,7 +1264,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
 
     <!--  <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
 
-    <? include_once('otherlang_validation.php'); ?><?php } ?>
+    <?php include_once('otherlang_validation.php'); ?><?php } ?>
 
 <script type="text/javascript" src="assets/js/validation/additional-methods.js"></script>
 
@@ -2300,7 +2300,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
 
                 required: true,
 
-                <? } ?>
+                <?php } ?>
 
                 email: true,
 
@@ -2642,15 +2642,15 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
 
             else {
 
-                <? if ($db_user[0]['vPassword'] != "") { ?>
+                <?php if ($db_user[0]['vPassword'] != "") { ?>
 
                 valid = validate_password();
 
-                <? } else { ?>
+                <?php } else { ?>
 
                 valid = validate_password_fb();
 
-                <? } ?>
+                <?php } ?>
 
             }
 

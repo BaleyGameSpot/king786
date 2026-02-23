@@ -218,7 +218,7 @@ if (!isset($dataArray['General'])) {
     <title>Admin | App Launch Images <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -228,8 +228,8 @@ if (!isset($dataArray['General'])) {
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -244,27 +244,27 @@ if (!isset($dataArray['General'])) {
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
+                    <?php if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <? echo $_REQUEST['var_msg']; ?>
+                            <?php echo $_REQUEST['var_msg']; ?>
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if ($success == 1) { ?>
+                    <?php } ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if ($success == 2) { ?>
+                    <?php } ?>
+                    <?php if ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <form method="post" class="app_launch" action="" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                         <input type="hidden" name="vImage_old" id="vImage_old" value="<?= $vImage ?>">
@@ -273,13 +273,13 @@ if (!isset($dataArray['General'])) {
                                 <label>Image<?= (empty($vImage)) ? '<span class="red"> *</span>' : ''; ?></label>
                             </div>
                             <div class="col-lg-6">
-                                <? if (!empty($vImage)) { ?>
+                                <?php if (!empty($vImage)) { ?>
                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=400&MAX_HEIGHT=200&src=' . $tconfig['tsite_upload_app_launch_images'] . $vImage; ?>"
                                          style="width:200px;height:auto;">
                                     <input type="file" class="form-control" name="vImage" id="vImage" value="<?= $vImage; ?>"/>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <input type="file" class="form-control" name="vImage" id="vImage" value="<?= $vImage; ?>" required/>
-                                <? } ?>
+                                <?php } ?>
                                 <span class="note">[Note: Recommended dimension is 3350 * 2760.]</span>
                             </div>
                         </div>
@@ -720,7 +720,7 @@ if (!isset($dataArray['General'])) {
         <span>Language Translation is in Process. Please Wait...</span>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script src="../assets/plugins/ckeditor/ckeditor.js"></script>
 <!--<script src="../assets/plugins/ckeditor/config.js"></script>-->

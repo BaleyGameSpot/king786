@@ -654,7 +654,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                                 <td><?= $data_drv[$i]['vPlanPeriod'] . " " . $durTxt; ?></td>
 
-                                                <!-- <td><?// $CurrSymbol.$data_drv[$i]['fPrice']; ?></td> -->
+                                                <!-- <td><?php // $CurrSymbol.$data_drv[$i]['fPrice']; ?></td> -->
 
                                                 <td><?= formateNumAsPerCurrency($data_drv[$i]['fPrice'], ''); ?></td>
 

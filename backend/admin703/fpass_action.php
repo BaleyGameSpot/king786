@@ -1,4 +1,4 @@
-<?
+<?php
 	
 	include_once('common.php');
 	$email = isset($_POST['femail'])?$_POST['femail']:'';

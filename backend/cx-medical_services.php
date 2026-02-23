@@ -170,7 +170,7 @@ if(ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
     $tMessage_call = str_replace($key_arr, $val_arr, $tMessage_call); ?>
 
     <!-- *************call to section end************* -->
-<? } else {
+<?php } else {
     $benefit_section = $LANG_OBJ->checkOtherLangDataExist(json_decode($ride_data[0]['lBenefitSection'],true),$vCode,$inner_key);
 
     $menutitleBenefit = !empty($benefit_section['menu_title_'.$vCode]) ? $benefit_section['menu_title_'.$vCode] : $benefit_section['title_'.$vCode];
@@ -442,4 +442,4 @@ if(ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
     <!-- End: Footer Script -->
     </body>
     </html>
-<? } ?>
+<?php } ?>

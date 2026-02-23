@@ -1923,7 +1923,7 @@ if($eCatType == 'TaxiBid'){
     <title>Admin | <?= $langage_lbl_admin['LBL_VEHICLE_CATEGORY_ADMIN']; ?> <?= $actionSave; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <?
+    <?php
     include_once('global_files.php');
     ?>
     <!-- On OFF switch -->
@@ -1949,7 +1949,7 @@ if($eCatType == 'TaxiBid'){
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <?
+    <?php
     include_once('header.php');
     include_once('left_menu.php');
     ?>
@@ -2196,11 +2196,11 @@ if($eCatType == 'TaxiBid'){
                                         <div class="col-md-6 col-sm-6">
                                             <select class="form-control" name='ePriceType' id='ePriceType'>
                                                 <option value="Service"
-                                                        <? if ('Service' == $db_data[0]['ePriceType']) { ?>selected<? } ?>>
+                                                        <?php if ('Service' == $db_data[0]['ePriceType']) { ?>selected<?php } ?>>
                                                     Service ( Site Administrator will define the price)
                                                 </option>
                                                 <option value="Provider"
-                                                        <? if ('Provider' == $db_data[0]['ePriceType']) { ?>selected<? } ?>><?php echo $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?>
+                                                        <?php if ('Provider' == $db_data[0]['ePriceType']) { ?>selected<?php } ?>><?php echo $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?>
                                                     ( <?php echo $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?> will set
                                                     their own price )
                                                 </option>
@@ -2217,10 +2217,10 @@ if($eCatType == 'TaxiBid'){
                                             <select class="form-control" name="eMaterialCommision"
                                                     id="eMaterialCommision">
                                                 <option value="Yes"
-                                                        <? if ("Yes" == $eMaterialCommision) { ?>selected<? } ?>>Yes
+                                                        <?php if ("Yes" == $eMaterialCommision) { ?>selected<?php } ?>>Yes
                                                 </option>
                                                 <option value="No"
-                                                        <? if ("No" == $eMaterialCommision) { ?>selected<? } ?>>No
+                                                        <?php if ("No" == $eMaterialCommision) { ?>selected<?php } ?>>No
                                                 </option>
                                             </select>
                                         </div>
@@ -2370,7 +2370,7 @@ if($eCatType == 'TaxiBid'){
                                                               id="tCategoryDesc_<?= $default_lang ?>"><?= $db_data[0]['tCategoryDesc_' . $default_lang]; ?></textarea>
                                                 </div>
                                             </div>
-                                        <?php } ?><?
+                                        <?php } ?><?php
                                     }
                                     if ($iServiceIdEdit > 0 && $descEnable == 1) {
                                         ?><?php if (scount($db_master) > 1) { ?>
@@ -2691,10 +2691,10 @@ if($eCatType == 'TaxiBid'){
                                                 <label>Logo</label>
                                             </div>
                                             <div class="col-md-6 col-sm-6">
-                                                <? if (isset($vListLogo2) && $vListLogo2 != '') { ?>
+                                                <?php if (isset($vListLogo2) && $vListLogo2 != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=200&h=200&src=' . $tconfig['tsite_upload_images_vehicle_category'] . "/" . $id . "/" . $vListLogo2; ?>"
                                                          class="logo-preview-img">
-                                                <? } else { ?>
+                                                <?php } else { ?>
                                                     <img src="../assets/img/placeholder-img.png"
                                                          class="logo-preview-img"/>
                                                 <?php } ?>
@@ -2712,9 +2712,9 @@ if($eCatType == 'TaxiBid'){
                                                 <label>Icon</label>
                                             </div>
                                             <div class="col-md-6 col-sm-6">
-                                                <? if (isset($vListLogo3) && $vListLogo3 != '') { ?>
+                                                <?php if (isset($vListLogo3) && $vListLogo3 != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=100&src=' . $tconfig['tsite_upload_images_vehicle_category'] . "/" . $id . "/" . $vListLogo3; ?>" class="logo-preview-img">
-                                                <? } else { ?>
+                                                <?php } else { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=200&src=' . $tconfig['tsite_url'] . '/assets/img/placeholder-img.png' ?>" class="logo-preview-img"/>
                                                 <?php } ?>
                                                 <!-- <input type="file" class="form-control" name="vListLogo3" id="vListLogo3" <?php //echo $required_rule; ?> > -->
@@ -2738,9 +2738,9 @@ if($eCatType == 'TaxiBid'){
                                                 <label>Service Image</label>
                                             </div>
                                             <div class="col-md-6 col-sm-6">
-                                                <? if (isset($vServiceImage) && $vServiceImage != '') { ?>
+                                                <?php if (isset($vServiceImage) && $vServiceImage != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=200&src=' . $tconfig['tsite_upload_images_vehicle_category'] . "/" . $id . "/" . $vServiceImage; ?>" class="logo-preview-img">
-                                                <? } else { ?>
+                                                <?php } else { ?>
                                                     <img src="../assets/img/placeholder-img.png" class="logo-preview-img"/>
                                                 <?php } ?>
                                                 <input type="file" class="form-control" name="vServiceImage" <?php echo $required_rule; ?> id="vServiceImage">
@@ -2755,10 +2755,10 @@ if($eCatType == 'TaxiBid'){
                                                 <label>Logo</label>
                                             </div>
                                             <div class="col-md-6 col-sm-6">
-                                                <? if (isset($vLogo) && $vLogo != '') { ?>
+                                                <?php if (isset($vLogo) && $vLogo != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=200&h=200&src=' . $tconfig['tsite_upload_images_vehicle_category'] . "/" . $id . "/ios/3x_" . $vLogo; ?>"
                                                          class="logo-preview-img">
-                                                <? } else { ?>
+                                                <?php } else { ?>
                                                     <img src="../assets/img/placeholder-img.png"
                                                          class="logo-preview-img"/>
                                                 <?php } ?>
@@ -2952,10 +2952,10 @@ if($eCatType == 'TaxiBid'){
                                                 <label>Banner</label>
                                             </div>
                                             <div class="col-md-6 col-sm-6">
-                                                <? if ($vBannerImage != '') { ?>
+                                                <?php if ($vBannerImage != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=400&src=' . $tconfig['tsite_upload_images_vehicle_category'] . "/" . $id . "/" . $vBannerImage; ?>"
                                                          style="margin-bottom: 10px;">
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control"
                                                        name="vBannerImage" <?php echo $required_rule; ?> id="vBannerImage"
                                                        placeholder="">
@@ -3168,10 +3168,10 @@ if($eCatType == 'TaxiBid'){
                                                             <label>List - Logo</label>
                                                         </div>
                                                         <div class="col-md-6 col-sm-6">
-                                                            <? if (isset($vListLogo1) && $vListLogo1 != '') { ?>
+                                                            <?php if (isset($vListLogo1) && $vListLogo1 != '') { ?>
                                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=400&src=' . $tconfig['tsite_upload_images_vehicle_category'] . "/" . $id . "/" . $vListLogo1; ?>"
                                                                      style="width:200px;">
-                                                            <? } else { ?>
+                                                            <?php } else { ?>
                                                                 <img src="../assets/img/placeholder-img.png"
                                                                      class="logo-preview-img"/>
                                                             <?php } ?>
@@ -3189,10 +3189,10 @@ if($eCatType == 'TaxiBid'){
                                                             <label>List - Logo</label>
                                                         </div>
                                                         <div class="col-md-6 col-sm-6">
-                                                            <? if (isset($vListLogo) && $vListLogo != '') { ?>
+                                                            <?php if (isset($vListLogo) && $vListLogo != '') { ?>
                                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=400&src=' . $tconfig['tsite_upload_images_vehicle_category'] . "/" . $id . "/" . $vListLogo; ?>"
                                                                      style="width:200px;">
-                                                            <? } else { ?>
+                                                            <?php } else { ?>
                                                                 <img src="../assets/img/placeholder-img.png"
                                                                      class="logo-preview-img"/>
                                                             <?php } ?>
@@ -3216,10 +3216,10 @@ if($eCatType == 'TaxiBid'){
                                                     <label>Image</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6" <?= $stylehide ?>>
-                                                    <? if (!empty($vLogo2)) { ?>
+                                                    <?php if (!empty($vLogo2)) { ?>
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=200&h=200&src=' . $tconfig['tsite_upload_images_vehicle_category'] . "/" . $id . "/ios/3x_" . $vLogo2; ?>"
                                                              style="width:100px;height:100px;">
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vLogo2" id="vLogo2" placeholder="">
                                                     <br/>
                                                     Note: Upload only png image size of 512px X 512px. <br> <?= IMAGE_INSTRUCTION_NOTES ?>
@@ -3231,10 +3231,10 @@ if($eCatType == 'TaxiBid'){
                                                     <label>Logo</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6" <?= $stylehide ?>>
-                                                    <? if ($vLogo != '') { ?>
+                                                    <?php if ($vLogo != '') { ?>
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=200&h=200&src=' . $tconfig['tsite_upload_images_vehicle_category'] . "/" . $id . "/ios/3x_" . $vLogo; ?>"
                                                              style="width:100px;height:100px;">
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control"
                                                            name="vLogo" <?php echo $required_rule; ?> id="vLogo"
                                                            placeholder="" style="padding-bottom: 39px;">
@@ -3250,10 +3250,10 @@ if($eCatType == 'TaxiBid'){
                                                     <label>Logo</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if (isset($vListLogo2) && $vListLogo2 != '') { ?>
+                                                    <?php if (isset($vListLogo2) && $vListLogo2 != '') { ?>
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=200&h=200&src=' . $tconfig['tsite_upload_images_vehicle_category'] . "/" . $id . "/" . $vListLogo2; ?>"
                                                              class="logo-preview-img">
-                                                    <? } else { ?>
+                                                    <?php } else { ?>
                                                         <img src="../assets/img/placeholder-img.png"
                                                              class="logo-preview-img"/>
                                                     <?php } ?>
@@ -3270,10 +3270,10 @@ if($eCatType == 'TaxiBid'){
                                                     <label>Logo</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if (isset($vListLogo3) && $vListLogo3 != '') { ?>
+                                                    <?php if (isset($vListLogo3) && $vListLogo3 != '') { ?>
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=200&h=200&src=' . $tconfig['tsite_upload_images_vehicle_category'] . "/" . $id . "/" . $vListLogo3; ?>"
                                                              class="logo-preview-img">
-                                                    <? } else { ?>
+                                                    <?php } else { ?>
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=200&src=' . $tconfig['tsite_url'] . '/assets/img/placeholder-img.png' ?>" class="logo-preview-img"/>
                                                     <?php } ?>
                                                     <input type="file" class="form-control"
@@ -3288,9 +3288,9 @@ if($eCatType == 'TaxiBid'){
                                                         <label>Icon</label>
                                                     </div>
                                                     <div class="col-md-6 col-sm-6" <?= $stylehide ?>>
-                                                        <? if ($vLogo2 != '') { ?>
+                                                        <?php if ($vLogo2 != '') { ?>
                                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=100&src=' . $tconfig['tsite_upload_images_vehicle_category'] . "/" . $id . "/ios/" . $vLogo2; ?>" style="margin-bottom: 10px;">
-                                                        <? } ?>
+                                                        <?php } ?>
                                                         <input type="file" class="form-control" name="vLogo2" <?php //echo $required_rule; ?> id="vLogo2" placeholder="">
                                                         <span class="notes">[Note: Recommended dimension for icon is <?= $vIconDetails ?>. <br> <?= IMAGE_INSTRUCTION_NOTES ?>]</span>
                                                     </div>
@@ -3320,10 +3320,10 @@ if($eCatType == 'TaxiBid'){
                                                     <label>Banner</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vBannerImage != '') { ?>
+                                                    <?php if ($vBannerImage != '') { ?>
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=400&&src=' . $tconfig['tsite_upload_images_vehicle_category'] . "/" . $id . "/" . $vBannerImage; ?>"
                                                              style="margin-bottom: 10px;">
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control"
                                                            name="vBannerImage" <?php echo $required_rule; ?>
                                                            id="vBannerImage" placeholder="">
@@ -3496,11 +3496,11 @@ if($eCatType == 'TaxiBid'){
                                             <select class="form-control" name='eBeforeUpload' id='eBeforeUpload'
                                                     required>
                                                 <option value="No"
-                                                        <? if (isset($db_data[0]['eBeforeUpload']) && 'No' == $db_data[0]['eBeforeUpload']) { ?>selected<? } ?>>
+                                                        <?php if (isset($db_data[0]['eBeforeUpload']) && 'No' == $db_data[0]['eBeforeUpload']) { ?>selected<?php } ?>>
                                                     No
                                                 </option>
                                                 <option value="Yes"
-                                                        <? if (isset($db_data[0]['eBeforeUpload']) && 'Yes' == $db_data[0]['eBeforeUpload']) { ?>selected<? } ?>>
+                                                        <?php if (isset($db_data[0]['eBeforeUpload']) && 'Yes' == $db_data[0]['eBeforeUpload']) { ?>selected<?php } ?>>
                                                     Yes
                                                 </option>
                                                 </option>
@@ -3516,11 +3516,11 @@ if($eCatType == 'TaxiBid'){
                                         <div class="col-md-6 col-sm-6">
                                             <select class="form-control" name='eAfterUpload' id='eAfterUpload' required>
                                                 <option value="No"
-                                                        <? if (isset($db_data[0]['eAfterUpload']) && 'No' == $db_data[0]['eAfterUpload']) { ?>selected<? } ?>>
+                                                        <?php if (isset($db_data[0]['eAfterUpload']) && 'No' == $db_data[0]['eAfterUpload']) { ?>selected<?php } ?>>
                                                     No
                                                 </option>
                                                 <option value="Yes"
-                                                        <? if (isset($db_data[0]['eAfterUpload']) && 'Yes' == $db_data[0]['eAfterUpload']) { ?>selected<? } ?>>
+                                                        <?php if (isset($db_data[0]['eAfterUpload']) && 'Yes' == $db_data[0]['eAfterUpload']) { ?>selected<?php } ?>>
                                                     Yes
                                                 </option>
                                             </select>
@@ -3717,7 +3717,7 @@ if($eCatType == 'TaxiBid'){
                                                             $vValueName = 'tProofNoteTitle_' . $vCode;
                                                             $required = ($eDefault == 'Yes') ? '' : '';
                                                             $required_msg = ($eDefault == 'Yes') ? '<span class="red"> *</span>' : '';
-                                                            ?><? if ($vCode == $default_lang && scount($db_master) > 1) { ?>
+                                                            ?><?php if ($vCode == $default_lang && scount($db_master) > 1) { ?>
                                                                 <div class="form-group row">
                                                                     <div class="col-md-12">
                                                                         <label><span id="<?= $vValueName ?>">ID Proof Note</span>
@@ -3766,7 +3766,7 @@ if($eCatType == 'TaxiBid'){
                                                                         </button>
                                                                     </div>
                                                                 <?php }
-                                                            } ?><? //if($vCode == $default_lang  && scount($db_master) > 1) {
+                                                            } ?><?php //if($vCode == $default_lang  && scount($db_master) > 1) {
                                                             ?>
                                                             <!--<div class="form-group">
                                                 <button type="button" class="btn btn-primary" onclick="getAllLanguageCode('tProofNoteValue_', '<?= $default_lang ?>');">Convert To All Language</button>
@@ -4022,7 +4022,7 @@ if($eCatType == 'TaxiBid'){
                                     </div>
                                     <?php if ($sub_action == "sub_category") { ?>
                                         <div class="col-md-6 col-sm-6">
-                                            <?
+                                            <?php
                                             $temp = 1;
                                             $query1 = $obj->MySQLSelect("SELECT count(iVehicleCategoryId) as maxnumber FROM " . $tbl_name . " WHERE iParentId = '" . $sub_cid . "' ORDER BY iDisplayOrder");
                                             $maxnum = isset($query1[0]['maxnumber']) ? $query1[0]['maxnumber'] : 0;
@@ -4033,20 +4033,20 @@ if($eCatType == 'TaxiBid'){
                                             }
                                             ?>
                                             <select name="iDisplayOrder" class="form-control">
-                                                <? foreach ($dataArray as $arr): ?>
+                                                <?php foreach ($dataArray as $arr): ?>
                                                     <option <?= $arr == $temp ? ' selected="selected"' : '' ?>
                                                             value="<?= $arr; ?>">
                                                         -- <?= $arr ?> --
                                                     </option>
-                                                <? endforeach; ?>
-                                                <? if ($action == "Add") { ?>
+                                                <?php endforeach; ?>
+                                                <?php if ($action == "Add") { ?>
                                                     <option value="<?= $temp; ?>">-- <?= $temp ?> --</option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     <?php } else { ?>
                                         <div class="col-md-6 col-sm-6">
-                                            <?
+                                            <?php
                                             $temp = 1;
                                             $query1 = $obj->MySQLSelect("SELECT count(iVehicleCategoryId) as maxnumber FROM " . $tbl_name . " WHERE iParentId = 0 ORDER BY iDisplayOrder");
                                             $maxnum = isset($query1[0]['maxnumber']) ? $query1[0]['maxnumber'] : 0;
@@ -4057,15 +4057,15 @@ if($eCatType == 'TaxiBid'){
                                             }
                                             ?>
                                             <select name="iDisplayOrder" class="form-control">
-                                                <? foreach ($dataArray as $arr): ?>
+                                                <?php foreach ($dataArray as $arr): ?>
                                                     <option <?= $arr == $temp ? ' selected="selected"' : '' ?>
                                                             value="<?= $arr; ?>">
                                                         -- <?= $arr ?> --
                                                     </option>
-                                                <? endforeach; ?>
-                                                <? if ($action == "Add") { ?>
+                                                <?php endforeach; ?>
+                                                <?php if ($action == "Add") { ?>
                                                     <option value="<?= $temp; ?>">-- <?= $temp ?> --</option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     <?php } ?>
@@ -4078,11 +4078,11 @@ if($eCatType == 'TaxiBid'){
                                         <div class="col-md-6 col-sm-6">
                                             <select class="form-control" name='eStatus' id='eStatus' required>
                                                 <option value="Active"
-                                                        <? if (isset($db_data[0]['eStatus']) && 'Active' == $db_data[0]['eStatus']) { ?>selected<? } ?>>
+                                                        <?php if (isset($db_data[0]['eStatus']) && 'Active' == $db_data[0]['eStatus']) { ?>selected<?php } ?>>
                                                     Active
                                                 </option>
                                                 <option value="Inactive"
-                                                        <? if (isset($db_data[0]['eStatus']) &&  'Inactive' == $db_data[0]['eStatus']) { ?>selected<? } ?>>
+                                                        <?php if (isset($db_data[0]['eStatus']) &&  'Inactive' == $db_data[0]['eStatus']) { ?>selected<?php } ?>>
                                                     Inactive
                                                 </option>
                                                 </option>
@@ -4354,7 +4354,7 @@ if($eCatType == 'TaxiBid'){
                                                     <div class="text-danger" id="<?= $vCatNameHomepageN . '_error'; ?>"
                                                          style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                                 </div>
-                                                <?
+                                                <?php
                                                 if ($EN_available) {
                                                     if ($vCode == "EN") { ?>
                                                         <div class="form-group">
@@ -4398,7 +4398,7 @@ if($eCatType == 'TaxiBid'){
                                                     <div class="text-danger" id="<?= $vCatTitleHomepageN . '_error'; ?>"
                                                          style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                                 </div>
-                                                <?
+                                                <?php
                                                 if ($EN_available) {
                                                     if ($vCode == "EN") { ?>
                                                         <div class="form-group">
@@ -4443,7 +4443,7 @@ if($eCatType == 'TaxiBid'){
                                                          id="<?= $vCatSloganHomepageN . '_error'; ?>"
                                                          style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                                 </div>
-                                                <?
+                                                <?php
                                                 if ($EN_available) {
                                                     if ($vCode == "EN") { ?>
                                                         <div class="form-group">
@@ -4485,7 +4485,7 @@ if($eCatType == 'TaxiBid'){
                                                     <div class="text-danger" id="<?= $lCatDescHomepageN . '_error'; ?>"
                                                          style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                                 </div>
-                                                <?
+                                                <?php
                                                 if ($EN_available) {
                                                     if ($vCode == "EN") { ?>
                                                         <div class="form-group">
@@ -4530,7 +4530,7 @@ if($eCatType == 'TaxiBid'){
                                                          id="<?= $vCatDescbtnHomepageN . '_error'; ?>"
                                                          style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                                 </div>
-                                                <?
+                                                <?php
                                                 if ($EN_available) {
                                                     if ($vCode == "EN") { ?>
                                                         <div class="form-group">
@@ -4568,11 +4568,11 @@ if($eCatType == 'TaxiBid'){
                                             <label>Logo</label>
                                         </div>
                                         <div class="col-md-6 col-sm-6">
-                                            <? if (isset($vHomepageLogo) && $vHomepageLogo != '') { ?>
+                                            <?php if (isset($vHomepageLogo) && $vHomepageLogo != '') { ?>
                                                 <!-- <img src="<?= $tconfig['tsite_upload_home_page_service_images'] . "/" . $vHomepageLogo; ?>" style="width:100px;height:100px;"> -->
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=200&h=200&src=' . $tconfig['tsite_upload_home_page_service_images'] . "/" . $vHomepageLogo; ?>"
                                                      style="width:100px;height:100px;">
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control"
                                                    name="vHomepageLogo" <?php echo $required_rule; ?> id="vHomepageLogo"
                                                    placeholder="" style="padding-bottom: 39px;">
@@ -4584,18 +4584,18 @@ if($eCatType == 'TaxiBid'){
                                             <label>Banner</label>
                                         </div>
                                         <div class="col-md-6 col-sm-6">
-                                            <? if (isset($vHomepageBanner) && $vHomepageBanner != '') { ?>
+                                            <?php if (isset($vHomepageBanner) && $vHomepageBanner != '') { ?>
                                                 <!-- <img src="<?= $tconfig['tsite_upload_home_page_service_images'] . "/" . $vHomepageBanner; ?>" style="width:200px;"> -->
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=400&&src=' . $tconfig['tsite_upload_home_page_service_images'] . "/" . $vHomepageBanner; ?>"
                                                      style="width:200px;">
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control"
                                                    name="vHomepageBanner" <?php echo $required_rule; ?>
                                                    id="vHomepageBanner" placeholder="" style="padding-bottom: 39px;">
                                             <span class="notes">[Note: Recommended dimension for banner image is 2880px X 1620px. <br> <?= IMAGE_INSTRUCTION_NOTES ?>]</span>
                                         </div>
                                     </div>
-                                <? }
+                                <?php }
                                 if ($homepage_cubejekx != 0) { ?>
                                     <h3>Shown In Service Section</h3>
                                     <?php if (scount($db_master) > 1) { ?>
@@ -4622,7 +4622,7 @@ if($eCatType == 'TaxiBid'){
                                                 </div>
                                             <?php } ?>
                                         </div>
-                                        <? if ($THEME_OBJ->isMedicalServicev2ThemeActive() == 'Yes' || $THEME_OBJ->isDeliveryKingXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv3ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv3ProThemeActive() == 'Yes' || (defined('IS_CUBEX_APP') && strtoupper(IS_CUBEX_APP) == "YES") || $MODULES_OBJ->isCubeXGcApp() || $THEME_OBJ->isProKXThemeActive() == 'Yes') { ?>
+                                        <?php if ($THEME_OBJ->isMedicalServicev2ThemeActive() == 'Yes' || $THEME_OBJ->isDeliveryKingXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv3ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv3ProThemeActive() == 'Yes' || (defined('IS_CUBEX_APP') && strtoupper(IS_CUBEX_APP) == "YES") || $MODULES_OBJ->isCubeXGcApp() || $THEME_OBJ->isProKXThemeActive() == 'Yes') { ?>
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <label>SubTitle (<?= $db_master[0]['vTitle']; ?>)</label>
@@ -4646,7 +4646,7 @@ if($eCatType == 'TaxiBid'){
                                                     </div>
                                                 <?php } ?>
                                             </div>
-                                        <? } ?>
+                                        <?php } ?>
                                         <div class="modal fade" id="ServiceCatTitle_Modal" tabindex="-1" role="dialog"
                                              aria-hidden="true" data-backdrop="static" data-keyboard="false">
                                             <div class="modal-dialog modal-lg">
@@ -4899,7 +4899,7 @@ if($eCatType == 'TaxiBid'){
                                                     ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=100&src=' . $tconfig['tsite_upload_home_page_service_images'] . "/" . $vHomepageLogoOurServices; ?>"
                                                          style="width:100px;" style="margin-top: 10px;">
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="vHomepageLogoOurServices" id="vHomepageLogoOurServices" placeholder="" style="margin: 10px 0;">
                                                 
                                                 <div><span class="notes">[Note: Upload only png image size of 512px X 512px. <br> <?= IMAGE_INSTRUCTION_NOTES ?>]</span></div>
@@ -4909,10 +4909,10 @@ if($eCatType == 'TaxiBid'){
                                                 <label>Background Image</label>
                                             </div>
                                             <div class="col-md-6 col-sm-6">
-                                                <? if (isset($vServiceHomepageBanner) && $vServiceHomepageBanner != '') { ?>
+                                                <?php if (isset($vServiceHomepageBanner) && $vServiceHomepageBanner != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=400&&src=' . $tconfig['tsite_upload_home_page_service_images'] . "/" . $vServiceHomepageBanner; ?>"
                                                          style="width:200px;">
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control"
                                                        name="vServiceHomepageBanner" <?php echo $required_rule; ?>
                                                        id="vServiceHomepageBanner" placeholder=""
@@ -4921,7 +4921,7 @@ if($eCatType == 'TaxiBid'){
                                             </div>
                                         <?php } ?><?php } ?>
                                     </div>
-                                <? }
+                                <?php }
                                 //becoz orderhomepage shown in cubex and cubejekx both
                                 if ($cubexthemeon == 1 && !$MODULES_OBJ->isCubeXGcApp()) { ?>
                                     <div class="row">
@@ -4931,20 +4931,20 @@ if($eCatType == 'TaxiBid'){
                                         <div class="col-md-6 col-sm-6">
                                             <input type="hidden" name="temp_orderHomepage" id="temp_orderHomepage"
                                                    value="<?= ($action == 'Edit') ? $iDisplayOrderHomepage_db : '1'; ?>">
-                                            <?
+                                            <?php
                                             $display_numbers = ($action == "Add") ? $iDisplayOrder_max_Homepage : $iDisplayOrderHomepage;
                                             ?>
                                             <select name="iDisplayOrderHomepage" class="form-control">
-                                                <? for ($i = 1; $i <= $display_numbers; $i++) { ?>
-                                                    <option value="<?= $i ?>" <? if ($i == $iDisplayOrderHomepage_db) {
+                                                <?php for ($i = 1; $i <= $display_numbers; $i++) { ?>
+                                                    <option value="<?= $i ?>" <?php if ($i == $iDisplayOrderHomepage_db) {
                                                         echo "selected";
                                                     } ?>> -- <?= $i ?> --
                                                     </option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
-                                <? } ?>
+                                <?php } ?>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <?php if (($action == 'Edit' && $userObj->hasPermission($update)) || ($action == 'Add' && $userObj->hasPermission($create))) { ?>
@@ -4972,7 +4972,7 @@ if($eCatType == 'TaxiBid'){
         <span>Language Translation is in Process. Please Wait...</span>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <link rel="stylesheet" type="text/css" media="screen"
       href="css/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
@@ -5072,7 +5072,7 @@ if($eCatType == 'TaxiBid'){
                 $(".bannerbutton").hide(); // Comment By HJ On 23-01-2019 For Prevent JS Error Like : An invalid form control with name='tBannerButtonText_EN' is not focusable.
                 <?php if (!empty($tBannerButtonTextdefault)) { ?>
                     document.getElementById("<?php echo $tBannerButtonTextdefault; ?>").removeAttribute('required', 'required');
-                <? } ?>
+                <?php } ?>
             } else if (targetBox1 == 'Banner') {
                 $(".Icon").hide();
                 $(".Banner").show();

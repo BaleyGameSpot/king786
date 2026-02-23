@@ -332,9 +332,9 @@ if ($action == 'Edit') {
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <label>Email<? if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>
+                                <label>Email<?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>
                                         <span class="red">
-                                        *</span><? } ?></label>
+                                        *</span><?php } ?></label>
                             </div>
                             <div class="col-lg-6">
                                 <input autocomplete="new-email" type="text" class="form-control" name="vEmail"
@@ -514,7 +514,7 @@ include_once('footer.php');
             vEmail: {
                 <?php if ($ENABLE_EMAIL_OPTIONAL != 'Yes') { ?>
                 required: true,
-                <? } ?>
+                <?php } ?>
                 email: true
             },
             <?php if ($id == '') { ?>vPassword: {required: true, noSpace: true, minlength: 6, maxlength: 16},<?php } ?>

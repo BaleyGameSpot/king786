@@ -231,7 +231,7 @@ if ($action == 'Edit') {
         <title>Admin | Home Content <?= $action; ?></title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <!-- On OFF switch -->
         <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -253,8 +253,8 @@ if ($action == 'Edit') {
     <body class="padTop53 " >
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -272,17 +272,17 @@ if ($action == 'Edit') {
                     <hr />
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                 </div><br/>
-                            <? } elseif ($success == 2) { ?>
+                            <?php } elseif ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
                             <form method="post" name="_home_content_form" id="_home_content_form" action="" enctype='multipart/form-data'>
                                 <input type="hidden" name="id" value="<?= $id; ?>"/>
                                 <input type="hidden" name="vCode" value="<?= $vCode; ?>">
@@ -313,9 +313,9 @@ if ($action == 'Edit') {
                                                 <label>First Image(Background image)</label>
                                             </div>
                                             <div class="col-lg-6">
-                                                <? if ($general_section['img'] != '') { ?>
+                                                <?php if ($general_section['img'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$general_section['img']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control FilUploader" name="general_section_img"  id="general_section_img" accept=".png,.jpg,.jpeg,.gif">
                                                 <br/>
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 609px * 547px.]</span>
@@ -326,9 +326,9 @@ if ($action == 'Edit') {
                                                 <label>Second Image</label>
                                             </div>
                                             <div class="col-lg-6">
-                                                <? if ($general_section['img_sec'] != '') { ?>
+                                                <?php if ($general_section['img_sec'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$general_section['img_sec']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control FilUploader" name="general_section_img_sec"  id="general_section_img_sec" accept=".png,.jpg,.jpeg,.gif">
                                                 <br/>
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 609px * 547px.]</span>
@@ -362,9 +362,9 @@ if ($action == 'Edit') {
                                                 <label>Image</label>
                                             </div>
                                             <div class="col-lg-6">
-                                                <? if ($how_it_work_section['img'] != '') { ?>
+                                                <?php if ($how_it_work_section['img'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$how_it_work_section['img']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control FilUploader" name="how_it_work_section_img"  id="how_it_work_section_img" accept=".png,.jpg,.jpeg,.gif">
                                                 <br/>
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 493px * 740px.]</span>
@@ -405,9 +405,9 @@ if ($action == 'Edit') {
                                                 <label>Image</label>
                                             </div>
                                             <div class="col-lg-6">
-                                                <? if ($download_section['img'] != '') { ?>
+                                                <?php if ($download_section['img'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$download_section['img']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control FilUploader" name="download_section_img"  id="download_section_img" accept=".png,.jpg,.jpeg,.gif">
                                                 <br/>
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 1920px * 405px.]</span>
@@ -448,9 +448,9 @@ if ($action == 'Edit') {
                                                <label>Image</label>
                                            </div>
                                            <div class="col-lg-6">
-                                               <? if ($calculate_section['img'] != '') { ?>
+                                               <?php if ($calculate_section['img'] != '') { ?>
                                                    <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$calculate_section['img']; ?>" class="innerbg_image"/>
-                                               <? } ?>
+                                               <?php } ?>
                                                <input type="file" class="form-control FilUploader" name="calculate_section_img"  id="calculate_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
                                                <br/>
                                                <span class="notes">[Note: For Better Resolution Upload only image size of 860px * 445px.]</span>
@@ -483,9 +483,9 @@ if ($action == 'Edit') {
                                                 <label>Image</label>
                                             </div>
                                             <div class="col-lg-6">
-                                                <? if ($secure_section['img'] != '') { ?>
+                                                <?php if ($secure_section['img'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$secure_section['img']; ?>" class="innerbg_image" />
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control FilUploader" name="secure_section_img"  id="secure_section_img" accept=".png,.jpg,.jpeg,.gif">
                                                 <br/>
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 564px * 570px.]</span>
@@ -518,9 +518,9 @@ if ($action == 'Edit') {
                                                 <label>Image</label>
                                             </div>
                                             <div class="col-lg-6">
-                                                <? if ($call_section['img'] != '') { ?>
+                                                <?php if ($call_section['img'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$call_section['img']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control FilUploader" name="call_section_img"  id="call_section_img" accept=".png,.jpg,.jpeg,.gif">
                                                 <br/>
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 609px * 547px.]</span>
@@ -553,9 +553,9 @@ if ($action == 'Edit') {
                                                 <label>Image</label>
                                             </div>
                                             <div class="col-lg-6">
-                                                <? if ($track_section['img'] != '') { ?>
+                                                <?php if ($track_section['img'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$track_section['img']; ?>" class="innerbg_image" />
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control FilUploader" name="track_section_img"  id="track_section_img" accept=".png,.jpg,.jpeg,.gif">
                                                 <br/>
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 564px * 570px.]</span>
@@ -581,7 +581,7 @@ if ($action == 'Edit') {
         </div>
         <!--END MAIN WRAPPER -->
         
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
         <script src="../assets/plugins/ckeditor/ckeditor.js"></script>
         <script src="../assets/plugins/ckeditor/config.js"></script>

@@ -273,12 +273,12 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
     <meta content="" name="keywords"/>
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <body class="padTop53">
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -383,7 +383,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                     </tr>
                     </thead>
                     <tbody>
-                    <?
+                    <?php
                     if (scount($driverPayment) > 0) { ?>
                         <?php foreach ($driverPayment as  $payment) { ?>
                             <tr class="gradeA">
@@ -421,11 +421,11 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                 </td>
 
                                 <td align="center">
-                                    <? if ($payment['eDriverPaymentStatus'] == 'Unsettelled') { ?>
+                                    <?php if ($payment['eDriverPaymentStatus'] == 'Unsettelled') { ?>
                                         <input class="validate[required]" type="checkbox"
                                                value="<?= $payment['iDriverId'] ?>"
                                                id="iTripId_<?= $payment['iDriverId'] ?>" name="iDriverId[]">
-                                    <? } ?>
+                                    <?php } ?>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -435,13 +435,13 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                 <a href="javascript:void(0);" onClick="Paytodriver();" class="btn btn-primary">Mark As Settled</a>
                             </td>
                         </tr>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <tr class="gradeA">
                             <td colspan="8" align="center">
                                 No <?= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?> Payment Details Found.
                             </td>
                         </tr>
-                    <? } ?>
+                    <?php } ?>
                     </tbody>
                 </table>
             </form>
@@ -541,10 +541,10 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 
 </body>
 

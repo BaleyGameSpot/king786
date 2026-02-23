@@ -191,7 +191,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
 
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -214,7 +214,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <?
+    <?php
     include_once('header.php');
     include_once('left_menu.php');
     ?>
@@ -232,28 +232,28 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable msgs_hide">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div><br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable ">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div><br/>
-                    <? } else if ($success == 3) { ?>
+                    <?php } else if ($success == 3) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?php echo $_REQUEST['varmsg']; ?>
                         </div><br/>
-                    <? } ?>
-                    <? if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
+                    <?php } ?>
+                    <?php if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             Record Not Updated .
                         </div><br/>
-                    <? } ?>
+                    <?php } ?>
                     <form id="_news_form" name="_news_form" method="post" action="" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                         <input type="hidden" name="previousLink" id="previousLink"
@@ -263,7 +263,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                             <div class="col-lg-12" id="errorMessage"></div>
                         </div>
 
-                        <? if (scount($db_master) > 0) {
+                        <?php if (scount($db_master) > 0) {
                             if ($onlyRideShareEnable != 'Yes' && $onlyBSREnable != 'Yes') { ?>
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -282,7 +282,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                             <option value="rider" <?php if ($eUserType == 'rider') {
                                                 echo 'selected';
                                             } ?>><?php echo $langage_lbl_admin['LBL_RIDER']; ?></option>
-                                            <? if (DELIVERALL == "Yes") { ?>
+                                            <?php if (DELIVERALL == "Yes") { ?>
                                                 <option value="company" <?php if ($eUserType == 'company') {
                                                     echo 'selected';
                                                 } ?>>
@@ -294,7 +294,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <?php } ?>
 
                                                 </option>
-                                            <? } ?>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -304,13 +304,13 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                     <label>Image</label>
                                 </div>
                                 <div class="col-md-6 col-sm-6">
-                                    <? if (!empty($vNewfeedImage)) { ?>
+                                    <?php if (!empty($vNewfeedImage)) { ?>
                                         <!-- <img src="<?= $tconfig['tsite_upload_images_news_feed'] . "/" . $vNewfeedImage; ?>" style="width:100px;height:100px;"> -->
 
                                         <img src="<?= $tconfig['tsite_url'] . 'resizeImg.php?w=200&h=200&src=' . $tconfig['tsite_upload_images_news_feed'] . "/" . $vNewfeedImage; ?>"
                                              style="width:100px;height:100px;">
 
-                                    <? } ?>
+                                    <?php } ?>
                                     <input type="file" class="form-control" name="vNewfeedImage" id="vNewfeedImage"
                                            value="<?= isset($vNewfeedImage) ? $vNewfeedImage : ''; ?>">
                                 </div>
@@ -590,7 +590,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                     </div>
                                 </div>
                             <?php } ?>
-                            <?/*
+                            <?php /*
                                     for ($i = 0; $i < scount($db_master); $i++) {
                                         $vCode = $db_master[$i]['vCode'];
                                         $vTitle = $db_master[$i]['vTitle'];
@@ -610,11 +610,11 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <input type="text" class="form-control" name="<?= $lableName; ?>" id="<?= $lableName; ?>" value="<?= $userEditDataArr[$lableName]; ?>" placeholder="<?= $vTitle; ?> Value" <?= $required; ?>>
                                                     <div class="text-danger" id="<?= $lableName.'_error'; ?>" style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                                 </div>
-            <? if ($vCode == $default_lang && scount($db_master) > 1) { ?>
-                                                    <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('<? echo $txtBoxNameArr[$l].'_'; ?>', '<?= $default_lang ?>');">Convert To All Language</button>
+            <?php if ($vCode == $default_lang && scount($db_master) > 1) { ?>
+                                                    <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('<?php echo $txtBoxNameArr[$l].'_'; ?>', '<?= $default_lang ?>');">Convert To All Language</button>
             <?php } ?>
                                             </div>
-        <? } ?>
+        <?php } ?>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <label>Description (<?= $vTitle; ?>) <?php echo $required_msg; ?></label>
@@ -623,14 +623,14 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                 <textarea class="form-control" name="<?= $descVal; ?>" id="<?= $descVal; ?>" placeholder="<?= $vTitle; ?> Value" <?= $required; ?>><?= $userEditDataArr[$descVal]; ?></textarea>
                                                 <div class="text-danger" id="<?= $descVal.'_error'; ?>" style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                             </div>
-                                        <? if ($vCode == $default_lang && scount($db_master) > 1) { ?>
+                                        <?php if ($vCode == $default_lang && scount($db_master) > 1) { ?>
                                                 <div class="col-md-6 col-sm-6">
                                                     <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('tDescription_', '<?= $default_lang ?>');">Convert To All Language</button>
                                                 </div>
                                         <?php } ?>
                                         </div>
 
-        <?
+        <?php
     }*/
                         }
                         ?>
@@ -657,7 +657,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
         <span>Language Translation is in Process. Please Wait...</span>
     </div>
 </div>
-<?
+<?php
 include_once('footer.php');
 ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>

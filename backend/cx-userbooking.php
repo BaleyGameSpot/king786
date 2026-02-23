@@ -214,7 +214,7 @@ $script = "booking";
 
             <div class="page-contant-inner1">
 
-                <?
+                <?php
 
                 if(isset($_REQUEST['ufxservice'])) {
 

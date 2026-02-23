@@ -404,9 +404,9 @@ if(strtoupper(DELIVERALL) == "YES") {
                         <table id="my-trips-data" class="ui celled table custom-table" style="width:100%">
                             <thead>
                                 <tr>
-                                    <? if (scount($allservice_cat_data) > 1) { ?>
+                                    <?php if (scount($allservice_cat_data) > 1) { ?>
                                         <th style="text-align: center;"><?= $langage_lbl['LBL_ORDER_TYPE'] ?></th>
-                                    <? } ?>
+                                    <?php } ?>
                                     <th style="text-align: center;"><?= $langage_lbl['LBL_ORDER_NO_TXT']; ?></th>   
                                     <th width="17%" style="text-align: center;"><?= $langage_lbl['LBL_ORDER_DATE_TXT']; ?></th>
                                     <th style="text-align: center;"><?= $restaurant ?></th>
@@ -491,9 +491,9 @@ if(strtoupper(DELIVERALL) == "YES") {
 
                                     ?>
                                     <tr class="gradeA">
-                                        <? if (scount($allservice_cat_data) > 1) { ?>
+                                        <?php if (scount($allservice_cat_data) > 1) { ?>
                                             <td><?= $vServiceName; ?></td>
-                                        <? } ?>
+                                        <?php } ?>
                                         <td align="center" data-order="<?php echo $db_order_detail[$i]['iOrderId']; ?>">
                                             <?=$db_order_detail[$i]['vOrderNo'];?>
                                             <?= $db_order_detail[$i]['eTakeaway'] == 'Yes' ? '<br><span class="grey-color">'.$langage_lbl['LBL_TAKE_AWAY'].'</span>' : ''?>
@@ -508,15 +508,15 @@ if(strtoupper(DELIVERALL) == "YES") {
                                         </td>
                                         <td align="center"><?= $db_order_detail[$i]['TotalItem']; ?></td>
                                         <td align="center">
-                                        <? 
+                                        <?php 
                                         if (isset($db_order_detail[$i]['fRoundingAmount']) && !empty($db_order_detail[$i]['fRoundingAmount']) && $db_order_detail[$i]['fRoundingAmount'] != 0 && $samecur == 1 && $currData[0]['eRoundingOffEnable'] == "Yes" && $MODULES_OBJ->isEnableRoundingMethod()) {
                                         $roundingOffTotal_fare_amountArr = getRoundingOffAmounttrip($db_order_detail[$i]['fNetTotal'] * $Ratio, $db_order_detail[$i]['fRoundingAmount'], $db_order_detail[$i]['eRoundingType']); ////start
                                        
                                          echo formateNumAsPerCurrency($roundingOffTotal_fare_amountArr['finalFareValue'],$currencycode);
                                         ?>
-                                        <?} else {?>
+                                        <?php } else {?>
                                         <?= formateNumAsPerCurrency($fNetTotalratio,$currencycode); ?>
-                                          <? } ?>  
+                                          <?php } ?>  
                                         </td>
                                         
                                         <td align="center"><?= str_replace("#STORE#", $db_order_detail[$i]['vCompany'], $db_order_detail[$i]['vStatus']); ?></td>
@@ -526,7 +526,7 @@ if(strtoupper(DELIVERALL) == "YES") {
                                             </a>
                                         </td>       
                                     </tr>
-                                <? } ?>     
+                                <?php } ?>     
                             </tbody>
                         </table>
                     </div>

@@ -722,8 +722,8 @@ $json_lang = json_encode($languageArr);
                                 ?>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <label>Email <? if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>
-                                                <span class="red"> *</span><? } ?></label>
+                                        <label>Email <?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>
+                                                <span class="red"> *</span><?php } ?></label>
                                     </div>
                                     <div class="col-lg-12">
                                         <input type="email" class="form-control" name="vEmail" id="vEmail" value="<?= $vEmail; ?>" placeholder="Email">
@@ -791,7 +791,7 @@ $json_lang = json_encode($languageArr);
                                             <?php } ?>
                                             <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
                                                 <option value="<?= $db_country[$i]['vCountryCode'] ?>" <?php if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if ($vCountry == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
-                                            <? } ?>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -934,7 +934,7 @@ $json_lang = json_encode($languageArr);
                                         </div>
                                     </div>
                                 <?php } ?>
-                                <? if ($takeaway == 'Yes') { ?>
+                                <?php if ($takeaway == 'Yes') { ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <label><?= $langage_lbl_admin['LBL_TAKE_AWAY'] ?></label>
@@ -953,7 +953,7 @@ $json_lang = json_encode($languageArr);
                                             </select>
                                         </div>
                                     </div>
-                                <? }
+                                <?php }
                                 if ($SafetyPractices == 'Yes') { ?>
                                     <div class="row" id="eSafetyPractices">
                                         <div class="col-lg-12">
@@ -971,7 +971,7 @@ $json_lang = json_encode($languageArr);
                                             </select>
                                         </div>
                                     </div>
-                                <? } ?>
+                                <?php } ?>
                                 <?php if ($StoreWiseCommission == "Yes") { ?>
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -991,15 +991,15 @@ $json_lang = json_encode($languageArr);
                                         <div class="col-lg-12">
                                             <!--<div class="make-switch" data-on="success" data-off="warning">-->
                                             <!--<input <?= $radiobtn ?> type="checkbox" id="eAvailable" name="eAvailable" <?= ($id != '' && $eAvailable == 'Yes') ? 'checked' : ''; ?>/>-->
-                                            <? if ($action == 'Add') { ?>
+                                            <?php if ($action == 'Add') { ?>
                                             <span class="tool-tip" data-toggle="tooltip" data-placement="top" title="<?= $langage_lbl_admin['LBL_STORE_ACCEPT_ORDER_TOOLTIP'] ?>">
-                                                            <? } ?>
+                                                            <?php } ?>
                                                             <div class="make-switch" id="eAvailable_<?= $id; ?>" data-on="success" data-off="warning">
                                                                 <input <?= $radiobtn ?> data-id="<?= $id; ?>" data-status="<?= ($eAvailable == "Yes") ? 'No' : 'Yes' ?>" onchange="return autoAcceptStatus(this,'eAvailable',event);" type="checkbox" id="eAvailable" data-estatus="<?= $db_data[0]['eStatus'] ?>" data-sessionId="<?= $db_data[0]['tSessionId']; ?>" data-serviceId="<?= $iServiceIdNew; ?>" name="eAvailable" <?= ($id != '' && $eAvailable == 'Yes') ? 'checked' : ''; ?>/>
                                                             </div>
-                                                            <? if ($action == 'Add') { ?>
+                                                            <?php if ($action == 'Add') { ?>
                                                         </span>
-                                        <? } ?>
+                                        <?php } ?>
                                         </div>
                                     </div>
                                 <?php }
@@ -1009,15 +1009,15 @@ $json_lang = json_encode($languageArr);
                                             <label>Auto Accept Order</label>
                                         </div>
                                         <div class="col-lg-12">
-                                            <? if ($action == 'Add') { ?>
+                                            <?php if ($action == 'Add') { ?>
                                             <span class="tool-tip" data-toggle="tooltip" data-placement="top" title="<?= $langage_lbl_admin['LBL_STORE_ACCEPT_ORDER_TOOLTIP'] ?>">
-                                                            <? } ?>
+                                                            <?php } ?>
                                                             <div class="make-switch" data-on="success" data-off="warning">
                                                                 <input <?= $radiobtn ?> type="checkbox" id="eAutoaccept" name="eAutoaccept" <?= ($id != '' && $eAutoaccept == 'Yes') ? 'checked' : ''; ?>/>
                                                             </div>
-                                                            <? if ($action == 'Add') { ?>
+                                                            <?php if ($action == 'Add') { ?>
                                                         </span>
-                                        <? } ?>
+                                        <?php } ?>
                                         </div>
                                     </div>
                                 <?php } ?>
@@ -1067,7 +1067,7 @@ $json_lang = json_encode($languageArr);
                                         </div>
                                     </div>
                                 </div>
-                                <? //added by SP on 14-10-2020 for timeslot changes
+                                <?php //added by SP on 14-10-2020 for timeslot changes
                                 if (strtoupper($ENABLE_TIMESLOT_ADDON) == "YES") { ?>
                                     <!--==============SLOT AREA==============-->
                                     <?php for ($j = 0; $j < scount($sltAry); $j++) {
@@ -1262,7 +1262,7 @@ $json_lang = json_encode($languageArr);
                                             </div>
                                         </div>
                                     </div>
-                                <? } ?>
+                                <?php } ?>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <label>Minimum Amount Per Order (In <?= $db_currency[0]['vName'] ?>)
@@ -1604,7 +1604,7 @@ $json_lang = json_encode($languageArr);
     setCity('<?php echo $vState; ?>', '<?php echo $vCity; ?>');
 
     function changeServiceType(iServiceid) {
-        var iCompanyId = "<? echo $id ?>";
+        var iCompanyId = "<?php echo $id ?>";
 
         iServiceid = Array.isArray($('#iServiceId').val()) ? $('#iServiceId').val().join(",") : $('#iServiceId').val();
         var cuisine_ids = JSON.stringify(Object.assign({}, $('#js-cuisine-multiple').val()));
@@ -1773,13 +1773,13 @@ $json_lang = json_encode($languageArr);
 
 
     $(function () {
-        <? //added by SP on 14-10-2020 for timeslot changes
+        <?php //added by SP on 14-10-2020 for timeslot changes
         if(strtoupper($ENABLE_TIMESLOT_ADDON) == "YES") { ?>
         $('.timepickerField').datetimepicker({
             format: 'hh:mm A',
             ignoreReadonly: true,
         });
-        <? } else { ?>
+        <?php } else { ?>
         $('#vFromMonFriTimeSlot1').datetimepicker({
             format: 'HH:mm A',
             ignoreReadonly: true,
@@ -1900,7 +1900,7 @@ $json_lang = json_encode($languageArr);
             ignoreReadonly: true,
             useCurrent: false
         });
-        <? } ?>
+        <?php } ?>
 
         /*Offer Apply Type*/
         var fOfferAppyType = $('#fOfferAppyType').val();

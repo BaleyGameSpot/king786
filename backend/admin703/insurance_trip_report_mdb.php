@@ -311,7 +311,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?
+                                    <?php
                                     $set_unsetarray = array();
                                     if (scount($db_trip) > 0) {
                                         $systemTimeZone = date_default_timezone_get();
@@ -363,7 +363,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                             ?>
                                             <tr class="gradeA ">
                                                 <td align="center">
-                                                    <?
+                                                    <?php
                                                     if ($db_trip[$i]['vRideNo'] != "") {
                                                         $link = "invoice.php?iTripId=" . $db_trip[$i]['iTripId'];
                                                         if ($db_trip[$i]['eType'] == "Multi-Delivery") {
@@ -386,7 +386,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                 <td align="center"><?= $get_dStartDate_format['tDisplayDateTime'].$Start_time_zone_difference_text; ?></td>
                                                 <td align="center"><?= $get_dEndDate_format['tDisplayDateTime'].$time_zone_difference_text; ?></td>
                                                 <td align="center">
-                                                    <?
+                                                    <?php
                                                     $db_trip[$i]['fDistance'] = $totalDistance;
                                                     $fDistance = number_format($db_trip[$i]['fDistance'], 2);
                                                     if ($DEFAULT_DISTANCE_UNIT == "Miles") {
@@ -397,7 +397,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                     ?>
                                                 </td>
                                                 <td align="center">
-                                                    <?
+                                                    <?php
                                                     $a = strtotime($db_trip[$i]['dStartDate']);
                                                     $b = strtotime($db_trip[$i]['dEndDate']);
                                                     $diff_time = ($b - $a);
@@ -418,8 +418,8 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                     ?>
                                                 </td>
                                             </tr>
-                                        <? } ?>
-                                        <?
+                                        <?php } ?>
+                                        <?php
                                     } else {
                                         ?>
                                         <tr class="gradeA">

@@ -24,7 +24,7 @@ $pagesubtitle_lang = $pagesubtitle;
 </style>
 <body>
 
-<!--<h2 class="header-page trip-detail"><?/*= $page_title; */?></h2>-->
+<!--<h2 class="header-page trip-detail"><?php /*= $page_title; */?></h2>-->
 <div class="static-page">
     <?= $pagesubtitle_lang; ?>
 </div>

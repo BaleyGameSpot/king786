@@ -117,13 +117,13 @@ $db_service_category = $obj->MySQLSelect($service_category);
                                         <label><?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?><span class="red">*</span></label>
                                         <input type="text" Required placeholder="<?= $langage_lbl['LBL_EMAIL_name@email.com']; ?>" name="vEmail" class="create-account-input " id="vEmail_verify" value="<?php echo $vEmail; ?>" />
                                     </strong>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <strong>
                                         <label><?= $langage_lbl['LBL_SIGNUP_777-777-7777']; ?><span class="red">*</span></label>
                                         <strong class="ph_no newrow" id="mobileCheck"><input required type="text"  id="vPhone" value="<?php echo $vPhone; ?>" placeholder="<?= $langage_lbl['LBL_SIGNUP_777-777-7777']; ?>" class="create-account-input create-account-input1 vPhone_verify" name="vPhone"/></strong>
                                         <strong class="c_code"><input type="text"  name="vCode" readonly  class="create-account-input " value="<?php echo $vCode; ?>" id="code" /></strong>
                                     </strong>
-                                <?  } ?>
+                                <?php  } ?>
                                     <strong>
                                         <label><?= $langage_lbl['LBL_PASSWORD']; ?><span class="red">*</span></label>
                                         <input id="pass" type="password" name="vPassword" placeholder="<?= $langage_lbl['LBL_PASSWORD']; ?>" class="create-account-input create-account-input1 " required value="" />
@@ -174,9 +174,9 @@ $db_service_category = $obj->MySQLSelect($service_category);
                                         <label><?= $langage_lbl['LBL_COUNTRY_TXT'] ?><span class="red">*</span></label>
                                         <select class="custom-select-new" required name='vCountry' id="vCountry" onChange="setState(this.value, '');" >
                                             <option value=""><?= $langage_lbl['LBL_SELECT_TXT'] ?></option>
-                                            <? for($i=0;$i<scount($db_country);$i++){ ?>
-                                            <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?if($DEFAULT_COUNTRY_CODE_WEB==$db_country[$i]['vCountryCode']){?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
-                                            <? } ?>
+                                            <?php for($i=0;$i<scount($db_country);$i++){ ?>
+                                            <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?php if($DEFAULT_COUNTRY_CODE_WEB==$db_country[$i]['vCountryCode']){?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
+                                            <?php } ?>
                                         </select>
                                     </strong>	
                                     <strong>
@@ -213,12 +213,12 @@ $db_service_category = $obj->MySQLSelect($service_category);
                                         <strong class="ph_no newrow" id="mobileCheck"><input required type="text"  id="vPhone" value="<?php echo $vPhone; ?>" placeholder="<?= $langage_lbl['LBL_SIGNUP_777-777-7777']; ?>" class="create-account-input create-account-input1 vPhone_verify" name="vPhone"/></strong>
                                         <strong class="c_code"><input type="text"  name="vCode" readonly  class="create-account-input " value="<?php echo $vCode; ?>" id="code" /></strong>
                                     </strong>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <strong id="emailCheck">
                                         <label><?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?></label>
                                         <input type="text" placeholder="<?= $langage_lbl['LBL_EMAIL_name@email.com']; ?>" name="vEmail" class="create-account-input " id="vEmail_verify" value="<?php echo $vEmail; ?>" />
                                     </strong>
-                                <? } ?>                           
+                                <?php } ?>                           
                                 </span> 
                                 <span class="newrow">
                                     <!-- recaptcha code start -->
@@ -267,7 +267,7 @@ $db_service_category = $obj->MySQLSelect($service_category);
         <script type="text/javascript" src="assets/js/validation/jquery.validate.min.js" ></script>
         <?php if ($lang != 'en') { ?>
            <!--  <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-           <? include_once('otherlang_validation.php');?>
+           <?php include_once('otherlang_validation.php');?>
 <?php } ?>
         <script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
 
@@ -299,7 +299,7 @@ $db_service_category = $obj->MySQLSelect($service_category);
                         rules: {
                             company_name: {required: true},
                             vContactName: {required: true},
-                            vEmail: { <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required: true, <? } ?> 
+                            vEmail: { <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required: true, <?php } ?> 
                                 email: true,
                                 /*remote: {
                                     url: 'ajax_validate_email_new.php',

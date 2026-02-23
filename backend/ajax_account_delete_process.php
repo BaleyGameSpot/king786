@@ -116,9 +116,9 @@ if ($screen == 'mainSignIn') {
     <!------------------2023 changes----------------->
     <!--<div id="signin-section">
     <form id="_signin-section" name="signin-section">
-        <strong><?/*= $languageLabelsArr['LBL_SIGN_IN'] */ ?></strong>
+        <strong><?php /*= $languageLabelsArr['LBL_SIGN_IN'] */ ?></strong>
         <div class="form-group">
-            <label><?/*= $languageLabelsArr['LBL_ENTER_MOBILE_NO'] */ ?></label>
+            <label><?php /*= $languageLabelsArr['LBL_ENTER_MOBILE_NO'] */ ?></label>
             <div class="phone-input">
 				<input type="text" name="email" id="email" class="form-control" pattern="^[0-9]*$" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" maxlength="15">
 				<input name="GeneralUserType" type="hidden" value="<?php /*echo $GeneralUserType; */ ?>">
@@ -127,14 +127,14 @@ if ($screen == 'mainSignIn') {
 			</div>
         </div>
         <span> <?php /*echo  $emailError */ ?> </span>
-        <a onclick="formsubmit('_signin-section');" class="gen-button"><?/*= $languageLabelsArr['LBL_BTN_NEXT_TXT'] */ ?> <span><img src="<?/*= $tconfig['tsite_url'] . "assets/img/apptype/" . $template . "/arrow.svg" */ ?>" alt=""></span></a>
+        <a onclick="formsubmit('_signin-section');" class="gen-button"><?php /*= $languageLabelsArr['LBL_BTN_NEXT_TXT'] */ ?> <span><img src="<?php /*= $tconfig['tsite_url'] . "assets/img/apptype/" . $template . "/arrow.svg" */ ?>" alt=""></span></a>
     </form>
 </div>-->
     <!------------------2023 changes----------------->
     <!------------------2024 changes----------------->
     <div id="signin-section">
         <form id="_signin-section" name="signin-section">
-            <!-- <strong><?/*= $languageLabelsArr['LBL_SIGN_IN'] */ ?></strong>-->
+            <!-- <strong><?php /*= $languageLabelsArr['LBL_SIGN_IN'] */ ?></strong>-->
             <div class="alert alert-danger" role="alert" id="error_signing_page" style="display: none">
                 <span id="txt_error_signing_page"></span>
                 <span class="close-btn" onclick="closeAlert('error_signing_page')">×</span>

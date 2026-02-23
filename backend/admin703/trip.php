@@ -780,7 +780,7 @@ if ($hotelPanel > 0 || $kioskPanel > 0) {
                                             echo "selected";
                                         }
                                         ?>><?= $langage_lbl_admin['LBL_HEADER_RDU_FLY_RIDE']; ?> </option>
-                                    <? } ?>
+                                    <?php } ?>
                                 </select>
                             </div>
 
@@ -1108,13 +1108,13 @@ if ($hotelPanel > 0 || $kioskPanel > 0) {
                                                     ?>
 
                                                                 <td class="align-center"><?= $eBookingFrom;?> <br> <a href="javascript:void(0);" onClick="show_kiosk_details('<?= $db_trip[$i]["iHotelBookingId"]?>')"  style="text-decoration: underline;"> <?= isset($kioskupdatedAry[$db_trip[$i]['iHotelBookingId']]) ? $kioskupdatedAry[$db_trip[$i]['iHotelBookingId']] : '' ?></td>
-                                                            <? //}
+                                                            <?php //}
                                                         ?>
                                                             <!-- <td class="align-center"><?= $eBookingFrom; ?></td>  -->
                                                         <?php
                                                         }else{ ?>
                                                     <td class="align-center"><?= $eBookingFrom; ?></td>
-                                                        <? }
+                                                        <?php }
                                                 }
                                                 ?>
                                                 <td align="center">
@@ -1654,14 +1654,14 @@ include_once 'service_details.php';
     </div>
 </div>
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <!--<link rel="stylesheet" href="css/select2/select2.min.css" />
 
     <script src="js/plugins/select2.min.js"></script> -->
 <script src="../assets/js/jquery-ui.min.js"></script>
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script>
     var typeArr = '<?= json_encode($vehilceTypeArr, JSON_HEX_APOS); ?>';
 

@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 $tbl_name 	= 'trips';
 $script="Trips";
@@ -185,11 +185,11 @@ $get_endDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
                 </li>
                 <li>
                     <div class="overview-data">
-								<? if($db_trip_data['eType'] == 'UberX') { ?>
+								<?php if($db_trip_data['eType'] == 'UberX') { ?>
 									<strong><?=$langage_lbl['LBL_MYTRIP_TRIP_TYPE']; ?></strong>
-								<? } else { ?>
+								<?php } else { ?>
 									<strong><?=$langage_lbl['LBL_INVOICE_Car']; ?></strong>
-								<? } ?>
+								<?php } ?>
 								<?php if(!empty($db_trip_data['vVehicleCategory'])){
 								  echo "<span>".$db_trip_data['vVehicleCategory'] . "-" . $db_trip_data['vVehicleType']."</span>";
 								} else {
@@ -234,22 +234,22 @@ $get_endDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
                             <strong><?= clearName($db_trip_data['PassengerDetails']['vName'] . ' ' . $db_trip_data['PassengerDetails']['vLastName']); ?> <?= $langage_lbl['LBL_RIDE_TXT_ADMIN']; ?> <?= $langage_lbl['LBL_WITH_TXT']; ?>  <?= clearName($db_trip_data['DriverDetails']['vName'] . ' ' . $db_trip_data['DriverDetails']['vLastName']); ?>
 								<?php } else if ($_SESSION['sess_user'] == "driver") { ?>
                         <div class="profile-image">
-                            <? if ($db_trip_data['PassengerDetails']['vImgName'] != '' && file_exists($tconfig["tsite_upload_images_passenger_path"] . '/' . $db_trip_data['PassengerDetails']['iUserId'] . '/2_' . $db_trip_data['PassengerDetails']['vImgName'])) {
+                            <?php if ($db_trip_data['PassengerDetails']['vImgName'] != '' && file_exists($tconfig["tsite_upload_images_passenger_path"] . '/' . $db_trip_data['PassengerDetails']['iUserId'] . '/2_' . $db_trip_data['PassengerDetails']['vImgName'])) {
                             ?>
                             <img src = "<?= $tconfig["tsite_upload_images_passenger"] . '/' . $db_trip_data['PassengerDetails']['iUserId'] . '/2_' . $db_trip_data['PassengerDetails']['vImgName'] ?>" /><!-- style="height:150px;" -->
-                            <? } else { ?>
+                            <?php } else { ?>
                             <img src="assets/img/profile-user-img.png" alt="">
-                            <? } ?>
+                            <?php } ?>
                         </div>
                         <div class="inv-data">
                             <strong><?= $langage_lbl['LBL_YOU_DELIVERY_WITH']; ?> <?= clearName($db_trip_data['PassengerDetails']['vName'] . ' ' . $db_trip_data['PassengerDetails']['vLastName']); ?>
                     <?php } else { ?>
                         <div class="profile-image">
-                            <? if ($db_trip_data['DriverDetails']['vImage'] != '' && file_exists($tconfig["tsite_upload_images_driver_path"] . '/' . $db_trip_data['DriverDetails']['iDriverId'] . '/2_' . $db_trip_data['DriverDetails']['vImage'])) { ?>
+                            <?php if ($db_trip_data['DriverDetails']['vImage'] != '' && file_exists($tconfig["tsite_upload_images_driver_path"] . '/' . $db_trip_data['DriverDetails']['iDriverId'] . '/2_' . $db_trip_data['DriverDetails']['vImage'])) { ?>
                                 <img src = "<?= $tconfig["tsite_upload_images_driver"] . '/' . $db_trip_data['DriverDetails']['iDriverId'] . '/2_' . $db_trip_data['DriverDetails']['vImage'] ?>" style="height:150px;"/>
-                            <? } else { ?>
+                            <?php } else { ?>
                                 <img src="assets/img/profile-user-img.png" alt="">
-                            <? } ?>
+                            <?php } ?>
                         </div>
                         <div class="inv-data">
                             <strong><?= $langage_lbl['LBL_YOU_DELIVERY_WITH']; ?> <?= clearName($db_trip_data['DriverDetails']['vName'] . ' ' . $db_trip_data['DriverDetails']['vLastName']); ?>
@@ -257,7 +257,7 @@ $get_endDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
 									</strong>
 
                             <ul>
-										<?
+										<?php
                     					//added by SP for rounding off currency wise on 8-11-2019 start
 	                                    $roundoff = 0;
 	                                    if (array_key_exists($langage_lbl['LBL_ROUNDING_DIFF_TXT'], $db_trip_data['FareDetailsArr']) && !empty($db_trip_data['FareDetailsArr'][$langage_lbl['LBL_ROUNDING_DIFF_TXT']])) {
@@ -278,7 +278,7 @@ $get_endDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
 													//echo '<li class="eDisplaySeperator"><hr/></li>';
 												} else { ?>
 													<li><span><?=$k;?></span><b><?php echo $val; ?></b></li>
-										<?		}
+										<?php		}
 											}
 										}
 									 ?>
@@ -293,24 +293,24 @@ $get_endDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
 	              				</ul>
 									<ul>
 										<li style="border: 1px dashed #d1d1d1; padding: 4px;">
-										<?
+										<?php
 											foreach($db_reci_data as $key1=>$value1) {
 												foreach($value1 as $key2=>$value2) {
 												 if(!empty($value2['ePaymentBy'])){
 												 	if ($value2['ePaymentBy'] == "Sender" || $value2['ePaymentBy'] == "Individual" || ($value2['ePaymentBy'] == "Receiver" && $value2['ePaymentByReceiver'] == "Yes")) {
 														?>
 														<h4><?=$langage_lbl['LBL_PAYMENT_BY_TXT']?></h4>
-														<?
+														<?php
 															if($value2['ePaymentBy']=="Sender") {
-																?><em><?=$langage_lbl['LBL_SENDER']?></em><?
+																?><em><?=$langage_lbl['LBL_SENDER']?></em><?php
 															}else if($value2['ePaymentBy']=="Receiver"){
-																?><em><?=$value2['PaymentPerson'];?></em><?
+																?><em><?=$value2['PaymentPerson'];?></em><?php
 															}else if($value2['ePaymentBy']=="Individual"){
-																?><em><?=$langage_lbl['LBL_EACH_RECIPIENT'];?></em><?
+																?><em><?=$langage_lbl['LBL_EACH_RECIPIENT'];?></em><?php
 															}
 														?>
 														</tr>
-														<?
+														<?php
 														break 2;
 													}
 												}
@@ -325,7 +325,7 @@ $get_endDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
 										<ul>
 											<li style="border:dotted 2px #000000;background: none;">
 												<strong style="font-weight: bold;padding: 2px;" >
-													<? if($db_trip_data['eCancelledBy'] == 'Driver'){
+													<?php if($db_trip_data['eCancelledBy'] == 'Driver'){
 														echo $langage_lbl['LBL_TRIP_CANCELLED_BY_DRIVER_ADMIN'];
 														if(!empty($db_trip_data['vCancelReason'])){
 														 echo 'Reason: '.$db_trip_data['vCancelReason'];
@@ -342,11 +342,11 @@ $get_endDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
 											</li>
 										</ul>
 										<div style="clear:both;"></div>
-									<? } ?>
+									<?php } ?>
 								<?php if($_SESSION['sess_user'] != "driver" && $_SESSION['sess_user'] != "company"){
 									if($db_trip_data['fTipPrice'] !="" && $db_trip_data['fTipPrice'] !="0" && $db_trip_data['fTipPrice'] !="0.00") { ?>
 									<ul><li class="no-border"><strong><?=$langage_lbl['LBL_TIP_RS_TXT']; ?></strong><b> <?=$db_trip_data['fTipPrice'];?></b></li></ul>
-								<?}  }?>
+								<?php }  }?>
                         </div>
                     </div>
 							<div class="inv-rating">
@@ -409,7 +409,7 @@ $get_endDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
 					</div>
 					<?php } ?>
 
-					<? if($APP_DELIVERY_MODE == "Multi"){?>
+					<?php if($APP_DELIVERY_MODE == "Multi"){?>
 					<div>&nbsp;</div>
                <div class="invoice-data-holder">
 	        			<div class="invoice-part-bottom invoice-recipient">
@@ -422,20 +422,20 @@ $get_endDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
 								<div class="recepient_list">
 								<h3 style="padding: 15px 0; margin-top: 0"><span style="padding: 0 10px"><?= $langage_lbl['LBL_RECIPIENT_LIST_TXT'].'&nbsp;'. $no; ?></span></h3>
 								<ul class="recipient_details">
-									<? foreach($value1 as $key2=>$value2) {?>
+									<?php foreach($value1 as $key2=>$value2) {?>
 										<li>
 											<span><?=$value2['vFieldName']; ?> </span>
 											<b><?=$value2['vValue']; ?> </b>
 										</li>
-									<? } ?>
-									<? if(!empty($value2['ePaymentBy']) && $value2['ePaymentBy'] == "Individual"){?>
+									<?php } ?>
+									<?php if(!empty($value2['ePaymentBy']) && $value2['ePaymentBy'] == "Individual"){?>
 									<li>
 										<span><?=$langage_lbl['LBL_AMOUNT_PAID_TXT']; ?></span>
 										<b>
 											<?=$value2['PaymentAmount'];?>
 										</b>
 									</li>
-								<? }?>
+								<?php }?>
 									<?php if(!empty($value2['Receipent_Signature']) && $db_trip_data['vVerificationMethod'] == 'Signature') {?>
 										<li>
 											<span><?=$langage_lbl['LBL_RECEIVER_SIGN']; ?></span>
@@ -450,7 +450,7 @@ $get_endDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
 												<?=$value2['vDeliveryConfirmCode']?>
 											</b>
 										</li>
-									<? } ?>
+									<?php } ?>
 								</ul>
 								</div>
 								</div>
@@ -459,7 +459,7 @@ $get_endDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
 							}   ?>
 						</div>
 					 </div>
-					<? } ?>
+					<?php } ?>
             </div>
         </div>
         <div class="left-right">
@@ -560,7 +560,7 @@ $get_endDate_format = DateformatCls::getNewDateFormat($date_format_data_array);
 	?>
 	<?php if ($lang != 'en') { ?>
 		 <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-		 <? include_once('otherlang_validation.php');?>
+		 <?php include_once('otherlang_validation.php');?>
 	<?php } ?>
 	<script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
 	<!-- home page end-->

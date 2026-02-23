@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 
 $tbl_name = 'register_driver';
@@ -219,7 +219,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?
+                            <?php
                             for ($i = 0; $i < scount($db_dtrip); $i++) {
                                 $poolTxt = $seriveJson = "";
                                 if ($db_dtrip[$i]['ePoolRide'] == "Yes") {
@@ -293,7 +293,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                 <tr class="gradeA">
                                         <td style="display: none" data-order="<?= $db_dtrip[$i]['iTripId'] ?>"><?php echo $db_dtrip[$i]['iTripId'] ?></td>
                                     <?php if ($APP_TYPE != 'UberX' && $APP_TYPE != 'Delivery') { ?>
-                                        <td data-order="<?= $db_dtrip[$i]['iTripId'] ?>"><?
+                                        <td data-order="<?= $db_dtrip[$i]['iTripId'] ?>"><?php
                                         if ($db_dtrip[$i]['eHailTrip'] == "Yes" && $db_dtrip[$i]['iRentalPackageId'] > 0 ) {
                                             echo "Rental " . $trip_type . "<br/> ( Hail )";
                                         } else if ($db_dtrip[$i]['iRentalPackageId'] > 0 && $db_dtrip[$i]['eIsInterCity'] != "Yes") {
@@ -342,13 +342,13 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                             <a target="_blank" href="<?= $link_page ?>?iTripId=<?= base64_encode(base64_encode($db_dtrip[$i]['iTripId'])) ?>"><strong><img src="<?php echo $invoice_icon; ?>"></strong></a>
                                             <div style="font-size: 12px;">Cancelled</div>
                                         </td>
-                                    <? } else { ?>
+                                    <?php } else { ?>
                                         <td class="center">
                                             <a target="_blank" href="<?= $link_page ?>?iTripId=<?= base64_encode(base64_encode($db_dtrip[$i]['iTripId'])) ?>" id=<?= $db_dtrip[$i]['iTripId'];?>><strong><img src="<?php echo $invoice_icon; ?>"></strong></a>
                                         </td>
                                     <?php } ?>
                                 </tr>
-                            <? } ?>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

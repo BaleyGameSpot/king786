@@ -239,11 +239,11 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3') {
                                 <div class="col-lg-3 select001">
                                     <select class="form-control" name='searchPaymentType' data-text="Select <?= $langage_lbl_admin['LBL_PASSANGER_TXT_ADMIN']; ?>">
                                         <option value="">Select Payment Type</option>
-                                        <option value="Cash" <? if ($searchPaymentType == "Cash") { ?>selected <? } ?>>Cash</option>
-                                        <option value="Card" <? if ($searchPaymentType == "Card") { ?>selected <? } ?>><?= $cardText; ?></option>
+                                        <option value="Cash" <?php if ($searchPaymentType == "Cash") { ?>selected <?php } ?>>Cash</option>
+                                        <option value="Card" <?php if ($searchPaymentType == "Card") { ?>selected <?php } ?>><?= $cardText; ?></option>
                                         <?php if($WalletText != "") { ?>
-                                        <option value="Wallet" <? if ($searchPaymentType == "Wallet") { ?>selected <? } ?>><?= $WalletText; ?></option>
-                                        <? } ?>
+                                        <option value="Wallet" <?php if ($searchPaymentType == "Wallet") { ?>selected <?php } ?>><?= $WalletText; ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-lg-2">
@@ -251,7 +251,7 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3') {
                                 </div>
                             </span>
                         </div>
-                        <? if (scount($allservice_cat_data) > 1) { ?>
+                        <?php if (scount($allservice_cat_data) > 1) { ?>
                             <div class="row payment-report payment-report1 payment-report2">
                                 <span>
                                     <div class="col-lg-2 select001" style="padding-right:15px;">
@@ -280,7 +280,7 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3') {
                                     </div>
                                 </span>
                             </div>
-                        <? } ?>
+                        <?php } ?>
                         <div class="tripBtns001"><b>
                                 <input type="submit" value="Search" class="btnalt button11" id="Search" name="Search" title="Search" />
                                 <input type="button" value="Reset" class="btnalt button11" onClick="window.location.href = 'cancelled_report.php'"/>
@@ -301,9 +301,9 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3') {
                                         <table class="table table-bordered" id="dataTables-example123" >
                                             <thead>
                                                 <tr>
-                                                    <? if (scount($allservice_cat_data) > 1) { ?>
+                                                    <?php if (scount($allservice_cat_data) > 1) { ?>
                                                         <th width="8%"  style="text-align:center;">Service Type</th>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <th width="10%"  style="text-align:center;"><?= $langage_lbl_admin['LBL_RIDE_NO_ADMIN_DL']; ?># </th>
                                                     <th width="10%" style="text-align:center;"><a href="javascript:void(0);" onClick="Redirect(4,<?php
                                                         if ($sortby == '4') {
@@ -335,7 +335,7 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3') {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?
+                                                <?php
                                                 $set_unsetarray = array();
                                                 if (scount($db_trip) > 0) {
                                                     //Added By HJ On 23-09-2020 For Optimize For Loop Query Start
@@ -370,17 +370,17 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3') {
                                                         }
                                                         ?>
                                                         <tr class="gradeA <?= $class_setteled ?>">
-                                                            <? if (scount($allservice_cat_data) > 1) { ?>
-                                                                <td align="center"><? echo $vServiceName; ?></td>
-                                                            <? } ?>
+                                                            <?php if (scount($allservice_cat_data) > 1) { ?>
+                                                                <td align="center"><?php echo $vServiceName; ?></td>
+                                                            <?php } ?>
                                                             <?php if ($userObj->hasPermission('view-invoice')) { ?>
-                                                                <td align="center"><a href="order_invoice.php?iOrderId=<?= $db_trip[$i]['iOrderId'] ?>" target="_blank"><? echo $db_trip[$i]['vOrderNo']; ?></a></td>
-        <? } else { ?>
-                                                                <td align="center"><? echo $db_trip[$i]['vOrderNo']; ?></td>
+                                                                <td align="center"><a href="order_invoice.php?iOrderId=<?= $db_trip[$i]['iOrderId'] ?>" target="_blank"><?php echo $db_trip[$i]['vOrderNo']; ?></a></td>
+        <?php } else { ?>
+                                                                <td align="center"><?php echo $db_trip[$i]['vOrderNo']; ?></td>
         <?php } ?>
 
 
-                                                            <td align="center"><?
+                                                            <td align="center"><?php
                                                             $systemTimeZone = date_default_timezone_get();
                                                             $vTimeZone = $db_trip[$i]['vTimeZone'];
                                                             //echo DateTime(converToTz($db_trip[$i]['tOrderRequestDate'], $vTimeZone,$systemTimeZone), 'yes');
@@ -403,7 +403,7 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3') {
                                                                 <?php } ?>
                                                             </td>
                                                             <td align="right">
-                                                                <? if ($payment_to_driver == 0) { ?>
+                                                                <?php if ($payment_to_driver == 0) { ?>
                                                                     <?= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?> not Assign
         <?php } else { ?>
                                                                     Actual Amount : <?= formateNumAsPerCurrency($db_trip[$i]['driverearning']+$db_trip[$i]['fTipAmount'],''); ?><br/>
@@ -421,7 +421,7 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3') {
                                                                     }
                                                                 ?>
                                                                 <br/>
-                                                                <? 
+                                                                <?php 
                                                                 if (!empty($db_trip[$i]['vTripAdjusmentId'])) {
                                                                     $vRideNo = get_value('trips', 'vRideNo', 'iTripId', $db_trip[$i]['vTripAdjusmentId'], '', 'true');
                                                                 } else {
@@ -430,11 +430,11 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3') {
 
                                                                 if ($db_trip[$i]['ePaymentOption'] == 'Cash' && $db_trip[$i]['ePaidByPassenger'] == 'Yes' && !empty($vRideNo)) { ?>
                                                                     ( Paid In Order No# : <?= $vRideNo ?>)
-                                                                <? } else if ($db_trip[$i]['ePaymentOption'] == 'Cash' && $db_trip[$i]['ePaidByPassenger'] == 'No') { ?>
+                                                                <?php } else if ($db_trip[$i]['ePaymentOption'] == 'Cash' && $db_trip[$i]['ePaidByPassenger'] == 'No') { ?>
                                                                     ( Outstanding )
-        <? } else if ($db_trip[$i]['ePaymentOption'] == 'Card') { ?>
+        <?php } else if ($db_trip[$i]['ePaymentOption'] == 'Card') { ?>
                                                                     ( Paid )
-                                                                <? } ?>
+                                                                <?php } ?>
                                                             </td>
                                                             <td align="center"><?= $db_trip[$i]['vStatus']; ?></td>
                                                             <td align="center">
@@ -484,12 +484,12 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3') {
             ?>
 
                                                                                             <div class="col-lg-7">
-                                                                                                <? if($payment_to_restaurant == 0) { ?>
+                                                                                                <?php if($payment_to_restaurant == 0) { ?>
                                                                                                 <input type="text" name="fRestaurantPayAmount" id="fRestaurantPayAmount" value="<?= $payment_to_restaurant; ?>" disabled><br>
                                                                                                 <?= $langage_lbl_admin['LBL_RESTAURANT_TXT_ADMIN']." has not confirmed order"; ?>
-                                                                                                <? } else { ?>
+                                                                                                <?php } else { ?>
                                                                                                 <input type="text" name="fRestaurantPayAmount" id="fRestaurantPayAmount" value="<?= $payment_to_restaurant; ?>" required>
-                                                                                                <? } ?>
+                                                                                                <?php } ?>
                                                                                             </div>
                                                                                             <div class="fRestaurantPayAmountError error red"></div>
                                                                                         </div>
@@ -520,7 +520,7 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3') {
                                                         <?php } ?>
                                                             </td>
                                                         </tr>
-        <?
+        <?php
     }
 } else {
     ?>

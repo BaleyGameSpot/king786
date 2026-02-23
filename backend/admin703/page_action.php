@@ -988,7 +988,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <!-- PAGE LEVEL STYLES -->
         <link rel="stylesheet" href="../assets/plugins/Font-Awesome/css/font-awesome.css" />
         <link rel="stylesheet" href="../assets/plugins/wysihtml5/dist/bootstrap-wysihtml5-0.0.2.css" />
@@ -1008,8 +1008,8 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
 
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -1025,18 +1025,18 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                     <?php include('valid_msg.php'); ?>
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                 </div><br/>
-                            <? } elseif ($success == 2) { ?>
+                            <?php } elseif ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } ?>
-                            <? if($cubexthemeon == 'Yes' && in_array($iPageId,array('1','52'))) {
+                            <?php } ?>
+                            <?php if($cubexthemeon == 'Yes' && in_array($iPageId,array('1','52'))) {
                              include_once('aboutus.php');
                             } else { ?>
                                 <form method="post" action="" name="_page_form" id="_page_form"  enctype="multipart/form-data">
@@ -1168,16 +1168,16 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                             <li class="<?php if($activetab=='drivertab') { ?> active <?php }  ?>">
                                                 <a data-toggle="tab" href="#drivertab"><?=$langage_lbl_admin['LBL_SIGNIN_DRIVER'];?></a>
                                             </li>
-                                            <? if(strtoupper(ONLYDELIVERALL) != "YES") { ?><li class="<?php if($activetab=='companytab') { ?> active <?php }  ?>">
+                                            <?php if(strtoupper(ONLYDELIVERALL) != "YES") { ?><li class="<?php if($activetab=='companytab') { ?> active <?php }  ?>">
                                                 <a data-toggle="tab" href="#companytab"><?=$langage_lbl_admin['LBL_COMPANY_SIGNIN'];?></a>
                                             </li>
-                                            <? } if (!empty($become_restaurant)) { ?><li class="<?php if($activetab=='restauranttab') { ?> active <?php }  ?>">
+                                            <?php } if (!empty($become_restaurant)) { ?><li class="<?php if($activetab=='restauranttab') { ?> active <?php }  ?>">
                                                 <a data-toggle="tab" href="#restauranttab"><?=$become_restaurant;?></a>
                                             </li>
-                                            <? } if(strtoupper($ENABLE_CORPORATE_PROFILE)=='YES') { ?><li class="<?php if($activetab=='organizationtab') { ?> active <?php }  ?>">
+                                            <?php } if(strtoupper($ENABLE_CORPORATE_PROFILE)=='YES') { ?><li class="<?php if($activetab=='organizationtab') { ?> active <?php }  ?>">
                                                 <a data-toggle="tab" href="#organizationtab"><?=$langage_lbl_admin['LBL_ORGANIZATION'];?></a>
                                             </li>
-                                            <? } if($MODULES_OBJ->isEnableTrackServiceFeature()) { ?><li class="<?php if($activetab=='trackservicetab') { ?> active <?php }  ?>">
+                                            <?php } if($MODULES_OBJ->isEnableTrackServiceFeature()) { ?><li class="<?php if($activetab=='trackservicetab') { ?> active <?php }  ?>">
                                                 <a data-toggle="tab" href="#trackservicetab">Tracking Company</a>
                                             </li>
                                             <?php } if($iPageId==48) { ?>
@@ -1223,7 +1223,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     </div>
                                                     <?php } ?>
                                                 </div>
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <div class="row">
                                                 <div class="col-lg-12">
@@ -1405,9 +1405,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <label>Image (Left side shown)</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vUserImage != '') { ?>
+                                                    <?php if ($vUserImage != '') { ?>
                                                         <a target="_blank" href="<?= $images . $vUserImage; ?>"><img src="<?= $images . $vUserImage; ?>" style="width:200px;"></a>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vUserImage" id="vUserImage" />
                                                     <span></span>
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 330px * 500px.]</span>
@@ -1448,7 +1448,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                 </div>
                                                 <?php } ?>
                                             </div>
-                                            <? } ?>
+                                            <?php } ?>
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <label>Page Description </label>
@@ -1629,9 +1629,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <label>Image (Left side shown)</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vDriverImage != '') { ?>
+                                                    <?php if ($vDriverImage != '') { ?>
                                                         <a target="_blank" href="<?= $images . $vDriverImage; ?>"><img src="<?= $images . $vDriverImage; ?>" style="width:200px;"></a>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vDriverImage" id="vDriverImage" />
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 330px * 500px.]</span>
                                                 </div>
@@ -1851,9 +1851,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
     														<label>Image</label>
     													</div>
     													<div class="col-md-6 col-sm-6">
-    														<? if ($vSignImage1 != '') { ?>
+    														<?php if ($vSignImage1 != '') { ?>
     															<a target="_blank" href="<?= $images . $vSignImage1; ?>"><img src="<?= $images . $vSignImage1; ?>" style="width:100px;height:100px;"></a>
-    														<? } ?>
+    														<?php } ?>
     														<input type="file" class="form-control" name="vSignImage1" id="vSignImage1" />
     														<span class="notes">[Note: For Better Resolution Upload only image size of 512px * 512px.]</span>
     													</div>
@@ -1864,9 +1864,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                         <label>Image (Left side shown)</label>
                                                     </div>
                                                     <div class="col-md-6 col-sm-6">
-                                                        <? if ($vCompanyImage != '') { ?>
+                                                        <?php if ($vCompanyImage != '') { ?>
                                                             <a target="_blank" href="<?= $images . $vCompanyImage; ?>"><img src="<?= $images . $vCompanyImage; ?>" style="width:200px;"></a>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                         <input type="file" class="form-control" name="vCompanyImage" id="vCompanyImage" />
                                                         <span class="notes">[Note: For Better Resolution Upload only image size of 330px * 500px.]</span>
                                                     </div>
@@ -2089,9 +2089,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <label>Image (Left side shown)</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vStoreImage != '') { ?>
+                                                    <?php if ($vStoreImage != '') { ?>
                                                         <a target="_blank" href="<?= $images . $vStoreImage; ?>"><img src="<?= $images . $vStoreImage; ?>" style="width:200px;"></a>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vStoreImage" id="vStoreImage" />
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 330px * 500px.]</span>
                                                 </div>
@@ -2312,9 +2312,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
 														<label>Image</label>
 													</div>
 													<div class="col-md-6 col-sm-6">
-														<? if ($vSignImage2 != '') { ?>
+														<?php if ($vSignImage2 != '') { ?>
 															<a target="_blank" href="<?= $images . $vSignImage2; ?>"><img src="<?= $images . $vSignImage2; ?>" style="width:100px;height:100px;"></a>
-														<? } ?>
+														<?php } ?>
 														<input type="file" class="form-control" name="vSignImage2" id="vSignImage2" />
 														<span class="notes">[Note: For Better Resolution Upload only image size of 512px * 512px.]</span>
 													</div>
@@ -2326,9 +2326,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <label>Image (Left side shown)</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vOrgImage != '') { ?>
+                                                    <?php if ($vOrgImage != '') { ?>
                                                         <a target="_blank" href="<?= $images . $vOrgImage; ?>"><img src="<?= $images . $vOrgImage; ?>" style="width:200px;"></a>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vOrgImage" id="vOrgImage" />
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 330px * 500px.]</span>
                                                 </div>
@@ -2552,9 +2552,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <label>Image (Left side shown)</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vTrackingImage != '') { ?>
+                                                    <?php if ($vTrackingImage != '') { ?>
                                                         <a target="_blank" href="<?= $images . $vTrackingImage; ?>"><img src="<?= $images . $vTrackingImage; ?>" style="width:200px;"></a>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vTrackingImage" id="vTrackingImage" />
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 330px * 500px.]</span>
                                                 </div>
@@ -2595,7 +2595,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                 </div>
                                                 <?php } ?>
                                             </div>
-                                            <? } ?>
+                                            <?php } ?>
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <label>Page Description </label>
@@ -2777,9 +2777,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <label>Image (Left side shown)</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vImage != '') { ?>
+                                                    <?php if ($vImage != '') { ?>
                                                         <a target="_blank" href="<?= $images . $vImage; ?>"><img src="<?= $images . $vImage; ?>" style="width:200px;"></a>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vHotelImage" id="vHotelImage" />
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 330px * 500px.]</span>
                                                 </div>
@@ -2789,7 +2789,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                     <?php } else { ?>
 
                                         <!--<textarea class="form-control ckeditor" rows="10" name="aaa"  id="editortest"  placeholder="aa Value"></textarea>-->
-                                        <?
+                                        <?php
                                         $style_v = "";
                                         if (in_array($iPageId, array('29', '30','53'))) {
                                             $style_v = "style = 'display:none;'";
@@ -3029,9 +3029,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <label>Image (Left side shown)</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vImage != '') { ?>
+                                                    <?php if ($vImage != '') { ?>
                                                         <a target="_blank" href="<?= $images . $vImage; ?>"><img src="<?= $images . $vImage; ?>" style="width:200px;"></a>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vImage" id="vImage" />
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 330px * 500px.]</span>
                                                 </div>
@@ -3047,9 +3047,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <?php } ?>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vImage1 != '') { ?>
+                                                    <?php if ($vImage1 != '') { ?>
                                                         <a target="_blank" href="<?= $images . $vImage1; ?>"><img src="<?= $images . $vImage1; ?>" style="width:200px;"></a>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vImage1" id="vImage1" />
                                                      <span class="notes">[Note: For Better Resolution Upload only image size of 943px * 1920px.]</span>
                                                 </div>
@@ -3061,9 +3061,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <label>First Image (Left side shown)</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vImage != '') { ?>
+                                                    <?php if ($vImage != '') { ?>
                                                         <a target="_blank" href="<?= $images . $vImage; ?>"><img src="<?= $images . $vImage; ?>" style="width:200px;"></a>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vImage" id="vImageaaa2" />
                                                 </div>
                                             </div>
@@ -3072,9 +3072,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <label>Second Image (Right side shown)</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vImage1 != '') { ?>
+                                                    <?php if ($vImage1 != '') { ?>
                                                         <a target="_blank" href="<?= $images . $vImage1; ?>"><img src="<?= $images . $vImage1; ?>" style="width:200px;"></a>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vImage1" id="vImagea1" />
                                                 </div>
                                             </div>
@@ -3083,9 +3083,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <label>Third Image (Left side shown)</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vImage2 != '') { ?>
+                                                    <?php if ($vImage2 != '') { ?>
                                                         <a target="_blank" href="<?= $images . $vImage2; ?>"><img src="<?= $images . $vImage2; ?>" style="width:200px;"></a>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vImage2" id="vImagea2" />
                                                 </div>
                                             </div>
@@ -3095,9 +3095,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <label>Image</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vImage1 != '') { ?>
+                                                    <?php if ($vImage1 != '') { ?>
                                                         <a target="_blank" href="<?= $images . $vImage1; ?>"><img src="<?= $images . $vImage1; ?>" style="width:200px;"></a>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vImage1" id="vImagen1" />
                                                      <span class="notes">[Note: For Better Resolution Upload only image size of 190px * 190px.]</span>
                                                 </div>
@@ -3113,9 +3113,9 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     <label>Image</label>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6">
-                                                    <? if ($vImage != '') { ?>
+                                                    <?php if ($vImage != '') { ?>
                                                         <a target="_blank" href="<?= $images . $vImage; ?>"><img src="<?= $images . $vImage; ?>" style="width:200px;"></a>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="vImage" id="vImage" />
                                                      <span class="notes">[Note: For Better Resolution Upload only image size of 1903px * 626px.]</span>
                                                 </div>
@@ -3147,7 +3147,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                         </div>
                                     </div>
                                 </form>
-                            <? } ?>
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -3163,7 +3163,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                 <span>Language Translation is in Process. Please Wait...</span>
             </div>
         </div>
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
 
         <!-- PAGE LEVEL SCRIPTS -->
         <script src="../assets/plugins/ckeditor/ckeditor.js"></script>

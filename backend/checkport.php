@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 chkServer('gateway.sandbox.push.apple.com',2195); 
 //chkServer('gateway.push.apple.com',2195); 

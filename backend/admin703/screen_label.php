@@ -308,9 +308,9 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                         <tr class="gradeA">
                                                             <td align="center" style="text-align:center;"><input type="checkbox" id="checkbox" name="checkbox[]" value="<?php echo $data_drv[$i]['LanguageLabelId']; ?>" />&nbsp;</td>
                                                           
-                                                            <td align="left"><? echo $data_drv[$i]['vLabel']; ?></td>	
+                                                            <td align="left"><?php echo $data_drv[$i]['vLabel']; ?></td>	
 
-                                                            <td align="left"><? echo $data_drv[$i]['vValue']; ?></td> 
+                                                            <td align="left"><?php echo $data_drv[$i]['vValue']; ?></td> 
 
                                                            
 
@@ -332,7 +332,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                                             
                                                             <td align="center">
-                                                                <?
+                                                                <?php
                                                                 if ($data_drv[$i]['eStatus'] == 'Active') {
                                                                     $dis_img = "img/active-icon.png";
                                                                 } else if ($data_drv[$i]['eStatus'] == 'Inactive') {
@@ -371,7 +371,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                                 </div>
                                                             </td>
                                                         </tr>
-                                                        <?
+                                                        <?php
                                                     }
                                                 } else {
                                                     ?>

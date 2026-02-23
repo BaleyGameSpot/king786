@@ -184,7 +184,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
     <meta content="" name="keywords"/>
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
 </head>
 <!-- END  HEAD-->
@@ -192,8 +192,8 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -313,7 +313,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                             echo "selected";
                                                         }
                                                         ?>><?php echo $langage_lbl_admin['LBL_HEADER_RDU_FLY_RIDE']; ?> </option>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -436,7 +436,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <?
+                                        <?php
                                         if (!empty($db_trip)) {
                                             $systemTimeZone = date_default_timezone_get();
                                             for ($i = 0; $i < scount($db_trip); $i++) {
@@ -491,7 +491,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                 <tr class="gradeA">
                                                     <?php if ($APP_TYPE != 'UberX' && $APP_TYPE != 'Delivery') { ?>
                                                         <td align="left">
-                                                            <?
+                                                            <?php
                                                             if ($db_trip[$i]['eHailTrip'] != "Yes") {
                                                                 echo $trip_type;
                                                             } else {
@@ -511,7 +511,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                         <?php if ($userObj->hasPermission('view-providers')) { ?>
                                                             <a href="javascript:void(0);"  onClick="show_driver_details('<?= $db_trip[$i]['iDriverId']; ?>')" style="text-decoration: underline;">
                                                         <?php } ?>
-                                                           <? echo clearName($db_trip[$i]['dName']); ?>
+                                                           <?php echo clearName($db_trip[$i]['dName']); ?>
                                                         <?php if ($userObj->hasPermission('view-providers')) { ?>       
                                                            </a>
                                                         <?php } ?>
@@ -537,7 +537,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                     <td width="30%"
                                                         data-order="<?= $db_trip[$i]['iTripId'] ?>"><?php echo $db_trip[$i]['tSaddress'] . ' -> ' . $db_trip[$i]['tDaddress']; ?></td>
                                                 </tr>
-                                                <?
+                                                <?php
                                             }
                                         } else {
                                             ?>
@@ -600,7 +600,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <link rel="stylesheet" href="css/select2/select2.min.css"/>
 <script src="js/plugins/select2.min.js"></script>

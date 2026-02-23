@@ -160,7 +160,7 @@ $getActiveCampaign = $DRIVER_REWARD_OBJ->getActiveCampaign();
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
     <!-- GLOBAL STYLES -->
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
     <link rel="stylesheet" type="text/css" media="screen"
           href="<?= $tsiteAdminUrl; ?>css/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
@@ -231,8 +231,8 @@ $getActiveCampaign = $DRIVER_REWARD_OBJ->getActiveCampaign();
 <body class="padTop53">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner" style="min-height:500px;">
@@ -778,7 +778,7 @@ $getActiveCampaign = $DRIVER_REWARD_OBJ->getActiveCampaign();
         <span>Language Translation is in Process. Please Wait...</span>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script type="text/javascript" src="<?= $tconfig['tsite_url_main_admin']; ?>js/moment.min.js"></script>
 <script type="text/javascript"

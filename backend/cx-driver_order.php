@@ -366,7 +366,7 @@ if(strtoupper(DELIVERALL) == "YES") {
 						<td align="center"><?= clearName($db_order_detail[$i]['vCompany']);?></td>
 						<td align="center"><?= formateNumAsPerCurrency(trip_currency_payment($expectedearning),$currencyName);     //$currencySymbol." ".trip_currency_payment($expectedearning);?></td>
 						<td align="center">
-							<? if(($driverEarning == 0 && $db_order_detail[$i]['iStatusCode'] == '7') || $driverEarning > 0 || $db_order_detail[$i]['eBuyAnyService'] == "Yes") {
+							<?php if(($driverEarning == 0 && $db_order_detail[$i]['iStatusCode'] == '7') || $driverEarning > 0 || $db_order_detail[$i]['eBuyAnyService'] == "Yes") {
 								// echo $currencySymbol." ".trip_currency_payment($driverEarning);
 								echo formateNumAsPerCurrency(trip_currency_payment($driverEarning),$currencyName);
 								 } else {
@@ -380,7 +380,7 @@ if(strtoupper(DELIVERALL) == "YES") {
 						 </a>
 						</td>
 					</tr>
-				<? } ?>
+				<?php } ?>
 			</tbody>
 			<tfoot>
             <?php if(scount($db_order_detail) > 0) { ?>

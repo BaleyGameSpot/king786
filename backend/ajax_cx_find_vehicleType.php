@@ -230,7 +230,7 @@ if (scount($vehicle_type_data_new) > 0){
                         </div>
 
                         <?php if (ENABLE_RENTAL_OPTION == 'Yes' && $value['eInterCityStatus'] != 'Yes'){ ?>
-                            <?
+                            <?php
                             $checkrentalquery = "SELECT count(iRentalPackageId) as totalrental FROM `rental_package` WHERE iVehicleTypeId = '".$value['iVehicleTypeId']."'";
                             $rental_data = $obj->MySQLSelect($checkrentalquery);
                             if ($rental_data[0]['totalrental'] > 0){
@@ -248,7 +248,7 @@ if (scount($vehicle_type_data_new) > 0){
                                     </div>
                                     <label id="<?='RentalTempLbl_'.$key;?>"><?php echo $langage_lbl['LBL_RENTAL_OPTION_SEE_TXT']; ?></label>
                                 </div>
-                            <? }
+                            <?php }
                         }else{
                             if ($MODULES_OBJ->isRentalFeatureAvailable() && ($db_etype == "Ride" || $db_etype == "Fly")){
                                 ?>
@@ -283,7 +283,7 @@ if (scount($vehicle_type_data_new) > 0){
                         ?>
 
                         <?php if (ENABLE_RENTAL_OPTION == 'Yes'){ ?>
-                            <?
+                            <?php
                             $checkrentalquery = "SELECT count(iRentalPackageId) as totalrental FROM `rental_package` WHERE iVehicleTypeId = '".$value['iVehicleTypeId']."'";
                             $rental_data = $obj->MySQLSelect($checkrentalquery);
                             if ($rental_data[0]['totalrental'] > 0){
@@ -293,7 +293,7 @@ if (scount($vehicle_type_data_new) > 0){
                                         <input type="checkbox" class="chk" name="vRentalCarType[]" <?php if (in_array($value['iVehicleTypeId'], $vRentalCarTyp)) { ?>checked<?php } ?> value="<?= $value['iVehicleTypeId'] ?>"/> Accept rental request for <?php echo $vname; ?> vehicle type?
                                     </div>
                                 </div>-->
-                                <?*/
+                                <?php */
                             }
                         }
                         ?>
@@ -326,7 +326,7 @@ if (scount($vehicle_type_data_new) > 0){
                             })
                         });
                     </script>
-                    <?
+                    <?php
                 }
             }
             ?>
@@ -346,10 +346,10 @@ if (scount($DeliverAllvehiclesData) > 0){
     <div style="float:left; width:100%;">
         <h1 class="col-lg-6"><?=$headinglabel?> <small>(<?=$langage_lbl['LBL_CHOOSE_ONE_VEHICLE']?>)</small></h1>
     </div>
-<? } ?>
+<?php } ?>
 <div class="partation">
     <ul class="setings-list">
-        <?
+        <?php
         $vIds = "";
         //echo "<pre>";print_r($DeliverAllvehiclesData);die;
         foreach ($DeliverAllvehiclesData as $key => $value){
@@ -374,11 +374,11 @@ if (scount($DeliverAllvehiclesData) > 0){
             <li>
                 <div class="toggle-combo">
                     <label>
-                        <? if (!empty($db_etype_name) && $storeDriver == ""){ ?>
+                        <?php if (!empty($db_etype_name) && $storeDriver == ""){ ?>
                             <div><?php echo $vname." (".$db_etype_name.")"; ?></div>
-                        <? }else{ ?>
+                        <?php }else{ ?>
                             <div><?php echo $vname; ?></div>
-                        <? } ?>
+                        <?php } ?>
 
                         <small>
                             <?php
@@ -407,7 +407,7 @@ if (scount($DeliverAllvehiclesData) > 0){
                             </span>
                     <?php } ?>
                     <?php if (ENABLE_RENTAL_OPTION == 'Yes'){ ?>
-                        <?
+                        <?php
                         $checkrentalquery = "SELECT count(iRentalPackageId) as totalrental FROM `rental_package` WHERE iVehicleTypeId = '".$value['iVehicleTypeId']."'";
                         $rental_data = $obj->MySQLSelect($checkrentalquery);
                         if ($rental_data[0]['totalrental'] > 0){
@@ -417,13 +417,13 @@ if (scount($DeliverAllvehiclesData) > 0){
                                         <input type="checkbox" class="chk" name="vRentalCarType[]" <?php if (in_array($value['iVehicleTypeId'],$vRentalCarTyp)){ ?>checked<?php } ?> value="<?=$value['iVehicleTypeId']?>"/> Accept rental request for <?php echo $vname; ?> vehicle type?
                                     </div>
                                 </div>-->
-                            <?
+                            <?php
                         }
                     }
                     ?>
                 </div>
             </li>
-        <? } ?>
+        <?php } ?>
         <input type="hidden" name="deliverall" value="<?php echo trim($vIds,","); ?>">
     </ul>
 </div>

@@ -367,12 +367,12 @@ $takeaway = $MODULES_OBJ->isTakeAwayEnable() ? "Yes" : "No";
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                 <?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
                             </div>
-                        <?} else if ($success == 0 && $var_msg != "") { ?>
+                        <?php } else if ($success == 0 && $var_msg != "") { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> 
                                 <?= isset($_REQUEST['error_msg']) ? $_REQUEST['error_msg'] : ' '; ?>
                         </div> 
-                        <? } ?>
+                        <?php } ?>
                         <div class="form-group">
                             <form method="post" action="" class="company_form" id="company_form" enctype="multipart/form-data">
                                 <input type="hidden" name="id" value="<?= base64_encode(base64_encode($id)); ?>"/>
@@ -835,7 +835,7 @@ $takeaway = $MODULES_OBJ->isTakeAwayEnable() ? "Yes" : "No";
                                             </div>
                                         <?php } ?>
 										
-					<? if($takeaway=='Yes') { ?>
+					<?php if($takeaway=='Yes') { ?>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <label><?= $langage_lbl['LBL_TAKE_AWAY'] ?></label>
@@ -848,7 +848,7 @@ $takeaway = $MODULES_OBJ->isTakeAwayEnable() ? "Yes" : "No";
                                                 </select>
                                             </div>
                                         </div>
-                                        <? } ?>
+                                        <?php } ?>
                                     </div>
                                 </div>
                                 <div class="car-type">
@@ -875,7 +875,7 @@ $takeaway = $MODULES_OBJ->isTakeAwayEnable() ? "Yes" : "No";
         <script type="text/javascript" src="<?php echo $tconfig["tsite_url_main_admin"] ?>js/validation/jquery.validate.min.js" ></script>
         <?php if ($lang != 'en') { ?>
             <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-            <? include_once('otherlang_validation.php');?>
+            <?php include_once('otherlang_validation.php');?>
         <?php } ?>
         <script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
         <script src="assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>

@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("../common.php");
 $default_lang = $LANG_OBJ->FetchSystemDefaultLang();
 $iParentId = isset($_REQUEST['iParentId'])?$_REQUEST['iParentId']:'';

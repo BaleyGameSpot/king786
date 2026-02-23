@@ -329,10 +329,10 @@ if (isset($_SESSION['sess_user']) && $_SESSION['sess_user'] == 'driver') {
                     <div class="demo-warning">
                     <p><?= $langage_lbl['LBL_WE_SEE_YOU_HAVE_REGISTERED_AS_A_COMPANY']; ?></p>
                     <p><?= $langage_lbl['LBL_SINCE_IT_IS_DEMO_VERSION']; ?></p>
-                    <? if (isset($db_user[0]['iServiceId']) && $db_user[0]['iServiceId'] == 0) { ?>
+                    <?php if (isset($db_user[0]['iServiceId']) && $db_user[0]['iServiceId'] == 0) { ?>
                         <p><?= $langage_lbl['LBL_STEP1']; ?></p><!--    <p><?= $langage_lbl['LBL_STEP2']; ?></p>-->
                         <p><?= $langage_lbl['LBL_STEP3']; ?></p>
-                    <? } ?>
+                    <?php } ?>
                     <p><?= $langage_lbl['LBL_HOWEVER_IN_REAL_SYSTEM']; ?></p>
                     </div>
                 <?php } else { ?>
@@ -485,14 +485,14 @@ if (isset($_SESSION['sess_user']) && $_SESSION['sess_user'] == 'driver') {
                                     <input type="email" id="in_email" class="edit-profile-detail-form-input" placeholder="<?= $langage_lbl['LBL_PROFILE_YOUR_EMAIL_ID']; ?>" value="<?= $db_user[0]['vEmail'] ?>" name="email" <?= isset($db_user[0]['vEmail']) ? '' : ''; ?> required>
                                     <div class="required-label" id="emailCheck"></div>
                                 </span>
-                            <? } else { ?>
+                            <?php } else { ?>
                                 <span>
                                     <label><?= $langage_lbl['LBL_Phone_Number']; ?><span class="red">*</span></label>
                                     <input type="text" class="input-phNumber1" id="code" name="vCode" value="<?= $db_user[0]['vCode'] ?>" readonly>
                                     <input name="phone" id="phone" type="text" value="<?= $db_user[0]['vPhone'] ?>" class="edit-profile-detail-form-input input-phNumber2" placeholder="<?= $langage_lbl['LBL_Phone_Number']; ?>" title="Please enter proper phone number." onKeyUp="return isNumberKey(event);" onkeypress="return isNumberKey(event);" onblur="return isNumberKey(event);" required/>
                                     <!-- pattern="[0-9]{1,}" -->
                                 </span>
-                            <? } ?>
+                            <?php } ?>
                             <?php
                             if (isset($_SESSION['sess_user']) && $_SESSION['sess_user'] == 'driver') {
                                 ?>
@@ -542,13 +542,13 @@ if (isset($_SESSION['sess_user']) && $_SESSION['sess_user'] == 'driver') {
                                     <input name="phone" id="phone" type="text" value="<?= $db_user[0]['vPhone'] ?>" class="edit-profile-detail-form-input input-phNumber2" placeholder="<?= $langage_lbl['LBL_Phone_Number']; ?>" title="Please enter proper phone number." onKeyUp="return isNumberKey(event);" onkeypress="return isNumberKey(event);" onblur="return isNumberKey(event);" required/>
                                     <!-- pattern="[0-9]{1,}" -->
                                 </span>
-                            <? } else { ?>
+                            <?php } else { ?>
                                 <span>
                                     <label><?= $langage_lbl['LBL_PROFILE_YOUR_EMAIL_ID']; ?> </label>
                                     <input type="email" id="in_email" class="edit-profile-detail-form-input" placeholder="<?= $langage_lbl['LBL_PROFILE_YOUR_EMAIL_ID']; ?>" value="<?= $db_user[0]['vEmail'] ?>" name="email" <?= isset($db_user[0]['vEmail']) ? '' : ''; ?> >
                                     <div class="required-label" id="emailCheck"></div>
                                 </span>
-                            <? } ?>
+                            <?php } ?>
                             <?php if (isset($_SESSION['sess_user']) && $_SESSION['sess_user'] == 'company') { ?>
                                 <span>
                                     <label><?= $langage_lbl['LBL_VAT_NUMBER_SIGNUP']; ?></label>
@@ -562,9 +562,9 @@ if (isset($_SESSION['sess_user']) && $_SESSION['sess_user'] == 'driver') {
                                 <div class="form-group half newrow">
                                     <select class="custom-select-new" name='store' id="store" onChange="changeCode(this.value);" disabled>
                                         <option value=""><?= $langage_lbl['LBL_SELECT_CONTRY']; ?></option>
-                                        <? for ($i = 0; $i < scount($db_country); $i++) { ?>
-                                            <option value="<?= $db_country[$i]['vCountryCode'] ?>" <? if ($db_user[0]['vCountry'] == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $vCompanyname; ?></option>
-                                        <? } ?>
+                                        <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                            <option value="<?= $db_country[$i]['vCountryCode'] ?>" <?php if ($db_user[0]['vCountry'] == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $vCompanyname; ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                             <?php } ?>
@@ -613,7 +613,7 @@ if (isset($_SESSION['sess_user']) && $_SESSION['sess_user'] == 'driver') {
                             <div class="driver-profile-mid-inner-a">
                                 <div class="profile-icon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></div>
                                 <h3><?= $langage_lbl['LBL_PROFILE_PASSWORD_LBL_TXT']; ?></h3>
-                                <?php /* <p><? for ($i = 0; $i < strlen(decrypt($db_user[0]['vPassword'])); $i++) echo '*'; ?></p> */ ?>
+                                <?php /* <p><?php for ($i = 0; $i < strlen(decrypt($db_user[0]['vPassword'])); $i++) echo '*'; ?></p> */ ?>
                                 <span>
                                     <a id="show-edit-password-div" class="hide-password-div hidev">
                                         <i class="fa fa-pencil" aria-hidden="true"></i><?= $langage_lbl['LBL_PROFILE_EDIT']; ?>
@@ -837,7 +837,7 @@ if (isset($_SESSION['sess_user']) && $_SESSION['sess_user'] == 'driver') {
                         <p>
                         <div class="driver-profile-info-aa col-md-5"> <?php foreach ($data_driver_pref as $val) { ?>
                                 <img data-toggle="tooltip" class="borderClass-aa border_class-bb" title="<?= $val['pref_Title'] ?>" src="<?= $tconfig["tsite_upload_preference_image_panel"] . $val['pref_Image'] ?>">
-                            <? } ?>
+                            <?php } ?>
                         </div>
                         <span class="col-md-5">
                             <a href="preferences.php" id="show-edit-language-div" class="hide-language">
@@ -1010,7 +1010,7 @@ if (isset($_SESSION['sess_user']) && $_SESSION['sess_user'] == 'driver') {
                             <?php } else { ?>
                                 <p><?= $langage_lbl['LBL_WE_SEE_YOU_HAVE_REGISTERED_AS_A_COMPANY']; ?></p>
                                 <p><?= $langage_lbl['LBL_SINCE_IT_IS_DEMO_VERSION']; ?></p>
-                                <p><?= $langage_lbl['LBL_STEP1']; ?></p><!--p><? //= $langage_lbl['LBL_STEP2'];      ?></p-->
+                                <p><?= $langage_lbl['LBL_STEP1']; ?></p><!--p><?php //= $langage_lbl['LBL_STEP2'];      ?></p-->
                                 <p><?= $langage_lbl['LBL_STEP3']; ?></p>
                                 <p><?= $langage_lbl['LBL_HOWEVER_IN_REAL_SYSTEM']; ?></p>
                             <?php } ?>
@@ -1049,7 +1049,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
 <script type="text/javascript" src="<?php echo $tconfig["tsite_url_main_admin"] ?>js/validation/jquery.validate.min.js"></script>
 <?php if ($lang != 'en') { ?>
     <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-    <? include_once('otherlang_validation.php'); ?><?php } ?>
+    <?php include_once('otherlang_validation.php'); ?><?php } ?>
 <script type="text/javascript" src="assets/js/validation/additional-methods.js"></script>
 <!-- End: Footer Script -->
 <script type="text/javascript">
@@ -1568,7 +1568,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
         },
         rules: {
             email: {
-                <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required: true,<? } ?>
+                <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required: true,<?php } ?>
                 email: true,
                 remote: {
                     url: 'ajax_validate_email.php',

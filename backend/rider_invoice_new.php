@@ -1,4 +1,4 @@
-<?
+<?php
 	include_once('common.php');
 	$tbl_name 	= 'trips';
 
@@ -49,7 +49,7 @@
 		<meta content="" name="keywords" />
 		<meta content="" name="description" />
 		<meta content="" name="author" />
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 		<link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 	</head>
@@ -59,8 +59,8 @@
 
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>
 
 			<!--PAGE CONTENT -->
 			<div id="content">
@@ -87,18 +87,18 @@
 									<div class="panel-body rider-invoice-new">
 										<div class="row">
 											<!-- <div class="col-sm-12">
-												<? if($db_user[0]['vImgName'] != '' && file_exists($tconfig["tsite_upload_images_panel"].'/'.$db_user[0]['vImgName'])){?>
+												<?php if($db_user[0]['vImgName'] != '' && file_exists($tconfig["tsite_upload_images_panel"].'/'.$db_user[0]['vImgName'])){?>
 													<img src = "<?=$tconfig["tsite_upload_images"].$db_user[0]['vImgName']?>" style="width:200px;height:150px;"/>
-													<? }else{ ?>
+													<?php }else{ ?>
 													<img src="assets/img/profile-user-img.png" alt="" style="width:200px;height:150px;">
-												<? } ?>
+												<?php } ?>
 
 
-												<? if($db_driver[0]['vImage'] != '' && file_exists($tconfig["tsite_upload_images_panel"].'/'.$db_driver[0]['vImage'])){?>
+												<?php if($db_driver[0]['vImage'] != '' && file_exists($tconfig["tsite_upload_images_panel"].'/'.$db_driver[0]['vImage'])){?>
 													<img src = "<?=$tconfig["tsite_upload_images"].$db_driver[0]['vImage']?>" style="width:200px;height:150px;"/>
-													<? }else{ ?>
+													<?php }else{ ?>
 													<img src="assets/img/profile-user-img.png" alt="" style="width:200px;height:150px;">
-												<? } ?>
+												<?php } ?>
 
 
 											</div> -->
@@ -117,13 +117,13 @@
 														Distance<br /> <b><?=$db_trip[0]['fDistance'];?></b> <br/>
 												</div>
 												<div class="col-sm-4">
-														Trip time<br /><b><?echo $diff;?></b>
+														Trip time<br /><b><?php echo $diff;?></b>
 												</div>
                                                 </div>
 											</div>
 											<div class="col-sm-6 rider-invoice-new-right">
 												<h4 style="text-align:center;">Fare Breakdown</h4><hr/>
-												<?$tot=$db_trip[0]['fPricePerKM']+$db_trip[0]['fPricePerMin']+$db_trip[0]['iBaseFare']+$db_trip[0]['fCommision'];?>
+												<?php $tot=$db_trip[0]['fPricePerKM']+$db_trip[0]['fPricePerMin']+$db_trip[0]['iBaseFare']+$db_trip[0]['fCommision'];?>
 												<table style="width:100%" cellpadding="5" cellspacing="0" border="0">
 													<tr>
 															<td>Basic Fare  </td>
@@ -164,11 +164,11 @@
 													<tr>
 															<td width="25%">
 																<span class="invoice-img">
-																<? if($db_driver[0]['vImage'] != '' && file_exists($tconfig["tsite_upload_images_driver_path"]. '/' . $db_driver[0]['iDriverId'] . '/2_' . $db_driver[0]['vImage'])){?>
+																<?php if($db_driver[0]['vImage'] != '' && file_exists($tconfig["tsite_upload_images_driver_path"]. '/' . $db_driver[0]['iDriverId'] . '/2_' . $db_driver[0]['vImage'])){?>
 																<img src = "<?= $tconfig["tsite_upload_images_driver"]. '/' . $db_driver[0]['iDriverId'] . '/2_' .$db_driver[0]['vImage'] ?>" style="height:150px;"/>
-																<? }else{ ?>
+																<?php }else{ ?>
 																<img src="assets/img/profile-user-img.png" alt="">
-																<? } ?></span>
+																<?php } ?></span>
 															</td>
 															<td width="25%">
 																	<span>You ride with <?= $db_driver[0]['vName']?></span>
@@ -184,11 +184,11 @@
 											
                                             
 													<span class="invoice-img">
-													<? if($db_driver[0]['vImage'] != '' && file_exists($tconfig["tsite_upload_images_driver_path"]. '/' . $db_driver[0]['iDriverId'] . '/2_' . $db_driver[0]['vImage'])){?>
+													<?php if($db_driver[0]['vImage'] != '' && file_exists($tconfig["tsite_upload_images_driver_path"]. '/' . $db_driver[0]['iDriverId'] . '/2_' . $db_driver[0]['vImage'])){?>
 													<img src = "<?= $tconfig["tsite_upload_images_driver"]. '/' . $db_driver[0]['iDriverId'] . '/2_' .$db_driver[0]['vImage'] ?>" style="height:150px;"/>
-													<? }else{ ?>
+													<?php }else{ ?>
 													<img src="assets/img/profile-user-img.png" alt="">
-													<? } ?></span>
+													<?php } ?></span>
 													<span class="invoice-name">You ride with <?= $db_driver[0]['vName']?></span>
 													<span class="invoice-ride">RATE YOUR RIDE</span>
 												    <span class="invoice-rating"><?=$db_ratings[0]['vRating1'];?></span>
@@ -206,7 +206,7 @@
 
 		<!--END MAIN WRAPPER -->
 
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 		<script src="assets/plugins/jasny/js/bootstrap-fileupload.js"></script>
 		<script src="assets/js/gmap3.js"></script>
 		<script>

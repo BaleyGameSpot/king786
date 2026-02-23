@@ -1,4 +1,4 @@
-<?
+<?php
 
 include_once('common.php');
 
@@ -124,7 +124,7 @@ $Psunday = date( 'Y-m-d', strtotime('saturday this week -1 week'));
 									</tr>
 								</thead>
 								<tbody>
-								<?
+								<?php
 								  	for($i=0;$i<scount($db_dtrip);$i++)
 								  	{
 										$pickup = $db_dtrip[$i]['tSaddress'];
@@ -139,26 +139,26 @@ $Psunday = date( 'Y-m-d', strtotime('saturday this week -1 week'));
 									<td ><?=$name;?></td>
 									<td align="center"><?= DateTime1($db_dtrip[$i]['tEndDate'],'no');?></td>
 									<!-- <td >
-										<?if($vRating == ''){echo '--';}else{echo $vRating;}?>
+										<?php if($vRating == ''){echo '--';}else{echo $vRating;}?>
 									</td> -->
 									<td align="right" class="center">
-										<?echo trip_currency($fare,$db_dtrip[$i]['fRatioDriver'],$db_dtrip[$i]['vCurrencyDriver']);?>
+										<?php echo trip_currency($fare,$db_dtrip[$i]['fRatioDriver'],$db_dtrip[$i]['vCurrencyDriver']);?>
 									</td>
 									<td align="center" class="center">
-										<?echo $car;?>
+										<?php echo $car;?>
 									</td>
 									<td class="center">
 									  <a href="invoice.php?iTripId=<?=$db_dtrip[$i]['iTripId']?>"><strong> <?=$langage_lbl['LBL_MYTRIP_VIEW']; ?></strong></a>
 									</td>
 								</tr>
-							  	<? } ?>
+							  	<?php } ?>
 								</tbody>
 			        		</table>
 			      		</div>
 			      	</div>
 			    </div>
 			    <!-- -->
-			    <? //if(SITE_TYPE=="Demo"){?>
+			    <?php //if(SITE_TYPE=="Demo"){?>
 			    <!-- <div class="record-feature"> <span><strong>“Edit / Delete Record Feature�?</strong> has been disabled on the Demo Admin Version you are viewing now.
 			      This feature will be enabled in the main product we will provide you.</span> </div> -->
 			      <?php //}?>

@@ -62,15 +62,15 @@ if (isset($_REQUEST['reload']) && !empty($_REQUEST['reload'])){
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
 <body class="padTop53">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -83,13 +83,13 @@ if (isset($_REQUEST['reload']) && !empty($_REQUEST['reload'])){
                 <hr/>
             </div>
             <div style="clear:both;"></div>
-            <? if ($success == 1){ ?>
+            <?php if ($success == 1){ ?>
                 <div class="alert alert-success alert-dismissable">
                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                     <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                 </div>
                 <br/>
-                <?
+                <?php
             }else if ($success == 2){
                 ?>
                 <div class="alert alert-danger alert-dismissable">
@@ -97,7 +97,7 @@ if (isset($_REQUEST['reload']) && !empty($_REQUEST['reload'])){
                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                 </div>
                 <br/>
-                <?
+                <?php
             }
             ?>
             <div class="table-list">
@@ -114,24 +114,24 @@ if (isset($_REQUEST['reload']) && !empty($_REQUEST['reload'])){
                                             <i class="icon-question-sign" data-placement="bottom" data-toggle="tooltip" data-original-title='<?=htmlspecialchars('Currency Wise Minimum Payment Drivers can Request from Website Driver Account to Admin.',ENT_QUOTES,'UTF-8')?>'></i>
                                         </th>
                                         <th>Symbol</th>
-                                        <? if ($rounding_enable){ ?>
+                                        <?php if ($rounding_enable){ ?>
                                             <th style="text-align:center">Rounding Off
                                                 <i class="icon-question-sign" data-placement="bottom" data-toggle="tooltip" data-original-title='<?=htmlspecialchars('<p class="text-left">The rounding is applied when the fare is generated in decimal value, where decimal range from 0 - 0.50 will consider as 0 and decimal range from 0.51 - 1 will consider as 1. <br><br>E.g. 1. Fare before rounding is $8.33 and Fare after rounding is $8.00  <br>E.g. 2. Fare before rounding is $8.50 and Fare after rounding is $8.00 <br>E.g. 3. Fare before rounding is $8.51 and Fare after rounding is $9.00</p>',ENT_QUOTES,'UTF-8')?>' data-html="true"></i>
                                             </th>
-                                        <? } ?>
-                                        <? if ($rformating_enable){ ?>
+                                        <?php } ?>
+                                        <?php if ($rformating_enable){ ?>
                                             <th>Currency formatting&nbsp;<i class="icon-question-sign" data-placement="bottom" data-toggle="tooltip" data-original-title='<?=htmlspecialchars('<p class="text-left">Once you activate Currency Formatting for any currency then currency formatting of the currency will reverse. <br><br>E.g. When enabled dot(.) will be considered as currency separator and comma(,) would be considered as decimal separator - $ 1.086,00 <br><br>E.g. When disabled comma(,) will be considered as currency separator and dot(.) would be considered as decimal separator - $ 1,086.00</p>',ENT_QUOTES,'UTF-8')?>' data-html="true"></i>
                                             </th>
                                             <th>Reverse Symbol&nbsp;<i class="icon-question-sign" data-placement="bottom" data-toggle="tooltip" data-original-title='<?=htmlspecialchars('<p class="text-left">Once you activate Reverse Symbol for any currency then respective symbol of the respective currency will reverse. <br><br>E.g. When Reverse Symbol is disabled, currency symbol ($) would be shown on left side of value - $ 505.00<br><br>E.g. When Reverse Symbol is enabled, currency symbol ($) would be shown on right side of value - 505.00 $</p>',ENT_QUOTES,'UTF-8')?>' data-html="true"></i>
                                             </th>
-                                        <? } ?>
+                                        <?php } ?>
                                         <th style="text-align:center">Default</th>
                                         <th style="text-align:center">Display Order</th>
                                         <th style="text-align:center">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <? foreach ($db_currency as $key => $value){
+                                    <?php foreach ($db_currency as $key => $value){
                                         $eStatus = $value['eStatus'];
                                         $iDispOrder = $value['iDispOrder'];
                                         $eDefault = "";
@@ -154,13 +154,13 @@ if (isset($_REQUEST['reload']) && !empty($_REQUEST['reload'])){
 
                                         <!--<td style="text-align:center">
                                         </tr>-->
-                                        <? if ($rounding_enable){ ?>
+                                        <?php if ($rounding_enable){ ?>
                                             <td style="text-align:center">
                                                 <div class="make-switch" data-on="success" data-off="warning">
                                                     <input type="checkbox" name="eRoundingOffEnable[<?=$value['iCurrencyId'];?>]" <?=($eRoundingOffEnable == 'Yes')?'checked':'';?>/>
                                             </td>
-                                        <? } ?>
-                                        <? if ($rformating_enable){ ?>
+                                        <?php } ?>
+                                        <?php if ($rformating_enable){ ?>
                                             <td style="text-align:center">
                                                 <div class="make-switch" data-on="success" data-off="warning">
                                                     <input type="checkbox" name="eReverseformattingEnable[<?=$value['iCurrencyId'];?>]" <?=($eReverseformattingEnable == 'Yes')?'checked':'';?>/>
@@ -171,21 +171,21 @@ if (isset($_REQUEST['reload']) && !empty($_REQUEST['reload'])){
                                                 <input type="checkbox" name="eReverseSymbolEnable[<?=$value['iCurrencyId'];?>]" <?=($eReverseSymbolEnable == 'Yes')?'checked':'';?>/>
 
                                             </div>
-                                        <? } ?>
+                                        <?php } ?>
                                         </td>
                                         <?php echo '<td align="Center">'.$eDefault.'</td>'; ?>
 
                                         <td width="10%" align="center">
-                                            <? if ($iDispOrder != 1 && $key > 0){ ?>
+                                            <?php if ($iDispOrder != 1 && $key > 0){ ?>
                                                 <a href="currency.php?id=<?=$value['iCurrencyId'];?>&flag=up" class="btn btn-warning">
                                                     <i class="icon-arrow-up"></i>
                                                 </a>
-                                            <? }
+                                            <?php }
                                             if ($iDispOrder != $count_all && $key < scount($db_currency) - 1){ ?>
                                                 <a href="currency.php?id=<?=$value['iCurrencyId'];?>&flag=down" class="btn btn-warning">
                                                     <i class="icon-arrow-down"></i>
                                                 </a>
-                                            <? } ?>
+                                            <?php } ?>
                                         </td>
 
                                         <?php if ($userObj->hasPermission('update-status-manage-currency')){ ?>
@@ -278,14 +278,14 @@ if (isset($_REQUEST['reload']) && !empty($_REQUEST['reload'])){
                                 if ($fMiddleRangeValue === floatval($fMiddleRangeValue)){
                                     ?>
                                     <option value=''>-- Select Value --</option>
-                                    <option value='0' <? if ($iFirstRangeValue == "0") { ?>selected<?php } ?>>0</option>
-                                    <option value="0.50" <? if ($iFirstRangeValue == "0.50") { ?>selected<?php } ?>>0.5</option>
-                                    <option value="1" <? if ($iFirstRangeValue == "1") { ?>selected<?php } ?>>1</option>
+                                    <option value='0' <?php if ($iFirstRangeValue == "0") { ?>selected<?php } ?>>0</option>
+                                    <option value="0.50" <?php if ($iFirstRangeValue == "0.50") { ?>selected<?php } ?>>0.5</option>
+                                    <option value="1" <?php if ($iFirstRangeValue == "1") { ?>selected<?php } ?>>1</option>
                                 <?php }else{ ?>
                                     <option value=''>-- Select Value --</option>
-                                    <option value='0' <? if ($iFirstRangeValue == "0") { ?>selected<?php } ?>>0</option>
-                                    <option value="50" <? if ($iFirstRangeValue == "50") { ?>selected<?php } ?>>0.5</option>
-                                    <option value="100" <? if ($iFirstRangeValue == "100") { ?>selected<?php } ?>>1</option>
+                                    <option value='0' <?php if ($iFirstRangeValue == "0") { ?>selected<?php } ?>>0</option>
+                                    <option value="50" <?php if ($iFirstRangeValue == "50") { ?>selected<?php } ?>>0.5</option>
+                                    <option value="100" <?php if ($iFirstRangeValue == "100") { ?>selected<?php } ?>>1</option>
                                 <?php } ?>
                             </select>
 
@@ -315,14 +315,14 @@ if (isset($_REQUEST['reload']) && !empty($_REQUEST['reload'])){
                                 if ($fMiddleRangeValue === floatval($fMiddleRangeValue)){
                                     ?>
                                     <option value=''>-- Select Value --</option>
-                                    <option value='0' <? if ($iSecRangeValue == "0") { ?>selected<?php } ?>>0</option>
-                                    <option value="0.50" <? if ($iSecRangeValue == "0.50") { ?>selected<?php } ?>>0.5</option>
-                                    <option value="1" <? if ($iSecRangeValue == "1") { ?>selected<?php } ?>>1</option>
+                                    <option value='0' <?php if ($iSecRangeValue == "0") { ?>selected<?php } ?>>0</option>
+                                    <option value="0.50" <?php if ($iSecRangeValue == "0.50") { ?>selected<?php } ?>>0.5</option>
+                                    <option value="1" <?php if ($iSecRangeValue == "1") { ?>selected<?php } ?>>1</option>
                                 <?php }else{ ?>
                                     <option value=''>-- Select Value --</option>
-                                    <option value='0' <? if ($iSecRangeValue == "0") { ?>selected<?php } ?>>0</option>
-                                    <option value="50" <? if ($iSecRangeValue == "1") { ?>selected<?php } ?>>50</option>
-                                    <option value="100" <? if ($iSecRangeValue == "100") { ?>selected<?php } ?>>100</option>
+                                    <option value='0' <?php if ($iSecRangeValue == "0") { ?>selected<?php } ?>>0</option>
+                                    <option value="50" <?php if ($iSecRangeValue == "1") { ?>selected<?php } ?>>50</option>
+                                    <option value="100" <?php if ($iSecRangeValue == "100") { ?>selected<?php } ?>>100</option>
                                 <?php } ?>
 
                             </select>
@@ -338,7 +338,7 @@ if (isset($_REQUEST['reload']) && !empty($_REQUEST['reload'])){
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/dataTables/jquery.dataTables.js"></script>
 <script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>

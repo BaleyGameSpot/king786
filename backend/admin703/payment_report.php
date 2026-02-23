@@ -401,17 +401,17 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                         <select class="form-control" name='searchPaymentType'
                                 data-text="Select <?php echo $langage_lbl_admin['LBL_PASSANGER_TXT_ADMIN']; ?>">
                             <option value="">Select Payment Types</option>
-                            <option value="Cash" <? if ($searchPaymentType == "Cash") { ?>selected <? } ?>>Cash</option>
+                            <option value="Cash" <?php if ($searchPaymentType == "Cash") { ?>selected <?php } ?>>Cash</option>
                             <?php
                             $payMethod = "Card";
                             if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3') {
                                 $payMethod = "Wallet";
                             } ?>
                             <option value="Card"
-                                    <? if ($searchPaymentType == "Card") { ?>selected <? } ?>><?= $payMethod; ?></option>
+                                    <?php if ($searchPaymentType == "Card") { ?>selected <?php } ?>><?= $payMethod; ?></option>
                             <?php if ($ENABLE_CORPORATE_PROFILE == "Yes") { ?>
                                 <option value="Organization"
-                                        <? if ($searchPaymentType == "Organization") { ?>selected <? } ?>>Organization
+                                        <?php if ($searchPaymentType == "Organization") { ?>selected <?php } ?>>Organization
                                 </option>
                             <?php } ?>
                         </select>
@@ -495,14 +495,14 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                                         echo "selected";
                                     }
                                     ?>><?php echo $langage_lbl_admin['LBL_HEADER_RDU_FLY_RIDE']; ?> </option>
-                                <? }
+                                <?php }
                                 if ($MODULES_OBJ->isEnableTaxiBidFeature()) { ?>
                                     <option value="TaxiBid" <?php
                                     if ($eType == "TaxiBid") {
                                         echo "selected";
                                     }
                                     ?>> <?php echo  TAXI_BID; ?>  </option>
-                                <? } ?>
+                                <?php } ?>
 
                                 <?php if ($MODULES_OBJ->isInterCityFeatureAvailable() && $APP_TYPE != 'Delivery') { ?>
 
@@ -627,7 +627,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                                                 $bookAmt = $nxtChar;
                                                 $colspan_count +=1; ?>
                                                 <th style="text-align:center;"><?= $nxtChar; ?>=Booking Fees</th>
-                                            <? }
+                                            <?php }
                                             $nxtChar = "G";
                                             if ($nxtChar == "G") {
                                                 $nxtChar = "H";
@@ -724,7 +724,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                                             <th style="text-align:center;">
                                                 <?= $ATTR['BOOKING_FEES']['FILED_NAME']; ?>
                                                 <i class="icon-question-sign" data-placement="bottom" data-toggle="tooltip" data-original-title="<?= $ATTR['BOOKING_FEES']['DISC']; ?>"></i></th>
-                                        <? } ?>
+                                        <?php } ?>
                                         <th style="text-align:center;">
                                             <?= $ATTR['PROVIDER_PAY_TAKE_AMOUNT']['FILED_NAME']; ?>
                                             <i class="icon-question-sign" data-placement="bottom" data-toggle="tooltip" data-original-title="<?= $ATTR['PROVIDER_PAY_TAKE_AMOUNT']['DISC']; ?>"></i>
@@ -863,7 +863,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                                                     <b><?= $langage_lbl_admin['LBL_RIDER_NAME_TXT_ADMIN'] ?> </b>
                                                     <?php if ($userObj->hasPermission('view-users')) { ?><a href="javascript:void(0);" onClick="show_rider_details('<?= $db_trip[$i]['iUserId']; ?>')" style="text-decoration: underline;"><?php } ?><?= clearName($db_trip[$i]['riderName']); ?><?php if ($userObj->hasPermission('view-users')) { ?></a><?php } ?> 
                                                 </td>
-                                                <?
+                                                <?php
                                                 // $systemTimeZone = date_default_timezone_get();
                                                 //$db_trip[$i]['tTripRequestDate'] = converToTz($db_trip[$i]['tTripRequestDate'], $db_trip[$i]['vTimeZone'], $systemTimeZone);
                                                 ?>
@@ -917,7 +917,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                                                     }
                                                     ?>
                                                 </td>
-                                                <? if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
+                                                <?php if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
                                                     <td align="center"><?php
                                                         if ($db_trip[$i]['fHotelCommision'] != "" && $db_trip[$i]['fHotelCommision'] != 0) {
                                                             echo formateNumAsPerCurrency($db_trip[$i]['fHotelCommision'], '');
@@ -925,7 +925,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                                                             echo '-';
                                                         }
                                                         ?></td>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <td align="center">
                                                     <?php
                                                     if ($driver_payment != "" && $driver_payment != 0) {
@@ -945,7 +945,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                                                            data-book="<?= formateNumAsPerCurrency($db_trip[$i]['fHotelCommision'], ''); ?>"
                                                            style='text-decoration: underline;'
                                                            onClick='showProvicePayDetails(this);'><?= formateNumAsPerCurrency($dispay_driver_payment, ''); ?></a>
-                                                    <? } else {
+                                                    <?php } else {
                                                         echo "-";
                                                     } ?>
 
@@ -974,7 +974,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <?
+                                                    <?php
                                                     if ($db_trip[$i]['eDriverPaymentStatus'] == "Settelled") {
                                                         /*if($db_trip[$i]['iActive'] == "Canceled" && $db_trip[$i]['fCancellationFare'] > 0) { ?>
                                                             <input class="validate[required]" type="checkbox" value="<?= $db_trip[$i]['iTripId'] ?>" id="iTripId_<?= $db_trip[$i]['iTripId'] ?>" name="iTripId[]">
@@ -985,7 +985,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                                                                value="<?= $db_trip[$i]['iTripId'] ?>"
                                                                id="iTripId_<?= $db_trip[$i]['iTripId'] ?>"
                                                                name="iTripId[]">
-                                                        <?
+                                                        <?php
                                                     }
                                                     ?>
                                                 </td>
@@ -1047,12 +1047,12 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                 <!--<ul>
                     <li>
                         Payment Mode : Card
-                        <br><?/*= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; */?> Pay / Take Amount (<?/*= $ppAmt; */?>) =
-                        A-<?/*= $pltAmt; */?>-<?/*= $ttaxAmt; */?><?php
+                        <br><?php /*= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; */?> Pay / Take Amount (<?php /*= $ppAmt; */?>) =
+                        A-<?php /*= $pltAmt; */?>-<?php /*= $ttaxAmt; */?><?php
 /*                        if ($tipAmt != "") {
                             echo " + " . $tipAmt;
                         }
-                        */?><?/*= " - " . $outAmt; */?><?php
+                        */?><?php /*= " - " . $outAmt; */?><?php
 /*                        if ($bookAmt != "") {
                             echo " - " . $bookAmt;
                         }
@@ -1061,12 +1061,12 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                     <?php /*if ($recAmt != "") { */?>
                         <li>
                             Payment Mode : Cash
-                            <br><?/*= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; */?> Pay / Take Amount (<?/*= $ppAmt; */?>) =
-                            (A-<?/*= $pltAmt; */?>-<?/*= $ttaxAmt; */?><?php
+                            <br><?php /*= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; */?> Pay / Take Amount (<?php /*= $ppAmt; */?>) =
+                            (A-<?php /*= $pltAmt; */?>-<?php /*= $ttaxAmt; */?><?php
 /*                            if ($tipAmt != "") {
                                 echo " + " . $tipAmt;
                             }
-                            */?><?/*= " - " . $outAmt; */?>
+                            */?><?php /*= " - " . $outAmt; */?>
 
 
 
@@ -1076,7 +1076,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                             } else {
                                 echo ") - ";
                             }
-                            */?><?/*= $recAmt; */?>
+                            */?><?php /*= $recAmt; */?>
                         </li>
                     <?php /*} */?>
                 </ul>-->
@@ -1186,7 +1186,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
 
  <script src="js/plugins/select2.min.js"></script> -->
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script>
     $('#dp4').datepicker().on('changeDate', function (ev) {
         var endDate = $('#dp5').val();
@@ -1256,7 +1256,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
         fareHtml += '<tr><td><b><?= $tipAmt; ?></b>-Tip</td><td align="right">' + tipAmt + '</td></tr>';
         <?php } ?>
         fareHtml += '<tr><td><b><?= $outAmt; ?></b>-Outstanding Amount</td><td align="right">' + outStandingAmt + '</td></tr>';
-        <? if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
+        <?php if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
         fareHtml += '<tr><td><b><?= $bookAmt; ?></b>-Booking Fees</td><td align="right">' + bookingFeeAmt + '</td></tr>';
         <?php } ?>
         <?php if (in_array(1, $enableCashReceivedCol)) { ?>

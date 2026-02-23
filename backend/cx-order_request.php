@@ -140,7 +140,7 @@ $CancelReasonData = $obj->MySQLSelect($sql);
                                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> 
                                                         <?= $var_msg ?>
                                                     </div>
-                                                <? } else if ($_REQUEST['success'] == 2) { ?>
+                                                <?php } else if ($_REQUEST['success'] == 2) { ?>
                                                     <div class="alert alert-danger alert-dismissable">
                                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                                         <?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -151,7 +151,7 @@ $CancelReasonData = $obj->MySQLSelect($sql);
                                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> 
                                                         <?= $var_msg ?>
                                                     </div>
-                                                <? }
+                                                <?php }
                                                 ?>
                                                 <table width="100%" border="0" class="ui celled table custom-table dataTable no-footer"  cellpadding="0" cellspacing="1" id="dataTables-example">
 								          			<thead>
@@ -165,7 +165,7 @@ $CancelReasonData = $obj->MySQLSelect($sql);
 														</tr>
 													</thead>
 													<tbody>
-													<? 
+													<?php 
 													$systemTimeZone = date_default_timezone_get();
 	                                                $db_records = $obj->MySQLSelect("SELECT iOrderId,count(CASE WHEN eStatus = 'Accept' THEN iDriverId END) as total_accept,max(tDate) as ttDate,count(iOrderId) as corder  FROM driver_request  WHERE 1 = 1 GROUP BY iOrderId ORDER BY  `tDate` DESC");
 	                                                $orderDataArr = array();
@@ -268,7 +268,7 @@ $CancelReasonData = $obj->MySQLSelect($sql);
 
 	                                                                        	<button  href="#" class="gen-btn declinebutton" onclick="openDeclineModal(this);" data-id="<?= $db_order_detail[$i]['iOrderId']; ?>" type="button" style="padding: 5px;font-size: 14px;"><?= $langage_lbl['LBL_DECLINE_TXT']; ?></button>
 
-	                                                                        <? }
+	                                                                        <?php }
 	                                                                    }
 	                                                                }
 	                                                            }
@@ -277,7 +277,7 @@ $CancelReasonData = $obj->MySQLSelect($sql);
 															  	}?>
 															</td>		
 														</tr>
-													<? } ?>		
+													<?php } ?>		
 													</tbody>
 								        		</table>
                                             </form>

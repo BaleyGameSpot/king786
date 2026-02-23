@@ -25,15 +25,15 @@ if($id != "") {
 		
 ?>
 <input type="hidden" name="temp_order" id="temp_order" value="<?= ($action == 'Edit') ? $totalVal : '1'; ?>">
-<?  $display_numbers = $totalVal; ?>
+<?php  $display_numbers = $totalVal; ?>
 <select name="iDisplayOrder" class="form-control">
-    <? for ($i = 1; $i <= $display_numbers; $i++) { ?>
-        <option value="<?= $i ?>" <?
+    <?php for ($i = 1; $i <= $display_numbers; $i++) { ?>
+        <option value="<?= $i ?>" <?php
         if ($i == $iDisplayOrder_db) {
             echo "selected";
         }
         ?>> -- <?= $i ?> --</option>
-            <? } ?>
+            <?php } ?>
 </select> 
 
 <?php exit();

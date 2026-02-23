@@ -9,16 +9,16 @@ android {
         create("signConfig") {
             keyAlias = "upload"
             keyPassword = "baley786"
-            storeFile = file("L:/gojek2024/buddyverse/ProviderApp/Provider-Main/app/nivsProvider.jks")
+            storeFile = file("nivsProvider.jks")
             storePassword = "baley786"
         }
     }
     namespace = "com.buddyverse.providers"
-    compileSdk = 34
+    compileSdk = 35
     defaultConfig {
         applicationId = "com.buddyverse.providers"
         minSdk = 23
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 2
         versionName = "1.0"
 

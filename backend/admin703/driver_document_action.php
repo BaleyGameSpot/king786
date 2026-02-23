@@ -329,35 +329,35 @@ if ($action = 'document' && isset($_POST['doc_type'])) {
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?= $var_msg; ?>
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if ($success == 2) { ?>
+                    <?php } ?>
+                    <?php if ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             "Edit / Delete Record Feature" has been disabled on the Demo Admin Panel. This feature will
                             be enabled on the main script we will provide you.
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if ($success == 3) { ?>
+                    <?php } ?>
+                    <?php if ($success == 3) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?= $var_msg; ?>
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if ($success == 4) { ?>
+                    <?php } ?>
+                    <?php if ($success == 4) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             Document Approved Successfully..
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <input type="hidden" name="id" value="<?= $id; ?>"/>
                     <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
                     <input type="hidden" name="user_type" id="user_type" value="<?php echo $user_type; ?>"/>
@@ -443,9 +443,9 @@ if ($action = 'document' && isset($_POST['doc_type'])) {
                                         <br/>
                                         <?php if ($userObj->hasPermission('edit-provider-document')) { ?>
                                             <b>
-                                                <? if(!empty($imgpath)) { ?>
+                                                <?php if(!empty($imgpath)) { ?>
                                                     <a href="<?= $pathsrc; ?>" target="_blank"><button class="btn btn-info" href="<?= $imgpath; ?>">View</button> </a> 
-                                                <? } ?>
+                                                <?php } ?>
                                                     <button class="btn btn-info" data-toggle="modal" data-target="#uiModal" id="custId" onClick="setModel001('<?php echo $db_userdoc[$i]['masterid']; ?>');">
                                                     <?php
                                                     // if ($db_userdoc[$i]['doc_name'] != '') {
@@ -559,7 +559,7 @@ if ($action = 'document' && isset($_POST['doc_type'])) {
 </div>
 <!--END MAIN WRAPPER -->
 <!-- Modal -->
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <link rel="stylesheet" type="text/css" media="screen"
       href="css/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
 <script type="text/javascript" src="js/moment.min.js"></script>

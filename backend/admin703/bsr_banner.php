@@ -188,7 +188,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages.$var_filter;
                                     </td>
                                    
                                     <td>
-                                        <? $reload_new = "bsr_banner.php?eType=".$_REQUEST['eType'];?>
+                                        <?php $reload_new = "bsr_banner.php?eType=".$_REQUEST['eType'];?>
                                         <input type="submit" value="Search" class="btnalt button11" id="Search" name="Search" title="Search" />
                                         <input type="button" value="Reset" class="btnalt button11" onClick="window.location.href='<?php echo $reload_new;?>'"/>
                                     </td>
@@ -246,13 +246,13 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages.$var_filter;
                                                             <?php } else { echo $vImage; }  ?>
                                                         </td>
                                                         <td><?= $vTitle; ?></td>
-                                                       <!--  <? if (scount($service_cat_data) > 1) { ?>
+                                                       <!--  <?php if (scount($service_cat_data) > 1) { ?>
                                                         <td  align="center">
                                                             <?php foreach ($service_cat_data as $servicedata) { ?>
                                                             <?php if ($servicedata['iServiceId'] == $db_data[$i]['iServiceId']) { ?><span><?php echo (isset($servicedata['vServiceName']) ? $servicedata['vServiceName'] : ''); ?></span><?php } ?>
                                                             <?php } ?>
                                                         </td>
-                                                        <? } ?>
+                                                        <?php } ?>
  -->
                                                         <td align="center" width="10%"><?= $vCode; ?></td>
                                                         <td width="10%" align="center"><?= $iDisplayOrder; ?> </td>
@@ -285,7 +285,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages.$var_filter;
                                                         </td>
                                                         <?php } ?> -->
                                                         <td width="10%"  align="center">
-                                                            <?
+                                                            <?php
                                                             if ($eStatus == 'Active') {
                                                                 $dis_img = "img/active-icon.png";
                                                             } else if ($eStatus == 'Inactive') {

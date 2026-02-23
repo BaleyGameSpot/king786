@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 
 
@@ -141,7 +141,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> 
                                             <?= $var_msg ?>
                                         </div>
-                                    <? } else if ($_REQUEST['success'] == 2) { ?>
+                                    <?php } else if ($_REQUEST['success'] == 2) { ?>
                                         <div class="alert alert-danger alert-dismissable">
                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                             <?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -152,7 +152,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> 
                                             <?= $var_msg ?>
                                         </div>
-                                    <? }
+                                    <?php }
                                     ?>
                                     <!--<div class="col-md-2" style="float:right;">
                                     <select name="payment_mode" class="form-control" onchange="getdatapaymentwise(this.value);">
@@ -167,9 +167,9 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
                                                 <th><?= $langage_lbl['LBL_MYTRIP_TRIPDATE']; ?></th>
                                                 <th><?= $langage_lbl['LBL_FARE_TXT']; ?></th>
                                                 <th><?= $langage_lbl['LBL_Commission']; ?></th>
-                                                <? if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
+                                                <?php if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
                                                     <th><?= $langage_lbl['LBL_HOTEL_BOOKING_CHARGE']; ?></th>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <th><?= ucfirst(strtolower($langage_lbl['LBL_TOTAL_TXT'])) . " " . ucfirst(strtolower($langage_lbl['LBL_TAX1_TXT'])); ?></th>
                                                 <th><?= ucfirst(strtolower($langage_lbl['LBL_TIP_TITLE_TXT'])); ?></th>
                                                 <th><?= $langage_lbl['LBL_MYEARNING_PAYMENT_TXT']; ?></th>
@@ -179,7 +179,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?
+                                            <?php
                                             $fareTotal = $commTotal = $tipPriceTotal = $driverPayTotal = $HotelCommisionTotal = $total_tax = $cardNo = 0; //added by SP if anyone request is of the card then only this btn shown for cardno only on 31-07-2019
                                             for ($i = 0; $i < scount($db_dtrip); $i++) {
                                                
@@ -230,12 +230,12 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
 														formateNumAsPerCurrency($site_commission, $tripcurname);
                                                         $commTotal += $site_commission;
                                                         ?></td>
-                                                        <? if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
+                                                        <?php if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
                                                         <td align="right"><?=
 														formateNumAsPerCurrency($hotel_commision, $tripcurname);
                                                             $HotelCommisionTotal += $hotel_commision;
                                                             ?></td>
-                                                        <? } ?>
+                                                        <?php } ?>
 
                                                     <td align="right"><?php
                                                         if ($totTax > 0) {
@@ -269,12 +269,12 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
                                                     <td>
                                                         <div class="checkbox-n">
                                                         <?php if ($db_dtrip[$i]['vTripPaymentMode'] != "Cash") { $cardNo++; //added by SP if anyone request is of the card then only this btn shown on 31-07-2019 ?>
-                                                                <input id="payment_<?= $db_dtrip[$i]['iTripId']; ?>" name="iTripId[]" value="<?= base64_decode(base64_decode(trim($db_dtrip[$i]['iTripId']))); ?>" type="checkbox" <? if ($db_dtrip[$i]['ePayment_request'] == 'Yes') { ?> checked="checked" disabled <? } ?> >
+                                                                <input id="payment_<?= $db_dtrip[$i]['iTripId']; ?>" name="iTripId[]" value="<?= base64_decode(base64_decode(trim($db_dtrip[$i]['iTripId']))); ?>" type="checkbox" <?php if ($db_dtrip[$i]['ePayment_request'] == 'Yes') { ?> checked="checked" disabled <?php } ?> >
                                                                 <label for="payment_<?= $db_dtrip[$i]['iTripId']; ?>"></label></div>
                                                 <?php } ?>
                                                     </td>
                                                 </tr>
-<? } ?>
+<?php } ?>
                                         </tbody>
                                         <tfoot>
                                             <tr class="last_row_record">
@@ -282,9 +282,9 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
                                                 <td></td>
                                                 <td class="last_record_row"><?= formateNumAsPerCurrency($fareTotal, $tripcurname); ?></td>
                                                 <td class="last_record_row midddle_rw"><?=formateNumAsPerCurrency($commTotal, $tripcurname); ?></td>
-                                                <? if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
+                                                <?php if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
                                                     <td class="last_record_row midddle_rw"><?= formateNumAsPerCurrency($HotelCommisionTotal, $tripcurname);?></td>
-<? } ?>
+<?php } ?>
                                                 <td class="last_record_row midddle_rw"><?=formateNumAsPerCurrency($total_tax, $tripcurname); ?></td>
                                                 <td class="last_record_row midddle_rw"><?=formateNumAsPerCurrency($tipPriceTotal, $tripcurname); ?></td>
                                                 <td class="last_record_row"> <?= formateNumAsPerCurrency($driverPayTotal, $tripcurname); ?></td>
@@ -302,7 +302,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
                     <?php } ?>
                         </div>
                     </div>
-<? //if(SITE_TYPE=="Demo"){    ?>
+<?php //if(SITE_TYPE=="Demo"){    ?>
                     <!-- <div class="record-feature"> 
                          <span><strong>“Edit / Delete Record Feature�?</strong> has been disabled on the Demo Admin Version you are viewing now.
                          This feature will be enabled in the main product we will provide you.</span> 
@@ -321,7 +321,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
         </div>
 
         <div class="col-lg-12">
-<? $type = $_SESSION['sess_user']; ?>
+<?php $type = $_SESSION['sess_user']; ?>
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-content image-upload-1 popup-box1">
                     <div class="upload-content">
@@ -334,15 +334,15 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
                             <div class="col-lg-13">
                                 <div class="input-group input-append" >
                                     <h5><?= $langage_lbl['LBL_WALLET_ACCOUNT_HOLDER_NAME']; ?>*</h5>
-                                    <input type="text" name="vHolderName" id="vHolderName" class="form-control vHolderName"  <? if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBankAccountHolderName']; ?>"<? } ?>>
+                                    <input type="text" name="vHolderName" id="vHolderName" class="form-control vHolderName"  <?php if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBankAccountHolderName']; ?>"<?php } ?>>
                                     <h5><?= $langage_lbl['LBL_WALLET_NAME_OF_BANK']; ?>*</h5>
-                                    <input type="text" name="vBankName" id="vBankName" class="form-control vBankName" <? if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBankName']; ?>"<? } ?>>
+                                    <input type="text" name="vBankName" id="vBankName" class="form-control vBankName" <?php if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBankName']; ?>"<?php } ?>>
                                     <h5><?= $langage_lbl['LBL_WALLET_ACCOUNT_NUMBER']; ?>*</h5>
-                                    <input type="text" name="iBankAccountNo" id="iBankAccountNo" class="form-control iBankAccountNo" <? if ($type == 'driver') { ?>value="<?= $db_booking[0]['vAccountNumber']; ?>"<? } ?>>
+                                    <input type="text" name="iBankAccountNo" id="iBankAccountNo" class="form-control iBankAccountNo" <?php if ($type == 'driver') { ?>value="<?= $db_booking[0]['vAccountNumber']; ?>"<?php } ?>>
                                     <h5><?= $langage_lbl['LBL_WALLET_BIC_SWIFT_CODE']; ?>*</h5>
-                                    <input type="text" name="BICSWIFTCode" id="BICSWIFTCode" class="form-control BICSWIFTCode" <? if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBIC_SWIFT_Code']; ?>"<? } ?>>
+                                    <input type="text" name="BICSWIFTCode" id="BICSWIFTCode" class="form-control BICSWIFTCode" <?php if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBIC_SWIFT_Code']; ?>"<?php } ?>>
                                     <h5><?= $langage_lbl['LBL_WALLET_BANK_LOCATION']; ?>*</h5>
-                                    <input type="text" name="vBankBranch" id="vBankBranch" class="form-control vBankBranch" <? if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBankLocation']; ?>"<? } ?>>
+                                    <input type="text" name="vBankBranch" id="vBankBranch" class="form-control vBankBranch" <?php if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBankLocation']; ?>"<?php } ?>>
                                 </div>
                             </div>
                             <input type="button" onClick="check_login_small();" id="withdrawal_request" class="save" name="<?= $langage_lbl['LBL_WALLET_save']; ?>" value="<?= $langage_lbl['LBL_BTN_SEND_TXT']; ?>">
@@ -387,7 +387,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
                                     }
                                 }
 <?php if ($ENABLE_TIP_MODULE == "Yes") { ?>
-    <? if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
+    <?php if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
                                         $(document).ready(function () {
                                             $('#dataTables-example').dataTable({
                                                 fixedHeader: {
@@ -409,7 +409,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
                                                 ]
                                             });
                                         });
-    <? } else { ?>
+    <?php } else { ?>
                                         $(document).ready(function () {
                                             $('#dataTables-example').dataTable({
                                                 fixedHeader: {
@@ -430,9 +430,9 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
                                                 ]
                                             });
                                         });
-    <? } ?>
+    <?php } ?>
 <?php } else { ?>
-    <? if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
+    <?php if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
                                         $(document).ready(function () {
                                             $('#dataTables-example').dataTable({
                                                 fixedHeader: {
@@ -453,7 +453,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
                                                 ]
                                             });
                                         });
-    <? } else { ?>
+    <?php } else { ?>
                                         $(document).ready(function () {
                                             $('#dataTables-example').dataTable({
                                                 fixedHeader: {
@@ -473,7 +473,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
                                                 ]
                                             });
                                         });
-    <? } ?>
+    <?php } ?>
 <?php } ?>
 
                                 function check_login_small() {

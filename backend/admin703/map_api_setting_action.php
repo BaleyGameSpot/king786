@@ -218,7 +218,7 @@ if ($action == 'Edit') {
         <meta charset="UTF-8" />
         <title><?=$SITE_NAME?> | <?php echo $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?>  <?=$action;?></title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <?
+        <?php
         include_once('global_files.php');
         ?>
         <!-- On OFF switch -->
@@ -230,7 +230,7 @@ if ($action == 'Edit') {
     <body class="padTop53 " >
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <?
+            <?php
             include_once('header.php');
             include_once('left_menu.php');
             ?>

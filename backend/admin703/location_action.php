@@ -230,7 +230,7 @@ if($cubeDeliverallOnly > 0){
                                                 <label>Location For<span class="red"> *</span></label>
                                             </div>
                                             <div class="col-lg-6">
-                                                <select class="form-control" name ="eFor" id="eFor" required="required" <? if ($action == 'Edit') { ?>disabled <? } ?>>
+                                                <select class="form-control" name ="eFor" id="eFor" required="required" <?php if ($action == 'Edit') { ?>disabled <?php } ?>>
                                                     <option value="">Select Location For</option>
                                                     <option value ="Restrict" <?php if ($eFor == 'Restrict') {?>selected<?php }?>><?php echo $langage_lbl_admin['LBL_LOCATION_AREA_RESTRICTION']; ?></option>
                                                     <option value="Franchise" <?= ($eFor == 'Franchise') ? "selected" : "" ?>>Franchise</option>
@@ -256,7 +256,7 @@ if($cubeDeliverallOnly > 0){
                                                         }
                                                     } if($MODULES_OBJ->isEnableLocationwiseBanner()) { ?>
                                                         <option value ="Banner" <?php if ($eFor == 'Banner') {?>selected<?php }?>>Banner</option>
-                                                    <? } if($MODULES_OBJ->isEnableLocationWisePromoCode()) { ?>
+                                                    <?php } if($MODULES_OBJ->isEnableLocationWisePromoCode()) { ?>
                                                         <option value="PromoCode" <?php if ($eFor == 'PromoCode') {?>selected<?php }?>>PromoCode</option>
                                                     <?php } ?>
                                                     

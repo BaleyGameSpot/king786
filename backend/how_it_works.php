@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("common.php");
 $PagesData = $obj->MySQLSelect("SELECT iPageId FROM `pages` WHERE iPageId = 6 AND eStatus = 'Active' ");
 if(scount($PagesData)<=0) {

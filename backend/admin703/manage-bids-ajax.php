@@ -82,7 +82,7 @@ $biddingServices = array_values($biddingServices);
                     <input type="checkbox" class="chk vCarTypeClass" name="selectedbiddingdriverservice[]" id="selectedbiddingdriverservice<?= $SubCategoryval['iBiddingId'] ?>"  <?php if (in_array($SubCategoryval['iBiddingId'], $selectedbiddingdriverservice)) { ?>checked<?php } ?> value="<?= $SubCategoryval['iBiddingId'] ?>" />
                 </div>
             </li>
-        <? } ?>
+        <?php } ?>
         </fieldset>
     <?php } ?>
     </ul>

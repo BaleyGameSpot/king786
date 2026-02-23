@@ -41,7 +41,7 @@
                                         <input type="email" name="vEmail" class="create-account-input"
                                                id="vEmail_verify" value="<?php echo $vEmail; ?>" Required/>
                                     </div>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <div class="form-group half phone-column newrow">
                                         <label><?= $langage_lbl['LBL_SIGNUP_777-777-7777']; ?>
                                             <span class="red">*</span>
@@ -50,7 +50,7 @@
                                         <input type="text" name="vPhoneCode" readonly id="code" class="phonecode"/>
                                         <input required type="text" id="vPhone" value="<?php echo $vPhone; ?>"  class="create-account-input create-account-input1 vPhone_verify" name="vPhone"/>
                                     </div>
-                                <? } ?>
+                                <?php } ?>
                                 <div class="form-group half newrow">
                                     <div class="relative_ele">
                                         <label><?= $langage_lbl['LBL_PASSWORD']; ?>
@@ -106,10 +106,10 @@
                                     </label>
                                     <select class="" required name='vCountry' id="vCountry"
                                             onChange="setState(this.value, '');changeCurrency(this.value);">
-                                        <? for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                        <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
                                             <option value="<?= $db_country[$i]['vCountryCode'] ?>"
-                                                    <? if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
-                                        <? } ?>
+                                                    <?php if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>
@@ -123,25 +123,25 @@
                                                class="create-account-input create-account-input1 vPhone_verify"
                                                name="vPhone"/>
                                     </div>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <div class="form-group half newrow">
                                         <label><?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?></label>
                                         <input type="email" name="vEmail" class="create-account-input"
                                                id="vEmail_verify" value="<?php echo $vEmail; ?>"/>
                                     </div>
-                                <? } ?>
+                                <?php } ?>
                                 <div class="form-group half newrow floating">
                                     <label><?= $langage_lbl['LBL_SELECT_LANGUAGE_TXT']; ?></label>
                                     <select name="vLang" class="">
-                                        <? for ($i = 0; $i < scount($db_lang); $i++) { ?>
-                                            <option value="<?= $db_lang[$i]['vCode'] ?>" <?
+                                        <?php for ($i = 0; $i < scount($db_lang); $i++) { ?>
+                                            <option value="<?= $db_lang[$i]['vCode'] ?>" <?php
                                             if ($db_lang[$i]['eDefault'] == 'Yes') {
                                                 echo 'selected';
                                             }
                                             ?>>
                                                 <?= $db_lang[$i]['vTitle'] ?>
                                             </option>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group half newrow floating selectcurrency">
@@ -149,10 +149,10 @@
                                     <select class="" required name='vCurrencyPassenger'>
                                         <?php for ($i = 0; $i < scount($db_currency); $i++) { ?>
                                             <option value="<?= $db_currency[$i]['vName'] ?>"
-                                                    <? if ($defaultCurrency == $db_currency[$i]['vName']) { ?>selected<? } ?>>
+                                                    <?php if ($defaultCurrency == $db_currency[$i]['vName']) { ?>selected<?php } ?>>
                                                 <?= $db_currency[$i]['vName'] ?>
                                             </option>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                 </div>
                                 <div class="form-group  captcha-column newrow">

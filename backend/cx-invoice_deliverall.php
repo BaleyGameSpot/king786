@@ -611,9 +611,9 @@
                                 <div class="overview-data">
                                     <strong><?= $langage_lbl['LBL_PASSENGER_NAME_TEXT_DL']; ?></strong>
                                     <span><?= clearName($db_order_data['UserName']) ?>
-                                    <? if (!empty($getratings['UserRate'])) { ?>
+                                    <?php if (!empty($getratings['UserRate'])) { ?>
                                     (<img src="<?= $siteUrl; ?>assets/img/star.jpg" alt=""> <?= $getratings['UserRate'] ?>)
-                                    <? } ?>
+                                    <?php } ?>
                                     </span>
                                 </div>
                             </li>
@@ -671,7 +671,7 @@
                                         <div class="fare-breakdown">
                                             <div class="fare-breakdown-inner">
                                                 <ul>
-                                                    <? $c = 1; foreach ($db_order_data['History_Arr'] as $key => $value) { ?>
+                                                    <?php $c = 1; foreach ($db_order_data['History_Arr'] as $key => $value) { ?>
                                                     <li>
                                                         <?= ($c == scount($db_order_data['History_Arr'])) ? '<span>'.$key.'</span>' : $key; ?>
                                                         <b><?= $value; ?></b>
@@ -691,53 +691,53 @@
                                                 $db_menu_item_list = $db_order_data['itemlist'];
                                                 if (!empty($db_menu_item_list)) { ?>
                                             <li class="item-list">
-                                                <? foreach ($db_menu_item_list as $key => $val) { ?>
+                                                <?php foreach ($db_menu_item_list as $key => $val) { ?>
                                                 <div class="itme-row">
                                                     <?php if($db_order_data['eBuyAnyService'] == "Yes") { ?>
                                                     <span>
                                                         <?= $val['MenuItem']; ?> X <?= $val['iQty']; ?>
-                                                        <? if ($val['SubTitle'] != '') { ?>
+                                                        <?php if ($val['SubTitle'] != '') { ?>
                                                         <strong style="font-size: 10px;">(<?= $val['SubTitle']; ?>)</strong>
-                                                        <? } ?>
-                                                        <? if ($val['eDecline'] == "Yes") { ?>
+                                                        <?php } ?>
+                                                        <?php if ($val['eDecline'] == "Yes") { ?>
                                                             <br/><strong style="font-size: 12px;">(<?= $langage_lbl['LBL_USER_DECLINED'] ?>)</strong>
-                                                        <? } ?>
-                                                        <? if ($val['eExtraPayment'] == "No" && $val['eItemAvailable'] == "Yes") { ?>
+                                                        <?php } ?>
+                                                        <?php if ($val['eExtraPayment'] == "No" && $val['eItemAvailable'] == "Yes") { ?>
                                                             <br/><strong style="font-size: 12px;">(<?= $langage_lbl['LBL_PAYMENT_NOT_REQUIRED'] ?>)</strong>
-                                                        <? } elseif ($val['eItemAvailable'] == "No") { ?>
-                                                            <? if ($val['eExtraPayment'] == "No") { ?>
+                                                        <?php } elseif ($val['eItemAvailable'] == "No") { ?>
+                                                            <?php if ($val['eExtraPayment'] == "No") { ?>
                                                             <br/><strong style="font-size: 12px;">(<?= $langage_lbl['LBL_ITEM_NO_PAYMENT_UNAVAILABLE'] ?>)</strong>
                                                             <?php } else { ?>
                                                             <br/><strong style="font-size: 12px;">(<?= $langage_lbl['LBL_ITEM_NOT_AVAILABLE'] ?>)</strong>
-                                                            <? } ?>
+                                                            <?php } ?>
                                                         <?php } ?>
                                                     </span>
                                                     <b><?= $val['fTotPrice']  ?></b>
                                                     <?php } else { ?>
-                                                    <span><?= $val['MenuItem']; ?> X <?= $val['iQty']; ?><? if ($val['SubTitle'] != '') { ?><strong style="font-size: 10px;">(<?= $val['SubTitle']; ?>)</strong><? } ?></span>
+                                                    <span><?= $val['MenuItem']; ?> X <?= $val['iQty']; ?><?php if ($val['SubTitle'] != '') { ?><strong style="font-size: 10px;">(<?= $val['SubTitle']; ?>)</strong><?php } ?></span>
                                                     <b><?= $val['fTotPrice'] ?></b>
                                                     <?php } ?>
                                                 </div>
                                                 <?php } ?>
                                             </li>
                                             <?php } ?>
-                                            <? foreach ($db_order_data['History_Arr'] as $key => $value) { ?>
+                                            <?php foreach ($db_order_data['History_Arr'] as $key => $value) { ?>
                                             <li><span><?= $key; ?></span><b><?= $value; ?></b></li>
                                             <?php } ?>
 
-                                            <? if($db_order_data['fTipAmount'] > 0) { ?>
-                                                <? foreach ($db_order_data['History_Arr_first'] as $key => $value) { ?>
+                                            <?php if($db_order_data['fTipAmount'] > 0) { ?>
+                                                <?php foreach ($db_order_data['History_Arr_first'] as $key => $value) { ?>
                                                 <li><span><?= $key; ?></span><b><?= $value; ?></b></li>
-                                                <? } ?>
+                                                <?php } ?>
 
-                                                <? foreach ($db_order_data['History_Arr_Total'] as $key => $value) { ?>
+                                                <?php foreach ($db_order_data['History_Arr_Total'] as $key => $value) { ?>
                                                 <li><span><?= $key; ?></span><b><?= $value; ?></b></li>
-                                                <? } ?>
-                                            <? } else { ?>
-                                                <? foreach ($db_order_data['History_Arr_first'] as $key => $value) { ?>
+                                                <?php } ?>
+                                            <?php } else { ?>
+                                                <?php foreach ($db_order_data['History_Arr_first'] as $key => $value) { ?>
                                                 <li><span><?= $key; ?></span><b><?= $value; ?></b></li>
-                                                <? } ?>
-                                            <? } ?>
+                                                <?php } ?>
+                                            <?php } ?>
                                         </ul>
                                         <?php }
                                         else { ?>
@@ -748,23 +748,23 @@
                                                 $db_menu_item_list = $db_order_data['itemlist'];
                                                 if (!empty($db_menu_item_list)) { ?>
                                             <li class="item-list">
-                                                <? foreach ($db_menu_item_list as $key => $val) { ?>
+                                                <?php foreach ($db_menu_item_list as $key => $val) { ?>
                                                 <div class="itme-row">
-                                                    <span><?= $val['MenuItem']; ?> X <?= $val['iQty']; ?><? if ($val['SubTitle'] != '') { ?><strong style="font-size: 10px;">(<?= $val['SubTitle']; ?>)</strong><? } ?></span>
+                                                    <span><?= $val['MenuItem']; ?> X <?= $val['iQty']; ?><?php if ($val['SubTitle'] != '') { ?><strong style="font-size: 10px;">(<?= $val['SubTitle']; ?>)</strong><?php } ?></span>
                                                     <b><?= $val['fTotPrice'] ?></b>
                                                 </div>
                                                 <?php } ?>
                                             </li>
                                             <?php } ?>
-                                            <? foreach ($db_order_data['History_Arr'] as $key => $value) { ?>
+                                            <?php foreach ($db_order_data['History_Arr'] as $key => $value) { ?>
                                             <li><span><?= $key; ?></span><b><?= $value; ?></b></li>
                                             <?php } ?>
-                                            <? foreach ($db_order_data['History_Arr_first'] as $key => $value) { ?>
+                                            <?php foreach ($db_order_data['History_Arr_first'] as $key => $value) { ?>
                                             <li><span><?= $key; ?></span><b><?= $value; ?></b></li>
-                                            <? } ?>
-                                            <? foreach ($db_order_data['History_Arr_second'] as $key => $value) { ?>
+                                            <?php } ?>
+                                            <?php foreach ($db_order_data['History_Arr_second'] as $key => $value) { ?>
                                             <li><span><?= $key; ?></span><b><?= $value; ?></b></li>
-                                            <? } ?>
+                                            <?php } ?>
                                         </ul>
                                         <?php } ?>
                                         <?php if ($db_order_data['iStatusCode'] == '8') { ?>
@@ -795,13 +795,13 @@
                                                     ?>
                                                 <?php if ($sessionUserType == 'rider') { ?>
                                                 <div><?= $langage_lbl["LBL_CANCELLATION_CHARGE_WEB"] ?> : <?= $db_order_data['CancellationCharge']; ?>
-                                                    <? if ($db_order_data['ePaymentOption'] == 'Cash' && $db_order_data['ePaidByPassenger'] == 'Yes') { ?>
+                                                    <?php if ($db_order_data['ePaymentOption'] == 'Cash' && $db_order_data['ePaidByPassenger'] == 'Yes') { ?>
                                                     ( <?= $langage_lbl["LBL_PAID_IN_ORDER_NO_TXT"] ?># : <?= $db_order_data['vOrderAdjusmentId'] ?>)
-                                                    <? } else if ($db_order_data['ePaymentOption'] == 'Cash') { ?>
+                                                    <?php } else if ($db_order_data['ePaymentOption'] == 'Cash') { ?>
                                                     ( <?= $langage_lbl["LBL_UNPAID_WEB_TXT"] ?> )
-                                                    <? } else if ($db_order_data['ePaymentOption'] == 'Card' && $db_order_data['eBuyAnyService'] == "No") { ?>
+                                                    <?php } else if ($db_order_data['ePaymentOption'] == 'Card' && $db_order_data['eBuyAnyService'] == "No") { ?>
                                                     ( <?= $langage_lbl["LBL_PAID_BY_CARD_WEB_TXT"] ?> )
-                                                    <? } ?>
+                                                    <?php } ?>
                                                 </div>
                                                 <?php } ?>
                                             </div>
@@ -834,13 +834,13 @@
                                                     ?>
                                                 <?php if ($sessionUserType == 'rider') { ?>
                                                 <div> <?= $langage_lbl["LBL_CANCELLATION_CHARGE_WEB"] ?> : <?= $db_order_data['CancellationCharge']; ?>
-                                                    <? if ($db_order_data['ePaymentOption'] == 'Cash' && $db_order_data['ePaidByPassenger'] == 'Yes') { ?>
+                                                    <?php if ($db_order_data['ePaymentOption'] == 'Cash' && $db_order_data['ePaidByPassenger'] == 'Yes') { ?>
                                                     ( <?= $langage_lbl["LBL_PAID_IN_ORDER_NO_TXT"] ?># : <?= $db_order_data['vOrderAdjusmentId'] ?>)
-                                                    <? } else if ($db_order_data['ePaymentOption'] == 'Cash') { ?>
+                                                    <?php } else if ($db_order_data['ePaymentOption'] == 'Cash') { ?>
                                                     ( <?= $langage_lbl["LBL_UNPAID_WEB_TXT"] ?> )
-                                                    <? } else if ($db_order_data['ePaymentOption'] == 'Card') { ?>
+                                                    <?php } else if ($db_order_data['ePaymentOption'] == 'Card') { ?>
                                                     ( <?= $langage_lbl["LBL_PAID_BY_CARD_WEB_TXT"] ?> )
-                                                    <? } ?>
+                                                    <?php } ?>
                                                 </div>
                                                 <div> <?= $langage_lbl["LBL_REFUND_WEB_TXT"] ?> : <?= $db_order_data['RefundAmount']; ?></div>
                                                 <?php } ?>
@@ -871,7 +871,7 @@
                                             <div class="invoice__right__side">
                                             <strong><?= $langage_lbl["LBL_ORDER_PICKUP_TIME"] ?>:</strong>
                                         <!-- // [HP] 25-10-2021 #region :  date change -->
-                                        <p><? /*if (isset($db_order_data['pickupTime']) && !empty($db_order_data['pickupTime'])) {
+                                        <p><?php /*if (isset($db_order_data['pickupTime']) && !empty($db_order_data['pickupTime'])) {
                                                 echo @date('h:i A', @strtotime($db_order_data['pickupTime']));
                                             } else {
                                                 echo "-";
@@ -896,7 +896,7 @@
                                             <i class="fa fa-clock-o"></i>
                                             <div class="invoice__right__side">
                                             <strong><?= $langage_lbl["LBL_DELIVERY_TIME"] ?>:</strong>
-                                            <p><? echo $delivery_drop_date_format;
+                                            <p><?php echo $delivery_drop_date_format;
 					    //if($db_order_data['iStatusCode'] == 6) { echo @date('h:i A', @strtotime($db_order_data['DeliveryDate'])); } else { echo "-"; } ?></p>
                                             </div>
                                         </li>
@@ -1076,22 +1076,22 @@
                                         <?php } else { ?>
                                         <?= $db_order_data['CompanyName']; ?>
                                         <?php } ?>
-                                        <? if (!empty($getratings['CompanyRate'])) { ?>
+                                        <?php if (!empty($getratings['CompanyRate'])) { ?>
                                         (<img src="<?= $siteUrl; ?>assets/img/star.jpg" alt=""> <?= $getratings['CompanyRate'] ?>)
-                                        <? } ?>
+                                        <?php } ?>
                                     </p>
                                 </div>
-                                <? if (!empty($db_order_data['DriverName'])) { ?>
+                                <?php if (!empty($db_order_data['DriverName'])) { ?>
                                 <div class="rest-name-holder">
                                     <i><img src="assets/img/apptype/<?php echo $template;?>/scooter_driver.svg" alt=""></i>
                                     <strong><?= $langage_lbl['LBL_ORDER_DELIVERED_BY_DRIVER']; ?> : </strong>
                                     <p><?= $db_order_data['DriverName']; ?>
-                                        <? if (!empty($getratings['DriverRate'])) { ?>
+                                        <?php if (!empty($getratings['DriverRate'])) { ?>
                                         (<img src="<?= $siteUrl; ?>assets/img/star.jpg" alt=""> <?= $getratings['DriverRate'] ?>)
-                                        <? } ?>
+                                        <?php } ?>
                                     </p>
                                 </div>
-                                <? } ?>
+                                <?php } ?>
                                 <?php if ($UserType == 'Passenger') { ?>
                                 <ul id="orderstatusall">
                                     <?php
@@ -1161,7 +1161,7 @@
                                 <!--<div class="order_cancel"><?= strtoupper($langage_lbl['LBL_ORDER_CANCELLED']); ?></div>-->
                                 <?php }
                                     if($takeaway=='Yes') { ?>
-                                <div class="new-box-one preparetime" style="margin-top:20px; <?php if($value->OrderCurrentStatusCode==2) { ?> display:block; <? } else { ?> display:none; <? } ?>">
+                                <div class="new-box-one preparetime" style="margin-top:20px; <?php if($value->OrderCurrentStatusCode==2) { ?> display:block; <?php } else { ?> display:none; <?php } ?>">
                                     <h4><b><?= $langage_lbl['LBL_REST_PREPARATION_TIME']?></b>: <?= $preparetimedata ?></h4>
                                     <div style="margin-top:5px"><i aria-hidden="true" class="fa fa-map-marker fa-22 green-location"></i>
                                         <span><?= $db_order_data['vRestuarantLocation'];  ?></span>
@@ -1173,11 +1173,11 @@
                                     </div>
 
                                 </div>
-                                <div class="new-box-one pickuptext" style="margin-top:20px; <?php if($value->OrderCurrentStatusCode==6) { ?> display:block; <? } else { ?> display:none; <? } ?>">
+                                <div class="new-box-one pickuptext" style="margin-top:20px; <?php if($value->OrderCurrentStatusCode==6) { ?> display:block; <?php } else { ?> display:none; <?php } ?>">
                                     <h4><b><?= $langage_lbl["LBL_ORDER_PICKDUP"] ?></b>: <?= str_replace("#RESTAURANT_NAME#", $db_order_data['CompanyName'], $langage_lbl["LBL_TAKE_AWAY_ORDER_NOTE"]); ?></h4>
                                 </div>
-                                <? } ?>
-                                <? } ?>
+                                <?php } ?>
+                                <?php } ?>
                             </div>
                             <div class="invoice-pay-type">
                                 <?php

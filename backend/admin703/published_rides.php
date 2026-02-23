@@ -611,7 +611,7 @@ if($RIDE_SHARE_OBJ->IsAnyDocumentActive()){
 <?php
 include_once('footer.php');
 ?>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script src="../assets/js/modal_alert.js"></script>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>

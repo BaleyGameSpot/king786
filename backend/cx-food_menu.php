@@ -151,12 +151,12 @@ if ($action == 'view') {
     <div class="profile-earning-inner">
 		<div class="table-holder">
 					<!-- trips page -->
-						<? if (isset($_REQUEST['success']) && $_REQUEST['success']==1) {?>
+						<?php if (isset($_REQUEST['success']) && $_REQUEST['success']==1) {?>
 							<div class="alert alert-success alert-dismissable">
 								<button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button> 
 								<?= $var_msg ?>
 							</div>
-						<?}else if(isset($_REQUEST['success']) && $_REQUEST['success']==2){ ?>
+						<?php }else if(isset($_REQUEST['success']) && $_REQUEST['success']==2){ ?>
 							<div class="alert alert-danger alert-dismissable">
 								<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 								<?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -166,7 +166,7 @@ if ($action == 'view') {
 								<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> 
 								<?= $var_msg ?>
 							</div>
-						<? } ?>
+						<?php } ?>
 						<div class="trips-table trips-table-driver trips-table-driver-res"> 
 	
 								<div class="driver-trip-table">
@@ -185,7 +185,7 @@ if ($action == 'view') {
 											</tr>
 										</thead>
 										<tbody>
-											<? for ($i = 0; $i < scount($data_drv); $i++) { ?>
+											<?php for ($i = 0; $i < scount($data_drv); $i++) { ?>
 												<tr class="gradeA">
 													<td><?= $data_drv[$i]['vMenu_'.$default_lang] ; ?></td>
 													<?php if(scount($allservice_cat_data) > 1 && $MODULES_OBJ->isEnableStoreMultiServiceCategories()) { ?>
@@ -212,12 +212,12 @@ if ($action == 'view') {
 														</form>
 													</td>
 												</tr>
-											<? } ?>
+											<?php } ?>
 										</tbody>
 									</table>
 								</div>
 						</div>
-						<!-- <? if(SITE_TYPE=="Demo"){?>
+						<!-- <?php if(SITE_TYPE=="Demo"){?>
 							<div class="record-feature"> <span><strong>"Edit / Delete Record Feature"</strong> has been disabled on the Demo Admin Version you are viewing now.
 							This feature will be enabled in the main product we will provide you.</span> </div>
 						<?php }?> -->

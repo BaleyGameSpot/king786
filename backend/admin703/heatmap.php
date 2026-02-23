@@ -158,7 +158,7 @@ $script="Heat Map";
 
 <div id="wrap">
 
-  <? include_once('header.php'); ?>
+  <?php include_once('header.php'); ?>
 
   <!--PAGE CONTENT -->
 
@@ -234,7 +234,7 @@ $script="Heat Map";
 
 			<h4>Notes:</h4>
 
-			<? if($APP_TYPE != "UberX"){?>
+			<?php if($APP_TYPE != "UberX"){?>
 
 				<ul>
 
@@ -270,7 +270,7 @@ $script="Heat Map";
 
 				</ul>
 
-			<? } else { ?>
+			<?php } else { ?>
 
 				<ul>
 
@@ -306,7 +306,7 @@ $script="Heat Map";
 
 				</ul>
 
-			<? } ?>
+			<?php } ?>
 
             
 

@@ -376,7 +376,7 @@ $db_rider = $obj->MySQLSelect($sql);
 
                             </tr>
 
-                        <? } 
+                        <?php } 
                     }  ?>
 
                     </tbody>

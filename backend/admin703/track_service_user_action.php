@@ -257,7 +257,7 @@ $trackServiceCompany = $obj->MySQLSelect($sql);
                                             if (file_exists($tconfig["tsite_upload_images_track_company_user_path"] . '/' . $id . '/3_' . $oldImage)) {
                                                 ?>
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=150&src=' . $tconfig["tsite_upload_images_track_company_user"] . '/' . $id . '/3_' . $oldImage; ?>" style="height:150px;"/>
-                                            <? } else { ?>
+                                            <?php } else { ?>
                                                 <img src="../assets/img/profile-user-img.png" alt="ereerr">
                                                 <?php
                                             }
@@ -311,8 +311,8 @@ $trackServiceCompany = $obj->MySQLSelect($sql);
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <label>Email <? if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?><span class="red">
-                                        *</span> <? } ?></label>
+                                <label>Email <?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?><span class="red">
+                                        *</span> <?php } ?></label>
                             </div>
                             <div class="col-lg-6">
                                 <input type="text" class="form-control" name="vEmail" id="vEmail" value="<?= $vEmail; ?>" placeholder="Email"/>
@@ -433,9 +433,9 @@ $trackServiceCompany = $obj->MySQLSelect($sql);
                 required: true
             },
             vEmail: {
-                <? if($ENABLE_EMAIL_OPTIONAL != "Yes") {?>
+                <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") {?>
                 required: true,
-                <? } ?>
+                <?php } ?>
                 email: true
             },
             <?php if ($id == '') { ?>vPassword: {required: true, noSpace: true, minlength: 6, maxlength: 16},<?php } ?>

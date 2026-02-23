@@ -212,7 +212,7 @@ if (SITE_TYPE == 'Demo' && isset($_SESSION['sess_iAdminUserId'])) {
                                     } ?> >
                                     <?= $db_code[$i]['vCountry']; ?>
                                 </option>
-                            <? } ?>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="form-column newrow country-code">
@@ -462,7 +462,7 @@ if (SITE_TYPE == 'Demo' && isset($_SESSION['sess_iAdminUserId'])) {
             // vServiceAddress:{alphanumericspace:true},
             customer_info_vName: {required: true, minlength: 1, maxlength: 30, alphanumericspace: true, notEmpty: true},
             customer_info_vLastName: {required: true, minlength: 1, maxlength: 30, alphanumericspace: true, notEmpty: true},
-            customer_info_vEmail: {<?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>required: true, <? }?>email: true},
+            customer_info_vEmail: {<?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>required: true, <?php }?>email: true},
             
         },
         messages: {

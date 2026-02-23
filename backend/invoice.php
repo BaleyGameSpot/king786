@@ -247,11 +247,11 @@ $tsite_host_sc_port = $tconfig['tsite_host_sc_port'];
                                     <div class="<?php echo $class_name ?>">
                                         <ul>
                                             <li>
-                                                <? if ($db_trip_data['eType'] == 'UberX') { ?>
+                                                <?php if ($db_trip_data['eType'] == 'UberX') { ?>
                                                     <h4 style="font-weight: bold;"><?= $langage_lbl['LBL_MYTRIP_TRIP_TYPE']; ?></h4>
-                                                <? } else { ?>
+                                                <?php } else { ?>
                                                     <h4 style="font-weight: bold;"><?php //$langage_lbl['LBL_INVOICE_Car']; ?><?php echo $db_trip_data['eIconType'];  ?></h4>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <?php
                                                 if (!empty($db_trip_data['vVehicleCategory'])) {
                                                     $printCategory = $db_trip_data['vVehicleCategory'];
@@ -283,7 +283,7 @@ $tsite_host_sc_port = $tconfig['tsite_host_sc_port'];
                                                 </li>
                                                 <li>
                                                     <h4 style="font-weight: bold;"><?= $langage_lbl['LBL_Trip_time']; ?></h4>
-                                                    <? echo $db_trip_data['TripTimeInMinutes']; ?>
+                                                    <?php echo $db_trip_data['TripTimeInMinutes']; ?>
                                                 </li>
                                             <?php } ?> 
                                         </ul>
@@ -298,12 +298,12 @@ $tsite_host_sc_port = $tconfig['tsite_host_sc_port'];
                                         <div class="driver-info">
                                             <div class="driver-img">
                                                 <span>
-                                                    <? if ($db_trip_data['PassengerDetails']['vImgName'] != '' && file_exists($tconfig["tsite_upload_images_passenger_path"] . '/' . $db_trip_data['PassengerDetails']['iUserId'] . '/2_' . $db_trip_data['PassengerDetails']['vImgName'])) {
+                                                    <?php if ($db_trip_data['PassengerDetails']['vImgName'] != '' && file_exists($tconfig["tsite_upload_images_passenger_path"] . '/' . $db_trip_data['PassengerDetails']['iUserId'] . '/2_' . $db_trip_data['PassengerDetails']['vImgName'])) {
                                                         ?>
                                                         <img src = "<?= $tconfig["tsite_upload_images_passenger"] . '/' . $db_trip_data['PassengerDetails']['iUserId'] . '/2_' . $db_trip_data['PassengerDetails']['vImgName'] ?>" /><!-- style="height:150px;" -->
-                                                    <? } else { ?>
+                                                    <?php } else { ?>
                                                         <img src="assets/img/profile-user-img.png" alt="">
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     </div>
                                                     <h3><?= $langage_lbl['LBL_You_ride_with']; ?> <?= clearName($db_trip_data['PassengerDetails']['vName'] . ' ' . $db_trip_data['PassengerDetails']['vLastName']); ?></h3>
                                                     <p><b><?= $langage_lbl['LBL_Rate_Your_Ride']; ?>:</b>
@@ -319,12 +319,12 @@ $tsite_host_sc_port = $tconfig['tsite_host_sc_port'];
                                             <div class="driver-info">
                                                 <div class="driver-img">
                                                     <span>
-                                                        <? if ($db_trip_data['DriverDetails']['vImage'] != '' && file_exists($tconfig["tsite_upload_images_driver_path"] . '/' . $db_trip_data['DriverDetails']['iDriverId'] . '/2_' . $db_trip_data['DriverDetails']['vImage'])) {
+                                                        <?php if ($db_trip_data['DriverDetails']['vImage'] != '' && file_exists($tconfig["tsite_upload_images_driver_path"] . '/' . $db_trip_data['DriverDetails']['iDriverId'] . '/2_' . $db_trip_data['DriverDetails']['vImage'])) {
                                                             ?>
                                                             <img src = "<?= $tconfig["tsite_upload_images_driver"] . '/' . $db_trip_data['DriverDetails']['iDriverId'] . '/2_' . $db_trip_data['DriverDetails']['vImage'] ?>" style="height:150px;"/>
-                                                        <? } else { ?>
+                                                        <?php } else { ?>
                                                             <img src="assets/img/profile-user-img.png" alt="">
-                                                        <? } ?>
+                                                        <?php } ?>
                                                         </div>
                                                         <h3><?= $langage_lbl['LBL_You_ride_with']; ?> <?= clearName($db_trip_data['DriverDetails']['vName'] . ' ' . $db_trip_data['DriverDetails']['vLastName']); ?></h3>
                                                         <div class="rating-row">
@@ -411,7 +411,7 @@ $tsite_host_sc_port = $tconfig['tsite_host_sc_port'];
                                                         <ul style="margin-top: 10px;">
                                                             <li style="border:dotted 2px #000000;background: none;">
                                                                 <strong style="font-weight: bold;padding: 2px;" >
-                                                                    <?
+                                                                    <?php
                                                                     if ($db_trip_data['eCancelledBy'] == 'Driver') {
                                                                         echo $langage_lbl['LBL_TRIP_CANCELLED_BY_DRIVER_ADMIN'];
                                                                         echo '<br/>';
@@ -432,12 +432,12 @@ $tsite_host_sc_port = $tconfig['tsite_host_sc_port'];
                                                             </li>
                                                         </ul>
                                                         <div style="clear:both;"></div>
-                                                    <? } ?>	
+                                                    <?php } ?>	
                                                     <?php
                                                     if ($db_trip_data['fTipPrice'] != "" && $db_trip_data['fTipPrice'] != "0" && $db_trip_data['fTipPrice'] != "0.00") {
                                                         ?>
                                                         <ul><li><strong><?= $langage_lbl['LBL_TIP_RS_TXT']; ?></strong><b> <?= $db_trip_data['fTipPrice']; ?></b></li></ul>
-                                                        <?
+                                                        <?php
                                                     }
                                                     ?>
                                                     <div  style="clear:both;"></div><hr>
@@ -507,7 +507,7 @@ $tsite_host_sc_port = $tconfig['tsite_host_sc_port'];
                                                 </div>
                                             </div>
                                         </div>
-                                        <? if ($APP_DELIVERY_MODE == "Multi" && $db_trip_data['eType'] == 'Deliver') { ?>
+                                        <?php if ($APP_DELIVERY_MODE == "Multi" && $db_trip_data['eType'] == 'Deliver') { ?>
                                             <div class="invoice-part-bottom invoice-part-bottom1">	
                                                 <?php
                                                 $sql1 = "SELECT * FROM trips_delivery_locations AS tdl WHERE iTripId = '" . $iTripId . "'";
@@ -561,7 +561,7 @@ $tsite_host_sc_port = $tconfig['tsite_host_sc_port'];
                                                 }
                                                 ?>      				 
                                             </div>
-                                        <? } ?>
+                                        <?php } ?>
                                     </div>
                                 </div>
                                 <?php

@@ -488,7 +488,7 @@ $reload = $_SERVER['PHP_SELF']."?tpages=".$tpages.$var_filter;
 
             </div>
 
-            <? php/*<div class="admin-notes">
+            <?php php/*<div class="admin-notes">
 
                             <h4>Notes:</h4>
 

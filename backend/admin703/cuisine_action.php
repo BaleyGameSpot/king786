@@ -215,7 +215,7 @@ if ($THEME_OBJ->isProThemeActive() == "Yes") {
     <title>Admin | <?= $action; ?> Item Type </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -225,8 +225,8 @@ if ($THEME_OBJ->isProThemeActive() == "Yes") {
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -241,25 +241,25 @@ if ($THEME_OBJ->isProThemeActive() == "Yes") {
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div>
                         <br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
                         <br/>
-                    <? }  elseif ($success == 3) { ?>
+                    <?php }  elseif ($success == 3) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $var_msg; ?>
                         </div>
                         <br/>
-                    <? }?>
+                    <?php }?>
                     
                     <form method="post" name="_cuisine_form" id="_cuisine_form" action="" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
@@ -423,9 +423,9 @@ if ($THEME_OBJ->isProThemeActive() == "Yes") {
                                     <select class="form-control" name='iServiceId' id="iServiceId" required
                                             onchange="changeDisplayOrder(this.value)">
                                         <option value="">Select</option>
-                                        <? for ($i = 0; $i < scount($service_cat_list); $i++) { ?>
-                                            <option value="<?= $service_cat_list[$i]['iServiceId'] ?>" <? if ($iServiceIdNew == $service_cat_list[$i]['iServiceId']) { ?> selected <?php } else if ($iServiceIdNew == $service_cat_list[$i]['iServiceId']) { ?>selected<? } ?>><?= $service_cat_list[$i]['servicename'] ?></option>
-                                        <? } ?>
+                                        <?php for ($i = 0; $i < scount($service_cat_list); $i++) { ?>
+                                            <option value="<?= $service_cat_list[$i]['iServiceId'] ?>" <?php if ($iServiceIdNew == $service_cat_list[$i]['iServiceId']) { ?> selected <?php } else if ($iServiceIdNew == $service_cat_list[$i]['iServiceId']) { ?>selected<?php } ?>><?= $service_cat_list[$i]['servicename'] ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                             </div>
@@ -534,7 +534,7 @@ if ($THEME_OBJ->isProThemeActive() == "Yes") {
         <span>Language Translation is in Process. Please Wait...</span>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script>
     $(document).ready(function () {

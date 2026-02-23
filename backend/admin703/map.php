@@ -17,7 +17,7 @@ $script="LiveMap";
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 	
 	<!-- GLOBAL STYLES -->
-	<? include_once('global_files.php');?>
+	<?php include_once('global_files.php');?>
 	<link rel="stylesheet" href="css/style.css" />
 	
 	<script src="https://maps.google.com/maps/api/js?sensor=true&key=<?=$GOOGLE_SEVER_API_KEY_WEB?>" type="text/javascript"></script>
@@ -32,8 +32,8 @@ $script="LiveMap";
 
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-	<? include_once('header.php'); ?>
-	<? include_once('left_menu.php'); ?>
+	<?php include_once('header.php'); ?>
+	<?php include_once('left_menu.php'); ?>
 	<!--PAGE CONTENT -->
 	<div id="content">
 
@@ -119,7 +119,7 @@ $script="LiveMap";
 <!--END PAGE CONTENT -->
 </div>
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <div style="clear:both;"></div>
 	<script>
 	//var is_touch_device = 'ontouchstart' in document.documentElement;

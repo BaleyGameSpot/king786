@@ -141,9 +141,9 @@
 			<div class="profile-caption">
 					<div class="page-heading">
 					<h1><?=$langage_lbl['LBL_COMPLATE_PROCESS_TXT'];?></h1>
-					<?if(SITE_TYPE =='Demo'){?>
+					<?php if(SITE_TYPE =='Demo'){?>
 						<p><?=$langage_lbl['LBL_SINCE_IT_IS_DEMO'];?></p>
-					<?}?>
+					<?php }?>
 					</div>
 					<?php	
 						if($success == 1) { ?>
@@ -151,7 +151,7 @@
 						<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 						<?php echo $_REQUEST['var_msg']; ?>
 					</div>
-					<? } ?>
+					<?php } ?>
 					<form name="resetpassword12" action="" class="form-signin general-form" method = "post" id="resetpassword12" >	
 						<input type="hidden" value="<?=$action; ?>" id="action" name="action12" >
 						<div class="partation">
@@ -168,9 +168,9 @@
 								<div class="form-group">
 									<strong><?= $langage_lbl['LBL_COUNTRY_TXT'] ?></strong>
 									<select class="select-reset-password"  name ="vCountry" id="vCountry" onChange="changeCode(this.value);" required >
-										<? for($i=0;$i<scount($db_country);$i++){ ?>
+										<?php for($i=0;$i<scount($db_country);$i++){ ?>
 										<option value ="<?= $db_country[$i]['vCountryCode'] ?>" <?php if($db_country[$i]['vCountryCode'] == $DEFAULT_COUNTRY_CODE_WEB){echo "selected";}?>><?= $db_country[$i]['vCountry'] ?></option>
-										<? } ?>
+										<?php } ?>
 									</select>
 								</div>
 							</div>
@@ -250,9 +250,9 @@
                                             <div class="form-group onethird newrow">
                                                 <select class="" required name='vCountry' id="vCountry" onChange="setState(this.value, '');" >
                                                     <option value=""><?= $langage_lbl['LBL_SELECT_TXT'] ?></option>
-                                                    <? for ($i = 0; $i < scount($db_country); $i++) { ?>
-                                                        <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <? if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
-                                                    <? } ?>
+                                                    <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                                        <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?php if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="form-group onethird phone-column newrow">
@@ -265,24 +265,24 @@
                                             </div>
                                             <div class="form-group onethird newrow">
                                                 <select name="vLang" class="">
-                                                    <? for ($i = 0; $i < scount($db_lang); $i++) { ?>
-                                                        <option value="<?= $db_lang[$i]['vCode'] ?>" <?
+                                                    <?php for ($i = 0; $i < scount($db_lang); $i++) { ?>
+                                                        <option value="<?= $db_lang[$i]['vCode'] ?>" <?php
                                                         if ($db_lang[$i]['eDefault'] == 'Yes') {
                                                             echo 'selected';
                                                         }
                                                         ?>>
                                                         <?= $db_lang[$i]['vTitle'] ?>
                                                         </option>
-<? } ?>
+<?php } ?>
                                                 </select>
                                             </div>
                                             <div class="form-group onethird newrow">
                                                 <select class="" required name = 'vCurrencyPassenger'>
                                                         <?php for ($i = 0; $i < scount($db_currency); $i++) { ?>
-                                                        <option value = "<?= $db_currency[$i]['vName'] ?>" <? if ($db_currency[$i]['eDefault'] == "Yes") { ?>selected<? } ?>>
+                                                        <option value = "<?= $db_currency[$i]['vName'] ?>" <?php if ($db_currency[$i]['eDefault'] == "Yes") { ?>selected<?php } ?>>
                                                         <?= $db_currency[$i]['vName'] ?>
                                                         </option>
-<? } ?>
+<?php } ?>
                                                 </select>
                                             </div>
 

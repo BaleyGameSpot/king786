@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('../common.php');
 
 unset($_POST['dataTables-example_length']);

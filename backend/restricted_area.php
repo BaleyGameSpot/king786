@@ -1,4 +1,4 @@
-<?
+<?php
 	include_once('../common.php');
 
 	$AUTH_OBJ->checkMemberAuthentication();
@@ -51,7 +51,7 @@
 		<meta charset="UTF-8" />
 		<title>Admin | Restricted Area</title>
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 
 		<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 		<script type="text/javascript">
@@ -68,8 +68,8 @@
 
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>
 
 			<!--PAGE CONTENT -->
 			<div id="content">
@@ -84,12 +84,12 @@
 							<?php } ?>
 						</div>
 					</div>
-				<? if ($success == 2) { ?>
+				<?php if ($success == 2) { ?>
 						<div class="alert alert-danger alert-dismissable">
 								 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 								 "Edit / Delete Record Feature" has been disabled on the Demo Admin Panel. This feature will be enabled on the main script we will provide you.
 						</div><br/>
-					<? } ?>
+					<?php } ?>
 					<hr />
 					<div class="table-list">
 						<div class="row">
@@ -113,7 +113,7 @@
 													</tr>
 												</thead>
 												<tbody>
-													<?
+													<?php
 														$count_all = scount($db_data);
 														if($count_all > 0) {
 															for($i=0;$i<$count_all;$i++) {
@@ -135,7 +135,7 @@
 																<td><?=$vCity;?></td>
 																<td><?=$vAddress;?></td>
 																<td width="20%" align="center" class="center">
-																	<? if($eStatus == 'Active') {
+																	<?php if($eStatus == 'Active') {
 																		   $dis_img = "img/active-icon.png";
 																			}else if($eStatus == 'Inactive'){
 																			 $dis_img = "img/inactive-icon.png";
@@ -170,12 +170,12 @@
 																	<?php } ?>
 																</td>
 															</tr>
-															<? }
+															<?php }
 														} else { ?>
 														<tr class="gradeA">
 															<td colspan="4">No Records found.</td>
 														</tr>
-													<? } ?>
+													<?php } ?>
 												</tbody>
 											</table>
 										</div>
@@ -192,7 +192,7 @@
 		</div>
 		<!--END MAIN WRAPPER -->
 
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 
 		<script src="../assets/plugins/dataTables/jquery.dataTables.js"></script>
 		<script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>

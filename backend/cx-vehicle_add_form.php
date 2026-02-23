@@ -347,19 +347,19 @@ $eShowDeliveryVehicles = $RideDeliveryIconArrStatus['eShowDeliveryVehicles'];
                     <div class="profile-earning-inner">
                         <div class="general-form">
                             <div class="card-block">
-                                <? if ($success == 1) { ?>
+                                <?php if ($success == 1) { ?>
                                     <div class="alert alert-success alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×
                                         </button>
                                         <?= $langage_lbl['LBL_Record_Updated_successfully']; ?>
                                     </div>
-                                <? } else if ($success == 2) { ?>
+                                <?php } else if ($success == 2) { ?>
                                     <div class="alert alert-danger alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×
                                         </button>
                                         <?= isset($_REQUEST['error_msg']) ? $_REQUEST['error_msg'] : ' '; ?>
                                     </div>
-                                <? } ?>
+                                <?php } ?>
                                 <h1><?= $langage_lbl['LBL_VEHICLE_DETAILS_TXT']; ?></h1>
                                 <div class="partation">
                                     <div class="form-group half newrow">
@@ -400,7 +400,7 @@ $eShowDeliveryVehicles = $RideDeliveryIconArrStatus['eShowDeliveryVehicles'];
                                                 id="iYear" class="custom-select-new">
                                             <option value=""><?= $langage_lbl['LBL_CHOOSE_YEAR']; ?> </option>
                                             <?php for ($j = $start; $j >= $end; $j--) { ?>
-                                                <option value="<?= $j ?>" <? if ($iYear == $j) { ?> selected <? } ?>><?= $j ?></option>
+                                                <option value="<?= $j ?>" <?php if ($iYear == $j) { ?> selected <?php } ?>><?= $j ?></option>
                                             <?php } ?>
                                         </select>
                                         <span id="" style="color: Red; font-size: 11px;"></span>
@@ -418,7 +418,7 @@ $eShowDeliveryVehicles = $RideDeliveryIconArrStatus['eShowDeliveryVehicles'];
                                             <span id="" style="color: Red; font-size: 11px;"></span>
                                         </div>
                                     </div>
-                                    <? if ($_SESSION['sess_user'] == 'company' || $TRACKING_COMPANY == 1) { ?>
+                                    <?php if ($_SESSION['sess_user'] == 'company' || $TRACKING_COMPANY == 1) { ?>
                                         <div class="form-group half">
                                             <?php if (strtoupper($vehicleStore) == "STORE" && $driverIdVehicle > 0) { ?>
                                                 <select name="iDriverId1" id="iDriverId1" class="custom-select-new"
@@ -427,7 +427,7 @@ $eShowDeliveryVehicles = $RideDeliveryIconArrStatus['eShowDeliveryVehicles'];
                                                         <option value=""><?= $langage_lbl['LBL_CHOOSE_DRIVER']; ?></option>
                                                     <?php } ?>
                                                     <?php for ($j = 0; $j < scount($db_drvr); $j++) { ?>
-                                                        <option value="<?= $db_drvr[$j]['iDriverId'] ?>" <? if ($db_drvr[$j]['iDriverId'] == $iDriverId) { ?> selected <? } ?>><?= clearName($db_drvr[$j]['vName'] . ' ' . $db_drvr[$j]['vLastName']); ?></option>
+                                                        <option value="<?= $db_drvr[$j]['iDriverId'] ?>" <?php if ($db_drvr[$j]['iDriverId'] == $iDriverId) { ?> selected <?php } ?>><?= clearName($db_drvr[$j]['vName'] . ' ' . $db_drvr[$j]['vLastName']); ?></option>
                                                     <?php } ?>
                                                 </select>
                                                 <input type="hidden" name="iDriverId" id="iDriverId"
@@ -439,12 +439,12 @@ $eShowDeliveryVehicles = $RideDeliveryIconArrStatus['eShowDeliveryVehicles'];
                                                         <option value=""><?= $langage_lbl['LBL_CHOOSE_DRIVER']; ?></option>
                                                     <?php } ?>
                                                     <?php for ($j = 0; $j < scount($db_drvr); $j++) { ?>
-                                                        <option value="<?= $db_drvr[$j]['iDriverId'] ?>" <? if ($db_drvr[$j]['iDriverId'] == $iDriverId) { ?> selected <? } ?>><?= clearName($db_drvr[$j]['vName'] . ' ' . $db_drvr[$j]['vLastName']); ?></option>
+                                                        <option value="<?= $db_drvr[$j]['iDriverId'] ?>" <?php if ($db_drvr[$j]['iDriverId'] == $iDriverId) { ?> selected <?php } ?>><?= clearName($db_drvr[$j]['vName'] . ' ' . $db_drvr[$j]['vLastName']); ?></option>
                                                     <?php } ?>
                                                 </select>
                                             <?php } ?>
                                         </div>
-                                    <? } ?>
+                                    <?php } ?>
                                     <div class="form-group half">
                                         <label><?= $langage_lbl['LBL_VEHICLE_TITLE'] . " " . $langage_lbl['LBL_COLOR_ADD_VEHICLES']; ?></label>
                                         <input type="text" class="form-control" name="vColour" id="vColour"
@@ -452,7 +452,7 @@ $eShowDeliveryVehicles = $RideDeliveryIconArrStatus['eShowDeliveryVehicles'];
                                     </div>
                                 </div>
                             </div>
-                            <?
+                            <?php
                             if ($APP_TYPE != 'Delivery' && $storeDriver == 0 && ONLYDELIVERALL != 'Yes' && ((isset($HANDICAP_ACCESSIBILITY_OPTION) && $HANDICAP_ACCESSIBILITY_OPTION == "Yes") || (isset($CHILD_SEAT_ACCESSIBILITY_OPTION) && $CHILD_SEAT_ACCESSIBILITY_OPTION == "Yes") || (isset($WHEEL_CHAIR_ACCESSIBILITY_OPTION) && $WHEEL_CHAIR_ACCESSIBILITY_OPTION == "Yes"))) {
                                 ?>
                                 <div <?php echo $TRACKING_COMPANY_STYLE_DISPLAY; ?> class="card-block">
@@ -504,7 +504,7 @@ $eShowDeliveryVehicles = $RideDeliveryIconArrStatus['eShowDeliveryVehicles'];
                                         </ul>
                                     </div>
                                 </div>
-                            <? } ?>
+                            <?php } ?>
                             <div <?php echo $TRACKING_COMPANY_STYLE_DISPLAY; ?> class="card-block">
                                 <!--<h1><?= $langage_lbl['LBL_Car_Type']; ?></h1>-->
                                 <div id="vehicleTypes001"></div>
@@ -614,7 +614,7 @@ $eShowDeliveryVehicles = $RideDeliveryIconArrStatus['eShowDeliveryVehicles'];
             //  get_model('<?php echo $db_mdl[0]['iMakeId']; ?>', '<?php echo $db_mdl[0]['iModelId']; ?>');
             get_vehicleType('<?= $iDriverId; ?>', '<?= $vCarType; ?>', '<?= $eType ?>', '<?= $vRentalCarType ?>');
         });
-    </script><? } else { ?>
+    </script><?php } else { ?>
     <script>
         //window.onload = function () {
         $(document).ready(function () {
@@ -636,7 +636,7 @@ $eShowDeliveryVehicles = $RideDeliveryIconArrStatus['eShowDeliveryVehicles'];
             //   get_model('<?php echo $iMakeId; ?>', '<?php echo $iModelId; ?>');
         };
     </script>
-<? } ?>
+<?php } ?>
 <script>
     $('#etypedelivery').on('change', function () {
         get_vehicleType('<?= $iDriverId; ?>', '<?php echo $vCarType; ?>', this.value, '<?= $vRentalCarType ?>');
@@ -650,12 +650,12 @@ $eShowDeliveryVehicles = $RideDeliveryIconArrStatus['eShowDeliveryVehicles'];
     $('#iDriverId').on('change', function () {
         get_vehicleType(this.value, '<?php echo $vCarType; ?>', $("#etypedelivery").val(), '<?= $vRentalCarType ?>');
     });
-    <?
+    <?php
     } else {
     if ($APP_TYPE == 'Ride') {
     ?>
     get_vehicleType('<?= $iDriverId; ?>', '<?= $vCarType; ?>', '<?= $eType ?>', '<?= $vRentalCarType ?>');
-    <?
+    <?php
     }
     }
     ?>

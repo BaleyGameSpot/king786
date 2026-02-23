@@ -1,4 +1,4 @@
-<?
+<?php
   include_once("common.php");
   //include_once('include_taxi_webservices.php');
 	//include_once(TPATH_CLASS.'configuration.php');

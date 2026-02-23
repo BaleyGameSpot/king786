@@ -118,12 +118,12 @@
 					<h2 class="header-page-d1 trip-detail driver-detail1"><?=$langage_lbl['LBL_MENU_ITEMS_FRONT']; ?><a href="javascript:void(0);" onClick="add_menu_item_form();">Add <?=$langage_lbl['LBL_MENU_ITEM_FRONT']; ?></a></h2>
 					<!-- trips page -->
 					<div class="trips-page trips-page1">
-						<? if ($_REQUEST['success']==1) {?>
+						<?php if ($_REQUEST['success']==1) {?>
 							<div class="alert alert-success alert-dismissable">
 								<button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button> 
 								<?= $var_msg ?>
 							</div>
-							<?}else if($_REQUEST['success']==2){ ?>
+							<?php }else if($_REQUEST['success']==2){ ?>
 							<div class="alert alert-danger alert-dismissable">
 								<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 								<?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -134,7 +134,7 @@
 								<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> 
 								<?= $var_msg ?>
 							</div>
-							<? }
+							<?php }
 						?>
 						<div class="trips-table trips-table-driver trips-table-driver-res"> 
 							<div class="trips-table-inner">
@@ -153,13 +153,13 @@
 											</tr>
 										</thead>
 										<tbody>
-											<? for ($i = 0; $i < scount($data_drv); $i++) { ?>
+											<?php for ($i = 0; $i < scount($data_drv); $i++) { ?>
 												<tr class="gradeA">
 													<td><?= $data_drv[$i]['vItemType_'.$default_lang] ; ?></td>
 													<td><?= $data_drv[$i]['vMenu_'.$default_lang] ; ?></td>
 													<!-- <td><?= clearName($data_drv[$i]['vCompany']); ?></td> -->
 													<td>
-														<? $imgpth = $tconfig["tsite_upload_images_menu_item_path"] . '/' . $data_drv[$i]['vImage'];
+														<?php $imgpth = $tconfig["tsite_upload_images_menu_item_path"] . '/' . $data_drv[$i]['vImage'];
 						                                    $imgUrl = $tconfig["tsite_upload_images_menu_item"] . '/' . $data_drv[$i]['vImage'];
 						                                    if ($data_drv[$i]['vImage'] != "" && file_exists($imgpth)) {
 						                                        ?>
@@ -191,7 +191,7 @@
 														</form>
 													</td>
 												</tr>
-											<? } ?>
+											<?php } ?>
 										</tbody>
 									</table>
 								</div>  </div>

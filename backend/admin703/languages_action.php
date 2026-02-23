@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('../common.php');
 $script = 'language_label';
 $catdata = serviceCategories;
@@ -169,7 +169,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
 
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
@@ -177,8 +177,8 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -193,22 +193,22 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div><br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div><br/>
-                    <? } elseif ($success == 0 && $var_msg != '') { ?>
+                    <?php } elseif ($success == 0 && $var_msg != '') { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?= $var_msg; ?>
                         </div><br/>
-                    <? } ?>
+                    <?php } ?>
                     <form method="post" name="_languages_form" id="_languages_form" action="">
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                         <input type="hidden" name="previousLink" id="previousLink"
@@ -228,7 +228,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                        placeholder="Language Label" <?= ($id != '') ? 'disabled' : 'required'; ?>>
                             </div>
                         </div>
-                        <? if ($SITE_VERSION == "v5") { ?>
+                        <?php if ($SITE_VERSION == "v5") { ?>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <label>Page ID</label>
@@ -238,7 +238,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                            value="<?= $lPage_id; ?>" placeholder="Page id">
                                 </div>
                             </div>
-                        <? } ?>
+                        <?php } ?>
 
                         <div class="row">
                             <div class="col-lg-12">
@@ -360,7 +360,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                             </div>
 
                         </div>
-                        <? /*
+                        <?php /*
                                 if ($count_all > 0) {
                                     for ($i = 0; $i < $count_all; $i++) {
                                         $vCode = $db_master[$i]['vCode'];
@@ -397,7 +397,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                             }
                                             ?>
                                         </div>
-                                    <? }
+                                    <?php }
                                 }*/
                         ?>
 
@@ -441,7 +441,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
     </div>
 </div>
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 </body>
 <!-- END BODY-->
 </html>

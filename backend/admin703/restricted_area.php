@@ -292,7 +292,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?
+                                    <?php
                                     $count_all = scount($db_data);
                                     if ($count_all > 0) {
                                         for ($i = 0; $i < $count_all; $i++) {
@@ -310,7 +310,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                 <?php } ?>
                                                 <td><?php echo $db_data[$i]['eType']; ?></td>
                                                 <td width="20%" align="center" class="center">
-                                                    <? if ($db_data[$i]['eStatus'] == 'Active') {
+                                                    <?php if ($db_data[$i]['eStatus'] == 'Active') {
                                                         $dis_img = "img/active-icon.png";
                                                     } else if ($db_data[$i]['eStatus'] == 'Inactive') {
                                                         $dis_img = "img/inactive-icon.png";
@@ -373,12 +373,12 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                     </td>
                                                 <?php } ?>
                                             </tr>
-                                        <? }
+                                        <?php }
                                     } else { ?>
                                         <tr class="gradeA">
                                             <td colspan="10">No Records found.</td>
                                         </tr>
-                                    <? } ?>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </form>

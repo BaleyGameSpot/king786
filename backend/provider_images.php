@@ -87,11 +87,11 @@ for ($r = 0; $r < scount($getProviderImages); $r++) {
     <!-- Default Top Script and css -->
     <?php include_once("top/top_script.php"); ?>
     <link rel="stylesheet" href="assets/css/bootstrap-fileupload.min.css"/>
-    <? if ($APP_TYPE == 'Ride-Delivery-UberX') { ?>
+    <?php if ($APP_TYPE == 'Ride-Delivery-UberX') { ?>
         <link rel="stylesheet" type="text/css" href="assets/css/vehicles_cubejek.css">
-    <? } else { ?>
+    <?php } else { ?>
         <link rel="stylesheet" type="text/css" href="assets/css/vehicles.css">
-    <? } ?>
+    <?php } ?>
     <link href="assets/plugins/dropzone/css/dropzone.css" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/modal_alert.css"/>
     <style>

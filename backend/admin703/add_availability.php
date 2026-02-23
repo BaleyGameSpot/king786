@@ -92,7 +92,7 @@ if($action = "Edit") {
 		<meta content="" name="author" />
 		<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 		<!-- On OFF switch -->
 		<link href="../assets/css/jquery-ui.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -164,8 +164,8 @@ if($action = "Edit") {
 
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>
 			<!--PAGE CONTENT -->
 			<div id="content">
 				<div class="inner">
@@ -180,12 +180,12 @@ if($action = "Edit") {
 					<hr />
 					<div class="body-div">
 						<div class="form-group">
-							<? if ($success == 3) {?>
+							<?php if ($success == 3) {?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php print_r($error); ?>
                             </div><br/>
-                            <?} ?>
+                            <?php } ?>
                             <form name="frm1" method="post" action="">
 								<input type="hidden" name="iDriverId" value="<?= $iDriverId; ?>"/>
 								<input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -225,7 +225,7 @@ if($action = "Edit") {
 		<!--END MAIN WRAPPER -->
 
 
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 		<script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 		<script>
 		$(document).ready(function() {

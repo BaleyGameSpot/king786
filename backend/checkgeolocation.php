@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("common.php");	
 //https://stackoverflow.com/questions/14087116/extract-address-from-string
 //http://nominatim.openstreetmap.org/reverse?format=json&lat=23.016310&lon=72.505042&zoom=18&addressdetails=1

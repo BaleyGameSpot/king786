@@ -319,23 +319,23 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                         <tr class="gradeA">
                                                             <td align="center" style="text-align:center;"><input type="checkbox" id="checkbox" name="checkbox[]" value="<?php echo $data_drv[$i]['iAdvertBannerId']; ?>" />&nbsp;</td>
                                                             <td align="center">						
-                                                                <? if ($data_drv[$i]['vBannerImage'] != '') { ?>                     
+                                                                <?php if ($data_drv[$i]['vBannerImage'] != '') { ?>                     
                                                                     <img src="<?= $tconfig['tsite_upload_advertise_banner'] . "/" . $data_drv[$i]['vBannerImage']; ?>" style="width:35px;height:35px;">
-                                                                <? } ?>										
+                                                                <?php } ?>										
                                                             </td>
-                                                            <td align="center"><? echo $data_drv[$i]['vBannerTitle']; ?></td>	
-                                                            <td align="center"><? echo $data_drv[$i]['iDispOrder']; ?></td>
-                                                            <td width="20%" align="center"><? echo $timePeriod; ?></td>
+                                                            <td align="center"><?php echo $data_drv[$i]['vBannerTitle']; ?></td>	
+                                                            <td align="center"><?php echo $data_drv[$i]['iDispOrder']; ?></td>
+                                                            <td width="20%" align="center"><?php echo $timePeriod; ?></td>
 
-                                                            <td align="center"><? echo $data_drv[$i]['dAddedDate']; ?></td>
-                                                            <td align="center"><? echo $impressionCount; ?></td>
+                                                            <td align="center"><?php echo $data_drv[$i]['dAddedDate']; ?></td>
+                                                            <td align="center"><?php echo $impressionCount; ?></td>
                                                             <?php if ($bannerUsedCount > 0) { ?>
                                                                 <td align="center"><button type="button" class="btn btn-primary btn-new" title="<?= $data_drv[$i]['tRedirectUrl'] ?>" onclick='javascript:window.open("banner_impression.php?id=<?= $data_drv[$i]['iAdvertBannerId']; ?>", "_blank")'><b><?= $bannerUsedCount; ?></b></button></td>
                                                             <?php } else { ?>
                                                                 <td align="center">-----</td>
                                                             <?php } ?>
                                                             <td align="center">
-                                                                <?
+                                                                <?php
                                                                 if ($data_drv[$i]['eStatus'] == 'Active') {
                                                                     $dis_img = "img/active-icon.png";
                                                                 } else if ($data_drv[$i]['eStatus'] == 'Inactive') {
@@ -373,7 +373,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                                 </div>
                                                             </td>
                                                         </tr>
-                                                        <?
+                                                        <?php
                                                     }
                                                 } else {
                                                     ?>

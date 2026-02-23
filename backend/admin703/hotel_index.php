@@ -72,7 +72,7 @@ $userType = isset($_REQUEST['userType']) ? $_REQUEST['userType'] : '';
 								</form>
 							</div>
 						</div>
-						<? if(SITE_TYPE == "Demo") { ?>
+						<?php if(SITE_TYPE == "Demo") { ?>
 							<div class="tab-content">
 								<div id="super001" class="tab-pane active">
 									<h3> Use below Detail for Demo Version</h3>								
@@ -81,7 +81,7 @@ $userType = isset($_REQUEST['userType']) ? $_REQUEST['userType'] : '';
 									<p>Hotel Administrator can book taxi.</p>
 								</div>
 							</div>
-						<? } ?>
+						<?php } ?>
 						<div style="clear:both;"></div>
 					</div>
 				</div>
@@ -123,7 +123,7 @@ $userType = isset($_REQUEST['userType']) ? $_REQUEST['userType'] : '';
 									</form>
 								</div>
 							</div>
-							<? if(SITE_TYPE == "Demo") { ?>
+							<?php if(SITE_TYPE == "Demo") { ?>
 								<div class="tab-content">
 									<div id="super001" class="tab-pane active">
 										<h3> Use below Detail for Demo Version</h3>
@@ -147,7 +147,7 @@ $userType = isset($_REQUEST['userType']) ? $_REQUEST['userType'] : '';
 										<p>This use will have access to reports only. Will be used by Accounts Team to manage finances and see profits/revenue.</p>
 									</div>
 								</div>
-							<? } ?>
+							<?php } ?>
 							<div style="clear:both;"></div>
 						</div>
 						

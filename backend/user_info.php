@@ -157,7 +157,7 @@ if (isset($_REQUEST['pageId']) && !empty($_REQUEST['pageId'])) {
                                                 $service_categories[$i]['vImage'] = $siteUrl . 'assets/img/burger.jpg';
                                             }
                                             ?>
-                                            <option value="<?php echo $iServiceId; ?>" data-servicename="<?php echo $service_categories[$i]['vServiceName']; ?>" <? if (!empty($selectedServiceIdOrderItems) && $iServiceId == $selectedServiceIdOrderItems) echo "selected"; ?>><?php echo $service_categories[$i]['vServiceName']; ?> </option>
+                                            <option value="<?php echo $iServiceId; ?>" data-servicename="<?php echo $service_categories[$i]['vServiceName']; ?>" <?php if (!empty($selectedServiceIdOrderItems) && $iServiceId == $selectedServiceIdOrderItems) echo "selected"; ?>><?php echo $service_categories[$i]['vServiceName']; ?> </option>
                                         <?php }
                                         ?></select><?php
                                     }

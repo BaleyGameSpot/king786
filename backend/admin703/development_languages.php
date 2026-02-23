@@ -1,4 +1,4 @@
-<?
+<?php
 	include_once('../common.php');
 	$type = $_REQUEST['type'];
 	
@@ -53,7 +53,7 @@
 		<meta content="" name="author" />
 		<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 		<script type="text/javascript">
 			function confirm_delete()
 			{
@@ -69,8 +69,8 @@
 
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>
 
 			<!--PAGE CONTENT -->
 			<div id="content">
@@ -81,12 +81,12 @@
 						</div>
 					</div>
 					<hr />
-					<? if ($success == 2) { ?>
+					<?php if ($success == 2) { ?>
 							<div class="alert alert-danger alert-dismissable">
 									 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 									 <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
 							</div><br/>
-						<? } ?>
+						<?php } ?>
 					<div class="table-list">
 						<div class="row">
 							<div class="col-lg-12">
@@ -112,7 +112,7 @@
 													<tr class="gradeA">
 														<td>All Labels</td>
 														<td align="center">
-															<?
+															<?php
 																$sql="select count(vLabel) as totlabels from language_label WHERE 1=1 and vCode = '".$default_lang."' group by 'vLabel' ";
 																$total_count = $obj->MySQLSelect($sql); 
 																
@@ -128,7 +128,7 @@
 															</a>
 														</td>
 													</tr>
-													<?
+													<?php
 														$count_all = scount($db_data);
 														if($count_all > 0) {
 															for($i=0;$i<$count_all;$i++) {
@@ -157,12 +157,12 @@
 																	</a>
 																</td>
 															</tr>
-															<? }
+															<?php }
 														} ?>
 														<tr class="gradeA">
 														<td>Other Labels</td>
 														<td align="center">
-															<?
+															<?php
 																$sql="select count(vLabel) as tot_label from language_label WHERE lPage_id = '0' and vCode = '".$default_lang."' group by 'vLabel' ";
 																$total_label = $obj->MySQLSelect($sql); 
 																
@@ -194,7 +194,7 @@
 		<!--END MAIN WRAPPER -->
 
 
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 		<script src="../assets/plugins/dataTables/jquery.dataTables.js"></script>
 		<script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>
 		<script>

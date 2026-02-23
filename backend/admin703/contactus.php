@@ -254,28 +254,28 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                
                                                 <tr class="gradeA">
                                                     <td>
-                                                        <? if($data_drv[$i]['eUserType']=='Passenger') {
+                                                        <?php if($data_drv[$i]['eUserType']=='Passenger') {
                                                             if ($userObj->hasPermission('view-users')) { ?>
                                                                 <a href="javascript:void(0);" onClick="show_rider_details('<?= $data_drv[$i]['iMemberId']; ?>')" style="text-decoration: underline;"><?= validName(clearName($data_drv[$i]['vFirstname']." ".$data_drv[$i]['vLastname'])); ?></a>
-                                                                <? echo " (".$langage_lbl_admin['LBL_RIDER'].")";
+                                                                <?php echo " (".$langage_lbl_admin['LBL_RIDER'].")";
                                                             } else {
                                                                 echo validName(clearName($data_drv[$i]['vFirstname']." ".$data_drv[$i]['vLastname']))." (".$langage_lbl_admin['LBL_RIDER'].")";
                                                             }
                                                         } else if($data_drv[$i]['eUserType']=='Driver') {
                                                             if ($userObj->hasPermission('view-providers')) { ?>
-                                                                <a href="javascript:void(0);" onClick="show_driver_details('<?= $data_drv[$i]['iMemberId']; ?>')" style="text-decoration: underline;"><?= validName(clearName($data_drv[$i]['vFirstname']." ".$data_drv[$i]['vLastname'])); ?></a><? echo " (".$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'].")";
+                                                                <a href="javascript:void(0);" onClick="show_driver_details('<?= $data_drv[$i]['iMemberId']; ?>')" style="text-decoration: underline;"><?= validName(clearName($data_drv[$i]['vFirstname']." ".$data_drv[$i]['vLastname'])); ?></a><?php echo " (".$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'].")";
                                                             } else {
                                                                 echo validName(clearName($data_drv[$i]['vFirstname']." ".$data_drv[$i]['vLastname']))." (".$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'].")";
                                                             }
                                                         } else if($data_drv[$i]['eUserType']=='Company' && $data_drv[$i]['eSystem']=='General') { 
                                                             if ($userObj->hasPermission('view-company')) { ?>
-                                                                <a href="javascript:void(0);" onClick="show_company_details('<?= $data_drv[$i]['iMemberId']; ?>','company')" style="text-decoration: underline;"><?= validName(clearName($data_drv[$i]['vFirstname']." ".$data_drv[$i]['vLastname'])); ?></a><? echo " (Company)";
+                                                                <a href="javascript:void(0);" onClick="show_company_details('<?= $data_drv[$i]['iMemberId']; ?>','company')" style="text-decoration: underline;"><?= validName(clearName($data_drv[$i]['vFirstname']." ".$data_drv[$i]['vLastname'])); ?></a><?php echo " (Company)";
                                                             } else {
                                                                 echo validName(clearName($data_drv[$i]['vFirstname']." ".$data_drv[$i]['vLastname']))." (Company)";
                                                             }
                                                         } else if($data_drv[$i]['eUserType']=='Company' && $data_drv[$i]['eSystem']=='DeliverAll') { 
                                                             if ($userObj->hasPermission('view-store')) { ?>
-                                                                <a href="javascript:void(0);" onClick="show_company_details('<?= $data_drv[$i]['iMemberId']; ?>','store')" style="text-decoration: underline;"><?= validName(clearName($data_drv[$i]['vFirstname']." ".$data_drv[$i]['vLastname'])); ?></a><? echo " (".$langage_lbl_admin['LBL_RESTAURANT_TXT'].")";
+                                                                <a href="javascript:void(0);" onClick="show_company_details('<?= $data_drv[$i]['iMemberId']; ?>','store')" style="text-decoration: underline;"><?= validName(clearName($data_drv[$i]['vFirstname']." ".$data_drv[$i]['vLastname'])); ?></a><?php echo " (".$langage_lbl_admin['LBL_RESTAURANT_TXT'].")";
                                                             } else {
                                                                 echo validName(clearName(($data_drv[$i]['vFirstname']." ".$data_drv[$i]['vLastname'])))." (".$langage_lbl_admin['LBL_RESTAURANT_TXT'].")";
                                                             }
@@ -421,7 +421,7 @@ include_once('footer.php');
 <link rel="stylesheet" href="css/select2/select2.min.css" />
 <script src="js/plugins/select2.min.js"></script>
 
-<? //include_once('searchfunctions.php'); ?>
+<?php //include_once('searchfunctions.php'); ?>
 <script>
     var startDate;
     var endDate;

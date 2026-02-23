@@ -115,7 +115,7 @@
 						</a>
 					</li>
 					<li class="divider"></li>
-				<?} ?>
+				<?php } ?>
 				</ul>
 
 			</li>
@@ -138,8 +138,8 @@
 										?></span>
 								</p>
 								<div class="progress progress-striped active">
-									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <?echo $ComAct."%";?>">
-										<span class="sr-only"><? echo $ComAct."% Active"; ?></span>
+									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $ComAct."%";?>">
+										<span class="sr-only"><?php echo $ComAct."% Active"; ?></span>
 									</div>
 								</div>
 							</div>
@@ -214,7 +214,7 @@
 					<i class="icon-user "></i>&nbsp; <i class="icon-chevron-down "></i>
 				</a>
 				<ul class="dropdown-menu dropdown-user">
-					<li><a href="admin_action.php?id=<?echo $_SESSION['sess_iAdminUserId'];?>"><i class="icon-user"></i> User Profile </a></li>
+					<li><a href="admin_action.php?id=<?php echo $_SESSION['sess_iAdminUserId'];?>"><i class="icon-user"></i> User Profile </a></li>
 					<li><a href="general.php"><i class="icon-gear"></i> Settings </a></li>
 					<li class="divider"></li>
 					<li><a href="logout.php"><i class="icon-signout"></i> Logout </a></li>

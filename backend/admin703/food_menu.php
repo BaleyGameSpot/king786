@@ -415,7 +415,7 @@ $service_cat_data = json_decode($catdata, true);
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?
+                                                <?php
                                                     if (!empty($data_drv)) {
                                                         for ($i = 0; $i < scount($data_drv); $i++) {
                                                             $menuItemCount = 0;
@@ -461,7 +461,7 @@ $service_cat_data = json_decode($catdata, true);
                                                     <?php } ?>
                                                     <td align="center"><?= clearEmail($data_drv[$i]['iDisplayOrder']); ?></td>
                                                     <td align="center">
-                                                        <?
+                                                        <?php
                                                             if ($data_drv[$i]['eStatus'] == 'Active') {
                                                                 $dis_img = "img/active-icon.png";
                                                             } else if ($data_drv[$i]['eStatus'] == 'Inactive') {

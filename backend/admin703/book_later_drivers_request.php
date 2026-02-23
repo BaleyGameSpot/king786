@@ -82,8 +82,8 @@ $get_dBooking_date_format = DateformatCls::getNewDateFormat($date_format_data_ar
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner" id="page_height" style="">
@@ -269,7 +269,7 @@ $get_dBooking_date_format = DateformatCls::getNewDateFormat($date_format_data_ar
     </div>
 </div>
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/js/gmap3.js"></script>
 <script src="../assets/js/modal_alert.js"></script>
 

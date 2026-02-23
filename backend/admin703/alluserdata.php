@@ -158,7 +158,7 @@ if($checkusedata != 'Yes'){
 	exit;
 }
 ?>
-<?
+<?php
 
 if($checkusedata == 'Yes'){
 	//if(empty($db_drv_list) && empty($db_rdr_list) && empty($db_login_drv_list) && empty($db_login_rdr_list) && empty($db_inactive_drv_list) && empty($db_inactive_rdr_list) && empty($db_store_list) && empty($db_login_rst_list) && empty($db_inactive_rst_list)){

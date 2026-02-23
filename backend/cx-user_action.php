@@ -186,15 +186,15 @@ if ($action == 'Add') {
                         <?= $vName; ?></h1>
                 </div>
                 <div class="button-block end">
-                    <? if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'UberX') { ?>
+                    <?php if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'UberX') { ?>
                         <a href="trackinguserlist" class="gen-btn">
                             <?= $langage_lbl['LBL_BACK_To_Listing_WEB']; ?>
                         </a>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <a href="driverlist" class="gen-btn">
                             <?= $langage_lbl['LBL_BACK_To_Listing_WEB']; ?>
                         </a>
-                    <? } ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -207,13 +207,13 @@ if ($action == 'Add') {
                         <div class="addDriverform">
                             <!-- login in page -->
                             <div class="driver-action-page">
-                                <? if ($success == 1) { ?>
+                                <?php if ($success == 1) { ?>
                                     <div class="alert alert-success alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×
                                         </button>
                                         <?php echo $langage_lbl['LBL_Record_Updated_successfully']; ?>
                                     </div>
-                                <? } else if ($success == 2) { ?>
+                                <?php } else if ($success == 2) { ?>
                                     <div class="alert alert-danger alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×
                                         </button>
@@ -241,7 +241,7 @@ if ($action == 'Add') {
                                                 <img src="assets/img/profile-user-img.png" alt="">
                                             <?php } ?>
                                         </div>
-                                    <? } ?>
+                                    <?php } ?>
                                     <div class="">
                                         <div class="grpDriver">
                                             <div class="action-driv">
@@ -310,11 +310,11 @@ if ($action == 'Add') {
                                                                 <option value=""><?= $langage_lbl['LBL_SELECT_CONTRY']; ?></option>
                                                             <?php } ?>
 
-                                                            <? for ($i = 0; $i < scount($AllcountryArry); $i++) { ?>
+                                                            <?php for ($i = 0; $i < scount($AllcountryArry); $i++) { ?>
                                                                 <option
                                                                         value="<?= $AllcountryArry[$i]['vCountryCode'] ?>"
-                                                                    <? if ($DEFAULT_COUNTRY_CODE_WEB == $AllcountryArry[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if ($vCountry == $AllcountryArry[$i]['vCountryCode']) { ?>selected<? } ?>><?= $AllcountryArry[$i]['vCountry'] ?></option>
-                                                            <? } ?>
+                                                                    <?php if ($DEFAULT_COUNTRY_CODE_WEB == $AllcountryArry[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if ($vCountry == $AllcountryArry[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $AllcountryArry[$i]['vCountry'] ?></option>
+                                                            <?php } ?>
                                                         </select>
                                                         <div id="vCountry_validate"></div>
                                                     </div>
@@ -324,7 +324,7 @@ if ($action == 'Add') {
                                                         <select name="iDriverId" id="iDriverId" class="custom-select-new" required>
                                                             <option value=""><?= $langage_lbl['LBL_CHOOSE_DRIVER']; ?></option>
                                                             <?php for ($j = 0; $j < scount($db_drvr); $j++) { ?>
-                                                                <option value="<?= $db_drvr[$j]['iDriverId'] ?>" <? if ($db_drvr[$j]['iDriverId'] == $iDriverId) { ?> selected <? } ?>><?= clearName($db_drvr[$j]['vName'] . ' ' . $db_drvr[$j]['vLastName']); ?></option>
+                                                                <option value="<?= $db_drvr[$j]['iDriverId'] ?>" <?php if ($db_drvr[$j]['iDriverId'] == $iDriverId) { ?> selected <?php } ?>><?= clearName($db_drvr[$j]['vName'] . ' ' . $db_drvr[$j]['vLastName']); ?></option>
                                                             <?php } ?>
                                                         </select>
                                                     </div>
@@ -334,7 +334,7 @@ if ($action == 'Add') {
                                                         <select name="iDriverId" id="iDriverId" class="custom-select-new">
                                                             <option value=""><?= $langage_lbl['LBL_CHOOSE_CAR']; ?></option>
                                                             <?php for ($i = 0; $i < scount($db_vehicles); $i++) { ?>
-                                                                <option value="<?= $db_vehicles[$i]['iDriverId'] ?>" <?php if ($db_vehicles[$i]['iDriverId'] == $iDriverId) { ?> selected <? } ?>><?= $db_vehicles[$i]['vMake'] . ' ' . $db_vehicles[$i]['vTitle'] . ' (' . $db_vehicles[$i]['vLicencePlate'] . ')' ?></option>
+                                                                <option value="<?= $db_vehicles[$i]['iDriverId'] ?>" <?php if ($db_vehicles[$i]['iDriverId'] == $iDriverId) { ?> selected <?php } ?>><?= $db_vehicles[$i]['vMake'] . ' ' . $db_vehicles[$i]['vTitle'] . ' (' . $db_vehicles[$i]['vLicencePlate'] . ')' ?></option>
                                                             <?php } ?>
                                                         </select>
                                                     </div>

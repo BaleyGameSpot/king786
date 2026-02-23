@@ -104,7 +104,7 @@ $adding_date= date("Y-m-d H:i:s");
 		<link href="css/bootstrap-select.css" rel="stylesheet" />
 		<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 		<!-- On OFF switch -->
 		<link href="../assets/css/jquery-ui.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -115,8 +115,8 @@ $adding_date= date("Y-m-d H:i:s");
 
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>
 			<!--PAGE CONTENT -->
 			<div id="content">
 				<div class="inner">
@@ -131,18 +131,18 @@ $adding_date= date("Y-m-d H:i:s");
 					<hr />
 					<div class="body-div">
 						<div class="form-group">
-							<? if ($success == 2) {?>
+							<?php if ($success == 2) {?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                 <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                             </div><br/>
-                            <?} ?>
-                            <? if ($success == 3) {?>
+                            <?php } ?>
+                            <?php if ($success == 3) {?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
 								<?php print_r($error); ?>
                             </div><br/>
-                            <?} ?>
+                            <?php } ?>
 							<form method="post" name="_masking_form" id="_masking_form" action="">
 								<input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
 								<input type="hidden" name="backlink" id="backlink" value="masking_numbers.php"/>
@@ -164,9 +164,9 @@ $adding_date= date("Y-m-d H:i:s");
 								 <div class="col-lg-4">
 									  <select class="form-control" name = 'vCountry' id="vCountry" required>
 										   <option value="">Select</option>
-										   <? for($i=0;$i<scount($db_country);$i++){ ?>
-										   <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?if($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if($vCountry==$db_country[$i]['vCountryCode']){?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
-										   <? } ?>
+										   <?php for($i=0;$i<scount($db_country);$i++){ ?>
+										   <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?php if($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if($vCountry==$db_country[$i]['vCountryCode']){?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
+										   <?php } ?>
 									  </select>
 								 </div>
 								</div>
@@ -198,7 +198,7 @@ $adding_date= date("Y-m-d H:i:s");
 			<!--END PAGE CONTENT -->
 		</div>
 		<!--END MAIN WRAPPER -->
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 
 <script>
 $(document).ready(function() {

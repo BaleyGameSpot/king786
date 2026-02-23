@@ -302,18 +302,18 @@ if ($action == 'Edit') {
 
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 2) {?>
+                            <?php if ($success == 2) {?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
 <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                             </div><br/>
-                            <?} ?>
-                            <? if ($success == 3) {?>
+                            <?php } ?>
+                            <?php if ($success == 3) {?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
 <?php print_r($error); ?>
                             </div><br/>
-                            <?} ?>
+                            <?php } ?>
 <?php include 'valid_msg.php'; ?>
                             <form name="_admin_form" id="_admin_form" method="post" action="" enctype="multipart/form-data">
                                 <input type="hidden" name="actionOf" id="actionOf" value="<?php echo $action; ?>"/>
@@ -373,7 +373,7 @@ if ($action == 'Edit') {
                                             <?php 
                                             if(scount($db_country) > 1){ ?>
                                             <option value=""><?= $langage_lbl['LBL_SELECT_TXT'] ?></option>
-                                            <? } ?>
+                                            <?php } ?>
                                             <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
                                                 <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?php if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if ($vCountry == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
                                                     <?php } ?>

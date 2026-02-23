@@ -364,7 +364,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
         <title>Admin | Fly Home Content <?= $action; ?></title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <!-- On OFF switch -->
         <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -390,8 +390,8 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
     <body class="padTop53 " >
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
             <div class="inner">
@@ -410,17 +410,17 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                 <hr />
                 <div class="body-div">
                     <div class="form-group">
-                        <? if ($success == 1) { ?>
+                        <?php if ($success == 1) { ?>
                             <div class="alert alert-success alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                 <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                             </div><br/>
-                        <? } elseif ($success == 2) { ?>
+                        <?php } elseif ($success == 2) { ?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                 <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                             </div><br/>
-                        <? } ?>
+                        <?php } ?>
                         <form method="post" name="_home_content_form" id="_home_content_form" action="" enctype='multipart/form-data'>
                             <input type="hidden" name="id" value="<?= $id; ?>"/>
                             <input type="hidden" name="vCode" value="<?= $vCode; ?>">
@@ -459,9 +459,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>Background Image</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($banner_section['img_'.$vCode] != '') { ?>
+                                            <?php if ($banner_section['img_'.$vCode] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$banner_section['img_'.$vCode]; ?>" class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader" name="banner_section_img"  id="banner_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
                                             <br/>
                                            <span class="notes">[Note: For Better Resolution Upload only image size of 1900px * 605px.]</span>
@@ -525,9 +525,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>Image#1</label>
                                         </div>
                                         <div class="col-lg-11">
-                                             <? if ($service_section['img_first_'.$vCode] != '') { ?>
+                                             <?php if ($service_section['img_first_'.$vCode] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$service_section['img_first_'.$vCode]; ?>" class="innerbg_image"/>
-                                             <? } ?>
+                                             <?php } ?>
                                             <input type="file" class="form-control" name="service_section_img_first" value="<?= $service_section['img_first_'.$vCode]; ?>">
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 715px * 480px.]</span>
                                         </div>
@@ -556,9 +556,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>Image#2</label>
                                         </div>
                                         <div class="col-lg-11">
-                                             <? if ($service_section['img_sec_'.$vCode] != '') { ?>
+                                             <?php if ($service_section['img_sec_'.$vCode] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$service_section['img_sec_'.$vCode]; ?>" class="innerbg_image"/>
-                                             <? } ?>
+                                             <?php } ?>
                                             <input type="file" class="form-control" name="service_section_img_sec" value="<?= $service_section['img_sec_'.$vCode]; ?>">
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 715px * 480px.]</span>
                                         </div>
@@ -602,9 +602,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                            <label>Middle Image</label>
                                        </div>
                                        <div class="col-lg-6">
-                                            <? if ($benefit_section['img_'.$vCode] != '') { ?>
+                                            <?php if ($benefit_section['img_'.$vCode] != '') { ?>
                                                <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_'.$vCode]; ?>" class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                            <input type="file" class="form-control" name="benefit_section_img" value="<?= $benefit_section['img_'.$vCode]; ?>" placeholder="Main Title">
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 350px * 390px.]</span>
                                        </div>
@@ -632,9 +632,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#1</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($benefit_section['img_first_'.$vCode] != '') { ?>
+                                                     <?php if ($benefit_section['img_first_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_first_'.$vCode]; ?>" class="innerbg_image whiteimgbg"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="benefit_section_img_first" value="<?= $benefit_section['img_first_'.$vCode]; ?>" placeholder="Main Title">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 50px * 50px.]</span>
                                                 </div>
@@ -663,9 +663,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#2</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($benefit_section['img_sec_'.$vCode] != '') { ?>
+                                                     <?php if ($benefit_section['img_sec_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_sec_'.$vCode]; ?>" class="innerbg_image whiteimgbg"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="benefit_section_img_sec" value="<?= $benefit_section['img_sec_'.$vCode]; ?>" placeholder="Main Title">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 50px * 50px.]</span>
                                                 </div>
@@ -694,9 +694,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#3</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($benefit_section['img_third_'.$vCode] != '') { ?>
+                                                     <?php if ($benefit_section['img_third_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_third_'.$vCode]; ?>" class="innerbg_image whiteimgbg"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="benefit_section_img_third" value="<?= $benefit_section['img_third_'.$vCode]; ?>" placeholder="Main Title">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 50px * 50px.]</span>
                                                 </div>
@@ -726,9 +726,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#4</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($benefit_section['img_fourth_'.$vCode] != '') { ?>
+                                                     <?php if ($benefit_section['img_fourth_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_fourth_'.$vCode]; ?>" class="innerbg_image whiteimgbg"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="benefit_section_img_fourth" value="<?= $benefit_section['img_fourth_'.$vCode]; ?>" placeholder="Main Title">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 50px * 50px.]</span>
                                                 </div>
@@ -757,9 +757,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#5</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($benefit_section['img_fifth_'.$vCode] != '') { ?>
+                                                     <?php if ($benefit_section['img_fifth_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_fifth_'.$vCode]; ?>" class="innerbg_image whiteimgbg"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="benefit_section_img_fifth" value="<?= $benefit_section['img_fifth_'.$vCode]; ?>" placeholder="Main Title">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 50px * 50px.]</span>
                                                 </div>
@@ -788,9 +788,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#6</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($benefit_section['img_six_'.$vCode] != '') { ?>
+                                                     <?php if ($benefit_section['img_six_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_six_'.$vCode]; ?>" class="innerbg_image whiteimgbg"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="benefit_section_img_six" value="<?= $benefit_section['img_six_'.$vCode]; ?>" placeholder="Main Title">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 50px * 50px.]</span>
                                                 </div>
@@ -835,9 +835,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>Main Image</label>
                                         </div>
                                         <div class="col-lg-6">
-                                             <? if ($secure_section['img_'.$vCode] != '') { ?>
+                                             <?php if ($secure_section['img_'.$vCode] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$secure_section['img_'.$vCode]; ?>" class="innerbg_image"/>
-                                             <? } ?>
+                                             <?php } ?>
                                             <input type="file" class="form-control" name="secure_section_img" value="<?= $secure_section['img_'.$vCode]; ?>">
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 515px * 735px.]</span>
                                         </div>
@@ -867,9 +867,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#1</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($secure_section['img_first_'.$vCode] != '') { ?>
+                                                     <?php if ($secure_section['img_first_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$secure_section['img_first_'.$vCode]; ?>" class="innerbg_image"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="secure_section_img_first" value="<?= $secure_section['img_first_'.$vCode]; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 64px * 64px.]</span>
                                                 </div>
@@ -898,9 +898,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#2</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($secure_section['img_sec_'.$vCode] != '') { ?>
+                                                     <?php if ($secure_section['img_sec_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$secure_section['img_sec_'.$vCode]; ?>" class="innerbg_image"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="secure_section_img_sec" value="<?= $secure_section['img_sec_'.$vCode]; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 64px * 64px.]</span>
                                                 </div>
@@ -929,9 +929,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#3</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($secure_section['img_third_'.$vCode] != '') { ?>
+                                                     <?php if ($secure_section['img_third_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$secure_section['img_third_'.$vCode]; ?>" class="innerbg_image"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="secure_section_img_third" value="<?= $secure_section['img_third_'.$vCode]; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 64px * 64px.]</span>
                                                 </div>
@@ -961,9 +961,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#4</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($secure_section['img_fourth_'.$vCode] != '') { ?>
+                                                     <?php if ($secure_section['img_fourth_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$secure_section['img_fourth_'.$vCode]; ?>" class="innerbg_image"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="secure_section_img_fourth" value="<?= $secure_section['img_fourth_'.$vCode]; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 64px * 64px.]</span>
                                                 </div>
@@ -992,9 +992,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#5</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($secure_section['img_fifth_'.$vCode] != '') { ?>
+                                                     <?php if ($secure_section['img_fifth_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$secure_section['img_fifth_'.$vCode]; ?>" class="innerbg_image"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="secure_section_img_fifth" value="<?= $secure_section['img_fifth_'.$vCode]; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 64px * 64px.]</span>
                                                 </div>
@@ -1023,9 +1023,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#6</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($secure_section['img_six_'.$vCode] != '') { ?>
+                                                     <?php if ($secure_section['img_six_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$secure_section['img_six_'.$vCode]; ?>" class="innerbg_image"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="secure_section_img_six" value="<?= $secure_section['img_six_'.$vCode]; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 64px * 64px.]</span>
                                                 </div>
@@ -1070,9 +1070,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#1</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($calculate_section['img_first_'.$vCode] != '') { ?>
+                                                     <?php if ($calculate_section['img_first_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$calculate_section['img_first_'.$vCode]; ?>" class="innerbg_image"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="calculate_section_img_first" value="<?= $calculate_section['img_first_'.$vCode]; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 380px * 300px.]</span>
                                                 </div>
@@ -1093,9 +1093,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#2</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($calculate_section['img_sec_'.$vCode] != '') { ?>
+                                                     <?php if ($calculate_section['img_sec_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$calculate_section['img_sec_'.$vCode]; ?>" class="innerbg_image"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="calculate_section_img_sec" value="<?= $calculate_section['img_sec_'.$vCode]; ?>">
                                                      <span class="notes">[Note: For Better Resolution Upload only image size of 380px * 300px.]</span>
                                                 </div>
@@ -1116,9 +1116,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#3</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($calculate_section['img_third_'.$vCode] != '') { ?>
+                                                     <?php if ($calculate_section['img_third_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$calculate_section['img_third_'.$vCode]; ?>" class="innerbg_image"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="calculate_section_img_third" value="<?= $calculate_section['img_third_'.$vCode]; ?>">
                                                      <span class="notes">[Note: For Better Resolution Upload only image size of 380px * 300px.]</span>
                                                 </div>
@@ -1160,9 +1160,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>Background Image</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($how_it_work_section['img_'.$vCode] != '') { ?>
+                                            <?php if ($how_it_work_section['img_'.$vCode] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$how_it_work_section['img_'.$vCode]; ?>" class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader" name="how_it_work_section_img"  id="how_it_work_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
                                             <br/>
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 1920px * 1245px.]</span>
@@ -1217,9 +1217,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#1</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($cartype_section['img_first_'.$vCode] != '') { ?>
+                                                     <?php if ($cartype_section['img_first_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$cartype_section['img_first_'.$vCode]; ?>" class="innerbg_image"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="cartype_section_img_first" value="<?= $cartype_section['img_first_'.$vCode]; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 295px * 295px.]</span>
                                                 </div>
@@ -1248,9 +1248,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#2</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($cartype_section['img_sec_'.$vCode] != '') { ?>
+                                                     <?php if ($cartype_section['img_sec_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$cartype_section['img_sec_'.$vCode]; ?>" class="innerbg_image"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="cartype_section_img_sec" value="<?= $cartype_section['img_sec_'.$vCode]; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 295px * 295px.]</span>
                                                 </div>
@@ -1279,9 +1279,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#3</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($cartype_section['img_third_'.$vCode] != '') { ?>
+                                                     <?php if ($cartype_section['img_third_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$cartype_section['img_third_'.$vCode]; ?>" class="innerbg_image"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="cartype_section_img_third" value="<?= $cartype_section['img_third_'.$vCode]; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 295px * 295px.]</span>
                                                 </div>
@@ -1310,9 +1310,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                     <label>Image#4</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                     <? if ($cartype_section['img_fourth_'.$vCode] != '') { ?>
+                                                     <?php if ($cartype_section['img_fourth_'.$vCode] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$cartype_section['img_fourth_'.$vCode]; ?>" class="innerbg_image"/>
-                                                     <? } ?>
+                                                     <?php } ?>
                                                     <input type="file" class="form-control" name="cartype_section_img_fourth" value="<?= $cartype_section['img_fourth_'.$vCode]; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 295px * 295px.]</span>
                                                 </div>
@@ -1355,17 +1355,17 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>Images</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($download_section['img_'.$vCode] != '') { ?>
+                                            <?php if ($download_section['img_'.$vCode] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$download_section['img_'.$vCode]; ?>" class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader" name="download_section_img"  id="download_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
                                             <br/>
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 205px * 590px.]</span>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($download_section['img2_'.$vCode] != '') { ?>
+                                            <?php if ($download_section['img2_'.$vCode] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$download_section['img2_'.$vCode]; ?>" class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader" name="download_section_img2"  id="download_section_img2" accept=".png,.jpg,.jpeg,.gif,.svg">
                                             <br/>
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 205px * 590px.]</span>
@@ -1391,7 +1391,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                     </div>
                                 </div>
                             </div>
-                            <? if(ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
+                            <?php if(ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
                             <div style = "display:none" class="body-div innersection">
                                 <div class="form-group">
                                     <div class="row"><div class="col-lg-12"><h3>Get in Touch / Contact / Address  Section</h3></div></div>
@@ -1425,11 +1425,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                             <label>Image</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($call_section['img_'.$vCode] != '') { ?>
+                                            <?php if ($call_section['img_'.$vCode] != '') { ?>
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$call_section['img_'.$vCode]; ?>" class="innerbg_image"/> -->
 
                                                 <img src="<?= $tconfig["tsite_url"].'resizeImg.php?h=300&src='.$tconfig["tsite_upload_apptype_page_images"].$template.'/'.$call_section['img_'.$vCode]; ?>" class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader" name="call_section_img"  id="call_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
                                             <br/>
                                             <span class="notes">[Note: For Better Resolution Upload only image size of 1920px * 1340px.]</span>
@@ -1437,7 +1437,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                     </div>
                                 </div>
                              </div>
-                            <? } ?>
+                            <?php } ?>
                             <!-- End Home Header area-->
                             
                             <div class="row">
@@ -1456,7 +1456,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
         </div>
         <!--END MAIN WRAPPER -->
         
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
         <script src="../assets/plugins/ckeditor/ckeditor.js"></script>
         <script src="../assets/plugins/ckeditor/config.js"></script>

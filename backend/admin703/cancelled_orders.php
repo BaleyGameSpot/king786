@@ -154,7 +154,7 @@ $allservice_cat_data = json_decode($catdata, true);
     <meta content="" name="keywords"/>
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
 </head>
 <!-- END  HEAD-->
@@ -163,8 +163,8 @@ $allservice_cat_data = json_decode($catdata, true);
 
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -221,7 +221,7 @@ $allservice_cat_data = json_decode($catdata, true);
                                                     </div>
                                                 </span>
                                     </div>
-                                    <? if (scount($allservice_cat_data) > 1) { ?>
+                                    <?php if (scount($allservice_cat_data) > 1) { ?>
                                         <div class="mytrip-page payment-report payment-report1">
                                                     <span>
                                                         <div class="col-lg-2 select001" style="padding-right:15px;">
@@ -253,7 +253,7 @@ $allservice_cat_data = json_decode($catdata, true);
                                                         </div>
                                                     </span>
                                         </div>
-                                    <? } ?>
+                                    <?php } ?>
                                     <div class="tripBtns001">
                                         <b>
                                             <input type="submit" value="Search" class="btnalt button11" id="Search"
@@ -272,11 +272,11 @@ $allservice_cat_data = json_decode($catdata, true);
                                            id="dataTables-example">
                                         <thead>
                                         <tr>
-                                            <? if (scount($allservice_cat_data) > 1) { ?>
+                                            <?php if (scount($allservice_cat_data) > 1) { ?>
                                                 <th class="text-center"><?= $langage_lbl_admin['LBL_TRIP_TXT_ADMIN_DL']; ?>
                                                     Service Type
                                                 </th>
-                                            <? } ?>
+                                            <?php } ?>
                                             <th class="text-center"><?= $langage_lbl_admin['LBL_TRIP_TXT_ADMIN_DL']; ?>
                                                 No#
                                             </th>
@@ -364,7 +364,7 @@ $allservice_cat_data = json_decode($catdata, true);
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <?
+                                        <?php
                                         if (!empty($db_trip)) {
                                             //Added By HJ On 21-09-2020 For Optimize For Loop Query Start
                                             $cancleReasonArr = $orderStatusCodeArr = array();
@@ -463,9 +463,9 @@ $allservice_cat_data = json_decode($catdata, true);
                                                 }
                                                 ?>
                                                 <tr class="gradeA">
-                                                    <? if (scount($allservice_cat_data) > 1) { ?>
+                                                    <?php if (scount($allservice_cat_data) > 1) { ?>
                                                         <td align="center"><?= $vServiceName; ?></td>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <?php if ($userObj->hasPermission('view-order-invoice')) { ?>
                                                         <td align="center"><a
                                                                     href="order_invoice.php?iOrderId=<?= $db_trip[$i]['iOrderId'] ?>"
@@ -474,7 +474,7 @@ $allservice_cat_data = json_decode($catdata, true);
                                                     <?php } else { ?>
                                                         <td align="center"><?= $db_trip[$i]['vOrderNo']; ?></td>
                                                     <?php } ?>
-                                                    <td><?
+                                                    <td><?php
                                                         $systemTimeZone = date_default_timezone_get();
                                                         $vTimeZone = $db_trip[$i]['vTimeZone'];
                                                         $date_format_data_array = array(
@@ -679,7 +679,7 @@ $allservice_cat_data = json_decode($catdata, true);
                                                                                         </div>
                                                                                     <?php } ?>
                                                                                 </div>
-                                                                            <? }
+                                                                            <?php }
                                                                             if ($db_trip[$i]['ePaymentOption'] == 'Card') { ?>
                                                                                 <div class="row"
                                                                                      style="padding-bottom: 10px">
@@ -821,7 +821,7 @@ $allservice_cat_data = json_decode($catdata, true);
                                                         <!-- Modal -->
                                                     </td>
                                                 </tr>
-                                                <?
+                                                <?php
                                             }
                                         }
                                         else {
@@ -861,7 +861,7 @@ $allservice_cat_data = json_decode($catdata, true);
     <input type="hidden" name="eType" value="<?= $eType; ?>">
     <input type="hidden" name="method" id="method" value="">
 </form>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <div class="modal fade " id="detail_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
     <div class="modal-dialog">
@@ -1176,11 +1176,11 @@ $allservice_cat_data = json_decode($catdata, true);
         });
     });
     // Fetch the preselected item, and add to the control
-    <? if(!empty($iDriverId)) { ?>
+    <?php if(!empty($iDriverId)) { ?>
     var sId = "<?= $iDriverId;?>";
-    <? } else { ?>
+    <?php } else { ?>
     var sId = "";
-    <? } ?>
+    <?php } ?>
     var sSelect = $('select.filter-by-text#searchDriver');
     var itemname;
     var itemid;

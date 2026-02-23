@@ -238,11 +238,11 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                         <select class="form-control filter-by-text driver_container" name='searchRequestStatus'
                                 data-text="Select Request Status" id="searchRequestStatus">
                             <option value="">Pending Requests</option>
-                            <option value="Yes" <? if (!empty($searchRequestStatus) && $searchRequestStatus == "Yes") {
+                            <option value="Yes" <?php if (!empty($searchRequestStatus) && $searchRequestStatus == "Yes") {
                                 echo "selected";
                             } ?>>Completed Request
                             </option>
-                            <option value="No" <? if (!empty($searchRequestStatus) && $searchRequestStatus == "No") {
+                            <option value="No" <?php if (!empty($searchRequestStatus) && $searchRequestStatus == "No") {
                                 echo "selected";
                             } ?>>
                                 Declined Request
@@ -303,7 +303,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                         for ($i = 0; $i < scount($data_drv); $i++) { ?>
                                             <tr class="gradeA">
                                                 <td>
-                                                    <? if ($userObj->hasPermission('view-providers') || $userObj->hasPermission('view-rider')) { ?>
+                                                    <?php if ($userObj->hasPermission('view-providers') || $userObj->hasPermission('view-rider')) { ?>
 
                                                         <?php if ($data_drv[$i]['iDriverId'] > 0) { ?>
 
@@ -317,9 +317,9 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                                style="text-decoration: underline;"><?= clearName($data_drv[$i]['user_name'] . " " . $data_drv[$i]['user_lastname']); ?></a>
                                                         <?php } ?>
 
-                                                    <? } else { ?>
+                                                    <?php } else { ?>
                                                         <?= clearName($data_drv[$i]['firstname'] . " " . $data_drv[$i]['lastname']); ?>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <br><?= clearEmail($data_drv[$i]['vEmail']); ?>
                                                     <br>
                                                     <?= clearPhone("(+" . $data_drv[$i]['vCode'] . ") " . $data_drv[$i]['vPhone']); ?>
@@ -362,7 +362,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                 <!--<input type="hidden" name="iPaymentRequestsId" id="iPaymentRequestsId" value="<?= $data_drv[$i]['iPaymentRequestsId']; ?>">-->
                                                 <!--</td>-->
                                                 <td align="center" class="action-btn001">
-                                                    <? if ($data_drv[$i]['eMarkAsDone'] != "") {
+                                                    <?php if ($data_drv[$i]['eMarkAsDone'] != "") {
                                                         echo "--";
                                                     } else { ?>
                                                         <div class="share-button openHoverAction-class"
@@ -393,7 +393,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="hidden" name="iPaymentRequestsId"
                                                            id="iPaymentRequestsId"
                                                            value="<?= $data_drv[$i]['iPaymentRequestsId']; ?>">
@@ -531,7 +531,7 @@ include_once('footer.php');
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <!--<script src="../assets/js/jquery-ui.min.js"></script> commented bcoz in tooltip it affected-->
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script>
     var startDate;
     var endDate;

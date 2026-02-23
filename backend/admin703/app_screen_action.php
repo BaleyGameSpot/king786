@@ -255,7 +255,7 @@ $required_msg = '<span class="red"> *</span>';
 
         <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-        <?
+        <?php
         include_once('global_files.php');
         ?>
 
@@ -277,7 +277,7 @@ $required_msg = '<span class="red"> *</span>';
 
         <div id="wrap">
 
-            <?
+            <?php
             include_once('header.php');
 
             include_once('left_menu.php');
@@ -311,7 +311,7 @@ $required_msg = '<span class="red"> *</span>';
 
                         <div class="form-group">
 
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
 
                                 <div class="alert alert-success alert-dismissable">
 
@@ -321,7 +321,7 @@ $required_msg = '<span class="red"> *</span>';
 
                                 </div><br/>
 
-                            <? } elseif ($success == 2) { ?>
+                            <?php } elseif ($success == 2) { ?>
 
                                 <div class="alert alert-danger alert-dismissable">
 
@@ -329,7 +329,7 @@ $required_msg = '<span class="red"> *</span>';
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
 
-                                <?
+                                <?php
                             }
 
                             if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != "") {
@@ -374,7 +374,7 @@ $required_msg = '<span class="red"> *</span>';
                                              <option value="0" <?php if($db_data[0]['iParentId']=="0"){ ?>selected <?php } ?>>Parent Screen</option>
                                              <?php foreach ($select_boxinfo as $sinfo) { ?>
                                                 <option value="<?= $sinfo['lPage_id'] ?>" 
-                                                    <? if (isset($db_data[0]['iParentId']) && $db_data[0]['iParentId'] == $sinfo['lPage_id']) { ?>selected<? } ?>    
+                                                    <?php if (isset($db_data[0]['iParentId']) && $db_data[0]['iParentId'] == $sinfo['lPage_id']) { ?>selected<?php } ?>    
                                                     ><?= $sinfo['vScreenName'] ?></option>    
                                              <?php }  ?>
                                             
@@ -414,7 +414,7 @@ $required_msg = '<span class="red"> *</span>';
 
                                     <div class="col-lg-6">
 
-                                        <?
+                                        <?php
                                         $requireImg = 'required="required"';
 
                                         if (isset($vScreenImage) && $vScreenImage != '') {
@@ -424,7 +424,7 @@ $required_msg = '<span class="red"> *</span>';
 
                                             <img src="<?= $tconfig['tsite_upload_manage_app_screen'] . "/" . $vScreenImage; ?>" style="width:200px;">
 
-                                        <? } ?>
+                                        <?php } ?>
 
                                         <input value="<?= $vScreenImage; ?>" type="file" class="form-control" name="vScreenImage" <?php echo $required_rule; ?> id="vScreenImage" placeholder="" style="padding-bottom: 39px;" <?= $requireImg; ?>>
 
@@ -447,15 +447,15 @@ $required_msg = '<span class="red"> *</span>';
 
                                            <select  class="form-control" name = 'eAppType'  id= 'eAppType' required>                                   
 
-                                                <option value="General" <? if (isset($db_data[0]['eAppType']) && $db_data[0]['eAppType'] == "General") { ?>selected<? } ?>>General</option>
+                                                <option value="General" <?php if (isset($db_data[0]['eAppType']) && $db_data[0]['eAppType'] == "General") { ?>selected<?php } ?>>General</option>
 
-                                                <option value="Deliverall" <? if (isset($db_data[0]['eAppType']) && $db_data[0]['eAppType'] == "Deliverall") { ?>selected<? } ?>>Deliverall</option>
+                                                <option value="Deliverall" <?php if (isset($db_data[0]['eAppType']) && $db_data[0]['eAppType'] == "Deliverall") { ?>selected<?php } ?>>Deliverall</option>
 
-                                                 <option value="UberX" <? if (isset($db_data[0]['eAppType']) && $db_data[0]['eAppType'] == "UberX") { ?>selected<? } ?>>UberX</option>
+                                                 <option value="UberX" <?php if (isset($db_data[0]['eAppType']) && $db_data[0]['eAppType'] == "UberX") { ?>selected<?php } ?>>UberX</option>
 
-                                                 <option value="Delivery" <? if (isset($db_data[0]['eAppType']) && $db_data[0]['eAppType'] == "Delivery") { ?>selected<? } ?>>Delivery</option>
+                                                 <option value="Delivery" <?php if (isset($db_data[0]['eAppType']) && $db_data[0]['eAppType'] == "Delivery") { ?>selected<?php } ?>>Delivery</option>
 
-                                                 <option value="Ride" <? if (isset($db_data[0]['eAppType']) && $db_data[0]['eAppType'] == "Ride") { ?>selected<? } ?>>Ride</option>                                                      
+                                                 <option value="Ride" <?php if (isset($db_data[0]['eAppType']) && $db_data[0]['eAppType'] == "Ride") { ?>selected<?php } ?>>Ride</option>                                                      
 
                                                 </option>                                                    
 
@@ -480,9 +480,9 @@ $required_msg = '<span class="red"> *</span>';
 
                                             <select  class="form-control" name = 'eStatus'  id= 'eStatus' required>                                   
 
-                                                <option value="Active" <? if (isset($db_data[0]['eStatus']) && $db_data[0]['eStatus'] == "Active") { ?>selected<? } ?>>Active</option>
+                                                <option value="Active" <?php if (isset($db_data[0]['eStatus']) && $db_data[0]['eStatus'] == "Active") { ?>selected<?php } ?>>Active</option>
 
-                                                <option value="Inactive" <? if (isset($db_data[0]['eStatus']) && $db_data[0]['eStatus'] == "Inactive") { ?>selected<? } ?>>Inactive</option>                                                      
+                                                <option value="Inactive" <?php if (isset($db_data[0]['eStatus']) && $db_data[0]['eStatus'] == "Inactive") { ?>selected<?php } ?>>Inactive</option>                                                      
 
                                                 </option>                                                    
 
@@ -542,7 +542,7 @@ $required_msg = '<span class="red"> *</span>';
 
         </div>
 
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
 
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 

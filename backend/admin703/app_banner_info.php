@@ -86,7 +86,7 @@ $db_data = $obj->MySQLSelect($sql);
     <meta charset="UTF-8"/>
     <title>Admin | App Banner Info</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
     <script type="text/javascript">
         function confirm_delete() {
@@ -106,8 +106,8 @@ $db_data = $obj->MySQLSelect($sql);
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -168,10 +168,10 @@ $db_data = $obj->MySQLSelect($sql);
                                             ?>
                                             <tr class="gradeA">
                                                 <td width="10%" align="center">
-                                                    <? if ($vImage != '' && file_exists($tconfig['tsite_upload_app_banner_images_path'] . $vImage)) { ?>
+                                                    <?php if ($vImage != '' && file_exists($tconfig['tsite_upload_app_banner_images_path'] . $vImage)) { ?>
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=150&src=' . $tconfig['tsite_upload_app_banner_images'] . $vImage; ?>"
                                                              width="50">
-                                                    <? } else echo $vImage; ?>
+                                                    <?php } else echo $vImage; ?>
                                                 </td>
                                                 <td width="20%" align="center"><?= $tTitle; ?></td>
                                                 <td align="center">
@@ -181,16 +181,16 @@ $db_data = $obj->MySQLSelect($sql);
                                                         echo implode(' ', array_slice(explode(' ', $tSubtitle), 0, 20)) . " ...";
                                                     } ?>
                                                 </td>
-                                                <? php/*<td width="10%" align="center">
-                                                                    <? if ($iDisplayOrder != 1) { ?>
+                                                <?php php/*<td width="10%" align="center">
+                                                                    <?php if ($iDisplayOrder != 1) { ?>
                                                                         <a href="store_images.php?id=<?= $iUniqueId; ?>&flag=up<?= ($sid != "") ? '&'.$sid : '' ?>">
                                                                             <button class="btn btn-warning"><i class="icon-arrow-up"></i></button>
                                                                         </a>
-                                                                    <? } if ($iDisplayOrder != $count_all) { ?>
+                                                                    <?php } if ($iDisplayOrder != $count_all) { ?>
                                                                         <a href="store_images.php?id=<?= $iUniqueId; ?>&flag=down<?= ($sid != "") ? '&'.$sid : '' ?>">
                                                                             <button class="btn btn-warning"><i class="icon-arrow-down"></i></button>
                                                                         </a>
-                                                                    <? } ?>
+                                                                    <?php } ?>
                                                                 </td>*/ ?>
                                                 <td width="20%" align="center"><?= $vCategory; ?></td>
                                                 <?php if ($userObj->hasPermission('update-status-app-banner-info')) { ?>
@@ -246,7 +246,7 @@ $db_data = $obj->MySQLSelect($sql);
     <!--END PAGE CONTENT -->
 </div>
 <!--END MAIN WRAPPER -->
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/dataTables/jquery.dataTables.js"></script>
 <script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>
 <script>

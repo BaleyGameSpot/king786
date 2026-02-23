@@ -1,4 +1,4 @@
-<?
+<?php
 //echo "here";
 include '../common.php';
 $eUnit = isset($_REQUEST['eUnit']) ? $_REQUEST['eUnit'] : '';

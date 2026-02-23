@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("common.php");
 
 
@@ -18,20 +18,20 @@ $db_reci_data = FetchDeliveryRecepientDetails($iTripId,$iUserId,'Passenger');
 								<div class="col-sm-6 <?php echo $class;?>"> 
 								<h3><img src="assets/img/pin-rec.png" width="26px"> <?= $langage_lbl['LBL_RECIPIENT_LIST_TXT'].'&nbsp;'. $no; ?></h3>
 								<table style="width:100%" class="deliverytable deliverytable-a" cellpadding="10" cellspacing="10" border="1">
-									<? foreach($value1 as $key2=>$value2) {?>
+									<?php foreach($value1 as $key2=>$value2) {?>
 										<tr>
 											<td style="min-width: 150px;"><b class="bold-font"><?=$value2['vFieldName']; ?> </b></td>
 											<td><?=$value2['vValue']; ?> </td>
 										</tr>
-									<? } ?>
-									<? if(!empty($value2['ePaymentBy']) && $value2['ePaymentBy'] == "Individual"){?>
+									<?php } ?>
+									<?php if(!empty($value2['ePaymentBy']) && $value2['ePaymentBy'] == "Individual"){?>
 									<tr>
 										<td ><b><?=$langage_lbl['LBL_AMOUNT_PAID_TXT']; ?></b></td>
 										<td>
 											<?=$value2['PaymentAmount'];?>
 										</td>
 									</tr>
-								<? }?>
+								<?php }?>
 									<?php if(!empty($value2['Receipent_Signature'])) {?>
 										<tr>
 											<td><b><?=$langage_lbl['LBL_RECEIVER_SIGN']; ?></b></td>
@@ -46,7 +46,7 @@ $db_reci_data = FetchDeliveryRecepientDetails($iTripId,$iUserId,'Passenger');
 												<?=$value2['vDeliveryConfirmCode']?>
 											</td>
 										</tr>
-									<? } ?>
+									<?php } ?>
 								</table>
 								</div>
 								<?php 

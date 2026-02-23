@@ -114,14 +114,14 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
         <title>Admin | Business Trip Reason <?= $action; ?></title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
     </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
     <body class="padTop53 " >
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <?
+            <?php
             include_once('header.php');
             include_once('left_menu.php');
             ?>
@@ -139,28 +139,28 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                     <hr />
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable msgs_hide">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?= $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                 </div><br/>
-                            <? } elseif ($success == 2) { ?>
+                            <?php } elseif ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable ">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } else if ($success == 3) { ?>
+                            <?php } else if ($success == 3) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php echo $_REQUEST['varmsg']; ?> 
                                 </div><br/>	
-                            <? } ?>
-                            <? if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
+                            <?php } ?>
+                            <?php if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     Record  Not Updated .
                                 </div><br/>
-                            <? } ?>                   
+                            <?php } ?>                   
                             <form id="_trip_reason" name="_trip_reason" method="post" action="" enctype="multipart/form-data">
                                 <input type="hidden" name="id" value="<?= $id; ?>"/>
                                 <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -179,7 +179,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                             <?php
                                             for ($p = 0; $p < scount($userDataArr); $p++) {
                                                 ?>
-                                                <option value = "<?= $userDataArr[$p]['iUserProfileMasterId'] ?>" <? if ($profileMasterId == $userDataArr[$p]['iUserProfileMasterId']) { ?>selected<? } ?>><?= $userDataArr[$p]['vProfileName'] ?></option>
+                                                <option value = "<?= $userDataArr[$p]['iUserProfileMasterId'] ?>" <?php if ($profileMasterId == $userDataArr[$p]['iUserProfileMasterId']) { ?>selected<?php } ?>><?= $userDataArr[$p]['vProfileName'] ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -290,7 +290,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                     </div>
                                 </div>
                                 <?php } ?>
-                                <?/*
+                                <?php /*
                                 if (scount($db_master) > 0) {
                                     for ($i = 0; $i < scount($db_master); $i++) {
                                         $vCode = $db_master[$i]['vCode'];
@@ -311,13 +311,13 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                     <input type="text" class="form-control" name="<?= $lableName; ?>" id="<?= $lableName; ?>" value="<?= $userEditDataArr[$lableName]; ?>" placeholder="<?= $vTitle; ?> Value" <?= $required; ?>>
                                                     <div class="text-danger" id="<?= $lableName.'_error'; ?>" style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                                 </div>
-                                                <? if ($vCode == $default_lang && scount($db_master) > 1) { ?>
+                                                <?php if ($vCode == $default_lang && scount($db_master) > 1) { ?>
                                                     <div class="col-md-6 col-sm-6">
-                                                        <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('<? echo $lableNameArr[$l].'_'; ?>', '<?= $default_lang ?>');">Convert To All Language</button>
+                                                        <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('<?php echo $lableNameArr[$l].'_'; ?>', '<?= $default_lang ?>');">Convert To All Language</button>
                                                     </div>
                                                 <?php } ?>
                                             </div>
-                                            <?
+                                            <?php
                                         }
                                     }
                                 }*/
@@ -344,7 +344,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                 <span>Language Translation is in Process. Please Wait...</span>                       
             </div>                                                                                 
         </div>
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <script type="text/javascript" src="js/validation/jquery.validate.min.js" ></script>
         <script type="text/javascript" src="js/validation/additional-methods.min.js" ></script>
         <script type="text/javascript" src="js/form-validation.js" ></script>

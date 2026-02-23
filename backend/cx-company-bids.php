@@ -240,12 +240,12 @@ if (file_exists($logogpath . "canceled-invoice.png")) {
                                     <td align="center" class="center">
                                         <?php echo $db_trip[$i]['eStatus'];?>
                                     </td>
-                                   <? if ($db_trip[$i]['eStatus'] == 'Completed') { ?>
+                                   <?php if ($db_trip[$i]['eStatus'] == 'Completed') { ?>
                                         <td class="center">
                                             <a target="_blank" href="<?= $link_page ?>?iBiddingPostId=<?= base64_encode(base64_encode($db_trip[$i]['iBiddingPostId'])) ?>"><strong><img src="<?php echo $invoice_icon; ?>"></strong></a>
 
                                         </td>
-                                        <? } else if ($db_trip[$i]['eStatus'] == 'Cancelled' && $db_trip[$i]['iCancelReasonId'] > 0) {
+                                        <?php } else if ($db_trip[$i]['eStatus'] == 'Cancelled' && $db_trip[$i]['iCancelReasonId'] > 0) {
                                         ?>
                                             <td class="center">
                                                 <a href="#" data-toggle="modal" data-target="#uiModal1_<?= $db_trip[$i]['iBiddingPostId']; ?>">
@@ -262,7 +262,7 @@ if (file_exists($logogpath . "canceled-invoice.png")) {
                                                 </div>
                                             <div class="model-body">
                                             <ul class="value-listing">
-                                            <li><b><?= $langage_lbl['LBL_CANCEL_REASON']; ?> : </b><span> <?
+                                            <li><b><?= $langage_lbl['LBL_CANCEL_REASON']; ?> : </b><span> <?php
                                                 if ($db_trip[$i]['iCancelReasonId'] > 0) {
                                                     $cancelreasonarray = getCancelReason($db_trip[$i]['iCancelReasonId'], $deafultLang);
                                                     $db_trip[$i]['vCancelReason'] = $cancelreasonarray['vCancelReason'];
@@ -286,11 +286,11 @@ if (file_exists($logogpath . "canceled-invoice.png")) {
                                             </div>
                                         </div>
 
-                                    <? } else { ?>
+                                    <?php } else { ?>
                                         <td class="center">  -- </td>
                                     <?php } ?>
                                 </tr>
-                            <? } ?>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

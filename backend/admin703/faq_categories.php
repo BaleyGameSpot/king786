@@ -268,10 +268,10 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                         <tr class="gradeA">
                                                             <td align="center" style="text-align:center;"><input type="checkbox" id="checkbox" name="checkbox[]" value="<?php echo $data_drv[$i]['iUniqueId']; ?>" />&nbsp;</td>
         <?php /* <td width="15%" align="center">
-          <?
+          <?php
           if($vImage != '' && file_exists($tconfig['tsite_upload_images_panel'].'/'.$vImage)) {  ?>
           <img src="<?=$tconfig['tsite_upload_images'].$vImage;?>" height="50" width="50">
-          <? } else echo '---'; ?>
+          <?php } else echo '---'; ?>
           </td> */ ?>
                                                             <td><?= $vTitle; ?></td>
                                                             <td align="center">

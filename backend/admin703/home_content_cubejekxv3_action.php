@@ -928,7 +928,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
 
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 
     <!-- On OFF switch -->
 
@@ -982,9 +982,9 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
 <div id="wrap">
 
-    <? include_once('header.php'); ?>
+    <?php include_once('header.php'); ?>
 
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('left_menu.php'); ?>
 
     <!--PAGE CONTENT -->
 
@@ -1020,7 +1020,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                 <div class="form-group">
 
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
 
                         <div class="alert alert-success alert-dismissable">
 
@@ -1032,7 +1032,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                         <br/>
 
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
 
                         <div class="alert alert-danger alert-dismissable">
 
@@ -1044,7 +1044,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                         <br/>
 
-                    <? } ?>
+                    <?php } ?>
 
                     <form method="post" name="_home_content_form" id="_home_content_form" action=""
 
@@ -1100,7 +1100,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                 </div>
 
-                                <? if ($THEME_OBJ->isCubeJekXv3ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCJXDoctorv2ThemeActive() == 'Yes') { ?>
+                                <?php if ($THEME_OBJ->isCubeJekXv3ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCJXDoctorv2ThemeActive() == 'Yes') { ?>
 
                                     <div class="row">
 
@@ -1128,7 +1128,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                     </div>
 
-                                <? } ?>
+                                <?php } ?>
 
                                 <div class="row">
 
@@ -1150,7 +1150,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                 </div>
 
-                                <? if ($THEME_OBJ->isCubeJekXv3ThemeActive() != 'Yes') { ?>
+                                <?php if ($THEME_OBJ->isCubeJekXv3ThemeActive() != 'Yes') { ?>
 
                                     <div class="row">
 
@@ -1162,7 +1162,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                         <div class="col-lg-6">
 
-                                            <? if ($how_it_work_section['img'] != '') { ?>
+                                            <?php if ($how_it_work_section['img'] != '') { ?>
 
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img']; ?>" class="innerbg_image"/> -->
 
@@ -1170,7 +1170,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                      class="innerbg_image"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader"
 
@@ -1186,13 +1186,13 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                     </div>
 
-                                <? } ?>
+                                <?php } ?>
 
                             </div>
 
                         </div>
 
-                        <? if ($THEME_OBJ->isCubeJekXv3ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCJXDoctorv2ThemeActive() == 'Yes') { ?>
+                        <?php if ($THEME_OBJ->isCubeJekXv3ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCJXDoctorv2ThemeActive() == 'Yes') { ?>
 
                             <div class="body-div innersection">
 
@@ -1386,13 +1386,13 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                         <div class="col-lg-6">
 
-                                            <? if ($register_section['img_first'] != '') { ?>
+                                            <?php if ($register_section['img_first'] != '') { ?>
 
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_first']; ?>"
 
                                                      class="innerbg_image"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader"
 
@@ -1444,13 +1444,13 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                         <div class="col-lg-6">
 
-                                            <? if ($register_section['img_sec'] != '') { ?>
+                                            <?php if ($register_section['img_sec'] != '') { ?>
 
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_sec']; ?>"
 
                                                      class="innerbg_image"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader"
 
@@ -1470,7 +1470,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                             </div>
 
-                        <? } else { ?>
+                        <?php } else { ?>
 
                             <div class="body-div innersection">
 
@@ -1580,7 +1580,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                         <div class="col-lg-6">
 
-                                            <? if ($download_section['img'] != '') { ?>
+                                            <?php if ($download_section['img'] != '') { ?>
 
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $download_section['img']; ?>" class="innerbg_image"/> -->
 
@@ -1588,7 +1588,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                      class="innerbg_image"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader"
 
@@ -1614,7 +1614,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                         <div class="col-lg-6">
 
-                                            <? if ($download_section['img_first'] != '') { ?>
+                                            <?php if ($download_section['img_first'] != '') { ?>
 
                                                 <!--  <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $download_section['img_first']; ?>" class="innerbg_image"/> -->
 
@@ -1622,7 +1622,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                      class="innerbg_image"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader"
 
@@ -1648,7 +1648,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                         <div class="col-lg-6">
 
-                                            <? if ($download_section['img_sec'] != '') { ?>
+                                            <?php if ($download_section['img_sec'] != '') { ?>
 
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $download_section['img_sec']; ?>" class="innerbg_image"/> -->
 
@@ -1656,7 +1656,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                      class="innerbg_image"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader"
 
@@ -1682,7 +1682,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                         <div class="col-lg-6">
 
-                                            <? if ($download_section['img_third'] != '') { ?>
+                                            <?php if ($download_section['img_third'] != '') { ?>
 
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $download_section['img_third']; ?>" class="innerbg_image"/> -->
 
@@ -1690,7 +1690,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                      class="innerbg_image"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader"
 
@@ -1774,7 +1774,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                         <div class="col-lg-6">
 
-                                            <? if ($secure_section['img'] != '') { ?>
+                                            <?php if ($secure_section['img'] != '') { ?>
 
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $secure_section['img']; ?>" class="innerbg_image" /> -->
 
@@ -1782,7 +1782,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                      class="innerbg_image"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader"
 
@@ -1866,7 +1866,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                         <div class="col-lg-6">
 
-                                            <? if ($call_section['img'] != '') { ?>
+                                            <?php if ($call_section['img'] != '') { ?>
 
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $call_section['img']; ?>" class="innerbg_image"/> -->
 
@@ -1874,7 +1874,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                      class="innerbg_image"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader" name="call_section_img"
 
@@ -1892,7 +1892,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                             </div>
 
-                        <? } ?>
+                        <?php } ?>
 
                         <!-- Start Home icons area-->
 
@@ -1918,7 +1918,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                             </div>
 
-                            <? if ($THEME_OBJ->isCubeJekXv3ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCJXDoctorv2ThemeActive() == 'Yes') { ?>
+                            <?php if ($THEME_OBJ->isCubeJekXv3ThemeActive() == 'Yes' || $THEME_OBJ->isCubeJekXv2ThemeActive() == 'Yes' || $THEME_OBJ->isCJXDoctorv2ThemeActive() == 'Yes') { ?>
 
                                 <div class="row">
 
@@ -1934,7 +1934,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                 </div>
 
-                            <? } ?>
+                            <?php } ?>
 
                             <div class="form-group">
 
@@ -2016,7 +2016,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                          style="width:40px;height:35px;">
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                             </td>
 
@@ -2094,7 +2094,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                         <img src="<?= $tconfig["tsite_upload_home_page_service_images"] . '/' . $lbusinessServiceCatSection['vHomepageLogo'] ?>"  style="width:35px;height:35px;">
 
-                                                    <? } ?>
+                                                    <?php } ?>
 
                                                 </td>
 
@@ -2154,7 +2154,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                                  style="width:35px;height:35px;">
 
-                                                        <? } ?>
+                                                        <?php } ?>
 
                                                     </td>
 
@@ -2324,7 +2324,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                                  style="width:35px;height:35px;">
 
-                                                        <? } ?>
+                                                        <?php } ?>
 
                                                     </td>
 
@@ -2368,7 +2368,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                                     </li>
 
-                                                                    <? if (ENABLE_DYNAMIC_CREATE_PAGE == "Yes") { ?>
+                                                                    <?php if (ENABLE_DYNAMIC_CREATE_PAGE == "Yes") { ?>
 
                                                                         <li class="entypo-twitter entypo-twitter-new"
 
@@ -2378,19 +2378,19 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                                                     href="<?php echo $tconfig["tsite_url_main_admin"] . $urlCat[$vcatdata_main[$i]['iVehicleCategoryId']] . "?id=" . $iLanguageMasId; ?>">
 
-                                                                                <? if ($common_page == 1) { ?>
+                                                                                <?php if ($common_page == 1) { ?>
 
                                                                                     Edit Common Page
 
-                                                                                <? } else { ?>
+                                                                                <?php } else { ?>
 
                                                                                     Edit Inner Page
 
-                                                                                <? } ?></a>
+                                                                                <?php } ?></a>
 
                                                                         </li>
 
-                                                                    <? } else { ?>
+                                                                    <?php } else { ?>
 
                                                                         <li class="entypo-twitter entypo-twitter-new"
 
@@ -2408,7 +2408,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                                         </li>
 
-                                                                    <? }
+                                                                    <?php }
 
                                                                     if (!empty($inner_page_url) && ENABLE_DYNAMIC_CREATE_PAGE == "Yes") { ?>
 
@@ -2428,7 +2428,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                                         </li>
 
-                                                                    <? } ?>
+                                                                    <?php } ?>
 
                                                                 </ul>
 
@@ -2506,7 +2506,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                 </div>
 
-                                <? if ($THEME_OBJ->isCubeJekXv3ThemeActive() != 'Yes') { ?>
+                                <?php if ($THEME_OBJ->isCubeJekXv3ThemeActive() != 'Yes') { ?>
 
                                     <div class="row">
 
@@ -2518,7 +2518,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                         <div class="col-lg-6">
 
-                                            <? if ($general_section['img'] != '') { ?>
+                                            <?php if ($general_section['img'] != '') { ?>
 
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $general_section['img']; ?>" class="innerbg_image"/> -->
 
@@ -2526,7 +2526,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                      class="innerbg_image"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader"
 
@@ -2554,7 +2554,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                     <div class="col-lg-6">
 
-                                        <? if ($general_section['img_sec'] != '') { ?>
+                                        <?php if ($general_section['img_sec'] != '') { ?>
 
                                             <!--  <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $general_section['img_sec']; ?>" class="innerbg_image"/> -->
 
@@ -2562,7 +2562,7 @@ $vcatdata_main = array_unique($vcatdata_main, SORT_REGULAR);
 
                                                  class="innerbg_image"/>
 
-                                        <? } ?>
+                                        <?php } ?>
 
                                         <input type="file" class="form-control FilUploader"
 
@@ -2948,7 +2948,7 @@ if (!empty($vcatdata)) {
 
 </div>
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 

@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('../common.php');
 $action= isset($_REQUEST['action'])?$_REQUEST['action']:'';
 if($action==''){

@@ -327,12 +327,12 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                             </a>
                             <?php if ($MODULES_OBJ->isDeliverAllFeatureAvailable()) { ?>
                                 <!-- <a href="javascript:void(0);" id-attr="store" class="company-register-block"
-                                   style="width: calc(100% / <?//= $company_register_count ?>);">
+                                   style="width: calc(100% / <?php //= $company_register_count ?>);">
                                     <div class="company-register-card">
-                                        <img src="<?//= $tconfig['tsite_url'] ?>resizeImg.php?w=100&src=<?//= $tconfig['tsite_url'] ?>assets/img/store-register.png">
+                                        <img src="<?php //= $tconfig['tsite_url'] ?>resizeImg.php?w=100&src=<?php //= $tconfig['tsite_url'] ?>assets/img/store-register.png">
                                         <div class="company-register-content">
                                             <div class="company-register-content">
-                                                <div class="company-reg-title"><?//= $langage_lbl['LBL_RESTAURANT_GROCERY_ETC_STORE_TXT']; ?></div>
+                                                <div class="company-reg-title"><?php //= $langage_lbl['LBL_RESTAURANT_GROCERY_ETC_STORE_TXT']; ?></div>
                                                 <div class="company-reg-desc">
                                                     <?php // echo $regpage_title['restaurant_pages']; ?>
                                                 </div>
@@ -446,7 +446,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                        id="vEmail_verify" value="<?php echo $vEmail; ?>" Required/>
 													   <span id="" style="color: Red; font-size: 11px;"><?php echo $emailErr;?></span>
                                             </div>
-                                        <? } else { ?>
+                                        <?php } else { ?>
                                             <div class="form-group half phone-column newrow">
                                                 <label><?= $langage_lbl['LBL_SIGNUP_777-777-7777']; ?>
                                                     <span class="red">*</span>
@@ -462,7 +462,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
 													   <span id="" style="color: Red; font-size: 11px;"><?php echo isset($phonecodeErr) ? $phonecodeErr : '';?></span>
 													   <span id="" style="color: Red; font-size: 11px;"><?php echo isset($phoneErr) ? $phoneErr : '';?></span>
                                             </div>
-                                        <? } ?>
+                                        <?php } ?>
                                         <div class="form-group half newrow">
                                             <div class="relative_ele">
                                                 <label><?= $langage_lbl['LBL_PASSWORD']; ?>
@@ -524,10 +524,10 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                             <select class="" required name='vCountry' id="vCountry"
                                                     onChange="setState(this.value, '');changeCurrency(this.value);">
                                                 <!--  <option value=""><?= $langage_lbl['LBL_SELECT_TXT'] ?></option> -->
-                                                <? for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                                <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
                                                     <option value="<?= $db_country[$i]['vCountryCode'] ?>"
-                                                            <? if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
-                                                <? } ?>
+                                                            <?php if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
+                                                <?php } ?>
                                             </select>
 											<span id="" style="color: Red; font-size: 11px;"><?php echo isset($countryErr) ? $countryErr : '';?></span>
                                         </div>
@@ -550,27 +550,27 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
 													   <span id="" style="color: Red; font-size: 11px;"><?php echo isset($phonecodeErr) ? $phonecodeErr : '';?></span>
 													   <span id="" style="color: Red; font-size: 11px;"><?php echo isset($phoneErr) ? $phoneErr : '';?></span>
                                             </div>
-                                        <? } else { ?>
+                                        <?php } else { ?>
                                             <div class="form-group half newrow">
                                                 <label><?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?></label>
                                                 <input type="email" name="vEmail" class="create-account-input"
                                                        id="vEmail_verify" value="<?php echo $vEmail; ?>"/>
 													   <span id="" style="color: Red; font-size: 11px;"><?php echo isset($emailErr) ? $emailErr : '';?></span>
                                             </div>
-                                        <? } ?>
+                                        <?php } ?>
                                         <?php if (scount($db_lang) > 1) { ?>
                                         <div class="form-group half newrow floating">
                                             <label><?= $langage_lbl['LBL_SELECT_LANGUAGE_TXT']; ?></label>
                                             <select name="vLang" class="">
-                                                <? for ($i = 0; $i < scount($db_lang); $i++) { ?>
-                                                    <option value="<?= $db_lang[$i]['vCode'] ?>" <?
+                                                <?php for ($i = 0; $i < scount($db_lang); $i++) { ?>
+                                                    <option value="<?= $db_lang[$i]['vCode'] ?>" <?php
                                                     if ($db_lang[$i]['eDefault'] == 'Yes') {
                                                         echo 'selected';
                                                     }
                                                     ?>>
                                                         <?= $db_lang[$i]['vTitle'] ?>
                                                     </option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                         <?php } else { ?>
@@ -582,10 +582,10 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                             <select class="" required name='vCurrencyPassenger'>
                                                 <?php for ($i = 0; $i < scount($db_currency); $i++) { ?>
                                                     <option value="<?= $db_currency[$i]['vName'] ?>"
-                                                            <? if ($defaultCurrency == $db_currency[$i]['vName']) { ?>selected<? } ?>>
+                                                            <?php if ($defaultCurrency == $db_currency[$i]['vName']) { ?>selected<?php } ?>>
                                                         <?= $db_currency[$i]['vName'] ?>
                                                     </option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                         <?php } else { ?>
@@ -690,7 +690,7 @@ $lang = $LANG_OBJ->getLanguageData($vlangCode)['vLangCode'];
 <?php if ($lang != 'en') {
     ?>
     <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-    <? //include_once('otherlang_validation.php');?><?php } ?>
+    <?php //include_once('otherlang_validation.php');?><?php } ?>
 <script type="text/javascript" src="assets/js/validation/additional-methods.js"></script>
 <script>
 
@@ -966,9 +966,9 @@ $lang = $LANG_OBJ->getLanguageData($vlangCode)['vLangCode'];
         },
         rules: {
             vEmail: {
-                <?if($ENABLE_EMAIL_OPTIONAL != "Yes") {?>
+                <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") {?>
                 required: true,
-                <? } ?>
+                <?php } ?>
                 email: true,
                 // pattern: /^\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i,//solve issue of 1898 issue sheet,number not allowed after ., if any change then change in this pattern
                 remote: {
@@ -1296,9 +1296,9 @@ $lang = $LANG_OBJ->getLanguageData($vlangCode)['vLangCode'];
         },
         rules: {
             vEmaild: {
-                <?if($ENABLE_EMAIL_OPTIONAL != "Yes") {?>
+                <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") {?>
                 required: true,
-                <? } ?>
+                <?php } ?>
                 email: true,
                 // pattern: /^\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i,//solve issue of 1898 issue sheet,number not allowed after ., if any change then change in this pattern
                 remote: {
@@ -1547,9 +1547,9 @@ $lang = $LANG_OBJ->getLanguageData($vlangCode)['vLangCode'];
         },
         rules: {
             vEmailc: {
-                <?if($ENABLE_EMAIL_OPTIONAL != "Yes") {?>
+                <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") {?>
                 required: true,
-                <? } ?>
+                <?php } ?>
                 email: true,
                 //pattern: /^\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i,//solve issue of 1898 issue sheet,number not allowed after ., if any change then change in this pattern
                 remote: {
@@ -1861,9 +1861,9 @@ $lang = $LANG_OBJ->getLanguageData($vlangCode)['vLangCode'];
         },
         rules: {
             vEmailo: {
-                <?if($ENABLE_EMAIL_OPTIONAL != "Yes") {?>
+                <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") {?>
                 required: true,
-                <? } ?>
+                <?php } ?>
                 email: true,
                 // pattern: /^\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i,//solve issue of 1898 issue sheet,number not allowed after ., if any change then change in this pattern
                 remote: {

@@ -248,7 +248,7 @@ $db_currency = $obj->MySQLSelect($sql);
 
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
 
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 
 </head>
 
@@ -290,7 +290,7 @@ $db_currency = $obj->MySQLSelect($sql);
 
             </div>
 
-            <? if ($success == 3){ ?>
+            <?php if ($success == 3){ ?>
 
                 <div class="alert alert-danger alert-dismissable">
 
@@ -302,7 +302,7 @@ $db_currency = $obj->MySQLSelect($sql);
 
                 <br/>
 
-            <? } ?>
+            <?php } ?>
 
             <form name="frmsearch" id="frmsearch" action="javascript:void(0);" method="post">
 
@@ -608,7 +608,7 @@ $db_currency = $obj->MySQLSelect($sql);
 
                                             </tr>
 
-                                        <? }
+                                        <?php }
 
                                     }else{ ?>
 

@@ -410,7 +410,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                 </td>
                                                 <?php } ?>
                                                 <td>
-                                                    <? if ($data_drv[$i]['iLocationId'] == '0') {
+                                                    <?php if ($data_drv[$i]['iLocationId'] == '0') {
                                                         echo 'All Location';
                                                     } else {
                                                         echo $data_drv[$i]['vLocationName'];

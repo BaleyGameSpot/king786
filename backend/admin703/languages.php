@@ -175,7 +175,7 @@ if(isset($GetColumns) && !empty($GetColumns))
             <div id="add-hide-show-div">
                 <div class="row">
                     <div class="col-lg-12">
-                        <?
+                        <?php
                         if ($selectedlanguage != '') {
                             if (scount($allservice_cat_data) > 0) {
                                 foreach ($allservice_cat_data as $langOpt) {
@@ -190,7 +190,7 @@ if(isset($GetColumns) && !empty($GetColumns))
                         }
 
                         ?>
-                        <h2><?php echo $langage_lbl_admin['LBL_LANGUAGE_ADMIN']; ?> <? if (!empty($name)) { ?> (<?= $name ?>) <? } ?></h2>
+                        <h2><?php echo $langage_lbl_admin['LBL_LANGUAGE_ADMIN']; ?> <?php if (!empty($name)) { ?> (<?= $name ?>) <?php } ?></h2>
                     </div>
                 </div>
                 <hr/>
@@ -198,9 +198,9 @@ if(isset($GetColumns) && !empty($GetColumns))
                                                 <div class="languages-top-part">
                             <?php if (!isset($_SESSION['sess_editingToken'])) { ?>
                                                                                                     <h3 class="box_a">For Easy editing click "Enable Online Web Editing"</h3>
-                            <? } else { ?> 
+                            <?php } else { ?> 
                                                                                             <h3 class="box_a">To disable Easy editing click "Disable Online Web Editing"</h3>
-                            <? } ?>
+                            <?php } ?>
                                                       
                                                        <div class="admin_bax1">
                                                                 <p><?php if (!isset($_SESSION['sess_editingToken'])) { ?>
@@ -247,7 +247,7 @@ if(isset($GetColumns) && !empty($GetColumns))
                         </td>
                         <td width="6%" id="exactcheckbox">
                             <div class="checkbox" style="margin-left:5px;">
-                                <input type="checkbox" name="checktext" value="Yes" id="exactcheckbox_val" <?
+                                <input type="checkbox" name="checktext" value="Yes" id="exactcheckbox_val" <?php
                                 if ($checktext == 'Yes') {
                                     echo 'checked';
                                 }
@@ -266,14 +266,14 @@ if(isset($GetColumns) && !empty($GetColumns))
 
 
                         <td width="30%">
-                            <? if (!empty($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == "dev.bbcsproducts.net")) { ?>
-                                <? if (empty($selectedlanguage)) { ?>
+                            <?php if (!empty($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == "dev.bbcsproducts.net")) { ?>
+                                <?php if (empty($selectedlanguage)) { ?>
                                     <a class="add-btn input-pass" href="javascript:void(0);" data-toggle="modal"
                                        data-target="#input_pass_modal"
                                        data-fileaction="languages_action_multisystem.php" style="text-align: center;">
                                         Add Label
                                     </a>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <a class="add-btn input-pass" href="javascript:void(0);" data-toggle="modal"
                                        data-target="#input_pass_modal"
                                        data-fileaction="languages_action_multisystem_food_other.php"
@@ -292,10 +292,10 @@ if(isset($GetColumns) && !empty($GetColumns))
                                             <a class="add-btn" href="languages_action.php" style="text-align: center;">
                                                 Add Label
                                             </a>
-                                        <? }
+                                        <?php }
                                     }
                                 } ?>
-                            <? } ?>
+                            <?php } ?>
                         </td>
                         <?php } ?>
                         
@@ -320,21 +320,21 @@ if(isset($GetColumns) && !empty($GetColumns))
                                             </select>
                                     </span> -->
                                 <!-- <form method="POST" action="" name="mylangform">
-                                        <? if (scount($allservice_cat_data) > 1) { ?>
+                                        <?php if (scount($allservice_cat_data) > 1) { ?>
                                                              <span class="col-lg-2 new-select001">
                                                                  <select name="selectedlanguage" id="selectedlanguage" class="form-control" >
-                                            <? foreach ($allservice_cat_data as $langOpt) { ?>
+                                            <?php foreach ($allservice_cat_data as $langOpt) { ?>
                                                                                      <option value="<?php echo $langOpt['iServiceId']; ?>" <?php
                                     if ($selectedlanguage == $langOpt['iServiceId']) {
                                         echo "selected";
                                     }
                                     ?>><?php echo clearName($langOpt['vServiceName']); ?></option>
-                                            <? } ?>
+                                            <?php } ?>
                                                                  </select>
                                                              </span>
-                                        <? } else { ?>
+                                        <?php } else { ?>
                                                              <input type="hidden" name="selectedlanguage" id="selectedlanguage" value="<?= $allservice_cat_data[0]['iServiceId']; ?>">
-                                        <? } ?>
+                                        <?php } ?>
                                          </form> -->
                             </div>
                             <?php if (!empty($data_drv) && $_SERVER['HTTP_HOST'] == "dev.bbcsproducts.net" && $userObj->hasPermission('export-general-label')) { ?>
@@ -395,9 +395,9 @@ if(isset($GetColumns) && !empty($GetColumns))
                                                     ?>
                                                     <i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a>
                                         </th>
-                                        <? if ($edit_available == 1 && $userObj->hasPermission(['edit-general-label', 'delete-general-label'])) { ?>
+                                        <?php if ($edit_available == 1 && $userObj->hasPermission(['edit-general-label', 'delete-general-label'])) { ?>
                                             <th width="8%" align="center" style="text-align:center;">Action</th>
-                                        <? } ?>
+                                        <?php } ?>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -417,10 +417,10 @@ if(isset($GetColumns) && !empty($GetColumns))
 
                                                 <td><?= $data_drv[$i]['vLabel']; ?></td>
                                                 <td><?= $data_drv[$i]['vValue']; ?></td>
-                                                <? if ($edit_available == 1 && $userObj->hasPermission(['edit-general-label', 'delete-general-label'])) { ?>
+                                                <?php if ($edit_available == 1 && $userObj->hasPermission(['edit-general-label', 'delete-general-label'])) { ?>
                                                     <td align="center" style="text-align:center;" class="action-btn001">
                                                         <?php if (!empty($_SERVER['HTTP_HOST']) && ($_SERVER['HTTP_HOST'] == "dev.bbcsproducts.net")) { ?>
-                                                            <? if (empty($selectedlanguage)) { ?>
+                                                            <?php if (empty($selectedlanguage)) { ?>
                                                                 <?php if ($userObj->hasPermission('edit-general-label')) { ?>
                                                                     <a class="input-pass" href="javascript:void(0);"
                                                                        data-toggle="modal"
@@ -443,7 +443,7 @@ if(isset($GetColumns) && !empty($GetColumns))
                                                                         <img src="img/delete-icon.png" alt="Delete">
                                                                     </a>
                                                                 <?php } ?>
-                                                            <? } else { ?>
+                                                            <?php } else { ?>
                                                                 <?php if ($userObj->hasPermission('edit-general-label')) { ?>
                                                                     <a class="input-pass" href="javascript:void(0);"
                                                                        data-toggle="modal"
@@ -467,7 +467,7 @@ if(isset($GetColumns) && !empty($GetColumns))
                                                                     </a>
                                                                 <?php } ?>
                                                             <?php } ?>
-                                                        <? } else {
+                                                        <?php } else {
                                                             if (!empty($selectedlanguage)) { ?>
                                                                 <?php if ($userObj->hasPermission('edit-general-label')) { ?>
                                                                     <a href="languages_action.php?id=<?= $data_drv[$i]['LanguageLabelId']; ?>&selectedlanguage=<?= $selectedlanguage ?>"
@@ -475,17 +475,17 @@ if(isset($GetColumns) && !empty($GetColumns))
                                                                         <img src="img/edit-icon.png" alt="Edit">
                                                                     </a>
                                                                 <?php } ?>
-                                                            <? } else { ?>
+                                                            <?php } else { ?>
                                                                 <?php if ($userObj->hasPermission('edit-general-label')) { ?>
                                                                     <a href="languages_action.php?id=<?= $data_drv[$i]['LanguageLabelId']; ?>"
                                                                        data-toggle="tooltip" title="Edit">
                                                                         <img src="img/edit-icon.png" alt="Edit">
                                                                     </a>
                                                                 <?php } ?>
-                                                            <? } ?>
-                                                        <? } ?>
+                                                            <?php } ?>
+                                                        <?php } ?>
                                                     </td>
-                                                <? } ?>
+                                                <?php } ?>
                                             </tr>
                                             <?php
                                         }
@@ -612,7 +612,7 @@ if(isset($GetColumns) && !empty($GetColumns))
         var action = $("#_list_form").attr('action');
 
         var formValus = $("#frmsearch").serialize();
-        var selectedlanguage = "<? echo $selectedlanguage ?>";
+        var selectedlanguage = "<?php echo $selectedlanguage ?>";
 
         if (selectedlanguage != '') {
             window.location.href = action + "?" + formValus + "&selectedlanguage=" + selectedlanguage;

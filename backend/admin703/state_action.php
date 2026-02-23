@@ -125,7 +125,7 @@ if ($action == 'Edit') {
 
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <!-- On OFF switch -->
         <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -141,8 +141,8 @@ if ($action == 'Edit') {
 
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -157,18 +157,18 @@ if ($action == 'Edit') {
                     <hr />
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 2) { ?>
+                            <?php if ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } ?>
-                            <? if ($success == 3) { ?>
+                            <?php } ?>
+                            <?php if ($success == 3) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php print_r($error); ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
                             <form method="post" action="" name="_state_form" id="_state_form" >
                                 <input type="hidden" name="id" value="<?= $id; ?>"/>
                                 <input type="hidden" name="previousLink" id="previousLink" value="<?php echo isset($previousLink) ? $previousLink : ''; ?>"/>
@@ -257,7 +257,7 @@ if ($action == 'Edit') {
         <!--END MAIN WRAPPER -->
 
 
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
 
         <script>
             $(document).ready(function () {

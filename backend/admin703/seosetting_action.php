@@ -112,7 +112,7 @@
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 		<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 		<!-- PAGE LEVEL STYLES -->
 		<link rel="stylesheet" href="../assets/plugins/Font-Awesome/css/font-awesome.css" />
 		<link rel="stylesheet" href="../assets/plugins/wysihtml5/dist/bootstrap-wysihtml5-0.0.2.css" />
@@ -135,8 +135,8 @@
 
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>
 			
 			<!--PAGE CONTENT -->
 			<div id="content">
@@ -152,24 +152,24 @@
 					<hr />
 					<div class="body-div">
 						<div class="form-group">
-							<? if($success == 1) { ?>
+							<?php if($success == 1) { ?>
 								<div class="alert alert-success alert-dismissable">
 									<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 									<?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
 								</div><br/>
-							<? }elseif($success == 2){ ?>
+							<?php }elseif($success == 2){ ?>
 								<div class="alert alert-danger alert-dismissable">
 									<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 									<?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
 								</div><br/>
-							<? } ?>
-							 <? if ($success == 3) {?>
+							<?php } ?>
+							 <?php if ($success == 3) {?>
           <div class="alert alert-danger alert-dismissable">
             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
 			<?php print_r($error); ?>
              </div>
           <br/>
-          <?} ?>
+          <?php } ?>
 							<form method="post" action=""  enctype="multipart/form-data" name="_seo_form" id="_seo_form">
 								<input type="hidden" name="id" value="<?=$id;?>"/>
 								<div class="row">
@@ -223,7 +223,7 @@
 		</div>
 		<!--END MAIN WRAPPER -->
 		
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 
 		<!-- GLOBAL SCRIPTS -->
 		<!--<script src="../assets/plugins/jquery-2.0.3.min.js"></script>-->

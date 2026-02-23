@@ -125,7 +125,7 @@
 						</div>
 						
                         <div class="form-group">
-                            <? if ($success == "1") {?>
+                            <?php if ($success == "1") {?>
 								<div class="alert alert-success alert-dismissable">
 									<button aria-hidden="true" data-dismiss="alert" class="close" type="button">�</button>
 									<?php
@@ -138,20 +138,20 @@
 									<?php } ?>
 									
 								</div><br/>
-							<? } ?>
+							<?php } ?>
 							
-                            <? if ($success == 2) {?>
+                            <?php if ($success == 2) {?>
 								<div class="alert alert-danger alert-dismissable">
 									<button aria-hidden="true" data-dismiss="alert" class="close" type="button">�</button>
 									"Edit / Delete Record Feature" has been disabled on the Demo Admin Panel. This feature will be enabled on the main script we will provide you.
 								</div><br/>
-							<? } ?>
-							<? if ($success == 0 && $var_msg != "") {?>
+							<?php } ?>
+							<?php if ($success == 0 && $var_msg != "") {?>
 								<div class="alert alert-danger alert-dismissable">
 									<button aria-hidden="true" data-dismiss="alert" class="close" type="button">�</button>
 									<?=$var_msg;?>
 								</div><br/>
-							<? } ?>
+							<?php } ?>
                             <div class="col-lg-5">
                                 <form name="add_booking_form" id="add_booking_form" method="post" action="action_booking.php" enctype="multipart/form-data">
 									<input type="hidden" name="iCompanyId" id="iCompanyId" value="<?= $_SESSION['sess_iUserId']; ?>">
@@ -172,11 +172,11 @@
 										<span>
 											<select name="vCountry" class="form-control form-control-select" onChange="changeCode(this.value); " required>
 												<option value=""><?=$langage_lbl['LBL_SELECT_CONTRY']; ?></option>
-												<? for($i=0;$i<scount($db_code);$i++) { ?>
+												<?php for($i=0;$i<scount($db_code);$i++) { ?>
 													<option value="<?=$db_code[$i]['vCountryCode']?>" <?php if($db_code[$i]['vCountryCode'] == $vCountry){ echo "selected"; }?> >
 														<?=$db_code[$i]['vCountry']?>
 													</option>
-												<? } ?>
+												<?php } ?>
 											</select>
 										</span>
 										<span>

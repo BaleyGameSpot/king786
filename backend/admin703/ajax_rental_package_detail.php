@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("../common.php");
 
 $iRentalPackageId = isset($_REQUEST['iRentalPackageId'])?$_REQUEST['iRentalPackageId']:''; 

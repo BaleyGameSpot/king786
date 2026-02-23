@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 include_once('common.php');
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ include_once('common.php');
 	
 	
 	
-    <? include_once('global_files.php');?>
+    <?php include_once('global_files.php');?>
 </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
@@ -26,8 +26,8 @@ include_once('common.php');
 
     <!-- MAIN WRAPPER -->
     <div id="wrap">
-		<? include_once('header.php'); ?>
-		<? include_once('left_menu.php'); ?>
+		<?php include_once('header.php'); ?>
+		<?php include_once('left_menu.php'); ?>
        
         <!--PAGE CONTENT -->
         <div id="content">
@@ -172,7 +172,7 @@ include_once('common.php');
     </div>
      <!--END MAIN WRAPPER -->
 
-	<? include_once('footer.php');?>
+	<?php include_once('footer.php');?>
 	
 </body>
 	<!-- END BODY-->    

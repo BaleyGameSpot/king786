@@ -102,7 +102,7 @@
 		<title>Admin | General <?= $action; ?></title>
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 		<link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-		<?
+		<?php
 			include_once('global_files.php');
 		?>
 		<!-- On OFF switch -->
@@ -115,7 +115,7 @@
 
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<?
+			<?php
 				include_once('header.php');
 				include_once('left_menu.php');
 			?>
@@ -133,17 +133,17 @@
 					<hr />
 					<div class="body-div">
 						<div class="form-group">
-							<? if ($success == 1) {?>
+							<?php if ($success == 1) {?>
 								<div class="alert alert-success alert-dismissable">
 									<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 									<?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
 								</div><br/>
-							<?} elseif ($success == 2) { ?>
+							<?php } elseif ($success == 2) { ?>
 								<div class="alert alert-danger alert-dismissable">
                                                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
 								</div><br/>
-							<? } ?>
+							<?php } ?>
 							<form method="post" action="" enctype="multipart/form-data">
 								<input type="hidden" name="id" value="<?= $id; ?>"/>
 							 <div class="row">
@@ -168,15 +168,15 @@
 											if($vName=='APP_IMG'){
 												?>
 										<input type="file" class="form-control" name="vValue"  id="vValue" value="<?= $vValue; ?>" placeholder="First Name" required>
-										<?
+										<?php
 											}else if($vName=='FACEBOOK_IFRAME')
 											{?>
 										<textarea class="form-control" name="vValue"  id="vValue" cols="" rows="8"><?= $vValue; ?></textarea>
-										<?}
+										<?php }
 												else{
 													?>
 										<input type="text" class="form-control" name="vValue"  id="vValue" value="<?= $vValue; ?>" placeholder="" required>
-										<?		}
+										<?php		}
 											?>
 									</div>
 								</div>
@@ -205,7 +205,7 @@
 		<!--END MAIN WRAPPER -->
 
 
-		<?
+		<?php
 			include_once('footer.php');
 		?>
 		<script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>

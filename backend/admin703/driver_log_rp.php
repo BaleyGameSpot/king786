@@ -163,15 +163,15 @@ function secToHR($seconds)
         Report<?php echo $langage_lbl_admin['LBL_DRIVER_LOG_REPORT_SMALL_ADMIN']; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -333,16 +333,16 @@ function secToHR($seconds)
 
                                                 <a href="javascript:void(0);"
                                                    onClick="show_driver_details('<?= $db_log_report[$i]['iDriverId']; ?>')"
-                                                   style="text-decoration: underline;"><? echo clearName($db_log_report[$i]['vName'] . ' ' . $db_log_report[$i]['vLastName']); ?></a>
+                                                   style="text-decoration: underline;"><?php echo clearName($db_log_report[$i]['vName'] . ' ' . $db_log_report[$i]['vLastName']); ?></a>
 
                                                 </td>
-                                                <td><? echo clearEmail($db_log_report[$i]['vEmail']); ?></td>
-                                                <td style="text-align:center;"><? echo DateTime($db_log_report[$i]['dLoginDateTime'], '21'); ?></td>
+                                                <td><?php echo clearEmail($db_log_report[$i]['vEmail']); ?></td>
+                                                <td style="text-align:center;"><?php echo DateTime($db_log_report[$i]['dLoginDateTime'], '21'); ?></td>
                                                 <?php $logooutdate = ($db_log_report[$i]['dLogoutDateTime'] == '0000-00-00 00:00:00' || $db_log_report[$i]['dLogoutDateTime'] == '') ? '--' : DateTime($dLogoutDateTime, '21'); ?>
-                                                <td align="center"><? echo $logooutdate; ?></td>
-                                                <td align="center"><? echo $totalTimecount; ?></td>
+                                                <td align="center"><?php echo $logooutdate; ?></td>
+                                                <td align="center"><?php echo $totalTimecount; ?></td>
                                             </tr>
-                                        <? } ?>
+                                        <?php } ?>
                                         <?php if (!empty($db_log_report_total_time)) {
                                             for ($i = 0; $i < scount($db_log_report_total_time); $i++) {
                                                 $dstart1 = $db_log_report_total_time[$i]['dLoginDateTime'];
@@ -422,7 +422,7 @@ function secToHR($seconds)
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <link rel="stylesheet" href="css/select2/select2.min.css"/>
 <script src="js/plugins/select2.min.js"></script>

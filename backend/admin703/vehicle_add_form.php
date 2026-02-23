@@ -366,12 +366,12 @@ if ($isStoreDriverOption > 0) {
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <!-- <? if ($success == 3) { ?>
+                    <!-- <?php if ($success == 3) { ?>
                                                         <div class="alert alert-danger alert-dismissable">
                                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                 <?php print_r($error); ?>
                                                         </div><br/>
-                            <? } ?> -->
+                            <?php } ?> -->
                     <?php include('valid_msg.php'); ?>
                     <form name="_vehicle_form" id="_vehicle_form" method="post" action="">
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
@@ -442,7 +442,7 @@ if ($isStoreDriverOption > 0) {
                                     <select name="iYear" id="iYear" class="form-control">
                                         <option value="">CHOOSE YEAR</option>
                                         <?php for ($j = $start; $j >= $end; $j--) { ?>
-                                            <option value="<?= $j ?>" <? if ($iYear == $j) { ?> selected <? } ?>><?= $j ?></option>
+                                            <option value="<?= $j ?>" <?php if ($iYear == $j) { ?> selected <?php } ?>><?= $j ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -643,7 +643,7 @@ if ($isStoreDriverOption > 0) {
     <!--END PAGE CONTENT -->
 </div>
 <!--END MAIN WRAPPER -->
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script src="../assets/js/modal_alert.js"></script>
 </body>
@@ -657,7 +657,7 @@ if ($isStoreDriverOption > 0) {
             // get_vehicleType('<?= $iDriverId; ?>', '<?= $vCarType; ?>', '<?= $eType ?>', '<?= $vRentalCarType ?>');
         };
     </script>
-<? } else { ?>
+<?php } else { ?>
     <script>
         $(document).ready(function () {
             var appType = '<?= $APP_TYPE ?>';
@@ -886,12 +886,12 @@ if ($isStoreDriverOption > 0) {
                         // console.log(params);
                         var serviceIdnew = $('#iServiceId option:selected').val();
                         if (typeof serviceIdnew == 'undefined' || serviceIdnew == 0) {
-                            <? if (ONLYDELIVERALL == 'No') { ?>
+                            <?php if (ONLYDELIVERALL == 'No') { ?>
                             var company_id = $('#iCompanyId option:selected').val();
-                            <? } else { ?>
+                            <?php } else { ?>
                             var companyidselected = $("#iCompanyIdHidden").val();
                             var company_id = $('#iCompanyIdHidden').val();
-                            <? } ?>
+                            <?php } ?>
                         } else {
                             var company_id = $('#iCompanyIdhtml option:selected').val();
                         }

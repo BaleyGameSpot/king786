@@ -106,7 +106,7 @@ $tripcurthholsamt = $db_curr_ratio[0]['fThresholdAmount'];
                             </button>
                             <?= $var_msg ?>
                         </div>
-                    <? } else if (isset($_REQUEST['success']) && $_REQUEST['success'] == 2) { ?>
+                    <?php } else if (isset($_REQUEST['success']) && $_REQUEST['success'] == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close"
                                     type="button">×
@@ -121,7 +121,7 @@ $tripcurthholsamt = $db_curr_ratio[0]['fThresholdAmount'];
                             </button>
                             <?= $var_msg ?>
                         </div>
-                    <? }
+                    <?php }
                     ?>
                     <table id="my-trips-data" class="ui celled table custom-table" style="width:100%">
                         <thead>
@@ -191,7 +191,7 @@ $tripcurthholsamt = $db_curr_ratio[0]['fThresholdAmount'];
                                             <?php if ($trip['ePaymentStatus'] == "Unsettled") { ?>
                                                 <div class="check-main">
                                                     <label class="check-hold">
-                                                        <input id="iBookingId_<?= $trip['iBookingId']; ?>" name="iBookingId[]" value="<?= $trip['iBookingId'] ?>" type="checkbox" <? if ($trip['ePayment_request'] == 'Yes') { ?> checked="checked" disabled <? } ?> >
+                                                        <input id="iBookingId_<?= $trip['iBookingId']; ?>" name="iBookingId[]" value="<?= $trip['iBookingId'] ?>" type="checkbox" <?php if ($trip['ePayment_request'] == 'Yes') { ?> checked="checked" disabled <?php } ?> >
                                                         <span class="check-button"></span>
                                                     </label>
                                                 </div>
@@ -226,7 +226,7 @@ $tripcurthholsamt = $db_curr_ratio[0]['fThresholdAmount'];
         </div>
     </section>
     <div class="col-lg-12">
-        <? $type = $_SESSION['sess_user']; ?>
+        <?php $type = $_SESSION['sess_user']; ?>
         <div class="custom-modal-main in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
              aria-hidden="true">
             <div class="custom-modal">
@@ -248,31 +248,31 @@ $tripcurthholsamt = $db_curr_ratio[0]['fThresholdAmount'];
                                             <label><?= $langage_lbl['LBL_WALLET_ACCOUNT_HOLDER_NAME']; ?>*</label>
                                             <input type="text" name="vHolderName" id="vHolderName"
                                                    class="form-control vHolderName"
-                                                   <? if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBankAccountHolderName']; ?>"<? } ?>>
+                                                   <?php if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBankAccountHolderName']; ?>"<?php } ?>>
                                         </div>
                                         <div class="form-group newrow">
                                             <label><?= $langage_lbl['LBL_WALLET_NAME_OF_BANK']; ?>*</label>
                                             <input type="text" name="vBankName" id="vBankName"
                                                    class="form-control vBankName"
-                                                   <? if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBankName']; ?>"<? } ?>>
+                                                   <?php if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBankName']; ?>"<?php } ?>>
                                         </div>
                                         <div class="form-group newrow">
                                             <label><?= $langage_lbl['LBL_WALLET_ACCOUNT_NUMBER']; ?>*</label>
                                             <input type="text" name="iBankAccountNo" id="iBankAccountNo"
                                                    class="form-control iBankAccountNo"
-                                                   <? if ($type == 'driver') { ?>value="<?= $db_booking[0]['vAccountNumber']; ?>"<? } ?>>
+                                                   <?php if ($type == 'driver') { ?>value="<?= $db_booking[0]['vAccountNumber']; ?>"<?php } ?>>
                                         </div>
                                         <div class="form-group newrow">
                                             <label><?= $langage_lbl['LBL_WALLET_BIC_SWIFT_CODE']; ?>*</label>
                                             <input type="text" name="BICSWIFTCode" id="BICSWIFTCode"
                                                    class="form-control BICSWIFTCode"
-                                                   <? if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBIC_SWIFT_Code']; ?>"<? } ?>>
+                                                   <?php if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBIC_SWIFT_Code']; ?>"<?php } ?>>
                                         </div>
                                         <div class="form-group newrow">
                                             <label><?= $langage_lbl['LBL_WALLET_BANK_LOCATION']; ?>*</label>
                                             <input type="text" name="vBankBranch" id="vBankBranch"
                                                    class="form-control vBankBranch"
-                                                   <? if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBankLocation']; ?>"<? } ?>>
+                                                   <?php if ($type == 'driver') { ?>value="<?= $db_booking[0]['vBankLocation']; ?>"<?php } ?>>
                                         </div>
                                     </div>
                                 </div>

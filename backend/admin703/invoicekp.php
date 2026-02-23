@@ -158,7 +158,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
         <meta content="" name="keywords" />
         <meta content="" name="description" />
         <meta content="" name="author" />
-        <? include_once('global_files.php'); ?>		
+        <?php include_once('global_files.php'); ?>		
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places&key=<?= $GOOGLE_SEVER_API_KEY_WEB ?>"></script>
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
     </head>
@@ -173,8 +173,8 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
     <body class="padTop53 " >
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner" id="page_height" style="">
@@ -210,7 +210,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <b>Your <?php echo $langage_lbl_admin['LBL_TRIP_TXT_ADMIN']; ?> </b> 
-                                        <?
+                                        <?php
                                         if (($db_trip_data['tTripRequestDateOrig'] == "0000-00-00 00:00:00")) {
                                             echo "Was Cancelled.";
                                         } else {
@@ -256,8 +256,8 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                 ?>
                                                 <div class="rider-invoice-bottom">
                                                     <div class="<?php echo $class_name; ?>" <?= $style; ?> >
-                                                        <? if ($db_trip_data['eType'] == 'UberX') { ?> Service Type
-                                                            <?
+                                                        <?php if ($db_trip_data['eType'] == 'UberX') { ?> Service Type
+                                                            <?php
                                                         } else {
                                                             echo $langage_lbl_admin['LBL_CAR_TXT_ADMIN'];
                                                         }
@@ -294,7 +294,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                         </div>													
                                                         <div class="<?php echo $class_name; ?>">
                                                             <?php echo $langage_lbl_admin['LBL_TRIP_TXT_ADMIN']; ?>  time<br />
-                                                            <b><? echo $db_trip_data['TripTimeInMinutes']; ?></b>
+                                                            <b><?php echo $db_trip_data['TripTimeInMinutes']; ?></b>
                                                         </div>
                                                     <?php } ?> 
                                                     <?php if ((!empty($db_trip_data['vSignImage'])) && $APP_DELIVERY_MODE == 'Multi' && $db_trip_data['eType'] == "Deliver") { ?>
@@ -313,7 +313,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                         </div>
                                                     <?php } ?>
                                                 </div>
-                                                <? if ($APP_DELIVERY_MODE != 'Multi') { ?>
+                                                <?php if ($APP_DELIVERY_MODE != 'Multi') { ?>
                                                     <div class="rider-invoice-bottom">
                                                         <div class="col-sm-6">
                                                             <div class="left col-sm-3"> 
@@ -338,7 +338,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                <? } ?>
+                                                <?php } ?>
                                             </div>
                                             <div class="col-sm-6 rider-invoice-new-right">
 
@@ -348,7 +348,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
 
                                                     <tbody>
 
-                                                        <?
+                                                        <?php
                                                         //echo "<pre>";
                                                         //print_r($db_trip_data);die;
                                                         foreach ($db_trip_data['HistoryFareDetailsNewArr'] as $key => $value) {
@@ -365,7 +365,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                                         <td><?= $k; ?></td>
                                                                         <td align="right"><?php echo $val; ?></td>
                                                                     </tr>
-                                                                    <?
+                                                                    <?php
                                                                 }
                                                             }
                                                         }
@@ -376,7 +376,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                         <tr>
                                                             <td><b>
                                                                     <?php echo $langage_lbl_admin['LBL_Total_Fare_TXT']; ?> (Via 
-                                                                    <?
+                                                                    <?php
                                                                     if ($db_trip_data['vTripPaymentMode'] == "Card" && $db_trip_data['ePayWallet'] == 'Yes') {
                                                                         echo $langage_lbl_admin['LBL_WALLET_TXT'];
                                                                     } else {
@@ -423,7 +423,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                                 </b></td>
                                                         </tr>
                                                     </table><br>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <?php
                                                 if ($db_trip_data['fTipPrice'] != "" && $db_trip_data['fTipPrice'] != "0" && $db_trip_data['fTipPrice'] != "0.00") {
                                                     ?>
@@ -433,7 +433,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                             <td align="right"><b><?= $db_trip_data['fTipPrice']; ?></b></td>
                                                         </tr>
                                                     </table><br>
-                                                    <?
+                                                    <?php
                                                 }
                                                 ?>
                                                 <div style="clear:both;"></div>
@@ -537,7 +537,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                 <?php } ?>
                                             </div>
                                             <div class="clear"></div>
-                                            <? if (isset($db_trip[0]['eType']) && $db_trip[0]['eType'] == 'Deliver') { ?>
+                                            <?php if (isset($db_trip[0]['eType']) && $db_trip[0]['eType'] == 'Deliver') { ?>
                                                 <div class="invoice-table">
                                                     <?php
                                                     $sql1 = "SELECT * FROM trips_delivery_locations AS tdl WHERE iTripId = '" . $iTripId . "'";
@@ -596,7 +596,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                     }
                                                     ?>
                                                 </div>
-                                            <? } ?>
+                                            <?php } ?>
                                             <div class="row invoice-email-but">
                                                 <span>
                                                     <a href="../send_invoice_receipt.php?action_from=mail&iTripId=<?= $db_trip_data['iTripId'] ?>"><button class="btn btn-primary ">E-mail</button></a>
@@ -630,7 +630,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                 </div>
             </div>
         </div>
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <script src="../assets/js/gmap3.js"></script>
         <script>
                                                             var typeArr = '<?= json_encode($vehilceTypeArr, JSON_HEX_APOS); ?>';

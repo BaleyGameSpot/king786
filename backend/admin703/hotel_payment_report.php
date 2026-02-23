@@ -398,7 +398,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?
+                                    <?php
                                     $set_unsetarray = array();
                                     if (scount($db_trip) > 0) {
                                         for ($i = 0; $i < scount($db_trip); $i++) {
@@ -448,7 +448,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                        style="text-decoration: underline;"><?= clearName($db_trip[$i]['riderName']); ?></a>
 
                                                 </td>
-                                                <?
+                                                <?php
                                                 $systemTimeZone = date_default_timezone_get();
                                                 $db_trip[$i]['tTripRequestDate'] = (!empty($db_trip[$i]['vTimeZone'])) ? converToTz($db_trip[$i]['tTripRequestDate'], $db_trip[$i]['vTimeZone'], $systemTimeZone) : $db_trip[$i]['tTripRequestDate'];
 
@@ -505,7 +505,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                 </td>
                                                 <td><?= $db_trip[$i]['iActive']; ?></td>
                                                 <td><?= $db_trip[$i]['vTripPaymentMode']; ?></td>
-                                                <td><?
+                                                <td><?php
                                                     if ($db_trip[$i]['eHotelPaymentStatus'] == "Settelled") {
                                                         echo "Settled";
                                                     } else if ($db_trip[$i]['eHotelPaymentStatus'] == "Unsettelled") {
@@ -517,21 +517,21 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                 </td>
                                                 <?php if (isset($_SESSION['SessionUserType']) && $_SESSION['SessionUserType'] != 'hotel') { ?>
                                                     <td>
-                                                        <?
+                                                        <?php
                                                         if ($db_trip[$i]['eHotelPaymentStatus'] == 'Unsettelled') {
                                                             ?>
                                                             <input class="validate[required]" type="checkbox"
                                                                    value="<?= $db_trip[$i]['iTripId'] ?>"
                                                                    id="iTripId_<?= $db_trip[$i]['iTripId'] ?>"
                                                                    name="iTripId[]">
-                                                            <?
+                                                            <?php
                                                         }
                                                         ?>
                                                     </td>
-                                                <? } ?>
+                                                <?php } ?>
                                             </tr>
-                                        <? } ?>
-                                        <?
+                                        <?php } ?>
+                                        <?php
                                         if (isset($_SESSION['SessionUserType']) && $_SESSION['SessionUserType'] != 'hotel') {
                                             $colspan = "3";
                                             $colspan1 = "12";
@@ -553,14 +553,14 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                             <td align="right"
                                                 colspan="<?= $colspan ?>"><?= formateNumAsPerCurrency($tot_driver_refund, ''); ?></td>
                                         </tr>
-                                        <? if (isset($_SESSION['SessionUserType']) && $_SESSION['SessionUserType'] != 'hotel') { ?>
+                                        <?php if (isset($_SESSION['SessionUserType']) && $_SESSION['SessionUserType'] != 'hotel') { ?>
                                             <?php if (in_array("Unsettelled", $set_unsetarray)) { ?>
                                                 <tr class="gradeA">
                                                     <td colspan="15" align="right">
                                                         <a onClick="Paytodriver()" href="javascript:void(0);" class="btn btn-primary">Mark As Settled</a>
                                                     </td>
                                                 </tr>
-                                                <?
+                                                <?php
                                             }
                                         }
                                     } else {
@@ -660,7 +660,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
 <!-- <link rel="stylesheet" href="css/select2/select2.min.css" />
 <script src="js/plugins/select2.min.js"></script> -->
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script>
     $('#dp4').datepicker()
         .on('changeDate', function (ev) {

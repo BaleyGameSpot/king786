@@ -250,7 +250,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                             </select>
                                             <?php } ?>
                                         </span>
-                                        <? } ?>
+                                        <?php } ?>
                                     </div>
                                 </div>
                                 <div style="clear:both;"></div>
@@ -270,7 +270,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                         }
                                                         } else {
                                                         ?><i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a></th>
-                                                    <? if ($hideColumn == 0) { ?>               
+                                                    <?php if ($hideColumn == 0) { ?>               
                                                     <th width="8%" align="center" style="text-align:center;"><a href="javascript:void(0);" onClick="Redirect(3,<?php
                                                         if ($sortby == '3') {
                                                             echo $order;
@@ -282,7 +282,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                         }
                                                         } else {
                                                         ?><i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a></th>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <th width="8%" align="center" style="text-align:center;"><a href="javascript:void(0);" onClick="Redirect(4,<?php
                                                         if ($sortby == '4') {
                                                             echo $order;
@@ -329,10 +329,10 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                         
                                                         ?>
                                                     <tr class="gradeA">
-                                                        <td><? echo $data_drv[$i]['vServiceName_' . $default_lang . '']; ?></td>
-                                                        <td align="center"><? echo $data_drv[$i]['iDisplayOrder']; ?></td>
+                                                        <td><?php echo $data_drv[$i]['vServiceName_' . $default_lang . '']; ?></td>
+                                                        <td align="center"><?php echo $data_drv[$i]['iDisplayOrder']; ?></td>
                                                         <td width="10%" align="center">
-                                                            <?
+                                                            <?php
                                                                 if ($data_drv[$i]['eStatus'] == 'Active') {
                                                                     $dis_img = "img/active-icon.png";
                                                                 } else if ($data_drv[$i]['eStatus'] == 'Inactive') {
@@ -361,7 +361,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                             <?php } ?>
                                                         </td>                                           
                                                     </tr>
-                                                    <?
+                                                    <?php
                                                     }
                                                 } else { ?>
                                                     <tr class="gradeA">

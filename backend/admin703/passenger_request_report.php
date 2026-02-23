@@ -89,15 +89,15 @@ $db_rider = $obj->MySQLSelect("SELECT iUserId,CONCAT(vName,' ',vLastName) AS rid
         <title><?= $SITE_NAME ?> | <?php echo $langage_lbl_admin['LBL_PASSENGER_TXT']; ?> Request report</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>         
+        <?php include_once('global_files.php'); ?>         
     </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
     <body class="padTop53 " >
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -195,11 +195,11 @@ $db_rider = $obj->MySQLSelect("SELECT iUserId,CONCAT(vName,' ',vLastName) AS rid
                                                         </td>
                                                         <td><?= $riderName; ?></td>
                                                         <td><?= $driverName; ?></td>
-                                                        <td><? if ($totalData[$d]['iTripId'] != 0) { ?><button class="btn btn-primary" onclick='return !window.open("<?= $link_page ?>?iTripId=<?= $totalData[$d]['iTripId'] ?>", "_blank")'>
+                                                        <td><?php if ($totalData[$d]['iTripId'] != 0) { ?><button class="btn btn-primary" onclick='return !window.open("<?= $link_page ?>?iTripId=<?= $totalData[$d]['iTripId'] ?>", "_blank")'>
                                                                     <i class="icon-th-list icon-white"><b>View Trip</b></i>
-                                                                </button><? } ?></td>
+                                                                </button><?php } ?></td>
                                                     </tr>
-                                                    <?
+                                                    <?php
                                                 }
                                                 ?>                                                              
                                             </tbody>
@@ -225,7 +225,7 @@ $db_rider = $obj->MySQLSelect("SELECT iUserId,CONCAT(vName,' ',vLastName) AS rid
             <input type="hidden" name="endDate" value="<?php echo $endDate; ?>" >
             <input type="hidden" name="method" id="method" value="" >
         </form>
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css" />
         <link rel="stylesheet" href="css/select2/select2.min.css" />
         <script src="js/plugins/select2.min.js"></script>

@@ -154,7 +154,7 @@ $LocationData = $obj->MySQLSelect($Lsql);
         <title><?= $SITE_NAME; ?> |<?= $langage_lbl_admin['LBL_VEHICLE_TYPE_RENTAL_TXT']; ?></title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
     </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
@@ -209,7 +209,7 @@ $LocationData = $obj->MySQLSelect($Lsql);
                                                 }
                                                 ?> ><?= $l['vLocationName'] ?></option>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                         </select>
 
@@ -277,7 +277,7 @@ $LocationData = $obj->MySQLSelect($Lsql);
                                                                 <?php } ?>
                                                             </td>
                                                         </tr>    
-                                                    <?
+                                                    <?php
                                                     }
                                                 } else {
                                                     ?>

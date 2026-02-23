@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 
 $script = "Organization-Users-Trips";
@@ -196,7 +196,7 @@ if ($host_system == 'cubetaxiplus') {
                 </tr>
             </thead>
                 <tbody>
-                    <?
+                    <?php
                     for ($i = 0; $i < scount($db_trip); $i++) {
                         $eType = $db_trip[$i]['eType'];
                         //$link_page = "organization_invoice.php";
@@ -233,7 +233,7 @@ if ($host_system == 'cubetaxiplus') {
 
                             <?php if ($APP_TYPE != 'UberX' && $APP_TYPE != 'Delivery') { ?>
                                 <td >
-                                    <?
+                                    <?php
                                     if ($db_trip[$i]['eHailTrip'] == "Yes" && $db_trip[$i]['iRentalPackageId'] > 0) {
                                         echo $langage_lbl['LBL_RENTAL_CATEGORY_TXT']." ".$trip_type . "<br/> ( ".$langage_lbl['LBL_HAIL']." )";
                                     } else if ($db_trip[$i]['iRentalPackageId'] > 0) {
@@ -353,7 +353,7 @@ if ($host_system == 'cubetaxiplus') {
                                     <div style="font-size: 12px;"><?= $langage_lbl['LBL_CANCELED_TXT'] ?></div>
                                 </td>
 
-                            <? } else { ?>  
+                            <?php } else { ?>  
                                 <td align="center" width="10%">
                                     <a target = "_blank" href="<?= $link_page ?>?iTripId=<?= base64_encode(base64_encode($db_trip[$i]['iTripId'])) ?>">
                                         <img alt="" src="assets/img/<?php echo $invoice_icon; ?>">
@@ -361,7 +361,7 @@ if ($host_system == 'cubetaxiplus') {
                                 </td>
                             <?php } ?>
                         </tr>
-                    <? } ?>     
+                    <?php } ?>     
                 </tbody>
         </table>
     </div>

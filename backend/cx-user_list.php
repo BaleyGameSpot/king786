@@ -69,13 +69,13 @@ if ($action == 'view') {
                     <div class="page-contant-inner">
                         <!-- driver list page -->
                         <div class="trips-page trips-page1">
-                            <? if (isset($_REQUEST['success']) && $_REQUEST['success'] == 1) { ?>
+                            <?php if (isset($_REQUEST['success']) && $_REQUEST['success'] == 1) { ?>
                                 <div class="alert alert-success alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x
                                     </button>
                                     <?= $var_msg ?>
                                 </div>
-                            <? } else if (isset($_REQUEST['success']) && $_REQUEST['success'] == 2) { ?>
+                            <?php } else if (isset($_REQUEST['success']) && $_REQUEST['success'] == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×
                                     </button>
@@ -89,7 +89,7 @@ if ($action == 'view') {
                                     </button>
                                     <?= $var_msg ?>
                                 </div>
-                            <? }
+                            <?php }
                             ?>
                             <div class="trips-table trips-table-driver trips-table-driver-res">
                                 <div class="trips-table-inner">
@@ -145,7 +145,7 @@ if ($action == 'view') {
                                                         </form>
                                                     </td>
                                                 </tr>
-                                            <? } ?>
+                                            <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>

@@ -150,15 +150,15 @@ for ($i = 0; $i < scount($db_payment); $i++) {
     <meta content="" name="keywords"/>
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
 <body class="padTop53">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -279,7 +279,7 @@ for ($i = 0; $i < scount($db_payment); $i++) {
                     </tr>
                     </thead>
                     <tbody>
-                    <? if (scount($db_payment) > 0) {
+                    <?php if (scount($db_payment) > 0) {
                         for ($i = 0; $i < scount($db_payment); $i++) {
                             $user_available_balance = $WALLET_OBJ->FetchMemberWalletBalance($db_payment[$i]['iDriverId'], "Driver");
                             ?>
@@ -319,14 +319,14 @@ for ($i = 0; $i < scount($db_payment); $i++) {
                                     <?php } ?>
                                 </td>
                                 <td align="center">
-                                    <? if ($db_payment[$i]['eDriverPaymentStatus'] == 'Unsettelled') { ?>
+                                    <?php if ($db_payment[$i]['eDriverPaymentStatus'] == 'Unsettelled') { ?>
                                         <input class="validate[required]" type="checkbox"
                                                value="<?= $db_payment[$i]['iDriverId'] ?>"
                                                id="iTripId_<?= $db_payment[$i]['iDriverId'] ?>" name="iDriverId[]">
-                                    <? } ?>
+                                    <?php } ?>
                                 </td>
                             </tr>
-                        <? } ?>
+                        <?php } ?>
                         <tr class="gradeA">
                             <td colspan="14" align="right">
                                 <div class="row">
@@ -337,11 +337,11 @@ for ($i = 0; $i < scount($db_payment); $i++) {
                                 </div>
                             </td>
                         </tr>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <tr class="gradeA">
                             <td colspan="13" style="text-align:center;"> No Payment Details Found.</td>
                         </tr>
-                    <? } ?>
+                    <?php } ?>
                     </tbody>
                 </table>
             </form>
@@ -404,7 +404,7 @@ for ($i = 0; $i < scount($db_payment); $i++) {
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <link rel="stylesheet" href="css/select2/select2.min.css"/>
 <script src="js/plugins/select2.min.js"></script>

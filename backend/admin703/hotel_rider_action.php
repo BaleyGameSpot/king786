@@ -197,7 +197,7 @@ if ($action == 'Edit') {
           <title><?=$SITE_NAME?>	 | <?php echo $langage_lbl_admin['LBL_EDIT_RIDERS_TXT_ADMIN'];?>  <?= $action; ?></title>
           <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-          <? include_once('global_files.php');?>
+          <?php include_once('global_files.php');?>
           <!-- On OFF switch -->
           <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
           <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -208,8 +208,8 @@ if ($action == 'Edit') {
 
           <!-- MAIN WRAPPER -->
           <div id="wrap">
-               <? include_once('header.php'); ?>
-               <? include_once('left_menu.php'); ?>
+               <?php include_once('header.php'); ?>
+               <?php include_once('left_menu.php'); ?>
                <!--PAGE CONTENT -->
                <div id="content">
                     <div class="inner">
@@ -224,12 +224,12 @@ if ($action == 'Edit') {
 						<hr />
 						<div class="body-div">
 						<div class="form-group">
-                <? if ($success == 3) {?>
+                <?php if ($success == 3) {?>
                 <div class="alert alert-danger alert-dismissable">
                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                 <?php print_r($error); ?>
                 </div><br/>
-                <?} ?>
+                <?php } ?>
 						   <form method="post" action="" enctype="multipart/form-data" id="_rider_form" name="_rider_form">
 										<input type="hidden" name="actionOf" id="actionOf" value="<?php echo $action; ?>"/>
                     <input type="hidden" name="id" id="iHotelId" value="<?= $id; ?>"/>
@@ -242,9 +242,9 @@ if ($action == 'Edit') {
 													<b>
 														<?php if ($oldImage == 'NONE' || $oldImage == '') { ?>
 															<img src="../assets/img/profile-user-img.png" alt="">
-														<?}else{?>
+														<?php }else{?>
 															<img src = "<?php echo $tconfig["tsite_upload_images_hotel_passenger"]. '/' .$id. '/3_' .$oldImage ?>" style="height:150px;"/>
-														<?}?>
+														<?php }?>
 													</b>
                              </div>
                         </div>
@@ -300,9 +300,9 @@ if ($action == 'Edit') {
                                              <div class="col-lg-6">
                                                   <select class="form-control" name = 'vCountry' onChange="changeCode(this.value);">
                                                        <option value="">--select--</option>
-                                                       <? for($i=0;$i<scount($db_country);$i++){ ?>
-                                                       <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?if($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if($vCountry==$db_country[$i]['vCountryCode']){?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
-                                                       <? } ?>
+                                                       <?php for($i=0;$i<scount($db_country);$i++){ ?>
+                                                       <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?php if($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if($vCountry==$db_country[$i]['vCountryCode']){?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
+                                                       <?php } ?>
                                                   </select>
                                              </div>
                                         </div>
@@ -328,9 +328,9 @@ if ($action == 'Edit') {
                                              <div class="col-lg-6">
                                                   <select  class="form-control" name = 'vLang'>
                                                        <option value="">--select--</option>
-                                                       <? for ($i = 0; $i < scount($db_lang); $i++) { ?>
+                                                       <?php for ($i = 0; $i < scount($db_lang); $i++) { ?>
                                                        <option value = "<?= $db_lang[$i]['vCode'] ?>" <?= ($db_lang[$i]['vCode'] == $vLang) ? 'selected' : ''; ?>><?=$db_lang[$i]['vTitle']?> </option>
-                                                       <? } ?>
+                                                       <?php } ?>
                                                   </select>
                                              </div>
                                         </div>
@@ -342,9 +342,9 @@ if ($action == 'Edit') {
                                              <div class="col-lg-6">
                                                   <select class="form-control" name = 'vCurrencyPassenger'>
                                                        <option value="">--select--</option>
-                                                       <? for($i=0;$i<scount($db_currency);$i++){ ?>
-                                                       <option value = "<?= $db_currency[$i]['vName'] ?>" <?if($vCurrencyPassenger==$db_currency[$i]['vName']){?>selected<? } ?>><?= $db_currency[$i]['vName'] ?></option>
-                                                       <? } ?>
+                                                       <?php for($i=0;$i<scount($db_currency);$i++){ ?>
+                                                       <option value = "<?= $db_currency[$i]['vName'] ?>" <?php if($vCurrencyPassenger==$db_currency[$i]['vName']){?>selected<?php } ?>><?= $db_currency[$i]['vName'] ?></option>
+                                                       <?php } ?>
                                                   </select>
                                              </div>
                                         </div>                                     
@@ -374,7 +374,7 @@ if ($action == 'Edit') {
                <!--END PAGE CONTENT -->
           </div>
           <!--END MAIN WRAPPER -->
-<? include_once('footer.php');?>
+<?php include_once('footer.php');?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script>
 $(document).ready(function() {

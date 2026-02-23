@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('../common.php');
 require_once(TPATH_CLASS . "Imagecrop.class.php");
 
@@ -165,7 +165,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <!-- On OFF switch -->
         <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -189,8 +189,8 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>       
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>       
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -205,25 +205,25 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                     <hr />	
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
 
-                            <? if ($success == 2) { ?>
+                            <?php if ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
 
                             <form method="post" name="_help_detail_form" id="_help_detail_form" action="" enctype="multipart/form-data">
                                 <input type="hidden" name="id" value="<?= $id; ?>"/>
                                 <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
                                 <input type="hidden" name="backlink" id="backlink" value="help_detail.php"/>
-                                <?
+                                <?php
                                 $sql = "SELECT * FROM help_detail_categories WHERE vCode = '" . $default_lang . "' AND eStatus = 'Active' ORDER BY  vTitle ASC ";
                                 $db_cat = $obj->MySQLSelect($sql);
                                 if (scount($db_cat) > 0) {
@@ -234,11 +234,11 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                         </div>
                                         <div class="col-md-6 col-sm-6">
                                             <select name="iHelpDetailCategoryId" id="iHelpDetailCategoryId" class="form-control">
-                                                <? for ($i = 0; $i < scount($db_cat); $i++) { ?>
+                                                <?php for ($i = 0; $i < scount($db_cat); $i++) { ?>
                                                     <option value="<?= $db_cat[$i]['iUniqueId']; ?>" <?= ($db_cat[$i]['iUniqueId'] == $help_detail_cat_id) ? 'selected' : ''; ?>>
                                                         -- <?= $db_cat[$i]['vTitle'] ?> --
                                                     </option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -253,7 +253,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                             </div>
                                         </div>
                                     </div>
-                                    <? /* if($action == 'Edit') { */ ?>
+                                    <?php /* if($action == 'Edit') { */ ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <label>Order</label>
@@ -261,17 +261,17 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                         <div class="col-md-6 col-sm-6">
 
                                             <input type="hidden" name="temp_order" id="temp_order" value="<?= ($action == 'Edit') ? $iDisplayOrder_db : '1'; ?>">
-                                            <?
+                                            <?php
                                             $display_numbers = ($action == "Add") ? $iDisplayOrder_max : $iDisplayOrder;
                                             ?>
                                             <select name="iDisplayOrder" class="form-control">
-                                                <? for ($i = 1; $i <= $display_numbers; $i++) { ?>
-                                                    <option value="<?= $i ?>" <?
+                                                <?php for ($i = 1; $i <= $display_numbers; $i++) { ?>
+                                                    <option value="<?= $i ?>" <?php
                                                     if (isset($iDisplayOrder_db) && $i == $iDisplayOrder_db) {
                                                         echo "selected";
                                                     }
                                                     ?>> -- <?= $i ?> --</option>
-                                                        <? } ?>
+                                                        <?php } ?>
                                             </select>
 
                                         </div>
@@ -484,7 +484,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                     <input type="text" class="form-control" name="<?= $vTitle_val; ?>"  id="<?= $vTitle_val; ?>" value="<?= $$vTitle_val; ?>" placeholder="Help Detail" <?= $required; ?>>
                                                     <div class="text-danger" id="<?= $vTitle_val.'_error'; ?>" style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                                 </div>
-                                                <? if($vCode == $default_lang  && scount($db_master) > 1){ ?>
+                                                <?php if($vCode == $default_lang  && scount($db_master) > 1){ ?>
                                                     <div class="col-md-6 col-sm-6">
                                                         <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('vTitle_', '<?= $default_lang ?>');"> Convert To All Language</button>
                                                     </div>
@@ -499,7 +499,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                 </div>
                                                 
                                             </div>
-                                            <?
+                                            <?php
                                         }
                                     }
                                     ?> -->									
@@ -525,9 +525,9 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                             <a href="help_detail.php" class="btn btn-default back_link">Cancel</a>
                                         </div>
                                     </div>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     Please enter Help Topic Catgory
-                                <? } ?>
+                                <?php } ?>
                             </form>
                         </div>
                     </div>
@@ -544,7 +544,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
             </div>                                                                                 
         </div>
 
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 
         <!-- GLOBAL SCRIPTS -->

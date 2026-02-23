@@ -289,7 +289,7 @@ $service_categories = array_values(array_filter(getMasterServiceCategories(), fu
                                     <?php } ?>
                                 </td>
                             <?php } ?>
-                            <? } else { ?>
+                            <?php } else { ?>
                                 <?php if ($parent_ufx_catid == "0" && !in_array($eServiceType, ['Deliver'])) { ?>
                                 <td width="30%">
                                     <a class="add-btn" href="<?= $backPage; ?>" style="text-align: center;">Back To List</a>
@@ -336,7 +336,7 @@ $service_categories = array_values(array_filter(getMasterServiceCategories(), fu
                                                 </select>
                                             <?php } ?>
                                         </span>
-                                <? } ?>
+                                <?php } ?>
                             </div> */ ?>
                             <?php /*if ($parent_ufx_catid == "0" && !in_array($eServiceType, ['Deliver'])) { ?>
                                 <a class="add-btn" href="<?= $backPage; ?>" style="text-align: center;">Back To List</a>
@@ -392,7 +392,7 @@ $service_categories = array_values(array_filter(getMasterServiceCategories(), fu
                                                 } else {
                                                     ?>
                                                     <i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a>
-                                        </th> <? if ($hideColumn == 0) { ?>
+                                        </th> <?php if ($hideColumn == 0) { ?>
                                             <th width="8%" align="center" style="text-align:center;">
                                                 <a href="javascript:void(0);" onClick="Redirect(3,<?php
                                                 if ($sortby == '3') {
@@ -411,7 +411,7 @@ $service_categories = array_values(array_filter(getMasterServiceCategories(), fu
                                                         ?>
                                                         <i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a>
                                             </th>
-                                        <? } ?>
+                                        <?php } ?>
 
                                         <?php if ($eServiceType == "VideoConsult" && $MODULES_OBJ->isEnableVideoConsultingService()) { ?>
                                             <th width="8%" align="center" style="text-align:center;">
@@ -524,18 +524,18 @@ $service_categories = array_values(array_filter(getMasterServiceCategories(), fu
                                                     <?php }
                                                 } ?>
 
-                                                <? if ($data_cetegory_name[0]['eCatType'] != "MoreDelivery" || $THEME_OBJ->isPXCProThemeActive() == "Yes" || strtoupper($APP_TYPE) == "DELIVERY" || strtoupper($APP_TYPE) == "RIDE-DELIVERY") { ?>
+                                                <?php if ($data_cetegory_name[0]['eCatType'] != "MoreDelivery" || $THEME_OBJ->isPXCProThemeActive() == "Yes" || strtoupper($APP_TYPE) == "DELIVERY" || strtoupper($APP_TYPE) == "RIDE-DELIVERY") { ?>
                                                     <td align="center">
                                                         <?php if ($data_drv[$i]['vLogo'] != '' && $data_drv[$i]['iVehicleCategoryId'] != $parent_ufx_catid) { ?>
                                                             <img src="<?= $tconfig['tsite_upload_images_vehicle_category'] . "/" . $data_drv[$i]['iVehicleCategoryId'] . "/ios/3x_" . $data_drv[$i]['vLogo']; ?>"
                                                                  style="width:35px;height:35px;">
-                                                        <? } ?>
+                                                        <?php } ?>
                                                     </td>
-                                                <? } ?>
-                                                <td><? echo $data_drv[$i]['vCategory_' . $default_lang . '']; ?></td>
-                                                <? if ($hideColumn == 0) { ?>
+                                                <?php } ?>
+                                                <td><?php echo $data_drv[$i]['vCategory_' . $default_lang . '']; ?></td>
+                                                <?php if ($hideColumn == 0) { ?>
                                                     <td align="center">
-                                                        <?
+                                                        <?php
                                                         if ($data_drv[$i]['eCatType'] == 'ServiceProvider' && $parent_ufx_catid != $data_drv[$i]['iVehicleCategoryId']) {
                                                             if ($userObj->hasPermission($view)) {
                                                                 ?>
@@ -573,7 +573,7 @@ $service_categories = array_values(array_filter(getMasterServiceCategories(), fu
                                                         }
                                                         ?>
                                                     </td>
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <?php if ($eServiceType == "VideoConsult" && $MODULES_OBJ->isEnableVideoConsultingService()) { ?>
                                                     <td align="center">
@@ -594,14 +594,14 @@ $service_categories = array_values(array_filter(getMasterServiceCategories(), fu
                                                     </td>
                                                 <?php } ?>
                                                 <td align="center">
-                                                    <?php if ($data_drv[$i]['iVehicleCategoryId'] != $parent_ufx_catid) { ?><? echo $data_drv[$i]['iDisplayOrder']; ?>
+                                                    <?php if ($data_drv[$i]['iVehicleCategoryId'] != $parent_ufx_catid) { ?><?php echo $data_drv[$i]['iDisplayOrder']; ?>
                                                     <?php } else { ?>
                                                         ---
                                                     <?php } ?>
                                                 </td>
                                                 <td width="10%" align="center">
                                                     <?php if ($data_drv[$i]['iVehicleCategoryId'] != $parent_ufx_catid) { ?>
-                                                        <?
+                                                        <?php
                                                         if ($data_drv[$i]['eStatus'] == 'Active') {
                                                             $dis_img = "img/active-icon.png";
                                                         } else if ($data_drv[$i]['eStatus'] == 'Inactive') {
@@ -692,7 +692,7 @@ $service_categories = array_values(array_filter(getMasterServiceCategories(), fu
                                                     <?php } ?>
                                                 <?php } ?>
                                             </tr>
-                                            <?
+                                            <?php
                                         }
                                     } else {
                                         ?>

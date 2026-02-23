@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("../common.php");
 $booking_date = isset($_REQUEST['booking_date'])?$_REQUEST['booking_date']:'';
 $iBaseFare = isset($_REQUEST['iBaseFare'])?$_REQUEST['iBaseFare']:'';

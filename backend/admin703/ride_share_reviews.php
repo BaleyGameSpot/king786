@@ -190,7 +190,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                 </label>
                             </div>
                             <div class="col-lg-2">
-                                <input type="text" id="searchRideNo" name="searchRideNo" placeholder="Ride Number" class="form-control search-trip001" value="<?/*= $searchRideNo */?>">
+                                <input type="text" id="searchRideNo" name="searchRideNo" placeholder="Ride Number" class="form-control search-trip001" value="<?php /*= $searchRideNo */?>">
                             </div>
                             <div class="col-lg-2">
 

@@ -155,7 +155,7 @@ if ($iPublishedRideId != ""){
                     </li>
                     <li>
 
-                        <div class="overview-data <? echo $subclass; ?> ">
+                        <div class="overview-data <?php echo $subclass; ?> ">
                             <strong><?=$langage_lbl['LBL_VEHICLE_TITLE'];?></strong>
                             <span>
                                 <?php
@@ -477,7 +477,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
 ?>
 <?php if ($lang != 'en'){ ?>
     <!--  <script type="text/javascript" src="assets/js/validation/localization/messages_<?=$lang;?>.js" ></script> -->
-    <? include_once('otherlang_validation.php'); ?>
+    <?php include_once('otherlang_validation.php'); ?>
 <?php } ?>
 <script type="text/javascript" src="assets/js/validation/additional-methods.js"></script>
 <!-- home page end-->

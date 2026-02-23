@@ -951,7 +951,7 @@ if ($isFranchiseAdmin) {
     <!-- GLOBAL STYLES -->
     <?php include_once('global_files.php'); ?>
     <link rel="stylesheet"
-            href="<?=$tconfig['tsite_url_main_admin']?>css/admin_new/dashboard_v4.css?<? echo time(); ?>">
+            href="<?=$tconfig['tsite_url_main_admin']?>css/admin_new/dashboard_v4.css?<?php echo time(); ?>">
     <script src="<?=$tconfig['tsite_url_main_admin']?>js/apexcharts_v2.js"></script>
 
     <!-- END THIS PAGE PLUGINS-->
@@ -1842,7 +1842,7 @@ if ($isFranchiseAdmin) {
                                                 }
                                                 ?>
                                                 <?php if ($userObj->hasPermission($viewpermission)) { ?>
-                                                <a href="<?=$url;?>?id=<? echo $id; ?>&action=edit"
+                                                <a href="<?=$url;?>?id=<?php echo $id; ?>&action=edit"
                                                         target="_blank">
                                                     <?php } else { ?>
                                                     <a href="javascript:void(0)">

@@ -788,7 +788,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
 
         <!-- On OFF switch -->
 
@@ -840,9 +840,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
         <div id="wrap">
 
-            <? include_once('header.php'); ?>
+            <?php include_once('header.php'); ?>
 
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('left_menu.php'); ?>
 
             <!--PAGE CONTENT -->
 
@@ -878,7 +878,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                         <div class="form-group">
 
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
 
                                 <div class="alert alert-success alert-dismissable">
 
@@ -888,7 +888,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                 </div><br/>
 
-                            <? } elseif ($success == 2) { ?>
+                            <?php } elseif ($success == 2) { ?>
 
                                 <div class="alert alert-danger alert-dismissable">
 
@@ -898,7 +898,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                 </div><br/>
 
-                            <? } ?>
+                            <?php } ?>
 
                             <form method="post" name="_home_content_form" id="_home_content_form" action="" enctype='multipart/form-data'>
 
@@ -976,11 +976,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                             <div class="col-lg-6">
 
-                                                <? if ($banner_section['img_'.$vCode] != '') { ?>
+                                                <?php if ($banner_section['img_'.$vCode] != '') { ?>
 
                                                     <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$banner_section['img_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <input type="file" class="form-control FilUploader" name="banner_section_img"  id="banner_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
 
@@ -1062,11 +1062,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                             <div class="col-lg-6">
 
-                                                <? if ($how_it_work_section['img_'.$vCode] != '') { ?>
+                                                <?php if ($how_it_work_section['img_'.$vCode] != '') { ?>
 
                                                     <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$how_it_work_section['img_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <input type="file" class="form-control FilUploader" name="how_it_work_section_img"  id="how_it_work_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
 
@@ -1152,11 +1152,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                                         <div class="col-lg-11">
 
-                                                            <? if ($how_it_work_section['hiw_img'.$i.'_'.$vCode] != '') { ?>
+                                                            <?php if ($how_it_work_section['hiw_img'.$i.'_'.$vCode] != '') { ?>
 
                                                                 <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$how_it_work_section['hiw_img'.$i.'_'.$vCode]; ?>" class="innerbg_image"/ style="max-height:100px;">
 
-                                                            <? } ?>
+                                                            <?php } ?>
 
                                                             <input type="file" class="form-control FilUploader" name="how_it_work_section_hiw_img<?php echo $i ; ?>"  id="how_it_work_section_hiw_img<?php echo $i ; ?>" accept=".png,.jpg,.jpeg,.gif,.svg">
 
@@ -1246,11 +1246,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                            <div class="col-lg-6">
 
-                                               <? if ($calculate_section['img_'.$vCode] != '') { ?>
+                                               <?php if ($calculate_section['img_'.$vCode] != '') { ?>
 
                                                    <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$calculate_section['img_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                               <? } ?>
+                                               <?php } ?>
 
                                                <input type="file" class="form-control FilUploader" name="calculate_section_img"  id="calculate_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
 
@@ -1378,11 +1378,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                                  <div class="col-lg-11">
 
-                                                      <? if ($service_section['img_first_'.$vCode] != '') { ?>
+                                                      <?php if ($service_section['img_first_'.$vCode] != '') { ?>
 
                                                          <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$service_section['img_first_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                                      <? } ?>
+                                                      <?php } ?>
 
                                                      <input type="file" class="form-control" name="service_section_img_first" value="<?= $service_section['img_first_'.$vCode]; ?>">
 
@@ -1440,11 +1440,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                                  <div class="col-lg-11">
 
-                                                      <? if ($service_section['img_sec_'.$vCode] != '') { ?>
+                                                      <?php if ($service_section['img_sec_'.$vCode] != '') { ?>
 
                                                          <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$service_section['img_sec_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                                      <? } ?>
+                                                      <?php } ?>
 
                                                      <input type="file" class="form-control" name="service_section_img_sec" value="<?= $service_section['img_sec_'.$vCode]; ?>">
 
@@ -1502,11 +1502,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                                  <div class="col-lg-11">
 
-                                                      <? if ($service_section['img_third_'.$vCode] != '') { ?>
+                                                      <?php if ($service_section['img_third_'.$vCode] != '') { ?>
 
                                                          <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$service_section['img_third_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                                      <? } ?>
+                                                      <?php } ?>
 
                                                      <input type="file" class="form-control" name="service_section_img_third" value="<?= $service_section['img_third_'.$vCode]; ?>">
 
@@ -1566,11 +1566,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                                  <div class="col-lg-11">
 
-                                                      <? if ($service_section['img_fourth_'.$vCode] != '') { ?>
+                                                      <?php if ($service_section['img_fourth_'.$vCode] != '') { ?>
 
                                                          <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$service_section['img_fourth_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                                      <? } ?>
+                                                      <?php } ?>
 
                                                      <input type="file" class="form-control" name="service_section_img_fourth" value="<?= $service_section['img_fourth_'.$vCode]; ?>">
 
@@ -1628,11 +1628,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                                  <div class="col-lg-11">
 
-                                                      <? if ($service_section['img_fifth_'.$vCode] != '') { ?>
+                                                      <?php if ($service_section['img_fifth_'.$vCode] != '') { ?>
 
                                                          <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$service_section['img_fifth_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                                      <? } ?>
+                                                      <?php } ?>
 
                                                      <input type="file" class="form-control" name="service_section_img_fifth" value="<?= $service_section['img_fifth_'.$vCode]; ?>">
 
@@ -1690,11 +1690,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                                  <div class="col-lg-11">
 
-                                                      <? if ($service_section['img_six_'.$vCode] != '') { ?>
+                                                      <?php if ($service_section['img_six_'.$vCode] != '') { ?>
 
                                                          <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$service_section['img_six_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                                      <? } ?>
+                                                      <?php } ?>
 
                                                      <input type="file" class="form-control" name="service_section_img_six" value="<?= $service_section['img_six_'.$vCode]; ?>">
 
@@ -1782,11 +1782,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                         <div class="col-lg-6">
 
-                                             <? if ($benefit_section['img_'.$vCode] != '') { ?>
+                                             <?php if ($benefit_section['img_'.$vCode] != '') { ?>
 
                                                 <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                             <? } ?>
+                                             <?php } ?>
 
                                             <input type="file" class="form-control" name="benefit_section_img" value="<?= $benefit_section['img_'.$vCode]; ?>" placeholder="Main Title">
 
@@ -1842,11 +1842,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                               <div class="col-lg-11">
 
-                                                   <? if ($benefit_section['img_first_'.$vCode] != '') { ?>
+                                                   <?php if ($benefit_section['img_first_'.$vCode] != '') { ?>
 
                                                       <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_first_'.$vCode]; ?>" class="innerbg_image whiteimgbg"/>
 
-                                                   <? } ?>
+                                                   <?php } ?>
 
                                                   <input type="file" class="form-control" name="benefit_section_img_first" value="<?= $benefit_section['img_first_'.$vCode]; ?>">
 
@@ -1904,11 +1904,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                               <div class="col-lg-11">
 
-                                                   <? if ($benefit_section['img_sec_'.$vCode] != '') { ?>
+                                                   <?php if ($benefit_section['img_sec_'.$vCode] != '') { ?>
 
                                                       <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_sec_'.$vCode]; ?>" class="innerbg_image whiteimgbg"/>
 
-                                                   <? } ?>
+                                                   <?php } ?>
 
                                                   <input type="file" class="form-control" name="benefit_section_img_sec" value="<?= $benefit_section['img_sec_'.$vCode]; ?>">
 
@@ -1966,11 +1966,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                               <div class="col-lg-11">
 
-                                                   <? if ($benefit_section['img_third_'.$vCode] != '') { ?>
+                                                   <?php if ($benefit_section['img_third_'.$vCode] != '') { ?>
 
                                                       <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_third_'.$vCode]; ?>" class="innerbg_image whiteimgbg"/>
 
-                                                   <? } ?>
+                                                   <?php } ?>
 
                                                   <input type="file" class="form-control" name="benefit_section_img_third" value="<?= $benefit_section['img_third_'.$vCode]; ?>">
 
@@ -2030,11 +2030,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                               <div class="col-lg-11">
 
-                                                   <? if ($benefit_section['img_fourth_'.$vCode] != '') { ?>
+                                                   <?php if ($benefit_section['img_fourth_'.$vCode] != '') { ?>
 
                                                       <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_fourth_'.$vCode]; ?>" class="innerbg_image whiteimgbg"/>
 
-                                                   <? } ?>
+                                                   <?php } ?>
 
                                                   <input type="file" class="form-control" name="benefit_section_img_fourth" value="<?= $benefit_section['img_fourth_'.$vCode]; ?>">
 
@@ -2092,11 +2092,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                               <div class="col-lg-11">
 
-                                                   <? if ($benefit_section['img_fifth_'.$vCode] != '') { ?>
+                                                   <?php if ($benefit_section['img_fifth_'.$vCode] != '') { ?>
 
                                                       <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_fifth_'.$vCode]; ?>" class="innerbg_image whiteimgbg"/>
 
-                                                   <? } ?>
+                                                   <?php } ?>
 
                                                   <input type="file" class="form-control" name="benefit_section_img_fifth" value="<?= $benefit_section['img_fifth_'.$vCode]; ?>">
 
@@ -2154,11 +2154,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                               <div class="col-lg-11">
 
-                                                   <? if ($benefit_section['img_six_'.$vCode] != '') { ?>
+                                                   <?php if ($benefit_section['img_six_'.$vCode] != '') { ?>
 
                                                       <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$benefit_section['img_six_'.$vCode]; ?>" class="innerbg_image whiteimgbg"/>
 
-                                                   <? } ?>
+                                                   <?php } ?>
 
                                                   <input type="file" class="form-control" name="benefit_section_img_six" value="<?= $benefit_section['img_six_'.$vCode]; ?>">
 
@@ -2286,11 +2286,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                                         <div class="col-lg-11">
 
-                                                            <? if ($cartype_section['cartype_img'.$i.'_'.$vCode] != '') { ?>
+                                                            <?php if ($cartype_section['cartype_img'.$i.'_'.$vCode] != '') { ?>
 
                                                                 <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$cartype_section['cartype_img'.$i.'_'.$vCode]; ?>" class="innerbg_image"/ style="max-height:100px;">
 
-                                                            <? } ?>
+                                                            <?php } ?>
 
                                                             <input type="file" class="form-control FilUploader" name="cartype_section_block_img<?php echo $i ; ?>"  id="cartype_section_block_img<?php echo $i ; ?>" accept=".png,.jpg,.jpeg,.gif,.svg">
 
@@ -2384,11 +2384,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                             <div class="col-lg-6">
 
-                                                <? if ($download_section['img_'.$vCode] != '') { ?>
+                                                <?php if ($download_section['img_'.$vCode] != '') { ?>
 
                                                     <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$download_section['img_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <input type="file" class="form-control FilUploader" name="download_section_img"  id="download_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
 
@@ -2400,11 +2400,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                             <div class="col-lg-6">
 
-                                                <? if ($download_section['img2_'.$vCode] != '') { ?>
+                                                <?php if ($download_section['img2_'.$vCode] != '') { ?>
 
                                                     <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$download_section['img2_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <input type="file" class="form-control FilUploader" name="download_section_img2"  id="download_section_img2" accept=".png,.jpg,.jpeg,.gif,.svg">
 
@@ -2522,11 +2522,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                            <div class="col-lg-6">
 
-                                               <? if ($earn_section['img_'.$vCode] != '') { ?>
+                                               <?php if ($earn_section['img_'.$vCode] != '') { ?>
 
                                                    <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$earn_section['img_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                               <? } ?>
+                                               <?php } ?>
 
                                                <input type="file" class="form-control FilUploader" name="earn_section_img"  id="earn_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
 
@@ -2608,11 +2608,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                             <div class="col-lg-6">
 
-                                                <? if ($secure_section['img_'.$vCode] != '') { ?>
+                                                <?php if ($secure_section['img_'.$vCode] != '') { ?>
 
                                                     <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$secure_section['img_'.$vCode]; ?>" class="innerbg_image" />
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <input type="file" class="form-control FilUploader" name="secure_section_img"  id="secure_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
 
@@ -2652,7 +2652,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                         </div>
 
-                                        <? if(ENABLE_DYNAMIC_CREATE_PAGE!="Yes") { ?>
+                                        <?php if(ENABLE_DYNAMIC_CREATE_PAGE!="Yes") { ?>
 
                                         <div class="row">
 
@@ -2670,7 +2670,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                         </div>
 
-                                        <? } ?>
+                                        <?php } ?>
 
                                         <div class="row">
 
@@ -2700,11 +2700,11 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
                                             <div class="col-lg-6">
 
-                                                <? if ($call_section['img_'.$vCode] != '') { ?>
+                                                <?php if ($call_section['img_'.$vCode] != '') { ?>
 
                                                     <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$call_section['img_'.$vCode]; ?>" class="innerbg_image"/>
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <input type="file" class="form-control FilUploader" name="call_section_img"  id="call_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
 
@@ -2762,7 +2762,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 
         
 
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
 
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 

@@ -201,14 +201,14 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
     <title>Admin | <?php echo $langage_lbl_admin['LBL_VEHICLE_TYPE_SMALL_TXT']; ?> <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-    <? include_once('global_files.php');   ?>
+    <?php include_once('global_files.php');   ?>
 </head>
 <!-- END  HEAD-->
     <!-- BEGIN BODY-->
     <body class="padTop53 " >
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php');
+            <?php include_once('header.php');
             include_once('left_menu.php');
             ?>
             <!--PAGE CONTENT -->
@@ -225,26 +225,26 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                     <hr />
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 1) {?>
+                            <?php if ($success == 1) {?>
                             <div class="alert alert-success alert-dismissable msgs_hide">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                 <?= $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                             </div><br/>
-                            <? } elseif ($success == 2) { ?>
+                            <?php } elseif ($success == 2) { ?>
                             <div class="alert alert-danger alert-dismissable ">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                 <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                             </div><br/>
-                            <? } else if ($success == 3) { ?>
+                            <?php } else if ($success == 3) { ?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                 <?php echo $_REQUEST['varmsg']; ?> 
                             </div><br/>	
-                            <? } ?>
-                            <? if(isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] !=Null ) { ?>
+                            <?php } ?>
+                            <?php if(isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] !=Null ) { ?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> Record  Not Updated .</div><br/>
-                            <? } ?>                   
+                            <?php } ?>                   
                             <form id="_store_vehicleType_form" name="_store_vehicleType_form" method="post" action="" enctype="multipart/form-data">
                                 <input type="hidden" name="id" value="<?= $id; ?>"/>
                                 <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -377,14 +377,14 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
                                         <select class="form-control" name = 'iLocationId' id="iLocationId" onchange="changeCode_distance(this.value);">
                                             <option value="">Select Location</option>
-                                            <option value="-1" <?if($iLocationId== "-1"){?> selected <? } ?>>All</option>
+                                            <option value="-1" <?php if($iLocationId== "-1"){?> selected <?php } ?>>All</option>
                                             <?php 
                                             foreach ($db_location as $i => $row) {
                                                 if(scount($userObj->locations) > 0 && !in_array($row['iLocationId'], $userObj->locations)){
                                                     continue;
                                                 }
                                                 ?>
-                                                <option value = "<?= $row['iLocationId'] ?>" <?if($iLocationId == $row['iLocationId']){?>selected<? } ?>><?= $row['vLocationName'] ?></option>
+                                                <option value = "<?= $row['iLocationId'] ?>" <?php if($iLocationId == $row['iLocationId']){?>selected<?php } ?>><?= $row['vLocationName'] ?></option>
                                             <?php } ?>
                                         </select>
                                      </div>
@@ -443,13 +443,13 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                     <div class="col-md-6 col-sm-6">
                                         
                                         <input type="hidden" name="temp_order" id="temp_order" value="<?=($action == 'Edit') ? $iDisplayOrder_db : '1';?>">
-                                        <?
+                                        <?php
                                             $display_numbers = ($action=="Add") ? $iDisplayOrder_max : $iDisplayOrder;
                                         ?>
                                         <select name="iDisplayOrder" class="form-control">
-                                            <? for($i=1; $i <= $display_numbers; $i++){ ?>
-                                                <option value="<?=$i?>" <?if($i == $iDisplayOrder_db){echo "selected";}?>> -- <?=$i?> --</option>
-                                            <? } ?>
+                                            <?php for($i=1; $i <= $display_numbers; $i++){ ?>
+                                                <option value="<?=$i?>" <?php if($i == $iDisplayOrder_db){echo "selected";}?>> -- <?=$i?> --</option>
+                                            <?php } ?>
                                         </select>
                                         
                                     </div>
@@ -476,7 +476,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                 <span>Language Translation is in Process. Please Wait...</span>                       
             </div>                                                                                 
         </div>
-<? include_once('footer.php');  ?>
+<?php include_once('footer.php');  ?>
 <script type="text/javascript" src="js/validation/jquery.validate.min.js" ></script>
 <script type="text/javascript" src="js/validation/additional-methods.min.js" ></script>
 <script type="text/javascript" src="js/form-validation.js" ></script>

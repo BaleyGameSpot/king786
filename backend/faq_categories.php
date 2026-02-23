@@ -81,7 +81,7 @@ $db_data = $obj->MySQLSelect($sql);
 	<meta content="" name="keywords" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />	
-    <? include_once('global_files.php');?>
+    <?php include_once('global_files.php');?>
 	
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 	<script type="text/javascript">
@@ -99,8 +99,8 @@ $db_data = $obj->MySQLSelect($sql);
 
     <!-- MAIN WRAPPER -->
     <div id="wrap">
-		<? include_once('header.php'); ?>
-		<? include_once('left_menu.php'); ?>
+		<?php include_once('header.php'); ?>
+		<?php include_once('left_menu.php'); ?>
        
         <!--PAGE CONTENT -->
         <div id="content">
@@ -136,7 +136,7 @@ $db_data = $obj->MySQLSelect($sql);
 													</tr>
 												</thead>
 												<tbody>
-													<? 
+													<?php 
 													$count_all = scount($db_data);
 													if($count_all > 0) {
 														for($i=0;$i<$count_all;$i++) {
@@ -149,25 +149,25 @@ $db_data = $obj->MySQLSelect($sql);
 															?>
 															<tr class="gradeA">
 																<td width="10%">
-																	<? if($vImage != '' && file_exists($tconfig['tsite_upload_images_panel'].'/'.$vImage)) { ?>
+																	<?php if($vImage != '' && file_exists($tconfig['tsite_upload_images_panel'].'/'.$vImage)) { ?>
 																		<img src="<?=$tconfig['tsite_upload_images'].$vImage;?>" height="50" width="50">
-																	<? } else echo $vImage; ?>
+																	<?php } else echo $vImage; ?>
 																</td>
 																<td width="40%"><?=$vTitle;?></td>
 																<td align="center">
-																	<? if($iDisplayOrder != 1) { ?>
+																	<?php if($iDisplayOrder != 1) { ?>
 																		<a href="faq_categories.php?id=<?=$iUniqueId;?>&flag=up">
 																			<button class="btn btn-warning">
 																				<i class="icon-arrow-up"></i> 
 																			</button>
 																		</a>
-																	<? } if($iDisplayOrder != $count_all) { ?>
+																	<?php } if($iDisplayOrder != $count_all) { ?>
 																		<a href="faq_categories.php?id=<?=$iUniqueId;?>&flag=down">
 																			<button class="btn btn-warning">
 																				<i class="icon-arrow-down"></i> 
 																			</button>
 																		</a>
-																	<? } ?>
+																	<?php } ?>
 
 																</td>
 																<td>
@@ -195,12 +195,12 @@ $db_data = $obj->MySQLSelect($sql);
 																	</form>
 																</td>
 															</tr>
-														<? } 
+														<?php } 
 													} else { ?>
 														<tr class="gradeA">
 															<td colspan="6"><?=$langage_lbl['LBL_NO_RECORDS_FOUND']; ?>.</td>
 														</tr>
-													<? } ?>
+													<?php } ?>
 												</tbody>
 											</table>
 										</div>
@@ -217,7 +217,7 @@ $db_data = $obj->MySQLSelect($sql);
     </div>
     <!--END MAIN WRAPPER -->
 
-	<? include_once('footer.php');?>
+	<?php include_once('footer.php');?>
 	
     <script src="assets/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="assets/plugins/dataTables/dataTables.bootstrap.js"></script>

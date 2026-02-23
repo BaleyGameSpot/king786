@@ -72,12 +72,12 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
         $site_commission;
         $commTotal += $site_commission;
         ?></td>
-        <? if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
+        <?php if ($hotelPanel > 0 || $kioskPanel > 0) { ?>
         <td align="right"><?= $tripcursymbol; ?><?=
             $hotel_commision;
             $HotelCommisionTotal += $hotel_commision;
             ?></td>
-        <? } ?>
+        <?php } ?>
 
     <td align="right"><?php
         if ($totTax > 0) {
@@ -111,7 +111,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel();
     <td>
         <div class="checkbox-n">
         <?php if ($db_dtrip[$i]['vTripPaymentMode'] != "Cash") { ?>
-                <input id="payment_<?= $db_dtrip[$i]['iTripId']; ?>" name="iTripId[]" value="<?= base64_decode(base64_decode(trim($db_dtrip[$i]['iTripId']))); ?>" type="checkbox" <? if ($db_dtrip[$i]['ePayment_request'] == 'Yes') { ?> checked="checked" disabled <? } ?> >
+                <input id="payment_<?= $db_dtrip[$i]['iTripId']; ?>" name="iTripId[]" value="<?= base64_decode(base64_decode(trim($db_dtrip[$i]['iTripId']))); ?>" type="checkbox" <?php if ($db_dtrip[$i]['ePayment_request'] == 'Yes') { ?> checked="checked" disabled <?php } ?> >
                 <label for="payment_<?= $db_dtrip[$i]['iTripId']; ?>"></label></div>
 <?php } ?>
     </td>

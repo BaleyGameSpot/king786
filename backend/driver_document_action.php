@@ -208,12 +208,12 @@ $count_all_doc = scount($db_userdoc);
                     </h2>
                     <!-- driver vehicles page -->
                     <div class="driver-vehicles-page">
-                        <? if ($_REQUEST['success']==1) {?>
+                        <?php if ($_REQUEST['success']==1) {?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> 
                             <?= $var_msg ?>
                         </div>
-                        <?}else if($_REQUEST['success']==2){ ?>
+                        <?php }else if($_REQUEST['success']==2){ ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -311,7 +311,7 @@ $count_all_doc = scount($db_userdoc);
         <script type="text/javascript" src="assets/js/validation/jquery.validate.min.js" ></script>
         <?php if($lang != 'en') { ?>
         <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-        <? include_once('otherlang_validation.php');?>
+        <?php include_once('otherlang_validation.php');?>
         <?php } ?>
         <script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
         <script src="assets/plugins/jasny/js/bootstrap-fileupload.js"></script>

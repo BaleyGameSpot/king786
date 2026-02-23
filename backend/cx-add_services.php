@@ -783,13 +783,13 @@ $currencyDataJson = json_encode($currencyData);
                         </div>
                     <?php } ?> -->
                 <div class="panel panel-info ">
-                    <? if ($MODULES_OBJ->isEnableSearchUfxServices()){ ?>
+                    <?php if ($MODULES_OBJ->isEnableSearchUfxServices()){ ?>
                         <div class="panel-heading clearfix">
                             <div class="serarch-part-box">
                                 <input type="text" class="serach_services serarch-input-box form-control" name="" placeholder="<?=$langage_lbl['LBL_SEARCH_SERVICES'];?>">
                             </div>
                         </div>
-                    <? } ?>
+                    <?php } ?>
                     <div class="general-form" id="searching_div" style="display: none; min-height: auto;">
                         <div class="driver-add-vehicle">
                             <div class="add-car-services-hatch add-services-hatch add-services-taxi">
@@ -804,22 +804,22 @@ $currencyDataJson = json_encode($currencyData);
                             <div class="general-form">
                                 <!-- Service detail page -->
                                 <div class="driver-add-vehicle">
-                                    <? if ($success == 1 && $content != 'biddingcontent'){ ?>
+                                    <?php if ($success == 1 && $content != 'biddingcontent'){ ?>
                                         <div class="form-err">
                                             <span class="msg_close">✕</span>
                                             <p style="background-color: #14b368;" class="btn-block btn btn-rect btn-success error-login-v" id="success"> <?=$langage_lbl['LBL_SERVICE_UPDATE_SUCCESS'];?></p>
                                         </div>
-                                    <? }else if ($success == 2 && $content != 'biddingcontent'){ ?>
+                                    <?php }else if ($success == 2 && $content != 'biddingcontent'){ ?>
                                         <div class="form-err">
                                             <span class="msg_close">✕</span>
                                             <p id="errmsg" class="text-muted btn-block btn btn-danger btn-rect error-login-v"> <?=$error_msg;?></p>
                                         </div>
-                                    <? }else if ($success == 3 && $content != 'biddingcontent'){ ?>
+                                    <?php }else if ($success == 3 && $content != 'biddingcontent'){ ?>
                                         <div class="form-err">
                                             <span class="msg_close">✕</span>
                                             <p style="background-color: #14b368;" class="btn-block btn btn-rect btn-success error-login-v" id="success"><?=$var_msg1;?></p>
                                         </div>
-                                    <? } ?>
+                                    <?php } ?>
                                     <?php if (!empty($vehicle_type_data)){ ?>
                                         <!--  <form name="frm1" method="post" action="" > -->
                                         <input type="hidden" name="iDriverIdNew" value="<?=isset($iDriverIdNew)?$iDriverIdNew:''?>"/>
@@ -902,7 +902,7 @@ $currencyDataJson = json_encode($currencyData);
                                                                                                 <div style="font-size: 12px;"><?php echo $localization; ?></div>
                                                                                             </label>
                                                                                             <span class="toggle-switch">
-                                                                                        <input type="checkbox" <? if ($ePricetype == "Provider") { ?>onchange="check_box_value(this.value);" <? } else { ?>onchange="cTrig('vCarType1_<?=$val['iVehicleTypeId']?>')" <?php } ?> id="vCarType1_<?=$val['iVehicleTypeId']?>" class="chk vCarTypeClass" name="vCarType[]" <?php if (in_array($val['iVehicleTypeId'],$vCarTyp)) { ?>checked<?php } ?> value="<?=$val['iVehicleTypeId']?>" <?=$disStat?> />
+                                                                                        <input type="checkbox" <?php if ($ePricetype == "Provider") { ?>onchange="check_box_value(this.value);" <?php } else { ?>onchange="cTrig('vCarType1_<?=$val['iVehicleTypeId']?>')" <?php } ?> id="vCarType1_<?=$val['iVehicleTypeId']?>" class="chk vCarTypeClass" name="vCarType[]" <?php if (in_array($val['iVehicleTypeId'],$vCarTyp)) { ?>checked<?php } ?> value="<?=$val['iVehicleTypeId']?>" <?=$disStat?> />
                                                                                         <span class="toggle-base"></span>
                                                                                     </span>
                                                                                         </div>
@@ -923,7 +923,7 @@ $currencyDataJson = json_encode($currencyData);
                                                                                                     $price_info_class = 'price-info-list';
                                                                                                 }
                                                                                                 ?>
-                                                                                                <div class="hatchback-search <?=$price_info_class?>" id="amt1_<?=$val['iVehicleTypeId']?>" <? echo $p001; ?>>
+                                                                                                <div class="hatchback-search <?=$price_info_class?>" id="amt1_<?=$val['iVehicleTypeId']?>" <?php echo $p001; ?>>
                                                                                                     <?php if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                                                                         $_POST['eFareType'] = $val['eFareType'];
                                                                                                         $_POST['iVehicleTypeId'] = $val['iVehicleTypeId'];
@@ -950,7 +950,7 @@ $currencyDataJson = json_encode($currencyData);
                                                                                                                 <?php } ?>
                                                                                                                 <span><?php echo $eFareType; ?></span>
                                                                                                             </div>
-                                                                                                            <label id="ServiceText_<?=$val['iVehicleTypeId']?>" <? echo $p001Lbl; ?> class="ServiceText"><?=$langage_lbl['LBL_ENABLE_SERVICE_PRICE_TXT'];?></label>
+                                                                                                            <label id="ServiceText_<?=$val['iVehicleTypeId']?>" <?php echo $p001Lbl; ?> class="ServiceText"><?=$langage_lbl['LBL_ENABLE_SERVICE_PRICE_TXT'];?></label>
 
                                                                                                         <?php }
                                                                                                     } ?>
@@ -1000,29 +1000,29 @@ $currencyDataJson = json_encode($currencyData);
                 </div>
             </div>
             <div class="tabcontent" id="biddingcontent">
-                <!-- <? if ($MODULES_OBJ->isEnableSearchUfxServices()){ ?>
+                <!-- <?php if ($MODULES_OBJ->isEnableSearchUfxServices()){ ?>
                     <div class="serarch-part-box">
                        <input class="serarch-input-box" type="text" id="SearchBids" name="SearchBids" placeholder="<?=$langage_lbl['LBL_Search']." ".$langage_lbl['LBL_BIDDING_TXT']?>" value="">
                     </div>
-                <? } ?> -->
+                <?php } ?> -->
 
                 <div class="panel panel-info">
-                    <? if ($success == 1 && $content == 'biddingcontent'){ ?>
+                    <?php if ($success == 1 && $content == 'biddingcontent'){ ?>
                         <div class="form-err">
                             <span class="msg_close">✕</span>
                             <p style="background-color: #14b368;" class="btn-block btn btn-rect btn-success error-login-v" id="success"> <?=$langage_lbl['LBL_SERVICE_UPDATE_SUCCESS'];?></p>
                         </div>
-                    <? }else if ($success == 2 && $content == 'biddingcontent'){ ?>
+                    <?php }else if ($success == 2 && $content == 'biddingcontent'){ ?>
                         <div class="form-err">
                             <span class="msg_close">✕</span>
                             <p id="errmsg" class="text-muted btn-block btn btn-danger btn-rect error-login-v"> <?=$error_msg;?></p>
                         </div>
-                    <? }else if ($success == 3 && $content == 'biddingcontent'){ ?>
+                    <?php }else if ($success == 3 && $content == 'biddingcontent'){ ?>
                         <div class="form-err">
                             <span class="msg_close">✕</span>
                             <p style="background-color: #14b368;" class="btn-block btn btn-rect btn-success error-login-v" id="success"><?=$var_msg1;?></p>
                         </div>
-                    <? } ?>
+                    <?php } ?>
                     <div class="panel-heading clearfix">
                         <div class="serarch-part-box">
                             <form name="ufx_service_address" id="ufx_service_address" method="post" action="" enctype="multipart/form-data">
@@ -1384,10 +1384,10 @@ $currencyDataJson = json_encode($currencyData);
     // Tab Script
     <?php if (empty($biddingServices) || $ENABLE_BIDDING_SERVICES == 'No') { ?>
     document.getElementById("manageservicecontent").style.display = "block";
-    <? } else { ?>
+    <?php } else { ?>
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
-    <? } ?>
+    <?php } ?>
     function openTabContent(evt, Pagename) {
         // Declare all variables
         var i, tabcontent, tablinks;

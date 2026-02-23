@@ -51,12 +51,12 @@
 	<tbody>
 		<?php for($i=0;$i<scount($data_drv);$i++) {?>
 			<tr class="gradeA">
-				<td><? echo $data_drv[$i]['vName'].' '.$data_drv[$i]['vLastName']; ?></td>
-				<td><? echo clearEmail($data_drv[$i]['vEmail']); ?></td>
-				<td data-order="<?=$data_drv[$i]['iUserId']; ?>"><? echo $data_drv[$i]['tRegistrationDate']; ?></td>
+				<td><?php echo $data_drv[$i]['vName'].' '.$data_drv[$i]['vLastName']; ?></td>
+				<td><?php echo clearEmail($data_drv[$i]['vEmail']); ?></td>
+				<td data-order="<?=$data_drv[$i]['iUserId']; ?>"><?php echo $data_drv[$i]['tRegistrationDate']; ?></td>
 				<td class="center"><?= clearPhone($data_drv[$i]['vPhone']);?></td>
 				<td width="10%" align="center">
-					<? if($data_drv[$i]['eStatus'] == 'Active') {
+					<?php if($data_drv[$i]['eStatus'] == 'Active') {
 						$dis_img = "img/active-icon.png";
 						}else if($data_drv[$i]['eStatus'] == 'Inactive'){
 						$dis_img = "img/inactive-icon.png";
@@ -97,7 +97,7 @@
 					<?php }?>
 				</td>
 			</tr>
-		<? } ?>
+		<?php } ?>
 	</tbody>
 </table>
 

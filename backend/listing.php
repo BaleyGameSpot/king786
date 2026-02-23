@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 include_once('common.php');
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ include_once('common.php');
 	<meta content="" name="description" />
 	<meta content="" name="author" />
     <link rel="stylesheet" href="assets/css/bootstrap-fileupload.min.css" />
-    <? include_once('global_files.php');?>
+    <?php include_once('global_files.php');?>
 </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
@@ -23,8 +23,8 @@ include_once('common.php');
 
     <!-- MAIN WRAPPER -->
     <div id="wrap">
-		<? include_once('header.php'); ?>
-		<? include_once('left_menu.php'); ?>
+		<?php include_once('header.php'); ?>
+		<?php include_once('left_menu.php'); ?>
        
         <!--PAGE CONTENT -->
         <div id="content">
@@ -136,7 +136,7 @@ include_once('common.php');
     </div>
      <!--END MAIN WRAPPER -->
 
-	<? include_once('footer.php');?>
+	<?php include_once('footer.php');?>
    
      <script src="assets/plugins/jasny/js/bootstrap-fileupload.js"></script>
      <script src="assets/js/notifications.js"></script>

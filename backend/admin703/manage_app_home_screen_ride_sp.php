@@ -324,8 +324,8 @@ if (!empty($db_data_arr['Other']['tServiceDetails'])) {
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -1679,7 +1679,7 @@ if (!empty($db_data_arr['Other']['tServiceDetails'])) {
         <span>Language Translation is in Process. Please Wait...</span>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script type="text/javascript" src="js/fancybox.umd.js"></script>
 <script type="text/javascript" src="../assets/js/jquery-ui.min.js"></script>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>

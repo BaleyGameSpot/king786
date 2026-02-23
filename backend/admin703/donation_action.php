@@ -249,7 +249,7 @@
                 <title><?= $SITE_NAME ?> | Donation <?= $action; ?></title>
                 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
                 <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-                <? include_once('global_files.php'); ?>
+                <?php include_once('global_files.php'); ?>
                 <!-- On OFF switch -->
                 <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
                 <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -265,7 +265,7 @@
             <body class="padTop53 " >
                 <!-- MAIN WRAPPER -->
                 <div id="wrap">
-                    <?
+                    <?php
                         include_once('header.php');
                         include_once('left_menu.php');
                         ?>
@@ -284,26 +284,26 @@
                             <div class="body-div">
                                 <div class="form-group">
                                     <?php include('valid_msg.php'); ?>
-                                    <? if ($success == 1) { ?>
+                                    <?php if ($success == 1) { ?>
                                     <div class="alert alert-success alert-dismissable msgs_hide">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                         <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                     </div>
                                     <br/>
-                                    <? } elseif ($success == 2) { ?>
+                                    <?php } elseif ($success == 2) { ?>
                                     <div class="alert alert-danger alert-dismissable ">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                         <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                     </div>
                                     <br/>
-                                    <? } else if ($success == 3) { ?>
+                                    <?php } else if ($success == 3) { ?>
                                     <div class="alert alert-danger alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                         <?php echo $_REQUEST['varmsg']; ?> 
                                     </div>
                                     <br/> 
-                                    <? } ?>
-                                    <?  if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != "") {
+                                    <?php } ?>
+                                    <?php  if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != "") {
                                         ?>
                                     <div class="alert alert-danger alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
@@ -541,10 +541,10 @@
                                             </div>
                                         </div>
                                         <?php } ?>
-                                        <?
+                                        <?php
                                             /*if (scount($db_master) > 0) {
                                                 ?>
-                                        <?
+                                        <?php
                                             for ($i = 0; $i < scount($db_master); $i++) {
                                                 $vCode = $db_master[$i]['vCode'];
                                                 $tTitle = $db_master[$i]['vTitle'];
@@ -565,11 +565,11 @@
                                                 <input type="text" class="form-control" name="<?= $lableName; ?>" id="<?= $lableName; ?>" value="<?= $userEditDataArr[$lableName]; ?>" placeholder="<?= $tTitle; ?> Value" <?= $required; ?>>
                                                 <div class="text-danger" id="<?= $lableName.'_error'; ?>" style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                             </div>
-                                            <? if ($vCode == $default_lang && scount($db_master) > 1) { ?>
-                                            <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('<? echo $txtBoxNameArr[$l].'_'; ?>', '<?= $default_lang ?>');">Convert To All Language</button>
+                                            <?php if ($vCode == $default_lang && scount($db_master) > 1) { ?>
+                                            <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('<?php echo $txtBoxNameArr[$l].'_'; ?>', '<?= $default_lang ?>');">Convert To All Language</button>
                                             <?php } ?>
                                         </div>
-                                        <? } ?>
+                                        <?php } ?>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <label>Description (<?= $tTitle; ?>) <?php echo $required_msg; ?></label>
@@ -579,13 +579,13 @@
                                                 <!-- ckeditor -->
                                                 <div class="text-danger" id="<?= $descVal.'_error'; ?>" style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                             </div>
-                                            <? if ($vCode == $default_lang && scount($db_master) > 1) { ?>
+                                            <?php if ($vCode == $default_lang && scount($db_master) > 1) { ?>
                                             <div class="col-md-6 col-sm-6">
                                                 <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('tDescription_', '<?= $default_lang ?>');">Convert To All Language</button>
                                             </div>
                                             <?php } ?>
                                         </div>
-                                        <?
+                                        <?php
                                             }
                                             }*/
                                             ?>
@@ -604,10 +604,10 @@
                                                 <label>Image</label>
                                             </div>
                                             <div class="col-md-6 col-sm-6">
-                                                <? if (!empty($vDonationImage)) { ?>                                               
+                                                <?php if (!empty($vDonationImage)) { ?>                                               
                                                 <!--  <img src="<?= $tconfig['tsite_upload_images_donation'] . "/" . $vDonationImage; ?>" style="width:100px;height:100px;"> -->
                                                 <img src="<?= $tconfig["tsite_url"].'resizeImg.php?w=200&h=200&src='.$tconfig['tsite_upload_images_donation'] . '/' . $vDonationImage; ?>" style="width:100px;height:100px;">
-                                                <? } ?>
+                                                <?php } ?>
                                                 <!-- <input type="file" accept="image/jpg, image/jpeg, image/png image/gif" class="form-control" name="vDonationImage" id="vDonationImage" value="<?= $vDonationImage; ?>"> -->
                                                 <input type="hidden" class="form-control" name="vImage_old" id="vImage_old" value="<?= $vDonationImage; ?>">
                                                 <input type="file" class="form-control" name="vDonationImage" id="vDonationImage" value="<?= $vDonationImage; ?>">
@@ -629,19 +629,19 @@
                                                 <label>Display Order</label>
                                             </div>
                                             <div class="col-md-6 col-sm-6">
-                                                <?
+                                                <?php
                                                     $display_numbers = ($action=="Add") ? $iDisplayOrder_max : $iDisplayOrder;
                                                     ?>
                                                 <input type="hidden" name="temp_order" id="temp_order" value="<?=($action == 'Edit') ? $iDisplayOrder_db : $display_numbers;?>">
                                                 <select name="iDisplayOrder" class="form-control">
-                                                    <? 
+                                                    <?php 
                                                         for($i=1; $i <= $display_numbers; $i++){ 
                                                             if($action=="Add"){
                                                              $iDisplayOrder_db = $display_numbers;
                                                             }
                                                             ?>
-                                                    <option value="<?=$i?>" <?if($i == $iDisplayOrder_db){echo "selected";}?>> -- <?=$i?> --</option>
-                                                    <? } ?>
+                                                    <option value="<?=$i?>" <?php if($i == $iDisplayOrder_db){echo "selected";}?>> -- <?=$i?> --</option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -667,7 +667,7 @@
                         <span>Language Translation is in Process. Please Wait...</span>                       
                     </div>
                 </div>
-                <?
+                <?php
                     include_once('footer.php');
                     ?>  
                 <script type="text/javascript" src="js/validation/jquery.validate.min.js" ></script>

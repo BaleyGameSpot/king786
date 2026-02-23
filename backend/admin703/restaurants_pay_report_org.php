@@ -152,15 +152,15 @@ $allservice_cat_data = json_decode($catdata,true);
 	<meta content="" name="keywords" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
-    <? include_once('global_files.php');?>
+    <?php include_once('global_files.php');?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
 <body class="padTop53">
     <!-- MAIN WRAPPER -->
     <div id="wrap">
-		<? include_once('header.php'); ?>
-		<? include_once('left_menu.php'); ?>
+		<?php include_once('header.php'); ?>
+		<?php include_once('left_menu.php'); ?>
         <!--PAGE CONTENT -->
         <div id="content">
             <div class="inner">
@@ -202,7 +202,7 @@ $allservice_cat_data = json_decode($catdata,true);
                                         <?php } ?> -->
                                     </select>
                                 </div>
-                                <? if(scount($allservice_cat_data) > 1){ ?>
+                                <?php if(scount($allservice_cat_data) > 1){ ?>
                                 <div class="col-lg-3 select001" style="padding-right:15px;">
 		                            <select class="form-control filter-by-text" name = "searchServiceType" data-text="Select Serivce Type" id="searchServiceType">
 		                                <option value="">Select <?php echo $langage_lbl_admin['LBL_RIDER_NAME_TXT_ADMIN'];?></option>
@@ -211,7 +211,7 @@ $allservice_cat_data = json_decode($catdata,true);
 		                               <?php } ?>
 		                            </select>
 		                        </div>
-		                        <? } ?>
+		                        <?php } ?>
                                 <div class="tripBtns001">
                                 <b>
 									<input type="submit" value="Search" class="btnalt button11" id="Search" name="Search" title="Search" />
@@ -237,9 +237,9 @@ $allservice_cat_data = json_decode($catdata,true);
 							<table class="table table-striped table-bordered table-hover" id="dataTables-example123" >
 								<thead>
 									<tr>
-										<? if(scount($allservice_cat_data) > 1){ ?>
+										<?php if(scount($allservice_cat_data) > 1){ ?>
 										<th>Service type</th>
-										<? } ?>
+										<?php } ?>
 										<th><a href="javascript:void(0);" onClick="Redirect(2,<?php if($sortby == '2'){ echo $order; }else { ?>0<?php } ?>)"><?= $langage_lbl_admin['LBL_RESTAURANT_TXT_ADMIN']?> Name <?php if ($sortby == 2) { if($order == 0) { ?><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> <?php } else { ?><i class="fa fa-sort-amount-desc" aria-hidden="true"></i><?php } }else { ?><i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a></th>
 										<th><a href="javascript:void(0);" onClick="Redirect(3,<?php if($sortby == '3'){ echo $order; }else { ?>0<?php } ?>)"><?= $langage_lbl_admin['LBL_RESTAURANT_TXT_ADMIN']?> <br/> Account Name <?php if ($sortby == 3) { if($order == 0) { ?><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> <?php } else { ?><i class="fa fa-sort-amount-desc" aria-hidden="true"></i><?php } }else { ?><i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a></th>
 										<th><a href="javascript:void(0);" onClick="Redirect(4,<?php if($sortby == '4'){ echo $order; }else { ?>0<?php } ?>)">Bank Name <?php if ($sortby == 4) { if($order == 0) { ?><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> <?php } else { ?><i class="fa fa-sort-amount-desc" aria-hidden="true"></i><?php } }else { ?><i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a></th>
@@ -252,12 +252,12 @@ $allservice_cat_data = json_decode($catdata,true);
 									</tr>
 								</thead>
 								<tbody>
-									<?if(scount($db_payment) > 0){
+									<?php if(scount($db_payment) > 0){
 		                          	for($i=0;$i<scount($db_payment);$i++) { ?>
 									<tr class="gradeA">
-										<? if(scount($allservice_cat_data) > 1){ ?>
-										<td><? echo $db_payment[$i]['vServiceName']; ?></td>
-										<? } ?>
+										<?php if(scount($allservice_cat_data) > 1){ ?>
+										<td><?php echo $db_payment[$i]['vServiceName']; ?></td>
+										<?php } ?>
 									  	<td>
 									  		<?php if($db_payment[$i]['resturant_phone'] != '') {
 												echo clearName($db_payment[$i]['vCompany']);
@@ -291,12 +291,12 @@ $allservice_cat_data = json_decode($catdata,true);
 									  </td>
 									  <td ><?=$db_payment[$i]['eRestaurantPaymentStatus'];?> <br /><a href="store_payment_report.php?action=search&startDate=<?=$startDate;?>&endDate=<?=$endDate;?>&searchCompany=<?=$db_payment[$i]['iCompanyId'];?>&searchRestaurantPayment=Unsettled" target="_blank">[View Detail]</a></td>
 									  <td>
-										  <? if($db_payment[$i]['eRestaurantPaymentStatus'] == 'Unsettled'){ ?>
+										  <?php if($db_payment[$i]['eRestaurantPaymentStatus'] == 'Unsettled'){ ?>
 											  <input class="validate[required]" type="checkbox" value="<?=$db_payment[$i]['iCompanyId']?>" id="iTripId_<?=$db_payment[$i]['iCompanyId']?>" name="iCompanyId[]">
-										  <? } ?>
+										  <?php } ?>
 										</td>
 									</tr>
-							<? } ?>
+							<?php } ?>
                             <tr class="gradeA">
                               <td colspan="14" align="right"><div class="row">
 									<span style="margin:26px 13px 0 0;">
@@ -305,11 +305,11 @@ $allservice_cat_data = json_decode($catdata,true);
 							</div></td>
                             </tr>
                           
-                          <? } else { ?>
+                          <?php } else { ?>
                           <tr class="gradeA">
                                <td colspan="13" style="text-align:center;"> No Payment Details Found.</td>
                           </tr>
-                          <?}?>
+                          <?php }?>
 						</tbody>
 					</table>
 					</form>
@@ -333,7 +333,7 @@ $allservice_cat_data = json_decode($catdata,true);
 <input type="hidden" name="endDate" value="<?php echo $endDate; ?>" >
 <input type="hidden" name="method" id="method" value="" >
 </form>
-<? include_once('footer.php');?>
+<?php include_once('footer.php');?>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css" />
 <link rel="stylesheet" href="css/select2/select2.min.css" />
 <script src="js/plugins/select2.min.js"></script>

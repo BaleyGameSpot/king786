@@ -790,7 +790,7 @@ $vcatdata_main = $vcatdata_first;
 
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 
     <!-- On OFF switch -->
 
@@ -842,9 +842,9 @@ $vcatdata_main = $vcatdata_first;
 
     <div id="wrap">
 
-        <? include_once('header.php'); ?>
+        <?php include_once('header.php'); ?>
 
-        <? include_once('left_menu.php'); ?>
+        <?php include_once('left_menu.php'); ?>
 
         <!--PAGE CONTENT -->
 
@@ -880,7 +880,7 @@ $vcatdata_main = $vcatdata_first;
 
                     <div class="form-group">
 
-                        <? if ($success == 1) { ?>
+                        <?php if ($success == 1) { ?>
 
                             <div class="alert alert-success alert-dismissable">
 
@@ -890,7 +890,7 @@ $vcatdata_main = $vcatdata_first;
 
                             </div><br/>
 
-                        <? } elseif ($success == 2) { ?>
+                        <?php } elseif ($success == 2) { ?>
 
                             <div class="alert alert-danger alert-dismissable">
 
@@ -900,7 +900,7 @@ $vcatdata_main = $vcatdata_first;
 
                             </div><br/>
 
-                        <? } ?>
+                        <?php } ?>
 
                         <form method="post" name="_home_content_form" id="_home_content_form" action="" enctype='multipart/form-data'>
 
@@ -960,13 +960,13 @@ $vcatdata_main = $vcatdata_first;
 
                                     <div class="col-lg-6">
 
-                                        <? if ($general_section['img'] != '') { ?>
+                                        <?php if ($general_section['img'] != '') { ?>
 
                                             <img src="<?= $tconfig["tsite_url"].'resizeImg.php?h=300&src='.$tconfig["tsite_upload_apptype_page_images"].$template.'/'.$general_section['img']; ?>" class="innerbg_image"/>
 
 
 
-                                        <? } ?>
+                                        <?php } ?>
 
                                         <input type="file" class="form-control FilUploader" name="general_section_img"  id="general_section_img" accept=".png,.jpg,.jpeg,.gif">
 
@@ -988,13 +988,13 @@ $vcatdata_main = $vcatdata_first;
 
                                     <div class="col-lg-6">
 
-                                        <? if ($general_section['img_sec'] != '') { ?>
+                                        <?php if ($general_section['img_sec'] != '') { ?>
 
                                             <img src="<?= $tconfig["tsite_url"].'resizeImg.php?h=300&src='.$tconfig["tsite_upload_apptype_page_images"].$template.'/'.$general_section['img_sec']; ?>" class="innerbg_image height-150"/>
 
 
 
-                                        <? } ?>
+                                        <?php } ?>
 
                                         <input type="file" class="form-control FilUploader" name="general_section_img_sec"  id="general_section_img_sec" accept=".png,.jpg,.jpeg,.gif">
 
@@ -1094,11 +1094,11 @@ $vcatdata_main = $vcatdata_first;
 
                                                 <div class="col-lg-11">
 
-                                                    <? if ($how_it_work_section['img_first'] != '') { ?>
+                                                    <?php if ($how_it_work_section['img_first'] != '') { ?>
 
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=80&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_first']; ?>" class="innerbg_image"/>
 
-                                                    <? } ?>
+                                                    <?php } ?>
 
                                                     <input type="file" class="form-control" name="how_it_work_img_first" value="<?= $how_it_work_section['img_first']; ?>">
 
@@ -1154,11 +1154,11 @@ $vcatdata_main = $vcatdata_first;
 
                                                 <div class="col-lg-11">
 
-                                                    <? if ($how_it_work_section['img_sec'] != '') { ?>
+                                                    <?php if ($how_it_work_section['img_sec'] != '') { ?>
 
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=80&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_sec']; ?>" class="innerbg_image"/>
 
-                                                    <? } ?>
+                                                    <?php } ?>
 
                                                     <input type="file" class="form-control" name="how_it_work_img_sec" value="<?= $how_it_work_section['img_sec']; ?>">
 
@@ -1214,11 +1214,11 @@ $vcatdata_main = $vcatdata_first;
 
                                                 <div class="col-lg-11">
 
-                                                    <? if ($how_it_work_section['img_third'] != '') { ?>
+                                                    <?php if ($how_it_work_section['img_third'] != '') { ?>
 
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=80&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_third']; ?>" class="innerbg_image"/>
 
-                                                    <? } ?>
+                                                    <?php } ?>
 
                                                     <input type="file" class="form-control" name="how_it_work_img_third" value="<?= $how_it_work_section['img_third']; ?>">
 
@@ -1274,11 +1274,11 @@ $vcatdata_main = $vcatdata_first;
 
                                                 <div class="col-lg-11">
 
-                                                    <? if ($how_it_work_section['img_third'] != '') { ?>
+                                                    <?php if ($how_it_work_section['img_third'] != '') { ?>
 
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=80&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_four']; ?>" class="innerbg_image"/>
 
-                                                    <? } ?>
+                                                    <?php } ?>
 
                                                     <input type="file" class="form-control" name="how_it_work_img_four" value="<?= $how_it_work_section['img_four']; ?>">
 
@@ -1384,7 +1384,7 @@ $vcatdata_main = $vcatdata_first;
 
                                         <div class="col-lg-6">
 
-                                            <? if ($download_section['img'] != '') { ?>
+                                            <?php if ($download_section['img'] != '') { ?>
 
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$download_section['img']; ?>" class="innerbg_image"/> -->
 
@@ -1394,7 +1394,7 @@ $vcatdata_main = $vcatdata_first;
 
 
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader" name="download_section_img"  id="download_section_img" accept=".png,.jpg,.jpeg,.gif">
 
@@ -1416,7 +1416,7 @@ $vcatdata_main = $vcatdata_first;
 
                                         <div class="col-lg-6">
 
-                                            <? if ($download_section['img_first'] != '') { ?>
+                                            <?php if ($download_section['img_first'] != '') { ?>
 
                                                <!--  <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$download_section['img_first']; ?>" class="innerbg_image"/> -->
 
@@ -1426,7 +1426,7 @@ $vcatdata_main = $vcatdata_first;
 
 
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader" name="download_section_img_first"  id="download_section_img_first" accept=".png,.jpg,.jpeg,.gif">
 
@@ -1448,7 +1448,7 @@ $vcatdata_main = $vcatdata_first;
 
                                         <div class="col-lg-6">
 
-                                            <? if ($download_section['img_sec'] != '') { ?>
+                                            <?php if ($download_section['img_sec'] != '') { ?>
 
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$download_section['img_sec']; ?>" class="innerbg_image"/> -->
 
@@ -1458,7 +1458,7 @@ $vcatdata_main = $vcatdata_first;
 
 
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader" name="download_section_img_sec"  id="download_section_img_sec" accept=".png,.jpg,.jpeg,.gif">
 
@@ -1480,7 +1480,7 @@ $vcatdata_main = $vcatdata_first;
 
                                         <div class="col-lg-6">
 
-                                            <? if ($download_section['img_third'] != '') { ?>
+                                            <?php if ($download_section['img_third'] != '') { ?>
 
                                                 <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"].$template.'/'.$download_section['img_third']; ?>" class="innerbg_image"/> -->
 
@@ -1490,7 +1490,7 @@ $vcatdata_main = $vcatdata_first;
 
 
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader" name="download_section_img_third"  id="download_section_img_third" accept=".png,.jpg,.jpeg,.gif">
 
@@ -1564,11 +1564,11 @@ $vcatdata_main = $vcatdata_first;
 
                                         <div class="col-lg-6">
 
-                                            <? if ($secure_section['img'] != '') { ?>
+                                            <?php if ($secure_section['img'] != '') { ?>
 
                                                 <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $secure_section['img']; ?>" class="innerbg_image height-150"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader" name="secure_section_img" id="secure_section_img" accept=".png,.jpg,.jpeg,.gif">
 
@@ -1638,11 +1638,11 @@ $vcatdata_main = $vcatdata_first;
 
                                         <div class="col-lg-6">
 
-                                            <? if ($call_section['img'] != '') { ?>
+                                            <?php if ($call_section['img'] != '') { ?>
 
                                                 <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $call_section['img']; ?>" class="innerbg_image height-150"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader" name="call_section_img" id="call_section_img" accept=".png,.jpg,.jpeg,.gif">
 
@@ -1746,11 +1746,11 @@ $vcatdata_main = $vcatdata_first;
 
                                         <div class="col-lg-6">
 
-                                            <? if ($register_section['img_first'] != '') { ?>
+                                            <?php if ($register_section['img_first'] != '') { ?>
 
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_first']; ?>" class="innerbg_image height-150"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader" name="register_section_img_first" id="register_section_img_first" accept=".png,.jpg,.jpeg,.gif">
 
@@ -1788,11 +1788,11 @@ $vcatdata_main = $vcatdata_first;
 
                                         <div class="col-lg-6">
 
-                                            <? if ($register_section['img_sec'] != '') { ?>
+                                            <?php if ($register_section['img_sec'] != '') { ?>
 
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_sec']; ?>" class="innerbg_image height-150"/>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                             <input type="file" class="form-control FilUploader" name="register_section_img_sec" id="register_section_img_sec" accept=".png,.jpg,.jpeg,.gif">
 
@@ -1884,11 +1884,11 @@ $vcatdata_main = $vcatdata_first;
 
                                             <div class="col-lg-11">
 
-                                                <? if ($lServiceSection['img_first'] != '') { ?>
+                                                <?php if ($lServiceSection['img_first'] != '') { ?>
 
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=100&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $lServiceSection['img_first']; ?>" class="innerbg_image"/>
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <input type="file" class="form-control" name="lServiceSection_img_first" value="<?= $lServiceSection['img_first']; ?>">
 
@@ -1944,11 +1944,11 @@ $vcatdata_main = $vcatdata_first;
 
                                             <div class="col-lg-11">
 
-                                                <? if ($lServiceSection['img_sec'] != '') { ?>
+                                                <?php if ($lServiceSection['img_sec'] != '') { ?>
 
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=100&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $lServiceSection['img_sec']; ?>" class="innerbg_image"/>
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <input type="file" class="form-control" name="lServiceSection_img_sec" value="<?= $lServiceSection['img_sec']; ?>">
 
@@ -2004,11 +2004,11 @@ $vcatdata_main = $vcatdata_first;
 
                                             <div class="col-lg-11">
 
-                                                <? if ($lServiceSection['img_third'] != '') { ?>
+                                                <?php if ($lServiceSection['img_third'] != '') { ?>
 
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=100&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $lServiceSection['img_third']; ?>" class="innerbg_image"/>
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <input type="file" class="form-control" name="lServiceSection_img_third" value="<?= $lServiceSection['img_third']; ?>">
 
@@ -2064,11 +2064,11 @@ $vcatdata_main = $vcatdata_first;
 
                                             <div class="col-lg-11">
 
-                                                <? if ($lServiceSection['img_third'] != '') { ?>
+                                                <?php if ($lServiceSection['img_third'] != '') { ?>
 
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=100&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $lServiceSection['img_four']; ?>" class="innerbg_image"/>
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <input type="file" class="form-control" name="lServiceSection_img_four" value="<?= $lServiceSection['img_four']; ?>">
 
@@ -2150,7 +2150,7 @@ $vcatdata_main = $vcatdata_first;
 
 
 
-                                                        <? } ?>														
+                                                        <?php } ?>														
 
                                                     </td>
 
@@ -2182,7 +2182,7 @@ $vcatdata_main = $vcatdata_first;
 
                                                                         </a></li>
 
-                                                                        <? //} ?>
+                                                                        <?php //} ?>
 
                                                                     </ul>
 
@@ -2268,7 +2268,7 @@ $vcatdata_main = $vcatdata_first;
 
 
 
-                                                            <? } ?>														
+                                                            <?php } ?>														
 
                                                         </td>
 
@@ -2290,33 +2290,33 @@ $vcatdata_main = $vcatdata_first;
 
                                                                             <li class="entypo-twitter entypo-twitter-new" data-network="twitter"><a href="<?php echo $tconfig["tsite_url_main_admin"]."vehicle_category_action.php?id=".$vcatdata_main[$i]['iVehicleCategoryId']."&homepage=1"; ?>">Edit Details</a></li>
 
-                                                                            <? if(ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
+                                                                            <?php if(ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
 
                                                                             <li class="entypo-twitter entypo-twitter-new" data-network="twitter"><a href="<?php echo $tconfig["tsite_url_main_admin"].$urlCat[$vcatdata_main[$i]['iVehicleCategoryId']]."?id=".$iLanguageMasId; ?>">
 
-                                                                            <? if($common_page == 1) { ?>
+                                                                            <?php if($common_page == 1) { ?>
 
                                                                                 Edit Common Page 
 
-                                                                            <? } else { ?>
+                                                                            <?php } else { ?>
 
                                                                                 Edit Inner Page
 
-                                                                            <? } ?></a></li>
+                                                                            <?php } ?></a></li>
 
-                                                                            <? } else { ?>
+                                                                            <?php } else { ?>
 
                                                                             <li class="entypo-twitter entypo-twitter-new" data-network="twitter"><a href="<?php echo $tconfig["tsite_url_main_admin"].$urlCat[$vcatdata_main[$i]['iVehicleCategoryId']]."?id=".$iLanguageMasId; ?>">Edit Inner Page
 
                                                                             </a></li>
 
-                                                                            <? } if(!empty($inner_page_url) && ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
+                                                                            <?php } if(!empty($inner_page_url) && ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
 
                                                                             <li class="entypo-twitter entypo-twitter-new" data-network="twitter"><a href="<?php echo $tconfig["tsite_url_main_admin"].$inner_page_url."?iVehicleCategoryId=".$vcatdata_main[$i]['iVehicleCategoryId']."&id=".$iLanguageMasId; ?>">Add/Edit Page
 
                                                                             </a></li>
 
-                                                                            <? } ?>
+                                                                            <?php } ?>
 
                                                                         </ul>
 
@@ -2508,7 +2508,7 @@ $vcatdata_main = $vcatdata_first;
 
     
 
-    <? include_once('footer.php'); ?>
+    <?php include_once('footer.php'); ?>
 
     <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 

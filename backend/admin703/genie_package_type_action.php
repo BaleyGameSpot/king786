@@ -182,7 +182,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <!-- On OFF switch -->
         <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -193,8 +193,8 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -209,17 +209,17 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                     <hr />
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                 </div><br/>
-                            <? } elseif ($success == 2) { ?>
+                            <?php } elseif ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
                             <form method="post" name="_package_type" id="_package_type" action="" enctype="multipart/form-data">
                                 <input type="hidden" name="id" value="<?= $id; ?>"/>
                                 <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -232,12 +232,12 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                         <label>Image<?=($vImage == '')?'<span class="red"> *</span>':'';?></label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if($vImage != '') { ?>
+                                        <?php if($vImage != '') { ?>
                                         <img src="<?=$tconfig["tsite_url"].'resizeImg.php?w=100&src='.$tconfig['tsite_upload_genie_package_type_images'].$vImage;?>" style="margin-bottom: 10px;">
                                         <input type="file" class="form-control" name="vImage" id="vImage" value="<?=$vImage;?>" style="margin-bottom: 10px;"/>
-                                        <? } else { ?>
+                                        <?php } else { ?>
                                         <input type="file" class="form-control" name="vImage" id="vImage" value="<?=$vImage;?>" required/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <b>[Note: Recommended dimension is 500 * 500.]</b>
                                     </div>
                                 </div>
@@ -399,7 +399,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
             </div>                                                                                 
         </div>
 
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
     </body>
     <!-- END BODY-->

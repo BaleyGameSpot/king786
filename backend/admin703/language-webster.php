@@ -37,15 +37,15 @@ if (isset($_REQUEST['reload'])) {
             | Language</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
     </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
     <body class="padTop53">
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -60,13 +60,13 @@ if (isset($_REQUEST['reload'])) {
                         <hr />
                     </div>
                     <div style="clear:both;"></div>
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div>
                         <br/>
-                        <?
+                        <?php
                     } else if ($success == 2) {
                         ?>
                         <div class="alert alert-danger alert-dismissable">
@@ -74,7 +74,7 @@ if (isset($_REQUEST['reload'])) {
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
                         <br/>
-                        <?
+                        <?php
                     }
                     ?>
                     <div class="table-list">
@@ -135,7 +135,7 @@ if (isset($_REQUEST['reload'])) {
                                                 // $db_currency[$i] = $db_currency[$i]["iDispOrder"];
 
 
-                                         ?>   <option value ="<?= $i; ?>" <? if($i == $iDispOrder){echo "selected";}?> > <?= $i; ?> </option>
+                                         ?>   <option value ="<?= $i; ?>" <?php if($i == $iDispOrder){echo "selected";}?> > <?= $i; ?> </option>
                                              
                                               <?php }  ?>
                                         </select>
@@ -196,7 +196,7 @@ if (isset($_REQUEST['reload'])) {
             <!--END PAGE CONTENT -->
         </div>
         <!--END MAIN WRAPPER -->
-        <?
+        <?php
         include_once('footer.php');
         ?>
         <script src="../assets/plugins/dataTables/jquery.dataTables.js"></script>

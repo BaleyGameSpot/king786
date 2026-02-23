@@ -220,7 +220,7 @@
                 <meta charset="UTF-8" />
                 <title>Admin | Language Label Page <?= $action; ?></title>
                 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-                <? include_once('global_files.php'); ?>
+                <?php include_once('global_files.php'); ?>
                 <link rel="stylesheet" href="css/select2/select2.min.css" type="text/css" >
                 <script type="text/javascript" src="js/plugins/select2.min.js"></script>
                 <style type="text/css">
@@ -338,8 +338,8 @@
             <body class="padTop53 " >
                 <!-- MAIN WRAPPER -->
                 <div id="wrap">
-                    <? include_once('header.php'); ?>
-                    <? include_once('left_menu.php'); ?>
+                    <?php include_once('header.php'); ?>
+                    <?php include_once('left_menu.php'); ?>
                     <!--PAGE CONTENT -->
                     <div id="content">
                         <div class="inner">
@@ -355,24 +355,24 @@
                             <div class="body-div">
                                 <div class="form-group">
                                     <?php if($_SESSION['success'] != "") { ?>
-                                    <? if ($_SESSION['success'] == 1) { ?>
+                                    <?php if ($_SESSION['success'] == 1) { ?>
                                     <div class="alert alert-success alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                         <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                     </div>
                                     <br/>
-                                    <? } elseif ($_SESSION['success'] == 2) { ?>
+                                    <?php } elseif ($_SESSION['success'] == 2) { ?>
                                     <div class="alert alert-danger alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                         <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                     </div>
                                     <br/>
-                                    <? } elseif ($_SESSION['success'] == 0 && $_SESSION['var_msg'] != '') { ?>
+                                    <?php } elseif ($_SESSION['success'] == 0 && $_SESSION['var_msg'] != '') { ?>
                                     <div class="alert alert-danger alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                         <?= stripslashes($var_msg); ?>
                                     </div>
-                                    <? } unset($_SESSION['success']); unset($_SESSION['var_msg']); } ?>
+                                    <?php } unset($_SESSION['success']); unset($_SESSION['var_msg']); } ?>
                                     <form method="post" name="_languages_pages_form" id="_languages_pages_form" action="" enctype="multipart/form-data">
                                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                                         <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -667,7 +667,7 @@
                     <!--END PAGE CONTENT -->
                 </div>
                 <!--END MAIN WRAPPER -->
-                <? include_once('footer.php'); ?>
+                <?php include_once('footer.php'); ?>
             </body>
             <!-- END BODY-->
         </html>

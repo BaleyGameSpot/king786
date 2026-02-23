@@ -400,7 +400,7 @@ $Servicetitle = $data_Service_names[0]['vServiceName'];
         <!-- <meta charset="UTF-8" /> -->
         <title><?=$SITE_NAME?> | Maps API Key <?=$action;?></title>
         <!-- <meta content="width=device-width, initial-scale=1.0" name="viewport" /> -->
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <!-- On OFF switch -->
         <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />

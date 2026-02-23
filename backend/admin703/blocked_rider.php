@@ -415,7 +415,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                             ?>
                                             <tr class="gradeA">
                                                 <td>
-                                                    <? //if($APP_TYPE == "Ride"){  ?>
+                                                    <?php //if($APP_TYPE == "Ride"){  ?>
                                                     <?php if ($userObj->hasPermission('view-users')) { ?>    
                                                         <a href="javascript:void(0);"  onClick="show_rider_details('<?= $data_drv[$i]['iUserId']; ?>')"
                                                        style="text-decoration: underline;">
@@ -425,17 +425,17 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                         </a>
                                                     <?php } ?>  
 
-                                                    <? // }else{  ?>
+                                                    <?php // }else{  ?>
                                                     <!-- <?= clearName($data_drv[$i]['riderName']); ?> -->
-                                                    <? // }   ?>
+                                                    <?php // }   ?>
                                                 </td>
                                                 <td><?php if ($data_drv[$i]['vEmail'] != '') {
                                                         echo clearEmail($data_drv[$i]['vEmail']);
                                                     } else {
                                                         echo '--';
                                                     } ?></td>
-                                                <td align="center"><? echo($data_drv[$i]['countertrip']); ?></td>
-                                                <td align="center"><? echo($data_drv[$i]['Allcountertrip']); ?></td>
+                                                <td align="center"><?php echo($data_drv[$i]['countertrip']); ?></td>
+                                                <td align="center"><?php echo($data_drv[$i]['Allcountertrip']); ?></td>
                                                 <?php
                                                 if ($userObj->hasPermission('update-status-blocked-rider')) {
                                                     if ($data_drv[$i]['eIsBlocked'] == "No") {
@@ -470,7 +470,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                 ?>
                                                 <td align="center"><?= $get_tBlockeddate_format['tDisplayDate'];//DateTime($data_drv[$i]['tBlockeddate'], 'No') ?></td>
                                             </tr>
-                                            <?
+                                            <?php
                                         }
                                     } else {
                                         ?>

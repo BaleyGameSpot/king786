@@ -345,10 +345,10 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                                         <?= $buttonText; ?>(<?= $data_drv[$i]['SubCategories'] ?>)
                                                                     <?php } ?>
                                                                 </td>
-                                                            <? } ?>
-                                                            <td align="center"><? echo $data_drv[$i]['iDisplayOrder']; ?></td>
+                                                            <?php } ?>
+                                                            <td align="center"><?php echo $data_drv[$i]['iDisplayOrder']; ?></td>
                                                             <td width="10%" align="center">
-                                                                <?
+                                                                <?php
                                                                 if ($data_drv[$i]['eStatus'] == 'Active') {
                                                                     $dis_img = "img/active-icon.png";
                                                                 } else if ($data_drv[$i]['eStatus'] == 'Inactive') {
@@ -388,7 +388,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                             </td>
 
                                                         </tr>
-                                                        <?
+                                                        <?php
                                                     }
                                                 } else {
                                                     ?>

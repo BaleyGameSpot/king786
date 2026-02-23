@@ -530,7 +530,7 @@ $rentitem = $RENTITEM_OBJ->getRentItemMaster('admin', $rSql, 0, 0, $default_lang
                                         <?php }
                                     } else { ?>
                                         <td colspan="8">No Records Found.</td>
-                                    <? } ?>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </form>
@@ -602,7 +602,7 @@ $rentitem = $RENTITEM_OBJ->getRentItemMaster('admin', $rSql, 0, 0, $default_lang
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <div class="modal fade " id="detail_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -625,7 +625,7 @@ $rentitem = $RENTITEM_OBJ->getRentItemMaster('admin', $rSql, 0, 0, $default_lang
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <script src="../assets/js/jquery-ui.min.js"></script>
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script>
     var typeArr = '<?= json_encode($vehilceTypeArr, JSON_HEX_APOS); ?>';
 
@@ -936,7 +936,7 @@ $rentitem = $RENTITEM_OBJ->getRentItemMaster('admin', $rSql, 0, 0, $default_lang
     }
     <?php if (!empty($iItemSubCategoryId)) { ?>
     getsubcategories('<?php echo $iRentItemId;?>', '<?php echo $iMasterServiceCategoryId;?>', '<?php echo $iItemSubCategoryId;?>');
-    <? } ?>
+    <?php } ?>
 
     function getsubcategories(iParentId, iMasterServiceCategoryId, iItemSubCategoryId = "") {
         $("#iItemSubCategoryId").html();

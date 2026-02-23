@@ -182,24 +182,24 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 								<td width="12%" class="estatus_eFor" id="estatus_eFor" >
                                         <select class="form-control" name ="eFor" id="eFor" required="required">
                                             <option value="">Select <?= $langage_lbl_admin['LBL_FLY_STATIONS']; ?> For</option>
-                                            <option value ="Restrict" <? if ($eFor == 'Restrict') { ?>selected<? } ?>><?php echo $langage_lbl_admin['LBL_LOCATION_AREA_RESTRICTION']; ?></option>
-                                            <option value ="VehicleType" <? if ($eFor == 'VehicleType') { ?>selected<? } ?> ><?php echo $langage_lbl_admin['LBL_VEHICLE_SERVICE_TYPE_TXT']; ?></option>
+                                            <option value ="Restrict" <?php if ($eFor == 'Restrict') { ?>selected<?php } ?>><?php echo $langage_lbl_admin['LBL_LOCATION_AREA_RESTRICTION']; ?></option>
+                                            <option value ="VehicleType" <?php if ($eFor == 'VehicleType') { ?>selected<?php } ?> ><?php echo $langage_lbl_admin['LBL_VEHICLE_SERVICE_TYPE_TXT']; ?></option>
                                             <?php if ($APP_TYPE != 'UberX' && $APP_TYPE != 'Delivery') { ?>
                                                 <?php if (ONLYDELIVERALL == 'No') { ?>
-                                                    <option value ="FixFare" <? if ($eFor == 'FixFare') { ?>selected<? } ?> ><?php echo $langage_lbl_admin['LBL_FIXFARE_SMALL_TXT']; ?></option>
-                                                <? } ?>
-                                            <? } ?>
+                                                    <option value ="FixFare" <?php if ($eFor == 'FixFare') { ?>selected<?php } ?> ><?php echo $langage_lbl_admin['LBL_FIXFARE_SMALL_TXT']; ?></option>
+                                                <?php } ?>
+                                            <?php } ?>
                                             <?php if ((DELIVERALL == "Yes") OR ( ONLYDELIVERALL == "Yes")) { ?>
 
-                                                <option value ="UserDeliveryCharge" <? if ($eFor == 'UserDeliveryCharge') { ?>selected<? } ?> ><?php echo $langage_lbl_admin['LBL_LOCATION_USER_DELIVERY_CHARGE']; ?></option>
+                                                <option value ="UserDeliveryCharge" <?php if ($eFor == 'UserDeliveryCharge') { ?>selected<?php } ?> ><?php echo $langage_lbl_admin['LBL_LOCATION_USER_DELIVERY_CHARGE']; ?></option>
                                             <?php } ?>
 
                                             <?php if ($ENABLE_AIRPORT_SURCHARGE_SECTION=="Yes" && $APP_TYPE != 'UberX' && $APP_TYPE != 'Delivery') { ?>
                                                 <?php if (ONLYDELIVERALL == 'No') { ?>
 
-                                            <option value ="AirportSurcharge" <? if ($eFor == 'AirportSurcharge') { ?>selected<? } ?> ><?php echo 'Airport Surcharge'; ?></option>
-											<? } ?>
-                                            <? } ?>
+                                            <option value ="AirportSurcharge" <?php if ($eFor == 'AirportSurcharge') { ?>selected<?php } ?> ><?php echo 'Airport Surcharge'; ?></option>
+											<?php } ?>
+                                            <?php } ?>
                                         </select>
                                     </td>
 									<td width="12%" class="estatus_options" id="eStatus_options" >

@@ -65,7 +65,7 @@ if(isset($_POST['id']) && $_POST['id'] != "")
             </div>
         </div>
 
-        <?
+        <?php
         if ($count_all > 0) {
             for ($i = 0; $i < $count_all; $i++) {
                 $vCode = $db_master[$i]['vCode'];
@@ -103,7 +103,7 @@ if(isset($_POST['id']) && $_POST['id'] != "")
                     }
                     ?>
                 </div>
-            <? }
+            <?php }
         }
         ?>
         <div class="row">

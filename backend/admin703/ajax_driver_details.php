@@ -137,7 +137,7 @@ if ($average_rating > 0) {
                     <tr>
                         <td class="text_design">Status</td>
                         <td>
-                            <?
+                            <?php
                             $class = "";
                             if ($data_driver[0]['eStatus'] == "active") {
                                 $class = "btn-success";
@@ -159,7 +159,7 @@ if ($average_rating > 0) {
         <tr>
             <td class="text_design">Address</td>
             <td>
-                <?
+                <?php
                 $address1 = $data_driver[0]['vCaddress'];
                 if ($data_driver[0]['vCadress2'] != "") {
                     $conc = ($address1 != "") ? ", " : "";
@@ -190,22 +190,22 @@ if ($average_rating > 0) {
             <td class="text_design"><?= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'] ?> Company/Store</td>
             <td><?= clearCmpName($data_driver[0]['vCompany']); ?></td>
         </tr>
-        <? } ?>
-        <? if ($reg_date != "") { ?>
+        <?php } ?>
+        <?php if ($reg_date != "") { ?>
             <tr>
                 <td class="text_design">Registration Date</td>
                 <!-- <td>Tuesday, Aug  22<sup>nd</sup> 2017</td> -->
                 <td><?= $reg_date ?></td>
             </tr>
-        <? } ?>
-        <? if ($data_driver[0]['vVat'] != "") { ?>
+        <?php } ?>
+        <?php if ($data_driver[0]['vVat'] != "") { ?>
             <tr>
                 <td class="text_design">Vat Number</td>
                 <td>
                     <?= $data_driver[0]['vVat']; ?>
                 </td>
             </tr>
-        <? } ?>
+        <?php } ?>
         <!--
         <tr>
                 <td>Total Vehicles</td>
@@ -258,18 +258,18 @@ if ($average_rating > 0) {
 </table>
 </div>
 <div class="modal-footer">
-    <? if(!empty($_REQUEST['editTrip'])) {
+    <?php if(!empty($_REQUEST['editTrip'])) {
         if($_REQUEST['editTrip']=="Yes") { ?>
     <a href="trip.php?action=search&searchDriver=<?= $iDriverId; ?>" class="btn btn-primary btn-ok" target="blank">View <?= $langage_lbl_admin['LBL_TRIP_DETAILS_TXT'] ?></a>
-    <? } } else if(!empty($_REQUEST['editOrder'])) {
+    <?php } } else if(!empty($_REQUEST['editOrder'])) {
         if($_REQUEST['editOrder']=="Yes") { ?>
         <a href="allorders.php?action=search&type=allorders&searchDriver=<?= $iDriverId; ?>" class="btn btn-primary btn-ok" target="blank">View Order Details</a>
-    <? } }
+    <?php } }
     else if ($trackingCompany == '1') { ?>
     <a href="track_service_driver_action.php?id=<?= $iDriverId; ?>" class="btn btn-primary btn-ok" target="blank">Edit <?= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'] ?></a>
-    <? } 
+    <?php } 
     else if ($_SESSION['SessionUserType'] != 'hotel') { ?>
         <a href="<?= $URL; ?>" class="btn btn-primary btn-ok" target="blank">Edit <?= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'] ?></a>
-    <? } ?>
+    <?php } ?>
     <button type="button" class="btn btn-danger btn-ok" data-dismiss="modal">Close</button>
 </div>

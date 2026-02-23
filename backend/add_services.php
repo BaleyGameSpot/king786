@@ -351,26 +351,26 @@ $isEnableServiceTypeWiseProviderDocument  = $MODULES_OBJ->isEnableServiceTypeWis
             <div class="page-contant">
                 <div class="page-contant-inner page-trip-detail">
                     <h2 class="header-page trip-detail driver-detail1"> <?= $langage_lbl['LBL_HEADER_MY_SERVICES']; ?>
-                        <? if (($Vehicle_type_name == 'UberX') && $_SESSION['sess_user'] == "company") { ?>
+                        <?php if (($Vehicle_type_name == 'UberX') && $_SESSION['sess_user'] == "company") { ?>
                             <a href="providerlist">
                                 <img src="assets/img/arrow-white.png" alt="">
                                 <?= $langage_lbl['LBL_BACK_To_Listing_WEB']; ?>
                             </a>
-                        <? } ?>
+                        <?php } ?>
                     </h2>
                     <!-- Service detail page -->
                     <div class="driver-add-vehicle"> 
-                        <? if ($success == 1) { ?>
+                        <?php if ($success == 1) { ?>
                             <div class="alert alert-success alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                 <?= $langage_lbl['LBL_Record_Updated_successfully']; ?>
                             </div>
-                        <? } else if ($success == 2) { ?>
+                        <?php } else if ($success == 2) { ?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                 <?= isset($_REQUEST['error_msg']) ? $_REQUEST['error_msg'] : ' '; ?>
                             </div>
-                        <? } ?>
+                        <?php } ?>
                         <?php if (!empty($vehicle_type_data)) { ?>
                             <form name="frm1" id="frm1"  method="post">
                                 <input type="hidden" name="iDriverIdNew"  value="<?= $iDriverIdNew ?>"/>
@@ -434,7 +434,7 @@ $isEnableServiceTypeWiseProviderDocument  = $MODULES_OBJ->isEnableServiceTypeWis
                                                                 <b><?php echo $vehicle_typeName; ?><br/>
                                                                     <div style="font-size: 12px;"><?php echo $localization; ?></div></b>
                                                                 <div class="make-switch" data-on="success" data-off="warning">
-                                                        <input type="checkbox" <? if ($ePricetype == "Provider") { ?>onchange="check_box_value(this.value);" <? }else{ ?>onchange="cTrig('vCarType1_<?= $val['iVehicleTypeId'] ?>')"  <?php } ?> id="vCarType1_<?= $val['iVehicleTypeId'] ?>" class="chk  vCarTypeClass" name="vCarType[]" <?php if (in_array($val['iVehicleTypeId'], $vCarTyp)) { ?>checked<?php } ?> value="<?= $val['iVehicleTypeId'] ?>" <?=$disStat?> />
+                                                        <input type="checkbox" <?php if ($ePricetype == "Provider") { ?>onchange="check_box_value(this.value);" <?php }else{ ?>onchange="cTrig('vCarType1_<?= $val['iVehicleTypeId'] ?>')"  <?php } ?> id="vCarType1_<?= $val['iVehicleTypeId'] ?>" class="chk  vCarTypeClass" name="vCarType[]" <?php if (in_array($val['iVehicleTypeId'], $vCarTyp)) { ?>checked<?php } ?> value="<?= $val['iVehicleTypeId'] ?>" <?=$disStat?> />
                                                             
 
 
@@ -456,13 +456,13 @@ $isEnableServiceTypeWiseProviderDocument  = $MODULES_OBJ->isEnableServiceTypeWis
                                                                     $fAmount_new = $fAmount[$val['iVehicleTypeId']];
                                                                     $famount_val = (empty($fAmount_new)) ? round($fAmount_old, 2) : round($fAmount_new, 2);
                                                                     ?>
-                                                                    <div class="hatchback-search" id="amt1_<?= $val['iVehicleTypeId'] ?>" <? echo $p001; ?>>
+                                                                    <div class="hatchback-search" id="amt1_<?= $val['iVehicleTypeId'] ?>" <?php echo $p001; ?>>
                                                                         <input type="hidden" name="desc" id="desc_<?= $val['iVehicleTypeId'] ?>" value="<?= $val[$VehicleName1] ?>">
                                                                         <?php if ($val['eFareType'] != 'Regular') { ?>
-                                                                            <label><? echo $vSymbol; ?></label>
+                                                                            <label><?php echo $vSymbol; ?></label>
                                                                             <input class="form-control" type="text" name="fAmount[<?= $val['iVehicleTypeId'] ?>]" value="<?= $famount_val; ?>" placeholder="Enter Amount for <?= $val[$VehicleName1] ?>" id="fAmount_<?= $val['iVehicleTypeId'] ?>" maxlength="10"><label><?php echo $eFareType; ?></label>
                                                                         </div>
-                                                                        <?
+                                                                        <?php
                                                                     }
                                                                 }
                                                                 ?>

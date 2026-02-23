@@ -215,7 +215,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
     <meta charset="UTF-8"/>
     <title><?= $SITE_NAME ?> | Item Category <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -225,7 +225,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <?
+    <?php
     include_once('header.php');
     include_once('left_menu.php');
     ?>
@@ -266,9 +266,9 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                 onchange="changeserviceCategory(this.value)">
                                             <option value="">Select</option>
                                             <?php //foreach($db_company as $dbcm) { ?>
-                                            <? for ($i = 0; $i < scount($service_cat_list); $i++) { ?>
+                                            <?php for ($i = 0; $i < scount($service_cat_list); $i++) { ?>
                                                 <option value="<?= $service_cat_list[$i]['iServiceId'] ?>"><?= $service_cat_list[$i]['servicename'] ?></option>
-                                            <? } ?>
+                                            <?php } ?>
                                             <?php //} ?>
                                         </select>
                                     </div>
@@ -290,8 +290,8 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                         Select <?php echo $langage_lbl_admin['LBL_RESTAURANT_TXT_ADMIN']; ?></option>
                                     <?php foreach ($db_company as $dbc) { ?>
                                         <option value="<?php echo $dbc['iCompanyId']; ?>"
-                                                <? if ($dbc['iCompanyId'] == $iCompanyId) { ?>selected<? } ?>><?php echo clearName($dbc['vCompany']);
-                                            if ($dbc['vEmail'] != '') { ?> - ( <?php echo clearEmail($dbc['vEmail']); ?> ) <? } else {
+                                                <?php if ($dbc['iCompanyId'] == $iCompanyId) { ?>selected<?php } ?>><?php echo clearName($dbc['vCompany']);
+                                            if ($dbc['vEmail'] != '') { ?> - ( <?php echo clearEmail($dbc['vEmail']); ?> ) <?php } else {
                                                 echo '--';
                                             } ?></option>
                                     <?php } ?>
@@ -570,7 +570,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
         } else {
             var iServiceIdNew = "<?= $EditServiceIdNew ?>";
         }
-        var servicecounts = '<? echo scount($service_cat_list) ?>';
+        var servicecounts = '<?php echo scount($service_cat_list) ?>';
         if (servicecounts > '1') {
             changeserviceCategory(iServiceIdNew);
         }

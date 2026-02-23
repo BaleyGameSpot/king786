@@ -250,11 +250,11 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 							<?php   } else  if ($UserType == 'Store') { 	 $name=$data_drv[$i]['lname']; ?>
  <?php if ($userObj->hasPermission('view-store')) { ?><a href="javascript:void(0);" onClick="show_store_details('<?= $data_drv[$i]['iUserId']; ?>')" style="text-decoration: underline;"><?php } ?><?= clearCmpName($name); ?><?php if ($userObj->hasPermission('view-store')) { ?></a><?php } ?>
 											<?php } ?></td>
-                                                            <td align="center"><? echo $data_drv[$i]['eUserType']; ?></td>	
-                                                            <td align="center"><? echo $data_drv[$i]['vIP']; ?></td>
-                                                            <td width="20%" align="center"><? echo DateTime($data_drv[$i]['dDateTime'], 'No')	 ?></td> 
+                                                            <td align="center"><?php echo $data_drv[$i]['eUserType']; ?></td>	
+                                                            <td align="center"><?php echo $data_drv[$i]['vIP']; ?></td>
+                                                            <td width="20%" align="center"><?php echo DateTime($data_drv[$i]['dDateTime'], 'No')	 ?></td> 
 																		</tr>
-													<? }
+													<?php }
                                                 } else {
                                                     ?>
                                                     <tr class="gradeA">

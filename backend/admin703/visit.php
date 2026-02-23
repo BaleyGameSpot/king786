@@ -409,7 +409,7 @@ if ($eStatus == 'Active') {
                 <h4>Notes:</h4>
                 <ul>
                     <li>Visit Location module will list all makes on this page.</li>
-                    <li><? if (isset($_SESSION['SessionUserType']) && $_SESSION['SessionUserType'] == 'hotel') { ?>Hotel<? } else { ?>Administrator<? } ?>
+                    <li><?php if (isset($_SESSION['SessionUserType']) && $_SESSION['SessionUserType'] == 'hotel') { ?>Hotel<?php } else { ?>Administrator<?php } ?>
                         can Activate / Deactivate / Delete any Visit Location.
                     </li>
                     <li>This Module will list the Pre defined location for hotels.</li>

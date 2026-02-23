@@ -1,21 +1,19 @@
 [versions]
-agp = "8.5.2"
+agp = "8.7.1"
 anchorBottomSheetBehavior = "0.13-alpha"
 androidMapsUtils = "3.4.0"
 androidOtpviewPinview = "2.1.2"
 audienceNetworkSdk = "6.14.0"
-audienceNetworkSdkVersion = "6.15.0"
-biometric = "1.2.0-alpha05"
+biometric = "1.2.0-beta01"
 chatWindowAndroid = "v2.2.1"
 commonsLang3 = "3.12.0"
 facebookLogin = "16.3.0"
 firebaseAuth = "23.0.0"
-firebaseMessagingVersion = "23.4.0"
 floatingactionbutton = "1.10.1"
-glide = "4.15.1"
+glide = "4.16.0"
 gson = "2.10.1"
 haishinkit = "0.13.7"
-kotlin = "1.9.23"
+kotlin = "2.1.0"
 google-services = "4.4.2"
 
 firebaseMessaging = "24.0.2"
@@ -28,17 +26,14 @@ coreSplashscreen = "1.0.1"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
-kotlinReflect = "1.9.23"
+kotlinReflect = "2.1.0"
 lottie = "6.4.0"
 mpandroidchart = "v3.0.3"
 media3 = "1.4.1"
-navigationVersion = "1.0.0"
 okhttp = "4.12.0"
 okio = "3.9.0"
-playServicesAdsVersion = "22.6.0"
 playServicesAuth = "21.2.0"
 playServicesLocation = "21.3.0"
-playServicesLocationVersion = "21.0.1"
 playServicesMaps = "19.2.0"
 retrofit = "2.11.0"
 shimmerrecyclerview = "v1.3"
@@ -47,7 +42,7 @@ libraryVersion = "2.4.0"
 material = "1.12.0"
 multidex = "2.0.1"
 nvWebsocketClient = "2.14"
-picasso = "2.71828"
+picasso = "2.8"
 playServicesAds = "23.4.0"
 playServicesGcm = "17.0.0"
 #playServicesMaps = "19.0.0" // TODO : libraries.navigation remove
@@ -69,7 +64,6 @@ androidx-media3-exoplayer-dash = { module = "androidx.media3:media3-exoplayer-da
 androidx-media3-ui = { module = "androidx.media3:media3-ui", version.ref = "media3" }
 androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
 audience-network-sdk = { module = "com.facebook.android:audience-network-sdk", version.ref = "audienceNetworkSdk" }
-audience-network-sdk-v6150 = { module = "com.facebook.android:audience-network-sdk", version.ref = "audienceNetworkSdkVersion" }
 chat-window-android = { module = "com.github.livechat:chat-window-android", version.ref = "chatWindowAndroid" }
 commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commonsLang3" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
@@ -78,7 +72,6 @@ firebase-analytics = { module = "com.google.firebase:firebase-analytics", versio
 firebase-auth = { module = "com.google.firebase:firebase-auth", version.ref = "firebaseAuth" }
 firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics", version.ref = "firebaseCrashlyticsVersion" }
 firebase-messaging = { module = "com.google.firebase:firebase-messaging", version.ref = "firebaseMessaging" }
-firebase-messaging-v2340 = { module = "com.google.firebase:firebase-messaging", version.ref = "firebaseMessagingVersion" }
 floatingactionbutton = { module = "com.getbase:floatingactionbutton", version.ref = "floatingactionbutton" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
@@ -88,13 +81,10 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlinReflect" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 mpandroidchart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "mpandroidchart" }
-navigation-v100 = { module = "com.google.android.libraries.navigation:navigation", version.ref = "navigationVersion" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
-play-services-ads-v2260 = { module = "com.google.android.gms:play-services-ads", version.ref = "playServicesAdsVersion" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
-play-services-location-v2101 = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocationVersion" }
 play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 shimmerrecyclerview = { module = "com.github.sharish:ShimmerRecyclerView", version.ref = "shimmerrecyclerview" }
