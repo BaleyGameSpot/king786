@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/mainarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_11sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@drawable/card_view_23_gray_flat"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+
+        <com.view.AutoResizeTextView
+            android:id="@+id/stratTimeTxtView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_12ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="10 am - 11 pm" />
+
+    </LinearLayout>
+
+    <!--////////////////////-->
+
+    <LinearLayout
+        android:id="@+id/selmainarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_11sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@drawable/card_view_23_gray_flat"
+        android:backgroundTint="@color/appThemeColor_1"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+
+        <com.view.AutoResizeTextView
+            android:id="@+id/stratselTimeTxtView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="10 am - 11 pm" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

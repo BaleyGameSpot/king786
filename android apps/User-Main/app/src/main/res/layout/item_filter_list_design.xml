@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainArea"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="@dimen/_8sdp"
+    android:layout_marginBottom="@dimen/_8sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/_28sdp"
+        android:orientation="horizontal">
+
+        <com.view.MTextView
+            android:id="@+id/rowTitleTxtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_weight="1"
+            android:gravity="center_vertical|start"
+            android:text="abc"
+            android:textColor="@color/black"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/_12ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            android:layout_gravity="center_vertical"
+            android:includeFontPadding="false"/>
+
+        <ImageView
+            android:id="@+id/imgCheck"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:tint="@color/Gray"
+            app:srcCompat="@drawable/ic_arrow"/>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

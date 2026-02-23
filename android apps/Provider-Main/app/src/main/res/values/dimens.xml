@@ -1,0 +1,37 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="txt_size_24">@dimen/_24ssp</dimen> <!-- for banner -->
+    <dimen name="txt_size_20">@dimen/_20ssp</dimen> <!-- for other cases -->
+    <dimen name="txt_size_22">@dimen/_22ssp</dimen> <!-- for other cases -->
+    <dimen name="txt_size_18">@dimen/_18ssp</dimen> <!-- for title -->
+    <!-- for title -->
+    <dimen name="txt_size_16">@dimen/_16ssp</dimen> <!-- for All text -->
+    <dimen name="txt_size_15">@dimen/_15ssp</dimen>
+    <dimen name="txt_size_14">@dimen/_14ssp</dimen> <!-- for Form -->
+    <dimen name="txt_size_12">@dimen/_12ssp</dimen> <!-- for Form -->
+    <dimen name="txt_size_10">@dimen/_10ssp</dimen> <!-- for Form -->
+
+
+    <dimen name="all_btn_height">@dimen/_36sdp</dimen>
+    <dimen name="all_btn_height2">@dimen/_30sdp</dimen>
+    <dimen name="all_btn_height1">@dimen/_48sdp</dimen>
+    <dimen name="all_btn_height4">@dimen/_40sdp</dimen>
+    <dimen name="all_btn_height5">@dimen/_35sdp</dimen>
+
+
+    <dimen name="all_EditBox_height">@dimen/_60sdp</dimen>
+
+
+    <!-- dateTitleLayout -->
+    <!--<dimen name="dateTitlePaddingBottom">5dp</dimen>-->
+    <!-- weekLayout -->
+    <!-- weekRowLayout -->
+    <!--<dimen name="week_bottom_padding">5dp</dimen>-->
+    <!-- Day of the month -->
+
+
+    <!--New dimens-->
+
+    <dimen name="before_after_img_size">@dimen/_110sdp</dimen>
+</resources>

@@ -1,0 +1,57 @@
+2025-05-05 00:25:17,279:DEBUG:certbot._internal.main:certbot version: 1.11.0
+2025-05-05 00:25:17,279:DEBUG:certbot._internal.main:Location of certbot entry point: /bin/certbot
+2025-05-05 00:25:17,279:DEBUG:certbot._internal.main:Arguments: ['--standalone', '-d', 'apiservice.quikbuynsell.com', '--keep-until-expiring', '--agree-tos', '--email', 'markduo19@gmail.com', '--non-interactive', '--cert-path', '/home/quikbu5/public_html/dev/webimages/script_files/domain_cert_files/', '--config-dir', '/home/quikbu5/public_html/dev/webimages/script_files/domain_cert_files/', '--work-dir', '/home/quikbu5/public_html/dev/webimages/script_files/domain_cert_files/', '--logs-dir', '/home/quikbu5/public_html/dev/webimages/script_files/domain_cert_files/', '--pre-hook', 'service httpd stop', '--post-hook', 'service httpd start']
+2025-05-05 00:25:17,279:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-05-05 00:25:17,388:DEBUG:certbot._internal.log:Root logging level set at 20
+2025-05-05 00:25:17,388:INFO:certbot._internal.log:Saving debug log to /home/quikbu5/public_html/dev/webimages/script_files/domain_cert_files/letsencrypt.log
+2025-05-05 00:25:17,389:DEBUG:certbot._internal.plugins.selection:Requested authenticator standalone and installer None
+2025-05-05 00:25:17,390:DEBUG:certbot._internal.plugins.selection:Single candidate plugin: * standalone
+Description: Spin up a temporary webserver
+Interfaces: IAuthenticator, IPlugin
+Entry point: standalone = certbot._internal.plugins.standalone:Authenticator
+Initialized: <certbot._internal.plugins.standalone.Authenticator object at 0x7f6bbb968110>
+Prep: True
+2025-05-05 00:25:17,390:DEBUG:certbot._internal.plugins.selection:Selected authenticator <certbot._internal.plugins.standalone.Authenticator object at 0x7f6bbb968110> and installer None
+2025-05-05 00:25:17,390:INFO:certbot._internal.plugins.selection:Plugins selected: Authenticator standalone, Installer None
+2025-05-05 00:25:17,681:DEBUG:certbot._internal.main:Picked account: <Account(RegistrationResource(body=Registration(status=None, terms_of_service_agreed=None, agreement=None, only_return_existing=None, contact=(), key=None, external_account_binding=None), uri=u'https://acme-v02.api.letsencrypt.org/acme/acct/2119432975', new_authzr_uri=None, terms_of_service=None), 860732b3e8177c0c2208be62d1ea4faf, Meta(creation_host=u'vps85547.inmotionhosting.com', register_to_eff=None, creation_dt=datetime.datetime(2024, 12, 17, 23, 57, 25, tzinfo=<UTC>)))>
+2025-05-05 00:25:17,688:DEBUG:acme.client:Sending GET request to https://acme-v02.api.letsencrypt.org/directory.
+2025-05-05 00:25:17,727:INFO:urllib3.connectionpool:Starting new HTTPS connection (1): acme-v02.api.letsencrypt.org
+2025-05-05 00:25:17,954:DEBUG:urllib3.connectionpool:"GET /directory HTTP/1.1" 200 1012
+2025-05-05 00:25:17,954:DEBUG:acme.client:Received response:
+HTTP 200
+content-length: 1012
+strict-transport-security: max-age=604800
+server: nginx
+connection: keep-alive
+cache-control: public, max-age=0, no-cache
+date: Mon, 05 May 2025 04:25:17 GMT
+x-frame-options: DENY
+content-type: application/json
+
+{
+  "hZmlTGNMHjk": "https://community.letsencrypt.org/t/adding-random-entries-to-the-directory/33417",
+  "keyChange": "https://acme-v02.api.letsencrypt.org/acme/key-change",
+  "meta": {
+    "caaIdentities": [
+      "letsencrypt.org"
+    ],
+    "profiles": {
+      "classic": "https://letsencrypt.org/docs/profiles#classic",
+      "shortlived": "https://letsencrypt.org/docs/profiles#shortlived (not yet generally available)",
+      "tlsserver": "https://letsencrypt.org/docs/profiles#tlsserver"
+    },
+    "termsOfService": "https://letsencrypt.org/documents/LE-SA-v1.5-February-24-2025.pdf",
+    "website": "https://letsencrypt.org"
+  },
+  "newAccount": "https://acme-v02.api.letsencrypt.org/acme/new-acct",
+  "newNonce": "https://acme-v02.api.letsencrypt.org/acme/new-nonce",
+  "newOrder": "https://acme-v02.api.letsencrypt.org/acme/new-order",
+  "renewalInfo": "https://acme-v02.api.letsencrypt.org/draft-ietf-acme-ari-03/renewalInfo",
+  "revokeCert": "https://acme-v02.api.letsencrypt.org/acme/revoke-cert"
+}
+2025-05-05 00:25:18,061:DEBUG:certbot._internal.plugins.selection:Requested authenticator standalone and installer <certbot._internal.cli.cli_utils._Default object at 0x7f6bbb56bad0>
+2025-05-05 00:25:18,074:DEBUG:certbot.ocsp:Querying OCSP for /home/quikbu5/public_html/dev/webimages/script_files/domain_cert_files/archive/apiservice.quikbuynsell.com/cert3.pem
+2025-05-05 00:25:18,074:DEBUG:certbot.ocsp:openssl ocsp -no_nonce -issuer /home/quikbu5/public_html/dev/webimages/script_files/domain_cert_files/archive/apiservice.quikbuynsell.com/chain3.pem -cert /home/quikbu5/public_html/dev/webimages/script_files/domain_cert_files/archive/apiservice.quikbuynsell.com/cert3.pem -CAfile /home/quikbu5/public_html/dev/webimages/script_files/domain_cert_files/archive/apiservice.quikbuynsell.com/chain3.pem -verify_other /home/quikbu5/public_html/dev/webimages/script_files/domain_cert_files/archive/apiservice.quikbuynsell.com/chain3.pem -trust_other -timeout 10 -header Host r11.o.lencr.org -url http://r11.o.lencr.org
+2025-05-05 00:25:18,199:INFO:certbot._internal.renewal:Cert not yet due for renewal
+2025-05-05 00:25:18,199:INFO:certbot._internal.main:Keeping the existing certificate
+2025-05-05 00:25:18,200:DEBUG:certbot.display.util:Notifying user: Certificate not yet due for renewal; no action taken.

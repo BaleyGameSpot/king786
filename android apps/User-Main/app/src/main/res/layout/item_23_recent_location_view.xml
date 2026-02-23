@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/mainArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/whereToArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_view_23_white_shadow"
+            android:backgroundTint="@color/imageCircleBg23Pro_Light"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_11sdp"
+            android:paddingEnd="0dp">
+
+            <com.view.MTextView
+                android:id="@+id/whereToTxt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_35sdp"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                tools:text="Where to?" />
+
+            <LinearLayout
+                android:id="@+id/nowBtnArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_4sdp"
+                android:background="@drawable/round_corner_20dp">
+
+                <com.view.MTextView
+                    android:id="@+id/nowTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_timer_2_fill"
+                    android:drawableEnd="@drawable/ic_down_arrow_23_1"
+                    android:drawablePadding="@dimen/_6sdp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:padding="@dimen/_6sdp"
+                    app:drawableTint="@color/white"
+                    tools:text="Now" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecentLocationList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_23_recent_location_item" />
+    </LinearLayout>
+</layout>

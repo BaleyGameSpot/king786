@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/itemArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/history_reason_border"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="match_parent">
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/carImg"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="match_parent"
+                    android:background="@color/imageBg"
+                    android:padding="1dp"
+                    android:scaleType="centerCrop" />
+
+                <View
+                    android:id="@+id/bgSelectedImgView"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:background="@drawable/drawable_rounded_left_curve" />
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/selectedImg"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_checkbox_select_23"
+                    app:tint="@color/white" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llInfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:layout_marginEnd="@dimen/_11sdp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.view.MTextView
+                        android:id="@+id/carName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="2"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_12ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="Hyundai / Verna" />
+
+                    <com.view.MTextView
+                        android:id="@+id/carSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:textColor="@color/text23Pro_Light"
+                        android:textSize="@dimen/_10ssp"
+                        app:customTypeFace="@string/system_regular"
+                        tools:text="Small" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:layout_marginBottom="@dimen/_7sdp"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <com.view.MTextView
+                        android:id="@+id/carNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|end"
+                        android:textColor="@color/text23Pro_Light"
+                        android:textSize="@dimen/_10ssp"
+                        app:customTypeFace="@string/system_regular"
+                        tools:text="WB 06 F 5986" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/btnDelete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_20sdp"
+                            app:srcCompat="@drawable/ic_delete_icon_red" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/btnEdit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:padding="@dimen/_1sdp"
+                            app:srcCompat="@drawable/ic_edit_no_stroke" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.view.MTextView
+            android:id="@+id/disAllowNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/bottom_all_curve_card_7sdp"
+            android:backgroundTint="@color/cardView23ProBG"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:paddingBottom="@dimen/_7sdp"
+            android:textColor="@color/textSub23Pro_gray"
+            android:textSize="@dimen/_10ssp"
+            android:visibility="gone"
+            app:customTypeFace="@string/system_regular"
+            tools:text="Not Available for selection as you have selected Small type of vehicle"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+</layout>

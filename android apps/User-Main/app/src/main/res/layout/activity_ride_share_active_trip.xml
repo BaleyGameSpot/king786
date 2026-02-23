@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/design_toolbar_general" />
+
+        <RelativeLayout
+            android:id="@+id/rootRelView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Map Area -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/deliveryDetailsArea"
+                android:layout_below="@+id/navigationViewArea"
+                android:layout_marginBottom="@dimen/_minus27sdp">
+
+                <RelativeLayout
+                    android:id="@+id/mapFragmentContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/buttonlayouts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <!--start end trip slide button-->
+                <com.general.files.SlideButton
+                    android:id="@+id/startTripSlideButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    android:textAllCaps="true" />
+
+                <com.general.files.SlideButton
+                    android:id="@+id/endTripSlideButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    android:textAllCaps="true" />
+            </RelativeLayout>
+
+            <!-- Driver Detail view -->
+            <RelativeLayout
+                android:id="@+id/deliveryDetailsArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/buttonlayouts"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_minus10sdp"
+                        android:background="@drawable/top_curve_card">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="@dimen/_10sdp">
+
+                            <com.view.MTextView
+                                android:id="@+id/driverName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_20sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginEnd="@dimen/_90sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:ellipsize="end"
+                                android:includeFontPadding="false"
+                                android:maxLines="2"
+                                android:textColor="#141414"
+                                android:textSize="@dimen/_13ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="User" />
+
+                            <com.view.MTextView
+                                android:id="@+id/distanceTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_34sdp"
+                                android:layout_marginEnd="@dimen/_20sdp"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:minWidth="@dimen/_65sdp"
+                                android:textColor="#161616"
+                                android:textSize="@dimen/_15ssp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="0.8 Mi" />
+
+                            <com.view.MTextView
+                                android:id="@+id/timeTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/distanceTxt"
+                                android:layout_alignParentEnd="true"
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="@dimen/_20sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:gravity="center"
+                                android:minWidth="@dimen/_65sdp"
+                                android:textColor="#a4a4a4"
+                                android:textSize="@dimen/_8ssp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="7 min" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <!--floating buttons-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:orientation="horizontal">
+
+
+                    <com.view.CircularImageView
+                        android:id="@+id/callview"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:civ_border="true"
+                        app:civ_border_color="@color/transparent_full"
+                        app:civ_border_width="0dp"
+                        app:civ_shadow="true"
+                        app:civ_shadow_color="#4BAE4F"
+                        app:civ_shadow_gravity="center"
+                        app:civ_shadow_radius="@dimen/_1sdp"
+                        app:srcCompat="@drawable/ic_phone" />
+
+
+                    <com.view.CircularImageView
+                        android:id="@+id/navigateArea"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:civ_border="true"
+                        app:civ_border_color="@color/transparent_full"
+                        app:civ_border_width="0dp"
+                        app:civ_shadow="true"
+                        app:civ_shadow_color="#F19A08"
+                        app:civ_shadow_gravity="center"
+                        app:civ_shadow_radius="@dimen/_1sdp"
+
+                        app:srcCompat="@drawable/ic_navigation_new" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!--card area-->
+            <RelativeLayout
+                android:id="@+id/navigationViewArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        android:id="@+id/navigationViewToolBar"
+                        layout="@layout/navigation_view" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <com.view.CircularImageView
+                android:id="@+id/emeTapImgView"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_below="@id/deliveryInfoView"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                app:civ_border="true"
+                app:civ_border_color="@color/transparent_full"
+                app:civ_border_width="0dp"
+                app:civ_shadow="true"
+                app:civ_shadow_color="#FF0000"
+                app:civ_shadow_gravity="center"
+                app:civ_shadow_radius="@dimen/_1sdp"
+                app:srcCompat="@drawable/ic_emergency" />
+
+
+            <com.view.CircularImageView
+                android:id="@+id/deliveryInfoView"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_below="@id/navigationViewArea"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                app:civ_border="true"
+                app:civ_border_color="@color/transparent_full"
+                app:civ_border_width="0dp"
+                app:civ_shadow="true"
+                app:civ_shadow_color="#800080"
+                app:civ_shadow_gravity="center"
+                app:civ_shadow_radius="@dimen/_1sdp"
+                app:srcCompat="@drawable/ic_view_detail_icon_new" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

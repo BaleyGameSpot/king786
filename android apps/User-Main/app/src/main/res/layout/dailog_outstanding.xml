@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appThemeColor_1"
+            android:gravity="center"
+            android:minHeight="200dp"
+            android:orientation="vertical">
+
+            <com.view.MTextView
+                android:id="@+id/outStandingTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:maxLines="1"
+                tools:text="Outstanding Amount"
+                android:textColor="@color/appThemeColor_TXT_1"
+                android:textSize="@dimen/txt_size_16"
+                app:customTypeFace="@string/system_medium" />
+
+            <com.view.MTextView
+                android:id="@+id/outStandingValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:maxLines="1"
+                tools:text="$ 100.0"
+                android:textColor="@color/appThemeColor_TXT_1"
+                android:textSize="@dimen/_27sdp"
+                app:customTypeFace="@string/system_bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cardArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            tools:visibility="visible"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_gravity="center_vertical"
+                android:id="@+id/imgCardPayNow"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_pay_now"
+                tools:ignore="ContentDescription" />
+
+            <com.view.MTextView
+                android:id="@+id/cardtitleTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                tools:text="Pay Now"
+                android:gravity="start|center_vertical"
+                android:minHeight="30dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text23Pro_Dark_1"
+                android:textSize="@dimen/txt_size_14"
+                app:customTypeFace="@string/system_medium" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cardimagearrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_weight="0"
+                android:clickable="false"
+                app:srcCompat="@mipmap/ic_arrow_right"
+                app:tint="#9f9f9f" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/cashAreaSeparation"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/below_shadow" />
+
+        <LinearLayout
+            android:id="@+id/adjustarea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_gravity="center_vertical"
+                android:id="@+id/imgAdjustInTrip"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:src="@drawable/ic_adjust_in_trip"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/adjustTitleTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:clickable="false"
+                    tools:text="Adjust in trip"
+                    android:gravity="start|center_vertical"
+                    android:minHeight="30dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text23Pro_Dark_1"
+                    android:textSize="@dimen/txt_size_14"
+                    app:customTypeFace="@string/system_medium"  />
+
+                <com.view.MTextView
+                    android:id="@+id/adjustSubTitleTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:clickable="false"
+                    tools:text="Outstanding amount will be added in invoice total amount"
+                    android:gravity="start|center_vertical"
+                    android:minHeight="30dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text23Pro_Dark_1"
+                    android:textSize="@dimen/txt_size_10"
+                    app:customTypeFace="@string/system_medium" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/adjustimagearrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_weight="0"
+                android:clickable="false"
+                app:srcCompat="@mipmap/ic_arrow_right"
+                app:tint="#9f9f9f" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/adjustarea_seperation"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:visibility="visible"
+            android:background="@drawable/below_shadow" />
+
+        <com.view.MTextView
+            android:id="@+id/adjustTripMessageTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_margin="12dp"
+            android:clickable="false"
+            tools:text="You have an outstanding amount  A$ 30.00, Please contact us to clear any dues, You will be able to book services after clearing dues"
+            android:gravity="start|center_vertical"
+            android:minHeight="30dp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text23Pro_Dark_1"
+            android:textSize="@dimen/txt_size_14"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:customTypeFace="@string/system_medium" />
+
+        <View
+            android:id="@+id/contactUsAreaSeperation"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:visibility="gone"
+            android:background="@drawable/below_shadow" />
+
+        <LinearLayout
+            android:id="@+id/bottombtnarea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/reschedulearea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="visible">
+
+                <include
+                    android:id="@+id/btn_type2"
+                    layout="@layout/btn_type_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/all_btn_height"
+                    android:layout_gravity="bottom" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/contactUsArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_weight="1">
+
+                <com.view.MTextView
+                    android:background="@drawable/btn_type_1_rounded_corner_fill"
+                    android:id="@+id/contactUsTxt"
+                    android:textSize="@dimen/_13ssp"
+                    tools:text="Contact Us"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/all_btn_height"
+                    android:layout_gravity="bottom"
+                    app:customTypeFace="@string/system_medium"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+       <!-- <include
+            android:id="@+id/btn_type2"
+            layout="@layout/btn_type_1"
+            android:layout_width="150dp"
+            android:layout_height="@dimen/all_btn_height"
+            android:layout_gravity="bottom|center"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:paddingBottom="10dp" />-->
+    </LinearLayout>
+</LinearLayout>

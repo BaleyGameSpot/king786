@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<!--    &lt;!&ndash; Drop Shadow Stack &ndash;&gt;-->
+<!--    <item android:right="@dimen/_280sdp" >-->
+<!--        <shape>-->
+<!--            <padding android:bottom="@dimen/_1sdp" />-->
+
+<!--            <solid android:color="#00CCCCCC" />-->
+
+<!--            <corners android:bottomLeftRadius="@dimen/_20sdp" />-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--    <item android:right="@dimen/_280sdp" >-->
+<!--        <shape>-->
+
+<!--            <padding android:bottom="@dimen/_1sdp" />-->
+<!--            <solid android:color="#10CCCCCC" />-->
+
+<!--            <corners android:bottomLeftRadius="@dimen/_20sdp" />-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--    <item android:right="@dimen/_280sdp" >-->
+<!--        <shape>-->
+
+<!--            <padding android:bottom="@dimen/_1sdp" />-->
+<!--            <solid android:color="#20CCCCCC" />-->
+
+<!--            <corners android:bottomLeftRadius="@dimen/_20sdp" />-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--    <item android:right="@dimen/_280sdp" >-->
+<!--        <shape>-->
+<!--            <padding android:bottom="@dimen/_1sdp" />-->
+<!--            <solid android:color="#30CCCCCC" />-->
+
+<!--            <corners android:bottomLeftRadius="@dimen/_20sdp" />-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--    <item android:right="@dimen/_280sdp" >-->
+<!--        <shape>-->
+<!--            <padding android:bottom="@dimen/_1sdp" />-->
+
+
+<!--            <solid android:color="#50CCCCCC" />-->
+
+<!--            <corners android:bottomLeftRadius="@dimen/_20sdp" />-->
+<!--        </shape>-->
+<!--    </item>-->
+
+    <!-- Background -->
+    <item android:id="@+id/bannerBgView">
+        <shape >
+
+            <solid android:color="@color/appThemeColor_1" />
+
+<!--            <corners android:bottomLeftRadius="@dimen/_20sdp" />-->
+        </shape>
+    </item>
+
+</layer-list>

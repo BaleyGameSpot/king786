@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottomArea"
+            android:layout_below="@+id/topHeader"
+            android:layout_marginBottom="@dimen/_minus3sdp">
+
+            <RelativeLayout
+                android:id="@+id/mapFragmentContainer"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/pinImgView"
+                android:layout_width="@dimen/_23sdp"
+                android:layout_height="@dimen/_46sdp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_20sdp"
+                app:srcCompat="@drawable/ic_round_pin" />
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/backImgView"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_gravity="start|end"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:elevation="@dimen/_5sdp"
+            app:srcCompat="@drawable/ic_back_new" />
+
+        <LinearLayout
+            android:id="@+id/topHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:id="@+id/seperationLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#cecece"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/placeArea"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.view.MTextView
+                    android:id="@+id/homePlaceTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="#333"
+                    android:textSize="@dimen/txt_size_16"
+                    android:visibility="gone"
+                    tools:text="Home Place" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="0"
+                    android:background="#cecece" />
+
+                <com.view.MTextView
+                    android:id="@+id/workPlaceTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="#333"
+                    android:textSize="@dimen/txt_size_16"
+                    android:visibility="gone"
+                    tools:text="Work Place" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/card_view_23_white_top_flat"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <com.view.MTextView
+                android:id="@+id/titleTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fadingEdge="horizontal"
+                android:gravity="start|center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textAllCaps="true"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_13ssp"
+                app:customTypeFace="@string/system_bold"
+                tools:text="Your Location" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:background="@drawable/card_view_23_gray_shadow"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_9sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_gravity="top"
+                    android:layout_marginStart="@dimen/_9sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    app:srcCompat="@drawable/ic_location_pro" />
+
+                <com.view.MTextView
+                    android:id="@+id/placeTxtView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_12sdp"
+                    android:layout_weight="1"
+                    android:autoSizeStepGranularity="@dimen/_1ssp"
+                    android:clickable="false"
+                    android:gravity="start"
+                    android:maxLines="3"
+                    android:minLines="3"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_1sdp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/textSub23Pro_gray"
+                    android:textSize="@dimen/_10ssp"
+                    app:autoSizeMaxTextSize="@dimen/_11ssp"
+                    app:autoSizeMinTextSize="@dimen/_10ssp"
+                    app:autoSizeTextType="uniform"
+                    app:customTypeFace="@string/system_regular"
+                    tools:ignore="UnusedAttribute"
+                    tools:text="Prahlad Nagar" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/locationImage"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    app:srcCompat="@drawable/ic_edit_no_stroke" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp">
+
+                <include
+                    android:id="@+id/doneBtn"
+                    layout="@layout/btn_type_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/all_btn_height" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

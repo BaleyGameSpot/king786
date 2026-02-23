@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/prefImage"
+            android:layout_width="@dimen/_66sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:srcCompat="@drawable/ic_pref_setting" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cancelImg"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_7sdp"
+            android:padding="@dimen/_5sdp"
+            app:srcCompat="@drawable/ic_close_round" />
+
+        <com.view.MTextView
+            android:id="@+id/TitleTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prefImage"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:textAlignment="center"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_18ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="@string/app_name" />
+
+        <LinearLayout
+            android:id="@+id/containArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TitleTxt"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_11sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:background="@drawable/card_view_23_gray_shadow"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_view_23_white_shadow"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_13sdp">
+
+                <CheckBox
+                    android:id="@+id/checkboxFemale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:fontFamily="@string/system_semi_bold"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_11ssp"
+                    android:theme="@style/checkBoxStyle"
+                    tools:text="@string/app_name" />
+
+                <com.view.MTextView
+                    android:id="@+id/noteText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_27sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:textColor="@color/text23Pro_Light"
+                    android:textSize="@dimen/_9ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="@string/app_name" />
+
+                <View
+                    android:id="@+id/femaleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:background="@color/view23ProBG" />
+
+                <CheckBox
+                    android:id="@+id/checkboxHandicap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:fontFamily="@string/system_semi_bold"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_11ssp"
+                    android:theme="@style/checkBoxStyle"
+                    tools:text="@string/app_name" />
+
+                <View
+                    android:id="@+id/handicapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:background="@color/view23ProBG" />
+
+                <CheckBox
+                    android:id="@+id/checkboxChildSeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:fontFamily="@string/system_semi_bold"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_11ssp"
+                    android:theme="@style/checkBoxStyle"
+                    tools:text="@string/app_name" />
+
+                <View
+                    android:id="@+id/checkboxWheelChairView"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:background="@color/view23ProBG" />
+
+                <CheckBox
+                    android:id="@+id/checkboxWheelChair"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:fontFamily="@string/system_semi_bold"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_11ssp"
+                    android:theme="@style/checkBoxStyle"
+                    tools:text="@string/app_name" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/updateBtn"
+            layout="@layout/btn_type_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_btn_height"
+            android:layout_below="@id/containArea"
+            android:layout_marginStart="@dimen/_22sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_22sdp"
+            android:layout_marginBottom="@dimen/_11sdp" />
+    </RelativeLayout>
+</layout>

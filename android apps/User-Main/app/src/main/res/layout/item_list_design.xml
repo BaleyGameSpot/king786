@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainArea"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:background="@drawable/card_view_23_white_line_flat_1"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <com.view.MTextView
+        android:id="@+id/rowTitleTxtView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_weight="1"
+        android:gravity="center_vertical|start"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:text=""
+        android:textAlignment="viewStart"
+        android:textColor="#646464"
+        android:textSize="@dimen/_12ssp"
+        app:customTypeFace="@string/system_regular" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgCheck"
+        android:layout_width="@dimen/_22sdp"
+        android:layout_height="@dimen/_22sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:padding="@dimen/_2sdp"
+        app:srcCompat="@drawable/ic_checkmark" />
+</LinearLayout>

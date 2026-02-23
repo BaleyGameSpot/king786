@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#384255">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <org.webrtc.SurfaceViewRenderer
+                android:id="@+id/sfLocalView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <org.webrtc.SurfaceViewRenderer
+                android:id="@+id/sfRemoteView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.view.SelectableRoundedImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:scaleType="centerCrop"
+                app:sriv_border_color="@color/grayBorder_E6"
+                app:sriv_border_width="2dip"
+                app:sriv_oval="true" />
+
+            <com.view.MTextView
+                android:id="@+id/nameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20ssp"
+                app:customTypeFace="@string/system_semi_bold" />
+
+            <com.view.MTextView
+                android:id="@+id/stateTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:textColor="@color/grayBorder_E6"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_medium"
+                tools:text="calling..." />
+
+            <com.view.MTextView
+                android:id="@+id/callTimeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/grayBorder_E6"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_medium"
+                tools:text="00:00" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_11sdp"
+            android:baselineAligned="false"
+            android:minHeight="@dimen/_75sdp">
+
+            <LinearLayout
+                android:id="@+id/speakerArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/speakerImgBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_circle" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/speakerImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_speaker" />
+                </RelativeLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/speakerTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:lines="2"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_medium"
+                    tools:text="speaker" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cameraArea"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/cameraImgBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_circle" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/cameraImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:padding="@dimen/_13sdp"
+                        app:srcCompat="@drawable/ic_camera" />
+                </RelativeLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/cameraTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:lines="2"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_medium"
+                    tools:text="camera" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/switchArea"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/switchImgBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_circle" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/switchImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_cam_switch" />
+                </RelativeLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/switchTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:lines="2"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_medium"
+                    tools:text="switch dffsdf" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/muteArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/muteImgBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_circle" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/muteImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_mute" />
+                </RelativeLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/muteTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:lines="2"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_medium"
+                    tools:text="mute" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/declineArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_circle"
+                        app:tint="#F13E33" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/declineImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_call_end" />
+                </RelativeLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/declineTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:lines="2"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_medium"
+                    tools:text="decline" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/acceptArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    tools:ignore="NestedWeights">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_circle"
+                        app:tint="#62D45E" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/acceptImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_call" />
+                </RelativeLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/acceptTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:lines="2"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_medium"
+                    tools:text="accept" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

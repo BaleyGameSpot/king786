@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/mainarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/history_reason_border"
+        android:backgroundTint="@color/grayBorder_E6"
+        android:orientation="horizontal">
+
+
+        <com.view.MTextView
+
+            android:id="@+id/parkingTimeTxtView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_6sdp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingTop="@dimen/_2sdp"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_10ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="10 am - 11" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

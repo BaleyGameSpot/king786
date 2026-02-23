@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/topArea"
+                android:layout_marginTop="@dimen/_minus18sdp"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/noLocationView"
+                    layout="@layout/deliver_all_no_location_view"
+                    android:visibility="gone" />
+
+                <com.general.files.MySwipeRefreshLayout
+                    android:id="@+id/swipeRefresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.coordinatorlayout.widget.CoordinatorLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.appbar.AppBarLayout
+                            android:id="@+id/appBarLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="0dp"
+                            android:stateListAnimator="@null">
+
+                            <com.google.android.material.appbar.CollapsingToolbarLayout
+                                android:id="@+id/collapsingToolbar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:animateLayoutChanges="true"
+                                android:fitsSystemWindows="true"
+                                app:expandedTitleMarginEnd="64dp"
+                                app:expandedTitleMarginStart="48dp"
+                                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:orientation="vertical">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_18sdp"
+                                        android:background="@color/transparent_full"
+                                        tools:ignore="TooDeepLayout" />
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/rvBanner"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_15sdp"
+                                        android:clipToPadding="false"
+                                        android:orientation="horizontal"
+                                        android:paddingStart="@dimen/_15sdp"
+                                        android:paddingEnd="@dimen/_15sdp"
+                                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                        tools:listitem="@layout/item_common23_banner" />
+
+                                    <LinearLayout
+                                        android:id="@+id/cuisineArea"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_15sdp"
+                                        android:gravity="start|top"
+                                        android:orientation="vertical">
+
+                                        <com.view.MTextView
+                                            android:id="@+id/cuisinesTxt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_15sdp"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/_15ssp"
+                                            app:customTypeFace="@string/system_bold"
+                                            tools:text="@string/app_name" />
+
+                                        <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/rvCuisinesList"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginTop="@dimen/_11sdp"
+                                            android:background="@color/transparent_full"
+                                            android:clipToPadding="false"
+                                            android:orientation="horizontal"
+                                            android:paddingStart="@dimen/_10sdp"
+                                            android:paddingEnd="0dp"
+                                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                            tools:listitem="@layout/item_cuisines24" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_15sdp"
+                                android:background="@color/white" />
+
+                            <LinearLayout
+                                android:id="@+id/storeCounterArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white">
+
+                                <com.view.MTextView
+                                    android:id="@+id/noOfServiceTxt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_weight="1"
+                                    android:gravity="start|center"
+                                    android:paddingStart="@dimen/_15sdp"
+                                    android:paddingEnd="@dimen/_1sdp"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_16ssp"
+                                    app:customTypeFace="@string/system_semi_bold"
+                                    tools:text="@string/app_name" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/filterImage"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_gravity="center"
+                                    app:srcCompat="@drawable/ic_check_mark"
+                                    app:tint="@color/appThemeColor_1" />
+
+                                <com.view.MTextView
+                                    android:id="@+id/filterTxtView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:layout_weight="0"
+                                    android:gravity="start|center"
+                                    android:paddingStart="@dimen/_1sdp"
+                                    android:paddingEnd="@dimen/_5sdp"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="@color/appThemeColor_1"
+                                    android:textSize="@dimen/_12ssp"
+                                    app:customTypeFace="@string/system_bold"
+                                    tools:text="filter" />
+                            </LinearLayout>
+                        </com.google.android.material.appbar.AppBarLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/listArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                            <com.view.MTextView
+                                android:id="@+id/noDataTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="@dimen/_11sdp"
+                                android:text="@string/app_name"
+                                android:textColor="@color/appThemeColor_1"
+                                android:textSize="@dimen/txt_size_14"
+                                app:customTypeFace="@string/system_bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@+id/noDataTxt"
+                                android:orientation="vertical">
+
+                                <com.general.files.KmRecyclerView
+                                    android:id="@+id/rvDataList"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                    tools:itemCount="1"
+                                    tools:listitem="@layout/item_store_grid_24" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/rvSeeAllDataList"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical"
+                                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                        tools:itemCount="1"
+                                        tools:listitem="@layout/item_store_list_24" />
+
+                                    <include
+                                        android:id="@+id/footerInclude"
+                                        layout="@layout/footer_list" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:id="@+id/loadingData"
+                                style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="@dimen/_30sdp" />
+                        </RelativeLayout>
+                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                </com.general.files.MySwipeRefreshLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/topArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@color/appThemeColor_1"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/backImgView"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        app:srcCompat="@drawable/ic_arrow_back"
+                        app:tint="@color/appThemeColor_TXT_1" />
+
+                    <com.view.MTextView
+                        android:id="@+id/headerAddressTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawableStart="@drawable/ic_location_pro"
+                        android:drawableEnd="@drawable/ic_down_arrow_header"
+                        android:drawablePadding="@dimen/_6sdp"
+                        android:ellipsize="end"
+                        android:gravity="start|center"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        app:customTypeFace="@string/system_regular"
+                        app:drawableTint="@color/white"
+                        tools:text="@string/app_name" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/viewBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_15sdp"
+                    android:background="@color/appThemeColor_1" />
+
+                <RelativeLayout
+                    android:id="@+id/topSearchFilterArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_minus15sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/searchArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_7sdp"
+                        android:layout_toStartOf="@+id/filterArea"
+                        android:background="@drawable/card_view_23_search_bg_4dp_without_shadow"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_8sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:clickable="false"
+                            app:srcCompat="@drawable/ic_search_restaurant" />
+
+                        <com.view.MTextView
+                            android:id="@+id/searchTxtView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:clickable="false"
+                            android:includeFontPadding="false"
+                            android:textColor="#7d7d7d"
+                            android:textSize="@dimen/_11ssp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:hint="search" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/filterArea"
+                        android:layout_width="@dimen/_36sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:background="@drawable/card_view_23_search_bg_4dp_without_shadow"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_8sdp"
+                        android:paddingBottom="@dimen/_5sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:clickable="false"
+                            app:srcCompat="@drawable/ic_filter_icon"
+                            app:tint="@color/appThemeColor_1" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <com.andremion.counterfab.CounterFab
+                    android:id="@+id/cartFabIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:backgroundTint="@color/appThemeColor_1"
+                    app:badgeBackgroundColor="@color/black"
+                    app:badgeTextColor="@color/white"
+                    app:borderWidth="0dp"
+                    app:fabSize="normal"
+                    app:srcCompat="@drawable/cart_new"
+                    app:tint="@color/white" />
+
+                <include
+                    android:id="@+id/ratingArea"
+                    layout="@layout/item_list_rating" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <com.view.ErrorView
+            android:id="@+id/errorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+</layout>

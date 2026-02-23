@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/design_toolbar_general" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.view.CircularImageView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_30sdp"
+                app:civ_border="true"
+                app:civ_border_color="@color/transparent_full"
+                app:civ_border_width="0dp"
+                app:civ_shadow="true"
+                app:civ_shadow_color="#FF0000"
+                app:civ_shadow_gravity="center"
+                app:civ_shadow_radius="@dimen/_4sdp"
+                app:srcCompat="@drawable/ic_emergency" />
+
+            <com.view.MTextView
+                android:id="@+id/pageTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_16ssp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="text" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="#ECECEC"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@drawable/card_view_23_white_shadow"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/policeContactArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:id="@+id/phoneImgView"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_phone" />
+                </LinearLayout>
+
+
+                <com.view.MTextView
+                    android:id="@+id/callPoliceTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:gravity="start|center_vertical"
+                    android:textAlignment="viewStart"
+                    android:textColor="#141414"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="text" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Arrow1"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:clickable="false"
+                    app:srcCompat="@drawable/ic_arrow"
+                    app:tint="@color/text23Pro_Light" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="#ECECEC" />
+
+            <LinearLayout
+                android:id="@+id/emeContactArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:id="@+id/alertImgView"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_message" />
+                </LinearLayout>
+
+
+                <com.view.MTextView
+                    android:id="@+id/sendAlertTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|start"
+                    android:textAlignment="viewStart"
+                    android:textColor="#141414"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="text" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Arrow2"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:clickable="false"
+                    app:srcCompat="@drawable/ic_arrow"
+                    app:tint="@color/text23Pro_Light" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

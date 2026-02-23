@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/card_view_23_gray_shadow">
+
+            <LinearLayout
+                android:id="@+id/bookingArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/headerArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/historyNoHTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_13ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Booking#" />
+
+                        <com.view.MTextView
+                            android:id="@+id/historyNoVTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_13ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="4545454" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/statusArea"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_gravity="end|center"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/border_fill"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/statusVTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:textColor="@color/appThemeColor_TXT_1"
+                            android:textSize="@dimen/_9sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="@string/app_name" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/contentArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/typeArea"
+                            android:layout_width="@dimen/_71sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/border_fill"
+                            android:gravity="center">
+
+                            <com.view.MTextView
+                                android:id="@+id/SelectedTypeNameTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_9sdp"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="@string/app_name" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/driverDetailArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <com.view.MTextView
+                                android:id="@+id/providerNameTxt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:clickable="false"
+                                android:ellipsize="end"
+                                android:gravity="start|center_vertical"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:text="Dany Jose "
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_12ssp"
+                                app:customTypeFace="@string/system_semi_bold" />
+
+                            <LinearLayout
+                                android:id="@+id/ratingview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_minus3sdp"
+                                android:gravity="center_vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ratingImg"
+                                    android:layout_width="@dimen/_11sdp"
+                                    android:layout_height="@dimen/_11sdp"
+                                    app:srcCompat="@drawable/ic_star_filled" />
+
+                                <com.view.MTextView
+                                    android:id="@+id/driverRating"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_3sdp"
+                                    android:includeFontPadding="false"
+                                    android:textColor="@color/text23Pro_Dark"
+                                    android:textSize="@dimen/_11ssp"
+                                    app:customTypeFace="@string/system_semi_bold"
+                                    tools:text="5.4" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:clickable="false"
+                                    android:src="@drawable/ic_location_pro" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/pickupLocArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <com.view.MTextView
+                                        android:id="@+id/sourceAddressHTxt"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:clickable="false"
+                                        android:ellipsize="end"
+                                        android:gravity="start|center_vertical"
+                                        android:includeFontPadding="false"
+                                        android:maxLines="1"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="#929292"
+                                        android:textSize="@dimen/_9ssp"
+                                        android:visibility="gone"
+                                        app:customTypeFace="@string/system_regular"
+                                        tools:text="Pickup From" />
+                                </LinearLayout>
+
+                                <com.view.MTextView
+                                    android:id="@+id/sourceAddressTxt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:clickable="false"
+                                    android:ellipsize="end"
+                                    android:gravity="start|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="@color/textSub23Pro_gray"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:customTypeFace="@string/system_regular"
+                                    tools:text="PrahladNagar Cross Road,Iscon Char Rasta" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/viewBiddingDetailsArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_25sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:background="@drawable/selected_without_border"
+                                android:backgroundTint="@color/appThemeColor_1"
+                                android:gravity="center">
+
+                                <com.view.MTextView
+                                    android:id="@+id/viewBiddingTxt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_2sdp"
+                                    android:layout_marginEnd="@dimen/_2sdp"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/appThemeColor_TXT_1"
+                                    android:textStyle="normal"
+                                    app:autoSizeMaxTextSize="@dimen/_12sdp"
+                                    app:autoSizeMinTextSize="@dimen/_6sdp"
+                                    app:autoSizeStepGranularity="2sp"
+                                    app:autoSizeTextType="uniform"
+                                    app:customTypeFace="@string/system_semi_bold"
+                                    tools:text="View requested Services" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/cancelBiddingArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_25sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:background="@drawable/history_border"
+                                android:gravity="center">
+
+                                <com.view.MTextView
+                                    android:id="@+id/cancelBiddingTxt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_2sdp"
+                                    android:layout_marginEnd="@dimen/_2sdp"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/text23Pro_Dark"
+                                    android:textStyle="normal"
+                                    app:autoSizeMaxTextSize="@dimen/_12sdp"
+                                    app:autoSizeMinTextSize="@dimen/_6sdp"
+                                    app:autoSizeStepGranularity="2sp"
+                                    app:autoSizeTextType="uniform"
+                                    app:customTypeFace="@string/system_regular"
+                                    tools:text="Cancel Bidding" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/viewDetailsArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_25sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:background="@drawable/selected_without_border"
+                                android:backgroundTint="@color/appThemeColor_1"
+                                android:gravity="center">
+
+                                <com.view.MTextView
+                                    android:id="@+id/viewDetailsTxt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_2sdp"
+                                    android:layout_marginEnd="@dimen/_2sdp"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/appThemeColor_TXT_1"
+                                    android:textStyle="normal"
+                                    app:autoSizeMaxTextSize="@dimen/_12sdp"
+                                    app:autoSizeMinTextSize="@dimen/_6sdp"
+                                    app:autoSizeStepGranularity="2sp"
+                                    app:autoSizeTextType="uniform"
+                                    app:customTypeFace="@string/system_semi_bold"
+                                    tools:text="View requested Services" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="#E3E3E3" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/dateTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start|center"
+                                android:gravity="start"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_10sdp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="25th may,2016 (Wed)" />
+
+                            <com.view.MTextView
+                                android:id="@+id/timeTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/text23Pro_Light"
+                                android:textSize="@dimen/_10sdp"
+                                android:visibility="visible"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="At 05:30 PM" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/totalFareVTxtBidding"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end|center"
+                                android:gravity="end"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/appThemeColor_1"
+                                android:textSize="@dimen/_10sdp"
+                                app:customTypeFace="@string/system_bold"
+                                tools:text="$ 50" />
+
+                            <com.view.MTextView
+                                android:id="@+id/totalFareHTxtBidding"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end|center"
+                                android:gravity="end"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/text23Pro_Light"
+                                android:textSize="@dimen/_10sdp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="Total fare" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

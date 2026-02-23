@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="mapKey">AIzaSyBGmMiF7A2SUNqhNLBGsjsZiGUtf_lfGhs</string>
+
+    <string name="app_name">buddyverse</string>
+    <string name="APP_TYPE_NAME">User</string>
+
+    <string name="demo_text">Note:\nSince this is the demo version, please use below dummy credit/debit card for testing. The actual payment will not be deducted.</string>
+    <string name="demo_mobile_help">Note: Please enter the OTP \"1234\" If you do not receive SMS/EMAIL on your registered number in next one minute.</string>
+
+    <string name="defaultFont">@string/system_regular</string>
+
+    <string name="system_light">fonts/OpenSans_Light.ttf</string>
+    <string name="system_regular">fonts/OpenSans_Regular.ttf</string>
+    <string name="system_medium">fonts/OpenSans_Medium.ttf</string>
+    <string name="system_semi_bold">fonts/OpenSans_SemiBold.ttf</string>
+    <string name="system_bold">fonts/OpenSans_Bold.ttf</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="html" translatable="false">
+        <![CDATA[
+        <html>
+            <head></head>
+            <body>%1$s</body>
+        </html>
+        ]]>
+    </string>
+
+    <string name="facebook_app_id">12345678</string>
+    <string name="facebook_client_token">56789</string>
+
+    <!--// not changes name-->
+    <string name="mdtp_date_week_day_formatter">EEE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="star">*</string>
+    <!--// not changes name-->
+
+</resources>

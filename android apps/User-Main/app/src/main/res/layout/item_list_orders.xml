@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/restaurantAdptrLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/card_view_23_gray_shadow">
+
+            <LinearLayout
+                android:id="@+id/dataArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/orderNoHTxtView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_13ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Tracking#" />
+
+                        <com.view.MTextView
+                            android:id="@+id/orderNoTxtView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_13ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="1274903889" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/statusArea"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/border_fill"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/orderStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:textColor="@color/appThemeColor_TXT_1"
+                            android:textSize="@dimen/_9ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Completed" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/contentArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/typeArea"
+                        android:layout_width="@dimen/_71sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/border_fill"
+                        android:gravity="center">
+
+                        <com.view.MTextView
+                            android:id="@+id/serviceNameTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="marquee"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_9sdp"
+                            app:customTypeFace="@string/system_medium"
+                            tools:text="@string/app_name" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/serviceArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="top|start|center"
+                                        android:layout_marginEnd="@dimen/_10sdp"
+                                        android:background="@drawable/card_view_23_white_shadow"
+                                        android:clipToOutline="true"
+                                        android:gravity="top|start|center"
+                                        android:orientation="vertical">
+
+                                        <com.view.SelectableRoundedImageView
+                                            android:id="@+id/OrderHotelImage"
+                                            android:layout_width="@dimen/_60sdp"
+                                            android:layout_height="@dimen/_60sdp"
+                                            app:sriv_left_bottom_corner_radius="@dimen/_7sdp"
+                                            app:sriv_left_top_corner_radius="@dimen/_7sdp"
+                                            app:sriv_oval="false"
+                                            app:sriv_right_bottom_corner_radius="@dimen/_7sdp"
+                                            app:sriv_right_top_corner_radius="@dimen/_7sdp" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <com.view.MTextView
+                                                android:id="@+id/orderHotelName"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="0dp"
+                                                android:layout_gravity="start|center_vertical"
+                                                android:layout_weight="1"
+                                                android:includeFontPadding="false"
+                                                android:maxLines="2"
+                                                android:textAlignment="viewStart"
+                                                android:textColor="@color/text23Pro_Dark"
+                                                android:textSize="@dimen/_14ssp"
+                                                app:customTypeFace="@string/system_semi_bold"
+                                                tools:text="Grill n More" />
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal">
+
+                                            <androidx.appcompat.widget.AppCompatImageView
+                                                android:id="@+id/location"
+                                                android:layout_width="@dimen/_15sdp"
+                                                android:layout_height="@dimen/_15sdp"
+                                                android:layout_marginTop="@dimen/_8sdp"
+                                                android:clickable="false"
+                                                android:src="@drawable/ic_location_pro" />
+
+                                            <com.view.MTextView
+                                                android:id="@+id/orderHotelAddress"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/_5sdp"
+                                                android:clickable="false"
+                                                android:ellipsize="end"
+                                                android:gravity="start|center_vertical"
+                                                android:includeFontPadding="false"
+                                                android:textAlignment="viewStart"
+                                                android:textColor="@color/textSub23Pro_gray"
+                                                android:textSize="@dimen/_11ssp"
+                                                app:customTypeFace="@string/system_regular" />
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ongoingBtnArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/TrackOrderBtnArea"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/history_border"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <com.view.MTextView
+                                android:id="@+id/btn_trackOrder"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_2sdp"
+                                android:layout_marginEnd="@dimen/_2sdp"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_10ssp"
+                                android:textStyle="normal"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="Track Order" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/vieDetailsArea"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/history_border"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <com.view.MTextView
+                                android:id="@+id/btn_viewDetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_2sdp"
+                                android:layout_marginEnd="@dimen/_2sdp"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_10sdp"
+                                android:textStyle="normal"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="View Details" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/helpArea"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_fill"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+
+                            <com.view.MTextView
+                                android:id="@+id/btn_help"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_2sdp"
+                                android:layout_marginEnd="@dimen/_2sdp"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_10ssp"
+                                android:textStyle="normal"
+                                app:customTypeFace="@string/system_medium" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/RatingArea"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_fill"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <com.view.MTextView
+                                android:id="@+id/btn_Rating"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_2sdp"
+                                android:layout_marginEnd="@dimen/_2sdp"
+                                android:ellipsize="marquee"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_10ssp"
+                                android:textStyle="normal"
+                                app:customTypeFace="@string/system_medium" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="#E3E3E3" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/orderDateVTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start|center"
+                                android:gravity="start"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_10sdp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="Thu, 22 Dec 22" />
+
+                            <com.view.MTextView
+                                android:id="@+id/orderTimeVTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/text23Pro_Light"
+                                android:textSize="@dimen/_10ssp"
+                                android:visibility="visible"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="At 05.30 PM" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/totalVtxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end|center"
+                                android:gravity="end"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/appThemeColor_1"
+                                android:textSize="@dimen/_10sdp"
+                                app:customTypeFace="@string/system_bold"
+                                tools:text="$ 50" />
+
+                            <com.view.MTextView
+                                android:id="@+id/totalHtxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end|center"
+                                android:gravity="end"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/text23Pro_Light"
+                                android:textSize="@dimen/_10sdp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="Total fare" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
+
+

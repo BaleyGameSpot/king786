@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#605E60"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_minus5sdp"
+            android:background="@drawable/card_view_23_white_line_flat_1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_15sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imagecar"
+                android:layout_width="@dimen/_53sdp"
+                android:layout_height="@dimen/_53sdp"
+                android:layout_gravity="center" />
+
+            <com.view.MTextView
+                android:id="@+id/carTypeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_11sdp"
+                android:gravity="center"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_11ssp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="Basic" />
+
+            <com.view.MTextView
+                android:id="@+id/pkgMsgTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_11sdp"
+                android:gravity="center"
+                android:textColor="@color/text23Pro_Light"
+                android:textSize="@dimen/_10ssp"
+                app:customTypeFace="@string/system_regular"
+                tools:text="fdgdfgsdf" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/card_view_23_gray_shadow"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:background="@drawable/card_view_23_white_shadow"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/capacityArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_12sdp"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/capacityHTxt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center"
+                            android:layout_weight="1"
+                            android:gravity="start|center"
+                            android:maxLines="1"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_11ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Capacity" />
+
+                        <com.view.MTextView
+                            android:id="@+id/capacityVTxt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end|center"
+                            android:layout_weight="1"
+                            android:gravity="end|center"
+                            android:maxLines="1"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_12ssp"
+                            app:customTypeFace="@string/system_medium"
+                            tools:text="5 People" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/view23ProBG" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_12sdp"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/fareHTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center"
+                            android:layout_weight="1"
+                            android:gravity="start|center"
+                            android:maxLines="1"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_11ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Fare" />
+
+                        <com.view.MTextView
+                            android:id="@+id/fareVTxt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end|center"
+                            android:layout_weight="1"
+                            android:gravity="end|center"
+                            android:maxLines="1"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_12ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="$ 22.00" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/mordetailslayout"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:orientation="horizontal">
+
+                <com.view.MTextView
+                    android:id="@+id/mordetailsTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/appThemeColor_1"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="More Details" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/morwArrow"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    app:srcCompat="@drawable/ic_down_arrow_23"
+                    app:tint="@color/appThemeColor_1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:background="@color/white"
+                android:elevation="@dimen/_4sdp"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/farenoteTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:gravity="center"
+                    android:textColor="@color/textSub23Pro_gray"
+                    android:textSize="@dimen/_9ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:ignore="RtlCompat"
+                    tools:text="This fare is based on our estimation. This may vary during trip and final fare." />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_20sdp">
+
+                    <include
+                        android:id="@+id/doneBtn"
+                        layout="@layout/btn_type_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme configuration -->
+    <color name="appThemeColor_1">#042f1e</color> <!--used for bg-->
+    <color name="appThemeColor_2">@color/appThemeColor_1</color> <!--used for bg-->
+    <color name="appThemeColor_Accent">#f7c423</color><!-- add 98 before app theme color 1-->
+
+    <color name="card_loading_prj">@color/appThemeColor_1</color> <!-- no not Delete-->
+    <color name="appThemeColor_Dark_1">@color/appThemeColor_1</color> <!--used for Border-->
+    <color name="appThemeColor_hover_1">#140272</color> <!--used for hover-->
+
+    <color name="appThemeColor_70">#042f1e</color> <!-- add 70 before app theme color 1-->
+    <color name="appThemeColor_98">#042f1e</color> <!-- add 98 before app theme color 1-->
+
+    <!-- Theme configuration End-->
+
+    <!--used for bg-->
+    <color name="appThemeColor_TXT_1">#FFFFFF</color> <!--used for text color-->
+    <color name="appThemeColor_TXT_2">#FFFFFF</color> <!--used for text color-->
+    <color name="appThemeColor_bg_parent_1">@android:color/transparent</color>
+
+    <!-- EditBox configuration Start-->
+    <color name="editBox_primary">@color/appThemeColor_1</color> <!--used for EditBox-->
+    <color name="editBox_primary_dark">@color/appThemeColor_1</color> <!--used for EditBox-->
+    <color name="editBox_accent">@color/appThemeColor_1</color> <!--used for EditBox-->
+    <!-- EditBox configuration End-->
+
+    <!-- Theme configuration End-->
+    <color name="introTxtcolor">#545454</color>
+    <color name="loginTxtcolor">@color/white</color>
+    <color name="registerTxtcolor">@color/white</color>
+    <color name="bt_error_red">#DD5555</color>
+    <color name="transparent_full">#00000000</color>
+    <!--Screen specific color start-->
+
+    <color name="verfiybtncolor">#FFFF3B</color>
+    <color name="imageBg">#E5E5EA</color>
+    <color name="app_login_txt_color">@color/white</color>
+    <color name="app_login_selected_border_color">@color/white</color>
+    <color name="app_login_unselected_border_color">@color/white</color>
+    <color name="app_login_selected_filled_color">@color/white</color>
+
+    <color name="gray_light">#E9EEF2</color>
+
+    <!--used for parent bg color if applies-->
+    <color name="eme_txt_color">#333333</color>
+
+    <!--Screen specific color end-->
+    <color name="menu_list_txt_color">#FFFFFF</color>
+
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_shadow">#10000000</color>
+
+    <color name="Gray">#808080</color>
+    <color name="disable_color">#1000</color>
+    <color name="Green">#009900</color>
+    <color name="green_1">#34C759</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#222222</color>
+    <color name="gray">#90909090</color>
+    <color name="activityBg">#F1F1F1</color>
+
+    <color name="pickup_req_later_btn">#E04847</color>
+
+    <item name="gray_holo_dark" type="color">#FF464646</item>
+    <item name="gray_holo_light" type="color">#FFd0d0d0</item>
+
+    <color name="shimmer_color">#A2878787</color>
+    <color name="light_transparent">#16000000</color>
+
+    <!--Multi Related colors-->
+
+    <color name="sourceAddressTxt">#1E5B99</color>
+    <color name="destAddressTxt">#333333</color>
+
+    <!--Deliver all-->
+
+    <color name="orange">#D7740E</color>
+    <color name="orangeLight">#D6740C</color>
+    <color name="order_item_gray_color">#D8D8D8</color>
+    <color name="defaultTextColor">#7C7C7C</color>
+    <color name="green">#008000</color>
+    <color name="green_light">#C1EEB4</color>
+    <color name="textColor">#272727</color>
+    <color name="red">#FF0000</color>
+    <color name="Red">#CC0000</color>
+    <color name="red_1">#CC392F</color>
+    <!--used for drawer text-->
+    <color name="requestTimerColor">@color/appThemeColor_TXT_1</color>
+    <color name="greyish">#FFF2F1F2</color>
+    <color name="ratingfill">#FBB100</color>
+    <color name="homedeSelectColor">#787878</color>
+    <color name="mdtp_transparent_full">#00000000</color>
+
+
+    <color name="pickup_req_now_btn">#529800</color>
+    <item name="rating_fill_color" type="color">#FAB00A</item>
+
+    <!--    country lib color-->
+    <color name="countryNameColorOnLight">#000000</color>
+    <color name="dialCodeColorOnLight">#000000</color>
+    <color name="rowBackgroundColorLight">#FFFFFF</color>
+    <color name="rowBackgroundSelectedColorLight">#D7D5D5</color>
+    <color name="defaultColor">#AAA</color>
+    <color name="delivery_disable_line">#C0C0C0</color>
+    <color name="dark_green">#046C62</color>
+    <color name="dark_green_secondary">#128A7F</color>
+    <!--   // country lib color-->
+    <color name="blue">#0000FF</color>
+    <!--   23 Pro color-->
+    <color name="cardView23ProBG">#F6F6F6</color>
+    <color name="view23ProBG">#DDDDDD</color>
+    <color name="view23ProBG_Light">#EBEBEB</color>
+    <color name="imageCircleBg23Pro_Light">#F2F2F2</color>
+
+    <color name="text23Pro_Light">#8FA1B4</color>
+    <color name="text23Pro_Dark">#1B2A3B</color>
+    <color name="textSub23Pro_gray">#707070</color>
+
+    <color name="Red_23Pro">#FF3333</color>
+    <color name="commonText_Dark">#191919</color>
+    <color name="commonText_Light">#817E7E</color>
+    <color name="homeSelectColor_23">#1C1C1C</color>
+    <color name="homeDeSelectColor_23">#A0A0A0</color>
+    <color name="grayBorder_E6">#E6E6E6</color>
+    <!--   // 23 Pro color-->
+
+    <!--// not changes name-->
+    <!--<color name="mdtp_date_picker_dot_highlighted">@color/red</color>
+    <color name="mdtp_date_picker_highlighted_dot_dark_theme">@color/red</color>-->
+    <!--// not changes name-->
+
+</resources>

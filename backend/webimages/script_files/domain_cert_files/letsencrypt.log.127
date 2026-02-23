@@ -1,0 +1,85 @@
+2025-06-11 00:25:01,875:DEBUG:certbot._internal.main:certbot version: 1.22.0
+2025-06-11 00:25:01,876:DEBUG:certbot._internal.main:Location of certbot entry point: /bin/certbot
+2025-06-11 00:25:01,876:DEBUG:certbot._internal.main:Arguments: ['--standalone', '-d', 'apiservice.ridey.co', '--keep-until-expiring', '--agree-tos', '--email', 'markduo19@gmail.com', '--non-interactive', '--cert-path', '/home/ridey/public_html/webimages/script_files/domain_cert_files/', '--config-dir', '/home/ridey/public_html/webimages/script_files/domain_cert_files/', '--work-dir', '/home/ridey/public_html/webimages/script_files/domain_cert_files/', '--logs-dir', '/home/ridey/public_html/webimages/script_files/domain_cert_files/', '--pre-hook', 'service httpd stop', '--post-hook', 'service httpd start']
+2025-06-11 00:25:01,876:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-06-11 00:25:01,890:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-06-11 00:25:01,891:DEBUG:certbot._internal.plugins.selection:Requested authenticator standalone and installer None
+2025-06-11 00:25:01,892:DEBUG:certbot._internal.plugins.selection:Single candidate plugin: * standalone
+Description: Spin up a temporary webserver
+Interfaces: Authenticator, Plugin
+Entry point: standalone = certbot._internal.plugins.standalone:Authenticator
+Initialized: <certbot._internal.plugins.standalone.Authenticator object at 0x7fa6159dea90>
+Prep: True
+2025-06-11 00:25:01,893:DEBUG:certbot._internal.plugins.selection:Selected authenticator <certbot._internal.plugins.standalone.Authenticator object at 0x7fa6159dea90> and installer None
+2025-06-11 00:25:01,893:INFO:certbot._internal.plugins.selection:Plugins selected: Authenticator standalone, Installer None
+2025-06-11 00:25:01,902:DEBUG:certbot._internal.main:Picked account: <Account(RegistrationResource(body=Registration(key=None, contact=(), agreement=None, status=None, terms_of_service_agreed=None, only_return_existing=None, external_account_binding=None), uri='https://acme-v02.api.letsencrypt.org/acme/acct/2428023727', new_authzr_uri=None, terms_of_service=None), e93723be644b8d7beacce4d47e66bcc0, Meta(creation_dt=datetime.datetime(2025, 5, 28, 17, 20, 46, tzinfo=<UTC>), creation_host='server.dudedev.com', register_to_eff=None))>
+2025-06-11 00:25:01,903:DEBUG:acme.client:Sending GET request to https://acme-v02.api.letsencrypt.org/directory.
+2025-06-11 00:25:01,905:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): acme-v02.api.letsencrypt.org:443
+2025-06-11 00:25:01,905:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/urllib3/connection.py", line 162, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "/usr/lib/python3.6/site-packages/urllib3/util/connection.py", line 57, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib64/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/usr/lib/python3.6/site-packages/urllib3/connectionpool.py", line 344, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3.6/site-packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3.6/site-packages/urllib3/connection.py", line 315, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3.6/site-packages/urllib3/connection.py", line 171, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.VerifiedHTTPSConnection object at 0x7fa612acbfd0>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/site-packages/requests/adapters.py", line 622, in send
+    timeout=timeout
+  File "/usr/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/lib/python3.6/site-packages/urllib3/util/retry.py", line 399, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='acme-v02.api.letsencrypt.org', port=443): Max retries exceeded with url: /directory (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fa612acbfd0>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/bin/certbot", line 11, in <module>
+    load_entry_point('certbot==1.22.0', 'console_scripts', 'certbot')()
+  File "/usr/lib/python3.6/site-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+  File "/usr/lib/python3.6/site-packages/certbot/_internal/main.py", line 1632, in main
+    return config.func(config, plugins)
+  File "/usr/lib/python3.6/site-packages/certbot/_internal/main.py", line 1473, in certonly
+    le_client = _init_le_client(config, auth, installer)
+  File "/usr/lib/python3.6/site-packages/certbot/_internal/main.py", line 793, in _init_le_client
+    return client.Client(config, acc, authenticator, installer, acme=acme)
+  File "/usr/lib/python3.6/site-packages/certbot/_internal/client.py", line 294, in __init__
+    acme = acme_from_config_key(config, self.account.key, self.account.regr)
+  File "/usr/lib/python3.6/site-packages/certbot/_internal/client.py", line 59, in acme_from_config_key
+    client = acme_client.BackwardsCompatibleClientV2(net, key, config.server)
+  File "/usr/lib/python3.6/site-packages/acme/client.py", line 875, in __init__
+    directory = messages.Directory.from_json(net.get(server).json())
+  File "/usr/lib/python3.6/site-packages/acme/client.py", line 1236, in get
+    self._send_request('GET', url, **kwargs), content_type=content_type)
+  File "/usr/lib/python3.6/site-packages/acme/client.py", line 1174, in _send_request
+    response = self.session.request(method, url, *args, **kwargs)
+  File "/usr/lib/python3.6/site-packages/requests/sessions.py", line 535, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3.6/site-packages/requests/sessions.py", line 648, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3.6/site-packages/requests/adapters.py", line 689, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='acme-v02.api.letsencrypt.org', port=443): Max retries exceeded with url: /directory (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fa612acbfd0>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+2025-06-11 00:25:01,907:ERROR:certbot._internal.log:An unexpected error occurred:
+2025-06-11 00:25:01,907:ERROR:certbot._internal.log:requests.exceptions.ConnectionError: HTTPSConnectionPool(host='acme-v02.api.letsencrypt.org', port=443): Max retries exceeded with url: /directory (Caused by NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x7fa612acbfd0>: Failed to establish a new connection: [Errno -2] Name or service not known',))

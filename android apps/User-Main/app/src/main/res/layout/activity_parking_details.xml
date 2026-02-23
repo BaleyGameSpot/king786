@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar_include"
+                layout="@layout/design_toolbar_general" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:background="@color/appThemeColor_1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:background="@drawable/card_view_23_white_shadow"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_11sdp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_8sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            app:srcCompat="@drawable/ic_location_pro" />
+
+                        <com.view.MTextView
+                            android:id="@+id/tAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_12ssp"
+                            app:autoSizeMaxTextSize="@dimen/_20ssp"
+                            app:autoSizeMinTextSize="@dimen/_9ssp"
+                            app:autoSizeStepGranularity="@dimen/_1ssp"
+                            app:autoSizeTextType="uniform"
+                            tools:text="Mondal Square, B205C, Ahemdabad, Gujrat, India" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center">
+
+                        <com.view.simpleratingbar.SimpleRatingBar
+                            android:id="@+id/ratingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:backgroundTint="@color/gray_holo_light"
+                            android:padding="2dp"
+                            app:SRB_fillColor="@color/ratingfill"
+                            app:SRB_isIndicator="true"
+                            app:SRB_numberOfStars="5"
+                            app:SRB_starBackgroundColor="@color/gray_holo_light"
+                            app:SRB_starSize="19sp"
+                            app:SRB_stepSize="0.5" />
+
+                        <com.view.MTextView
+                            android:id="@+id/avgRating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_6sdp"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_11ssp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="(1)" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_11sdp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:gravity="start"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/parkingFrom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text23Pro_Light"
+                                android:textSize="@dimen/_11ssp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="Parking from" />
+
+                            <com.view.MTextView
+                                android:id="@+id/fromDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_9ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="14 Jun at 10:00" />
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_arrow_long"
+                            app:tint="@color/text23Pro_Light" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:gravity="end"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/parkingUntil"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text23Pro_Light"
+                                android:textSize="@dimen/_11ssp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="Parking from" />
+
+                            <com.view.MTextView
+                                android:id="@+id/untilDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_9ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="14 Jun at 10:00" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@color/cardView23ProBG"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/_11ssp"
+                        android:paddingEnd="@dimen/_11ssp"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_6sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/totalDuration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_9ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="20 mins" />
+
+                            <com.view.MTextView
+                                android:id="@+id/totalDurationHTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text23Pro_Light"
+                                android:textSize="@dimen/_10ssp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="Total Duration" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="@dimen/_1sdp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_marginBottom="@dimen/_3sdp"
+                            android:background="@color/border_gray_light_1" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_6sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/parkingFee"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_9ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="$20.03/Hour" />
+
+                            <com.view.MTextView
+                                android:id="@+id/parkingFeeHTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text23Pro_Light"
+                                android:textSize="@dimen/_10ssp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="Parking fee" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="@dimen/_1sdp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_marginBottom="@dimen/_3sdp"
+                            android:background="@color/border_gray_light_1" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_6sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/toDistance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_9ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="14 Jun at 10:00" />
+
+                            <com.view.MTextView
+                                android:id="@+id/toDistanceHTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text23Pro_Light"
+                                android:textSize="@dimen/_10ssp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="To Distance" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <com.view.MTextView
+                    android:id="@+id/infoFrag"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_6sdp"
+                    android:textColor="@color/appThemeColor_1"
+                    android:textSize="@dimen/_12ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="Information" />
+
+                <com.view.MTextView
+                    android:id="@+id/reviewfrag"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_6sdp"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_12ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="Reviews" />
+
+                <com.view.MTextView
+                    android:id="@+id/locationFrag"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_6sdp"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_12ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="Location" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <View
+                    android:id="@+id/infoFragIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:background="@color/appThemeColor_1" />
+
+                <View
+                    android:id="@+id/reviewfragIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:background="@color/cardView23ProBG" />
+
+                <View
+                    android:id="@+id/locationFragIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:background="@color/cardView23ProBG" />
+            </LinearLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerParkingDetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/card_view_23_white_top_shadow"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/btnType2"
+                layout="@layout/btn_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_btn_height"
+                android:layout_margin="@dimen/_15sdp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

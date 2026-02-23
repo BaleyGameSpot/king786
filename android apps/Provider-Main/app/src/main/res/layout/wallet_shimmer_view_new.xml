@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/img_banner_"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_165sdp"
+        android:background="@drawable/shimmershape"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/img_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_165sdp"
+        android:background="@color/light_transparent"/>
+
+
+    <View
+        android:id="@+id/itemNameArea"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_below="@+id/img_banner"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/shimmershape" />
+
+    <View
+        android:id="@+id/seeallArea"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_below="@+id/img_banner"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/shimmershape" />
+
+    <View
+        android:id="@+id/cat1area"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_below="@+id/seeallArea"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/shimmershaperounded" />
+
+    <View
+        android:id="@+id/cat2area"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_below="@+id/seeallArea"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_toEndOf="@+id/cat1area"
+        android:background="@drawable/shimmershaperounded" />
+
+    <View
+        android:id="@+id/cat3area"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_below="@+id/seeallArea"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_toEndOf="@+id/cat2area"
+        android:background="@drawable/shimmershaperounded" />
+
+    <View
+        android:id="@+id/whereArea"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_below="@+id/cat1area"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/shimmershape" />
+
+</RelativeLayout>

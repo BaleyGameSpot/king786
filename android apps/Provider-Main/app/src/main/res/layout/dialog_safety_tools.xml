@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_view_23_white_top_flat"
+        android:orientation="vertical">
+
+        <com.view.MTextView
+            android:id="@+id/topTitleTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textAlignment="center"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_14ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="@string/app_name" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_11sdp"
+            android:background="@color/view23ProBG_Light" />
+
+        <com.view.MTextView
+            android:id="@+id/headerTitleTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_15sdp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_14ssp"
+            app:customTypeFace="@string/system_bold"
+            tools:text="@string/app_name" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_11sdp"
+            android:paddingEnd="@dimen/_15sdp">
+
+            <LinearLayout
+                android:id="@+id/callPoliceArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:background="@drawable/card_view_23_gray_flat"
+                    android:backgroundTint="@color/view23ProBG_Light"
+                    android:padding="@dimen/_11sdp"
+                    app:srcCompat="@drawable/ic_emergency_1" />
+
+                <com.view.MTextView
+                    android:id="@+id/callPoliceTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:textAlignment="center"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="@string/app_name" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_9sdp"
+                android:layout_height="0dp" />
+
+            <LinearLayout
+                android:id="@+id/emeContactArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:background="@drawable/card_view_23_gray_flat"
+                    android:backgroundTint="@color/view23ProBG_Light"
+                    android:padding="@dimen/_7sdp"
+                    app:srcCompat="@drawable/ic_emergency_contact" />
+
+                <com.view.MTextView
+                    android:id="@+id/emeContactTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:textAlignment="center"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="@string/app_name" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/safetyToolkitArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_11sdp"
+            android:paddingEnd="@dimen/_15sdp">
+
+            <LinearLayout
+                android:id="@+id/recordAudioArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:background="@drawable/card_view_23_gray_flat"
+                    android:backgroundTint="@color/view23ProBG_Light"
+                    android:padding="@dimen/_11sdp"
+                    app:srcCompat="@drawable/ic_audio_record" />
+
+                <com.view.MTextView
+                    android:id="@+id/recordAudioTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:textAlignment="center"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="@string/app_name" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/startRecordAudioArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:background="@drawable/card_view_23_gray_flat"
+                    android:backgroundTint="@color/view23ProBG_Light"
+                    android:orientation="horizontal">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/waitingView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/audio_record" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <Chronometer
+                            android:id="@+id/recordTimeTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textAlignment="center"
+                            android:textColor="@color/red_1"
+                            android:textSize="@dimen/_13ssp"
+                            android:textStyle="bold"
+                            tools:ignore="NestedWeights" />
+
+                        <LinearLayout
+                            android:id="@+id/stopArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_background"
+                            android:backgroundTint="@color/red_1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:layout_marginStart="@dimen/_3sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:background="@color/white" />
+
+                            <com.view.MTextView
+                                android:id="@+id/stopTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="stop" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/startRecordAudioTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:textAlignment="center"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="@string/app_name" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/dividerView"
+                android:layout_width="@dimen/_9sdp"
+                android:layout_height="0dp" />
+
+            <LinearLayout
+                android:id="@+id/shareTripArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:background="@drawable/card_view_23_gray_flat"
+                    android:backgroundTint="@color/view23ProBG_Light"
+                    android:padding="@dimen/_11sdp"
+                    app:srcCompat="@drawable/ic_share_trip" />
+
+                <com.view.MTextView
+                    android:id="@+id/shareTripTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:textAlignment="center"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="@string/app_name" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/liveChatArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_11sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:background="@drawable/card_view_23_gray_flat"
+                android:backgroundTint="@color/view23ProBG_Light"
+                android:padding="@dimen/_11sdp"
+                app:srcCompat="@drawable/ic_live_chat_1" />
+
+            <com.view.MTextView
+                android:id="@+id/liveChatTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_11ssp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="@string/app_name" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

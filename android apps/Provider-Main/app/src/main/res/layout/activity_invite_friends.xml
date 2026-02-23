@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/design_toolbar_general" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250sdp"
+            android:layout_alignParentBottom="true"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/em_backgroung" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@+id/inviteBtn"
+            android:layout_below="@+id/toolbar_include">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_105sdp"
+                    android:layout_height="@dimen/_105sdp"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/ic_invite_friends" />
+
+                <com.view.MTextView
+                    android:id="@+id/shareTxtLbl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_19ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="SHARE YOUR INVITE CODE" />
+
+
+                <com.view.MTextView
+                    android:id="@+id/inviteCodeTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/dash_square"
+                    android:gravity="center"
+                    android:minWidth="@dimen/_100sdp"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:textAlignment="center"
+                    android:textColor="@color/appThemeColor_TXT_1"
+                    android:textSize="@dimen/_24ssp"
+                    app:customTypeFace="@string/system_medium"
+                    tools:text="@string/app_name" />
+
+                <com.view.MTextView
+                    android:id="@+id/shareTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:paddingStart="@dimen/_11sdp"
+                    android:paddingEnd="@dimen/_11sdp"
+                    android:textAlignment="center"
+                    android:textColor="#505050"
+                    android:textSize="@dimen/_13ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="@string/app_name" />
+            </LinearLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/inviteBtn"
+            layout="@layout/btn_type_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_btn_height"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_11sdp" />
+    </RelativeLayout>
+</layout>

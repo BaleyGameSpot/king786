@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/backImgView"
+            android:layout_width="@dimen/_46sdp"
+            android:layout_height="@dimen/_46sdp"
+            android:layout_gravity="start|end"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/circle_shadow_big"
+            android:elevation="@dimen/_5sdp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_back_button" />
+
+        <FrameLayout
+            android:id="@+id/mainContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/content_add_address"
+            android:layout_marginBottom="@dimen/_minus7sdp">
+
+            <fragment
+                android:id="@+id/mapV2"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                tools:layout="@layout/custom_tab_prj" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/pinImgView"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_17ssp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_round_pin"
+                tools:visibility="visible" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/content_add_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="@dimen/_minus5sdp"
+            android:background="@drawable/card_view_23_white_shadow"
+            android:elevation="@dimen/_5sdp"
+            android:gravity="center|bottom"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/titleTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_12ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="@string/app_name" />
+
+                <LinearLayout
+                    android:id="@+id/loc_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:background="@drawable/card_view_23_white_shadow"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_8sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_19sdp"
+                        android:layout_height="@dimen/_19sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:srcCompat="@drawable/ic_check_icon" />
+
+                    <com.view.MTextView
+                        android:id="@+id/locAddrTxtView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_marginBottom="@dimen/_9sdp"
+                        android:layout_weight="1"
+                        android:clickable="false"
+                        android:gravity="start|top"
+                        android:minLines="3"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_10ssp"
+                        app:customTypeFace="@string/system_regular"
+                        tools:text="btuy[nvuhh8by[mhvpwnc3rghyu-q=k09ubcvtkkkt7c8ex56awe-0[mubv9809[unmughnvp[wor=-9ietughvb;l[pa-qw93e08qwbb iuhf" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/locationImage"
+                        android:layout_width="@dimen/_19sdp"
+                        android:layout_height="@dimen/_19sdp"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/ic_location_edit" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/detailArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/card_view_23_gray_shadow"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15sdp">
+
+                    <include
+                        android:id="@+id/buildingBox"
+                        layout="@layout/editbox_form_design_nw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@+id/landmarkBox"
+                        layout="@layout/editbox_form_design_nw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@+id/addrtypeBox"
+                        layout="@layout/editbox_form_design_nw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@+id/apartmentLocNameBox"
+                        layout="@layout/editbox_form_design_nw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <include
+                        android:id="@+id/mobileBox"
+                        layout="@layout/editbox_form_design_nw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <FrameLayout
+                        android:id="@+id/countrySelectArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:visibility="gone">
+
+                        <include
+                            android:id="@+id/vContryBox"
+                            layout="@layout/editbox_form_design_nw"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp" />
+
+                        <ImageView
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_marginEnd="5dp"
+                            android:gravity="center"
+                            android:src="@mipmap/ic_arrow_down" />
+                    </FrameLayout>
+
+                    <include
+                        android:id="@+id/companyBox"
+                        layout="@layout/editbox_form_design"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <include
+                        android:id="@+id/postCodeBox"
+                        layout="@layout/editbox_form_design"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <include
+                        android:id="@+id/addr2Box"
+                        layout="@layout/editbox_form_design"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <include
+                        android:id="@+id/deliveryIntructionBox"
+                        layout="@layout/editbox_form_design"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/footer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp">
+
+                        <include
+                            android:id="@+id/btn_type2"
+                            layout="@layout/btn_type_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/all_btn_height"
+                            android:layout_gravity="bottom" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

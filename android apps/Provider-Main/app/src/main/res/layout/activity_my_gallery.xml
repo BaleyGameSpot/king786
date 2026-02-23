@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/design_toolbar_general" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar_include">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/galleryRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+
+
+            <ScrollView
+                android:id="@+id/noImgScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/noImgView"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_140sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_50sdp"
+                        app:srcCompat="@drawable/ic_upload_gallery" />
+
+                    <com.view.WKWebView
+                        android:id="@+id/noteview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/noImgView"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/transparent_full"
+                        android:scrollbars="none" />
+                </RelativeLayout>
+
+            </ScrollView>
+
+            <ProgressBar
+                android:id="@+id/loading_images"
+                style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <com.view.FloatingAction.FloatingActionButton
+                android:id="@+id/btnMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="20dp"
+                android:padding="5dp"
+                android:src="@mipmap/fab_add_prj"
+                app:fab_colorNormal="@color/appThemeColor_1"
+                app:fab_colorPressed="@color/appThemeColor_1"
+                app:fab_colorRipple="@color/appThemeColor_TXT_1" />
+
+            <com.view.FloatingAction.FloatingActionMenu
+                android:id="@+id/imgAddOptionMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="20dp"
+                app:menu_colorNormal="@color/appThemeColor_1"
+                app:menu_colorPressed="@color/appThemeColor_1"
+                app:menu_colorRipple="@color/appThemeColor_TXT_1"
+                app:menu_fab_size="normal"
+                app:menu_openDirection="up"
+                app:menu_shadowColor="#66000000"
+                app:menu_shadowRadius="4dp"
+                app:menu_shadowXOffset="1dp"
+                app:menu_shadowYOffset="3dp"
+                app:menu_showShadow="true">
+
+                <com.view.FloatingAction.FloatingActionButton
+                    android:id="@+id/cameraItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:src="@mipmap/ic_camera_fab"
+                    app:fab_colorNormal="@color/appThemeColor_1"
+                    app:fab_colorPressed="@color/appThemeColor_1"
+                    app:fab_colorRipple="@color/appThemeColor_TXT_1"
+                    app:fab_label="Camera"
+                    app:fab_size="mini" />
+
+
+                <com.view.FloatingAction.FloatingActionButton
+                    android:id="@+id/galleryItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_gallery_fab"
+                    app:fab_colorNormal="@color/appThemeColor_1"
+                    app:fab_colorPressed="@color/appThemeColor_1"
+                    app:fab_colorRipple="@color/appThemeColor_TXT_1"
+                    app:fab_label="Gallery"
+                    app:fab_size="mini" />
+
+
+            </com.view.FloatingAction.FloatingActionMenu>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/carouselContainerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#D9000000" />
+
+            <com.view.carouselview.CarouselView
+                android:id="@+id/carouselView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:autoPlay="false"
+                app:fillColor="#FFFFFF"
+                app:strokeColor="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/playIconBtn"
+
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/closeImg"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:padding="@dimen/_7sdp"
+                app:srcCompat="@drawable/ic_close_round"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

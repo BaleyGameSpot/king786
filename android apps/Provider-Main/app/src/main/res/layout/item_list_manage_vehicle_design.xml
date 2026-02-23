@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_view_23_white_shadow"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.view.MTextView
+            android:id="@+id/vNameTxtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_10ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="Name" />
+
+        <com.view.MTextView
+            android:id="@+id/vOthInfoTxtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text23Pro_Light"
+            android:textSize="@dimen/_10ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="Info" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom|center"
+            android:gravity="end|bottom|center"
+            android:orientation="horizontal">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/docImgView"
+                android:layout_width="@dimen/_19sdp"
+                android:layout_height="@dimen/_19sdp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_4sdp"
+                app:srcCompat="@drawable/ic_v_doc" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/deleteImgView"
+                android:layout_width="@dimen/_19sdp"
+                android:layout_height="@dimen/_19sdp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_4sdp"
+                app:srcCompat="@drawable/ic_v_delete" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/editImgView"
+                android:layout_width="@dimen/_19sdp"
+                android:layout_height="@dimen/_19sdp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_4sdp"
+                app:srcCompat="@drawable/ic_v_edit" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/statusHArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/card_view_23_white_line_flat"
+            android:backgroundTint="@color/text23Pro_Light">
+
+            <com.view.MTextView
+                android:id="@+id/statusTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9ssp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="Active" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

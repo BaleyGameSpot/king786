@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activityBg"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/design_toolbar_general" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottomArea"
+            android:layout_below="@id/toolbar_include"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/driverDetailArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_55sdp"
+                        android:background="@color/appThemeColor_1"
+                        android:gravity="bottom">
+
+                        <View
+                            android:id="@+id/viewGradient"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_25sdp"
+                            android:background="@drawable/ic_gradient" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <com.view.SelectableRoundedImageView
+                            android:id="@+id/driverProfileImgView"
+                            android:layout_width="@dimen/_90sdp"
+                            android:layout_height="@dimen/_90sdp"
+                            android:scaleType="centerCrop"
+                            app:sriv_border_color="@color/appThemeColor_1"
+                            app:sriv_border_width="3dip"
+                            app:sriv_left_bottom_corner_radius="20dip"
+                            app:sriv_left_top_corner_radius="20dip"
+                            app:sriv_oval="true"
+                            app:sriv_right_bottom_corner_radius="20dip"
+                            app:sriv_right_top_corner_radius="20dip" />
+
+
+                        <com.view.MTextView
+                            android:id="@+id/driverNameTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:textColor="@color/appThemeColor_TXT_2"
+                            android:textSize="@dimen/_13ssp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="@string/app_name" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/dataArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/driverDetailArea"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/dateVTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/Gray"
+                        android:textSize="@dimen/_13ssp"
+                        app:customTypeFace="@string/system_bold"
+                        tools:text="@string/app_name" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.view.MTextView
+                                android:id="@+id/startTimeTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/appThemeColor_1"
+                                android:textSize="@dimen/_12ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="16:55" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:gravity="center"
+                                android:minHeight="@dimen/_30sdp"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_13sdp"
+                                    android:layout_height="@dimen/_13sdp"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@drawable/hcircle"
+                                    android:tint="@color/pickup_req_now_btn" />
+
+                                <com.view.DividerView
+                                    android:layout_width="@dimen/_10sdp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:layerType="software"
+                                    app:dividerColor="@color/appThemeColor_1"
+                                    app:dividerDashGap="@dimen/_2sdp"
+                                    app:dividerDashLength="@dimen/_2sdp"
+                                    app:dividerOrientation="vertical" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:orientation="vertical">
+
+                                <com.view.MTextView
+                                    android:id="@+id/startCityTxt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:textSize="@dimen/_12ssp"
+                                    app:customTypeFace="@string/system_bold"
+                                    tools:text="@string/app_name" />
+
+                                <com.view.MTextView
+                                    android:id="@+id/startAddressTxt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/_10sdp"
+                                    android:includeFontPadding="false"
+                                    android:textColor="#646464"
+                                    android:textSize="@dimen/_11ssp"
+                                    app:customTypeFace="@string/system_regular"
+                                    tools:text="@string/app_name" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_minus3sdp"
+                            android:orientation="horizontal">
+
+                            <com.view.MTextView
+                                android:id="@+id/endTimeTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/appThemeColor_1"
+                                android:textSize="@dimen/_12ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="16:55" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:gravity="top"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_13sdp"
+                                    android:layout_height="@dimen/_13sdp"
+                                    android:src="@drawable/hcircle"
+                                    android:tint="@color/pickup_req_later_btn" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:orientation="vertical">
+
+                                <com.view.MTextView
+                                    android:id="@+id/endCityTxt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:textSize="@dimen/_12ssp"
+                                    app:customTypeFace="@string/system_bold"
+                                    tools:text="@string/app_name" />
+
+                                <com.view.MTextView
+                                    android:id="@+id/endAddressTxt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:includeFontPadding="false"
+                                    android:textColor="#646464"
+                                    android:textSize="@dimen/_11ssp"
+                                    app:customTypeFace="@string/system_regular"
+                                    tools:text="@string/app_name" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_230sdp"
+                    android:layout_below="@+id/dataArea"
+                    android:layout_marginTop="@dimen/_5ssp">
+
+                    <RelativeLayout
+                        android:id="@+id/mapBookReqContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:nestedScrollingEnabled="true" />
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/bottomArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_minus5sdp"
+            android:layout_marginEnd="@dimen/_minus5sdp"
+            android:layout_marginBottom="@dimen/_minus12sdp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_3sdp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/totalHTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_15sdp"
+                                app:customTypeFace="@string/system_bold"
+                                tools:text="total price" />
+
+                            <com.view.MTextView
+                                android:id="@+id/noOfPassengerText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="2"
+                                android:singleLine="true"
+                                android:textColor="#646464"
+                                android:textSize="@dimen/_13sdp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="for 1 passenger" />
+                        </LinearLayout>
+
+                        <com.view.MTextView
+                            android:id="@+id/fPriceTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:singleLine="true"
+                            android:textColor="@color/appThemeColor_1"
+                            android:textSize="@dimen/_15sdp"
+                            app:customTypeFace="@string/system_bold"
+                            tools:text="$ 77.00" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/declineBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_8sdp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/appThemeColor_1"
+                            android:textSize="@dimen/txt_size_16"
+                            app:customTypeFace="@string/system_medium"
+                            tools:text="decline" />
+
+                        <com.view.MTextView
+                            android:id="@+id/acceptBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_weight="1"
+                            android:background="@drawable/btn_border"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_8sdp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/txt_size_16"
+                            app:customTypeFace="@string/system_medium"
+                            tools:text="accept" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

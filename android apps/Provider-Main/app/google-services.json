@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "568742465500",
+    "firebase_url": "https://buddyverse-193bc-default-rtdb.firebaseio.com",
+    "project_id": "buddyverse-193bc",
+    "storage_bucket": "buddyverse-193bc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568742465500:android:45e73aaa52e7dcfdff4919",
+        "android_client_info": {
+          "package_name": "com.buddyverse.main"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIletfD2pBBQuYYk7yezGAzq41GhScJUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568742465500:android:544e59c446c97702ff4919",
+        "android_client_info": {
+          "package_name": "com.buddyverse.providers"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIletfD2pBBQuYYk7yezGAzq41GhScJUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

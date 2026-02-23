@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_view_23_white_shadow">
+
+        <LinearLayout
+            android:id="@+id/layoutShape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_11sdp"
+            android:layout_marginTop="@dimen/_11sdp"
+            android:layout_marginEnd="@dimen/_11sdp"
+            android:layout_marginBottom="@dimen/_11sdp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/itemNameTxtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:ellipsize="marquee"
+                    android:gravity="start|center_vertical"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_10ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="engine wash" />
+
+                <com.view.MTextView
+                    android:id="@+id/itemMenuNameTxtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:ellipsize="marquee"
+                    android:gravity="start|center_vertical"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:textColor="@color/text23Pro_Light"
+                    android:textSize="@dimen/_10ssp"
+                    android:visibility="gone"
+                    app:customTypeFace="@string/system_medium"
+                    tools:text="aaaaa"
+                    tools:visibility="visible" />
+
+                <com.view.MTextView
+                    android:id="@+id/itemstrikePriceTxtView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="start|center_vertical"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text23Pro_Light"
+                    android:textSize="@dimen/_10ssp"
+                    android:visibility="gone"
+                    app:customTypeFace="@string/system_medium"
+                    tools:text="1000"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|start"
+                    android:orientation="horizontal">
+
+                    <com.view.MTextView
+                        android:id="@+id/itemPriceTxtView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textSize="@dimen/_10ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="23" />
+
+                    <com.view.MTextView
+                        android:id="@+id/hourTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_10ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="2" />
+                </LinearLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/QTYNumberTxtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:focusableInTouchMode="true"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_10ssp"
+                    android:visibility="visible"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="x2" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/img_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/cancelImg"
+                    android:layout_width="@dimen/_19sdp"
+                    android:layout_height="@dimen/_19sdp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_delete_icon" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

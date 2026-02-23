@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.FLAG_GRANT_READ_URI_PERMISSION" />
+    <uses-permission
+        android:name="android.permission.MANAGE_DOCUMENTS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="com.huawei.appmarket.service.commondata.permission.GET_COMMON_DATA" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <permission
+        android:name="com.buddyverse.main.googlemapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="true" />
+
+    <uses-permission
+        android:name="com.buddyverse.main.googlemapsv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name="com.general.files.MyApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppCompatTheme"
+        tools:ignore="DataExtractionRules"
+        tools:replace="android:allowBackup"
+        tools:targetApi="n">
+        <activity
+            android:name="com.act.ChattingWindowActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="${crashlyticsCollectionEnabled}" />
+
+        <meta-data
+            android:name="com.google.key1"
+            android:value="$2y$05$zrAXaGza3IROxLXlmRhsq.6TY5aRpgaN0LcJPRBrrrq1ABQHtyliSd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$/gNq.RCJNiUGiIzqWpdMReWuvFPxeIOF/v2Xd55etC4WT4TUZ9sjSd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$SJabSnP564NiMGYckTc0AuWVUwhTghKmsukcsW.gIUmbZWQHUlTdGd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$VJ5anfNzi3YwnFkSiG/T0e7ToWcIaVREcDdQ4nSrwUfN4PEKjw02Od0d843846ea2c7d7e79e8eeb19572f0c$2y$05$dwivrbJd27VtfPN.Y30jreIH3e8KjkwTRHHp7//s5u5H4ZGTilINad0d843846ea2c7d7e79e8eeb19572f0c$2y$05$c/.jLKNoaulvj.AAjT0ljOhfLdkrXL135DRwrI43/rRQrmaEBpSnCd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$U7jog6lBS1oFJTTegEl8YuI0NOXnRp4Q0cZueBCeDsrBZQ7J2xX/ed0d843846ea2c7d7e79e8eeb19572f0c$2y$05$I9Kf1ztpCY5W4dXRqu9qSuXoYIv4SaVBnjZK70Bl37hvvBdMdoJXCd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$uN8TWc0h4xQy2GxAV.SpeuRRXJxL4.dOrtrxqpsKgu1Yic7/RnkJud0d843846ea2c7d7e79e8eeb19572f0c$2y$05$l/p0iw4uNeS9M72FCUA0IuD21S1256yCbvWD/ALtZd2.T1lPPErQWd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$k87cT5/1MD7uEVZINATOcOMv7P0LxLa8GNBAJQ4T5IsebtNKaKvVed0d843846ea2c7d7e79e8eeb19572f0c$2y$05$wByCOw.wlH7NcQjy3CFoieW2fo6aDwe8BZvWbbRSJyDHsG0htzFO2d0d843846ea2c7d7e79e8eeb19572f0c$2y$05$UuvkGdG4b0PzGPCsbPoHNuv4azda1zmkQMn.FAYD9fRCWRQg0WSLqd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$XUAbOfiagRZ/K.S4WvBpHu74SUI1reJkErMAB6APwo1ydEcGYEqfed0d843846ea2c7d7e79e8eeb19572f0c$2y$05$RFqcAFaP6H1WOHpLiHl7dOZ5DbzkXDDLyFFhY2ZU.6PYvs18HiM4.d0d843846ea2c7d7e79e8eeb19572f0c$2y$05$Y7i2EH7zwa8KRbucwVJfweYX0SG407RkxhWn4DtBkLrtmKW67b9HKd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$NwP.br7Q68R6Ka0ZRr81VuqUq/HTMZ5I.8uNYiu4m.HqbDqXjo/ued0d843846ea2c7d7e79e8eeb19572f0c$2y$05$ev/lmjQkGfDrNOogNdSaAe/NkIau6T7q/j0/vwy2VxBfdHouiCEp2d0d843846ea2c7d7e79e8eeb19572f0c$2y$05$W06R22y.MyvdPVVNA6hXse2.UdECzbbiK61kKqruLdrsZtlKQZxXCd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$mmahzCuFOyCxfBmjKIO1DObGY9n4lCWXs608.T6wVqT3D7nPuihfid0d843846ea2c7d7e79e8eeb19572f0c$2y$05$jy1./pySQCzWQR7SgKQNPu/KbhGubr.RVw9yXuidDG3A.SpMZhOYyd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$QOTDl3fstvtwaPze/doC1eC/7f4xixMTPGGpep90NdTJFH8fXOK3Sd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$f4XlLc6rErLdILLEsM8pgOV//JQXwozTl1CtD.yQX.JGcYbNMMYfmd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$JqIymRb1O6GZex7o/UTbVuXoNFgjQhh7Tn8BUc77mdDoNDfYKIU4md0d843846ea2c7d7e79e8eeb19572f0c$2y$05$wmmh9MpNnSBWvqRkOEVHJOklERhDlgct1ABiBBxo0Go15aaLjWNxid0d843846ea2c7d7e79e8eeb19572f0c$2y$05$2ocin1jci/D67wUQx6m7keo9D7o0e6lCJHxmfrHF.V1arqhMWmvEad0d843846ea2c7d7e79e8eeb19572f0c$2y$05$swCGc1PE5xgeZSv0yh7/KeUFQawq8uG4OJzFeVmp3KVBfull4Ydh2d0d843846ea2c7d7e79e8eeb19572f0c$2y$05$JS3DlD55DLPhMhi0aXoxjO/uujQUMcLkIMjcdQEUlZza83KK3wk6Gd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$P.uNEtEon9Wv0TPZmv.QteBxq4bPiDYwcVn6w6i5BWgmRttlM4vtSd0d843846ea2c7d7e79e8eeb19572f0c$2y$05$KyKqmErzTwPiLvPiKXdlIeN68Hra1m13vPS8.sxh7qI2iHPA.Nr/m" />
+        <meta-data
+            android:name="com.google.key2"
+            android:value="d0d843846ea2c7d7e79e8eeb19572f0c" />
+
+        <activity
+            android:name="com.act.LauncherActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.App.Starting">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.act.InviteStageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.EmailStageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.NameStageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.PasswordStageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.MobileStegeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.act.SearchCategoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.RideDeliveryActivity"
+            android:screenOrientation="portrait" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="com.act.MenuSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.InformationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.UberXHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.DonationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.PrescriptionHistoryImagesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.PrescriptionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.ProviderInfoActivity"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+        <property
+            android:name="android.adservices.AD_SERVICES_CONFIG"
+            android:resource="@xml/gma_ad_services_config"
+            tools:replace="android:resource" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/mapKey" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <receiver
+            android:name="com.general.files.AlarmReceiver"
+            android:enabled="false">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+            <!-- </intent-filter> -->
+        </receiver>
+        <receiver
+            android:name="com.huawei.BootAlarmReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.act.MyFirebaseMessagingService"
+            android:exported="true"
+            android:permission="">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="push_kit_auto_init_enabled"
+            android:value="true" />
+
+        <service
+            android:name="com.huawei.MyHmsMessageService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.act.AppLoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.nearbyservice.NearByServicesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.nearbyservice.NearByDetailsActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@style/FBtheme"
+            tools:replace="android:theme" />
+        <activity
+            android:name="com.act.SearchPickupLocationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.MyProfileActivity"
+            android:exported="true"
+            android:permission=""
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.StaticPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.ContactUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.QuestionAnswerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.HelpActivity23Pro"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.HelpMainCategory23Pro"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.HistoryDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.App.Base" />
+        <activity
+            android:name="com.act.RatingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.CardPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.EmergencyContactActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.ConfirmEmergencyTapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.EnterDeliveryDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.MyWalletActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.MyWalletHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.InviteFriendsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.VerifyInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.UberXSelectServiceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.UberXActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.OnGoingTripsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.OnGoingTripDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.AppLoignRegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.AccountverificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.SupportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.FareBreakDownActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name="com.act.FirebaseDataReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.general.call.VOIPActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.ChatActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name="com.act.SearchLocationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.ListAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.AddAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.ScheduleDateSelectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.AppRestrictedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.ManageAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.DeleteAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.Help_DetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.RentalInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.RentalDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cropper.CropImageActivity"
+            android:screenOrientation="portrait" /> <!-- Multi delivery_v2 Screens -->
+        <activity
+            android:name="com.act.CommonDeliveryTypeSelectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.EnterMultiDeliveryDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.MultiDeliverySecondPhaseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.MultiDeliveryThirdPhaseActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Deliver all -->
+        <activity
+            android:name="com.act.deliverAll.FoodDeliveryHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.FoodDeliveryHomeActivity24"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.SearchFoodActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.RestaurantsSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.SearchRestaurantListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.AddBasketActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.CheckOutActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.act.deliverAll.EditCartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.ServiceHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.OrderPlaceConfirmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.TrackOrderActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.OrderDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.FoodRatingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.RestaurantAllDetailsNewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.CouponActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.BusinessProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.BusinessSetupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.SelectOrganizationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.OrganizationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.MyBusinessProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.NotificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.NotificationDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.QuickPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.livechatinc.inappchat.ChatWindowActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.UberxFilterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.MoreInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.UberxCartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.CarWashBookingDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.MoreServiceInfoActivity"
+            android:screenOrientation="portrait" /> <!-- FavDriver Activities -->
+        <activity
+            android:name="com.act.FavouriteDriverActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.BookingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.ViewMultiDeliveryDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.UserPrefrenceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.GenieDeliveryHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.BuyAnythingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.general.files.SafetyDialog"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.general.files.CovidDialog"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.CommonIntroActivity"
+            android:screenOrientation="portrait" /> <!-- Verify Charges -->
+        <activity
+            android:name="com.act.AdditionalChargeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.PaymentWebviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.deliverAll.FindStoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.SearchServiceActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.act.BiddingHistoryDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.BiddingTaskActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.BiddingAdditionalMediaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.RequestBidInfoActivity"
+            android:screenOrientation="portrait" /> <!-- Rent item Activities -->
+        <activity
+            android:name="com.act.rentItem.RentItemHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rentItem.RentItemFilterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rentItem.RentItemNewPostActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rentItem.RentItemListPostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rentItem.RentItemReviewPostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rentItem.RentItemOwnerInfo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rentItem.RentItemInquiry"
+            android:screenOrientation="portrait" />
+        <!-- Rent item Activities -->
+
+        <!-- Ride Sharing Pro -->
+        <activity
+            android:name="com.act.rideSharingPro.ListOfDocumentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rideSharingPro.RideBookDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rideSharingPro.RideBookingRequestedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rideSharingPro.RideBookSearchList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rideSharingPro.RideBookSummary"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rideSharingPro.RideMyDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rideSharingPro.RideMyList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rideSharingPro.RideShareActiveTripActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rideSharingPro.RideSharePaymentSummaryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rideSharingPro.RideSharingProHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rideSharingPro.RideSharingProPreferences"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.rideSharingPro.RideUploadDocActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Tracking family -->
+        <activity
+            android:name="com.act.trackService.TrackAnyList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.trackService.TrackAnyProfileVehicle"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.trackService.TrackAnyLiveTracking"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.trackService.TrackAnyProfileSetup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.trackService.PairCodeGenrateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.giftcard.GiftCardRedeemActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.giftcard.GiftCardSendActivity"
+            android:screenOrientation="portrait" /> <!-- Parking -->
+        <activity
+            android:name="com.act.parking.AvailableParkingSpacesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.parking.ParkingDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.parking.BookParking"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.parking.ParkingArrivalScheduleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.parking.ParkingPublish"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.parking.ParkingPublishAndBooking"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.parking.ParkingUploadDocActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.parking.ParkingVehicleListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.parking.AddParkingCarOrDriverActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.parking.ReviewOrCancelParkingBookingActivity"
+            android:screenOrientation="portrait" /> <!-- Intercity -->
+        <activity
+            android:name="com.act.intercity.IntercityDateTimeSelectorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.act.intercity.IntercityHomeActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

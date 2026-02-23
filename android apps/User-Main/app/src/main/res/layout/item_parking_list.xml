@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/itemArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:background="@drawable/card_view_23_white_shadow"
+        android:clipToOutline="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/photosArea"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_145sdp"
+            android:orientation="vertical">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/parkingPhotosViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:overScrollMode="never" />
+
+            <RelativeLayout
+                android:id="@+id/dotsArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/rounded_view_basket"
+                android:padding="@dimen/_2sdp">
+
+                <com.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/dots_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:dotsColor="@color/white"
+                    app:dotsCornerRadius="@dimen/_8sdp"
+                    app:dotsSize="@dimen/_6sdp"
+                    app:dotsSpacing="@dimen/_3sdp"
+                    app:dotsWidthFactor="3"
+                    app:progressMode="true"
+                    app:selectedDotColor="@color/appThemeColor_1" />
+            </RelativeLayout>
+
+            <com.view.MTextView
+                android:id="@+id/distanceTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:layout_marginEnd="@dimen/_11sdp"
+                android:layout_marginBottom="@dimen/_11sdp"
+                android:background="@drawable/button_background"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_4sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_regular"
+                tools:text="0.3 Km" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_11sdp"
+            android:layout_marginBottom="@dimen/_11sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_11sdp"
+                android:layout_height="@dimen/_11sdp"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:srcCompat="@drawable/ic_location_pro" />
+
+            <com.view.MTextView
+                android:id="@+id/parkingAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:textColor="@color/textSub23Pro_gray"
+                android:textSize="@dimen/_11ssp"
+                app:customTypeFace="@string/system_regular"
+                tools:text="Mondal Square, B205C, Prahalad Nagar Mondeal Squre,100 Feet Anand Nagar Road, Prahlad Nagar, Ahemdabad, Gujrat, India" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:layout_marginEnd="@dimen/_9sdp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_4sdp">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/priceTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/appThemeColor_1"
+                    android:textSize="@dimen/_10ssp"
+                    app:customTypeFace="@string/system_bold"
+                    tools:text="$50" />
+
+                <com.view.MTextView
+                    android:id="@+id/priceMsgTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text23Pro_Light"
+                    android:textSize="@dimen/_9ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="per hour" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_11sdp"
+                        android:layout_height="@dimen/_11sdp"
+                        app:srcCompat="@drawable/star_on" />
+
+                    <com.view.MTextView
+                        android:id="@+id/ratingTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_11ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="4.5" />
+                </LinearLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/noOfRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text23Pro_Light"
+                    android:textSize="@dimen/_9ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="10 Ratings" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end|center">
+
+                <com.view.MTextView
+                    android:id="@+id/btn_book_now"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:background="@drawable/border_fill"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="Book Now" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

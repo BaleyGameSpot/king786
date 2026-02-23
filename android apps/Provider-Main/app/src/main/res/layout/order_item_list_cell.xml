@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemList_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <FrameLayout
+        android:id="@+id/farmelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/card_view_23_white_shadow">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/item_list_detail_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="0dp"
+                app:cardBackgroundColor="#ffffff"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="0dp"
+                app:contentPadding="@dimen/_2sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+
+                        android:layout_weight="1">
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/item_chkBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:buttonTint="@color/appThemeColor_1"
+                            android:gravity="center"
+                            android:scaleX="1.5"
+                            android:scaleY="1.5"
+                            android:visibility="visible" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/itemArea"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|start"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:elevation="0dp"
+                            android:visibility="gone"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="00dp"
+                            app:elevation="0dp"
+                            tools:visibility="visible">
+
+                            <com.view.SelectableRoundedImageView
+                                android:id="@+id/itemImg"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:layout_gravity="center_vertical|start"
+                                android:scaleType="fitXY"
+                                app:sriv_border_color="@color/text23Pro_Light"
+                                app:sriv_border_width="1dp"
+                                app:sriv_left_bottom_corner_radius="@dimen/_6ssp"
+                                app:sriv_left_top_corner_radius="@dimen/_6ssp"
+                                app:sriv_oval="false"
+                                app:sriv_right_bottom_corner_radius="@dimen/_6ssp"
+                                app:sriv_right_top_corner_radius="@dimen/_6ssp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="3dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/itemNameTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="start|center"
+                                android:includeFontPadding="false"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="#141414"
+                                android:textSize="@dimen/_11ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="Item name" />
+
+                            <com.view.MTextView
+                                android:id="@+id/notItemNameTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:includeFontPadding="false"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_11ssp"
+                                android:visibility="gone"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="No Item Text"
+                                tools:visibility="visible" />
+
+                            <com.view.MTextView
+                                android:id="@+id/subItemNameTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_11ssp"
+                                android:visibility="gone"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="Sub Item text"
+                                tools:visibility="visible" />
+
+                            <com.view.MTextView
+                                android:id="@+id/itemNoteTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/red"
+                                android:textSize="@dimen/_11ssp"
+                                android:visibility="gone"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="Item note"
+                                tools:visibility="visible" />
+
+                            <com.view.MTextView
+                                android:id="@+id/itemPriceTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:includeFontPadding="false"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/appThemeColor_1"
+                                android:textSize="@dimen/_11ssp"
+                                android:visibility="gone"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="$ 555"
+                                tools:visibility="visible" />
+
+                            <com.view.MTextView
+                                android:id="@+id/declineTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:includeFontPadding="false"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/bt_error_red"
+                                android:textSize="@dimen/_12ssp"
+                                android:visibility="gone"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="Decline text"
+                                tools:visibility="visible" />
+
+                            <com.view.MTextView
+                                android:id="@+id/itemQuantityTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginEnd="3dp"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="#141414"
+                                android:textSize="@dimen/_11ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="100" />
+
+                            <RelativeLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <View
+
+                                    android:id="@+id/disableview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="#95ffffff"
+                                    android:clickable="true"
+                                    android:minHeight="@dimen/_10sdp"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top">
+
+                        <ImageView
+                            android:id="@+id/editImg"
+                            android:layout_width="@dimen/_22sdp"
+                            android:layout_height="@dimen/_22sdp"
+                            android:layout_gravity="center"
+                            android:backgroundTint="@color/white"
+                            android:clickable="false"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_v_edit_theme"
+                            tools:visibility="visible" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_clear" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <!--<ImageView
+        android:id="@+id/editImg"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_below="@+id/farmelayout"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_minus25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:backgroundTint="@color/white"
+        android:clickable="false"
+        app:srcCompat="@drawable/ic_v_edit_theme" />-->
+
+
+    <View
+        android:id="@+id/bottomview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/farmelayout" />
+
+</RelativeLayout>

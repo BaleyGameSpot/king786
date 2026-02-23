@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/_13sdp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivRound"
+                android:layout_width="@dimen/_9sdp"
+                android:layout_height="@dimen/_9sdp"
+                app:srcCompat="@drawable/round_shape"
+                app:tint="@color/text23Pro_Dark" />
+
+            <RelativeLayout
+                android:layout_width="@dimen/_13sdp"
+                android:layout_height="@dimen/_13sdp">
+
+                <View
+                    android:id="@+id/squareImgView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/disabledColor"
+                    android:gravity="center"
+                    android:textAlignment="center" />
+
+                <com.view.MTextView
+                    android:id="@+id/locTagTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9ssp"
+                    app:customTypeFace="@string/system_bold"
+                    tools:text="Z" />
+            </RelativeLayout>
+
+            <com.view.DividerView
+                android:id="@+id/dividerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layerType="software"
+                app:dividerColor="@color/view23ProBG"
+                app:dividerDashGap="4dp"
+                app:dividerDashLength="4dp"
+                app:dividerOrientation="vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_minus3sdp"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:orientation="horizontal">
+
+            <com.view.MTextView
+                android:id="@+id/addressTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAlignment="viewStart"
+                android:textColor="@color/textSub23Pro_gray"
+                android:textSize="@dimen/_11ssp"
+                app:customTypeFace="@string/system_regular"
+                tools:text="sf dfsdstwesd" />
+
+            <com.view.MTextView
+                android:id="@+id/timeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/appThemeColor_1"
+                android:textSize="@dimen/_10ssp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="16:55" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

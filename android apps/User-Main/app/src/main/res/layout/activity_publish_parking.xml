@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/design_toolbar_general" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottomAreaView"
+            android:layout_below="@id/toolbar_include"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/ParkingStepViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:animateLayoutChanges="true" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/bottomAreaView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/appThemeColor_1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_11sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_11sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/previousBtn"
+                android:layout_width="@dimen/_31sdp"
+                android:layout_height="@dimen/_23sdp"
+                android:background="@drawable/ic_rounded_square"
+                android:backgroundTint="@color/white"
+                android:padding="@dimen/_6sdp"
+                android:rotation="@integer/angleY_rtl_180"
+                android:src="@drawable/ic_right_arrow_1"
+                android:visibility="gone"
+                app:tint="@color/text23Pro_Dark"
+                tools:visibility="visible" />
+
+            <com.view.MTextView
+                android:id="@+id/StepHTxt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="start|center"
+                android:includeFontPadding="false"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="step 1/1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/nextBtn"
+                android:layout_width="@dimen/_31sdp"
+                android:layout_height="@dimen/_23sdp"
+                android:background="@drawable/ic_rounded_square"
+                android:backgroundTint="@color/white"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_right_arrow_1"
+                android:visibility="gone"
+                app:tint="@color/text23Pro_Dark"
+                tools:visibility="visible" />
+
+            <com.view.MTextView
+                android:id="@+id/publishParkingBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_23sdp"
+                android:background="@drawable/ic_rounded_square"
+                android:backgroundTint="@color/white"
+                android:gravity="center"
+                android:paddingStart="@dimen/_9sdp"
+                android:paddingEnd="@dimen/_9sdp"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="gone"
+                app:customTypeFace="@string/system_semi_bold"
+                app:tint="@color/text23Pro_Dark"
+                tools:text="Submit"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/loading"
+                style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

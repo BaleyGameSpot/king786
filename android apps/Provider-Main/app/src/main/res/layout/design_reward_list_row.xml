@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/_10sdp"
+    android:paddingEnd="@dimen/_10sdp"
+    android:paddingBottom="@dimen/_10sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.view.MTextView
+            android:id="@+id/titleHTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="viewStart"
+            android:textColor="#656565"
+            app:customTypeFace="@string/system_regular" />
+
+        <com.view.MTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text=" : "
+            android:textAlignment="viewStart"
+            android:textColor="#656565"
+            android:visibility="gone"
+            app:customTypeFace="@string/system_bold"
+            tools:ignore="HardcodedText" />
+
+        <com.view.MTextView
+            android:id="@+id/titleVTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.35"
+            android:textColor="#1c1c1c"
+            android:textSize="@dimen/_12ssp"
+            app:customTypeFace="@string/system_regular" />
+    </LinearLayout>
+
+    <com.view.MTextView
+        android:id="@+id/tvLblCompleteMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewStart"
+        android:textColor="#505050"
+        app:customTypeFace="@string/system_regular"
+        tools:text="The reward amount will get credited in your In-App Wallet immediately as soon as you achieve the above criteria." />
+</LinearLayout>

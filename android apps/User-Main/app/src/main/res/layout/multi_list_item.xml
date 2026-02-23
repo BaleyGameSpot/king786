@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainArea"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:buttonTint="@color/appThemeColor_1"
+        android:textAlignment="center"
+        android:visibility="invisible" />
+
+    <com.view.MTextView
+        android:id="@+id/lblListItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:ellipsize="end"
+        android:gravity="start|center"
+        android:textAlignment="viewStart"
+        android:textColor="@color/textSub23Pro_gray"
+        android:textSize="@dimen/_11ssp"
+        app:customTypeFace="@string/system_regular"
+        tools:text="reciepient 1 (John wick) reciepient 1 (John wick)" />
+
+    <CheckBox
+        android:id="@+id/lstcheckBox"
+        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lblListItem"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:buttonTint="@color/appThemeColor_1"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="center"
+        android:text="" />
+
+</LinearLayout>

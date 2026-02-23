@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.view.MTextView
+                android:id="@+id/permissionTitleTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:includeFontPadding="false"
+                android:text="@string/app_name"
+                android:textColor="#141A3E"
+                android:textSize="@dimen/_16ssp"
+                app:customTypeFace="@string/system_bold" />
+
+            <View
+                android:id="@+id/shadowHeaderViewTop"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_minus3sdp"
+                android:background="@drawable/custom_shadow_header_1" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/permissionImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/ic_permission_location" />
+
+                    <com.view.HTextView
+                        android:id="@+id/txtSubTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:textAlignment="viewStart"
+                        android:textColor="#8A8D96"
+                        android:textSize="@dimen/_12ssp"
+                        app:customTypeFace="@string/system_regular"
+                        tools:text="Addresss" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <View
+                android:id="@+id/shadowHeaderViewBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_minus6sdp"
+                android:background="@drawable/custom_shadow_header_1"
+                android:rotation="180" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_weight="0">
+
+            <include
+                android:id="@+id/continueBtn"
+                layout="@layout/btn_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_11sdp" />
+    </LinearLayout>
+</layout>

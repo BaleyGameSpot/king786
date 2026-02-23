@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/errorViewArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="?attr/actionBarSize"
+        android:visibility="gone">
+
+        <com.view.ErrorView
+            android:id="@+id/errorView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#e6e6e6"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/contentArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/design_toolbar_general"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:background="@color/appThemeColor_1" />
+
+            <include
+                layout="@layout/multi_tab_design_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/mainContentArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/card_view_23_white_shadow"
+                android:orientation="horizontal">
+
+                <com.view.SelectableRoundedImageView
+                    android:id="@+id/carTypeImg"
+                    android:layout_width="@dimen/_37sdp"
+                    android:layout_height="@dimen/_37sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:layout_marginBottom="@dimen/_11sdp"
+                    android:scaleType="centerCrop"
+                    app:sriv_left_bottom_corner_radius="0dp"
+                    app:sriv_left_top_corner_radius="0dp"
+                    app:sriv_right_bottom_corner_radius="0dp"
+                    app:sriv_right_top_corner_radius="0dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_toStartOf="@id/infoImage"
+                    android:layout_toEndOf="@id/carTypeImg"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/carTypeName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="marquee"
+                        android:gravity="start"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_10ssp"
+                        app:customTypeFace="@string/system_bold" />
+
+                    <com.view.MTextView
+                        android:id="@+id/pickupAddressTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="start"
+                        android:maxLines="2"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_9ssp"
+                        app:customTypeFace="@string/system_regular" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/infoImage"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_7sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_information" />
+
+            </RelativeLayout>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/detailsScrollArea"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_weight="1"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/applyCouponVTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_14ssp"
+                        app:customTypeFace="@string/system_bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:background="@drawable/card_view_23_gray_flat">
+
+                        <LinearLayout
+                            android:id="@+id/PromoCodearea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            tools:ignore="UselessParent">
+
+                            <LinearLayout
+                                android:id="@+id/couponCodeArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_10sdp"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_10sdp"
+                                    android:layout_gravity="center_vertical|start"
+                                    android:layout_weight="0"
+                                    app:srcCompat="@drawable/ic_voucher"
+                                    app:tint="@color/appThemeColor_1" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|start"
+                                    android:orientation="vertical">
+
+                                    <com.view.MTextView
+                                        android:id="@+id/applyCouponHTxt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center_vertical|start"
+                                        android:maxLines="2"
+                                        android:text="Apply coupon"
+                                        android:textAlignment="viewStart"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/text23Pro_Dark"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customTypeFace="@string/system_semi_bold"
+                                        tools:ignore="HardcodedText" />
+
+                                    <com.view.MTextView
+                                        android:id="@+id/appliedPromoHTxtView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical|start"
+                                        android:maxLines="1"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="#333333"
+                                        android:textSize="@dimen/txt_size_12"
+                                        android:visibility="gone"
+                                        app:customTypeFace="@string/system_regular" />
+                                </LinearLayout>
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/couponCodeImgView"
+                                    android:layout_width="@dimen/_8sdp"
+                                    android:layout_height="@dimen/_10sdp"
+                                    android:layout_gravity="center"
+                                    android:clickable="false"
+                                    app:srcCompat="@drawable/ic_arrow"
+                                    app:tint="@color/appThemeColor_1" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/couponCodeCloseImgView"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_gravity="center"
+                                    android:visibility="gone"
+                                    app:srcCompat="@drawable/ic_clear"
+                                    app:tint="@color/appThemeColor_1" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/promocodeArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:orientation="horizontal"
+                                android:visibility="gone"
+                                tools:ignore="DisableBaselineAlignment">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <com.view.MTextView
+                                        android:id="@+id/promocodeappliedHTxt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="7dp"
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/txt_size_14"
+                                        app:customTypeFace="@string/system_bold" />
+
+                                    <com.view.MTextView
+                                        android:id="@+id/removePromoTxt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="3dp"
+                                        android:text=""
+                                        android:textColor="#f44040"
+                                        android:textSize="@dimen/txt_size_12"
+                                        app:customTypeFace="@string/system_bold" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:visibility="gone">
+
+                                    <com.view.MTextView
+                                        android:id="@+id/promocodeappliedVTxt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="7dp"
+                                        android:textAlignment="viewEnd"
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/txt_size_14"
+                                        app:customTypeFace="@string/system_bold" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fareDetailArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <com.view.MTextView
+                            android:id="@+id/chargeTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:gravity="start"
+                            android:maxLines="1"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_15ssp"
+                            app:customTypeFace="@string/system_semi_bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_11sdp"
+                            android:background="@drawable/card_view_23_gray_shadow">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_15sdp"
+                                android:background="@drawable/card_view_23_white_shadow"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/fareArea"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:ignore="UselessParent">
+
+                                    <LinearLayout
+                                        android:id="@+id/fareDetailDisplayArea"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:paddingTop="@dimen/_5sdp"
+                                        android:paddingBottom="@dimen/_5sdp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/paymentArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:orientation="vertical"
+                            tools:ignore="UselessParent">
+
+                            <com.view.MTextView
+                                android:id="@+id/paymentTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_14ssp"
+                                android:visibility="gone"
+                                app:customTypeFace="@string/system_bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_11sdp"
+                                android:background="@drawable/card_view_23_gray_shadow">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_15sdp"
+                                    android:background="@drawable/card_view_23_white_shadow">
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/paymentMethodRecyclerView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:nestedScrollingEnabled="false" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_20sdp" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:background="@drawable/card_view_23_white_top_shadow"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_15sdp"
+                android:orientation="horizontal"
+                tools:ignore="DisableBaselineAlignment,UselessParent">
+
+                <LinearLayout
+                    android:id="@+id/scheduleArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1">
+
+                    <include
+                        android:id="@+id/btn_schedule"
+                        layout="@layout/btn_type_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/all_btn_height" />
+                </LinearLayout>
+
+                <include
+                    android:id="@+id/btn_type2"
+                    layout="@layout/btn_type_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/all_btn_height"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/itemFirst"
+        android:icon="@drawable/ic_home"
+        android:title="1" />
+
+    <item
+        android:id="@+id/itemSecond"
+        android:icon="@drawable/ic_booking"
+        android:title="2" />
+
+    <item
+        android:id="@+id/itemThird"
+        android:icon="@drawable/ic_wallet"
+        android:title="3" />
+
+    <item
+        android:id="@+id/itemFourth"
+        android:icon="@drawable/ic_profile"
+        android:title="4" />
+</menu>

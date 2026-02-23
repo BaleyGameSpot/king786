@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/design_toolbar_general" />
+
+        <LinearLayout
+            android:id="@+id/aboutUsArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_7sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:clickable="false"
+                android:src="@drawable/ic_menu_about_us" />
+
+            <com.view.MTextView
+                android:id="@+id/aboutUsTxt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:gravity="start|center_vertical"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/txt_size_16"
+                app:customTypeFace="@string/system_light"
+                tools:text="About Us" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/aboutUsLine"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="#000000" />
+
+        <LinearLayout
+            android:id="@+id/privacyArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_7sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:clickable="false"
+                android:src="@drawable/ic_menu_privacy" />
+
+            <com.view.MTextView
+                android:id="@+id/privacyTxt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:gravity="start|center_vertical"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/txt_size_16"
+                app:customTypeFace="@string/system_light"
+                tools:text="Privacy Policy" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="#000000" />
+
+        <LinearLayout
+            android:id="@+id/termsCondArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_7sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:clickable="false"
+                android:src="@drawable/ic_menu_terms" />
+
+            <com.view.MTextView
+                android:id="@+id/termsTxt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:gravity="start|center_vertical"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/txt_size_16"
+                app:customTypeFace="@string/system_light"
+                tools:text="terms" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="#000000" />
+
+        <LinearLayout
+            android:id="@+id/chatLiveArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_7sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:clickable="false"
+                android:src="@drawable/ic_menu_live_chat" />
+
+            <com.view.MTextView
+                android:id="@+id/chatLiveTxt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:gravity="start|center_vertical"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/txt_size_16"
+                app:customTypeFace="@string/system_light"
+                tools:text="Live Chat" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/chatLiveLine"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="#000000" />
+
+        <LinearLayout
+            android:id="@+id/contactArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_7sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:clickable="false"
+                android:src="@drawable/ic_menu_contact_us" />
+
+            <com.view.MTextView
+                android:id="@+id/contactTxt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:gravity="start|center_vertical"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/txt_size_16"
+                app:customTypeFace="@string/system_light"
+                tools:text="Contact Us" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/contactLine"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="#000000" />
+
+        <LinearLayout
+            android:id="@+id/helpArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_7sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:clickable="false"
+                android:src="@drawable/ic_menu_help" />
+
+            <com.view.MTextView
+                android:id="@+id/helpTxt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:gravity="start|center_vertical"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/txt_size_16"
+                app:customTypeFace="@string/system_light"
+                tools:text="Help" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/helpLine"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="#000000" />
+    </LinearLayout>
+</layout>

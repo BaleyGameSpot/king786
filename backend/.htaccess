@@ -1,0 +1,455 @@
+IndexIgnore *
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} /(.*)/$
+RewriteRule ^ /%1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} /setup_info/|/webimages/script_files/ [NC] 
+RewriteCond %{HTTP_HOST} !192.168.1.141 [NC] 
+RewriteCond %{HTTP_HOST} !webprojectsdemo.com [NC] 
+RewriteCond %{HTTP_HOST} !webprojectsdemo.net [NC] 
+RewriteCond %{HTTP_HOST} !v3cprojectsdemo.com [NC] 
+RewriteRule . https://%{HTTP_HOST}/Page-Not-Found [L]
+
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_URI} /app_configuration_file.php [NC] 
+# RewriteCond %{HTTP_HOST} !webprojectsdemo.net [NC] 
+# RewriteCond %{HTTP_HOST} !v3cprojectsdemo.com [NC] 
+# RewriteRule . https://%{HTTP_HOST}/Page-Not-Found [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} /assets/libraries/SocketClsNodeN/|/assets/libraries/mapsApiServiceProvider/|/assets/libraries/SocketClsNode/|/assets/libraries/datasetfiles/|/assets/libraries/adminMongo/|/sampletest.php [NC] 
+RewriteCond %{HTTP_HOST} !192.168.1.141 [NC] 
+RewriteCond %{HTTP_HOST} !webprojectsdemo.com [NC] 
+RewriteCond %{HTTP_HOST} !webprojectsdemo.net [NC] 
+RewriteCond %{HTTP_HOST} !v3cprojectsdemo.com [NC] 
+RewriteRule . 404-error.php [L]
+
+# Force SSL on all pages excluding Socket cluster dependent pages
+
+# Force No SSL on Socket cluster dependent pages
+# RewriteCond %{HTTPS} on [NC]
+# RewriteCond %{HTTP_HOST} !192.168.1.131 [NC] 
+# RewriteCond %{HTTP_HOST} !192.168.1.141 [NC] 
+# RewriteCond %{HTTP_HOST} !192.168.1.151 [NC]
+# RewriteCond %{HTTP_HOST} !67.205.155.33 [NC]
+# RewriteCond %{REQUEST_URI} /admin386/map_tracking.php|/admin386/ajax_getdriver_detail.php|ajax_getdirver_detail.php|trip_tracking.php|trip_tracking_multi_delivery.php|invoice_deliverall.php|invoice.php|cx-invoice_deliverall.php|cx-ajax_getOrderstatus.php|cx-processing_orders_store.php|/admin386/server_details.php|/admin386/sc_diagnostics.php|/admin386/sc_publish.php|socket_cluster.php [NC]
+# RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# RewriteCond %{HTTPS} on [NC]
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$ [NC] # Condition to make sure it's not sub domain
+# RewriteCond %{REQUEST_URI} !/webservice_shark.php [NC]
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+#get_reverse_geocoding_file_content.php file is included only in first block bc some are http and some are https..
+
+<FilesMatch ".(sh)$">
+	Order Allow,Deny
+	Deny from all
+</FilesMatch>
+<Files *.tpl>
+	Deny from all
+</Files>
+<Files *.inc>
+	Deny from all
+</Files>
+RewriteRule ^help-center$ help_center.php
+RewriteRule ^login-new$ login_new.php
+
+RewriteRule ^profile$ profile.php
+RewriteRule ^dashboard$ dashboard.php
+RewriteRule ^vehicle$ vehicle.php
+#RewriteRule ^vehicle/(.*)$ vehicle.php?iDriverId=$1
+
+RewriteRule ^vehicle-add$ vehicle_add_form.php
+RewriteRule ^driver-trip$ driver_trip.php
+RewriteRule ^provider-job$ driver_trip.php
+
+RewriteRule ^provider-bid$ cx-driver-bids.php
+
+RewriteRule ^driver-order$ driver_order.php
+RewriteRule ^payment-request$ payment_request.php
+RewriteRule ^logout$ logout.php
+RewriteRule ^driverlist$ driver.php
+RewriteRule ^foodcategorylist$ food_menu.php
+RewriteRule ^menuitems$ menuitems.php
+RewriteRule ^company-order$ company_order.php
+RewriteRule ^processing-orders$ processing_orders.php
+RewriteRule ^fare-estimate$ fareestimate.php
+RewriteRule ^providerlist$ driver.php
+RewriteRule ^company-trip$ company_trip.php
+RewriteRule ^profile-rider$ profile_rider.php
+RewriteRule ^profile-user$ profile_rider.php
+RewriteRule ^mytrip$ mytrip.php
+RewriteRule ^mybids$ cx-mybids.php
+RewriteRule ^myorder$ myorder.php
+RewriteRule ^driver_wallet$ rider_wallet.php?type=Driver
+RewriteRule ^provider_images$ provider_images.php
+RewriteRule ^rider_wallet$ rider_wallet.php?type=Rider
+RewriteRule ^provider_wallet$ rider_wallet.php?type=Driver
+RewriteRule ^user_wallet$ rider_wallet.php?type=Rider
+RewriteRule ^rider-login$ login_new.php?action=rider
+RewriteRule ^driver-login$ login_new.php?action=driver
+RewriteRule ^user-login$ login_new.php?action=rider
+RewriteRule ^provider-login$ login_new.php?action=driver
+RewriteRule ^company-login$ login_new.php?action=driver&iscompany=1
+RewriteRule ^organization-login$ organization_login.php?action=organization
+RewriteRule ^organization-profile$ organization-profile.php
+RewriteRule ^organization-user$ my_users.php
+RewriteRule ^store_images$ store_images.php
+RewriteRule ^store_users$ subadmin.php
+RewriteRule ^store_users_action$ cx-subadmin_action.php
+RewriteRule ^store-profile-user$ cx-profile-user.php
+RewriteRule ^blog$ cx-store_blog.php
+RewriteRule ^store-blog$ blog.php?iCompanyId=$1
+
+RewriteRule ^rider$ login_new.php?action=rider
+RewriteRule ^driver$ login_new.php?action=driver
+#RewriteRule ^facebook$ fbconnect.php
+
+RewriteRule ^facebook$ fb-login/fbconfig.php
+RewriteRule ^facebook/(.*)$ fb-login/fbconfig.php?userType=$1
+RewriteRule ^facebook-rider/(.*)$ fb-login/fbconfig-rider.php?userType=$1
+
+RewriteRule ^twitter/(.*)$ twconnect.php?userType=$1
+RewriteRule ^google/(.*)$ gpconnect.php?userType=$1
+#RewriteRule ^google-rider/(.*)$ gpconnect_user.php?userType=$1
+RewriteRule ^linkedin/(.*)$ linkedin-login/auth.php?userType=$1
+RewriteRule ^linkedin-rider/(.*)$ linkedin-login/auth-rider.php?userType=$1
+
+
+
+RewriteRule ^hotel$ admin386/index.php?userType=hotel
+RewriteRule ^billingpanel$ admin386/index.php?userType=billing
+RewriteRule ^sign-in$ sign-in.php
+RewriteRule ^sign-up-rider$ sign-up_rider.php
+RewriteRule ^sign-up-user$ sign-up_rider.php
+RewriteRule ^sign-up-restaurant$ sign-up-restaurant.php
+RewriteRule ^sign-up-organization$ sign-up-organization.php
+RewriteRule ^sign-up$ sign-up.php
+RewriteRule ^about-us$ about.php
+RewriteRule ^trust-safety-insurance$ trust_safty_insurance.php
+RewriteRule ^safety-measures$ safety_measures.php
+
+RewriteRule ^how-it-works$ how_it_works.php
+RewriteRule ^terms-condition$ terms_condition.php
+RewriteRule ^gift-card-terms-condition$ terms_conditions_gift_card_code.php
+RewriteRule ^faq$ faq.php
+RewriteRule ^about$ about.php
+RewriteRule ^contact-us$ contact_us.php
+RewriteRule ^help-center$ help_center.php
+RewriteRule ^legal$ legal.php
+RewriteRule ^dummy$ dummy_data_insert.php
+RewriteRule ^settings$ settings.php
+RewriteRule ^privacy-policy$ privacy-policy.php
+RewriteRule ^organization-trip$ organization_trip.php
+RewriteRule ^users-trip$ organization_users_trip.php
+RewriteRule ^maintanance maintanance.php
+
+RewriteRule ^cj-sign-in$ sign-in.php
+RewriteRule ^cj-user-login$ login_new.php?action=rider
+RewriteRule ^cj-rider-login$ login_new.php?action=rider
+RewriteRule ^cj-provider-login$ login_new.php?action=driver
+RewriteRule ^cj-driver-login$ login_new.php?action=driver
+RewriteRule ^cj-company-login$ login_new.php?action=driver&iscompany=1
+RewriteRule ^cj-organization-login$ organization_login.php?action=organization
+RewriteRule ^cj-sign-up$ sign-up.php
+RewriteRule ^cj-sign-up-user$ sign-up_rider.php
+RewriteRule ^cj-sign-up-rider$ sign-up_rider.php
+RewriteRule ^cj-sign-up-restaurant$ sign-up-restaurant.php
+RewriteRule ^cj-sign-up-organization$ sign-up-organization.php
+RewriteRule ^cj-SignUp$ sign-up.php
+
+
+
+RewriteRule ^order-items$ user_info.php
+RewriteRule ^order-items/(.*)$ user_info.php?pageId=$1
+RewriteRule ^store-listing$ restaurant_listing.php
+RewriteRule ^store-items$ restaurant_menu.php
+RewriteRule ^store-order$ restaurant_place-order.php
+RewriteRule ^user-order-information$ customer_info.php
+
+
+RewriteRule ^userbooking$ userbooking.php?userType1=rider
+
+RewriteRule ^companybooking$ userbooking.php?userType1=company
+
+RewriteRule ^adminbooking$ userbooking.php?userType1=admin
+
+#### tracking company #####
+RewriteRule ^trackinguserlist$ cx-user_list.php
+RewriteRule ^trackinguseraction$ cx-user_action.php
+RewriteRule ^trackingtriplist$ cx-track_company_list.php
+#### tracking company #####
+#RewriteRule ^adminbooking/(.*)$ userbooking.php?userType1=admin&booking_id=$1 [QSA]
+
+RewriteRule ^SignUp sign-up.php
+RewriteRule ^my-account my-account.php
+RewriteRule ^Logout logout.php
+RewriteRule ^Organization-Logout organization-logout.php
+RewriteRule ^Page-Not-Found 404-error.php
+RewriteRule ^Site-Maintenance-Page site_maintenance.php
+
+###############################################################################
+
+#RewriteRule ^cx-sign-in$ cx-sign-in.php
+#RewriteRule ^cx-sign-up$ cx-sign-up.php
+
+#RewriteRule ^processing-orders$ cx-processing_orders.php
+
+#RewriteRule ^companybooking$ cx-userbooking.php?userType1=company
+#RewriteRule ^companybooking-ride$ cx-userbooking.php?userType1=company&navigatedPage=ride
+#RewriteRule ^companybooking-delivery$ cx-userbooking.php?userType1=company&navigatedPage=Delivery
+#RewriteRule ^companybooking-fly$ cx-userbooking.php?userType1=company&navigatedPage=Fly
+#RewriteRule ^companybooking-moto$ cx-userbooking.php?userType1=company&navigatedPage=Moto
+
+#RewriteRule ^userbooking$ cx-userbooking.php?userType1=rider
+#RewriteRule ^userbooking-ride$ cx-userbooking.php?userType1=rider&navigatedPage=ride
+#RewriteRule ^userbooking-delivery$ cx-userbooking.php?userType1=rider&navigatedPage=Delivery
+#RewriteRule ^userbooking-fly$ cx-userbooking.php?userType1=rider&navigatedPage=Fly
+#RewriteRule ^userbooking-moto$ cx-userbooking.php?userType1=rider&navigatedPage=Moto
+
+RewriteRule ^companybooking-ride$ userbooking.php?userType1=company&navigatedPage=ride
+RewriteRule ^companybooking-delivery$ userbooking.php?userType1=company&navigatedPage=Delivery
+RewriteRule ^companybooking-fly$ userbooking.php?userType1=company&navigatedPage=Fly
+RewriteRule ^companybooking-moto$ userbooking.php?userType1=company&navigatedPage=Moto
+
+RewriteRule ^userbooking-ride$ userbooking.php?userType1=rider&navigatedPage=ride
+RewriteRule ^userbooking-delivery$ userbooking.php?userType1=rider&navigatedPage=Delivery
+RewriteRule ^userbooking-fly$ userbooking.php?userType1=rider&navigatedPage=Fly
+RewriteRule ^userbooking-moto$ userbooking.php?userType1=rider&navigatedPage=Moto
+
+RewriteRule ^company-fare-estimate$ cx-fareestimate.php?userType1=company
+RewriteRule ^user-fare-estimate$ cx-fareestimate.php?userType1=rider
+
+RewriteRule ^earn$ cx-earn.php
+RewriteRule ^corporate-ride$ cx-business.php
+#RewriteRule ^taxi$ cx-taxi.php
+RewriteRule ^taxi$ cx-services.php?iVehicleCategoryId=174
+RewriteRule ^food$ cx-food.php
+#RewriteRule ^delivery$ cx-delivery.php
+RewriteRule ^delivery$ cx-services.php?iVehicleCategoryId=178
+RewriteRule ^moto$ cx-moto.php
+#RewriteRule ^fly$ cx-fly.php
+RewriteRule ^fly$ cx-services.php?iVehicleCategoryId=276
+RewriteRule ^about$ cx-about.php
+RewriteRule ^grocery$ cx-grocery.php
+RewriteRule ^otherservices$ cx-otherservices.php
+RewriteRule ^otherservices/(.*)/(.*)$ cx-otherservices.php?iVehicleCategoryId=$2
+RewriteRule ^services/(.*)/(.*)$ cx-services.php?iVehicleCategoryId=$2
+RewriteRule ^moto/(.*)/(.*)$ cx-moto.php?iVehicleCategoryId=$2
+RewriteRule ^msite$ cx-msite.php
+RewriteRule ^doctor$ cx-doctor.php
+RewriteRule ^video-consulting/(.*)/(.*)$ cx-services.php?iMedicalVehicleCategoryId=$2&iVehicleCategoryId=$2&video-consulting=1
+RewriteRule ^medical-services/(.*)/(.*)$ cx-services.php?medical_services=1&iVehicleCategoryId=$2
+RewriteRule ^service-bid/(.*)/(.*)$ cx-services.php?iVehicleCategoryId=$2&service-bid=1
+
+RewriteRule ^join/(.*)$ video_call_response.php?roomId=$1
+RewriteRule ^message/(.*)/(.*)$ video_call_message.php?roomId=$1&userId=$2
+
+############# Rewrite rule for templates, css and images ###############################
+
+# RewriteRule ^assets/css/apptype/(.*)/(.*)$ /assets/theme/$1/css/$2 [NC,L]
+# RewriteRule ^assets/img/page/home/apptype/(.*)/(.*)$ /assets/theme/$1/img/$2 [NC,L]
+# RewriteRule ^assets/img/apptype/(.*)/(.*)$ /assets/theme/$1/img/$2 [NC,L]
+
+############# Rewrite rule for templates, css and images end ###########################
+
+#RewriteRule ^sign-in.php$ cx-sign-in
+
+# RewriteRule ^/index.php / [QSA,L]
+
+ErrorDocument 404 https://%{HTTP_HOST}/Page-Not-Found
+
+####################################################################################################################################
+# compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+######
+
+######
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/x-javascript
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+Header append Vary User-Agent
+######
+
+######
+Header unset ETag
+FileETag None
+######
+
+<ifModule mod_deflate.c>
+  <filesMatch ".(css|js|x?html?|php|jpg|jpeg|js|pdf|png|svg|swf|tif|tiff)$">
+    SetOutputFilter DEFLATE
+  </filesMatch>
+</ifModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css text/javascript application/javascript
+</IfModule>
+
+
+# 1 Month for most static assets
+<filesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
+Header set Cache-Control "max-age=2592000, public"
+</filesMatch>
+
+<IfModule mod_headers.c>
+	Header set Access-Control-Allow-Origin "*"
+    <FilesMatch "\.(bmp|css|flv|gif|ico|jpg|jpeg|js|pdf|png|svg|swf|tif|tiff)$">
+        Header set Last-Modified "Fri, 31 Aug 2018 00:00:00 GMT"
+    </FilesMatch>
+</IfModule>
+
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access plus 2 days"
+</IfModule>
+## EXPIRES CACHING ##
+
+<IfModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_keep_workfiles No
+mod_gzip_can_negotiate Yes
+mod_gzip_add_header_count Yes
+mod_gzip_send_vary Yes
+mod_gzip_command_version '/mod_gzip_status'
+mod_gzip_min_http 1000
+mod_gzip_minimum_file_size 300
+mod_gzip_maximum_file_size 512000
+mod_gzip_maximum_inmem_size 60000
+mod_gzip_handle_methods GET POST
+mod_gzip_temp_dir /tmp
+mod_gzip_item_include file \.html$
+mod_gzip_item_include file \.php$
+mod_gzip_item_include file \.pl$
+mod_gzip_item_include file \.rb$
+mod_gzip_item_include file \.py$
+mod_gzip_item_include file \.cgi$
+mod_gzip_item_include file \.css$
+mod_gzip_item_include file \.js$
+mod_gzip_item_include mime ^application/javascript$
+mod_gzip_item_include mime ^application/x-javascript$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^httpd/unix-directory$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include handler ^server-status$
+mod_gzip_item_include handler ^server-info$
+mod_gzip_item_include handler ^application/x-httpd-php
+mod_gzip_item_exclude mime ^image/.*
+</IfModule>
+####################################################################################################################################
+
+<IfModule mod_rewrite.c>
+ #RewriteEngine on
+ #RewriteCond %{REMOTE_ADDR} !^123\.456\.789\.000
+ #RewriteCond %{REQUEST_URI} !maintenance.html$ [NC]
+ #RewriteCond %{REQUEST_URI} !\.(jpe?g?|png|gif|jpg) [NC]
+ #RewriteRule .* maintenance.html [R=302,L]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+#RewriteEngine on
+#RewriteCond %{REMOTE_ADDR} !^123\.456\.789\.000
+#RewriteCond %{REQUEST_URI} !1.html$ [NC]
+#RewriteCond %{REQUEST_URI} !\.(jpe?g?|png|gif|jpg) [NC]
+#RewriteRule .* 1.html [R=301,L]
+</IfModule>
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php7_module>
+   php_flag display_errors On
+   php_value max_execution_time 60
+   php_value max_input_time 90
+   php_value max_input_vars 3000
+   php_value memory_limit 1024M
+   php_value post_max_size 128M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php74"
+   php_value upload_max_filesize 64M
+   php_flag zlib.output_compression On
+</IfModule>
+<IfModule lsapi_module>
+   php_flag display_errors On
+   php_value max_execution_time 60
+   php_value max_input_time 90
+   php_value max_input_vars 3000
+   php_value memory_limit 1024M
+   php_value post_max_size 128M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php74"
+   php_value upload_max_filesize 64M
+   php_flag zlib.output_compression On
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php8_module>
+   php_flag display_errors On
+   php_value max_execution_time 0
+   php_value max_input_time 0
+   php_value max_input_vars 15000
+   php_value memory_limit 128M
+   php_value post_max_size 900M
+   php_value session.gc_maxlifetime 43200
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php82"
+   php_value upload_max_filesize 900M
+   php_flag zlib.output_compression On
+</IfModule>
+<IfModule lsapi_module>
+   php_flag display_errors On
+   php_value max_execution_time 0
+   php_value max_input_time 0
+   php_value max_input_vars 15000
+   php_value memory_limit 128M
+   php_value post_max_size 900M
+   php_value session.gc_maxlifetime 43200
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php82"
+   php_value upload_max_filesize 900M
+   php_flag zlib.output_compression On
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^buddyverse\.africa$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.buddyverse\.africa$
+RewriteRule ^/?$ "https\:\/\/www\.buddyverse\.africa\/" [R=301,L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php83” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php83 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

@@ -1,0 +1,20 @@
+{
+    "name": "admin/library",
+    "require": {
+        "illuminate/pagination": "^11.19",
+        "illuminate/http": "^11.19",
+        "illuminate/events": "^11.19",
+        "illuminate/database": "^11.19",
+        "php": "*"
+    },
+    "autoload": {
+    	"psr-4": { 
+	        "Models\\": "models/"
+	    }
+	},
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
+    }
+}

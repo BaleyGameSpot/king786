@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/appThemeColor_1"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/searcharea"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/appThemeColor_1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:background="@drawable/search_shape"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:srcCompat="@drawable/ic_search_black_24dp" />
+
+            <EditText
+                android:id="@+id/searchTxt"
+                layout="@layout/editbox_form_design"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/search_shape"
+                android:hint="search"
+                android:inputType="textNoSuggestions"
+                android:padding="5dp"
+                android:paddingEnd="25dp"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/txt_size_16" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageCancel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="-40dp"
+            android:src="@mipmap/ic_cancel_cab_request"
+            android:visibility="gone"
+            app:tint="@android:color/black" />
+
+        <com.view.MTextView
+            android:id="@+id/cancelTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:padding="5dp"
+            android:text="Cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_size_14"
+            app:customTypeFace="@string/system_light" />
+
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/toolbarArea"
+        layout="@layout/design_toolbar_general" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:padding="@dimen/_15sdp">
+
+        <com.view.MTextView
+            android:id="@+id/headingTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_11ssp"
+            app:customTypeFace="@string/system_bold" />
+
+        <LinearLayout
+            android:id="@+id/ll_pinnedlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headingTxt"
+            android:layout_marginTop="@dimen/_11ssp"
+            android:background="@drawable/card_view_23_gray_shadow"
+            android:padding="@dimen/_15sdp">
+
+            <com.view.pinnedListView.PinnedSectionListView
+                android:id="@+id/organization_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_view_23_white_line_flat_1"
+                android:divider="#dddddd"
+                android:dividerHeight="0dp"
+                android:footerDividersEnabled="false"
+                android:headerDividersEnabled="false" />
+        </LinearLayout>
+
+        <com.view.MTextView
+            android:id="@+id/noResTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:maxLines="2"
+            android:padding="10dp"
+            android:textColor="#9F9F9F"
+            android:textSize="@dimen/txt_size_16"
+            android:visibility="gone"
+            app:customTypeFace="@string/system_light"
+            tools:visibility="visible" />
+
+        <com.view.MTextView
+            android:id="@+id/noData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:maxLines="2"
+            android:padding="10dp"
+            android:textColor="#9F9F9F"
+            android:textSize="@dimen/txt_size_16"
+            android:visibility="gone"
+            app:customTypeFace="@string/system_light" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <com.view.ErrorView
+            android:id="@+id/errorView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_btn_type2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/btn_type2"
+                layout="@layout/btn_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_btn_height"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
+

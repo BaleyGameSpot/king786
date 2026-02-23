@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/design_toolbar_general" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Profile View -->
+                <LinearLayout
+                    android:id="@+id/profileView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_110sdp"
+                        android:background="@color/appThemeColor_1"
+                        android:gravity="center">
+
+                        <FrameLayout
+                            android:layout_width="@dimen/_85sdp"
+                            android:layout_height="@dimen/_85sdp"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            tools:ignore="UselessParent">
+
+                            <com.view.SelectableRoundedImageView
+                                android:id="@+id/userImgView"
+                                android:layout_width="@dimen/_85sdp"
+                                android:layout_height="@dimen/_85sdp"
+                                android:scaleType="centerCrop"
+                                app:sriv_border_color="@color/white"
+                                app:sriv_border_width="2dip"
+                                app:sriv_left_bottom_corner_radius="20dip"
+                                app:sriv_left_top_corner_radius="20dip"
+                                app:sriv_oval="true"
+                                app:sriv_right_bottom_corner_radius="20dip"
+                                app:sriv_right_top_corner_radius="20dip"
+                                tools:background="@drawable/ic_baseline_person_24" />
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/_35sdp"
+                                android:layout_height="@dimen/_35sdp"
+                                android:layout_gravity="top|end"
+                                android:background="@drawable/circle_shadow_big">
+
+                                <com.view.SelectableRoundedImageView
+                                    android:id="@+id/editIconImgView"
+                                    android:layout_width="@dimen/_30sdp"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_centerInParent="true"
+                                    android:scaleType="centerCrop"
+                                    app:srcCompat="@mipmap/ic_edit"
+                                    app:sriv_border_color="@color/white"
+                                    app:sriv_border_width="0dip"
+                                    app:sriv_left_bottom_corner_radius="5dip"
+                                    app:sriv_left_top_corner_radius="5dip"
+                                    app:sriv_oval="true"
+                                    app:sriv_right_bottom_corner_radius="5dip"
+                                    app:sriv_right_top_corner_radius="5dip" />
+                            </RelativeLayout>
+                        </FrameLayout>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_40sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/txtUserNameH"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_13sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="User Name" />
+
+                        <com.view.MTextView
+                            android:id="@+id/txtUserNameV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Gray"
+                            android:textSize="@dimen/_11sdp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="Dtfinal dtfinal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/txtUserPhoneH"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_13sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="User Phone" />
+
+                        <com.view.MTextView
+                            android:id="@+id/txtUserPhoneV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Gray"
+                            android:textSize="@dimen/_11sdp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="+918128545553" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/txtInviteCodeH"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_13sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Invite Code" />
+
+                        <com.view.MTextView
+                            android:id="@+id/txtInviteCodeV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Gray"
+                            android:textSize="@dimen/_11sdp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="SBS8DW7E" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/txtUserLocationH"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_13sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="User Location" />
+
+                        <com.view.MTextView
+                            android:id="@+id/txtUserLocationV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Gray"
+                            android:textSize="@dimen/_11sdp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="Axar apartment,c2 apartment,Ahmedabad,Gujarat 380013" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Vehicle View -->
+                <LinearLayout
+                    android:id="@+id/vehicleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/txtVehicleMakeH"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_13sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Vehicle Make" />
+
+                        <com.view.MTextView
+                            android:id="@+id/txtVehicleMakeV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Gray"
+                            android:textSize="@dimen/_11sdp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="Force" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/txtVehicleLiceNoH"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_13sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Vehicle License Number" />
+
+                        <com.view.MTextView
+                            android:id="@+id/txtVehicleLiceNoV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Gray"
+                            android:textSize="@dimen/_11sdp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="AABBCC" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/txtDriverNameH"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_13sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Driver Name" />
+
+                        <com.view.MTextView
+                            android:id="@+id/txtDriverNameV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Gray"
+                            android:textSize="@dimen/_11sdp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="Don Track" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/txtDriverPhoneH"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_13sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Driver Phone" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.view.MTextView
+                                android:id="@+id/txtDriverPhoneV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/Gray"
+                                android:textSize="@dimen/_11sdp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="48455" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgCallDriver"
+                                android:layout_width="@dimen/_22sdp"
+                                android:layout_height="@dimen/_22sdp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_minus3sdp"
+                                android:padding="@dimen/_3sdp"
+                                app:srcCompat="@drawable/ic_call_fill"
+                                app:tint="@color/appThemeColor_1" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/txtOrgNameH"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_13sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Organization Name" />
+
+                        <com.view.MTextView
+                            android:id="@+id/txtOrgNameV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Gray"
+                            android:textSize="@dimen/_11sdp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="vTrack" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/txtOrgPhoneH"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_13sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Organization Phone No." />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.view.MTextView
+                                android:id="@+id/txtOrgPhoneV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/Gray"
+                                android:textSize="@dimen/_11sdp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="9595" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgCallOrg"
+                                android:layout_width="@dimen/_22sdp"
+                                android:layout_height="@dimen/_22sdp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_minus3sdp"
+                                android:padding="@dimen/_3sdp"
+                                app:srcCompat="@drawable/ic_call_fill"
+                                app:tint="@color/appThemeColor_1" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/txtOrgAddressH"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_13sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Organization Address" />
+
+                        <com.view.MTextView
+                            android:id="@+id/txtOrgAddressV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/Gray"
+                            android:textSize="@dimen/_11sdp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="dfsdfkjdsfjsgdf" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

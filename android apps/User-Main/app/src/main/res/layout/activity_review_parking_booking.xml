@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/design_toolbar_general" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_alignParentTop="true"
+                android:background="@color/appThemeColor_1" />
+
+            <LinearLayout
+                android:id="@+id/topCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/card_view_23_white_line_flat_1"
+                android:elevation="@dimen/_2sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:layout_marginEnd="@dimen/_11sdp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        app:srcCompat="@drawable/ic_location_pro" />
+
+                    <com.view.MTextView
+                        android:id="@+id/tAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:maxLines="4"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_12ssp"
+                        app:autoSizeMaxTextSize="@dimen/_20ssp"
+                        app:autoSizeMinTextSize="@dimen/_9ssp"
+                        app:autoSizeStepGranularity="@dimen/_1ssp"
+                        app:autoSizeTextType="uniform"
+                        tools:text="Mondal Square, B205C, Ahemdabad, Gujrat, India" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:layout_marginEnd="@dimen/_11sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/parkingFrom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text23Pro_Light"
+                            android:textSize="@dimen/_11ssp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="Parking from" />
+
+                        <com.view.MTextView
+                            android:id="@+id/fromDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_9ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="14 Jun at 10:00" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_arrow_long"
+                        app:tint="@color/text23Pro_Light" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:gravity="end"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/parkingUntil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text23Pro_Light"
+                            android:textSize="@dimen/_11ssp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="Parking from" />
+
+                        <com.view.MTextView
+                            android:id="@+id/untilDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_9ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="14 Jun at 10:00" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:background="@drawable/bottom_all_curve_card_7sdp"
+                    android:backgroundTint="@color/cardView23ProBG"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/_11ssp"
+                    android:paddingEnd="@dimen/_11ssp"
+                    android:rotation="@integer/angle_rtl_180"
+                    android:weightSum="3">
+
+
+                    <com.view.MTextView
+                        android:id="@+id/totalDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_9ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="20 mins" />
+
+                    <com.view.MTextView
+                        android:id="@+id/totalDurationHTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_6sdp"
+                        android:textColor="@color/text23Pro_Light"
+                        android:textSize="@dimen/_10ssp"
+                        app:customTypeFace="@string/system_regular"
+                        tools:text="Selected Duration" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/priceInfoHtTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_9sdp"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_13ssp"
+                        app:customTypeFace="@string/system_bold"
+                        tools:text="Pricing Information" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:background="@drawable/card_view_23_gray_shadow"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_15sdp">
+
+                        <LinearLayout
+
+                            android:id="@+id/priceInfoContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/card_view_23_white_shadow"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <com.view.MTextView
+                        android:id="@+id/paymentModeHTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_13ssp"
+                        app:customTypeFace="@string/system_bold"
+                        tools:text="Payment Mode" />
+
+                    <LinearLayout
+                        android:id="@+id/llPaymentMode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:background="@drawable/card_view_23_white_shadow"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/cashImg"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginStart="@dimen/_7sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginBottom="@dimen/_7sdp" />
+
+                        <com.view.MTextView
+                            android:id="@+id/paymentModeTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_14ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Cash" />
+
+                    </LinearLayout>
+
+
+                    <com.view.MTextView
+                        android:id="@+id/carDetailsHTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_13ssp"
+                        app:customTypeFace="@string/system_bold"
+                        tools:text="Car Details" />
+
+                    <LinearLayout
+                        android:id="@+id/llCarDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:background="@drawable/card_view_23_white_shadow"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/carImgView"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_142sdp"
+                            android:background="@color/imageBg"
+                            android:scaleType="centerCrop" />
+
+                        <com.view.MTextView
+                            android:id="@+id/carName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_11sdp"
+                            android:layout_marginTop="@dimen/_11sdp"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_12ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Venue" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_11sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:layout_marginEnd="@dimen/_11sdp"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_12sdp"
+                                android:layout_gravity="center"
+                                android:tint="@color/text23Pro_Light"
+                                app:srcCompat="@drawable/car_rental" />
+
+                            <com.view.MTextView
+                                android:id="@+id/carModel"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:layout_weight="1"
+                                android:textColor="@color/text23Pro_Light"
+                                android:textSize="@dimen/_11ssp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="Hyundai - Black" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/editCar"
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                app:srcCompat="@drawable/ic_edit_pencil_23" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_11sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:layout_marginEnd="@dimen/_11sdp"
+                            android:layout_marginBottom="@dimen/_12sdp"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="19dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/ic_car_plate" />
+
+                            <com.view.MTextView
+                                android:id="@+id/carNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:textColor="@color/text23Pro_Light"
+                                android:textSize="@dimen/_11ssp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="A45 - 458" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llAddCarDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:background="@drawable/card_view_23_white_shadow"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/_15sdp"
+                            android:paddingTop="@dimen/_15sdp"
+                            android:paddingEnd="@dimen/_11sdp"
+                            android:paddingBottom="@dimen/_15sdp">
+
+                            <com.view.MTextView
+                                android:id="@+id/carNotFoundTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_15ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="Car Details not Found" />
+
+                            <com.view.MTextView
+                                android:id="@+id/carNotFoundSubTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="There are currently no vehicles Found"
+                                android:textColor="@color/textSub23Pro_gray"
+                                android:textSize="@dimen/_11ssp"
+                                app:customTypeFace="@string/system_regular" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            app:srcCompat="@drawable/addiconnew" />
+
+
+                    </LinearLayout>
+
+                    <com.view.MTextView
+                        android:id="@+id/driverDetailsHTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_13ssp"
+                        app:customTypeFace="@string/system_bold"
+                        tools:text="Driver Details" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_11sdp"
+                        android:background="@drawable/card_view_23_white_shadow"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/_13sdp"
+                        android:paddingBottom="@dimen/_13sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_11sdp"
+                            app:srcCompat="@drawable/contact_img_parking" />
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/userName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_12ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="John Kartar" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_11sdp"
+                                    android:layout_height="@dimen/_11sdp"
+                                    android:layout_gravity="center"
+                                    app:srcCompat="@drawable/ic_call_1" />
+
+                                <com.view.MTextView
+                                    android:id="@+id/userNumber"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:textColor="@color/appThemeColor_1"
+                                    android:textSize="@dimen/_12ssp"
+                                    app:customTypeFace="@string/system_regular"
+                                    tools:text="+91 9898406121" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/editDriver"
+                            android:layout_width="@dimen/_16sdp"
+                            android:layout_height="@dimen/_16sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            app:srcCompat="@drawable/ic_edit_pencil_23" />
+
+                    </LinearLayout>
+
+                    <com.view.MTextView
+                        android:id="@+id/ratingHTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_13ssp"
+                        android:visibility="gone"
+                        app:customTypeFace="@string/system_bold"
+                        tools:text="Ratings &amp; review"
+                        tools:visibility="visible" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ratingLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/card_view_23_gray_shadow"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:background="@drawable/all_roundcurve_card_food"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/_9sdp"
+                            android:paddingEnd="@dimen/_9sdp">
+
+                            <com.view.simpleratingbar.SimpleRatingBar
+                                android:id="@+id/ratingBar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_10sdp"
+                                android:backgroundTint="@color/gray_holo_light"
+                                app:SRB_fillColor="@color/ratingfill"
+                                app:SRB_isIndicator="false"
+                                app:SRB_numberOfStars="5"
+                                app:SRB_starBackgroundColor="@color/gray_holo_light"
+                                app:SRB_starSize="@dimen/_30sdp"
+                                app:SRB_stepSize="0.5" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="@dimen/_15sdp"
+                                android:background="@drawable/card_view_23_white_shadow"
+                                android:padding="@dimen/_9sdp">
+
+                                <com.view.editBox.MaterialEditText
+                                    android:id="@+id/EtReview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_45sdp"
+                                    android:gravity="top"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:met_hideUnderline="true"
+                                    app:met_textColor="@color/text23Pro_Dark"
+                                    app:met_textColorHint="@color/text23Pro_Light"
+                                    tools:hint="Tell us what you liked..." />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.view.MTextView
+                            android:id="@+id/rateBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/_11sdp"
+                            android:background="@drawable/border_fill"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/_20sdp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingEnd="@dimen/_20sdp"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_13ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Rate" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_cash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_view_23_white_top_shadow"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_15sdp">
+
+            <LinearLayout
+                android:id="@+id/btn_type2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/border"
+                android:backgroundTint="@color/text23Pro_Dark"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_paymentType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        app:srcCompat="@drawable/wallet_parking" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/selectTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text23Pro_Light"
+                            android:textSize="@dimen/_9ssp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="Select" />
+
+                        <com.view.MTextView
+                            android:id="@+id/cashTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_9ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Cash" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_9sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:paddingTop="@dimen/_12sdp"
+                        app:srcCompat="@drawable/ic_down_arrow_23" />
+                </LinearLayout>
+
+
+                <com.view.MTextView
+                    android:id="@+id/canceltxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_14ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="Cancel Booking" />
+
+
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/btn_pay_and_reserve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/border_fill"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                app:customTypeFace="@string/system_medium"
+                tools:text="Pay &amp; Reserve" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cancelledView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/top_curve_card_shadow"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_11sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_11sdp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <com.view.MTextView
+                android:id="@+id/bookingCancelledHTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/delete_btn_Red"
+                android:textSize="@dimen/_14ssp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="Booking has been cancelled." />
+
+            <com.view.MTextView
+                android:id="@+id/cancelReasonTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:textColor="@color/text23Pro_Light"
+                android:textSize="@dimen/_11ssp"
+                app:customTypeFace="@string/system_regular"
+                tools:text="Reason: Plan Changed" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

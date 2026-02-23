@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/llVideoConsultEnableView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:tint="@color/appThemeColor_1"
+                    app:srcCompat="@drawable/ic_video_consultation" />
+
+                <com.view.MTextView
+                    android:id="@+id/txtVideoConsultEnableTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:text="@string/app_name"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/appThemeColor_1"
+                    android:textSize="@dimen/_14ssp"
+                    app:customTypeFace="@string/system_semi_bold" />
+
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/switchVideoConsult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:kswBackColor="@drawable/manage_smart_switch_color"
+                    app:kswThumbRangeRatio="2"
+                    app:kswBackRadius="20dp"
+                    app:kswThumbColor="@color/white"
+                    app:kswThumbHeight="20dp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_75sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/border"
+                android:backgroundTint="@color/gray">
+
+                <com.view.editBox.MaterialEditText
+                    android:id="@+id/editBoxVideoConsultDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColorHint="@color/gray" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <com.view.MTextView
+                    android:id="@+id/txtRateHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:text="Rate: "
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:ignore="HardcodedText" />
+
+                <com.view.MTextView
+                    android:id="@+id/txtRateValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:text="$ 0.00"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/appThemeColor_1"
+                    android:textSize="@dimen/_14ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivEditVideoConsult"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:tint="@color/appThemeColor_1"
+                    app:srcCompat="@drawable/ic_pencil_edit_button" />
+            </LinearLayout>
+
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_1sdp"-->
+<!--                android:background="#E1E1E1" />-->
+
+            <com.view.MTextView
+                android:id="@+id/txtVideoConsultServiceRequestMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                tools:text="@string/app_name"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_11ssp"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/_11sdp"
+                tools:visibility="visible"
+                app:customTypeFace="@string/system_regular" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

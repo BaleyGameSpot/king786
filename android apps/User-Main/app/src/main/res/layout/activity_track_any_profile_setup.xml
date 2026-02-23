@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appThemeColor_60">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                tools:ignore="UselessParent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="start|end"
+                    android:background="@drawable/circle_shadow_big"
+                    android:elevation="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_back_button" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/imgWelcomeImgContainer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieAnimation"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_145sdp"
+                    android:background="@color/appThemeColor_60"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/track_member" />
+
+                <View
+                    android:id="@+id/gradientArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/bottomViewTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    android:textSize="@dimen/_15sdp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="Track Any" />
+
+                <com.view.MTextView
+                    android:id="@+id/bottomView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/Gray"
+                    android:textSize="@dimen/_12sdp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="Enhance the safety and stay updated about the bus location at the touch of a button. Tap on button below to setup your tracking profile. " />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.view.MTextView
+            android:id="@+id/btnSetProfile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_btn_height"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/btn_border_1"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="setup a profile" />
+    </LinearLayout>
+</layout>

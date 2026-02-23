@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <com.view.DividerView
+            android:id="@+id/aboveLine"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/imagedest"
+            android:layout_below="@+id/srcimage"
+            android:layout_gravity="center"
+            android:layout_marginBottom="-7dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layerType="software"
+            app:dividerColor="#8c8c8c"
+            app:dividerDashGap="@dimen/_2sdp"
+            app:dividerDashLength="0.5dp"
+            app:dividerDashThickness="@dimen/_1sdp"
+            app:dividerOrientation="vertical" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_loc_img"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:visibility="visible"
+                app:srcCompat="@drawable/green_circle"
+                app:tint="#008000" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_round"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:visibility="gone"
+                app:srcCompat="@drawable/hcircle"
+                app:tint="#CA3939" />
+
+
+            <View
+                android:id="@+id/squareImgView"
+                android:layout_width="@dimen/_9sdp"
+                android:layout_height="@dimen/_9sdp"
+                android:layout_gravity="center"
+                android:background="@color/disabledColor"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+        <com.view.DividerView
+            android:id="@+id/lowerLine"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/imagedest"
+            android:layout_below="@+id/srcimage"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layerType="software"
+            app:dividerColor="#8c8c8c"
+            app:dividerDashGap="@dimen/_2sdp"
+            app:dividerDashLength="0.5dp"
+            app:dividerDashThickness="@dimen/_1sdp"
+            app:dividerOrientation="vertical" />
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/mainSelectionArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:background="@drawable/card_view_23_gray_flat"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/_2sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp">
+
+            <com.view.MTextView
+                android:id="@+id/toValueTxt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_gravity="start|center"
+                android:layout_weight="1"
+                android:gravity="start|center"
+                android:imeOptions="actionSearch"
+                android:scrollbars="vertical"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text23Pro_Dark"
+                android:textColorHint="@color/text23Pro_Light"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="visible"
+                app:customTypeFace="@string/system_regular"
+                app:met_hideUnderline="true"
+                tools:hint="Input Address Or Source Pin"
+                tools:text="Input Address Or Source Pin" />
+
+
+            <LinearLayout
+                android:id="@+id/removeAdd"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_add_23" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_remove"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_cancel_new"
+                    app:tint="@color/text23Pro_Dark" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

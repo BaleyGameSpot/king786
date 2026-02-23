@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/deliverall_design_toolbar_general" />
+
+        <com.view.MTextView
+            android:id="@+id/orderNoTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:includeFontPadding="false"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_15ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="@string/app_name" />
+
+        <RelativeLayout
+            android:id="@+id/driverFeedbackRatingArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/ratingBtn"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/llBannerArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="9"
+                        android:padding="@dimen/_20sdp"
+                        android:src="@drawable/order_place_food"
+                        tools:ignore="NestedWeights" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/txtRateBy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/app_name"
+                            android:textColor="@color/Gray"
+                            android:textSize="@dimen/txt_size_12"
+                            app:customTypeFace="@string/system_light" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_2sdp"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@color/appThemeColor_1" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llQuestionArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/llratingArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/card_view_23_gray_shadow"
+                                android:padding="@dimen/_10sdp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/card_view_23_white_shadow"
+                                    android:orientation="vertical"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <LinearLayout
+                                        android:id="@+id/llDriverNameRating1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/_10sdp"
+                                        android:orientation="vertical">
+
+                                        <com.view.MTextView
+                                            android:id="@+id/providerNameTxt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginBottom="@dimen/_5sdp"
+                                            android:textColor="@color/text23Pro_Dark"
+                                            android:textSize="@dimen/txt_size_14"
+                                            app:customTypeFace="@string/system_bold" />
+
+                                        <FrameLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center">
+
+                                            <com.view.simpleratingbar.SimpleRatingBar
+                                                android:id="@+id/ratingBarDriver"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:padding="@dimen/_2sdp"
+                                                app:SRB_fillColor="@color/ratingfill"
+                                                app:SRB_starBackgroundColor="@color/gray_holo_light"
+                                                app:SRB_starCornerRadius="10"
+                                                app:SRB_starSize="@dimen/_30sdp"
+                                                app:SRB_starsSeparation="@dimen/_5sdp"
+                                                app:SRB_stepSize="0.5" />
+
+                                            <LinearLayout
+                                                android:id="@+id/llStarEmojiArea"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:orientation="horizontal">
+
+                                                <androidx.appcompat.widget.AppCompatImageView
+                                                    android:id="@+id/ivStarEmoji_1"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    app:srcCompat="@drawable/ic_star1" />
+
+                                                <androidx.appcompat.widget.AppCompatImageView
+                                                    android:id="@+id/ivStarEmoji_2"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_marginStart="@dimen/_2sdp"
+                                                    app:srcCompat="@drawable/ic_star2" />
+
+                                                <androidx.appcompat.widget.AppCompatImageView
+                                                    android:id="@+id/ivStarEmoji_3"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_marginStart="@dimen/_2sdp"
+                                                    app:srcCompat="@drawable/ic_star3" />
+
+                                                <androidx.appcompat.widget.AppCompatImageView
+                                                    android:id="@+id/ivStarEmoji_4"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_marginStart="@dimen/_2sdp"
+                                                    app:srcCompat="@drawable/ic_star4" />
+
+                                                <androidx.appcompat.widget.AppCompatImageView
+                                                    android:id="@+id/ivStarEmoji_5"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_marginStart="@dimen/_2sdp"
+                                                    app:srcCompat="@drawable/ic_star5" />
+
+                                            </LinearLayout>
+
+                                        </FrameLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/llDriverNameRating2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:id="@+id/dataContainer"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="@dimen/_10sdp"
+                                            android:orientation="vertical" />
+
+                                        <include
+                                            android:id="@+id/txtTellUs"
+                                            layout="@layout/editbox_form_design_nw"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+
+                                        <com.view.MTextView
+                                            android:id="@+id/thanksNoteTxt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_5sdp"
+                                            android:layout_marginTop="@dimen/_5sdp"
+                                            android:layout_marginEnd="@dimen/_5sdp"
+                                            android:text="@string/app_name"
+                                            android:textColor="@color/text23Pro_Dark"
+                                            android:textSize="@dimen/txt_size_10"
+                                            app:customTypeFace="@string/system_light" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/llStoreRating"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginBottom="@dimen/_30sdp"
+                                android:background="@drawable/card_view_23_gray_shadow"
+                                android:padding="@dimen/_10sdp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/card_view_23_white_shadow"
+                                    android:orientation="vertical"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <com.view.MTextView
+                                        android:id="@+id/restaurantNameTxt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginBottom="@dimen/_5sdp"
+                                        android:textColor="@color/text23Pro_Dark"
+                                        android:textSize="@dimen/txt_size_14"
+                                        app:customTypeFace="@string/system_bold"
+                                        tools:ignore="TooDeepLayout"
+                                        tools:text="@string/app_name" />
+
+                                    <FrameLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center">
+
+                                        <com.view.simpleratingbar.SimpleRatingBar
+                                            android:id="@+id/ratingBarRestaurant"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:padding="@dimen/_2sdp"
+                                            app:SRB_fillColor="@color/ratingfill"
+                                            app:SRB_starBackgroundColor="@color/gray_holo_light"
+                                            app:SRB_starCornerRadius="10"
+                                            app:SRB_starSize="@dimen/_30sdp"
+                                            app:SRB_starsSeparation="@dimen/_5sdp"
+                                            app:SRB_stepSize="0.5" />
+
+                                        <LinearLayout
+                                            android:id="@+id/llStarEmojiRestaurantArea"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="horizontal">
+
+                                            <androidx.appcompat.widget.AppCompatImageView
+                                                android:id="@+id/ivStarEmoji_R1"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                app:srcCompat="@drawable/ic_star1" />
+
+                                            <androidx.appcompat.widget.AppCompatImageView
+                                                android:id="@+id/ivStarEmoji_R2"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginStart="@dimen/_2sdp"
+                                                app:srcCompat="@drawable/ic_star2" />
+
+                                            <androidx.appcompat.widget.AppCompatImageView
+                                                android:id="@+id/ivStarEmoji_R3"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginStart="@dimen/_2sdp"
+                                                app:srcCompat="@drawable/ic_star3" />
+
+                                            <androidx.appcompat.widget.AppCompatImageView
+                                                android:id="@+id/ivStarEmoji_R4"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginStart="@dimen/_2sdp"
+                                                app:srcCompat="@drawable/ic_star4" />
+
+                                            <androidx.appcompat.widget.AppCompatImageView
+                                                android:id="@+id/ivStarEmoji_R5"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginStart="@dimen/_2sdp"
+                                                app:srcCompat="@drawable/ic_star5" />
+                                        </LinearLayout>
+                                    </FrameLayout>
+
+                                    <include
+                                        android:id="@+id/txtTellUsRestaurant"
+                                        layout="@layout/editbox_form_design_nw"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_10sdp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <include
+                android:id="@+id/ratingBtn"
+                layout="@layout/btn_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_btn_height"
+                android:layout_alignParentBottom="true" />
+
+            <View
+                android:id="@+id/disableArea"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_btn_height"
+                android:layout_alignParentBottom="true"
+                android:background="#95ffffff"
+                android:clickable="true"
+                android:focusable="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/restaurantDriverRatingArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.view.MTextView
+                android:id="@+id/ratingResNameTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:gravity="start|center"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/txt_size_14"
+                app:customTypeFace="@string/system_bold" />
+
+            <com.view.simpleratingbar.SimpleRatingBar
+                android:id="@+id/ratingBarRes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:padding="2dp"
+                app:SRB_fillColor="@color/ratingfill"
+                app:SRB_starBackgroundColor="@color/gray_holo_light"
+                app:SRB_starSize="25dp"
+                app:SRB_stepSize="0.5" />
+
+            <include
+                android:id="@+id/resCommentBox"
+                layout="@layout/editbox_form_design_nw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp" />
+
+            <LinearLayout
+                android:id="@+id/driverAreaRating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#E3E3E3" />
+
+                <com.view.MTextView
+                    android:id="@+id/ratingDriverNameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="start|center"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/txt_size_14"
+                    app:customTypeFace="@string/system_bold" />
+
+                <com.view.simpleratingbar.SimpleRatingBar
+                    android:id="@+id/ratingBarDriverOld"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:padding="2dp"
+                    app:SRB_fillColor="@color/ratingfill"
+                    app:SRB_starBackgroundColor="@color/gray_holo_light"
+                    app:SRB_starSize="25dp"
+                    app:SRB_stepSize="0.5" />
+
+                <include
+                    android:id="@+id/driverCommentBox"
+                    layout="@layout/editbox_form_design_nw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <include
+                    android:id="@+id/ratingBtnOld"
+                    layout="@layout/btn_type_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/all_btn_height" />
+
+                <View
+                    android:id="@+id/disableArea1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/all_btn_height"
+                    android:background="#95ffffff"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

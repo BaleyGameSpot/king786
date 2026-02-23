@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+     android:padding="@dimen/_5sdp"
+    android:layout_margin="@dimen/_10sdp"
+
+android:background="@android:color/transparent"
+
+    android:orientation="vertical">
+    <androidx.core.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+
+
+    <ImageView
+        android:layout_gravity="end"
+        android:id="@+id/cancelImg"
+        android:src="@mipmap/ic_close_icon_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_shop_selection"
+            android:layout_width="@dimen/_67sdp"
+            android:layout_height="@dimen/_67sdp"/>
+
+    <LinearLayout
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <com.view.MTextView
+        android:id="@+id/titleTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Is The Store Open?"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15ssp"
+        app:customTypeFace="@string/system_semi_bold"
+       />
+
+
+
+
+    <com.view.MTextView
+
+        android:id="@+id/msgTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="Due to the restrictions, mnay store in your neighbourhood are either shut or not permitting our delivery partners to pick up orders on your behalf."
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:includeFontPadding="false"
+        app:customTypeFace="@string/system_regular" />
+    </LinearLayout>
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+
+            android:background="@color/black" />
+    <LinearLayout
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <com.view.MTextView
+
+        android:id="@+id/NotetitleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="Here's how you can help:"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15ssp"
+        app:customTypeFace="@string/system_semi_bold" />
+
+    <com.view.MTextView
+
+        android:id="@+id/Notemsgxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:includeFontPadding="true"
+        android:text="Call the store in advance to confirm that they are open.\n
+Check if they will let our delivery partners pick up your order."
+
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+
+        app:customTypeFace="@string/system_regular" />
+    </LinearLayout>
+
+    <View
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:background="@color/gray" />
+
+    <com.view.MTextView
+        android:visibility="gone"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+android:layout_gravity="center"
+        android:id="@+id/helpTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:includeFontPadding="true"
+        android:text="This will help us support our delivery partners pick up your order."
+android:textAlignment="center"
+        android:textColor="@color/appThemeColor_1"
+        android:textSize="@dimen/_12ssp"
+
+        app:customTypeFace="@string/system_medium" />
+
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_gravity="center"
+        android:id="@+id/bottomview"
+        android:minWidth="@dimen/_200sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/btn_border"
+        android:padding="@dimen/_2sdp">
+
+        <include
+
+
+            android:id="@+id/btn_type2"
+            layout="@layout/btn_type_1"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/all_btn_height"
+            android:layout_gravity="bottom" />
+
+    </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

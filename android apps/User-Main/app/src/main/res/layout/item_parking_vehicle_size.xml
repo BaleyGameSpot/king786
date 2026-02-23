@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/mainArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_view_23_white_shadow"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_15sdp"
+            android:weightSum="10">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:gravity="center">
+
+                <com.view.MTextView
+                    android:id="@+id/txtSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_14ssp"
+                    app:customTypeFace="@string/system_bold"
+                    tools:text="Small" />
+
+                <com.view.MTextView
+                    android:id="@+id/txtSizeEg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtSize"
+                    android:layout_centerInParent="true"
+                    android:includeFontPadding="false"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_10ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="Small" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/rightArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/check"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_check_mark_button"
+                    tools:tint="@color/appThemeColor_1"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/unCheck"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    app:srcCompat="@drawable/ic_un_select_check_mark" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/extraView"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_12sdp" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/deliverall_design_toolbar_new"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/searchLocArea"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/login_fb_border"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/searchFrameArea"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/_25sdp"
+                    android:orientation="horizontal">
+
+                    <com.view.editBox.MaterialEditText
+                        android:id="@+id/searchTxt"
+                        layout="@layout/editbox_form_design"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start|center"
+                        android:hint="Search For any Store"
+                        android:imeOptions="actionSearch"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        app:met_hideUnderline="true" />
+
+                    <ImageView
+                        android:id="@+id/imageCancel"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="end|center"
+                        android:layout_marginEnd="10dp"
+                        android:src="@mipmap/ic_cancel_cab_request"
+                        android:tint="@android:color/black" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="end|center"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    app:srcCompat="@drawable/ic_search_black_24dp" />
+
+                <com.view.anim.loader.AVLoadingIndicatorView
+
+                    android:id="@+id/loaderView"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="10dp"
+                    android:background="@android:color/transparent"
+                    android:visibility="gone"
+                    app:indicator="BallPulse"
+                    app:indicator_color="@color/Gray" />
+
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:gravity="center" />
+
+            <com.view.MTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Or"
+                app:textAllCaps="true" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mapLocArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:minHeight="@dimen/_40sdp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:minHeight="@dimen/_40sdp"
+
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+
+                <LinearLayout
+                    android:id="@+id/maproundBack"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="@drawable/round_shape"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp">
+
+                    <ImageView
+                        android:id="@+id/maproundImage"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_gravity="center"
+                        android:tint="@color/appThemeColor_TXT_1"
+                        app:srcCompat="@drawable/ic_map_location" />
+
+                </LinearLayout>
+
+
+                <com.view.MTextView
+                    android:id="@+id/mapLocTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:gravity="start|center"
+                    android:text="Set location of the store on the map"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="visible"
+                    app:customTypeFace="@string/system_regular" />
+
+
+                <ImageView
+
+                    android:id="@+id/ivRightArrow2"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+
+                    app:srcCompat="@drawable/ic_arrow" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@color/disable_color"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_margin="2dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                app:srcCompat="@drawable/ic_megaphone"
+                android:layout_width="35dp"
+                android:layout_height="35dp"/>
+
+            <com.view.MTextView
+                android:id="@+id/recentSearchHTXt"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:gravity="start|center"
+                android:text="Thank You india for staying home.Call the store before placing an order to ensure that it's open"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="visible"
+                app:customTypeFace="@string/system_regular" />
+        </LinearLayout>
+
+      <LinearLayout
+          android:id="@+id/recentSearchArea"
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <com.view.MTextView
+              android:layout_marginStart="10dp"
+              android:layout_marginTop="5dp"
+              android:layout_marginBottom="5dp"
+              android:layout_marginEnd="10dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:layout_weight="1"
+              android:clickable="false"
+              android:gravity="start|center"
+              android:text="Recent Searches"
+              android:textAlignment="viewStart"
+              android:textColor="@color/black"
+              android:textSize="@dimen/_12ssp"
+              android:visibility="visible"
+              app:customTypeFace="@string/system_regular" />
+          <ScrollView
+              android:id="@+id/recentScrollView"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:fillViewport="true">
+
+
+              <LinearLayout
+                  android:id="@+id/sourceLocationView"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="5dp"
+                  android:orientation="vertical"
+                  android:padding="5dp">
+
+              </LinearLayout>
+
+          </ScrollView>
+
+      </LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/topSearchArea"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.view.MTextView
+                android:id="@+id/topSearchHTXt"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:gravity="start|center"
+                android:text="Top Searches"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="visible"
+                app:customTypeFace="@string/system_regular" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/topSearchScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/placesRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp" />
+
+                <ImageView
+                    android:id="@+id/googleimagearea"
+                    android:layout_width="170dp"
+                    android:layout_height="20dp"
+                    android:layout_above="@+id/placesRecyclerView"
+                    android:layout_gravity="end"
+                    android:src="@drawable/google"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        </LinearLayout>
+
+</LinearLayout>

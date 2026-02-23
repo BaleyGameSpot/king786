@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/mainArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_view_23_white_shadow"
+        android:minHeight="@dimen/_70sdp">
+
+        <com.view.SelectableRoundedImageView
+            android:id="@+id/listImage"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_group"
+            android:scaleType="fitStart"
+            app:sriv_left_bottom_corner_radius="@dimen/_7sdp"
+            app:sriv_left_top_corner_radius="@dimen/_7sdp"
+            app:sriv_oval="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <com.view.MTextView
+                android:id="@+id/titleTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAlignment="viewStart"
+                tools:text="dfsdg hfgsdfg sddgh fjsdghfsd fjsdgfbf gdfgdsgfjhsdgf sdfsdhfsd fgshfgweruyg egfeghb" />
+
+            <com.view.MTextView
+                android:id="@+id/descriptionTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:textAlignment="viewStart"
+                tools:text="dfsdg hfgsdfg sddgh fjsdghfsd fjsdgfbf gdfgdsg sfdsafsdf fsdfsdfsdfsfrwer fjhsdgf sdfsdhfsd fgshfgweruyg egfeghb fsadfsdjghfsdfjsd ghfjgsdbfhdsfjgsdf dfsdfgsdhgfd" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.view.bottombar.SmoothBottomBar
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_52sdp"
+            app:backgroundColor="@color/text23Pro_Dark"
+            app:badgeColor="@color/appThemeColor_1"
+            app:cornerRadius="@dimen/_11sdp"
+            app:corners="top_left|top_right"
+            app:iconMargin="@dimen/_4ssp"
+            app:iconSize="@dimen/_18sdp"
+            app:iconTint="@color/white"
+            app:indicatorColor="@color/appThemeColor_1"
+            app:indicatorRadius="@dimen/_6sdp"
+            app:itemPadding="@dimen/_4sdp"
+            app:sideMargins="@dimen/_7sdp"
+            app:textColor="@color/white"
+            app:textSize="@dimen/_9ssp" />
+
+        <LinearLayout
+            android:id="@+id/bottomArea"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_52sdp"
+            android:layout_marginStart="-6dp"
+            android:layout_marginEnd="-6dp"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <View
+                android:id="@+id/shadowHeaderView"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_2sdp"
+                android:background="@drawable/gradient_shadow" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@color/activityBg"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/homeArea"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/home_img"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:srcCompat="@drawable/ic_home"
+                        app:tint="@color/homedeSelectColor" />
+
+                    <com.view.MTextView
+                        android:id="@+id/homeTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:maxLines="4"
+                        android:textAlignment="center"
+                        android:textColor="@color/homedeSelectColor"
+                        android:textSize="@dimen/_9sdp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="Home" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/servicesArea"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/servicesImg"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:srcCompat="@drawable/ic_services"
+                        app:tint="@color/homedeSelectColor" />
+
+                    <com.view.MTextView
+                        android:id="@+id/servicesTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:maxLines="4"
+                        android:textAlignment="center"
+                        android:textColor="@color/homedeSelectColor"
+                        android:textSize="@dimen/_9sdp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="services" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rentItemPostListArea"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/postImg"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:srcCompat="@drawable/ic_booking"
+                        app:tint="@color/homedeSelectColor" />
+
+                    <com.view.MTextView
+                        android:id="@+id/postText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:maxLines="4"
+                        android:textAlignment="center"
+                        android:textColor="@color/homedeSelectColor"
+                        android:textSize="@dimen/_9sdp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="Post" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/historyArea"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/bookingImg"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:srcCompat="@drawable/ic_booking"
+                        app:tint="@color/homedeSelectColor" />
+
+                    <com.view.MTextView
+                        android:id="@+id/historyTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:maxLines="4"
+                        android:textAlignment="center"
+                        android:textColor="@color/homedeSelectColor"
+                        android:textSize="@dimen/_9sdp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="booking" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/walletArea"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/walletImg"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:srcCompat="@drawable/ic_wallet"
+                        app:tint="@color/homedeSelectColor" />
+
+                    <com.view.MTextView
+                        android:id="@+id/walletTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:maxLines="4"
+                        android:textAlignment="center"
+                        android:textColor="@color/homedeSelectColor"
+                        android:textSize="@dimen/_9sdp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="wallet" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/profileArea"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/profileImg"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:srcCompat="@drawable/ic_profile"
+                        app:tint="@color/homedeSelectColor" />
+
+                    <com.view.MTextView
+                        android:id="@+id/profileTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:maxLines="4"
+                        android:textAlignment="center"
+                        android:textColor="@color/homedeSelectColor"
+                        android:textSize="@dimen/_9sdp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="profile" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

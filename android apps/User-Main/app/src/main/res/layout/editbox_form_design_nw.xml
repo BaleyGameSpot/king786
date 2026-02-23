@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.view.MTextView
+            android:id="@+id/mTextH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:layout_margin="@dimen/_4sdp"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_13sdp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="header text" />
+
+        <LinearLayout
+            android:id="@+id/mLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_view_23_white_shadow">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_height="wrap_content">
+
+                <com.view.editBox.MaterialEditText
+                    android:id="@+id/mEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:gravity="start"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:textAlignment="viewStart"
+                    android:textSize="@dimen/_13ssp"
+                    android:theme="@style/bg_materialEditText"
+                    app:met_accentTypeface="@string/defaultFont"
+                    app:met_clearButton="false"
+                    app:met_floatingLabel="none"
+                    app:met_textColorHint="@color/text23Pro_Light"
+                    app:met_hideUnderline="true"
+                    app:met_textColor="@color/text23Pro_Dark"
+                    app:met_isSetAlphaToBaseColor="false"
+                    app:met_typeface="@string/defaultFont"
+                    tools:hint="text hint" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mDropDownArrow"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_down_arrow"
+                    app:tint="@color/text23Pro_Light"
+                    tools:visibility="visible" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

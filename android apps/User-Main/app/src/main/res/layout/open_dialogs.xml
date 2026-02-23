@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/DialogBGView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CC000000"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ratingDesignCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="15dp"
+        android:clipToPadding="true"
+        card_view:cardBackgroundColor="#ffffff"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardElevation="2dp"
+        card_view:cardMaxElevation="0dp"
+        card_view:cardUseCompatPadding="true">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f2f2f4"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ratingViewww"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="0"
+                        android:gravity="start|center"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="27dp"
+                            android:paddingStart="-15dp"
+                            android:paddingEnd="-15dp"
+                            android:src="@mipmap/ic_star"
+                            app:tint="@color/white" />
+
+                        <TextView
+                            android:id="@+id/restaurantRateTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="27dp"
+                            android:layout_marginTop="-2dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:paddingStart="-1dp"
+                            android:paddingEnd="5dp"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/txt_size_14"
+                            android:textStyle="normal"
+                            tools:text="4.4" />
+                    </LinearLayout>
+
+                    <com.view.MTextView
+                        android:id="@+id/ratingheade11rTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="0dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/txt_size_16"
+                        tools:text="Reviews" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ratingDialogCloseBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/ic_close_icon_" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/ratingDialogRecycView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+    <!--cc696969-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/informationDesignCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:clipToPadding="true"
+        app:cardBackgroundColor="#ffffff"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        app:cardMaxElevation="0dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:id="@+id/infoInnerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <com.view.MTextView
+                android:id="@+id/titleDailogTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center"
+                android:maxLines="2"
+                android:text="@string/app_name"
+                android:textAlignment="viewStart"
+                android:textAllCaps="true"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_14ssp"
+                app:customTypeFace="@string/system_bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    app:srcCompat="@drawable/ic_location_pro" />
+
+                <com.view.MTextView
+                    android:id="@+id/addressDailogTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:gravity="start|center"
+                    android:maxLines="3"
+                    android:text="@string/app_name"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text23Pro_Light"
+                    android:textSize="@dimen/_9sdp"
+                    app:customTypeFace="@string/system_medium" />
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/openingHourTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="start|center"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_13sdp"
+                app:customTypeFace="@string/system_bold"
+                tools:text="Opening Hours" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/cardView23ProBG"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardUseCompatPadding="true">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8ssp"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:id="@+id/oldTimeSlotsArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_3sdp">
+
+                            <com.view.MTextView
+                                android:id="@+id/timeHTxt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/txt_size_12"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="Monday-Sunday" />
+
+                            <com.view.MTextView
+                                android:id="@+id/timeVTxt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                android:layout_marginStart="@dimen/_2sdp"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/txt_size_12"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="11:00 - 22:30" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_3sdp">
+
+                            <com.view.MTextView
+                                android:id="@+id/timeSatTxt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/txt_size_12"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="Monday-Sunday" />
+
+                            <com.view.MTextView
+                                android:id="@+id/timeVSatTxt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                android:textAlignment="viewStart"
+                                android:layout_marginStart="@dimen/_2sdp"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/txt_size_12"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="11:00 - 22:30" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ScrollView
+                        android:id="@+id/newTimeSlotsArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/openingHrArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" />
+                    </ScrollView>
+                </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
+
+            <include
+                android:id="@+id/closeBtn"
+                layout="@layout/btn_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_btn_height"
+                android:layout_marginTop="@dimen/_10sdp"
+                tools:text="close" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

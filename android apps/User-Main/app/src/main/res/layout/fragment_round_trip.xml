@@ -1,0 +1,358 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:background="@drawable/card_view_23_gray_shadow"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/enterSourceHeaderTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_12ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Enter Source" />
+
+                        <com.view.MTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:textColor="@color/redStar"
+                            android:textSize="@dimen/_12ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            android:text="@string/star" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/enterSourceParentBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/card_view_23_white_shadow"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_12sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_location_pro" />
+
+                        <com.view.MTextView
+                            android:id="@+id/enterSourceValueTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:textAlignment="viewStart"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:focusable="true"
+                            android:gravity="start|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_13ssp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:hint="Enter Source" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_edit_icon_intercity" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/enterDestinationHeaderTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_12ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Enter Destination" />
+
+                        <com.view.MTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:textColor="@color/redStar"
+                            android:textSize="@dimen/_12ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            android:text="@string/star" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/enterDestinationParentBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/card_view_23_white_shadow"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_12sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_location_pro" />
+
+                        <com.view.MTextView
+                            android:id="@+id/enterDestinationValueTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:textAlignment="viewStart"
+                            android:focusable="true"
+                            android:gravity="start|center_vertical"
+                            android:includeFontPadding="false"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:maxLines="1"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_13ssp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:hint="Enter destination" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/enterDestinationEditIconIV"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_edit_icon_intercity" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/pickupDateTimeHeaderTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_12ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Pick-up Date &amp; time" />
+
+                        <com.view.MTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:textColor="@color/redStar"
+                            android:textSize="@dimen/_12ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            android:text="@string/star" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/pickupDateTimeParentBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/card_view_23_white_shadow"
+                        android:baselineAligned="false"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_12sdp">
+
+
+                        <com.view.MTextView
+                            android:id="@+id/pickupDateTimeValueTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:focusable="true"
+                            android:textAlignment="viewStart"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:gravity="start|center_vertical"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_13ssp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:hint="Enter Date &amp; time"
+                            tools:text="Thu,07 Dec" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:tint="@color/text23Pro_Light"
+                            app:srcCompat="@drawable/ic_calendar_later" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/dropOffDateTimeHeaderTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_12ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Drop-off Date &amp; time" />
+
+                        <com.view.MTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:textColor="@color/redStar"
+                            android:textSize="@dimen/_12ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            android:text="@string/star" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/dropOffDateTimeParentBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/card_view_23_white_shadow"
+                        android:baselineAligned="false"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_12sdp">
+
+
+                        <com.view.MTextView
+                            android:id="@+id/dropOffDateTimeValueTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:focusable="true"
+                            android:textAlignment="viewStart"
+                            android:gravity="start|center_vertical"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_13ssp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:hint="Enter Date &amp; time"
+                            tools:text="Thu,07 Dec" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:tint="@color/text23Pro_Light"
+                            app:srcCompat="@drawable/ic_calendar_later" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/intercity_round_trip_note_bg_5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_uturn_arrow" />
+
+                <com.view.MTextView
+                    android:id="@+id/roundTripNoteTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:gravity="start|center_vertical"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_9ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="Keep the car with you for the entire journey when you book a round trip" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

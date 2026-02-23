@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/itemArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_view_23_gray_shadow"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_10sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.view.MTextView
+                android:id="@+id/bookNoTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_bold"
+                tools:text="Booking#" />
+
+            <com.view.MTextView
+                android:id="@+id/bkStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_11sdp"
+                android:background="@drawable/border_fill"
+                android:paddingStart="@dimen/_4sdp"
+                android:paddingTop="@dimen/_1sdp"
+                android:paddingEnd="@dimen/_4sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9sdp"
+                tools:text="Pending" />
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_11sdp"
+                android:layout_height="@dimen/_11sdp"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:srcCompat="@drawable/ic_location_pro" />
+
+            <com.view.MTextView
+                android:id="@+id/bkAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textSub23Pro_gray"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_regular" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:layout_marginEnd="@dimen/_9sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_4sdp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/dateTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_10ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="tue, 13th feb 23" />
+
+                <com.view.MTextView
+                    android:id="@+id/timeTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text23Pro_Light"
+                    android:textSize="@dimen/_9ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="tue, 13th feb 23" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end|center"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/priceTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/appThemeColor_1"
+                    android:textSize="@dimen/_10ssp"
+                    app:customTypeFace="@string/system_bold"
+                    tools:text="$50" />
+
+                <com.view.MTextView
+                    android:id="@+id/priceMsgTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text23Pro_Light"
+                    android:textSize="@dimen/_9ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="per passenger" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

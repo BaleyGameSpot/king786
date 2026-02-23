@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search_location"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <LinearLayout
+        android:id="@+id/headerArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/backImgView"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <!--Book For Someone Else Element-->
+        <include layout="@layout/design_book_someone_details" />
+        <!--Book For Someone Else Element-->
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/contentArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/headerArea">
+
+        <LinearLayout
+            android:id="@+id/headerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/searchLocArea"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/card_view_23_white_shadow"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/searchFrameArea"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/search_shape"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/search_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        app:srcCompat="@drawable/ic_search" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/back_img"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start|center"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:tint="@color/text23Pro_Dark"
+                        app:srcCompat="@drawable/ic_back_arrow_1" />
+
+                    <EditText
+                        android:id="@+id/searchTxt"
+                        layout="@layout/editbox_form_design"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_25sdp"
+                        android:background="@drawable/search_shape"
+                        android:ellipsize="end"
+                        android:imeOptions="actionSearch"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColorHint="@color/text23Pro_Light"
+                        tools:hint="" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageCancel"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="end|center"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:src="@drawable/ic_close_round"
+                        android:visibility="gone" />
+
+                    <com.view.anim.loader.AVLoadingIndicatorView
+                        android:id="@+id/loaderView"
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:layout_marginEnd="10dp"
+                        android:background="@android:color/transparent"
+                        android:visibility="gone"
+                        app:indicator="BallPulse"
+                        app:indicator_color="@color/Gray" />
+                </FrameLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/cancelTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txt_size_14"
+                    android:visibility="gone"
+                    app:customTypeFace="@string/system_light"
+                    tools:text="Cancel" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/stopOverSubPointsArea"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_67sdp"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/appThemeColor_1" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:elevation="@dimen/_5sdp"
+                            android:maxHeight="@dimen/_120sdp"
+                            app:cardCornerRadius="@dimen/_10sdp">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/stopOverPointsSubRecyclerView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:background="@android:color/white"
+                                android:orientation="vertical"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                        </androidx.cardview.widget.CardView>
+                    </FrameLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.view.MyScrollView
+            android:id="@+id/dataArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerview">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/placesarea"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/placesInfoArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/placearea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:orientation="horizontal">
+
+                                <com.view.MTextView
+                                    android:id="@+id/locPlacesTxt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center|start"
+                                    android:gravity="start|center"
+                                    android:paddingStart="@dimen/_15sdp"
+                                    android:paddingEnd="0dp"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="@color/text23Pro_Dark"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:customTypeFace="@string/system_bold"
+                                    tools:text="Places" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/homeWorkArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_11sdp"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/card_view_23_white_shadow"
+                                    android:gravity="center"
+                                    android:minHeight="@dimen/_40sdp"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:id="@+id/homeImgBack"
+                                        android:layout_width="@dimen/_30sdp"
+                                        android:layout_height="@dimen/_30sdp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_11sdp"
+                                        android:layout_marginTop="@dimen/_11sdp"
+                                        android:layout_marginEnd="@dimen/_8sdp"
+                                        android:layout_marginBottom="@dimen/_11sdp"
+                                        android:background="@drawable/round_shape"
+                                        android:gravity="center">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/homeroundImage"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            app:srcCompat="@drawable/ic_home_address"
+                                            app:tint="@color/appThemeColor_TXT_1" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/homeLocArea"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_11sdp"
+                                        android:layout_marginBottom="@dimen/_11sdp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <com.view.MTextView
+                                            android:id="@+id/homePlaceTxt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:gravity="start|center_vertical"
+                                            android:maxLines="1"
+                                            android:textAlignment="viewStart"
+                                            android:textColor="@color/text23Pro_Dark"
+                                            android:textSize="@dimen/_11ssp"
+                                            app:customTypeFace="@string/system_semi_bold"
+                                            tools:text="Add Home" />
+
+                                        <com.view.MTextView
+                                            android:id="@+id/homePlaceHTxt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:gravity="start|center_vertical"
+                                            android:maxLines="2"
+                                            android:text=""
+                                            android:textAlignment="viewStart"
+                                            android:textColor="@color/textSub23Pro_gray"
+                                            android:textSize="@dimen/_9ssp"
+                                            android:visibility="gone"
+                                            app:customTypeFace="@string/system_regular" />
+                                    </LinearLayout>
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/homeActionImgView"
+                                        android:layout_width="@dimen/_25sdp"
+                                        android:layout_height="@dimen/_25sdp"
+                                        android:layout_marginEnd="@dimen/_9sdp"
+                                        android:layout_weight="0"
+                                        android:gravity="center"
+                                        android:padding="@dimen/_3sdp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_11sdp"
+                                    android:background="@drawable/card_view_23_white_shadow"
+                                    android:gravity="center"
+                                    android:minHeight="@dimen/_40sdp"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:id="@+id/workImgBack"
+                                        android:layout_width="@dimen/_30sdp"
+                                        android:layout_height="@dimen/_30sdp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="@dimen/_11sdp"
+                                        android:layout_marginTop="@dimen/_11sdp"
+                                        android:layout_marginEnd="@dimen/_8sdp"
+                                        android:layout_marginBottom="@dimen/_11sdp"
+                                        android:background="@drawable/round_shape"
+                                        android:gravity="center">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/workroundImage"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            app:srcCompat="@drawable/ic_work_address"
+                                            app:tint="@color/appThemeColor_TXT_1" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/workLocArea"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_11sdp"
+                                        android:layout_marginBottom="@dimen/_11sdp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <com.view.MTextView
+                                            android:id="@+id/workPlaceTxt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:gravity="start|center_vertical"
+                                            android:maxLines="1"
+                                            android:textAlignment="viewStart"
+                                            android:textColor="@color/text23Pro_Dark"
+                                            android:textSize="@dimen/_11ssp"
+                                            app:customTypeFace="@string/system_semi_bold"
+                                            tools:text="Add Work" />
+
+                                        <com.view.MTextView
+                                            android:id="@+id/workPlaceHTxt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:gravity="start|center_vertical"
+                                            android:maxLines="2"
+                                            android:textAlignment="viewStart"
+                                            android:textColor="@color/textSub23Pro_gray"
+                                            android:textSize="@dimen/_9ssp"
+                                            android:visibility="gone"
+                                            app:customTypeFace="@string/system_regular"
+                                            tools:text="Add Work" />
+                                    </LinearLayout>
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/workActionImgView"
+                                        android:layout_width="@dimen/_25sdp"
+                                        android:layout_height="@dimen/_25sdp"
+                                        android:layout_marginEnd="@dimen/_11sdp"
+                                        android:layout_weight="0"
+                                        android:gravity="center"
+                                        android:padding="@dimen/_3sdp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/myLocationarea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_11sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:background="@drawable/card_view_23_white_shadow"
+                            android:minHeight="@dimen/_40sdp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/currentLocBack"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_11sdp"
+                                android:layout_marginTop="@dimen/_11sdp"
+                                android:layout_marginEnd="@dimen/_8sdp"
+                                android:layout_marginBottom="@dimen/_11sdp"
+                                android:background="@drawable/round_shape"
+                                android:gravity="center">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/currentLocImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    app:srcCompat="@drawable/ic_current_location"
+                                    app:tint="@color/appThemeColor_TXT_1" />
+                            </LinearLayout>
+
+                            <com.view.MTextView
+                                android:id="@+id/mylocHTxtView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_11sdp"
+                                android:layout_marginBottom="@dimen/_11sdp"
+                                android:layout_weight="1"
+                                android:clickable="false"
+                                android:gravity="start|center"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_11ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="I want services at my current location" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/arrow_right"
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_11sdp"
+                                android:rotation="270"
+                                app:srcCompat="@drawable/ic_down_arrow_23" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/mapLocArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="@dimen/_40sdp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <com.view.MTextView
+                                    android:id="@+id/noPlacedata"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="2sp"
+                                    android:text="@string/app_name"
+                                    android:textColor="#1c1c1c"
+                                    android:textSize="@dimen/txt_size_16"
+                                    android:textStyle="bold"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_11sdp"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                android:background="@drawable/card_view_23_white_shadow"
+                                android:gravity="center"
+                                android:minHeight="@dimen/_40sdp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/maproundBack"
+                                    android:layout_width="@dimen/_30sdp"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_11sdp"
+                                    android:layout_marginTop="@dimen/_11sdp"
+                                    android:layout_marginEnd="@dimen/_8sdp"
+                                    android:layout_marginBottom="@dimen/_11sdp"
+                                    android:background="@drawable/round_shape"
+                                    android:gravity="center">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/maproundImage"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        app:srcCompat="@drawable/ic_map_location"
+                                        app:tint="@color/appThemeColor_TXT_1" />
+                                </LinearLayout>
+
+                                <com.view.MTextView
+                                    android:id="@+id/mapLocTxt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/_11sdp"
+                                    android:layout_marginBottom="@dimen/_11sdp"
+                                    android:layout_weight="1"
+                                    android:clickable="false"
+                                    android:gravity="start|center"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="@color/text23Pro_Dark"
+                                    android:textSize="@dimen/_11ssp"
+                                    app:customTypeFace="@string/system_semi_bold"
+                                    tools:text="I want services at my current location" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivRightArrow2"
+                                    android:layout_width="@dimen/_10sdp"
+                                    android:layout_height="@dimen/_10sdp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginEnd="@dimen/_11sdp"
+                                    android:rotation="270"
+                                    app:srcCompat="@drawable/ic_down_arrow_23" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/destinationLaterArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_11sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:background="@drawable/card_view_23_white_shadow"
+                            android:gravity="center"
+                            android:minHeight="@dimen/_40sdp"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <LinearLayout
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_30sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_11sdp"
+                                android:layout_marginTop="@dimen/_11sdp"
+                                android:layout_marginEnd="@dimen/_11sdp"
+                                android:layout_marginBottom="@dimen/_11sdp"
+                                android:background="@drawable/round_shape"
+                                android:gravity="center">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/destLaterRoundImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    app:srcCompat="@drawable/ic_destination_later"
+                                    app:tint="@color/appThemeColor_TXT_1" />
+                            </LinearLayout>
+
+                            <com.view.MTextView
+                                android:id="@+id/destHTxtView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:clickable="false"
+                                android:gravity="start|center"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_11ssp"
+                                app:customTypeFace="@string/system_semi_bold" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivRightArrow3"
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_11sdp"
+                                android:rotation="270"
+                                app:srcCompat="@drawable/ic_down_arrow_23" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/recentLocationArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/recentLocHTxtView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:gravity="start|center"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_13ssp"
+                                app:customTypeFace="@string/system_bold" />
+
+                            <ScrollView
+                                android:id="@+id/recentScrollView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fillViewport="true">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:id="@+id/sourceLocationView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="11dp"
+                                        android:orientation="vertical" />
+
+                                    <LinearLayout
+                                        android:id="@+id/destLocationView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_11sdp"
+                                        android:orientation="vertical" />
+                                </LinearLayout>
+                            </ScrollView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/placesRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/googleimagearea"
+                    android:layout_width="170dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:src="@drawable/google"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </com.view.MyScrollView>
+    </RelativeLayout>
+    <!--Multi StopOver Element Start-->
+
+    <LinearLayout
+        android:id="@+id/stopOverPointsArea"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/headerArea"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_17sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:elevation="@dimen/_5sdp"
+                    android:maxHeight="@dimen/_120sdp"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/stopOverPointsRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                </androidx.cardview.widget.CardView>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/stopOverDetailsArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:gravity="center|bottom"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_timer_icon" />
+
+                <com.view.MTextView
+                    android:id="@+id/stopOverPointsInfoTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_12ssp"
+                    app:customTypeFace="@string/system_semi_bold" />
+
+                <com.view.MTextView
+                    android:id="@+id/stopOverPointsSubInfoTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_40sdp"
+                    android:gravity="center"
+                    android:letterSpacing="0.1"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="@color/textSub23Pro_gray"
+                    android:textSize="@dimen/_10ssp"
+                    app:customTypeFace="@string/system_regular" />
+
+                <include
+                    android:id="@+id/btn_type2"
+                    layout="@layout/btn_type_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/all_btn_height5"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_15sdp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!--Multi StopOver  Element End-->
+
+    <!--Book For Someone Else Element Start-->
+    <RelativeLayout
+        android:id="@+id/contactListArea"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/headerArea">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#66000000" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_63sdp"
+            android:background="@color/appThemeColor_1"
+            tools:ignore="TooManyViews" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contactListRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@drawable/card_view_23_white_line_flat_1"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </RelativeLayout>
+    <!--Book For Someone Else Element End-->
+</RelativeLayout>

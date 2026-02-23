@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/activityBg">
+
+        <LinearLayout
+            android:id="@+id/availableArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/timeslot_border"
+            android:backgroundTint="@color/white"
+            android:elevation="@dimen/_2sdp"
+            android:padding="@dimen/_6sdp">
+
+            <com.view.AutoResizeTextView
+                android:id="@+id/availableTimeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:minWidth="@dimen/_80sdp"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_medium"
+                tools:text="10 am - 11  " />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/selArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/timeslot_border"
+            android:padding="@dimen/_6sdp"
+            android:visibility="gone">
+
+            <com.view.AutoResizeTextView
+                android:id="@+id/selTimeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@color/appThemeColor_1"
+                android:gravity="center"
+                android:minWidth="@dimen/_80sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_medium"
+                tools:text="10 - 11 AM" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/unSelArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/timeslot_border"
+            android:backgroundTint="@color/view23ProBG"
+            android:padding="@dimen/_6sdp"
+            android:visibility="gone">
+
+            <com.view.AutoResizeTextView
+                android:id="@+id/unSelTimeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:gravity="center"
+                android:minWidth="@dimen/_80sdp"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_light"
+                tools:text="10 am - 11" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

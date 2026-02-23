@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/mainContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/viewLine">
+
+                <RelativeLayout
+                    android:id="@+id/mapFragmentContainer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/pinImgView"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_round_pin"
+                    tools:visibility="visible" />
+            </FrameLayout>
+
+            <View
+                android:id="@+id/viewLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_above="@+id/content_add_address"
+                android:background="#E3E3E3"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/content_add_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom|center"
+                android:background="@drawable/top_curve_card"
+                android:elevation="@dimen/_5sdp"
+                android:gravity="center|bottom"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <com.view.MTextView
+                        android:id="@+id/titleTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:ellipsize="marquee"
+                        android:fadingEdge="horizontal"
+                        android:gravity="start|center"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_12ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="@string/app_name" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:background="@drawable/card_view_23_white_shadow">
+
+                        <LinearLayout
+                            android:id="@+id/loc_area"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:layout_marginBottom="@dimen/_9sdp"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                app:srcCompat="@drawable/ic_location_pro" />
+
+                            <com.view.MTextView
+                                android:id="@+id/locAddrTxtView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_weight="1"
+                                android:clickable="false"
+                                android:gravity="start|top"
+                                android:maxLines="3"
+                                android:minLines="2"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textColorHint="@color/text23Pro_Light"
+                                android:textSize="@dimen/_10ssp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="@string/app_name" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/editLocation"
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                app:srcCompat="@drawable/ic_edit_no_stroke" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@drawable/card_view_23_gray_shadow"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:orientation="vertical">
+
+                            <include
+                                android:id="@+id/buildingBox"
+                                layout="@layout/editbox_form_design_nw"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp" />
+
+                            <LinearLayout
+                                android:id="@+id/personNameArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp">
+
+                                <include
+                                    android:id="@+id/personNameBox"
+                                    layout="@layout/editbox_form_design_nw"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+
+                            <include
+                                android:id="@+id/StoreBox"
+                                layout="@layout/editbox_form_design_nw"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp" />
+
+                            <include
+                                android:id="@+id/landmarkBox"
+                                layout="@layout/editbox_form_design_nw"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp" />
+
+                            <include
+                                android:id="@+id/addrtypeBox"
+                                layout="@layout/editbox_form_design_nw"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp" />
+
+
+                            <com.view.MTextView
+                                android:id="@+id/detailAddressHeaderTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_13sdp"
+                                android:visibility="gone"
+                                app:customTypeFace="@string/system_semi_bold" />
+
+                            <LinearLayout
+                                android:id="@+id/detailAddressArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_70sdp"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:background="@drawable/card_view_23_white_shadow"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <com.view.editBox.MaterialEditText
+                                    android:id="@+id/detailAddressEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_9sdp"
+                                    android:gravity="start"
+                                    android:textColor="@color/text23Pro_Dark"
+                                    android:textColorHint="@color/text23Pro_Light"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:met_accentTypeface="@string/defaultFont"
+                                    app:met_hideUnderline="true"
+                                    app:met_textColorHint="@color/text23Pro_Light"
+                                    app:met_typeface="@string/defaultFont" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <include
+                        android:id="@+id/btn_type2"
+                        layout="@layout/btn_type_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/all_btn_height"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_15sdp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/backImgView"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_gravity="start|end"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_37sdp"
+                app:srcCompat="@drawable/ic_back_new" />
+
+        </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

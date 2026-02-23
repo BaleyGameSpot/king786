@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: /
+Disallow: /admin703
+Disallow: /assets
+Disallow: /top
+Disallow: /linkedin-login
+Disallow: /firebasedb

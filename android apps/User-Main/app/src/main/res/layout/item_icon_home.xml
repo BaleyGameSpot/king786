@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contentArea"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginEnd="@dimen/_5sdp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="@dimen/_52sdp"
+        android:layout_height="@dimen/_52sdp"
+        android:background="@drawable/circle_shadow_big"
+        android:layout_gravity="center_horizontal">
+
+        <com.view.SelectableRoundedImageView
+            android:id="@+id/iconImgview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:sriv_left_bottom_corner_radius="@dimen/_15sdp"
+            app:sriv_left_top_corner_radius="@dimen/_15sdp"
+            app:sriv_oval="true"
+            app:sriv_right_bottom_corner_radius="@dimen/_15sdp"
+            app:sriv_right_top_corner_radius="@dimen/_15sdp"
+            tools:src="@mipmap/ic_launcher"
+            android:layout_centerInParent="true"/>
+
+
+    </RelativeLayout>
+
+    <!--<com.view.SelectableRoundedImageView
+        android:id="@+id/iconImgview"
+        android:layout_width="@dimen/_52sdp"
+        android:layout_height="@dimen/_52sdp"
+        android:background="@drawable/circle_shadow"
+        app:sriv_border_color="@color/gray"
+        app:sriv_border_width="@dimen/_1sdp"
+        app:sriv_left_bottom_corner_radius="@dimen/_15sdp"
+        app:sriv_left_top_corner_radius="@dimen/_15sdp"
+        app:sriv_oval="true"
+        app:sriv_right_bottom_corner_radius="@dimen/_15sdp"
+        app:sriv_right_top_corner_radius="@dimen/_15sdp"
+        tools:src="@mipmap/ic_launcher" />-->
+
+    <com.view.MTextView
+        android:id="@+id/iconTitle"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:gravity="center_horizontal"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_size_10"
+        app:customTypeFace="@string/system_regular"
+        tools:text="Home Food" />
+
+</LinearLayout>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_view_23_white_shadow"
+        android:orientation="vertical"
+        android:padding="@dimen/_12sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.view.SelectableRoundedImageView
+                android:id="@+id/rideDriverImg"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:scaleType="centerCrop"
+                app:sriv_left_bottom_corner_radius="@dimen/_6sdp"
+                app:sriv_left_top_corner_radius="@dimen/_6sdp"
+                app:sriv_oval="false"
+                app:sriv_right_bottom_corner_radius="@dimen/_6sdp"
+                app:sriv_right_top_corner_radius="@dimen/_6sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <com.view.MTextView
+                        android:id="@+id/passengerNameTxt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_12ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:ignore="NestedWeights"
+                        tools:text="@string/app_name" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/callArea"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        app:srcCompat="@drawable/ic_call_2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:orientation="horizontal">
+
+                    <com.view.MTextView
+                        android:id="@+id/paymentModeHTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text23Pro_Light"
+                        android:textSize="@dimen/_10ssp"
+                        app:customTypeFace="@string/system_regular"
+                        tools:text="Payment Mode:" />
+
+                    <com.view.MTextView
+                        android:id="@+id/paymentModeVTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_10ssp"
+                        app:customTypeFace="@string/system_bold"
+                        tools:text="Cash" />
+                </LinearLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/paymentNoteTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:textColor="@color/text23Pro_Light"
+                    android:textSize="@dimen/_9ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="fdsfsdf dfsdfsdf rwerwer dfsdf ffdfdfsdf g edg uy etgw t egtwe  tgg  wetgu weugtwe wetgwe tfdf" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    app:srcCompat="@drawable/ic_group"
+                    app:tint="@color/black" />
+
+                <com.view.MTextView
+                    android:id="@+id/availableSeatsTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_weight="1"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_12ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="2 Passengers" />
+
+                <com.view.MTextView
+                    android:id="@+id/totalPriceTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableEnd="@drawable/ic_information"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableTint="@color/appThemeColor_1"
+                    android:textColor="@color/appThemeColor_1"
+                    android:textSize="@dimen/_12ssp"
+                    app:customTypeFace="@string/system_bold"
+                    tools:ignore="UnusedAttribute"
+                    tools:text="$ 100" />
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/locationTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_bold"
+                tools:text="location a - c" />
+
+            <com.view.MTextView
+                android:id="@+id/statusTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_9ssp"
+                app:customTypeFace="@string/system_regular"
+                tools:text="Waiting for your Approval" />
+
+            <com.view.simpleratingbar.SimpleRatingBar
+                android:id="@+id/rideSharingRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_8sdp"
+                android:backgroundTint="@color/gray_holo_light"
+                android:gravity="center"
+                app:SRB_fillColor="@color/ratingfill"
+                app:SRB_starBackgroundColor="@color/gray_holo_light"
+                app:SRB_starSize="@dimen/_25sdp"
+                app:SRB_stepSize="0.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/viewReasonBtnArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_11sdp">
+
+                <include
+                    android:id="@+id/viewReasonBtn"
+                    layout="@layout/btn_type_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/declineBtnArea"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:layout_weight="1">
+
+                    <include
+                        android:id="@+id/declineBtn"
+                        layout="@layout/btn_type_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="0dp" />
+
+                <LinearLayout
+                    android:id="@+id/acceptBtnArea"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:layout_weight="1">
+
+                    <include
+                        android:id="@+id/acceptBtn"
+                        layout="@layout/btn_type_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="center">
+
+        <LinearLayout
+            android:id="@+id/tipAmountArea1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/button"
+            android:gravity="center"
+            android:minWidth="@dimen/_50sdp"
+            android:minHeight="@dimen/_25sdp">
+
+            <com.view.MTextView
+                android:id="@+id/tipAmountText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_13sdp"
+                tools:text="$ 10" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/closeImg1"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_minus8sdp"
+                android:src="@mipmap/ic_close_detail"
+                android:visibility="gone"
+                app:tint="@color/black"
+                tools:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tipAmountArea2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/button"
+            android:minWidth="@dimen/_50sdp"
+            android:minHeight="@dimen/_25sdp">
+
+            <com.view.MTextView
+                android:id="@+id/tipAmountText2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_13sdp"
+                tools:text="$ 50" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/closeImg2"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_minus8sdp"
+                android:src="@mipmap/ic_close_detail"
+                android:visibility="gone"
+                app:tint="@color/black"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tipAmountArea3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/button"
+            android:minWidth="@dimen/_50sdp"
+            android:minHeight="@dimen/_25sdp">
+
+            <com.view.MTextView
+                android:id="@+id/tipAmountText3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_13sdp"
+                tools:text="$ 100" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/closeImg3"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_minus8sdp"
+                android:src="@mipmap/ic_close_detail"
+                android:visibility="gone"
+                app:tint="@color/black"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tipAmountAreaOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/button"
+            android:gravity="center"
+            android:minWidth="@dimen/_50sdp"
+            android:minHeight="@dimen/_25sdp">
+
+            <com.view.MTextView
+                android:id="@+id/tipAmountTextOther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_13sdp"
+                tools:text="Other" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/closeImgOther"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_minus8sdp"
+                android:src="@mipmap/ic_close_detail"
+                android:visibility="gone"
+                app:tint="@color/black"
+                tools:visibility="visible" />
+        </LinearLayout>
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <LinearLayout
+        android:id="@+id/addTipArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/amountArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/roundrectwithdesign"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/tipAmountBox"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="start|center"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_10ssp"
+                    tools:hint="Enter tip amount" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/tipBtnArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:gravity="end|center">
+
+                <com.view.SelectableRoundedImageView
+                    android:id="@+id/tipGivenBtn"
+                    android:layout_width="@dimen/_33sdp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:visibility="visible"
+                    app:sriv_border_color="@color/appThemeColor_1"
+                    app:sriv_border_width="5dip"
+                    app:sriv_left_bottom_corner_radius="@dimen/_33sdp"
+                    app:sriv_left_top_corner_radius="@dimen/_33sdp"
+                    app:sriv_right_bottom_corner_radius="@dimen/_33sdp"
+                    app:sriv_right_top_corner_radius="@dimen/_33sdp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_right_arrow"
+                    app:tint="@color/appThemeColor_TXT_1" />
+            </FrameLayout>
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.view.MTextView
+        android:id="@+id/errorTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="@color/Red"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone" />
+
+    <com.view.MTextView
+        android:id="@+id/tv_percentageAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="start|center"
+        android:textColor="#284552"
+        android:textSize="@dimen/txt_size_12"
+        android:visibility="gone"
+        app:customTypeFace="@string/system_bold" />
+</LinearLayout>

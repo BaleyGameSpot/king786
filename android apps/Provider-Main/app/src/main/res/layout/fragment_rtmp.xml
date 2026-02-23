@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:keepScreenOn="true">
+
+        <LinearLayout
+            android:id="@+id/leftView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_minus3sdp"
+            android:background="@drawable/square_border_shape"
+            android:backgroundTint="#99000000"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                app:srcCompat="@drawable/ic_arrow" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/viewArea"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:background="@drawable/square_border_shape"
+            android:backgroundTint="#99000000"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_7sdp"
+            tools:ignore="UselessParent">
+
+            <com.haishinkit.view.HkSurfaceView
+                android:id="@+id/cameraView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentStart="true"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/camera_rec" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/fullViewImg"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:padding="@dimen/_7sdp"
+                app:srcCompat="@drawable/ic_view_expand" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:gravity="center">
+
+                <com.view.MTextView
+                    android:id="@+id/timeTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_fill"
+                    android:backgroundTint="#fe4850"
+                    android:paddingStart="@dimen/_7sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="00:00"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sdp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/playPause"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_gravity="end|bottom"
+                    android:padding="@dimen/_3sdp"
+                    app:srcCompat="@drawable/ic_play" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/rightView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_minus3sdp"
+            android:background="@drawable/square_border_shape"
+            android:backgroundTint="#99000000"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:rotation="180"
+                app:srcCompat="@drawable/ic_arrow" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

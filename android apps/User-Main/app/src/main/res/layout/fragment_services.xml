@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/vehicleSizeArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_11sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_gray_line_1"
+                    android:backgroundTint="@color/text23Pro_Dark"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/_11sdp"
+                    android:paddingEnd="@dimen/_11sdp"
+                    tools:ignore="UselessParent">
+
+                    <com.view.MTextView
+                        android:id="@+id/vehicleSizeTxt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="@dimen/_7sdp"
+                        android:paddingBottom="@dimen/_7sdp"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_12ssp"
+                        app:customTypeFace="@string/system_bold"
+                        tools:text="@string/app_name" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:tint="@color/text23Pro_Dark"
+                        app:srcCompat="@drawable/ic_down_arrow_23" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.view.pinnedListView.PinnedSectionListView
+                android:id="@+id/serviceList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vehicleSizeArea"
+                android:background="@color/white"
+                android:divider="@color/white"
+                android:dividerHeight="0dp"
+                android:footerDividersEnabled="false"
+                android:headerDividersEnabled="false"
+                android:nestedScrollingEnabled="true" />
+        </RelativeLayout>
+
+        <com.view.MTextView
+            android:id="@+id/noResTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:maxLines="2"
+            android:padding="@dimen/_7sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_size_16"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="$20" />
+
+        <ProgressBar
+            android:id="@+id/loadingBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+</layout>

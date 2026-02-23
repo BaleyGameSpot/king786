@@ -1,0 +1,294 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00FFFFFF"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_minus20sdp"
+            android:visibility="visible"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.view.SelectableRoundedImageView
+                        android:id="@+id/driverImgView"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_35sdp"
+                        android:scaleType="centerCrop"
+                        app:sriv_border_color="#FFFFFF"
+                        app:sriv_border_width="4dip"
+                        app:sriv_left_bottom_corner_radius="20dip"
+                        app:sriv_left_top_corner_radius="20dip"
+                        app:sriv_oval="true"
+                        app:sriv_right_bottom_corner_radius="20dip"
+                        app:sriv_right_top_corner_radius="20dip" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_45sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_toEndOf="@id/driverImgView"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.view.MTextView
+                                android:id="@+id/driver_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:text="Driver Name"
+                                android:textAlignment="viewStart"
+                                android:textColor="#141414"
+                                android:textSize="@dimen/_13ssp"
+                                app:customTypeFace="@string/system_semi_bold" />
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+                                <com.view.simpleratingbar.SimpleRatingBar
+                                    android:id="@+id/ratingBar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    app:SRB_fillColor="@color/ratingfill"
+                                    app:SRB_isIndicator="true"
+                                    app:SRB_starBackgroundColor="@color/gray_holo_light"
+                                    app:SRB_starSize="15sp"
+                                    app:SRB_stepSize="0.5" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.view.MTextView
+                                android:id="@+id/numberPlate_txt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical|start"
+                                android:textAlignment="viewStart"
+                                android:textSize="@dimen/_10ssp"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="gj 01 2193" />
+
+                            <com.view.MTextView
+                                android:id="@+id/driver_car_model"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:gravity="end"
+                                android:maxWidth="@dimen/_130sdp"
+                                android:textAlignment="viewEnd"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="volvo s80" />
+
+                        </LinearLayout>
+
+                        <com.view.MTextView
+                            android:id="@+id/driver_car_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textAlignment="viewEnd"
+                            android:textColor="#7C7A7A"
+                            app:customTypeFace="@string/system_light"
+                            tools:text="Basic" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/videoRecordingNoteTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:textSize="@dimen/_11ssp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/border_23"
+                    android:layout_marginBottom="@dimen/_11sdp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    tools:text="Vehicle is equipped with inside video recording."/>
+
+
+                <LinearLayout
+                    android:id="@+id/recipientNameArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:visibility="visible"
+                    android:visibility="gone">
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E3E3E3" />
+
+                    <com.view.MTextView
+                        android:id="@+id/recipientNameTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/detail_area"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:gravity="bottom|start|center"
+                        android:text="Recipient Name"
+                        android:textAlignment="viewStart"
+                        android:textSize="@dimen/_10ssp"
+                        app:customTypeFace="@string/system_medium" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/subBtnDetail_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+
+        <com.view.CircularImageView
+            android:id="@+id/confirmationareacode"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center"
+            android:clickable="false"
+            app:srcCompat="@drawable/ic_otp"
+            app:civ_border_color="@color/transparent_full"
+            app:civ_border_width="0dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_marginEnd="@dimen/_4sdp"
+            app:civ_shadow="true"
+            app:civ_shadow_color="#055169"
+            app:civ_shadow_gravity="center"
+            app:civ_shadow_radius="@dimen/_1sdp"/>
+
+        <com.view.CircularImageView
+            android:id="@+id/rlCall"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:layout_marginEnd="@dimen/_4sdp"
+            app:civ_border_color="@color/transparent_full"
+            app:civ_border_width="0dp"
+            app:civ_shadow="true"
+            app:civ_shadow_color="#4BAE4F"
+            app:civ_shadow_gravity="center"
+            app:civ_shadow_radius="@dimen/_1sdp"
+            app:srcCompat="@drawable/ic_phone" />
+
+
+        <com.view.CircularImageView
+            android:id="@+id/rlMessage"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:layout_marginEnd="@dimen/_4sdp"
+            app:civ_border_color="@color/transparent_full"
+            app:civ_border_width="0dp"
+            app:civ_shadow="true"
+            app:civ_shadow_color="#2196F3"
+            app:civ_shadow_gravity="center"
+            app:civ_shadow_radius="@dimen/_1sdp"
+            app:srcCompat="@drawable/ic_message" />
+
+
+        <com.view.CircularImageView
+            android:id="@+id/rlShare"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:layout_marginEnd="@dimen/_4sdp"
+            app:civ_border_color="@color/transparent_full"
+            app:civ_border_width="0dp"
+            app:civ_shadow="true"
+            app:civ_shadow_color="#FF8C24"
+            app:civ_shadow_gravity="center"
+            app:civ_shadow_radius="@dimen/_1sdp"
+            app:srcCompat="@drawable/ic_share_location" />
+
+
+        <com.view.CircularImageView
+            android:id="@+id/rlCancel"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:src="@drawable/ic_cancel_round"
+            app:civ_border_color="@color/transparent_full"
+            app:civ_border_width="0dp"
+            app:civ_shadow="true"
+            app:civ_shadow_color="@color/text23Pro_Dark"
+            app:civ_shadow_gravity="center"
+            app:civ_shadow_radius="@dimen/_1sdp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

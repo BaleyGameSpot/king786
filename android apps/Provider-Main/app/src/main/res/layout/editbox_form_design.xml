@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.view.editBox.MaterialEditText
+        android:id="@+id/mEditText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/all_EditBox_height"
+        android:gravity="start"
+        android:inputType="textNoSuggestions"
+        android:maxLines="1"
+        android:textAlignment="viewStart"
+        android:textColor="@color/text23Pro_Dark"
+        android:textColorHint="@color/text23Pro_Light"
+        android:textSize="@dimen/_13ssp"
+        android:theme="@style/bg_materialEditText"
+        app:met_accentTypeface="@string/defaultFont"
+        app:met_baseColor="#646464"
+        app:met_clearButton="false"
+        app:met_floatingLabel="highlight"
+        app:met_isSetAlphaToBaseColor="false"
+        app:met_typeface="@string/defaultFont" />
+</layout>

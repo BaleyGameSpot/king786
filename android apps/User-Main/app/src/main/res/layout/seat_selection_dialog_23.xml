@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/top_curve_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/top_curve_card"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.view.MTextView
+                        android:id="@+id/itemTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_15ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:ignore="RelativeOverlap"
+                        tools:text="Select" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageCancel"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        app:srcCompat="@drawable/ic_close_round" />
+                </RelativeLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/itemHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_13ssp"
+                    app:customTypeFace="@string/system_medium"
+                    tools:text="To Proceed,please specify the number of seats you need." />
+
+                <LinearLayout
+                    android:id="@+id/seatListBoxLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/card_view_23_white_shadow">
+
+                    <com.view.MTextView
+                        android:id="@+id/itemPersonSeatTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:drawableEnd="@drawable/ic_down_arrow_23"
+                        android:ellipsize="end"
+                        android:gravity="start|center"
+                        android:includeFontPadding="false"
+                        android:singleLine="true"
+                        android:textColor="@color/text23Pro_Dark_1"
+                        android:textColorHint="@color/text23Pro_Light"
+                        android:textSize="@dimen/_12ssp"
+                        app:customTypeFace="@string/system_regular"
+                        app:drawableTint="@color/text23Pro_Dark_1"
+                        tools:hint="select" />
+                </LinearLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/itemNoteText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_9ssp"
+                    app:customTypeFace="@string/system_medium"
+                    tools:text="@string/app_name" />
+
+                <include
+                    android:id="@+id/itemNextBtn"
+                    layout="@layout/btn_type_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/all_btn_height"
+                    android:layout_marginTop="@dimen/_15sdp" />
+            </LinearLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </RelativeLayout>
+</layout>

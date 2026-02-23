@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootRelView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f4f4f4"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:id="@+id/tollbararea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/deliverall_design_toolbar_general" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tollbararea"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/deliveryStatusArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/mainArea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/mainContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/_95sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/mapFragmentContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </FrameLayout>
+
+                <RelativeLayout
+                    android:id="@+id/bottomArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/transparent_full">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/timeArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:visibility="gone"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="@dimen/_2sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_60sdp"
+                                android:orientation="horizontal"
+                                android:visibility="visible">
+
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <com.view.MTextView
+                                            android:id="@+id/pickedUpTimeTxtView_"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:includeFontPadding="false"
+                                            android:textColor="#141414"
+                                            android:textSize="@dimen/_15ssp"
+                                            app:customTypeFace="@string/system_medium"
+                                            tools:text="8:23" />
+
+                                        <com.view.MTextView
+                                            android:id="@+id/pickedUpTimeAbbrTxtView_"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_5sdp"
+                                            android:gravity="center"
+                                            android:includeFontPadding="false"
+                                            android:textColor="#000000"
+                                            android:textSize="@dimen/_15ssp"
+                                            app:customTypeFace="@string/system_medium"
+                                            tools:text="AM" />
+                                    </LinearLayout>
+
+                                    <com.view.MTextView
+                                        android:id="@+id/pickedUpTxtView_"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:includeFontPadding="false"
+                                        android:text="picked up"
+                                        android:textColor="#a0a0a0"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customTypeFace="@string/system_light" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="@dimen/_1sdp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_marginBottom="@dimen/_10sdp"
+                                    android:layout_weight="0"
+                                    android:background="#dddddd" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <com.view.MTextView
+                                            android:id="@+id/distanceVTxtView"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:includeFontPadding="false"
+                                            android:text="0.58"
+                                            android:textColor="#141414"
+                                            android:textSize="@dimen/_15ssp"
+                                            app:customTypeFace="@string/system_medium" />
+
+                                        <com.view.MTextView
+                                            android:id="@+id/distanceVAbbrTxtView"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_5sdp"
+                                            android:gravity="center"
+                                            android:includeFontPadding="false"
+                                            android:text="KM"
+                                            android:textColor="#141414"
+                                            android:textSize="@dimen/_15ssp"
+                                            app:customTypeFace="@string/system_medium" />
+                                    </LinearLayout>
+
+                                    <com.view.MTextView
+                                        android:id="@+id/distanceTxtView"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:includeFontPadding="false"
+                                        android:text="Distance"
+                                        android:textColor="#a0a0a0"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customTypeFace="@string/system_light" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                            <include
+                                android:id="@+id/bottom_sheet_behavior_id"
+                                layout="@layout/bottom_sheet_order_status" />
+                        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dataRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/mProgressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <com.view.ErrorView
+        android:id="@+id/errorView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

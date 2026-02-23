@@ -1,0 +1,865 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/testBgView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="@color/black" />
+
+    <LinearLayout
+
+        android:id="@+id/tollbarArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="visible"
+        tools:visibility="visible">
+
+        <include layout="@layout/design_toolbar_general" />
+
+    </LinearLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tollbarArea"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true">
+
+        <FrameLayout
+            android:id="@+id/bottom_sheet_cab_frag_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:nestedScrollingEnabled="false"
+            app:behavior_hideable="false"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/tempRentalArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rentalarea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:animateLayoutChanges="true"
+                        android:background="@android:color/transparent"
+                        android:gravity="end"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_11sdp"
+                            android:background="@drawable/card_view_23_white_line_flat_1"
+                            android:elevation="@dimen/_2sdp"
+                            android:maxWidth="@dimen/_125sdp"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/rentIconImage"
+                                android:layout_width="@dimen/_16sdp"
+                                android:layout_height="@dimen/_16sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_7sdp"
+                                app:srcCompat="@drawable/car_rental" />
+
+                            <com.view.MTextView
+                                android:id="@+id/rentalPkg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:paddingStart="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_8sdp"
+                                android:paddingEnd="@dimen/_8sdp"
+                                android:paddingBottom="@dimen/_8sdp"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_12ssp"
+                                android:visibility="visible"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="Rental" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_marginEnd="-12dp">
+
+                            <com.view.SelectableRoundedImageView
+                                android:id="@+id/rentBackPkgImage"
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_alignParentEnd="true"
+                                android:background="@color/appThemeColor_1"
+                                android:visibility="gone"
+                                app:sriv_left_bottom_corner_radius="14dip"
+                                app:sriv_left_top_corner_radius="14dip"
+                                app:sriv_oval="true"
+                                app:sriv_right_bottom_corner_radius="14dip"
+                                app:sriv_right_top_corner_radius="14dip" />
+
+
+                            <com.view.SelectableRoundedImageView
+                                android:id="@+id/rentPkgImage"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_centerInParent="true"
+                                android:background="@color/white"
+                                android:scaleType="fitXY"
+                                android:tint="@color/appThemeColor_TXT_1"
+                                android:visibility="gone"
+                                app:sriv_left_bottom_corner_radius="12dip"
+                                app:sriv_left_top_corner_radius="12dip"
+                                app:sriv_oval="true"
+                                app:sriv_right_bottom_corner_radius="13dip"
+                                app:sriv_right_top_corner_radius="13dip" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/detailArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_view_23_white_top_flat"
+                    android:elevation="@dimen/_2sdp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/poolArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_23sdp"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/poolBackImage"
+                                    android:layout_width="@dimen/_19sdp"
+                                    android:layout_height="@dimen/_19sdp"
+                                    android:elevation="@dimen/_6sdp"
+                                    android:src="@drawable/ic_back_pool"
+                                    android:visibility="visible" />
+
+                                <com.view.MTextView
+                                    android:id="@+id/poolTxt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_7sdp"
+                                    android:layout_weight="1"
+                                    android:gravity="start|center"
+                                    android:includeFontPadding="false"
+                                    android:textColor="@color/text23Pro_Dark"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:customTypeFace="@string/system_semi_bold"
+                                    tools:text="Pool" />
+
+                                <com.view.MTextView
+                                    android:id="@+id/poolFareTxt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginEnd="@dimen/txt_size_15"
+                                    android:gravity="center"
+                                    android:includeFontPadding="false"
+                                    android:text="$ "
+                                    android:textColor="@color/appThemeColor_1"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:customTypeFace="@string/system_bold" />
+
+                            </LinearLayout>
+
+
+                            <com.view.MTextView
+                                android:id="@+id/poolnoseatsTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_16sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_10ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="How many seats do you need ?" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_70sdp"
+                                android:layout_gravity="center"
+                                android:gravity="center">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/poolSeatsRecyclerView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:visibility="visible"
+                                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+                            </LinearLayout>
+
+                            <com.view.MTextView
+                                android:id="@+id/poolnoteTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/gray"
+                                android:textSize="@dimen/_9ssp"
+                                app:customTypeFace="@string/system_medium"
+                                tools:text="How many seats do you need ?" />
+
+
+                            <include
+                                android:id="@+id/confirm_seats_btn"
+                                layout="@layout/btn_type_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/all_btn_height"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="@dimen/_8sdp" />
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/mainContentArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical">
+
+                                <ProgressBar
+                                    android:id="@+id/mProgressBar"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="-6dp"
+                                    android:visibility="invisible" />
+
+                                <LinearLayout
+                                    android:id="@+id/verticalscrollIndicatorLL"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:animateLayoutChanges="true"
+                                    android:gravity="center_horizontal">
+
+                                    <View
+                                        android:id="@+id/verticalscrollIndicator"
+                                        android:layout_width="@dimen/_44sdp"
+                                        android:layout_height="@dimen/_3sdp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="@dimen/_11sdp"
+                                        android:layout_marginBottom="@dimen/_11sdp"
+                                        android:background="@drawable/rounded_view_home"
+                                        android:backgroundTint="@color/gray"
+                                        android:visibility="gone"
+                                        tools:visibility="visible" />
+                                </LinearLayout>
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center">
+
+                                    <ImageView
+                                        android:id="@+id/rentalBackImage"
+                                        android:layout_width="@dimen/_19sdp"
+                                        android:layout_height="@dimen/_19sdp"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_marginStart="@dimen/_14sdp"
+                                        android:src="@drawable/ic_back_pool"
+                                        android:visibility="gone" />
+
+                                    <com.view.MTextView
+                                        android:id="@+id/noServiceTxt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:includeFontPadding="false"
+                                        android:textColor="@color/text23Pro_Dark"
+                                        android:textSize="@dimen/_11ssp"
+                                        android:visibility="gone"
+                                        app:customTypeFace="@string/system_semi_bold"
+                                        tools:text="Service not available in this location" />
+
+
+                                    <FrameLayout
+
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rentalMainArea"
+                                        android:descendantFocusability="blocksDescendants"
+                                        android:focusable="true"
+                                        android:focusableInTouchMode="true"
+                                        android:gravity="center">
+
+
+                                        <androidx.recyclerview.widget.RecyclerView
+
+                                            android:id="@+id/carTypeRecyclerView"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center"
+                                            android:background="@color/white"
+                                            android:nestedScrollingEnabled="false"
+                                            android:orientation="horizontal"
+                                            android:overScrollMode="never"
+                                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+                                        <com.view.anim.loader.AVLoadingIndicatorView
+                                            android:id="@+id/loaderView"
+                                            android:layout_width="70dp"
+                                            android:layout_height="70dp"
+                                            android:layout_gravity="center|top"
+                                            android:layout_marginTop="@dimen/_30sdp"
+                                            android:background="@android:color/transparent"
+                                            android:visibility="gone"
+                                            app:indicator="BallSpinFadeLoader"
+                                            app:indicator_color="#000000" />
+
+                                    </FrameLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/rentalMainArea"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:animateLayoutChanges="true">
+
+
+                                        <com.view.MTextView
+                                            android:id="@+id/rentalPkgDesc"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_marginBottom="@dimen/_15sdp"
+                                            android:gravity="center"
+                                            android:includeFontPadding="false"
+                                            android:textColor="@color/text23Pro_Dark"
+                                            android:textSize="@dimen/_11ssp"
+                                            android:visibility="visible"
+                                            app:customTypeFace="@string/system_semi_bold"
+                                            tools:text="Rent a cab at flexible hourly packages" />
+
+                                    </RelativeLayout>
+
+
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <LinearLayout
+        android:id="@+id/design_linear_layout_car_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/requestPayArea"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/_minus2sdp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/rentalArea2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_11sdp"
+            android:animateLayoutChanges="true"
+            android:background="@android:color/transparent"
+            android:gravity="end"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/card_view_23_white_line_flat_1"
+                android:elevation="@dimen/_2sdp"
+                android:maxWidth="@dimen/_125sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/rentIconImage2"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    app:srcCompat="@drawable/car_rental" />
+
+                <com.view.MTextView
+                    android:id="@+id/rentalPkg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="visible"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="Rental" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_minus5sdp"
+                android:background="@drawable/card_view_23_white_line_flat_1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imagecar"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/_5sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.view.MTextView
+                        android:id="@+id/carTypeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_15ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="Basic" />
+
+                    <com.view.MTextView
+
+                        android:id="@+id/personsizeTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:drawableStart="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="@dimen/_2sdp"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_11ssp"
+                        app:customTypeFace="@string/system_bold" />
+
+                    <ImageView
+                        android:id="@+id/DeliveryHelper"
+                        android:layout_width="@dimen/_11sdp"
+                        android:layout_height="@dimen/_11sdp"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:src="@drawable/ic_delivery_helper_boy"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <com.view.MTextView
+                        android:id="@+id/fareVTxt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:layout_weight="1"
+                        android:gravity="end|center"
+                        android:maxLines="1"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textSize="@dimen/_15ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="$ 22.00" />
+
+                </LinearLayout>
+
+
+                <com.view.MTextView
+                    android:id="@+id/pkgMsgTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="start|center_vertical"
+                    android:textColor="@color/text23Pro_Light"
+                    android:textSize="@dimen/_10ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="fdgdfgsdf" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.view.MTextView
+                        android:id="@+id/mordetailsTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:gravity="center"
+                        android:maxWidth="@dimen/_210sdp"
+                        android:maxLines="1"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textSize="@dimen/_11ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="More Details" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/morwArrow"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        app:srcCompat="@drawable/ic_down_arrow_23"
+                        app:tint="@color/appThemeColor_1" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/requestPayArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/card_view_23_white_top_shadow"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/cashcardarea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/paymentArea"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/errorImage"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/error_cash_card" />
+
+                    <ImageView
+                        android:id="@+id/payImgView"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_money_cash" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/organizationArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <com.view.MTextView
+                                android:id="@+id/organizationTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:clickable="false"
+                                android:gravity="start|center"
+                                android:includeFontPadding="false"
+                                android:text="Personal"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/text23Pro_Light"
+                                android:textSize="@dimen/_11ssp"
+                                app:customTypeFace="@string/system_regular" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="5dp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_8sdp"
+                                    android:layout_height="@dimen/_8sdp"
+                                    android:layout_gravity="center"
+                                    android:clickable="false"
+                                    android:visibility="gone"
+                                    app:srcCompat="@drawable/ic_down_arrow" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.view.MTextView
+                                android:id="@+id/payTypeTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:clickable="false"
+                                android:gravity="start|center"
+                                android:includeFontPadding="false"
+                                android:text="Cash"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14ssp"
+                                app:customTypeFace="@string/system_semi_bold" />
+
+                            <com.view.MTextView
+                                android:id="@+id/payTypeHTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:clickable="false"
+                                android:gravity="start|center"
+                                android:includeFontPadding="false"
+                                android:text="Cash"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11ssp"
+                                app:customTypeFace="@string/system_semi_bold" />
+
+                            <LinearLayout
+                                android:id="@+id/showDropDownArea"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:gravity="center"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_8sdp"
+                                    android:layout_height="@dimen/_8sdp"
+                                    android:layout_gravity="center"
+                                    android:clickable="false"
+                                    android:gravity="center"
+                                    android:visibility="gone"
+                                    app:srcCompat="@drawable/ic_down_arrow" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/arrowImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:rotation="270"
+                    android:src="@drawable/ic_down_arrow_23" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="@dimen/_11sdp"
+            android:paddingBottom="@dimen/_15sdp">
+
+            <LinearLayout
+                android:id="@+id/sendRequestArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_2sdp">
+
+                    <LinearLayout
+
+                        android:id="@+id/btnArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/all_btn_height"
+                        android:layout_centerInParent="true"
+                        android:layout_weight="1">
+
+                        <include
+                            android:id="@+id/ride_now_btn"
+                            layout="@layout/btn_type_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/scheduleArrowImage"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_right"
+                        android:visibility="gone"
+
+                        app:tint="@color/appThemeColor_TXT_1" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/imageLaterarea"
+                    android:layout_width="0dp"
+
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:background="@drawable/border"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img_ridelater"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_gravity="center"
+
+                            app:srcCompat="@drawable/ic_ride_later" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

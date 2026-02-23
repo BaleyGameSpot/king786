@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_12sdp">
+
+        <com.view.MTextView
+            android:id="@+id/summaryHTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_10ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="Seat X $2.00" />
+
+        <com.view.MTextView
+            android:id="@+id/summaryVTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/appThemeColor_1"
+            android:textSize="@dimen/_12ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="$10.00" />
+    </LinearLayout>
+</layout>

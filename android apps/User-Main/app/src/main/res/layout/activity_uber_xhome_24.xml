@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/screen23MainArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/Main23ProArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/dataArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/topArea"
+                android:layout_marginTop="@dimen/_minus18sdp"
+                android:orientation="vertical">
+
+                <com.general.files.MySwipeRefreshLayout
+                    android:id="@+id/swipeRefresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/dynamicHomeList23RecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingTop="@dimen/_18sdp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                </com.general.files.MySwipeRefreshLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/topArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_view_24_white_bottom_shadow"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize">
+
+                    <LinearLayout
+                        android:id="@+id/userProfileView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="@dimen/_15sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_11sdp"
+                            app:srcCompat="@drawable/ic_home_profile_menu_24" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/welcomeTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/appThemeColor_1"
+                            android:textSize="@dimen/_10ssp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="@string/app_name" />
+
+                        <com.view.MTextView
+                            android:id="@+id/userNameTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/text24Pro_Black"
+                            android:textSize="@dimen/_14ssp"
+                            app:customTypeFace="@string/system_bold"
+                            tools:text="@string/app_name" />
+                    </LinearLayout>
+
+                    <com.view.SelectableRoundedImageView
+                        android:id="@+id/userImgView"
+                        android:layout_width="@dimen/_31sdp"
+                        android:layout_height="@dimen/_31sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_9sdp"
+                        android:scaleType="centerCrop"
+                        app:sriv_border_color="@color/border_gray_light_1"
+                        app:sriv_border_width="1dp"
+                        app:sriv_left_bottom_corner_radius="@dimen/_5sdp"
+                        app:sriv_left_top_corner_radius="@dimen/_5sdp"
+                        app:sriv_right_bottom_corner_radius="@dimen/_5sdp"
+                        app:sriv_right_top_corner_radius="@dimen/_5sdp" />
+
+                    <View
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="0dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/headerAddressView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_10sdp">
+
+                    <com.view.MTextView
+                        android:id="@+id/headerAddressTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_location_pro"
+                        android:drawableEnd="@drawable/ic_down_arrow_23"
+                        android:drawablePadding="@dimen/_6sdp"
+                        android:ellipsize="end"
+                        android:gravity="start|center"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/text24Pro_Black"
+                        android:textColorHint="@color/text24Pro_Black"
+                        android:textSize="@dimen/_12ssp"
+                        app:customTypeFace="@string/system_regular"
+                        app:drawableTint="@color/text24Pro_Black"
+                        tools:text="@string/app_name" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/UFX23ProArea"
+            layout="@layout/activity_ufx_services_23pro"
+            tools:visibility="gone" />
+
+        <include
+            android:id="@+id/UFX23BuySellRentOnlyArea"
+            layout="@layout/activity_uber_xhome_23_buy_sell_rent_only"
+            tools:visibility="gone" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.view.MTextView
+        android:id="@+id/headerMsgTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_11sdp"
+        android:layout_marginEnd="@dimen/_22sdp"
+        android:gravity="center"
+        android:text="Surge"
+        android:textColor="@color/text23Pro_Dark"
+        android:textSize="@dimen/_12ssp"
+        app:customTypeFace="@string/system_semi_bold" />
+
+    <com.view.MTextView
+        android:id="@+id/surgePriceTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_22sdp"
+        android:gravity="center"
+        android:text="1.2x"
+        android:textColor="@color/appThemeColor_1"
+        android:textSize="@dimen/_17ssp"
+        app:customTypeFace="@string/system_semi_bold" />
+
+
+    <com.view.MTextView
+        android:id="@+id/payableTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_11sdp"
+        android:layout_marginEnd="@dimen/_22sdp"
+        android:gravity="center"
+        android:text="payable amount"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11ssp"
+        app:customTypeFace="@string/system_semi_bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <com.view.MTextView
+            android:id="@+id/payableAmountTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="gone"
+            app:customTypeFace="@string/system_medium" />
+
+        <com.view.MTextView
+            android:id="@+id/payableAmountValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/appThemeColor_1"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="gone"
+            app:customTypeFace="@string/system_medium" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/btn_type2"
+        layout="@layout/btn_type_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/all_btn_height"
+        android:layout_marginStart="@dimen/_11sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_11sdp" />
+
+    <com.view.MTextView
+        android:id="@+id/tryLaterTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_11sdp"
+        android:gravity="center"
+        android:text="TRY LATER"
+        android:textColor="@color/text23Pro_Light"
+        android:textSize="@dimen/_14ssp"
+        app:customTypeFace="@string/system_semi_bold" />
+
+</LinearLayout>

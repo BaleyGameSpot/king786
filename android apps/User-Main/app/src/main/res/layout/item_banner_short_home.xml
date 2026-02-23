@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contentView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:orientation="vertical"
+    android:padding="0dp">
+
+    <RelativeLayout
+        android:id="@+id/containerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp">
+
+        <com.view.SelectableRoundedImageView
+            android:id="@+id/bannerImgView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/ic_no_icon"
+            app:sriv_left_bottom_corner_radius="@dimen/_10sdp"
+            app:sriv_left_top_corner_radius="@dimen/_10sdp"
+            app:sriv_right_bottom_corner_radius="@dimen/_10sdp"
+            app:sriv_right_top_corner_radius="@dimen/_10sdp" />
+
+        <com.view.SelectableRoundedImageView
+            android:id="@+id/transparentView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            app:sriv_left_bottom_corner_radius="@dimen/_10sdp"
+            app:sriv_left_top_corner_radius="@dimen/_10sdp"
+            app:sriv_right_bottom_corner_radius="@dimen/_10sdp"
+            app:sriv_right_top_corner_radius="@dimen/_10sdp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bookNowImg"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_9sdp"
+            android:background="@drawable/round_new_shape"
+            android:padding="@dimen/_10sdp"
+            android:rotation="@integer/angleY_rtl_180"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_keyboard_backspace_black_24dp"
+            app:tint="@color/transparent_full" />
+
+        <com.view.MTextView
+            android:id="@+id/bannerTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_64sdp"
+            android:maxLines="3"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_size_14"
+            android:visibility="gone"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="Buy anything \nFrom AnyWhere" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bookNowImgBottom"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_9sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/round_new_shape"
+            android:padding="@dimen/_10sdp"
+            android:rotation="@integer/angleY_rtl_180"
+            app:srcCompat="@drawable/ic_keyboard_backspace_black_24dp"
+            app:tint="@color/transparent_full" />
+    </RelativeLayout>
+</RelativeLayout>

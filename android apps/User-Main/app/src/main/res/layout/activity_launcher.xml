@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appImage"
+            android:layout_width="288dp"
+            android:layout_height="288dp"
+            android:src="@drawable/splash"
+            app:srcCompat="@drawable/splash"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="?android:actionBarSize"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/drawOverMsgTxtView"
+            app:layout_constraintEnd_toEndOf="@+id/appImage"
+            app:layout_constraintStart_toStartOf="@+id/appImage">
+
+            <com.view.MTextView
+                android:id="@+id/appNameTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="center"
+                android:text="@string/APP_TYPE_NAME"
+                android:textAllCaps="true"
+                android:textColor="#000000"
+                android:textSize="@dimen/_20ssp"
+                app:customTypeFace="@string/system_bold" />
+
+            <com.view.anim.loader.AVLoadingIndicatorView
+                android:id="@+id/loaderView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:visibility="gone"
+                app:indicator="BallPulse"
+                app:indicator_color="@color/appThemeColor_1" />
+        </LinearLayout>
+
+
+        <com.view.MTextView
+            android:id="@+id/drawOverMsgTxtView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1C1C1C"
+            android:gravity="center"
+            android:paddingStart="@dimen/_11sdp"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingEnd="@dimen/_11sdp"
+            android:paddingBottom="@dimen/_7sdp"
+            android:textColor="#FFFFFF"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

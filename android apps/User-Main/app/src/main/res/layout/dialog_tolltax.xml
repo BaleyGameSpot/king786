@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_11sdp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imagecar"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_tip_icon" />
+
+        <com.view.MTextView
+            android:id="@+id/tolltaxTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imagarea"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_18ssp"
+            app:customTypeFace="@string/system_bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:orientation="vertical">
+
+            <com.view.MTextView
+                android:id="@+id/tollTaxMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imagarea"
+                android:layout_centerHorizontal="true"
+                android:gravity="start"
+                android:text=""
+                android:textColor="@color/textSub23Pro_gray"
+                android:textSize="@dimen/_9ssp"
+                app:customTypeFace="@string/system_regular" />
+
+            <com.view.MTextView
+                android:id="@+id/tollTaxpriceTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tollTaxMsg"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/appThemeColor_1"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_semi_bold" />
+
+
+        </LinearLayout>
+
+
+        <CheckBox
+            android:id="@+id/checkboxTolltax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_10ssp"
+            android:buttonTint="@color/text23Pro_Light"
+            android:fontFamily="@string/system_semi_bold"
+            android:theme="@style/MyCheckBox" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_11sdp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:layout_marginEnd="@dimen/_5sdp">
+
+                <include
+                    android:id="@+id/cancelTxt"
+                    layout="@layout/btn_type_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/all_btn_height" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_11sdp">
+
+                <include
+                    android:id="@+id/btn_type2"
+                    layout="@layout/btn_type_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/all_btn_height" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

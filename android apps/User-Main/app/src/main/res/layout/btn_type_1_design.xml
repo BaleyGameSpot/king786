@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.view.MButton xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/btn_type_1_rounded_corner_fill"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:includeFontPadding="false"
+    android:outlineAmbientShadowColor="@color/white"
+    android:outlineSpotShadowColor="@color/white"
+    android:textColor="@color/btn_text_color_type1"
+    android:textSize="@dimen/_13ssp"
+    app:customButtonTypeFace="@string/system_medium"
+    app:heightOfButton="@dimen/all_btn_height"
+    app:textAutoCaps="false"
+    tools:text="@string/app_name" />

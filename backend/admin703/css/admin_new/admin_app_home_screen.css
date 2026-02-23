@@ -1,0 +1,159 @@
+.section-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.underline-section-title {
+    display: block;
+    border-top: 5px solid #799FCB;
+    width: 75px;
+    margin: 0 0 15px 0;
+}
+
+.save-section-btn, .manage-service-btn {
+    background-color: #000000;
+    border-color: #000000;
+    font-size: 18px;
+    min-width: 120px;
+    outline: none !important;
+}
+
+.save-section-btn:hover, .save-section-btn:focus, .save-section-btn:active, .save-section-btn:disabled,
+.manage-service-btn:hover, .manage-service-btn:focus, .manage-service-btn:active, .manage-service-btn:disabled {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.manage-service-btn {
+    font-size: 14px;
+    min-width: auto;
+}
+
+.paddingbottom-10 {
+    padding-bottom: 10px !important;
+}
+
+.paddingbottom-0 {
+    padding-bottom: 0 !important;   
+}
+
+.promo-banner .banner-img-block {
+    justify-content: center;
+    grid-template-columns: auto;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #dddddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #cccccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding-top: 15px;
+}
+
+.display-tab-content {
+    display: block;
+}
+
+.manage-banner-section .service-img-block {
+    display: inline-block;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 15px 0 10px 15px;
+    margin-bottom: 15px;
+}
+
+.service-preview-img {
+    width: auto;
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: top;
+}
+
+.service-img-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    max-width: 400px;
+    margin: 0 auto 15px;
+    padding: 15px 15px 10px !important;
+}
+
+.service-img-grid .service-preview-img {
+    margin: 0 auto;
+}
+
+.service-img-grid .service-img-title {
+    margin: 5px auto;
+}
+
+.manage-banner-section .manage-icon-btn {
+    display: block;
+    margin: auto;
+}
+
+.service-img-title {
+    font-size: 12px;
+    font-weight: 600;
+    word-break: break-word;
+    width: 70px;
+    margin-top: 5px;
+}
+
+.manage-banner-section .manage-banner-btn {
+    margin-top: 10px;
+}
+
+.img-note {
+    display: block;
+    margin-top: 10px;
+    width: max-content;
+}
+
+.service-box-preview-img {
+    background-color: #F2F2F4;
+    border-radius: 7px;
+    padding: 10px;
+    min-width: 120px;
+    min-height: 100px;
+    position: relative;
+}
+
+.service-box-preview-img .service-img-title {
+    text-align: left;
+    margin: 0 !important;
+}
+
+.service-box-preview-img img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    max-height: 60px;
+}

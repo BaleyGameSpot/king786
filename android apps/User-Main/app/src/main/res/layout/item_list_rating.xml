@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/appThemeColor_1"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:padding="@dimen/_7sdp">
+
+        <com.view.MTextView
+            android:id="@+id/orderHotelName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="start|center"
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_size_14"
+            app:customTypeFace="@string/system_bold"
+            tools:text="Burger King" />
+
+        <com.view.simpleratingbar.SimpleRatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderHotelName"
+            android:layout_gravity="start"
+            android:padding="@dimen/_1sdp"
+            app:SRB_fillColor="@color/rating_fill_color"
+            app:SRB_starBackgroundColor="@color/white"
+            app:SRB_starSize="25dp"
+            app:SRB_stepSize="0.5" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ratingCancel"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:focusable="true"
+            app:srcCompat="@mipmap/ic_close_icon_"
+            app:tint="@color/white" />
+    </RelativeLayout>
+</layout>
+

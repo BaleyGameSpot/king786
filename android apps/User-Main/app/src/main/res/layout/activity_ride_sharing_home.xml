@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fragContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/fbBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/googleBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/bottomArea"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_52sdp"
+            android:background="#00FFFFFF"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_56sdp"
+                android:layout_marginStart="-6dp"
+                android:layout_marginEnd="-6dp"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_2sdp"
+                    android:background="@drawable/gradient_shadow" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:background="@color/activityBg"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/searchArea"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/searchIcon"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            app:srcCompat="@drawable/ic_home"
+                            app:tint="@color/homedeSelectColor" />
+
+                        <com.view.MTextView
+                            android:id="@+id/searchTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:maxLines="4"
+                            android:textAlignment="center"
+                            android:textColor="@color/homedeSelectColor"
+                            android:textSize="@dimen/_9sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="search" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/publishArea"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/publishIcon"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            app:srcCompat="@drawable/ic_booking"
+                            app:tint="@color/homedeSelectColor" />
+
+                        <com.view.MTextView
+                            android:id="@+id/publishTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:maxLines="4"
+                            android:textAlignment="center"
+                            android:textColor="@color/homedeSelectColor"
+                            android:textSize="@dimen/_9sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="publish" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ridesArea"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ridesIcon"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            app:srcCompat="@drawable/ic_wallet"
+                            app:tint="@color/homedeSelectColor" />
+
+                        <com.view.MTextView
+                            android:id="@+id/ridesTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:maxLines="4"
+                            android:textAlignment="center"
+                            android:textColor="@color/homedeSelectColor"
+                            android:textSize="@dimen/_9sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="rides" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/profileArea"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/profileIcon"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            app:srcCompat="@drawable/ic_profile"
+                            app:tint="@color/homedeSelectColor" />
+
+                        <com.view.MTextView
+                            android:id="@+id/profileTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:maxLines="4"
+                            android:textAlignment="center"
+                            android:textColor="@color/homedeSelectColor"
+                            android:textSize="@dimen/_9sdp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="profile" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

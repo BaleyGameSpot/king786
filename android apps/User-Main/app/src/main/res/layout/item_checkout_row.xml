@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_7sdp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_6ssp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/menuImage"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_gravity="center"
+                    android:layout_margin="1dp"
+                    android:background="@color/imageBg"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearance="@style/RoundedSquare_7sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8ssp"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:layout_marginEnd="@dimen/_5ssp"
+                    android:layout_marginBottom="@dimen/_5ssp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/itemNameTxtView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center"
+                            android:layout_weight="1"
+                            android:ellipsize="marquee"
+                            android:gravity="start|center_vertical"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:singleLine="true"
+                            android:textAlignment="viewStart"
+                            android:textColor="#141414"
+                            android:textSize="@dimen/_15ssp"
+                            app:customTypeFace="@string/system_medium"
+                            tools:text="s fnfudsygfusdf gfsadbcsgfs fhsfg" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/cancelImg"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_minus3sdp"
+                            app:srcCompat="@drawable/ic_delete_icon" />
+                    </LinearLayout>
+
+                    <com.view.MTextView
+                        android:id="@+id/itemMenuNameTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:ellipsize="marquee"
+                        android:gravity="start|center_vertical"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="#666666"
+                        android:textSize="@dimen/txt_size_12"
+                        app:customTypeFace="@string/system_regular"
+                        tools:text="@string/app_name" />
+
+                    <com.view.MTextView
+                        android:id="@+id/itemstrikePriceTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="start|center_vertical"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/txt_size_12"
+                        app:customTypeFace="@string/system_regular"
+                        tools:text="@string/app_name" />
+
+                    <com.view.MTextView
+                        android:id="@+id/itemPriceTxtView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center_vertical"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textSize="@dimen/_15ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="@string/app_name" />
+
+                    <com.view.MTextView
+                        android:id="@+id/QTYNumberTxtView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#141414"
+                        android:textSize="@dimen/_11ssp"
+                        app:customTypeFace="@string/system_medium"
+                        tools:text="x5" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>

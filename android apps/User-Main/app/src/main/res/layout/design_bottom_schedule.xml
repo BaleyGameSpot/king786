@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/ic_top_rounded_bottom_svg"
+    android:orientation="vertical">
+
+    <com.view.MTextView
+        android:id="@+id/titleTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textColor="@color/text23Pro_Dark"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        app:customTypeFace="@string/system_bold"
+        tools:text="Schedule" />
+
+    <com.view.MTextView
+        android:id="@+id/selectedDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="false"
+        android:gravity="center"
+        android:textColor="@color/textSub23Pro_gray"
+        android:textSize="@dimen/_11ssp"
+        app:customTypeFace="@string/system_medium"
+        tools:text="Mon, Nov 15" />
+
+    <com.view.MTextView
+        android:id="@+id/selectedTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="false"
+        android:gravity="center"
+        android:textColor="@color/text23Pro_Dark"
+        android:textSize="@dimen/_11ssp"
+        app:customTypeFace="@string/system_semi_bold"
+        app:textAllCaps="true"
+        tools:text="2:45PM - 2:50PM" />
+
+    <com.datepicker.DatePickerTimeline
+        android:id="@+id/dateTimeline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_13sdp"
+        android:layout_marginTop="@dimen/_21sdp"
+        android:layout_marginEnd="@dimen/_10sdp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_19sdp"
+        android:gravity="center_horizontal">
+
+
+        <com.view.MTextView
+            android:id="@+id/hourselectotTxt"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_gravity="center"
+            android:background="@drawable/schedule_border_flat_line"
+            android:clickable="false"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="@dimen/_10ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="2"
+            tools:textColor="@color/text23Pro_Dark" />
+
+        <com.view.MTextView
+            android:id="@+id/minselectotTxt"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@drawable/schedule_border_flat_line"
+            android:clickable="false"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="@dimen/_10ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="45"
+            tools:textColor="@color/text23Pro_Dark" />
+
+        <com.view.MTextView
+            android:id="@+id/AmpmselectotTxt"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@drawable/schedule_border_flat_line"
+            android:clickable="false"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_10ssp"
+            app:customTypeFace="@string/system_semi_bold"
+            tools:text="PM"
+            tools:textColor="@color/text23Pro_Dark" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/skipTxtArea"
+                layout="@layout/btn_type_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_btn_height" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/okTxt"
+                layout="@layout/btn_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_btn_height" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

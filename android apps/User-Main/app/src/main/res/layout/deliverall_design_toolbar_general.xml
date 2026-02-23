@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent_full"
+    app:elevation="0dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/appThemeColor_1"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:layout_scrollFlags="scroll|enterAlways">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/menuImgView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="0"
+                android:clickable="true"
+                android:visibility="gone"
+                app:srcCompat="@mipmap/ic_drawer_menu"
+                app:tint="@color/appThemeColor_TXT_1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/backImgView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0"
+                android:rotationY="@integer/angle_rtl_180"
+                app:srcCompat="@mipmap/ic_back_arrow"
+                app:tint="@color/appThemeColor_TXT_1" />
+
+            <com.view.MTextView
+                android:id="@+id/titleTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/appThemeColor_TXT_1"
+                android:textSize="@dimen/_15ssp"
+                android:visibility="visible"
+                app:customTypeFace="@string/system_medium" />
+
+            <LinearLayout
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_toEndOf="@id/backImgView"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/ordertitleTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoSizeStepGranularity="@dimen/_1ssp"
+                    android:gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:paddingStart="10dp"
+                    android:text=""
+                    tools:text="Order Title"
+                    android:textAlignment="center"
+                    android:textColor="@color/appThemeColor_TXT_1"
+                    android:textSize="@dimen/_15ssp"
+                    android:visibility="visible"
+                    app:autoSizeMaxTextSize="@dimen/_12ssp"
+                    app:autoSizeMinTextSize="@dimen/_8ssp"
+                    app:autoSizeTextType="uniform"
+                    app:customTypeFace="@string/system_regular" />
+
+                <com.view.MTextView
+                    android:id="@+id/orderMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-3dp"
+                    android:gravity="center_horizontal"
+                    android:includeFontPadding="false"
+                    android:maxLines="2"
+                    android:paddingStart="10dp"
+                    android:singleLine="true"
+                    android:text=""
+                    tools:text="Order number"
+                    android:textAlignment="center"
+                    android:textColor="@color/appThemeColor_TXT_1"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="visible"
+                    app:customTypeFace="@string/system_regular" />
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/subTitleTxt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end|center_vertical"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/appThemeColor_TXT_1"
+                android:textSize="@dimen/txt_size_16"
+                android:visibility="gone"
+                app:customTypeFace="@string/system_light" />
+
+            <com.view.MTextView
+                android:id="@+id/addVehicleTxtView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:text="+"
+                android:textColor="@color/appThemeColor_TXT_1"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:customTypeFace="@string/system_light" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/rightImgView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_toStartOf="@id/editCartImageview"
+                android:padding="12dp"
+                android:visibility="gone"
+                app:srcCompat="@mipmap/ic_menu_search"
+                app:tint="@color/appThemeColor_TXT_1"
+                tools:ignore="VectorDrawableCompat" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/logoutImageview"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0"
+                android:padding="10dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_menu_logout"
+                app:tint="@color/appThemeColor_TXT_1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/editCartImageview"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_edit"
+                app:tint="@color/appThemeColor_TXT_1" />
+
+            <com.view.MTextView
+                android:id="@+id/helpTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="help"
+                android:textColor="@color/appThemeColor_TXT_1"
+                android:textSize="@dimen/txt_size_16"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:customTypeFace="@string/system_bold" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+</com.google.android.material.appbar.AppBarLayout>

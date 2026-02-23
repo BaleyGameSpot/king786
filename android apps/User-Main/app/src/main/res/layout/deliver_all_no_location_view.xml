@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_175sdp"
+            android:layout_height="@dimen/_175sdp"
+            android:layout_centerInParent="true"
+            app:srcCompat="@mipmap/no_service" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <com.view.MTextView
+                android:id="@+id/outAreaTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/appThemeColor_1"
+                android:textSize="@dimen/txt_size_16"
+                app:customTypeFace="@string/system_medium"
+                tools:text="out of delivery area" />
+
+            <com.view.MTextView
+                android:id="@+id/deliveryAreaTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/_7sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txt_size_16"
+                app:customTypeFace="@string/system_regular"
+                tools:text="We are not here yet" />
+
+            <com.view.MButton
+                android:id="@+id/editLocationBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_11sdp"
+                android:background="@drawable/btn_type_1_rounded_corner_fill"
+                android:gravity="center"
+                android:padding="@dimen/_7sdp"
+                android:textAllCaps="true"
+                android:textColor="@color/btn_text_color_type1"
+                android:textSize="@dimen/_13ssp"
+                app:customButtonTypeFace="@string/system_medium"
+                tools:text="Edit Location" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

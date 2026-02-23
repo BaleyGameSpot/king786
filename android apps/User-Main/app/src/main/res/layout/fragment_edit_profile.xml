@@ -1,0 +1,171 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+        <include
+            android:id="@+id/fNameBox"
+            layout="@layout/editbox_form_design_nw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/lNameBox"
+            layout="@layout/editbox_form_design_nw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/emailBox"
+            layout="@layout/editbox_form_design_nw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical">
+
+            <com.view.MTextView
+                android:id="@+id/mobileBoxHTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_13sdp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="user phone" />
+
+            <LinearLayout
+                android:id="@+id/mobileNoArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_view_23_white_shadow">
+
+                <LinearLayout
+                    android:id="@+id/yearSelectArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/countryArea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/countryimage"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            app:srcCompat="@drawable/ic_card_default" />
+
+                        <com.view.editBox.MaterialEditText
+                            android:id="@+id/countryBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:includeFontPadding="false"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_13ssp"
+                            app:customTypeFace="@string/system_regular"
+                            app:met_hideUnderline="true"
+                            tools:text="+91" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/countrydropimage"
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_gravity="center|end"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            app:srcCompat="@drawable/ic_down_arrow"
+                            app:tint="@color/text23Pro_Light" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.7dp"
+                        android:layout_height="@dimen/_20ssp"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:background="@color/text23Pro_Light" />
+
+                    <com.view.editBox.MaterialEditText
+                        android:id="@+id/mobileBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.70"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_13ssp"
+                        app:customTypeFace="@string/system_regular"
+                        app:met_hideUnderline="true"
+                        tools:hint="enter number" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/langSelectArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <include
+                android:id="@+id/langBox"
+                layout="@layout/editbox_form_design_nw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/currencySelectArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:visibility="gone">
+
+            <include
+                android:id="@+id/currencyBox"
+                layout="@layout/editbox_form_design_nw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="34dp" />
+        </FrameLayout>
+
+        <include
+            android:id="@+id/btn_type2"
+            layout="@layout/btn_type_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_btn_height"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="@dimen/_15sdp" />
+    </LinearLayout>
+</RelativeLayout>

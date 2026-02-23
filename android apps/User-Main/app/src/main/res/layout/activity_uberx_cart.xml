@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general" />
+
+    <ScrollView
+        android:id="@+id/scrollArea"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.view.MTextView
+                android:id="@+id/headingTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_14ssp"
+                app:customTypeFace="@string/system_bold" />
+
+            <com.view.WKWebView
+                android:id="@+id/descWebView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/gray_light"
+                tools:ignore="WebViewLayout" />
+
+            <com.view.MTextView
+                android:id="@+id/descMoreLessTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/appThemeColor_1"
+                android:textSize="@dimen/_13ssp"
+                app:customTypeFace="@string/system_semi_bold" />
+
+            <LinearLayout
+                android:id="@+id/fareArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:background="@drawable/card_view_23_gray_shadow"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/fareDetailDisplayArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_13sdp"
+                    android:background="@drawable/card_view_23_white_shadow"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_7sdp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/qtyArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.view.MTextView
+                    android:id="@+id/quantityTxtView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/all_TxtView_height"
+                    android:background="@color/mdtp_white"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_15ssp"
+                    android:visibility="gone"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="Quantity"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/countingArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/minusarea"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/minusImgView"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_gravity="center"
+                            android:clickable="false"
+                            android:gravity="center"
+                            app:srcCompat="@drawable/ic_minus_cart" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_25sdp"
+                        android:layout_marginEnd="@dimen/_25sdp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/QTYNumberTxtView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:minEms="2"
+                            android:text="1"
+                            android:textColor="#141414"
+                            android:textSize="@dimen/_17sdp"
+                            app:customTypeFace="@string/system_medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/addarea"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/addImgView"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_gravity="center"
+                            android:clickable="false"
+                            android:gravity="center"
+                            app:srcCompat="@drawable/ic_plus_cart" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/removeCartTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/marron"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                app:customTypeFace="@string/system_regular"
+                tools:text="Remove From cart"
+                tools:visibility="visible" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/detailArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_view_23_white_top_shadow"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/commentarea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <com.view.MTextView
+                android:id="@+id/commentHname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:textAlignment="center"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="Add special instruction" />
+
+            <com.view.editBox.MaterialEditText
+                android:id="@+id/commentBox"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_54sdp"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:background="@drawable/material_card_gray" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/btn_type2"
+            layout="@layout/btn_type_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_btn_height5"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/_15sdp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cancelImg"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/_11ssp"
+            android:clickable="true"
+            android:focusable="true"
+            app:srcCompat="@drawable/ic_close_new" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            app:cardBackgroundColor="#ffffff"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="0dp"
+            app:contentPadding="@dimen/_2sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_7sdp">
+
+                <LinearLayout
+                    android:id="@+id/imageArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:background="@color/transparent_full"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iamage_source"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_4sdp"
+                        app:srcCompat="@drawable/ic_feedback_new" />
+                </LinearLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/titileTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageArea"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/txt_size_16"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="Title Text" />
+
+                <LinearLayout
+                    android:id="@+id/cardViewOrderItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titileTxt"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_marginBottom="@dimen/_7sdp"
+                    android:background="@drawable/card_view_23_gray_shadow"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_11sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <com.view.MTextView
+                                    android:id="@+id/itemAvailTxt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/text23Pro_Dark"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:customTypeFace="@string/system_semi_bold"
+                                    tools:text="Title Text" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/iteminfo"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    app:srcCompat="@drawable/ic_information" />
+                            </LinearLayout>
+
+                            <com.kyleduo.switchbutton.SwitchButton
+                                android:id="@+id/itemSwitch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|end"
+                                android:focusableInTouchMode="false"
+                                android:gravity="center|end"
+                                app:kswBackColor="#eeeeee"
+                                app:kswBackDrawable="@drawable/miui_back_drawable"
+                                app:kswThumbColor="@color/white"
+                                app:kswThumbHeight="@dimen/_15sdp"
+                                app:kswThumbMargin="@dimen/_2sdp"
+                                app:kswThumbRangeRatio="2.5"
+                                app:kswThumbWidth="@dimen/_15sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.view.MTextView
+                                android:id="@+id/payNotTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_11ssp"
+                                android:visibility="gone"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="Title Text"
+                                tools:visibility="visible" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/payinfo"
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/ic_information"
+                                tools:visibility="visible" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/priceBoxArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/card_view_23_white_shadow"
+                            android:padding="@dimen/_3sdp">
+
+                            <com.view.editBox.MaterialEditText
+                                android:id="@+id/priceBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn_border"
+                                android:backgroundTint="@color/white"
+                                android:cursorVisible="false"
+                                android:ellipsize="end"
+                                android:fontFamily="@string/system_medium"
+                                android:inputType="textNoSuggestions"
+                                android:maxLines="1"
+                                android:padding="@dimen/_5sdp"
+                                android:textSize="@dimen/txt_size_12"
+                                app:customTypeFace="@string/system_medium"
+                                app:fontFamily="@string/system_medium"
+                                tools:text="Price here" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/uploadArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/uploadTitleTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:gravity="start"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_13ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Upload Item Photo" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/mCardView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:elevation="0dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/_4sdp"
+                            app:cardElevation="0dp"
+                            app:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_1sdp"
+                                android:background="@drawable/dash_square_white"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/uploadImgArea"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:paddingTop="@dimen/_5sdp"
+                                    android:paddingBottom="@dimen/_1sdp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center_vertical"
+                                        android:gravity="center_vertical"
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/camImgVIew"
+                                            android:layout_width="@dimen/_35sdp"
+                                            android:layout_height="@dimen/_30sdp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="@dimen/_15sdp"
+                                            android:src="@drawable/ic_choose_photo" />
+
+                                        <com.view.MTextView
+                                            android:id="@+id/chooseFileTitleTxt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/app_name"
+                                            android:textAlignment="center"
+                                            android:textSize="@dimen/_12ssp"
+                                            app:customTypeFace="@string/system_semi_bold" />
+                                    </LinearLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:clickable="true">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/uploadImgVIew"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerInParent="true"
+                                            android:layout_centerVertical="true"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="@dimen/_15sdp"
+                                            android:adjustViewBounds="true"
+                                            android:maxWidth="@dimen/_200sdp"
+                                            android:maxHeight="@dimen/_150sdp" />
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/clearImg"
+                                            android:layout_width="@dimen/_20sdp"
+                                            android:layout_height="@dimen/_20sdp"
+                                            android:layout_alignParentTop="true"
+                                            android:layout_gravity="end"
+                                            android:layout_marginStart="@dimen/_minus10sdp"
+                                            android:layout_toEndOf="@+id/uploadImgVIew"
+                                            android:clickable="true"
+                                            android:onClick="removeImage"
+                                            app:srcCompat="@drawable/ic_clear_whiteback" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <include
+                        android:id="@+id/btn_type2"
+                        layout="@layout/btn_type_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginTop="@dimen/_5sdp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

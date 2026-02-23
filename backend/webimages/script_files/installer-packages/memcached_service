@@ -1,0 +1,10 @@
+[Unit]
+Description=Memcached
+After=network.target
+
+[Service]
+User=memcached
+ExecStart=/usr/local/bin/memcached -m 64 -p 11211 -u memcached -l 127.0.0.1
+
+[Install]
+WantedBy=multi-user.target

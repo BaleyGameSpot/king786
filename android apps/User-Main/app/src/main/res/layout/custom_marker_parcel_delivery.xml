@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/pin_image"
+        android:layout_width="@dimen/_23sdp"
+        android:layout_height="@dimen/_44sdp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/pin_dest_green_multi" />
+
+    <com.view.MTextView
+        android:id="@+id/pintext"
+        android:layout_width="@dimen/_23sdp"
+        android:layout_height="@dimen/_23sdp"
+        android:gravity="center"
+        android:textSize="@dimen/_9ssp"
+        tools:text="FR" />
+
+</RelativeLayout>

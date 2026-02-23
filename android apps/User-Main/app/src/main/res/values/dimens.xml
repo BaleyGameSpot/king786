@@ -1,0 +1,55 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="txt_size_24">@dimen/_24ssp</dimen> <!-- for banner -->
+    <dimen name="txt_size_20">@dimen/_20ssp</dimen> <!-- for other cases -->
+    <dimen name="txt_size_22">@dimen/_22ssp</dimen> <!-- for other cases -->
+    <dimen name="txt_size_18">@dimen/_18ssp</dimen> <!-- for title -->
+    <dimen name="txt_size_17">@dimen/_18ssp</dimen> <!-- for title -->
+    <dimen name="txt_size_16">@dimen/_16ssp</dimen> <!-- for All text -->
+    <dimen name="txt_size_15">@dimen/_15ssp</dimen>
+    <dimen name="txt_size_14">@dimen/_14ssp</dimen> <!-- for Form -->
+    <dimen name="txt_size_12">@dimen/_12ssp</dimen> <!-- for Form -->
+    <dimen name="txt_size_10">@dimen/_10ssp</dimen> <!-- for Form -->
+    <!-- for Form -->
+
+    <dimen name="all_btn_height">@dimen/_36sdp</dimen>
+    <dimen name="all_btn_height5">@dimen/_45sdp</dimen>
+    <dimen name="all_btn_height2">@dimen/_30sdp</dimen>
+    <dimen name="all_btn_height1">@dimen/_48sdp</dimen>
+    <dimen name="all_btn_height4">@dimen/_40sdp</dimen>
+
+    <dimen name="rippleStrokeWidth_">@dimen/_10sdp</dimen>
+    <dimen name="rippleRadius_">@dimen/_40sdp</dimen>
+
+    <dimen name="all_EditBox_height">@dimen/_60sdp</dimen>
+    <dimen name="all_TxtView_height">@dimen/_60sdp</dimen>
+    <dimen name="fab_margin">@dimen/_16sdp</dimen>
+    <dimen name="card_padding">@dimen/_20sdp</dimen>
+
+    <dimen name="category_grid_size">@dimen/_60sdp</dimen>
+
+    <dimen name="category_banner_left_right_margin">@dimen/_5sdp</dimen>
+    <dimen name="before_after_img_size">@dimen/_110sdp</dimen>
+
+    <!--Deliver all-->
+    <dimen name="cart_restaurant_img_size">@dimen/_80sdp</dimen>
+    <dimen name="restaurant_img_size_home_screen">@dimen/_85sdp</dimen>
+    <dimen name="dimen_50">@dimen/_50sdp</dimen>
+
+
+    <dimen name="default_icon_size">150dp</dimen>
+    <dimen name="default_icon_remove_size">50dp</dimen>
+    <dimen name="chronometer_margin">1dp</dimen>
+
+    <dimen name="simpletooltip_overlay_offset">10dp</dimen>
+    <dimen name="simpletooltip_margin">10dp</dimen>
+    <dimen name="simpletooltip_padding">8dp</dimen>
+    <dimen name="simpletooltip_arrow_width">30dp</dimen>
+    <dimen name="simpletooltip_arrow_height">15dp</dimen>
+    <dimen name="simpletooltip_animation_padding">4dp</dimen>
+    <dimen name="category_grid_size_more">@dimen/_90sdp</dimen>
+    <dimen name="restaurant_img_size_home_screen_new">@dimen/_65sdp</dimen>
+
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/mainArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:id="@+id/imgBgArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/serviceImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_group"
+                    app:strokeColor="@android:color/transparent"
+                    app:strokeWidth="0dp" />
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/txtServiceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:paddingStart="@dimen/_1sdp"
+                android:paddingEnd="@dimen/_1sdp"
+                android:textAlignment="center"
+                tools:text="dfsdfsdfsdf" />
+
+            <com.view.MTextView
+                android:id="@+id/txtServiceDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:ellipsize="end"
+                android:lines="2"
+                android:maxLines="2"
+                android:textAlignment="textStart"
+                tools:text="dfsdfsdfsdf  rddg fe ds fbsjdf gdsfgsd fe reiure r fff s fasfuayfudfsdhfdg fsdjgfsdf" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

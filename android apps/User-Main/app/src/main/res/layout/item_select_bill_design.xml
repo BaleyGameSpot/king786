@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/totalarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:elevation="0dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_6sdp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/foodImageArea"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:elevation="0dp"
+                app:cardBackgroundColor="#eeeeee"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="0dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageFoodType"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/billItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|start"
+                    android:textAlignment="viewStart"
+                    android:textColor="#272727"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/system_bold"
+                    tools:text="Test gm Food" />
+
+                <com.view.MTextView
+                    android:id="@+id/serviceTypeNameTxtView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:textAlignment="viewStart"
+                    android:textColor="#838383"
+                    android:textSize="@dimen/txt_size_10"
+                    android:visibility="gone"
+                    app:customTypeFace="@string/system_medium"
+                    tools:text="TEST Sub Menu"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal">
+
+                    <com.view.MTextView
+                        android:id="@+id/strikeoutbillAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/txt_size_10"
+                        android:visibility="gone"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="$ 25.00"
+                        tools:visibility="visible" />
+
+                    <com.view.MTextView
+                        android:id="@+id/billAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:textAlignment="viewStart"
+                        android:textColor="#272727"
+                        android:textSize="@dimen/txt_size_12"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="$ 20.00" />
+
+                    <com.view.MTextView
+                        android:id="@+id/billExtraAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="gone"
+                        app:customTypeFace="@string/system_regular"
+                        tools:text="$ 20.00"
+                        tools:visibility="visible" />
+                </LinearLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/itemNoteTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="start"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_10ssp"
+                    android:visibility="gone"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="@string/app_name"
+                    tools:visibility="visible" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center"
+                android:padding="@dimen/_4sdp"
+                app:srcCompat="@drawable/ic_cancel" />
+
+            <com.view.MTextView
+                android:id="@+id/billItemsQty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:gravity="center_vertical|end"
+                android:textAlignment="viewEnd"
+                android:textColor="#272727"
+                android:textSize="@dimen/txt_size_12"
+                app:customTypeFace="@string/system_regular"
+                tools:text="415" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

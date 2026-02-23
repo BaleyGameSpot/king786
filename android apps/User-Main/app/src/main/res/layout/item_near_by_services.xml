@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/nearByItemArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:background="@drawable/all_roundcurve_card_food"
+        android:minHeight="@dimen/_80sdp">
+
+        <com.view.SelectableRoundedImageView
+            android:id="@+id/ivNearByService"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:paddingStart="0.6dp"
+            android:paddingTop="0.6dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="0.6dp"
+            app:sriv_left_bottom_corner_radius="@dimen/_10sdp"
+            app:sriv_left_top_corner_radius="@dimen/_10sdp"
+            app:sriv_oval="false" />
+
+        <View
+            android:layout_width="0.8dp"
+            android:layout_height="match_parent"
+            android:background="@color/card_shadow" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_10sdp">
+
+            <com.view.MTextView
+                android:id="@+id/restaurantNameTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center"
+                android:maxLines="2"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                app:customTypeFace="@string/system_bold"
+                tools:text="xyzaa" />
+
+            <com.view.MTextView
+                android:id="@+id/placesLocationTXT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="#646464"
+                android:textSize="@dimen/_10ssp"
+                app:customTypeFace="@string/system_light"
+                tools:text="gsdgsdg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_gravity="start|center"
+                    app:srcCompat="@drawable/ic_location_2"
+                    app:tint="@color/appThemeColor_1" />
+
+                <com.view.MTextView
+                    android:id="@+id/deliveryTimeTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:includeFontPadding="false"
+                    android:textColor="#646464"
+                    android:textSize="@dimen/_10ssp"
+                    app:customTypeFace="@string/system_light"
+                    tools:text="45 Mins" />
+
+                <com.view.MTextView
+                    android:id="@+id/statusMessageTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:gravity="end"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_10ssp"
+                    app:customTypeFace="@string/system_light"
+                    tools:text="Open" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

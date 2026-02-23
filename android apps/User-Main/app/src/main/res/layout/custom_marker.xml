@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_shadow"
+            android:orientation="horizontal">
+
+            <com.view.MTextView
+                android:id="@+id/etaTxt"
+                android:layout_width="@dimen/_27sdp"
+                android:layout_height="match_parent"
+                android:background="@color/text23Pro_Dark"
+                android:gravity="center"
+                android:maxLines="2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8ssp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="10" />
+
+            <com.view.MTextView
+                android:id="@+id/addressTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:lines="2"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="start|center_vertical"
+                android:maxLines="2"
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingBottom="@dimen/_3sdp"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_8ssp"
+                app:customTypeFace="@string/system_regular"
+                tools:text="trutyrutyur ytrytu rtrutrtyrutyrytyrtyrutrytyrty hfdhdhfhdeyryerye fhdf" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:gravity="top|start">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="@dimen/_3sdp"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/ic_triangle"
+                app:tint="@color/text23Pro_Dark" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

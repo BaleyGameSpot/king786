@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rootRelView"
+            android:layout_width="match_parent"
+            android:layout_above="@+id/customArea"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_minus10sdp">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/navigation_fragment"
+                android:name="com.google.android.libraries.navigation.SupportNavigationFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_80sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <com.view.MTextView
+                        android:id="@+id/snackbarTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/card_view_23_white_shadow"
+                        android:backgroundTint="@color/activityBg"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/Gray"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone"
+                        app:customTypeFace="@string/system_bold"
+                        tools:text="silent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/audioArea"
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_45sdp"
+                        android:background="@drawable/circle_shadow_big"
+                        android:padding="@dimen/_12sdp"
+                        android:src="@drawable/ic_start_audio" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/audioView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/all_side_curve_card"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/silentAudio"
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:padding="@dimen/_12sdp"
+                        android:src="@drawable/ic_silent_audio" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/onlyAlertAudio"
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_45sdp"
+                        android:padding="@dimen/_12sdp"
+                        android:src="@drawable/ic_alert_audio" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/startAudio"
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_gravity="end"
+                        android:padding="@dimen/_12sdp"
+                        android:src="@drawable/ic_start_audio" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/compassArea"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/circle_shadow_big"
+                    android:src="@drawable/ic_compass" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/northArea"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_gravity="center|end"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/circle_shadow_big"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_northcompass"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/recenterBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/all_side_curve_card"
+                android:drawableStart="@drawable/ic_recenter"
+                android:gravity="center"
+                android:minWidth="@dimen/_70sdp"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/appThemeColor_1"
+                android:visibility="gone"
+                app:customTypeFace="@string/system_bold"
+                app:drawableTint="@color/appThemeColor_1"
+                tools:text="  Re-Centre"
+                tools:visibility="visible" />
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/customArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/top_curve_card_navigation_shadow"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/exitArea"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/ic_close_round" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/timeArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_18ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="atrdfbhb" />
+
+                <com.view.MTextView
+                    android:id="@+id/distanceArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/Gray"
+                    android:textSize="@dimen/_15ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="atrdfbhb" />
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/zoomArea"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginEnd="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/circle_shadow_big"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_zoom" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

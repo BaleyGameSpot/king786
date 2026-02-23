@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/mainArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/InnerArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cardView23ProBG"
+            android:gravity="center"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_8sdp">
+
+            <com.view.MTextView
+                android:id="@+id/titleTxtView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_13ssp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="Want to sell something?" />
+
+            <LinearLayout
+                android:id="@+id/btnArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_border"
+                android:backgroundTint="@color/text23Pro_Dark">
+
+                <com.view.MTextView
+                    android:id="@+id/newListingButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_12sdp"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingEnd="@dimen/_12sdp"
+                    android:paddingBottom="@dimen/_4sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:ignore="NestedWeights"
+                    tools:text="+ New Listing" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/_5sdp"
+    android:paddingBottom="@dimen/_5sdp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_8sdp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:visibility="invisible"
+        android:src="@drawable/all_roundcurve_card"
+        app:tint="@color/appThemeColor_Dark_1" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.view.MTextView
+            android:id="@+id/catetitleTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:customTypeFace="@string/system_bold"
+            tools:text="Title" />
+
+        <com.view.MTextView
+            android:id="@+id/catedescTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone"
+            app:customTypeFace="@string/system_light"
+            tools:text="desc" />
+    </LinearLayout>
+
+    <com.view.MTextView
+        android:id="@+id/seeAllTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:includeFontPadding="false"
+        android:textColor="@color/appThemeColor_1"
+        android:textSize="@dimen/_10ssp"
+        app:customTypeFace="@string/system_regular"
+        tools:text="See all"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/seeAllImg"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_right_arrow"
+        app:tint="@color/appThemeColor_1" />
+</LinearLayout>

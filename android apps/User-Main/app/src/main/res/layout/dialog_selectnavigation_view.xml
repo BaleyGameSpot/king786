@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cancelImg"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                app:srcCompat="@drawable/ic_close_round" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_58sdp"
+                android:layout_height="@dimen/_58sdp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:background="@drawable/ic_circular_shape"
+                android:backgroundTint="@color/appThemeColor_1"
+                android:padding="@dimen/_12sdp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_nav_option" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            android:orientation="vertical">
+
+            <com.view.MTextView
+                android:id="@+id/titleTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:gravity="center"
+                android:textSize="@dimen/_14ssp"
+                app:customTypeFace="@string/system_bold"
+                tools:text="Choose Option" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/card_view_23_gray_shadow"
+                android:orientation="vertical"
+                android:padding="@dimen/_11sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_view_23_white_shadow"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/googleMapArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:layout_marginEnd="@dimen/_7sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_7sdp"
+                            app:srcCompat="@drawable/ic_google_map" />
+
+                        <com.view.MTextView
+                            android:id="@+id/googleMapTxt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_14ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Google maps navigation" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/googleArrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_11sdp"
+                            app:srcCompat="@drawable/ic_arrow"
+                            app:tint="@color/text23Pro_Light" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:background="@color/view23ProBG" />
+
+                    <LinearLayout
+                        android:id="@+id/wazeMapArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_7sdp"
+                        android:layout_marginBottom="@dimen/_11sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_7sdp"
+                            app:srcCompat="@drawable/ic_waze_map" />
+
+                        <com.view.MTextView
+                            android:id="@+id/wazeMapTxt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_14ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Waze navigation" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/wazeArrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_11sdp"
+                            app:srcCompat="@drawable/ic_arrow"
+                            app:tint="@color/text23Pro_Light" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

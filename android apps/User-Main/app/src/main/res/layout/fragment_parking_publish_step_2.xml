@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_frag_two"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <com.view.MTextView
+                android:id="@+id/parkingLocationTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_13ssp"
+                app:customTypeFace="@string/system_bold"
+                tools:text="Parking Location" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@drawable/card_view_23_gray_shadow"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_15sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_view_23_white_line_flat_1"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        app:srcCompat="@drawable/ic_location_pro" />
+
+                    <com.view.MTextView
+                        android:id="@+id/parkingAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_10ssp"
+                        tools:text="Mondeal Square..." />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/AddressHTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_13ssp"
+                app:customTypeFace="@string/system_bold"
+                tools:text="Address" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@drawable/card_view_23_gray_shadow"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_15sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    android:background="@drawable/card_view_23_white_line_flat_1"
+                    android:paddingBottom="@dimen/_5sdp">
+
+                    <com.view.editBox.MaterialEditText
+                        android:id="@+id/EtAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="top"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textColorHint="@color/text23Pro_Light"
+                        android:textSize="@dimen/_10ssp"
+                        app:met_hideUnderline="true"
+                        tools:hint="Enter full Address" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/parkingSpaceHTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_13ssp"
+                app:customTypeFace="@string/system_bold"
+                tools:text="Parking Space" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@drawable/card_view_23_gray_shadow"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_15sdp">
+
+                <LinearLayout
+                    android:layout_width="@dimen/_140sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:background="@drawable/card_view_23_white_line_flat_1"
+                    android:backgroundTint="@color/appThemeColor_1"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:id="@+id/subtractParkingSpace"
+                        android:layout_width="@dimen/_37sdp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_radius_minus" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#D1D1D1"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/parkingSpaceCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1.2dp"
+                            android:background="@color/white"
+                            android:focusableInTouchMode="true"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_14ssp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:hint="1" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/addParkingspace"
+                        android:layout_width="@dimen/_37sdp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_radius_plus" />
+
+                </LinearLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/no_of_parking_spaces"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:textColor="@color/textSub23Pro_gray"
+                    android:textSize="@dimen/_11ssp"
+                    tools:text="No available parking spaces" />
+
+
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/vehicleSizeHtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_13ssp"
+                app:customTypeFace="@string/system_bold"
+                tools:text="Vehicle Size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@drawable/card_view_23_gray_shadow"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_15sdp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/RvVehicleSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_parking_publish_car_size" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

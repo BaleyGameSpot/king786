@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/cardArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@drawable/card_view_23_white_shadow"
+            android:gravity="center"
+            android:padding="@dimen/_7sdp">
+
+            <LinearLayout
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/chkBox"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@null"
+                    android:theme="@style/MyCheckBox" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/_7sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/serviceNameTxtView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_10ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="@string/app_name" />
+
+                        <com.view.MTextView
+                            android:id="@+id/serviceTypeNameTxtView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/textSub23Pro_gray"
+                            android:textSize="@dimen/_10ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="All" />
+                    </LinearLayout>
+
+                    <com.view.MTextView
+                        android:id="@+id/apptypeTxtView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="12dp"
+                        android:layout_weight="1"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/textSub23Pro_gray"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="gone"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="@string/app_name"
+                        tools:visibility="visible" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_19sdp"
+                        android:layout_height="@dimen/_19sdp"
+                        android:layout_weight="0"
+                        android:textColor="@color/white"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_add_border"
+                        app:tint="@color/appThemeColor_1"
+                        tools:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@+id/editBtnBack"
+                        android:layout_width="@dimen/_19sdp"
+                        android:layout_height="@dimen/_19sdp"
+                        android:background="@drawable/ic_circle"
+                        android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/editBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/_5sdp"
+                            app:srcCompat="@drawable/ic_edit"
+                            app:tint="@color/white" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10ssp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/editarea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/serviceamtHtxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:singleLine="true"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_10ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="amunt" />
+
+
+                        <com.view.MTextView
+                            android:id="@+id/serviceamtVtxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/appThemeColor_1"
+                            android:textSize="@dimen/_10ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="$50" />
+                    </LinearLayout>
+
+                    <com.view.MTextView
+                        android:id="@+id/minHourTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textSize="@dimen/_10ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="asdasd" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nesScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/workLocTitleTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:gravity="start|center_vertical"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_13ssp"
+                    app:customTypeFace="@string/system_bold"
+                    tools:text="@string/app_name" />
+
+                <LinearLayout
+                    android:id="@+id/workLocationArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:background="@drawable/card_view_23_gray_shadow"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <include
+                        android:id="@+id/locationWorkBox"
+                        layout="@layout/editbox_form_design_nw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_15sdp" />
+
+                    <LinearLayout
+                        android:id="@+id/addressArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:orientation="horizontal">
+
+                        <com.view.MTextView
+                            android:id="@+id/addressTxt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="start"
+                            android:maxLines="3"
+                            android:minHeight="20dp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_10ssp"
+                            app:customTypeFace="@string/system_regular" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/editLocation"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_gravity="center_vertical"
+                            app:srcCompat="@drawable/ic_location_edit" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:orientation="vertical">
+
+
+                        <CheckBox
+                            android:id="@+id/checkboxWork"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_15sdp"
+                            android:buttonTint="@color/appThemeColor_1"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_10ssp"
+                            android:theme="@style/MyCheckBox"
+                            android:visibility="gone"
+                            app:customTypeFace="@string/system_semi_bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/workradiusArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/workradiusTitleTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_13ssp"
+                        app:customTypeFace="@string/system_bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:background="@drawable/card_view_23_gray_shadow"
+                        android:orientation="vertical">
+
+                        <include
+                            android:id="@+id/radiusWorkBox"
+                            layout="@layout/editbox_form_design_nw"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_8sdp"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"/>
+
+                        <!--                        <FrameLayout-->
+                        <!--                            android:id="@+id/WorkradiusArea"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_margin="@dimen/_15sdp"-->
+                        <!--                            android:background="@drawable/card_view_23_white_shadow"-->
+                        <!--                            android:focusable="true"-->
+                        <!--                            android:focusableInTouchMode="true">-->
+
+                        <!--                            <include-->
+                        <!--                                android:id="@+id/radiusWorkBox"-->
+                        <!--                                layout="@layout/editbox_form_design"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="wrap_content" />-->
+
+                        <!--                            <androidx.appcompat.widget.AppCompatImageView-->
+                        <!--                                android:layout_width="@dimen/_11sdp"-->
+                        <!--                                android:layout_height="@dimen/_11sdp"-->
+                        <!--                                android:layout_gravity="center_vertical|end"-->
+                        <!--                                android:layout_marginEnd="@dimen/_8sdp"-->
+                        <!--                                android:gravity="center"-->
+                        <!--                                android:src="@drawable/ic_arrow_point_to_down"-->
+                        <!--                                app:tint="#8FA1B4" />-->
+                        <!--                        </FrameLayout>-->
+
+
+                        <LinearLayout
+                            android:id="@+id/otherArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/card_view_23_white_shadow">
+
+                                <com.view.editBox.MaterialEditText
+                                    android:id="@+id/otherBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:layout_marginBottom="@dimen/_3sdp"
+                                    android:imeOptions="actionNext"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:customTypeFace="@string/system_regular"
+                                    app:met_hideUnderline="true"
+                                    app:met_textColor="@color/text23Pro_Dark"
+                                    app:met_textColorHint="@color/text23Pro_Light" />
+
+                            </LinearLayout>
+
+
+                            <include
+                                android:id="@+id/btn_type2"
+                                layout="@layout/btn_type_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/all_btn_height"
+                                android:layout_gravity="bottom"
+                                android:layout_marginTop="@dimen/_10sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/noteArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/noteText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/Red_23Pro"
+                                android:textSize="@dimen/_10ssp"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:text="NOTES" />
+
+                            <com.view.MTextView
+                                android:id="@+id/noteDetailsText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text23Pro_Dark"
+                                android:textSize="@dimen/_10ssp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="NOTES" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/loading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <LinearLayout
+            android:id="@+id/screenNoteAreaView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/view23ProBG" />
+
+            <com.view.MTextView
+                android:id="@+id/demonoteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:textColor="@color/Red_23Pro"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="gone"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="NOTES"
+                tools:visibility="visible" />
+
+            <com.view.MTextView
+                android:id="@+id/demoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_10ssp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="NOTES" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

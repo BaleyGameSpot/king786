@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/_15sdp"
+    android:layout_marginEnd="@dimen/_15sdp"
+    android:layout_marginBottom="@dimen/_15sdp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomarea"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/introImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180sdp"
+            android:src="@drawable/suitcase" />
+
+        <com.view.MTextView
+            android:id="@+id/noteHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/introImage"
+            android:layout_marginTop="@dimen/_11sdp"
+            android:gravity="center"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_14sdp"
+            app:customTypeFace="@string/system_bold" />
+
+
+        <com.view.MTextView
+            android:id="@+id/noteTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noteHeading"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:gravity="center"
+            android:textColor="@color/textSub23Pro_gray"
+            android:textSize="@dimen/txt_size_12"
+            app:customTypeFace="@string/system_regular" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottomarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include
+            android:id="@+id/btn_type2"
+            layout="@layout/btn_type_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_btn_height" />
+    </LinearLayout>
+
+</RelativeLayout>

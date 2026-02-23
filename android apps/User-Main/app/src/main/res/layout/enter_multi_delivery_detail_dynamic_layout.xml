@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/singleLineTextArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.view.MTextView
+            android:id="@+id/SingleTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_13sdp"
+            app:customTypeFace="@string/system_semi_bold" />
+
+        <LinearLayout
+            android:id="@+id/mobileNoArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_minus1sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/card_view_23_white_shadow"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/countrySelectArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/countryimage"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    app:srcCompat="@drawable/ic_card_default" />
+
+                <com.view.MTextView
+                    android:id="@+id/countryBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:includeFontPadding="false"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_13ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="+91" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/countrydropimage"
+                    android:layout_width="@dimen/_7sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|end"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    app:srcCompat="@drawable/ic_down_arrow_23" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_Country"
+                android:layout_width="0.7dp"
+                android:layout_height="@dimen/_14ssp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@color/text23Pro_Light"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.view.editBox.MaterialEditText
+                android:id="@+id/textField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_9sdp"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="@color/text23Pro_Dark"
+                android:textColorHint="@color/text23Pro_Light"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_regular"
+                app:met_hideUnderline="true"
+                app:met_textColor="@color/text23Pro_Dark"
+                app:met_textColorHint="@color/text23Pro_Light"
+                tools:hint="mobile" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/selectHArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.view.MTextView
+            android:id="@+id/SelectTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_13sdp"
+            android:visibility="gone"
+            app:customTypeFace="@string/system_semi_bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/card_view_23_white_shadow"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp">
+
+            <FrameLayout
+                android:id="@+id/selectArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.view.editBox.MaterialEditText
+                    android:id="@+id/selectBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:inputType="number"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_13ssp"
+                    app:customTypeFace="@string/system_regular"
+                    app:met_textColor="@color/text23Pro_Dark"
+                    app:met_textColorHint="@color/text23Pro_Light" />
+
+                <ImageView
+                    android:id="@+id/arrowImageView"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:src="@drawable/ic_down_arrow_23" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/textfield_new"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.view.MTextView
+            android:id="@+id/textfield_tittle_new"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_13sdp"
+            android:visibility="gone"
+            app:customTypeFace="@string/system_semi_bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/card_view_23_white_shadow"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp">
+
+            <FrameLayout
+                android:id="@+id/textfield_area_new"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.view.MTextView
+                    android:id="@+id/textfield_box_new"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:lines="3"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textColorHint="@color/text23Pro_Light"
+                    android:textSize="@dimen/_13ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/add_edit_button"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_gravity="center|end"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:gravity="top"
+                    android:src="@drawable/ic_add_"
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
+
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/multiLineTextArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+
+        <com.view.MTextView
+            android:id="@+id/multiLineTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/text23Pro_Dark"
+            android:textSize="@dimen/_13sdp"
+            app:customTypeFace="@string/system_semi_bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_below="@+id/multiLineTitle"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@drawable/card_view_23_white_shadow">
+
+            <com.view.editBox.MaterialEditText
+                android:id="@+id/multiLineText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_13ssp"
+                app:met_accentTypeface="@string/defaultFont"
+                app:met_textColor="@color/text23Pro_Dark"
+                app:met_textColorHint="@color/text23Pro_Light"
+                app:met_typeface="@string/defaultFont" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

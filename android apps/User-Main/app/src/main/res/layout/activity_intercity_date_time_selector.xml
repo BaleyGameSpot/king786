@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.act.intercity.IntercityDateTimeSelectorActivity">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/design_toolbar_general" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/titleTextVIew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text23Pro_Dark"
+                    android:textSize="@dimen/_16ssp"
+                    app:customTypeFace="@string/system_semi_bold"
+                    tools:text="When do you want to leave for rajkot?" />
+
+                <com.view.MTextView
+                    android:id="@+id/subTitleTextVIew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/textSub23Pro_gray"
+                    android:textSize="@dimen/_12ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="From Viaan Technologies" />
+
+                <LinearLayout
+                    android:id="@+id/leaveNowParentLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/card_view_23_white_shadow"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/leaveNowImage"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:layout_marginBottom="@dimen/_11sdp"
+                        android:clickable="false"
+                        android:src="@drawable/ic_intercity_leavenow" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/leaveNowTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center_vertical"
+                            android:clickable="false"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="normal"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Leave now" />
+
+                        <com.view.MTextView
+                            android:id="@+id/leaveNowSubTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center_vertical"
+                            android:clickable="false"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/textSub23Pro_gray"
+                            android:textSize="@dimen/_9sdp"
+                            android:textStyle="normal"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="Get a trip in the next few mins"
+                            tools:visibility="visible" />
+
+
+                    </LinearLayout>
+
+
+                    <RadioButton
+                        android:id="@+id/leaveNowRadioButton"
+                        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@color/transparent_full"
+                        android:buttonTint="@color/appThemeColor_1" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/reserveTripParentLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/card_view_23_white_shadow"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/reserveTripImage"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_11sdp"
+                        android:layout_marginTop="@dimen/_11sdp"
+                        android:layout_marginBottom="@dimen/_11sdp"
+                        android:clickable="false"
+                        android:src="@drawable/ic_intercity_reservetrip" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/reserveTripTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center_vertical"
+                            android:clickable="false"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_11sdp"
+                            android:textStyle="normal"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="Reserve a trip" />
+
+                        <com.view.MTextView
+                            android:id="@+id/reserveTripSubTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center_vertical"
+                            android:clickable="false"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/textSub23Pro_gray"
+                            android:textSize="@dimen/_9sdp"
+                            android:textStyle="normal"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="Book upto 90 days in advance"
+                            tools:visibility="visible" />
+
+
+                    </LinearLayout>
+
+
+                    <RadioButton
+                        android:id="@+id/reserveTripRadioButton"
+                        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@color/transparent_full"
+                        android:buttonTint="@color/appThemeColor_1" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/reserveTripExtendLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.55"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <com.view.MTextView
+                                    android:id="@+id/dateHeaderTextview"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/text23Pro_Dark"
+                                    android:textSize="@dimen/_12ssp"
+                                    app:customTypeFace="@string/system_semi_bold"
+                                    tools:text="Date" />
+
+                                <com.view.MTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:text="@string/star"
+                                    android:textColor="@color/redStar"
+                                    android:textSize="@dimen/_12ssp"
+                                    app:customTypeFace="@string/system_semi_bold" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/dateSelectParentBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:background="@drawable/card_view_23_white_shadow"
+                                android:baselineAligned="false"
+                                android:gravity="center"
+                                android:minHeight="@dimen/_40sdp"
+                                android:orientation="horizontal"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp">
+
+
+                                <com.view.MTextView
+                                    android:id="@+id/dateValueTextView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginEnd="@dimen/_3sdp"
+                                    android:textAlignment="viewStart"
+                                    android:focusable="true"
+                                    android:gravity="start|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:textColor="@color/text23Pro_Dark"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:customTypeFace="@string/system_regular"
+                                    tools:hint="Select Date"
+                                    tools:text="Thu,07 Dec" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_18sdp"
+                                    android:layout_height="@dimen/_18sdp"
+                                    android:tint="@color/text23Pro_Light"
+                                    app:srcCompat="@drawable/ic_calendar" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.45"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <com.view.MTextView
+                                    android:id="@+id/timeHeaderTextview"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:textColor="@color/text23Pro_Dark"
+                                    android:textSize="@dimen/_12ssp"
+                                    app:customTypeFace="@string/system_semi_bold"
+                                    tools:text="Time" />
+
+                                <com.view.MTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:text="@string/star"
+                                    android:textColor="@color/redStar"
+                                    android:textSize="@dimen/_12ssp"
+                                    app:customTypeFace="@string/system_semi_bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/timeSelectParentBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@drawable/card_view_23_white_shadow"
+                                android:baselineAligned="false"
+                                android:gravity="center"
+                                android:minHeight="@dimen/_40sdp"
+                                android:orientation="horizontal"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp">
+
+
+                                <com.view.MTextView
+                                    android:id="@+id/timeValueTextView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginEnd="@dimen/_3sdp"
+                                    android:focusable="true"
+                                    android:textAlignment="viewStart"
+                                    android:gravity="start|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:textColor="@color/text23Pro_Dark"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:customTypeFace="@string/system_regular"
+                                    tools:hint="Select Time"
+                                    tools:text="06:50 PM" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_18sdp"
+                                    android:layout_height="@dimen/_18sdp"
+                                    android:tint="@color/text23Pro_Light"
+                                    app:srcCompat="@drawable/ic_timer" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/roundTripNoteParentLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_refresh"
+                            android:tint="@color/black" />
+
+                        <com.view.MTextView
+                            android:id="@+id/matchDriverTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_7sdp"
+                            android:layout_marginEnd="@dimen/_7sdp"
+                            android:layout_weight="1"
+                            android:focusable="true"
+                            android:gravity="start|center_vertical"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/textSub23Pro_gray"
+                            android:textSize="@dimen/_11ssp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="Match with a new driver if yours will be late due to slow progress." />
+
+                        <CheckBox
+                            android:id="@+id/matchDriverCheckbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/appThemeColor_1"
+                            android:theme="@style/MyCheckBox" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dropOffNoteParentLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/intercity_round_trip_note_bg_5dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_8sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_uturn_arrow" />
+
+                        <com.view.MTextView
+                            android:id="@+id/dropOffNoteTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:focusable="true"
+                            android:gravity="start|center_vertical"
+                            android:includeFontPadding="false"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textSize="@dimen/_9ssp"
+                            app:customTypeFace="@string/system_regular"
+                            tools:text="Keep the car for up to #MAX_INTERCITY_DAYS# days and enjoy effortless travel, without any concerns about getting a ride back." />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp">
+
+            <include
+                android:id="@+id/continueButton"
+                layout="@layout/btn_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_btn_height"
+                android:layout_gravity="bottom" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

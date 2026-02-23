@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar_include"
+                layout="@layout/design_toolbar_general" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/parkingLocationArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15sdp">
+
+                    <com.view.MTextView
+                        android:id="@+id/enterParkingLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_13ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="@string/app_name" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:background="@drawable/card_view_23_white_shadow"
+                        android:gravity="center"
+
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_location_pro" />
+
+                        <com.view.MTextView
+                            android:id="@+id/parkingAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:paddingEnd="@dimen/_8sdp"
+                            android:textColor="@color/text23Pro_Dark"
+                            android:textColorHint="@color/text23Pro_Light"
+                            android:textSize="@dimen/_10ssp"
+                            tools:text="Mondeal Square..." />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/editLocation"
+                            android:layout_width="@dimen/_18sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:src="@drawable/ic_edit_no_stroke" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_frag"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <RelativeLayout
+                        android:id="@+id/mapParkingPublishContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_mapType"
+                        android:layout_width="@dimen/_110sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@drawable/eta_border"
+                        android:weightSum="2">
+
+                        <com.view.MTextView
+                            android:id="@+id/btnMap"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_28sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@color/text23Pro_Dark"
+                            tools:text="Map" />
+
+                        <com.view.MTextView
+                            android:id="@+id/btnSatellite"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_28sdp"
+                            android:layout_weight="1"
+                            android:background="@color/appThemeColor_1"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            tools:text="Satellite" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_location_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/transparent_full"
+                        android:orientation="vertical">
+
+                        <com.view.CircularImageView
+                            android:id="@+id/userLocationBtn"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="@dimen/_16sdp"
+                            app:civ_border="true"
+                            app:civ_border_color="@color/transparent_full"
+                            app:civ_border_width="0dp"
+                            app:civ_shadow="true"
+                            app:civ_shadow_color="#4BAE4F"
+                            app:civ_shadow_gravity="center"
+                            app:civ_shadow_radius="@dimen/_1sdp"
+                            app:srcCompat="@drawable/ic_location_coordinate" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize">
+
+                <include
+                    android:id="@+id/bottom_sheet_behavior_id"
+                    layout="@layout/vehicle_size_bottom_sheet" />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_btn_type2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/card_view_23_white_top_shadow">
+
+            <include
+                android:id="@+id/btn_type2"
+                layout="@layout/btn_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

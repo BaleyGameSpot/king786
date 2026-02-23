@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/topArea"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/appThemeColor_1"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/backImgView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:srcCompat="@drawable/ic_back_arrow_1" />
+
+            <com.view.MTextView
+                android:id="@+id/headerAddressTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/ic_location_pro"
+                android:drawableEnd="@drawable/ic_down_arrow_header"
+                android:drawablePadding="@dimen/_6sdp"
+                android:ellipsize="end"
+                android:gravity="start|center"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_regular"
+                app:drawableTint="@color/white"
+                tools:text="@string/app_name" />
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btnArea"
+            android:layout_below="@+id/topArea"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/UFXDataArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_common23_banner" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp">
+
+                    <com.view.MTextView
+                        android:id="@+id/selectServiceTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_14ssp"
+                        app:customTypeFace="@string/system_bold"
+                        tools:text="@string/app_name" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvUFXServices"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:nestedScrollingEnabled="false"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="20"
+                        tools:listitem="@layout/item_23_ufx_sub_category" />
+                </LinearLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/servicesTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:lineSpacingExtra="@dimen/_minus2sdp"
+                    android:minHeight="@dimen/_24sdp"
+                    android:textColor="@color/Gray"
+                    android:textSize="@dimen/_13ssp"
+                    app:customTypeFace="@string/system_regular"
+                    tools:text="@string/APP_TYPE_NAME" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/btnArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/card_view_23_white_top_shadow"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <include
+                android:id="@+id/btnType2"
+                layout="@layout/btn_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_anchor="@+id/linearLayout"
+                app:layout_anchorGravity="center" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

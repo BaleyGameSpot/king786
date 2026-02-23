@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_70"
+        android:orientation="vertical"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        <com.view.MTextView
+            android:id="@+id/headerText"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/appThemeColor_1"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            app:customTypeFace="@string/system_semi_bold" />
+
+        <RelativeLayout
+            android:id="@+id/radarDrawArea"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/llRadarDraw"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical" />
+
+            <com.dialogs.RippleBackground23
+                android:id="@+id/rippleBackground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:alpha="0.8"
+                android:background="@color/transparent_full"
+                app:rb_color="@color/transparent_full"
+                app:rb_duration="5000"
+                app:rb_radius="@dimen/_83sdp"
+                app:rb_rippleAmount="8"
+                app:rb_scale="4"
+                app:rb_type="strokeRipple" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_168sdp"
+                    android:layout_height="@dimen/_168sdp"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/rotationCircle"
+                        android:layout_width="@dimen/_168sdp"
+                        android:layout_height="@dimen/_168sdp"
+                        app:srcCompat="@drawable/border_circle_23" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_55sdp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:background="@color/transparent_full"
+                        app:srcCompat="@drawable/location_marker_23" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTaxiBidDriverList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:padding="@dimen/_15sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_taxi_bid_drivers" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_minus5sdp"
+            android:background="@drawable/card_view_23_white_line_flat_1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
+
+            <com.view.MTextView
+                android:id="@+id/findingTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/appThemeColor_1"
+                android:textSize="@dimen/_13ssp"
+                app:customTypeFace="@string/system_bold"
+                tools:text="finding drivers.........." />
+
+            <LinearLayout
+                android:id="@+id/offerArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/card_view_23_white_line_flat"
+                    android:padding="@dimen/_11sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivFareHelp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_17sdp"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="@dimen/_7sdp"
+                        app:srcCompat="@drawable/ic_information"
+                        app:tint="@color/appThemeColor_1" />
+
+                    <com.view.MTextView
+                        android:id="@+id/noteMsgTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_10ssp"
+                        app:customTypeFace="@string/system_medium"
+                        tools:text="finding driver" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/card_view_23_gray_shadow"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_11sdp">
+
+                    <com.view.MTextView
+                        android:id="@+id/enterYoreFareHTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/text23Pro_Dark"
+                        android:textSize="@dimen/_12ssp"
+                        app:customTypeFace="@string/system_bold"
+                        tools:text="enter yore fare below" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_marginEnd="@dimen/_30sdp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:id="@+id/offerMinus"
+                            android:layout_width="@dimen/_37sdp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ic_radius_minus" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#D1D1D1"
+                            android:orientation="horizontal">
+
+                            <com.view.AutoFitEditText
+                                android:id="@+id/yoreOfferEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="1.2dp"
+                                android:background="@color/white"
+                                android:focusableInTouchMode="true"
+                                android:gravity="center"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/gray"
+                                android:textSize="@dimen/_14ssp"
+                                app:customTypeFace="@string/system_bold"
+                                tools:hint="0.00" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/offerPlus"
+                            android:layout_width="@dimen/_37sdp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ic_radius_plus" />
+                    </LinearLayout>
+
+                    <com.view.MTextView
+                        android:id="@+id/currencyTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:textAlignment="center"
+                        android:textColor="@color/text23Pro_Light"
+                        android:textSize="@dimen/_11ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="usd" />
+
+                    <com.view.MTextView
+                        android:id="@+id/offerNoteTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:textAlignment="center"
+                        android:textColor="@color/text23Pro_Light"
+                        android:textSize="@dimen/_10ssp"
+                        app:customTypeFace="@string/system_medium"
+                        tools:text="Note: tax will be applied on the final amount................" />
+
+                </LinearLayout>
+
+                <include
+                    android:id="@+id/sendToDriverBtn"
+                    layout="@layout/btn_type_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp" />
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/cancelBtnTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="@dimen/_7sdp"
+                android:textAlignment="center"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_13ssp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="cancel" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

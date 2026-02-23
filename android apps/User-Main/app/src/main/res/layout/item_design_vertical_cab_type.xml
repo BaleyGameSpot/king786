@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llArea"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_65sdp"
+    android:orientation="vertical"
+    tools:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/contentArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_minus7sdp"
+        android:layout_marginEnd="@dimen/_minus7sdp"
+        android:background="@drawable/cab_select_item_background"
+        android:paddingStart="@dimen/_20sdp"
+        android:paddingEnd="@dimen/_20sdp">
+
+        <RelativeLayout
+            android:id="@+id/mainimagearea"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginBottom="@dimen/_14sdp">
+
+            <FrameLayout
+                android:id="@+id/imagarea"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_centerInParent="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.view.SelectableRoundedImageView
+                        android:id="@+id/carTypeImgView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerInside"
+                        app:sriv_left_bottom_corner_radius="0dp"
+                        app:sriv_left_top_corner_radius="0dp"
+                        app:sriv_right_bottom_corner_radius="0dp"
+                        app:sriv_right_top_corner_radius="0dp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/imagareaselcted"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_centerInParent="true"
+                android:visibility="invisible"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.view.SelectableRoundedImageView
+                        android:id="@+id/carTypeImgViewselcted"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerInside"
+                        app:sriv_left_bottom_corner_radius="0dp"
+                        app:sriv_left_top_corner_radius="0dp"
+                        app:sriv_right_bottom_corner_radius="0dp"
+                        app:sriv_right_top_corner_radius="0dp" />
+                </LinearLayout>
+            </FrameLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_toStartOf="@+id/totalFareArea"
+            android:layout_toEndOf="@+id/mainimagearea">
+
+            <com.view.MTextView
+                android:id="@+id/carTypeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:includeFontPadding="false"
+                android:maxWidth="@dimen/_100sdp"
+                android:maxLines="1"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_10ssp"
+                app:customTypeFace="@string/system_bold"
+                tools:text="Cargo Car 1" />
+
+            <LinearLayout
+                android:id="@+id/DeliveryHelperLayout"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_toEndOf="@+id/carTypeTitle"
+                android:background="@color/transparent_full"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/DeliveryHelper"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_delivery_helper_boy" />
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/personsizeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/carTypeDesc"
+                android:drawableStart="@drawable/ic_baseline_person_24"
+                android:drawablePadding="@dimen/_2sdp"
+                android:gravity="start"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/text23Pro_Dark"
+                android:textSize="@dimen/_11ssp"
+                android:visibility="gone"
+                app:customTypeFace="@string/system_bold"
+                tools:text="5"
+                tools:visibility="visible" />
+
+            <com.view.MTextView
+                android:id="@+id/carTypeDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/carTypeTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:textAlignment="viewStart"
+                android:textColor="@color/textSub23Pro_gray"
+                android:textSize="@dimen/_9ssp"
+                app:customTypeFace="@string/system_semi_bold"
+                tools:text="@string/app_name" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/totalFareArea"
+            android:layout_width="@dimen/_76sdp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:gravity="end|center"
+            android:orientation="horizontal">
+
+            <com.view.MTextView
+                android:id="@+id/totalfare"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:maxLines="3"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/appThemeColor_1"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/system_bold"
+                tools:text="$ 644854548.25" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/infoimage"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                app:srcCompat="@drawable/ic_information" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

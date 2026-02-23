@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/recentAdapterView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center"
+        android:layout_marginBottom="@dimen/_11sdp"
+        android:background="@drawable/card_view_23_white_shadow"
+        android:minHeight="@dimen/_40sdp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/imageabackArea"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_11sdp"
+            android:layout_marginBottom="@dimen/_11sdp"
+            android:layout_marginStart="@dimen/_11sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@drawable/round_shape"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/roundImage"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_recent_location"
+                app:tint="@color/appThemeColor_TXT_1" />
+
+        </LinearLayout>
+
+
+        <com.view.MTextView
+            android:id="@+id/recentAddrTxtView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginTop="@dimen/_11sdp"
+            android:layout_marginBottom="@dimen/_11sdp"
+            android:layout_weight="1"
+            android:gravity="start|center"
+            android:maxLines="3"
+            android:text=""
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/_9ssp"
+            android:textColor="@color/text23Pro_Dark"
+            app:customTypeFace="@string/system_semi_bold" />
+
+        <ImageView
+            android:id="@+id/recarrowImage"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_gravity="center"
+            android:rotation="270"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_11sdp"
+            app:srcCompat="@drawable/ic_down_arrow_23" />
+    </LinearLayout>
+
+</LinearLayout>

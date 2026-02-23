@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/headerArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/statusTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textAlignment="viewStart"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Deliverd" />
+
+            <TextView
+                android:id="@+id/titleTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:includeFontPadding="false"
+                android:textAlignment="viewStart"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                tools:text="paws a little Reflective Collars (Mixed Colours)-Pack of 5
+,paws a little Reflective Collars (Mixed Colours)-Pack of 5" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/trackview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/trackorderTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:includeFontPadding="false"
+                android:textAlignment="viewStart"
+                android:textColor="#007AFF"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="Track Order" />
+
+            <TextView
+                android:id="@+id/viewdetailsTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textAlignment="viewStart"
+                android:textColor="#007AFF"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="View Details" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

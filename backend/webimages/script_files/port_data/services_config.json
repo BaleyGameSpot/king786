@@ -1,0 +1,41 @@
+{
+    "buddyverse.africa": {
+        "SOCKET_CLUSTER_PORT": 3190,
+        "SOCKET_PHP_CLIENT_PORT": 9347,
+        "MAPS_API_SERVICE_PORT": 7308,
+        "WRTC_PORT": 6642,
+        "WRTC_STUN_PORT": 7613,
+        "WRTC_TURN_PORT": 7613,
+        "WRTC_TURN_TLS_PORT": 2050,
+        "APP_SERVICE_PORT": 1401,
+        "ADMIN_MONGO_PORT": 1164,
+        "ENABLE_DATA_ENCRYPTION": "No",
+        "ENABLE_CRON_JOB": "Yes"
+    },
+    "www.buddyverse.africa": {
+        "SOCKET_CLUSTER_PORT": 3190,
+        "SOCKET_PHP_CLIENT_PORT": 9347,
+        "MAPS_API_SERVICE_PORT": 7308,
+        "WRTC_PORT": 6642,
+        "WRTC_STUN_PORT": 7613,
+        "WRTC_TURN_PORT": 7613,
+        "WRTC_TURN_TLS_PORT": 2050,
+        "APP_SERVICE_PORT": 1401,
+        "ADMIN_MONGO_PORT": 1164,
+        "ENABLE_DATA_ENCRYPTION": "No",
+        "ENABLE_CRON_JOB": "Yes"
+    },
+    "apiservice.buddyverse.africa": {
+        "SOCKET_CLUSTER_PORT": 3190,
+        "SOCKET_PHP_CLIENT_PORT": 9347,
+        "MAPS_API_SERVICE_PORT": 7308,
+        "WRTC_PORT": 6642,
+        "WRTC_STUN_PORT": 7613,
+        "WRTC_TURN_PORT": 7613,
+        "WRTC_TURN_TLS_PORT": 2050,
+        "APP_SERVICE_PORT": 1401,
+        "ADMIN_MONGO_PORT": 1164,
+        "ENABLE_DATA_ENCRYPTION": "No",
+        "ENABLE_CRON_JOB": "Yes"
+    }
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Drop Shadow Stack -->
+    <item>
+        <shape>
+            <padding
+                android:bottom="0.4dp"
+                android:left="0.4dp"
+                android:right="0.4dp"
+                android:top="0.4dp" />
+
+            <solid android:color="#30F6F6F6" />
+            <corners android:radius="@dimen/_7sdp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding
+                android:bottom="0.4dp"
+                android:left="0.4dp"
+                android:right="0.4dp"
+                android:top="0.4dp" />
+
+            <solid android:color="#50F6F6F6" />
+            <corners android:radius="@dimen/_7sdp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding
+                android:bottom="0.4dp"
+                android:left="0.4dp"
+                android:right="0.4dp"
+                android:top="0.4dp" />
+
+            <solid android:color="#AAF6F6F6" />
+            <corners android:radius="@dimen/_7sdp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding
+                android:bottom="0.3dp"
+                android:left="0.3dp"
+                android:right="0.3dp"
+                android:top="0.3dp" />
+
+            <solid android:color="#CCF6F6F6" />
+            <corners android:radius="@dimen/_7sdp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <padding
+                android:bottom="0.4dp"
+                android:left="0.4dp"
+                android:right="0.4dp"
+                android:top="0.4dp" />
+
+            <solid android:color="#EEF6F6F6" />
+            <corners android:radius="@dimen/_7sdp" />
+        </shape>
+    </item>
+    <!-- Background -->
+    <item>
+        <shape>
+            <corners android:radius="5dp" />
+            <solid android:color="@color/white" />
+            <stroke
+                android:width="@dimen/_1sdp"
+                android:color="#9E9E9E"
+                android:dashWidth="5dp"
+                android:dashGap="5dp" />
+        </shape>
+    </item>
+</layer-list>

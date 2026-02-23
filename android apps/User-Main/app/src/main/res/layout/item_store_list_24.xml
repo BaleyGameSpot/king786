@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/mainArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_full"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:background="@drawable/gradient_shadow_line"
+            android:gravity="center"
+            android:minHeight="@dimen/_100sdp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/restaurantAdptrLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingTop="@dimen/_7sdp"
+                android:paddingBottom="@dimen/_7sdp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/imgArea"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/imgView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="1dp"
+                            android:background="@color/imageBg"
+                            android:scaleType="centerCrop"
+                            app:shapeAppearance="@style/RoundedSquare_7sdp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/favImage"
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_alignWithParentIfMissing="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_marginEnd="@dimen/_3sdp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_heart"
+                            tools:visibility="visible" />
+
+                        <com.like.LikeButton
+                            android:id="@+id/likeButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:clickable="false"
+                            android:visibility="gone"
+                            app:anim_scale_factor="1.8"
+                            app:icon_size="15dp"
+                            app:icon_type="heart"
+                            app:like_drawable="@drawable/heart_on_fav_store"
+                            app:unlike_drawable="@drawable/heart_off_fav_store"
+                            tools:visibility="visible" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/safetyArea"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="@dimen/_minus20sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="end|bottom"
+                        android:outlineProvider="background"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/safetyImage"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            app:srcCompat="@drawable/ic_safety" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.view.MTextView
+                            android:id="@+id/restaurantNameTxt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:gravity="start|center"
+                            android:includeFontPadding="false"
+                            android:maxLines="2"
+                            android:textAlignment="viewStart"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp"
+                            app:customTypeFace="@string/system_semi_bold"
+                            tools:text="xyz" />
+
+                        <LinearLayout
+                            android:id="@+id/ratingArea"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="@dimen/_4sdp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ratingImg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start|center"
+                                android:layout_marginEnd="@dimen/_2sdp"
+                                app:srcCompat="@drawable/ic_star_black_24dp"
+                                app:tint="@color/rating_fill_color" />
+
+                            <com.view.MTextView
+                                android:id="@+id/restaurantRateTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start|center"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_9ssp"
+                                android:textStyle="normal"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="4.5" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <com.view.MTextView
+                        android:id="@+id/RestCuisineTXT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/cuisineText23"
+                        android:textSize="@dimen/_9ssp"
+                        app:customTypeFace="@string/system_regular"
+                        tools:text="gsdgsdgdfgfgdfgdgsdgdsg\nsdfhsfjhfkhsdkffddjsdkhfsdkjfhkjd" />
+
+                    <LinearLayout
+                        android:id="@+id/offerArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="start|bottom"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/offerImage"
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_discount_store_23" />
+
+                        <com.view.MTextView
+                            android:id="@+id/offerTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:gravity="start|center"
+                            android:includeFontPadding="false"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textAllCaps="false"
+                            android:textColor="#D90000"
+                            android:textSize="@dimen/_9ssp"
+                            app:customTypeFace="@string/system_semi_bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/timerImage"
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:layout_gravity="start|center"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/ic_dot"
+                                app:tint="@color/appThemeColor_1" />
+
+                            <com.view.MTextView
+                                android:id="@+id/deliveryTimeTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical|start"
+                                android:includeFontPadding="false"
+                                android:textColor="@color/cuisineText23"
+                                android:textSize="@dimen/_9ssp"
+                                android:textStyle="normal"
+                                app:customTypeFace="@string/system_regular"
+                                tools:text="45 Mins" />
+
+                            <com.view.MTextView
+                                android:id="@+id/deliveryLBLTimeTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:gravity="start|center"
+                                android:includeFontPadding="false"
+                                android:text="@string/app_name"
+                                android:textColor="#646464"
+                                android:textSize="@dimen/_9ssp"
+                                android:textStyle="normal"
+                                android:visibility="gone"
+                                app:customTypeFace="@string/system_light"
+                                tools:visibility="visible" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/perpersonlayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="@dimen/_1sdp"
+                                android:layout_height="@dimen/_12sdp"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:background="@color/gray" />
+
+                            <com.view.MTextView
+                                android:id="@+id/pricePerPersonTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/ic_baseline_person_24"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:drawableTint="@color/appThemeColor_1"
+                                android:ellipsize="end"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textColor="@color/cuisineText23"
+                                android:textSize="@dimen/_9ssp"
+                                app:customTypeFace="@string/system_regular"
+                                tools:ignore="UnusedAttribute"
+                                tools:text="$100 per 2 Personaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" />
+
+                            <com.view.MTextView
+                                android:id="@+id/minOrderTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@color/appThemeColor_1"
+                                android:textSize="@dimen/_9ssp"
+                                android:textStyle="normal"
+                                android:visibility="gone"
+                                app:customTypeFace="@string/system_semi_bold"
+                                tools:visibility="visible" />
+
+                            <com.view.MTextView
+                                android:id="@+id/minOrderLBLTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:gravity="center"
+                                android:textColor="#646464"
+                                android:textSize="@dimen/_9ssp"
+                                android:textStyle="normal"
+                                android:visibility="gone"
+                                app:customTypeFace="@string/system_light"
+                                tools:visibility="visible" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <com.view.MTextView
+                        android:id="@+id/resStatusTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center"
+                        android:includeFontPadding="false"
+                        android:padding="@dimen/_2sdp"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textAllCaps="false"
+                        android:textColor="#D90000"
+                        android:textSize="@dimen/_7ssp"
+                        app:customTypeFace="@string/system_semi_bold"
+                        tools:text="@string/app_name" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/safetylayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/safetyImage_"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_safety" />
+
+                <com.view.MTextView
+                    android:id="@+id/resSsafetyTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:gravity="start|center"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textAllCaps="false"
+                    android:textColor="#415E72"
+                    android:textSize="@dimen/txt_size_10"
+                    app:customTypeFace="@string/system_medium"
+                    tools:text="Follows WHO safety practices" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
