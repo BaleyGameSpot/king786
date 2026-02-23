@@ -338,7 +338,7 @@ $currencyDataJson = json_encode($currencyData);
     <meta content="" name="description"/>
     <meta content="" name="author"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
     <link rel="stylesheet" href="../assets/validation/validatrix.css"/>
@@ -439,8 +439,8 @@ $currencyDataJson = json_encode($currencyData);
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -467,16 +467,16 @@ $currencyDataJson = json_encode($currencyData);
             <!-- First page content-->
             <div class="body-div tabcontent" id="manageservicecontent">
                 <div class="form-group">
-                    <? if ($success == 3){ ?>
+                    <?php if ($success == 3){ ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?=$error;?>
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <?php if (!empty($vehicle_type_data)){ ?>
                         <div class="panel panel-info ">
-                            <? if ($MODULES_OBJ->isEnableSearchUfxServices()){ ?>
+                            <?php if ($MODULES_OBJ->isEnableSearchUfxServices()){ ?>
                                 <div class="panel-heading clearfix">
                                     <div class="row" style="padding: 0;">
                                         <div class="col-sm-12 input-group">
@@ -485,7 +485,7 @@ $currencyDataJson = json_encode($currencyData);
                                         </div>
                                     </div>
                                 </div>
-                            <? } ?>
+                            <?php } ?>
                             <div id="ajaxHTML" class="panel-body">
                                 <form name="vehicle_form" id="vehicle_form" method="post" action="">
                                     <input type="hidden" name="iDriverId" value="<?=$iDriverId?>"/>
@@ -567,7 +567,7 @@ $currencyDataJson = json_encode($currencyData);
                                                                                             class="chk vCarTypeClass"
                                                                                             name="vCarType[]"
                                                                                             id="vCarType_<?=$val['iVehicleTypeId']?>"
-                                                                                        <? if ($ePricetype == "Provider") { ?>onchange="check_box_value(this.value);" <? } ?>
+                                                                                        <?php if ($ePricetype == "Provider") { ?>onchange="check_box_value(this.value);" <?php } ?>
                                                                                         <?php if (in_array($val['iVehicleTypeId'],$vCarTyp)) { ?>checked<?php } ?>
                                                                                             value="<?=$val['iVehicleTypeId']?>"/>
                                                                                 </div>
@@ -584,7 +584,7 @@ $currencyDataJson = json_encode($currencyData);
                                                                                         $price_info_class = 'price-info-table';
                                                                                     }
                                                                                     ?>
-                                                                                    <div class="hatchback-search <?=$price_info_class?>" id="amt1_<?=$val['iVehicleTypeId']?>" <? echo $p001; ?>>
+                                                                                    <div class="hatchback-search <?=$price_info_class?>" id="amt1_<?=$val['iVehicleTypeId']?>" <?php echo $p001; ?>>
                                                                                         <?php if ($MODULES_OBJ->isEnableCarSizeServiceTypeAmount()){
                                                                                             $_POST['eFareType'] = $val['eFareType'];
                                                                                             $_POST['iVehicleTypeId'] = $val['iVehicleTypeId'];
@@ -615,7 +615,7 @@ $currencyDataJson = json_encode($currencyData);
                                                                                                     <label class="fare_type"><?php echo $eFareType; ?></label>
                                                                                                 </div>
 
-                                                                                                <?
+                                                                                                <?php
                                                                                             }
                                                                                         } ?>
                                                                                     </div> <?php
@@ -677,13 +677,13 @@ $currencyDataJson = json_encode($currencyData);
                 <!-- Second page content-->
                 <div class="body-div tabcontent" id="biddingcontent">
                     <div class="form-group">
-                        <? if ($success == 3){ ?>
+                        <?php if ($success == 3){ ?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                 <?=$error;?>
                             </div>
                             <br/>
-                        <? } ?>
+                        <?php } ?>
                         <?php if (!empty($biddingServices)){ ?>
                             <div class="panel panel-info">
                                 <div class="panel-heading clearfix">
@@ -745,7 +745,7 @@ $currencyDataJson = json_encode($currencyData);
                                                                                         value="<?=$SubCategoryval['iBiddingId']?>"/>
                                                                             </div>
                                                                         </div>
-                                                                    <? } ?>
+                                                                    <?php } ?>
                                                                 </fieldset>
                                                             </div>
                                                         </li>
@@ -778,7 +778,7 @@ $currencyDataJson = json_encode($currencyData);
 </div>
 <!--END PAGE CONTENT -->
 <!--END MAIN WRAPPER -->
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script type="text/javascript" src="../assets/js/modal_alert.js"></script>
 <script src="https://maps.google.com/maps/api/js?key=<?=$GOOGLE_SEVER_API_KEY_WEB?>&libraries=places" type="text/javascript" async></script>
@@ -1091,10 +1091,10 @@ $currencyDataJson = json_encode($currencyData);
 
     <?php if (empty($biddingServices) || $ENABLE_BIDDING_SERVICES == 'No') { ?>
     document.getElementById("manageservicecontent").style.display = "block";
-    <? } else { ?>
+    <?php } else { ?>
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
-    <? } ?>
+    <?php } ?>
 
     function openTabContent(evt, Pagename) {
         // Declare all variables

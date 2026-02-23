@@ -242,7 +242,7 @@ $db_location = $obj->MySQLSelect($sql_location);
                     <?php if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <? echo $_REQUEST['var_msg']; ?>
+                            <?php echo $_REQUEST['var_msg']; ?>
                         </div> <br/>
                     <?php } ?>
                     <?php if ($success == 1) { ?>
@@ -274,12 +274,12 @@ $db_location = $obj->MySQLSelect($sql_location);
                                         <?php } ?>
                                     </select>
                                 </div>
-                            <? } else { ?>
+                            <?php } else { ?>
                                 <div class="col-lg-12">
                                     <label>Language: <?= $vCodeLang ?></label>
                                 </div>
                                 <input type="hidden" name="vCode" value="<?= $vCodeLang ?>">
-                            <? } ?>
+                            <?php } ?>
                         </div> -->
                         <div class="row">
                             <div class="col-lg-12">
@@ -318,7 +318,7 @@ $db_location = $obj->MySQLSelect($sql_location);
                                 </div>
                             </div>
                         </div>
-                        <? if ($MODULES_OBJ->isEnableLocationwiseBanner()) { ?>
+                        <?php if ($MODULES_OBJ->isEnableLocationwiseBanner()) { ?>
                             <div class="row">
                                 <div class="col-lg-12">
                                     
@@ -327,12 +327,12 @@ $db_location = $obj->MySQLSelect($sql_location);
                                 <div class="col-lg-6">
                                     <select class="form-control" name='iLocationId' id="iLocationId" required="">
                                         <option value="">Select Location</option>
-                                        <option value="-1" <? if ($iLocationId == "-1") { ?>selected<? } ?>>All</option>
+                                        <option value="-1" <?php if ($iLocationId == "-1") { ?>selected<?php } ?>>All</option>
                                         <?php
                                         foreach ($db_location as $i => $row) {
                                             ?>
                                             
-					    <option value="<?= $row['iLocationId'] ?>"     <? if ($iLocationId == $row['iLocationId']) { ?>selected<? } ?>><?= $row['vLocationName'] ?></option>
+					    <option value="<?= $row['iLocationId'] ?>"     <?php if ($iLocationId == $row['iLocationId']) { ?>selected<?php } ?>><?= $row['vLocationName'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -340,7 +340,7 @@ $db_location = $obj->MySQLSelect($sql_location);
                                     <a class="btn btn-primary" href="location.php" target="_blank">Enter New Location  </a>
                                 </div>
                             </div>
-                        <? } ?>
+                        <?php } ?>
 
                         <?php if ($MODULES_OBJ->isEnableAppHomeScreenLayoutV2()) { ?>
                             <div style="display: none" class="row">
@@ -412,8 +412,8 @@ $db_location = $obj->MySQLSelect($sql_location);
                                 <!--<div class="row">
                                     <?php /*if (($action == 'Edit' && $userObj->hasPermission($edit)) || ($action == 'Add' && $userObj->hasPermission($create))) { */?>
                                         <div class="col-lg-12">
-                                            <input type="submit" class="save btn-info" name="submit" id="submit" value="<?/*= $action; */?> Banner">
-                                            <a href="bsr_banner.php?eType=<?/*= $_REQUEST['eType']*/?>" class="btn btn-default back_link">Cancel</a>
+                                            <input type="submit" class="save btn-info" name="submit" id="submit" value="<?php /*= $action; */?> Banner">
+                                            <a href="bsr_banner.php?eType=<?php /*= $_REQUEST['eType']*/?>" class="btn btn-default back_link">Cancel</a>
                                         </div>
                                     <?php /*} */?>
                                 </div>-->

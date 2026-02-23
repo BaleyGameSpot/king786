@@ -1,4 +1,4 @@
-<?
+<?php
 include '../common.php';
 $iVehicleCategoryId = isset($_REQUEST['iVehicleCategoryId']) ? $_REQUEST['iVehicleCategoryId'] : '';
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
@@ -21,13 +21,13 @@ if(!empty($iVehicleCategoryId)){
 	}
 	?>
 <select name="iDisplayOrder" class="form-control">
-    <? foreach($dataArray as $arr):?>
+    <?php foreach($dataArray as $arr):?>
     <option <?= $arr == $temp ? ' selected="selected"' : '' ?> value="<?=$arr;?>" >
       -- <?= $arr ?> --
     </option>
-    <? endforeach; ?>
-    <?if($action=="Add") {?>
+    <?php endforeach; ?>
+    <?php if($action=="Add") {?>
       <option value="<?=$temp;?>">-- <?= $temp ?> -- </option>
-    <? }?>
+    <?php }?>
   </select>
 <?php exit(); } ?>

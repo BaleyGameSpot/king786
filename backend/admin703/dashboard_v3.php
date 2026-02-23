@@ -287,7 +287,7 @@ if(scount($WebValues) > 0 || scount($AndroidUserValues) > 0 || scount($AndroidDr
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
     <!-- GLOBAL STYLES -->
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/new_main.css"/>
     <link rel="stylesheet" href="css/admin_new/dashboard.css">
@@ -408,7 +408,7 @@ if(scount($WebValues) > 0 || scount($AndroidUserValues) > 0 || scount($AndroidDr
                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4">
                         <div class="row d-flex clearfix">
                             <?php if ($userObj->hasPermission('dashboard-total-ride-jobs')) { ?>
-                                <div <?php if (!$userObj->hasPermission('dashboard-total-orders') && !$MODULES_OBJ->isDeliverAllFeatureAvailable('Yes')) { ?> class="col-sm-12" <?php } else { ?> class="col-sm-12 col-md-12 col-lg-6" <? } ?>>
+                                <div <?php if (!$userObj->hasPermission('dashboard-total-orders') && !$MODULES_OBJ->isDeliverAllFeatureAvailable('Yes')) { ?> class="col-sm-12" <?php } else { ?> class="col-sm-12 col-md-12 col-lg-6" <?php } ?>>
                                     <div class="card">
                                         <?php if ($userObj->hasPermission('view-trip-jobs')) { ?>
                                             <a href="<?php echo $LOCATION_FILE_ARRAY['TRIP'];?>">
@@ -429,7 +429,7 @@ if(scount($WebValues) > 0 || scount($AndroidUserValues) > 0 || scount($AndroidDr
                                 </div>
                             <?php }
                             if ($userObj->hasPermission('dashboard-total-orders')) { ?>
-                                <div <?php if ($userObj->hasPermission('dashboard-total-ride-jobs')) { ?> class="col-sm-12 col-md-12 col-lg-6" <?php } else { ?> class="col-sm-12" <? } ?>>
+                                <div <?php if ($userObj->hasPermission('dashboard-total-ride-jobs')) { ?> class="col-sm-12 col-md-12 col-lg-6" <?php } else { ?> class="col-sm-12" <?php } ?>>
                                     <div class="card">
                                         <?php if ($userObj->hasPermission('view-all-orders')) { ?>
                                             <a href="allorders.php?type=allorders">
@@ -1377,7 +1377,7 @@ if(scount($WebValues) > 0 || scount($AndroidUserValues) > 0 || scount($AndroidDr
                                                                         } else {
                                                                             echo clearName($latest_payment_requests[$i]['user_name'] . ' ' . $latest_payment_requests[$i]['user_lastname']);
                                                                         } ?> </b>
-                                                                    <span> <? 
+                                                                    <span> <?php 
                                                                     if(!empty($latest_payment_requests[$i]['vRideNo'])){  
                                                                             echo clearEmail($latest_payment_requests[$i]['driveremail']); 
                                                                     } else {
@@ -1492,7 +1492,7 @@ if(scount($WebValues) > 0 || scount($AndroidUserValues) > 0 || scount($AndroidDr
                                                             }
                                                             ?>
                                                             <?php if($userObj->hasPermission($viewpermission)) { ?>
-                                                                <a href="<?= $url; ?>?id=<? echo $id; ?>&action=edit" class="list-group-item" target="_blank">
+                                                                <a href="<?= $url; ?>?id=<?php echo $id; ?>&action=edit" class="list-group-item" target="_blank">
                                                             <?php } else { ?>
                                                                 <a href="javascript:void(0)" class="list-group-item">
                                                             <?php } ?>

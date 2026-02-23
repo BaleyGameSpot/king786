@@ -201,7 +201,7 @@
                 <title><?=$SITE_NAME;?> | Rental Packages </title>
                 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
                 <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-                <? include_once('global_files.php');?>
+                <?php include_once('global_files.php');?>
             </head>
             <!-- END  HEAD-->
             <!-- BEGIN BODY-->
@@ -222,13 +222,13 @@
                             </div>
                             <hr />
                         </div>
-                        <? if ($success == 3) {?>
+                        <?php if ($success == 3) {?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php print_r($error); ?>
                         </div>
                         <br/>
-                        <?} ?>
+                        <?php } ?>
                         <form name="frmsearch" id="frmsearch" action="javascript:void(0);" method="post">
                             <table width="100%" border="0" cellpadding="0" cellspacing="0" class="admin-nir-table">
                                 <tbody>
@@ -318,7 +318,7 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                    <? } } else {?>
+                                                    <?php } } else {?>
                                                     <tr class="gradeA">
                                                         <td colspan="8"> No Records Found.</td>
                                                     </tr>
@@ -348,7 +348,7 @@
                                                             <input type="hidden" name="iVehicleTypeId" value="<?php echo $id; ?>">
                                                             <input type="hidden" id= "iRentalPackageId" name="iRentalPackageId" value="">
                                                             <input type="hidden" name="frm_action" value="<?php echo $frm_action ?>">       
-                                                            <?
+                                                            <?php
                                                                 if($count_all > 0) {
                                                                 for($i=0;$i<$count_all;$i++) {
                                                                 $vCode = $db_master[$i]['vCode'];
@@ -369,7 +369,7 @@
                                                                     <input type="text" class="form-control" name="<?= $vValue; ?>" id="<?= $vValue; ?>" value="" placeholder="<?= $vTitle; ?>" <?= $required; ?>>
                                                                     <div class="text-danger" id="<?= $vValue.'_error'; ?>" style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                                                 </div>
-                                                                <?       
+                                                                <?php       
                                                                     if($vCode == $default_lang  && scount($db_master) > 1){
                                                                     ?>
                                                                 <div class="col-lg-6">
@@ -379,7 +379,7 @@
                                                                     }
                                                                     ?>
                                                             </div>
-                                                            <? }
+                                                            <?php }
                                                                 } ?>
                                                             <div class="row">
                                                                 <div class="col-lg-12">

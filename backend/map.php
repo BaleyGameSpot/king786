@@ -57,7 +57,7 @@ $script="Map";
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<![endif]-->
 	<!-- GLOBAL STYLES -->
-	<? include_once('global_files.php');?>
+	<?php include_once('global_files.php');?>
 	<link rel="stylesheet" href="css/style.css" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
@@ -79,8 +79,8 @@ $script="Map";
 
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-	<? include_once('header.php'); ?>
-	<? include_once('left_menu.php'); ?>
+	<?php include_once('header.php'); ?>
+	<?php include_once('left_menu.php'); ?>
 	<!--PAGE CONTENT -->
 	<div id="content">
 
@@ -153,7 +153,7 @@ $script="Map";
 <!--END PAGE CONTENT -->
 </div>
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 
 <?php
 function getaddress($lat,$lng)

@@ -122,9 +122,9 @@ for ($i = 0; $i < scount($db_country); $i++) {
                                 <input  type="hidden" class="edit" name="action" value="login">
                                 <div class="edit-profile-detail-form-inner">
                                     <span>                                  
-                                        <label><?= $langage_lbl['LBL_PROFILE_YOUR_EMAIL_ID']; ?><?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> <span class="red">*</span> <? } ?> </label>
+                                        <label><?= $langage_lbl['LBL_PROFILE_YOUR_EMAIL_ID']; ?><?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> <span class="red">*</span> <?php } ?> </label>
                                         <input type="hidden" name="uid" id="u_id1" value="<?= $_SESSION['sess_iUserId']; ?>">
-                                        <input type="email" id="in_email" class="edit-profile-detail-form-input" placeholder="<?= $langage_lbl['LBL_RIDER_PROFILE_YOUR_EMAIL_ID']; ?>" value = "<?= $db_user[0]['vEmail'] ?>" name="email" <?= isset($db_user[0]['vEmail']) ? '' : ''; ?>  <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required <? } ?> > <div class="required-label" id="emailCheck"></div>
+                                        <input type="email" id="in_email" class="edit-profile-detail-form-input" placeholder="<?= $langage_lbl['LBL_RIDER_PROFILE_YOUR_EMAIL_ID']; ?>" value = "<?= $db_user[0]['vEmail'] ?>" name="email" <?= isset($db_user[0]['vEmail']) ? '' : ''; ?>  <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required <?php } ?> > <div class="required-label" id="emailCheck"></div>
                                     </span> 
 
                                     <span>
@@ -192,7 +192,7 @@ for ($i = 0; $i < scount($db_country); $i++) {
                         <!-- from -->
                         <div class="driver-profile-mid-part">
                             <ul>
-                            <?if($db_user[0]['vEmail'] != ""){?>
+                            <?php if($db_user[0]['vEmail'] != ""){?>
                                 <li>
                                     <div class="driver-profile-mid-inner">
                                         <div class="profile-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
@@ -201,12 +201,12 @@ for ($i = 0; $i < scount($db_country); $i++) {
                                         <span><!--<a id="show-edit-vemail-div" class="hide-vemail-div hidev"><i class="fa fa-pencil" aria-hidden="true"></i><?= $langage_lbl['LBL_RIDER_EDIT']; ?></a>--></span> 
                                     </div>                            
                                 </li>
-                            <? } ?>
+                            <?php } ?>
                                 <li>
                                     <div class="driver-profile-mid-inner">
                                         <div class="profile-icon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></div>
                                         <h3><?= $langage_lbl['LBL_PROFILE_RIDER_PASSWORD']; ?></h3>
-                                        <?php /* <p><? for ($i = 0; $i < strlen(decrypt($db_user[0]['vPassword'])); $i++)
+                                        <?php /* <p><?php for ($i = 0; $i < strlen(decrypt($db_user[0]['vPassword'])); $i++)
                                           echo '*'; ?></p> */ ?>
                                         <span><a id="show-edit-password-div" class="hide-password-div hidev"><i class="fa fa-pencil" aria-hidden="true"></i><?= $langage_lbl['LBL_RIDER_EDIT']; ?></a></span> 
                                     </div>
@@ -397,7 +397,7 @@ for ($i = 0; $i < scount($db_country); $i++) {
         <script type="text/javascript" src="assets/js/validation/jquery.validate.min.js" ></script>
         <?php if ($lang != 'en') { ?>
             <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-            <? include_once('otherlang_validation.php');?>
+            <?php include_once('otherlang_validation.php');?>
         <?php } ?>
         <script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
         <!-- End: Footer Script -->
@@ -827,7 +827,7 @@ for ($i = 0; $i < scount($db_country); $i++) {
             }
             function editProfile(action)
             {
-                var chk = '<?echo SITE_TYPE?>';
+                var chk = '<?php echo SITE_TYPE?>';
                 if (action == 'login')
                 {
                     data = $("#frm1").serialize();
@@ -908,7 +908,7 @@ for ($i = 0; $i < scount($db_country); $i++) {
                     email: {
                         <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>
                         required: true,
-                        <? } ?>
+                        <?php } ?>
                         email: true,
                         remote: {
                             url: 'ajax_validate_email.php',

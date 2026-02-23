@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('../common.php');
 
 
@@ -126,7 +126,7 @@ $longitude = $output->results[0]->geometry->location->lng;
 
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-<? include_once('global_files.php'); ?>
+<?php include_once('global_files.php'); ?>
         <!-- On OFF switch -->
         <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -142,8 +142,8 @@ $longitude = $output->results[0]->geometry->location->lng;
 
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-<? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+<?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -157,17 +157,17 @@ $longitude = $output->results[0]->geometry->location->lng;
                     </div>
                     <hr />
                     <div class="body-div">
-<? if ($success == 1) { ?>
+<?php if ($success == 1) { ?>
                             <div class="alert alert-success alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                 <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                             </div><br/>
-<? } elseif ($success == 2) { ?>
+<?php } elseif ($success == 2) { ?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                 <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                             </div><br/>
-<? } elseif ($success == 3) { ?>
+<?php } elseif ($success == 3) { ?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
     <?php echo $var_msg; ?>
@@ -202,9 +202,9 @@ $longitude = $output->results[0]->geometry->location->lng;
                                             <div class="col-lg-6">
                                                 <select class="form-control" name ="iCountry" id="iCountry" required="required" onChange="getGeoCounty(this.value);">
                                                     <option value="">Select Country</option>
-<? for ($i = 0; $i < scount($db_country); $i++) { ?>
-                                                        <option value = "<?= $db_country[$i]['vCountry'] ?>" <? if ($vCountry == $db_country[$i]['vCountry']) { ?>selected<? } ?> ><?= $db_country[$i]['vCountry'] ?></option>
-                                                    <? } ?>
+<?php for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                                        <option value = "<?= $db_country[$i]['vCountry'] ?>" <?php if ($vCountry == $db_country[$i]['vCountry']) { ?>selected<?php } ?> ><?= $db_country[$i]['vCountry'] ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -295,7 +295,7 @@ $longitude = $output->results[0]->geometry->location->lng;
         <!--END MAIN WRAPPER -->
 
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
         <script src="//maps.google.com/maps/api/js?sensor=fasle&key=<?= $GOOGLE_SEVER_API_KEY_WEB ?>&libraries=places,drawing" type="text/javascript"></script>
         <script>

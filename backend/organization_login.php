@@ -158,9 +158,9 @@ $SITEPATH = $tconfig['tsite_url'];
             <div class="page-contant">
                 <div class="page-contant-inner">
                     <h2 class="header-page" id="label-id"><?= $langage_lbl['LBL_SIGN_IN_TXT']; ?>
-                        <? if (SITE_TYPE == 'Demo') { ?>
+                        <?php if (SITE_TYPE == 'Demo') { ?>
                             <p><?= $langage_lbl['LBL_SINCE_IT_IS_DEMO']; ?></p>
-                        <? } ?>
+                        <?php } ?>
                     </h2>
                     <!-- login in page -->
                     <div class="login-form">
@@ -170,7 +170,7 @@ $SITEPATH = $tconfig['tsite_url'];
                             <p style="display:none;" class="btn-block btn btn-rect btn-success error-login-v" id="success" ></p>
                         </div>
 
-                        <!-- <?
+                        <!-- <?php
                         if ($action == 'rider') {
                             $action_url = 'mytrip.php';
                         } else if ($action == 'driver' && $iscompany != "1") {
@@ -188,8 +188,8 @@ $SITEPATH = $tconfig['tsite_url'];
                         <div class="login-form-left"> <form action="<?= $action_url ?>" class="form-signin" method ="post" id="login_box" onSubmit="return chkValid('<?= $action ?>');" >	 
 
                                 <b>
-                                    <input type="hidden" name="action" value="<? echo $action ?>"/>
-                                    <input type="hidden" name="type_usr" value="<? echo $type ?>"/>
+                                    <input type="hidden" name="action" value="<?php echo $action ?>"/>
+                                    <input type="hidden" name="type_usr" value="<?php echo $type ?>"/>
                                     <input type="hidden" name="type" id="type" value="signIn"/>
 
                                     <label><?= $langage_lbl['LBL_EMAIL_MOBILE_NO_TXT_MSG']; ?></label>
@@ -254,16 +254,16 @@ $SITEPATH = $tconfig['tsite_url'];
 
                             <h3><?= $langage_lbl['LBL_DONT_HAVE_ACCOUNT']; ?></h3>
 
-                            <!-- <? if ($iscompany != "1") { ?>
+                            <!-- <?php if ($iscompany != "1") { ?>
                                             <div class="login-form-right1-inner">
                                                     <span><a class="company" href="<?= ($action == 'rider') ? $sign_up_rider : $cjSignupCompany; ?>">
-                                <? echo $langage_lbl['LBL_LOGIN_NEW_SIGN_UP']; ?>
+                                <?php echo $langage_lbl['LBL_LOGIN_NEW_SIGN_UP']; ?>
                                                             </a></span>  
                                             </div>
-                            <? } ?> -->
+                            <?php } ?> -->
                             <div class="login-form-right1-inner">
                             <!-- 	<span>
-                                            <a class="company" href="<?= ($action == 'rider') ? $sign_up_rider : $cjSignupCompany; ?>"><?
+                                            <a class="company" href="<?= ($action == 'rider') ? $sign_up_rider : $cjSignupCompany; ?>"><?php
                                 if (($action == 'driver' && $iscompany == "1")) {
                                     echo $langage_lbl['LBL_LOGIN_NEW_SIGN_UP_COMPANY'];
                                 } else {
@@ -281,21 +281,21 @@ $SITEPATH = $tconfig['tsite_url'];
 
                             </div>
 
-                            <!-- <?
+                            <!-- <?php
                             if (ONLYDELIVERALL == 'Yes' || DELIVERALL == 'Yes') {
                                 if (($action == 'driver' && $iscompany == "1")) {
                                     ?>
                                                                             <div class="login-form-right1-inner-new">	
                                                                                     <span><a class="company" href="sign-up-restaurant"><?= $langage_lbl['LBL_LOGIN_NEW_SIGN_UP_STORE']; ?></a></span> 
                                                                             </div>
-                                    <?
+                                    <?php
                                 }
                             }
                             ?> -->
 
-                            <? if ($iscompany == "0") { ?>
+                            <?php if ($iscompany == "0") { ?>
                                 <div class="login-form-right1-inner">
-                                        <!--span class="fb-login"><a href="facebook"><img alt="" src="assets/img/reg-fb.jpg"><? //=$langage_lbl['LBL_SIGN_UP_WITH_FACEBOOK'];   ?></a></span-->
+                                        <!--span class="fb-login"><a href="facebook"><img alt="" src="assets/img/reg-fb.jpg"><?php //=$langage_lbl['LBL_SIGN_UP_WITH_FACEBOOK'];   ?></a></span-->
 
                                                         <!--<span class="login-socials">
                                                                 <a href="facebook/<?= $action ?>" class="fa fa-facebook"></a>
@@ -349,7 +349,7 @@ $SITEPATH = $tconfig['tsite_url'];
                                     <?php } ?>
 
                                 </div>
-                            <? } ?>
+                            <?php } ?>
                         </div>   
                     </div>
 
@@ -360,7 +360,7 @@ $SITEPATH = $tconfig['tsite_url'];
                             ?>
 
                             <div class="text-center" style="text-align:left; display: none;">
-                                <? if ($host_system == "carwash") { ?>
+                                <?php if ($host_system == "carwash") { ?>
                                     <h4>
                                         <b>Note :</b><br /> 
                                         - If you have registered as a new user, use your registered Email Id and Password to view the detail of your Jobs.<br />
@@ -371,7 +371,7 @@ $SITEPATH = $tconfig['tsite_url'];
                                         Username: user@demo.com<br />
                                         Password: 123456
                                     </p>
-                                <? } elseif ($host_system == "beautician" || $host_system == "beautician4" || $host_system == "carwash4" || $host_system == "dogwalking4" || $host_system == "towtruck4" || $host_system == "massage4" || $host_system == "ufxforall4" || $domain == "cubejek") { ?>
+                                <?php } elseif ($host_system == "beautician" || $host_system == "beautician4" || $host_system == "carwash4" || $host_system == "dogwalking4" || $host_system == "towtruck4" || $host_system == "massage4" || $host_system == "ufxforall4" || $domain == "cubejek") { ?>
                                     <h4>
                                         <b>Note :</b><br /> 
                                         - If you have registered as a new user, use your registered Email Id and Password to view the detail of your Jobs.<br />
@@ -382,7 +382,7 @@ $SITEPATH = $tconfig['tsite_url'];
                                         Username: user@demo.com<br />
                                         Password: 123456
                                     </p>
-                                <? } elseif ($host_system == "tutors") { ?>
+                                <?php } elseif ($host_system == "tutors") { ?>
                                     <h4>
                                         <b>Note :</b><br /> 
                                         - If you have registered as a new student, use your registered Email Id and Password to view the detail of your Jobs.<br />
@@ -393,7 +393,7 @@ $SITEPATH = $tconfig['tsite_url'];
                                         Username: student@demo.com<br />
                                         Password: 123456
                                     </p>
-                                <? } elseif ($host_system == "doctor4") { ?>
+                                <?php } elseif ($host_system == "doctor4") { ?>
                                     <h4>
                                         <b>Note :</b><br /> 
                                         - If you have registered as a new patient, use your registered Email Id and Password to view the detail of your Appointment.<br />
@@ -404,7 +404,7 @@ $SITEPATH = $tconfig['tsite_url'];
                                         Username: patient@demo.com<br />
                                         Password: 123456
                                     </p>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <h4>
                                         <b>Note :</b><br /> 
                                         - If you have registered as a new Rider, use your registered Email Id and Password to view the detail of your Rides.<br />
@@ -416,7 +416,7 @@ $SITEPATH = $tconfig['tsite_url'];
                                         Password: 123456
                                     </p>
 
-                                <? } ?>
+                                <?php } ?>
                                                                 <!--<h4 ><?= $langage_lbl['LBL_PLEASE_USE_BELOW']; ?> </h4>
                                                                                 <h5>
                                                                                         <p><?= $langage_lbl['LBL_IF_YOU_HAVE_REGISTER']; ?></p>
@@ -429,7 +429,7 @@ $SITEPATH = $tconfig['tsite_url'];
                         } else {
                             ?>
                             <div class="text-center" style="text-align:left;  display: none;">
-                                <? if ($host_system == "carwash") { ?>
+                                <?php if ($host_system == "carwash") { ?>
                                     <h4>
                                         <b>Note :</b><br /> 
                                         - If you have registered as a new Washer, use your registered Email Id and Password to view the detail of your Jobs.<br />
@@ -440,7 +440,7 @@ $SITEPATH = $tconfig['tsite_url'];
                                         Username: washer@demo.com<br />
                                         Password: 123456
                                     </p>
-                                <? } elseif ($host_system == "beautician" || $host_system == "beautician4") { ?>
+                                <?php } elseif ($host_system == "beautician" || $host_system == "beautician4") { ?>
                                     <h4>
                                         <b>Note :</b><br /> 
                                         - If you have registered as a new beautician , use your registered Email Id and Password to view the detail of your Jobs.<br />
@@ -451,7 +451,7 @@ $SITEPATH = $tconfig['tsite_url'];
                                         Username: beautician@demo.com<br />
                                         Password: 123456
                                     </p>
-                                <? } elseif ($host_system == "tutors") { ?>
+                                <?php } elseif ($host_system == "tutors") { ?>
                                     <h4>
                                         <b>Note :</b><br /> 
                                         - If you have registered as a new Tutor, use your registered Email Id and Password to view the detail of your Jobs.<br />
@@ -462,7 +462,7 @@ $SITEPATH = $tconfig['tsite_url'];
                                         Username: tutor@demo.com<br />
                                         Password: 123456
                                     </p>
-                                <? } elseif ($host_system == "carwash4") { ?>
+                                <?php } elseif ($host_system == "carwash4") { ?>
                                     <h4>
                                         <b>Note :</b><br /> 
                                         - If you have registered as a new car washer, use your registered Email Id and Password to view the detail of your Jobs.<br />
@@ -540,7 +540,7 @@ $SITEPATH = $tconfig['tsite_url'];
                                         Password: 123456
                                     </p>
 
-                                <? } ?>
+                                <?php } ?>
                                 <p>
                                     <br /><b>Company : </b><br />
                                     Username: company@gmail.com<br />
@@ -559,7 +559,7 @@ $SITEPATH = $tconfig['tsite_url'];
                                         <p><b><?= $langage_lbl['LBL_PASSWORD_LBL_TXT']; ?></b>: <?= $langage_lbl['LBL_PASSWORD']; ?> </p>
                                 </h5> -->
                             </div>
-                            <?
+                            <?php
                         }
                     }
                     ?>
@@ -661,11 +661,11 @@ $SITEPATH = $tconfig['tsite_url'];
                                  window.location = "profile.php";*/
 
                                 /*	else if(login_type == 'rider')
-<? if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'UberX') { ?>
+<?php if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'UberX') { ?>
                                      window.location = "profile-user";
-<? } else { ?>
+<?php } else { ?>
                                      window.location = "profile-rider";
-<? } ?>*/
+<?php } ?>*/
 
                                 return true; // success registration
                             }
@@ -733,11 +733,11 @@ $SITEPATH = $tconfig['tsite_url'];
               //       $('.isEmail').val("Yes");
               //      }
               //   });
-            <? } ?>
+            <?php } ?>
             function forgotPass()
             {
                 $('.error-login-v').hide();
-                var site_type = '<? echo SITE_TYPE; ?>';
+                var site_type = '<?php echo SITE_TYPE; ?>';
                 var id = document.getElementById("femail").value;
                 if (id == '')
                 {

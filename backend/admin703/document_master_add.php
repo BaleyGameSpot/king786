@@ -195,7 +195,7 @@ if ($MODULES_OBJ->isEnableBiddingWiseProviderDoc()) {
     <title>Admin | <?php echo $langage_lbl_admin['LBL_DOCUMENT_TYPE']; ?> <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <?
+    <?php
     include_once('global_files.php');
     ?>
     <!-- On OFF switch -->
@@ -239,38 +239,38 @@ if ($MODULES_OBJ->isEnableBiddingWiseProviderDoc()) {
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable msgs_hide">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?= $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div>
                         <br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable ">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
                         <br/>
-                    <? } elseif ($success == 3) { ?>
+                    <?php } elseif ($success == 3) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?php echo $_REQUEST['varmsg']; ?>
                         </div>
                         <br/>
-                    <? } elseif ($success == 4) { ?>
+                    <?php } elseif ($success == 4) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             "Please Select Night Start Time less than Night End Time."
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if (!empty($_REQUEST['var_msg'])) { ?>
+                    <?php } ?>
+                    <?php if (!empty($_REQUEST['var_msg'])) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             Record Not Updated .
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <form id="_document_master" method="post" action="" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                         <input type="hidden" name="previousLink" id="previousLink"
@@ -291,7 +291,7 @@ if ($MODULES_OBJ->isEnableBiddingWiseProviderDoc()) {
                                                 <?= $langage_lbl_admin['LBL_Vehicle'] ?>
                                             </option>
                                         <?php } ?>
-                                        <? if (ONLYDELIVERALL == "No") { ?>
+                                        <?php if (ONLYDELIVERALL == "No") { ?>
                                             <option value="company"<?php if ($doc_usertype == "company") echo 'selected="selected"'; ?>>
                                                 <?= $langage_lbl_admin['LBL_COMPANY_SIGNIN'] ?>
                                             </option>
@@ -596,42 +596,42 @@ if ($MODULES_OBJ->isEnableBiddingWiseProviderDoc()) {
                             </div>
                             <div class="col-md-6 col-sm-6">
                                 <!--  <input type="hidden" name="temp_order" id="temp_order" value="<?= ($action == 'Edit') ? $iDisplayOrder_max : '1'; ?>">
-                                        <? $display_numbers = $iDisplayOrder_max; ?>
+                                        <?php $display_numbers = $iDisplayOrder_max; ?>
                                         <select name="iDisplayOrder" class="form-control">
-                                            <? for ($i = 1; $i <= $display_numbers; $i++) { ?>
-                                                <option value="<?= $i ?>" <?
+                                            <?php for ($i = 1; $i <= $display_numbers; $i++) { ?>
+                                                <option value="<?= $i ?>" <?php
                                     if ($i == $iDisplayOrder_db) {
                                         echo "selected";
                                     }
                                     ?>> -- <?= $i ?> --</option>
-                                                    <? } ?>
+                                                    <?php } ?>
                                         </select> -->
                                 <span id="showDisplayOrder001">
                                         <?php if ($action == 'Add') { ?>
                                             <input type="hidden" name="temp_order" id="temp_order"
                                                    value="<?= ($action == 'Edit') ? $iDisplayOrder_max : '1'; ?>">
-                                        <? $display_numbers = $iDisplayOrder_max; ?>
+                                        <?php $display_numbers = $iDisplayOrder_max; ?>
                                         <select name="iDisplayOrder" class="form-control">
-                                            <? for ($i = 1; $i <= $display_numbers; $i++) { ?>
-                                                <option value="<?= $i ?>" <?
+                                            <?php for ($i = 1; $i <= $display_numbers; $i++) { ?>
+                                                <option value="<?= $i ?>" <?php
                                                 if (isset($iDisplayOrder_db) && $i == $iDisplayOrder_db) {
                                                     echo "selected";
                                                 }
                                                 ?>> -- <?= $i ?> --</option>
-                                            <? } ?>
+                                            <?php } ?>
                                         </select>
                                         <?php } else { ?>
                                             <input type="hidden" name="temp_order" id="temp_order"
                                                    value="<?= ($action == 'Edit') ? $iDisplayOrder_max : '1'; ?>">
-                                        <? $display_numbers = $iDisplayOrder_max; ?>
+                                        <?php $display_numbers = $iDisplayOrder_max; ?>
                                         <select name="iDisplayOrder" class="form-control">
-                                            <? for ($i = 1; $i <= $display_numbers; $i++) { ?>
-                                                <option value="<?= $i ?>" <?
+                                            <?php for ($i = 1; $i <= $display_numbers; $i++) { ?>
+                                                <option value="<?= $i ?>" <?php
                                                 if (isset($iDisplayOrder_db) &&$i == $iDisplayOrder_db) {
                                                     echo "selected";
                                                 }
                                                 ?>> -- <?= $i ?> --</option>
-                                            <? } ?>
+                                            <?php } ?>
                                         </select>
                                         <?php } ?>
                                     </span>
@@ -661,7 +661,7 @@ if ($MODULES_OBJ->isEnableBiddingWiseProviderDoc()) {
         <span>Language Translation is in Process. Please Wait...</span>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script>
     $(document).ready(function () {

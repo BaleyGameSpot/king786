@@ -148,7 +148,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
     <title><?= $SITE_NAME; ?> | <?php echo $langage_lbl_admin['LBL_VEHICLE_TYPE_SMALL_TXT']; ?> </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
@@ -286,14 +286,14 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                             echo "selected";
                                                         }
                                                         ?> >Deactivate</option>
-                                                    <? }
+                                                    <?php }
                                                     if ($eStatus != 'Deleted' && $userObj->hasPermission($delete)) { ?>
                                                         <option value="Deleted" <?php
                                                         if ($option == 'Delete') {
                                                             echo "selected";
                                                         }
                                                         ?> >Delete</option>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                 </select>
                                             <?php } ?>
                                         </span>
@@ -469,7 +469,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                             <?php } ?>
                                                             <td align="center"><?= $data_drv[$i]['iDisplayOrder'] ?></td>
                                                             <td align="center">
-								        <?
+								        <?php
 								        if ($data_drv[$i]['eStatus'] == 'Active') {
 								            $dis_img = "img/active-icon.png";
 								        } else if ($data_drv[$i]['eStatus'] == 'Inactive') {
@@ -518,7 +518,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 										 alt="<?php echo $data_drv[$i]['eStatus']; ?>" >
 										    </a>
 										    </li>
-										     <? } 
+										     <?php } 
 										     if ($eStatus != 'Deleted' && $userObj->hasPermission('delete-vehicle-type-deliverall')) { ?>
 											<li class="entypo-gplus" data-network="gplus">
 											<a href="javascript:void(0);" 
@@ -537,7 +537,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                             </td>
                                                 <?php } ?>
                                                         </tr>    
-    <?
+    <?php
     }
 } else {
     ?>

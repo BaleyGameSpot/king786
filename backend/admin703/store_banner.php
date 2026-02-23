@@ -303,9 +303,9 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages.$var_filter;
                                                     <tr>
                                                         <th>Image</th>
                                                         <th>Title</th>
-                                                        <? if (scount($service_cat_data) > 1) { ?>
+                                                        <?php if (scount($service_cat_data) > 1) { ?>
                                                         <th class="text-center">Service Category</th>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                         <th>Language</th>
                                                         <th style="text-align:center;">Order</th>
                                                         <!-- <?php if ($userObj->hasPermission('update-status-banner-store')) { ?>
@@ -345,13 +345,13 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages.$var_filter;
                                                                 ?>
                                                         </td>
                                                         <td><?= $vTitle; ?></td>
-                                                        <? if (scount($service_cat_data) > 1) { ?>
+                                                        <?php if (scount($service_cat_data) > 1) { ?>
                                                         <td  align="center">
                                                             <?php foreach ($service_cat_data as $servicedata) { ?>
                                                             <?php if ($servicedata['iServiceId'] == $db_data[$i]['iServiceId']) { ?><span><?php echo (isset($servicedata['vServiceName']) ? $servicedata['vServiceName'] : ''); ?></span><?php } ?>
                                                             <?php } ?>
                                                         </td>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                         <td><?= $vCode; ?></td>
                                                         <td width="10%" align="center">
                                                             <?php
@@ -404,7 +404,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages.$var_filter;
                                                         </td>
                                                         <?php } ?> -->
                                                         <td width="10%"  align="center">
-                                                            <?
+                                                            <?php
                                                             if ($eStatus == 'Active') {
                                                                 $dis_img = "img/active-icon.png";
                                                             } else if ($eStatus == 'Inactive') {

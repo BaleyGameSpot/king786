@@ -565,7 +565,7 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                                     <option value="">Select</option>
                                                     <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
                                                         <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?php if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if ($vCountry == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -645,12 +645,12 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                         </div>
                                         <!--  <?php if ($id) { ?>
                                                                                                  <div class= "row col-md-12" id="hide-profile-div">
-                                            <? $class = "col-lg-12"; ?>
+                                            <?php $class = "col-lg-12"; ?>
                                                                                                       <div class="<?= $class ?>">
                                                                                                            <b>
                                             <?php if ($oldvCoverImageImage == 'NONE' || $oldvCoverImageImage == '') { ?>
                                                                                                                                                                          <img src="../assets/img/profile-user-img.png" alt="" >
-                                                <?
+                                                <?php
                                             } else {
                                                 if (file_exists('../webimages/upload/Company/' . $id . '/3_' . $oldvCoverImageImage)) {
                                                     ?>
@@ -1163,7 +1163,7 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                                         setCity('<?php echo $vState; ?>', '<?php echo $vCity; ?>');
 
                                                         function changeServiceType(iServiceid) {
-                                                            var iCompanyId = "<? echo $id ?>";
+                                                            var iCompanyId = "<?php echo $id ?>";
                                                             $.ajax({
                                                                 type: "POST",
                                                                 url: 'ajax_get_cuisine.php',
@@ -1178,7 +1178,7 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                                         }
 
                                                         /*function changeServiceTypesecond(iServiceid){
-                                                         var iCompanyId = "<? echo $id ?>";
+                                                         var iCompanyId = "<?php echo $id ?>";
                                                          $.ajax({
                                                          type: "POST",
                                                          url: 'ajax_get_cuisine.php',

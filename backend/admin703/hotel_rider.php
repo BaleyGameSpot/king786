@@ -222,12 +222,12 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages.$var_filter;
                                                         for($i=0;$i<scount($data_drv);$i++) {?>
 														<tr class="gradeA">
 														<td align="center" style="text-align:center;"><input type="checkbox" id="checkbox" name="checkbox[]" <?php echo $default; ?> value="<?php echo $data_drv[$i]['iHotelId']; ?>" />&nbsp;</td>
-															<td><? echo clearName($data_drv[$i]['name']); ?></td>
-															<td><? echo clearEmail($data_drv[$i]['vEmail']); ?></td>
-															<td data-order="<?=$data_drv[$i]['iHotelId']; ?>"><? echo DateTime($data_drv[$i]['tRegistrationDate']) ?></td>
+															<td><?php echo clearName($data_drv[$i]['name']); ?></td>
+															<td><?php echo clearEmail($data_drv[$i]['vEmail']); ?></td>
+															<td data-order="<?=$data_drv[$i]['iHotelId']; ?>"><?php echo DateTime($data_drv[$i]['tRegistrationDate']) ?></td>
 															<td class="center"><?= clearPhone($data_drv[$i]['mobile']);?></td>
 															<td width="10%" align="center">
-																<? if($data_drv[$i]['eStatus'] == 'Active') {
+																<?php if($data_drv[$i]['eStatus'] == 'Active') {
 																	$dis_img = "img/active-icon.png";
 																	}else if($data_drv[$i]['eStatus'] == 'Inactive'){
 																	$dis_img = "img/inactive-icon.png";
@@ -264,7 +264,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages.$var_filter;
                                                             </td>
 															
 														</tr>
-													<? } 
+													<?php } 
                                                     } else { ?>
                                                     <tr class="gradeA">
                                                         <td colspan="8"> No Records Found.</td>

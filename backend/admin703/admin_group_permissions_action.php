@@ -662,7 +662,7 @@ for ($r = 0; $r < scount($getDisplayGroupData); $r++) {
 
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
 
-    <?
+    <?php
 
     include_once('global_files.php');
 
@@ -780,7 +780,7 @@ for ($r = 0; $r < scount($getDisplayGroupData); $r++) {
 
 <div id="wrap">
 
-    <?
+    <?php
 
     include_once('header.php');
 
@@ -816,7 +816,7 @@ for ($r = 0; $r < scount($getDisplayGroupData); $r++) {
 
                 <div class="form-group">
 
-                    <? if ($success == 2) { ?>
+                    <?php if ($success == 2) { ?>
 
                         <div class="alert alert-danger alert-dismissable">
 
@@ -828,9 +828,9 @@ for ($r = 0; $r < scount($getDisplayGroupData); $r++) {
 
                         <br/>
 
-                    <? } ?>
+                    <?php } ?>
 
-                    <? if ($success == 3) { ?>
+                    <?php if ($success == 3) { ?>
 
                         <div class="alert alert-danger alert-dismissable">
 
@@ -842,7 +842,7 @@ for ($r = 0; $r < scount($getDisplayGroupData); $r++) {
 
                         <br/>
 
-                    <? } ?>
+                    <?php } ?>
 
                     <form name="_admin_form" id="_admin_form" method="post" action="" enctype="multipart/form-data">
 
@@ -1084,7 +1084,7 @@ for ($r = 0; $r < scount($getDisplayGroupData); $r++) {
 
 <!--END MAIN WRAPPER -->
 
-<?
+<?php
 
 include_once('footer.php');
 

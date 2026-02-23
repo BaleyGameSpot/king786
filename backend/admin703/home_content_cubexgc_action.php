@@ -414,7 +414,7 @@ $banner_img_accept_ext = '.' . implode(",.", explode(",", $tconfig['tsite_upload
     <title>Admin | Manage Web Home Page</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -504,8 +504,8 @@ $banner_img_accept_ext = '.' . implode(",.", explode(",", $tconfig['tsite_upload
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -541,17 +541,17 @@ $banner_img_accept_ext = '.' . implode(",.", explode(",", $tconfig['tsite_upload
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div><br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div><br/>
-                    <? } ?>
+                    <?php } ?>
                     <form method="post" name="_home_content_form" id="_home_content_form" action="" enctype='multipart/form-data'>
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                         <input type="hidden" name="vCode" value="<?= $vCode; ?>">
@@ -740,9 +740,9 @@ $banner_img_accept_ext = '.' . implode(",.", explode(",", $tconfig['tsite_upload
                                                 <label>Image#1</label>
                                             </div>
                                             <div class="col-lg-11">
-                                                <? if ($how_it_work_section['img_first'] != '') { ?>
+                                                <?php if ($how_it_work_section['img_first'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=80&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_first']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="how_it_work_img_first" value="<?= $how_it_work_section['img_first']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 95px * 95px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
                                             </div>
@@ -770,9 +770,9 @@ $banner_img_accept_ext = '.' . implode(",.", explode(",", $tconfig['tsite_upload
                                                 <label>Image#2</label>
                                             </div>
                                             <div class="col-lg-11">
-                                                <? if ($how_it_work_section['img_sec'] != '') { ?>
+                                                <?php if ($how_it_work_section['img_sec'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=80&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_sec']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="how_it_work_img_sec" value="<?= $how_it_work_section['img_sec']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 95px * 95px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
                                             </div>
@@ -800,9 +800,9 @@ $banner_img_accept_ext = '.' . implode(",.", explode(",", $tconfig['tsite_upload
                                                 <label>Image#3</label>
                                             </div>
                                             <div class="col-lg-11">
-                                                <? if ($how_it_work_section['img_third'] != '') { ?>
+                                                <?php if ($how_it_work_section['img_third'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=80&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_third']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="how_it_work_img_third" value="<?= $how_it_work_section['img_third']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 95px * 95px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
                                             </div>
@@ -830,9 +830,9 @@ $banner_img_accept_ext = '.' . implode(",.", explode(",", $tconfig['tsite_upload
                                                 <label>Image#4</label>
                                             </div>
                                             <div class="col-lg-11">
-                                                <? if ($how_it_work_section['img_third'] != '') { ?>
+                                                <?php if ($how_it_work_section['img_third'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=80&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_four']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="how_it_work_img_four" value="<?= $how_it_work_section['img_four']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 95px * 95px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
                                             </div>
@@ -888,9 +888,9 @@ $banner_img_accept_ext = '.' . implode(",.", explode(",", $tconfig['tsite_upload
                                         <label>Image 1</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($register_section['img_first'] != '') { ?>
+                                        <?php if ($register_section['img_first'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=200&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_first']; ?>" class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="register_section_img_first" id="register_section_img_first" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
                                         <span class="notes">[Note: For Better Resolution Upload only image size of 740px * 740px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
@@ -910,9 +910,9 @@ $banner_img_accept_ext = '.' . implode(",.", explode(",", $tconfig['tsite_upload
                                         <label>Image 2</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($register_section['img_sec'] != '') { ?>
+                                        <?php if ($register_section['img_sec'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=200&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_sec']; ?>" class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="register_section_img_sec" id="register_section_img_sec" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
                                         <span class="notes">[Note: For Better Resolution Upload only image size of 740px * 740px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
@@ -932,9 +932,9 @@ $banner_img_accept_ext = '.' . implode(",.", explode(",", $tconfig['tsite_upload
                                         <label>Image 3</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($register_section['img_third'] != '') { ?>
+                                        <?php if ($register_section['img_third'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=200&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_third']; ?>" class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="register_section_img_third" id="register_section_img_third" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
                                         <span class="notes">[Note: For Better Resolution Upload only image size of 1000px * 300px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
@@ -954,9 +954,9 @@ $banner_img_accept_ext = '.' . implode(",.", explode(",", $tconfig['tsite_upload
                                         <label>Image 4</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($register_section['img_fourth'] != '') { ?>
+                                        <?php if ($register_section['img_fourth'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=200&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_fourth']; ?>" class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="register_section_img_fourth" id="register_section_img_fourth" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
                                         <span class="notes">[Note: For Better Resolution Upload only image size of 480px * 270px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
@@ -976,9 +976,9 @@ $banner_img_accept_ext = '.' . implode(",.", explode(",", $tconfig['tsite_upload
                                         <label>Image 5</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($register_section['img_fifth'] != '') { ?>
+                                        <?php if ($register_section['img_fifth'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=200&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_fifth']; ?>" class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="register_section_img_fifth" id="register_section_img_fifth" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
                                         <span class="notes">[Note: For Better Resolution Upload only image size of 480px * 270px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>

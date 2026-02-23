@@ -48,9 +48,9 @@ exit;
 /*                            $file_ext = $UPLOAD_OBJ->GetFileExtension($db_user_li[0]['doc_file']);
                             if ($file_ext == 'is_image') {
                                 */?>
-                                <img src = "<?/*= $tconfig["tsite_upload_ride_share_documents"] . '/' . $id[1] . '/' . $db_user_li[0]['doc_file']; */?>" style="width:200px;" alt ="Licence not found"/>
+                                <img src = "<?php /*= $tconfig["tsite_upload_ride_share_documents"] . '/' . $id[1] . '/' . $db_user_li[0]['doc_file']; */?>" style="width:200px;" alt ="Licence not found"/>
                             <?php /*} else { */?>
-                                <a href="<?/*= $tconfig["tsite_upload_ride_share_documents"] . '/' . $id[1] . '/' . $db_user_li[0]['doc_file'] */?>" target="_blank"><?php /*echo $db_user_doc[0]['doc_name']; */?></a>
+                                <a href="<?php /*= $tconfig["tsite_upload_ride_share_documents"] . '/' . $id[1] . '/' . $db_user_li[0]['doc_file'] */?>" target="_blank"><?php /*echo $db_user_doc[0]['doc_name']; */?></a>
                             <?php /*} */?>
                         <?php /*} */?>
                     </div>

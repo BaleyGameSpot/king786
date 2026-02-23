@@ -220,7 +220,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages.$var_filter;
 													</tr>
 												</thead>
 												<tbody>
-													<? if(!empty($data_cancel_reason)) {
+													<?php if(!empty($data_cancel_reason)) {
 													for ($i = 0; $i < scount($data_cancel_reason); $i++) { ?>
 														<tr class="gradeA" >
 														 <td align="center"><input type="checkbox" id="checkbox" name="checkbox[]" <?php echo $default; ?> value="<?php echo $data_cancel_reason[$i]['iCancelReasonId']; ?>" />&nbsp;</td>
@@ -228,7 +228,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages.$var_filter;
 															<td><?= $data_cancel_reason[$i]['eAllowedCharge']; ?></td>
 															<td><?= $data_cancel_reason[$i]['iSortId']; ?></td>
 															<td align="center">
-																	<? if($data_cancel_reason[$i]['eStatus'] == 'Active') {
+																	<?php if($data_cancel_reason[$i]['eStatus'] == 'Active') {
 																			$dis_img = "img/active-icon.png";
 																		}else if($data_cancel_reason[$i]['eStatus'] == 'Inactive'){
 																			 $dis_img = "img/inactive-icon.png";

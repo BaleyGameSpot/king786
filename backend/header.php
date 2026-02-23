@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 	$sess_user 		= isset($_SESSION['sess_user'])?$_SESSION['sess_user']:'';
 	$sess_iUserId 	= isset($_SESSION['sess_iUserId'])?$_SESSION['sess_iUserId']:'';
@@ -72,7 +72,7 @@ if($host_system == 'cubetaxiplus') {
 				</a>
 
 				<ul class="dropdown-menu dropdown-alerts">
-					<? if($noc==''){?>
+					<?php if($noc==''){?>
 						<li>
 						  <a href="#">
 								
@@ -83,11 +83,11 @@ if($host_system == 'cubetaxiplus') {
 								<!--<span class="pull-right text-muted small"> 4 minutes ago</span> -->
 						  </a>
 						</li>
-						<?}?>
+						<?php }?>
 						
 						<li class="divider"></li>
 						
-						<? if($certi==''){?>
+						<?php if($certi==''){?>
 						<li>
 						  <a href="#">
 								
@@ -98,9 +98,9 @@ if($host_system == 'cubetaxiplus') {
 								<!--<span class="pull-right text-muted small"> 4 minutes ago</span> -->
 						  </a>
 						</li>
-						<?}?>
+						<?php }?>
 					<li class="divider"></li>
-						<? if($licence==''){?>
+						<?php if($licence==''){?>
 						<li>
 						  <a href="#">
 								
@@ -111,7 +111,7 @@ if($host_system == 'cubetaxiplus') {
 								<!--<span class="pull-right text-muted small"> 4 minutes ago</span> -->
 						  </a>
 						</li>
-						<?}?>
+						<?php }?>
 						
 					
 				</ul>
@@ -130,7 +130,7 @@ if($host_system == 'cubetaxiplus') {
 				</a>
 
 				<ul class="dropdown-menu dropdown-alerts">
-						<? if($noc==''){?>
+						<?php if($noc==''){?>
 						<li>
 						  <a href="#">
 								<i class="icon-comment" >
@@ -138,9 +138,9 @@ if($host_system == 'cubetaxiplus') {
 								</i>
 						  </a>
 						</li>
-						<?}?>
+						<?php }?>
 					<li class="divider"></li>
-						<? if($certi==''){?>
+						<?php if($certi==''){?>
 						<li>
 						  <a href="#">
 								<i class="icon-comment" >
@@ -148,12 +148,12 @@ if($host_system == 'cubetaxiplus') {
 								</i>
 						  </a>
 						</li>
-						<?}?>
+						<?php }?>
 					
 				</ul>
 
 			</li>
-			<?}
+			<?php }
 			
 			}
 			?>

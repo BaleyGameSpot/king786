@@ -29,7 +29,7 @@ $data = $obj->MySQLSelect($sql);
 				<th width="45%">Cubejek Language Label 1 Name/Value</th>
 		</tr>
 
-<?
+<?php
 $j = 1;
 $TotalChanges = 0;
 for($i=0;$i<scount($data);$i++){
@@ -53,22 +53,22 @@ for($i=0;$i<scount($data);$i++){
         $textdifference = "No";
      }
 ?>
-		<tr <?if($textdifference == "Yes"){ ?> style="color:black;background:red;font-weight:bold;" <?}?>>
+		<tr <?php if($textdifference == "Yes"){ ?> style="color:black;background:red;font-weight:bold;" <?php }?>>
         <td><?=$j;?></td>
 		  	<td><?=$vLabel;?> >>  <br /> <?=$vValue?></td>
 				<td><?=$vLiveLabel;?> >>  <br /> <?=$vLiveValue?></td>
 		</tr>
-<?   
+<?php   
      $j++;  
   }
 } 
 ?>
 </table>
-<?
+<?php
 echo "<br />";
 echo "Total Changes of Labels >> ".$TotalChanges;
 ?>
-<?
+<?php
 // Checking For Live Language Label Other Table
 $sql = "SELECT  `vLabel` , `vValue`  FROM  `language_label_cubejek` WHERE  `vCode` = '" . $lCode . "' UNION SELECT `vLabel` , `vValue`  FROM  `language_label_other_cubejek` WHERE  `vCode` = '" . $lCode . "' ";
 $data = $obj->MySQLSelect($sql);
@@ -85,7 +85,7 @@ $data = $obj->MySQLSelect($sql);
 				<th width="45%">Live Label Name/Value</th>
 		</tr>
 
-<?
+<?php
 $j = 1;
 for($i=0;$i<scount($data);$i++){
   // echo $data[$i]['vLabel']." - ".$data[$i]['vValue'];
@@ -106,7 +106,7 @@ for($i=0;$i<scount($data);$i++){
 		  	<td><?=$vLabel;?> >>  <br />  <?=$vValue?></td>
 				<td><?=$vLiveLabel;?> >>  <br /> <?=$vLiveValue?></td>
 		</tr>
-<?   
+<?php   
      $j++;  
      }
   }

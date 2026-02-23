@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("common.php");
 $doc_type = isset($_REQUEST['doc_type'])?$_REQUEST['doc_type']:'';
 

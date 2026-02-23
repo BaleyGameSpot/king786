@@ -122,15 +122,15 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
     <title><?= $SITE_NAME ?> | Ride Acceptance Report</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -283,7 +283,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
                                                 <td><?= $inprocess; ?></td>
                                                 <td><?= round($aceptance_percentage, 2) . ' %'; ?></td>
                                             </tr>
-                                            <?
+                                            <?php
                                         }
                                     }
                                     ?>
@@ -350,7 +350,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <link rel="stylesheet" href="css/select2/select2.min.css"/>
 <script src="js/plugins/select2.min.js"></script>

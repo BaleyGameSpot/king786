@@ -221,7 +221,7 @@ $LocationData = $obj->MySQLSelect($Lsql);
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
     </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
@@ -285,7 +285,7 @@ $LocationData = $obj->MySQLSelect($Lsql);
                                             echo "selected";
                                         }
                                         ?> ><?= $l['vLocationName'] ?></option>
-                                            <? } ?>
+                                            <?php } ?>
                                 </select>
                             </td>
                             <?php if ($Vehicle_type_name == 'Ride-Delivery') { ?>
@@ -309,7 +309,7 @@ $LocationData = $obj->MySQLSelect($Lsql);
                                 <td width="15%">
                                     <select  class="form-control" name = 'iVehicleCategoryId'>
                                         <option value="">Select Subcategory</option>
-                                        <? for ($i = 0; $i < scount($db_data_cat); $i++) { ?>
+                                        <?php for ($i = 0; $i < scount($db_data_cat); $i++) { ?>
                                             <optgroup label="<?php echo $db_data_cat[$i]['vCategory_' . $default_lang]; ?>">
                                                 <?php
                                                 $sql = "SELECT * FROM  `vehicle_category` WHERE  `iParentId` = '" . $db_data_cat[$i]['iVehicleCategoryId'] . "' ";
@@ -323,9 +323,9 @@ $LocationData = $obj->MySQLSelect($Lsql);
                                                     ?>
                                                             >
                                                         <?php echo "&nbsp;&nbsp;|-- " . $db_data2[$j]['vCategory_' . $default_lang]; ?></option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </optgroup>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                 </td>
                             <?php } ?>
@@ -382,13 +382,13 @@ $LocationData = $obj->MySQLSelect($Lsql);
                                                         }
                                                         ?> >Deactivate</option>
                                                             <?php } ?>
-                                                            <? if ($eStatus != 'Deleted' && $userObj->hasPermission('delete-fly-vehicle-type')) { ?>
+                                                            <?php if ($eStatus != 'Deleted' && $userObj->hasPermission('delete-fly-vehicle-type')) { ?>
                                                         <option value="Deleted" <?php
                                                         if ($option == 'Delete') {
                                                             echo "selected";
                                                         }
                                                         ?> >Delete</option>
-                                                            <? } ?>
+                                                            <?php } ?>
                                                 </select>
                                             <?php } ?>
                                         </span>
@@ -478,7 +478,7 @@ $LocationData = $obj->MySQLSelect($Lsql);
                                                                 <td><?= $data_drv[$i]['iDisplayOrder'] ?></td>
                                                             <?php } ?>
                                                             <td align="center">
-                                                                <?
+                                                                <?php
                                                                 if ($data_drv[$i]['eStatus'] == 'Active') {
                                                                     $dis_img = "img/active-icon.png";
                                                                 } else if ($data_drv[$i]['eStatus'] == 'Inactive') {
@@ -510,13 +510,13 @@ $LocationData = $obj->MySQLSelect($Lsql);
                                                                                             <img src="img/delete-icon.png" alt="Delete" >
                                                                                         </a></li>
                                                                                 <?php } ?>
-                                                                            <? } ?>
+                                                                            <?php } ?>
                                                                         </ul>
                                                                     </div>
                                                                 </div>                      
                                                             </td>
                                                         </tr>    
-                                                        <?
+                                                        <?php
                                                     }
                                                 } else {
                                                     ?>

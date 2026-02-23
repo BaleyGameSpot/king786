@@ -129,7 +129,7 @@ if ($action == 'Edit') {
     <title>Admin | <?= $action; ?> <?php echo $langage_lbl_admin['LBL_PARKING_VEHICLE_SIZE_TXT']; ?> Info</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <?
+    <?php
     include_once('global_files.php');
     ?>
     <!-- On OFF switch -->
@@ -145,7 +145,7 @@ if ($action == 'Edit') {
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <?
+    <?php
     include_once('header.php');
     include_once('left_menu.php');
     ?>
@@ -166,26 +166,26 @@ if ($action == 'Edit') {
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable msgs_hide">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?= $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div>
                         <br/>
-                    <? } else if ($success == 3) { ?>
+                    <?php } else if ($success == 3) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?php echo $_REQUEST['varmsg']; ?>
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if ($_REQUEST['var_msg'] != Null) { ?>
+                    <?php } ?>
+                    <?php if ($_REQUEST['var_msg'] != Null) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             Record Not Updated .
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <div id="price1"></div>
                     <form id="_vehicleType_form" name="_vehicleType_form" method="post" action=""
                           enctype="multipart/form-data">
@@ -321,7 +321,7 @@ if ($action == 'Edit') {
                                 <div class="col-md-6 col-sm-6">
                                     <input type="hidden" name="temp_order" id="temp_order"
                                            value="<?= ($action == 'Edit') ? $iDisplayOrder_db : '1'; ?>">
-                                    <?
+                                    <?php
                                     $temp = 1;
                                     $select_order = $obj->MySQLSelect("SELECT count(iVehicleSizeId) as maxnumber FROM vehicle_size_info");
                                     $maxnum = isset($select_order[0]['maxnumber']) ? $select_order[0]['maxnumber'] : 0;
@@ -332,24 +332,24 @@ if ($action == 'Edit') {
                                     }
                                     //$display_numbers = ($action == "Add") ? $iDisplayOrder_max : $iDisplayOrder; ?>
                                     <select name="iDisplayOrder" class="form-control" id="change_order">
-                                        <? foreach ($dataArray as $arr): ?>
+                                        <?php foreach ($dataArray as $arr): ?>
                                             <option <?= $arr == $iDisplayOrder_db ? ' selected="selected"' : '' ?>
                                                     value="<?= $arr; ?>">
                                                 -- <?= $arr ?> --
                                             </option>
-                                        <? endforeach; ?>
-                                        <? if ($action == "Add") { ?>
+                                        <?php endforeach; ?>
+                                        <?php if ($action == "Add") { ?>
                                             <option value="<?= $temp; ?>">-- <?= $temp ?> --</option>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                     <!--  <select name="iDisplayOrder" class="form-control" >
-                                                    <? for ($i = 1; $i <= $display_numbers; $i++) { ?>
-                                                    <option value="<?= $i ?>" <?
+                                                    <?php for ($i = 1; $i <= $display_numbers; $i++) { ?>
+                                                    <option value="<?= $i ?>" <?php
                                         if ($i == $iDisplayOrder_db) {
                                             echo "selected";
                                         }
                                         ?>> -- <?= $i ?> --</option>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                 </select> -->
                                 </div>
                             </div>
@@ -405,7 +405,7 @@ if ($action == 'Edit') {
 
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script type="text/javascript" src="js/validation/jquery.validate.min.js"></script>
 <script type="text/javascript" src="js/validation/additional-methods.min.js"></script>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>

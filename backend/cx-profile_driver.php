@@ -434,11 +434,11 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                             <p><?= $langage_lbl['LBL_STEP3']; ?></p>
                             <p><?= $langage_lbl['LBL_HOWEVER_IN_REAL_SYSTEM']; ?></p>
                         </div>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <div class="demo-warning" style="width: 100%; margin-bottom:30px;">
                             <p>
-                                <?= $langage_lbl['LBL_WE_SEE_YOU_HAVE_REGISTERED_AS_A_COMPANY']; ?><? if ($UploadDocuments == 'No') { ?>
-                                    <?= $langage_lbl['LBL_KINDLY_PROVIDE_BELOW']; ?><? } ?></p>
+                                <?= $langage_lbl['LBL_WE_SEE_YOU_HAVE_REGISTERED_AS_A_COMPANY']; ?><?php if ($UploadDocuments == 'No') { ?>
+                                    <?= $langage_lbl['LBL_KINDLY_PROVIDE_BELOW']; ?><?php } ?></p>
                             <p><?= $langage_lbl['LBL_ALSO_ADD_DRIVERS']; ?></p>
                             <p><?= $langage_lbl['LBL_EITHER_YOU_AS_A_COMPANY_DRIVER']; ?></p>
                         </div>
@@ -446,13 +446,13 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                     }
                 }
                 else {
-                    ?><? if (SITE_TYPE == 'Demo') { ?>
+                    ?><?php if (SITE_TYPE == 'Demo') { ?>
                         <div class="demo-warning" style="width: 100%; margin-bottom:30px;">
                             <p><?= $langage_lbl['LBL_PROFILE_WE_SEE_YOU_HAVE_REGISTERED_AS_A_DRIVER']; ?></p>
                             <p><?= $langage_lbl['LBL_SINCE_IT_IS_DEMO_VERSION_ADDVEHICLE']; ?></p>
                             <p><?= $langage_lbl['LBL_HOWEVER_IN_REAL_SYSTEM_DRIVER']; ?></p>
                         </div>
-                        <?
+                        <?php
                     }
                     else {
                         if ($UploadDocuments == 'No') {
@@ -529,7 +529,7 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                     if (($db_user[0]['vImage'] == 'NONE' || $db_user[0]['vImage'] == '') || !file_exists($profileImgpath . '/' . $sessionUserId . '/2_' . $db_user[0]['vImage'])) {
                         ?>
                         <img src="assets/img/profile-user-img.png" alt="">
-                    <? } else { ?>
+                    <?php } else { ?>
                         <img src="<?= $img_path . '/' . $sessionUserId . '/2_' . $db_user[0]['vImage'] ?>" style="height:150px;"/>
                     <?php } ?>
                     <!-- <a data-toggle="modal" data-target="#uiModal_4"><i class="fa fa-pencil" aria-hidden="true"></i></a> -->
@@ -565,7 +565,7 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                         <?php } ?>
                     </div>
                     <div class="profile-detail">
-                        <? if ($db_user[0]['vEmail'] != "") { ?>
+                        <?php if ($db_user[0]['vEmail'] != "") { ?>
                             <div class="profile-column">
                                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                 <div class="data_info">
@@ -573,12 +573,12 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                                     <span><?= $db_user[0]['vEmail']; ?></span>
                                 </div>
                             </div>
-                        <? } ?>
+                        <?php } ?>
                         <div class="profile-column">
                             <i class="icon-call" aria-hidden="true"></i>
                             <div class="data_info">
                                 <strong><?= $langage_lbl['LBL_PHONE']; ?></strong>
-                                <span dir="ltr"><? if (!empty($db_user[0]['vPhone'])) { ?>(+<?= $db_user[0]['vCode'] ?>) <?= $db_user[0]['vPhone'] ?><?php } ?></span>
+                                <span dir="ltr"><?php if (!empty($db_user[0]['vPhone'])) { ?>(+<?= $db_user[0]['vCode'] ?>) <?= $db_user[0]['vPhone'] ?><?php } ?></span>
                             </div>
                         </div>
                         <div class="profile-column">
@@ -639,17 +639,17 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                     <?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>
                         <div class="form-group half newrow">
                             <label><?= $langage_lbl['LBL_PROFILE_YOUR_EMAIL_ID']; ?> <?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>
-                                    <span class="red">*</span><? } ?></label>
-                            <input type="email" id="in_email" class="edit-profile-detail-form-input" value="<?= $db_user[0]['vEmail'] ?>" name="email" <?= isset($db_user[0]['vEmail']) ? '' : ''; ?> <?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required <? } ?> title="Please enter valid email address">
+                                    <span class="red">*</span><?php } ?></label>
+                            <input type="email" id="in_email" class="edit-profile-detail-form-input" value="<?= $db_user[0]['vEmail'] ?>" name="email" <?= isset($db_user[0]['vEmail']) ? '' : ''; ?> <?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required <?php } ?> title="Please enter valid email address">
                             <div class="required-label" id="emailCheck"></div>
                         </div>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <div class="form-group half newrow phone-column">
                             <label><?= $langage_lbl['LBL_Phone_Number']; ?><span class="red">*</span></label>
                             <input type="text" class="input-phNumber1 phonecode" id="code" name="vCode" value="<?= $db_user[0]['vCode'] ?>" readonly>
                             <input name="phone" id="phone" type="text" value="<?= $db_user[0]['vPhone'] ?>" class="edit-profile-detail-form-input input-phNumber2" title="Please enter proper phone number." onKeyUp="return isNumberKey(event);" onkeypress="return isNumberKey(event);" onblur="return isNumberKey(event);" required/>
                         </div>
-                    <? } ?>
+                    <?php } ?>
                     <?php
                     if ($sessionUserType == 'driver') {
                         $readOnly = "";
@@ -665,7 +665,7 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                             <label><?= $langage_lbl['LBL_YOUR_LAST_NAME']; ?><span class="red">*</span></label>
                             <input type="text" class="edit-profile-detail-form-input" value="<?= cleanall(htmlspecialchars($db_user[0]['vLastName'])); ?>" name="lname" required <?= $readOnly ?>>
                         </div>
-                        <?
+                        <?php
                     }
                     else if ($sessionUserType == 'company') {
                         ?>
@@ -673,7 +673,7 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                             <label><?= $langage_lbl['LBL_COMPANY_SIGNUP']; ?><span class="red">*</span></label>
                             <input type="text" class="edit-profile-detail-form-input" value="<?= cleanall(htmlspecialchars($db_user[0]['vCompany'])); ?>" name="vCompany" required>
                         </div>
-                    <? } ?>
+                    <?php } ?>
                     <div class="form-group half newrow floating">
                         <label><?= $langage_lbl['LBL_SELECT_CONTRY']; ?><span class="red">*</span></label>
                         <?php
@@ -689,9 +689,9 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                             if (scount($db_country) > 1) { ?>
                                     <option value=""><?= $langage_lbl['LBL_SELECT_CONTRY']; ?></option>
                                 <?php } ?> -->
-                            <? for ($i = 0; $i < scount($db_country); $i++) { ?>
-                                <option value="<?= $db_country[$i]['vCountryCode'] ?>" <? if ($db_user[0]['vCountry'] == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
-                            <? } ?>
+                            <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                <option value="<?= $db_country[$i]['vCountryCode'] ?>" <?php if ($db_user[0]['vCountry'] == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
+                            <?php } ?>
                         </select>
                         <div class="required-label" id="vCountryCheck"></div>
                     </div>
@@ -701,20 +701,20 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                             <input type="text" class="input-phNumber1 phonecode" id="code" name="vCode" value="<?= $db_user[0]['vCode'] ?>" readonly>
                             <input name="phone" id="phone" type="text" value="<?= $db_user[0]['vPhone'] ?>" class="edit-profile-detail-form-input input-phNumber2" title="Please enter proper phone number." onKeyUp="return isNumberKey(event);" onkeypress="return isNumberKey(event);" onblur="return isNumberKey(event);" required/>
                         </div>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <div class="form-group half newrow">
                             <label><?= $langage_lbl['LBL_PROFILE_YOUR_EMAIL_ID']; ?> </label>
                             <input type="email" id="in_email" class="edit-profile-detail-form-input" value="<?= $db_user[0]['vEmail'] ?>" name="email" <?= isset($db_user[0]['vEmail']) ? '' : ''; ?> <?php if ($DRIVER_EMAIL_VERIFICATION == 'Yes') { ?> required  title="<?= $langage_lbl['LBL_EMAIL_VERIFICATION_TITLE']; ?>"<?php } ?>>
                             <div class="required-label" id="emailCheck"></div>
                         </div>
-                    <? } ?>
+                    <?php } ?>
                     <?php if ($isStoreDriverOption > 0 && $vCompanyname != '' && $db_user[0]['iCompanyId'] > 1) { ?>
                         <div class="form-group half newrow">
                             <select class="custom-select-new store" name='store' id="store" onChange="changeCode(this.value);" disabled>
                                 <option value=""><?= $langage_lbl['LBL_STORE']; ?></option>
-                                <? for ($i = 0; $i < scount($db_country); $i++) { ?>
-                                    <option value="<?= $db_country[$i]['vCountryCode'] ?>" <? if ($db_user[0]['vCountry'] == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $vCompanyname; ?></option>
-                                <? } ?>
+                                <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                    <option value="<?= $db_country[$i]['vCountryCode'] ?>" <?php if ($db_user[0]['vCountry'] == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $vCompanyname; ?></option>
+                                <?php } ?>
                             </select>
                         </div>
                     <?php } ?>
@@ -730,15 +730,15 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                     <h1><?= $langage_lbl['LBL_PROFILE_ADDRESS']; ?></h1>
                     <div class="form-group half newrow">
                         <label><?= $langage_lbl['LBL_PROFILE_ADDRESS']; ?></label>
-                        <input type="text" class="profile-address-input" value="<?= cleanall(htmlspecialchars($db_user[0]['vCaddress'])); ?>" name="address1" <?php if ($sessionUserType == 'company') { ?>required<? } ?>>
+                        <input type="text" class="profile-address-input" value="<?= cleanall(htmlspecialchars($db_user[0]['vCaddress'])); ?>" name="address1" <?php if ($sessionUserType == 'company') { ?>required<?php } ?>>
                     </div>
                     <!-- <div class="form-group half newrow">
 
                                  <select class="form-control" name = 'vCountry' id="vCountry" onChange="setState(this.value, '');" required disabled="true">
                                      <option value="">Select</option>
-                            <? for ($i = 0; $i < scount($db_country); $i++) { ?>
-                                                 <option  <? if ($db_user[0]['vCountry'] == $db_country[$i]['vCountryCode']) { ?>selected<? } ?> value = "<?= $db_country[$i]['vCountryCode'] ?>"><?= $db_country[$i]['vCountry'] ?></option>
-                            <? } ?>
+                            <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                                 <option  <?php if ($db_user[0]['vCountry'] == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?> value = "<?= $db_country[$i]['vCountryCode'] ?>"><?= $db_country[$i]['vCountry'] ?></option>
+                            <?php } ?>
                                  </select>
                                  <div class="required-label" id="vCountryCheck"></div>
                              </div>-->
@@ -756,9 +756,9 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                         </div>
                     <?php } ?>
                     <div class="form-group half newrow">
-                        <label>Zip <?php if ($sessionUserType == 'company') { ?><span class="red">*</span><? } ?>
+                        <label>Zip <?php if ($sessionUserType == 'company') { ?><span class="red">*</span><?php } ?>
                         </label>
-                        <input type="text" class="profile-address-input" value="<?= $db_user[0]['vZip'] ?>" name="vZipcode" <?php if ($sessionUserType == 'company') { ?> required <? } ?>>
+                        <input type="text" class="profile-address-input" value="<?= $db_user[0]['vZip'] ?>" name="vZipcode" <?php if ($sessionUserType == 'company') { ?> required <?php } ?>>
                     </div>
                 </div>
                 <div class="partation">
@@ -827,21 +827,21 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                                 <?php
                                 for ($i = 0; $i < scount($db_lang); $i++) {
                                     ?>
-                                    <option value="<?= $db_lang[$i]['vCode'] ?>" <? if ($db_user[0]['vLang'] == $db_lang[$i]['vCode']) { ?> selected <? } ?>><? echo $db_lang[$i]['vTitle']; ?></option>
+                                    <option value="<?= $db_lang[$i]['vCode'] ?>" <?php if ($db_user[0]['vLang'] == $db_lang[$i]['vCode']) { ?> selected <?php } ?>><?php echo $db_lang[$i]['vTitle']; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
                     <?php }
                     if ($sessionUserType == 'driver') { ?><?php if (scount($db_currency) <= 1) { ?>
                         <input name="vCurrencyDriver" type="hidden" class="create-account-input" value="<?php echo $db_currency[0]['vName']; ?>"/>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <div class="form-group half newrow floating">
                             <label><?= $langage_lbl['LBL_SELECT_CURRENCY']; ?></label>
                             <select class="custom-select-new vCurrencyDriver" name='vCurrencyDriver' required> <
                                 <!-- option value="">--select--</option> -->
-                                <? for ($i = 0; $i < scount($db_currency); $i++) { ?>
-                                    <option value="<?= $db_currency[$i]['vName'] ?>" <? if ($db_user[0]['vCurrencyDriver'] == $db_currency[$i]['vName']) { ?>selected<? } ?>><?= $db_currency[$i]['vName'] ?></option>
-                                <? } ?>
+                                <?php for ($i = 0; $i < scount($db_currency); $i++) { ?>
+                                    <option value="<?= $db_currency[$i]['vName'] ?>" <?php if ($db_user[0]['vCurrencyDriver'] == $db_currency[$i]['vName']) { ?>selected<?php } ?>><?= $db_currency[$i]['vName'] ?></option>
+                                <?php } ?>
                             </select>
                             <div class="required-label" id="vCurrencyDriverCheck"></div>
                         </div>
@@ -977,13 +977,13 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                 }
                 ?>
 
-                <? if ($sessionUserType == "driver" && $SITE_VERSION == "v5") { ?>
+                <?php if ($sessionUserType == "driver" && $SITE_VERSION == "v5") { ?>
                     <div class="<?php echo $class_name; ?>">
                         <h3><?= $langage_lbl['LBL_PREFERENCES_TEXT'] ?> </h3>
                         <p>
-                        <div class="driver-profile-info-aa col-md-5"> <? foreach ($data_driver_pref as $val) { ?>
+                        <div class="driver-profile-info-aa col-md-5"> <?php foreach ($data_driver_pref as $val) { ?>
                                 <img data-toggle="tooltip" class="borderClass-aa border_class-bb" title="<?= $val['pref_Title'] ?>" src="<?= $tconfig["tsite_upload_preference_image_panel"] . $val['pref_Image'] ?>">
-                            <? } ?>
+                            <?php } ?>
                         </div>
                         <span class="col-md-5">
                             <?php if ($_SESSION["IsTrackServiceDriver"] != 'Yes') { ?>
@@ -993,7 +993,7 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                             <?php } ?>
                         </span></p>
                     </div>
-                <? } ?>
+                <?php } ?>
             </div>
             <div style="clear:both;"></div>
         </div>
@@ -1033,7 +1033,7 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                                         if (($db_user[0]['vImage'] == 'NONE' || $db_user[0]['vImage'] == '') || !file_exists($profileImgpath . '/' . $sessionUserId . '/2_' . $db_user[0]['vImage'])) {
                                             ?>
                                             <img class="imagename" src="assets/img/profile-user-img.png" alt="">
-                                        <? } else { ?>
+                                        <?php } else { ?>
                                             <img class="imagename" src="<?= $img_path . '/' . $sessionUserId . '/2_' . $db_user[0]['vImage'] ?>" style="height:150px;"/>
                                         <?php } ?>
                                     </div>
@@ -1078,17 +1078,17 @@ if (isset($db_user[0]['iCompanyId']) && $db_user[0]['iCompanyId'] > 0) {
                     </div>
                     <div class="model-body">
                         <form role="form" name="verification" id="verification">
-                            <? if ($sessionUserType == 'driver') { ?>
+                            <?php if ($sessionUserType == 'driver') { ?>
                                 <p><?= $langage_lbl['LBL_PROFILE_WE_SEE_YOU_HAVE_REGISTERED_AS_A_DRIVER']; ?></p>
                                 <p><?= $langage_lbl['LBL_SINCE_IT_IS_DEMO_VERSION_ADDVEHICLE']; ?></p>
                                 <p><?= $langage_lbl['LBL_HOWEVER_IN_REAL_SYSTEM_DRIVER']; ?></p>
-                            <? } else { ?>
+                            <?php } else { ?>
                                 <p><?= $langage_lbl['LBL_WE_SEE_YOU_HAVE_REGISTERED_AS_A_COMPANY']; ?></p>
                                 <p><?= $langage_lbl['LBL_SINCE_IT_IS_DEMO_VERSION']; ?></p>
-                                <p><?= $langage_lbl['LBL_STEP1']; ?></p><!--p><? //= $langage_lbl['LBL_STEP2'];
+                                <p><?= $langage_lbl['LBL_STEP1']; ?></p><!--p><?php //= $langage_lbl['LBL_STEP2'];
                                 ?></p--><p><?= $langage_lbl['LBL_STEP3']; ?></p>
                                 <p><?= $langage_lbl['LBL_HOWEVER_IN_REAL_SYSTEM']; ?></p>
-                            <? } ?>
+                            <?php } ?>
                             <div class="form-group"></div>
                             <p class="help-block" id="verification_error"></p>
                         </form>
@@ -1135,7 +1135,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
 <script src="assets/js/jquery-ui.min.js"></script>
 <?php if ($lang != 'en') { ?>
     <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-    <? include_once('otherlang_validation.php'); ?><?php } ?>
+    <?php include_once('otherlang_validation.php'); ?><?php } ?>
 <script src="assets/js/modal_alert.js"></script>
 <script type="text/javascript" src="assets/js/validation/additional-methods.js"></script>
 <!-- End: Footer Script -->
@@ -1651,7 +1651,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
             email: {
                 <?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>
                 required: true,
-                <? } ?>
+                <?php } ?>
                 email: true,
                 remote: {
                     url: 'ajax_validate_email.php',

@@ -252,7 +252,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
             <div id="add-hide-show-div">
                 <div class="row">
                     <div class="col-lg-12">
-                        <?
+                        <?php
                         $company_name = ($cmp_name != "") ? " of " . $cmp_name : "";
                         ?>
                         <h2>Drivers</h2>
@@ -281,14 +281,14 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                 }
                                 ?> ><?= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?> Name
                                 </option>
-                                <? if (ONLYDELIVERALL != 'Yes') { ?>
+                                <?php if (ONLYDELIVERALL != 'Yes') { ?>
                                     <option value="c.vCompany" <?php
                                     if ($option == "c.vCompany" || ($iCompanyId != "" && $cmp_name != "")) {
                                         echo "selected";
                                     }
                                     ?> >Company Name
                                     </option>
-                                <? } ?>
+                                <?php } ?>
                                 <option value="rd.vEmail" <?php
                                 if ($option == 'rd.vEmail') {
                                     echo "selected";
@@ -309,7 +309,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                             </select>
                         </td>
                         <td width="15%" class="searchform">
-                            <input type="Text" id="keyword" name="keyword" value="<?
+                            <input type="Text" id="keyword" name="keyword" value="<?php
                             if (!empty($keyword)) {
                                 echo $keyword;
                             }
@@ -420,7 +420,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                     ?>
                                                     <i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a>
                                         </th>
-                                        <? if (ONLYDELIVERALL == 'No') { ?>
+                                        <?php if (ONLYDELIVERALL == 'No') { ?>
                                             <th width="18%">
                                                 <a href="javascript:void(0);" onClick="Redirect(2,<?php
                                                 if ($sortby == '2') {
@@ -439,7 +439,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                         ?>
                                                         <i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a>
                                             </th>
-                                        <? } ?>
+                                        <?php } ?>
                                         <th width="18%">
                                             <a href="javascript:void(0);" onClick="Redirect(3,<?php
                                             if ($sortby == '3') {
@@ -560,7 +560,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                 <td> <?php if ($userObj->hasPermission('view-track-service-company')) { ?><a href="javascript:void(0);" onClick="show_track_company_details('<?= $data_drv[$i]['iTrackServiceCompanyId']; ?>')" style="text-decoration: underline;"><?php } ?><?= clearCmpName($data_drv[$i]['vCompany']. $status_cmp); ?><?php if ($userObj->hasPermission('view-track-service-company')) { ?></a><?php } ?></td>
                                                  <td style="word-break: break-all;">
                                                     <?php if ($data_drv[$i]['vEmail'] != '') { ?>
-                                                        <?= clearEmail($data_drv[$i]['vEmail']); ?><? } else {
+                                                        <?= clearEmail($data_drv[$i]['vEmail']); ?><?php } else {
                                                         echo '--';
                                                     } ?></td>
                                                 <td>
@@ -626,7 +626,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                                 </td>
                                                 <td align="center">
-                                                    <?
+                                                    <?php
                                                     if ($data_drv[$i]['eStatus'] == 'active') {
                                                         $dis_img = "img/active-icon.png";
                                                     } else if ($data_drv[$i]['eStatus'] == 'inactive') {

@@ -391,17 +391,17 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                     </td>
                                                 <?php } ?>
                                                 <td align="center">
-                                                    <? if ($data_drv[$i]['vBannerImage'] != '') { ?>
+                                                    <?php if ($data_drv[$i]['vBannerImage'] != '') { ?>
                                                         <!--  <img src="<?= $tconfig['tsite_upload_advertise_banner'] . "/" . $data_drv[$i]['vBannerImage']; ?>" style="width:35px;height:35px;"> -->
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=70&h=70&src=' . $tconfig['tsite_upload_advertise_banner'] . "/" . $data_drv[$i]['vBannerImage']; ?>"
                                                              style="width:35px;height:35px;">
-                                                    <? } ?>
+                                                    <?php } ?>
                                                 </td>
-                                                <td align="center"><? echo $data_drv[$i]['vBannerTitle']; ?></td>
-                                                <td align="center"><? echo $data_drv[$i]['iDispOrder']; ?></td>
-                                                <td width="20%" align="center"><? echo $timePeriod; ?></td>
-                                                <td align="center"><? echo $get_Added_date_format['tDisplayDate']//echo DateTime($data_drv[$i]['dAddedDate']); ?></td>
-                                                <td align="center"><? echo $impressionCount; ?></td>
+                                                <td align="center"><?php echo $data_drv[$i]['vBannerTitle']; ?></td>
+                                                <td align="center"><?php echo $data_drv[$i]['iDispOrder']; ?></td>
+                                                <td width="20%" align="center"><?php echo $timePeriod; ?></td>
+                                                <td align="center"><?php echo $get_Added_date_format['tDisplayDate']//echo DateTime($data_drv[$i]['dAddedDate']); ?></td>
+                                                <td align="center"><?php echo $impressionCount; ?></td>
                                                 <?php if ($bannerUsedCount > 0) { ?>
                                                     <td align="center">
                                                         <button type="button" class="btn btn-primary btn-new"
@@ -414,7 +414,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                     <td align="center">-----</td>
                                                 <?php } ?>
                                                 <td align="center">
-                                                    <?
+                                                    <?php
                                                     if ($data_drv[$i]['eStatus'] == 'Active') {
                                                         $dis_img = "img/active-icon.png";
                                                     } else if ($data_drv[$i]['eStatus'] == 'Inactive') {
@@ -480,7 +480,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                     </td>
                                                 <?php } ?>
                                             </tr>
-                                            <?
+                                            <?php
                                         }
                                     } else {
                                         ?>

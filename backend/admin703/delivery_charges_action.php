@@ -272,7 +272,7 @@ $db_currency = $obj->MySQLSelect($sql);
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="css/bootstrap-select.css" rel="stylesheet" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <!-- On OFF switch -->
         <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -294,8 +294,8 @@ $db_currency = $obj->MySQLSelect($sql);
     <body class="padTop53">
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -309,20 +309,20 @@ $db_currency = $obj->MySQLSelect($sql);
                     </div>
                     <hr />
                     <?php include('valid_msg.php'); ?>
-                    <? if ($success == 2) { ?>
+                    <?php if ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable msgs_hide">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div><br/>
-                    <? } ?>
+                    <?php } ?>
                     <div class="body-div">
                         <div class="form-group location-wise-box">
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable msgs_hide">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
                             <form method="post" action="" enctype="multipart/form-data" id="deliveryChargeForm">
                                 <input type="hidden" name="id" value="<?= $id; ?>"/>
                                 <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -368,8 +368,8 @@ $db_currency = $obj->MySQLSelect($sql);
                                                 </div>
                                                 
                                                 <div class="col-lg-3">
-                                                    <input type="text" class="form-control distance-range-input" name="iDistanceRangeTo"  id="iDistanceRangeTo"  required="required" placeholder="<?= 'Distance To ('.$DEFAULT_DISTANCE_UNIT.')' ?>" <?php if($iDistanceRangeTo == '100000000'){ ?> value="&#8734" readonly<? } else { ?> value="<?=
-                                                    $iDistanceRangeTo; ?>" <? } ?> <?= ($action == "Edit") ? 'disabled="disabled"' : '' ?>>
+                                                    <input type="text" class="form-control distance-range-input" name="iDistanceRangeTo"  id="iDistanceRangeTo"  required="required" placeholder="<?= 'Distance To ('.$DEFAULT_DISTANCE_UNIT.')' ?>" <?php if($iDistanceRangeTo == '100000000'){ ?> value="&#8734" readonly<?php } else { ?> value="<?=
+                                                    $iDistanceRangeTo; ?>" <?php } ?> <?= ($action == "Edit") ? 'disabled="disabled"' : '' ?>>
                                                 </div>
                                             </div>
                                             <div class="distance-range" style="align-items: unset;">
@@ -492,7 +492,7 @@ For E.g.: If you define 5km as a value under "Free delivery radius" field and if
             <!--END PAGE CONTENT -->
         </div>
         <!--END MAIN WRAPPER -->
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
         <script src="js/bootstrap-select.js"></script>
         <script>

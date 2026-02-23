@@ -1,4 +1,4 @@
-<? $aboutactivetab = 'webtab-52';?>
+<?php $aboutactivetab = 'webtab-52';?>
 
 <div id="tabs">
     <ul class="nav nav-tabs" style="display: none;">
@@ -14,7 +14,7 @@
     </ul>
     <div class="tab-content" style="border:0;">
         <div id="webtab-52" class="tab-pane <?php if($aboutactivetab=='webtab-52') { ?>active<?php } ?>">
-            <? if ($action == 'Edit') {
+            <?php if ($action == 'Edit') {
                 $id = $iPageId = "52";
                 $sql = "SELECT * FROM " . $tbl_name . " WHERE iPageId = '" . $id . "'";
                 $db_data = $obj->MySQLSelect($sql);
@@ -56,7 +56,7 @@
                         <input type="text" class="form-control" name="vPageName"  id="vPageName" value="<?= htmlspecialchars($vPageName); ?>" placeholder="Page Name">
                     </div>
                 </div>
-                <? $style_v = "";
+                <?php $style_v = "";
                 if (in_array($iPageId, array('29', '30','53'))) {
                     $style_v = "style = 'display:none;'";
                 }
@@ -587,9 +587,9 @@
                                             <label>Image (Left side shown)</label>
                                         </div>
                                         <div class="col-md-6 col-sm-6">
-                                            <? if ($vImage != '') { ?>
+                                            <?php if ($vImage != '') { ?>
                                                 <a target="_blank" href="<?= $images . $vImage; ?>"><img src="<?= $images . $vImage; ?>" style="width:200px;height:100px;"></a>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" name="vImage" id="vImage" />
                                         </div>
                                     </div>
@@ -599,9 +599,9 @@
                                         <label>Background Image</label>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
-                                        <? if ($vImage1 != '') { ?>
+                                        <?php if ($vImage1 != '') { ?>
                                             <a target="_blank" href="<?= $images . $vImage1; ?>"><img src="<?= $images . $vImage1; ?>" style="width:200px;height:100px;"></a>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" name="vImage1" id="vImage1" />
                                     </div>
                                 </div>
@@ -612,9 +612,9 @@
                                             <label>First Image (Left side shown)</label>
                                         </div>
                                         <div class="col-md-6 col-sm-6">
-                                            <? if ($vImage != '') { ?>
+                                            <?php if ($vImage != '') { ?>
                                                 <a target="_blank" href="<?= $images . $vImage; ?>"><img src="<?= $images . $vImage; ?>" style="width:200px;height:100px;"></a>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" name="vImage" id="vImageaaa2" /><br/>
                                             [Note: Recommended dimension for image is 570 * 640.]
                                         </div>
@@ -624,9 +624,9 @@
                                             <label>Second Image (Right side shown)</label>
                                         </div>
                                         <div class="col-md-6 col-sm-6">
-                                            <? if ($vImage1 != '') { ?>
+                                            <?php if ($vImage1 != '') { ?>
                                                 <a target="_blank" href="<?= $images . $vImage1; ?>"><img src="<?= $images . $vImage1; ?>" style="width:200px;height:100px;"></a>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" name="vImage1" id="vImagea1" /><br/>
                                             [Note: Recommended dimension for image is 570 * 640.]
                                         </div>
@@ -636,9 +636,9 @@
                                             <label>Third Image (Left side shown)</label>
                                         </div>
                                         <div class="col-md-6 col-sm-6">
-                                            <? if ($vImage2 != '') { ?>
+                                            <?php if ($vImage2 != '') { ?>
                                                 <a target="_blank" href="<?= $images . $vImage2; ?>"><img src="<?= $images . $vImage2; ?>" style="width:200px;height:100px;"></a>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" name="vImage2" id="vImagea2" /><br/>
                                             [Note: Recommended dimension for image is 570 * 640.]
                                         </div>
@@ -655,9 +655,9 @@
                                         <label>Image</label>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
-                                        <? if ($vImage != '') { ?>
+                                        <?php if ($vImage != '') { ?>
                                             <a target="_blank" href="<?= $images . $vImage; ?>"><img src="<?= $images . $vImage; ?>" style="width:200px;height:100px;"></a>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" name="vImage" id="vImage" />
                                     </div>
                                 </div>
@@ -690,7 +690,7 @@
                 </div>
 
                 <div id="mobiletab-1" class="tab-pane <?php if($aboutactivetab=='mobiletab-1') { ?>active<?php }?>" style="display: none;">
-                    <? if ($action == 'Edit') {
+                    <?php if ($action == 'Edit') {
                         $id = $iPageId = "1";
                         $sql = "SELECT * FROM " . $tbl_name . " WHERE iPageId = '" . $id . "'";
                         $db_data = $obj->MySQLSelect($sql);
@@ -727,7 +727,7 @@
                         <input type="text" class="form-control" name="vPageName_<?= $id?>"  id="vPageName_<?= $id?>" value="<?= htmlspecialchars($vPageName); ?>" placeholder="Page Name">
                     </div>
                 </div>
-                <? $style_v = "";
+                <?php $style_v = "";
                 if (in_array($iPageId, array('29', '30','53'))) {
                     $style_v = "style = 'display:none;'";
                 }
@@ -763,7 +763,7 @@
                                 </div>
                             </div>
                             <!--- Editor -->
-                            <? 
+                            <?php 
                         }
                     }*/?>
                     <?php if (scount($db_master) > 1) { ?>

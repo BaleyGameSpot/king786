@@ -304,9 +304,9 @@ if(strtoupper($ENABLE_PROVIDER_CAMERA_REC) == "YES") {
 
 <div id="wrap">
 
-    <? include_once('header.php'); ?>
+    <?php include_once('header.php'); ?>
 
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('left_menu.php'); ?>
 
     <!--PAGE CONTENT -->
 
@@ -517,7 +517,7 @@ if(strtoupper($ENABLE_PROVIDER_CAMERA_REC) == "YES") {
 
                                                     <?= $langage_lbl_admin['LBL_TRIP_TXT_ADMIN']; ?> time<br/>
 
-                                                    <b><? echo $db_trip_data['TripTimeInMinutes']; ?></b>
+                                                    <b><?php echo $db_trip_data['TripTimeInMinutes']; ?></b>
 
                                                 </div>
 
@@ -666,7 +666,7 @@ if(strtoupper($ENABLE_PROVIDER_CAMERA_REC) == "YES") {
 
                                             </div>
 
-                                        <? } ?>
+                                        <?php } ?>
 
                                         <?php if ($db_trip_data['eType'] == 'UberX') { ?>
                                         <div class="rider-invoice-bottom">
@@ -710,7 +710,7 @@ if(strtoupper($ENABLE_PROVIDER_CAMERA_REC) == "YES") {
 
                                             </div>
 
-                                        <? } ?>
+                                        <?php } ?>
 
                                     </div>
 
@@ -1400,7 +1400,7 @@ if(strtoupper($ENABLE_PROVIDER_CAMERA_REC) == "YES") {
     </div>
 </div>
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <?php
 include_once 'service_details.php';
 ?>

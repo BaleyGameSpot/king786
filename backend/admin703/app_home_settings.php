@@ -131,7 +131,7 @@ $totalData = $obj->MySQLSelect($sql);
                     <div class="admin-notes">
                          <h4>Notes:</h4>
                          <ul>
-                          <? if(ENABLE_RENTAL_OPTION == 'Yes') { ?>
+                          <?php if(ENABLE_RENTAL_OPTION == 'Yes') { ?>
                              <li>This section list the Ride, delivery, rental and Moto type for the Apps </li>
                               <li>Please close the application and open it again to see the settings reflected after saving the new setting values above.</li>
                               <li>Set the Icon and Banner images for the user app from this screen</li>
@@ -140,14 +140,14 @@ $totalData = $obj->MySQLSelect($sql);
                               <li>Once you have added Car Rental/ Moto Rental icon or baner, then you need to add the packages for the rent vehicle from Manage vehicle section. <a href="rental_vehicle_list.php" target="_blank">Click here</a> to go to Manage Rental Packages section</li>
                               <li>You can add the rental packages only after you have added the vehicle type of "RIDE" from the Manage vehicle section.</li>
                               <li>Disable  Taxi Ride, Car Rental, Moto Ride and Moto Rental service If you don't want to allow <?php echo strtolower($langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']); ?> to add vehicles for it.</li>
-                          <? } else {?>
+                          <?php } else {?>
                               <li>This section list the Ride, delivery and Moto type for the Apps </li>
                               <li>Please close the application and open it again to see the settings reflected after saving the new setting values above.</li>
                               <li>Set the Icon and Banner images for the user app from this screen</li>
                               <li> Also, you can disable any of the services by selecting "Show selection field - Disable/Hide" </li>
                               <li>Once you have added Taxi ride/ Moto ride/ Box/ Moto Send icon or banner, then you need to add the appropriate vehicle type from Manage vehicle section. <a href="vehicle_type.php">Click here</a> to go to Manage Vehicle section.</li>
                               <li>Disable  Taxi Ride, Car Rental, Moto Ride If you don't want to allow <?php echo strtolower($langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']); ?> to add vehicles for it.</li>
-                            <? } ?>
+                            <?php } ?>
                           </ul> 
                     </div>
                 </div>

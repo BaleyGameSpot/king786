@@ -583,7 +583,7 @@
         <meta charset="UTF-8" />
         <title><?= $SITE_NAME ?> | <?php echo $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?>  <?= $action; ?></title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <?
+        <?php
             include_once('global_files.php');
             ?>
         <!-- On OFF switch -->
@@ -595,7 +595,7 @@
     <body class="padTop53 " >
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <?
+            <?php
                 include_once('header.php');
                 include_once('left_menu.php');
                 ?>
@@ -613,20 +613,20 @@
                     <hr />
                     <div class="body-div">
                         <div class="form-group">
-                            <? if (isset($success) && $success == 2) { ?>
+                            <?php if (isset($success) && $success == 2) { ?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                 <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                             </div>
                             <br/>
-                            <? } ?>
-                            <? if (isset($success) &&$success == 3) { ?>
+                            <?php } ?>
+                            <?php if (isset($success) &&$success == 3) { ?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                 <?php print_r($error); ?>
                             </div>
                             <br/>
-                            <? } ?>
+                            <?php } ?>
                             <form id="_driver_form" name="_driver_form" method="post" action="" enctype="multipart/form-data">
                                 <input type="hidden" name="actionOf" id="actionOf" value="<?php echo $action; ?>"/>
                                 <input type="hidden" name="id" id="iDriverId" value="<?= $id; ?>"/>
@@ -635,18 +635,18 @@
                                 <input type="hidden" name="backlink" id="backlink" value="<?= $LOCATION_FILE_ARRAY['DRIVER.PHP'] ?>"/>
                                 <?php if ($id) { ?>
                                 <div class= "row col-md-12" id="hide-profile-div">
-                                    <? $class = ($SITE_VERSION == "v5") ? "col-lg-3" : "col-lg-4"; ?>
+                                    <?php $class = ($SITE_VERSION == "v5") ? "col-lg-3" : "col-lg-4"; ?>
                                     <div class="<?= $class ?>">
                                         <b>
                                             <?php if ($oldImage == 'NONE' || $oldImage == '') { ?>
                                             <img src="../assets/img/profile-user-img.png" alt="" >
-                                            <?
+                                            <?php
                                                 } else {
                                                     if (file_exists('../webimages/upload/Driver/' . $id . '/3_' . $oldImage)) {
                                                         ?>
                                             <!--  <img src = "<?php echo $tconfig["tsite_upload_images_driver"] . '/' . $id . '/3_' . $oldImage ?>" class="img-ipm" /> -->
                                             <img src = "<?= $tconfig["tsite_url"].'resizeImg.php?h=170&src='.$tconfig["tsite_upload_images_driver"] . '/' . $id . '/3_' . $oldImage ?>" class="img-ipm" />
-                                            <? } else { ?>
+                                            <?php } else { ?>
                                             <img src="../assets/img/profile-user-img.png" alt="" >
                                             <?php
                                                 }
@@ -654,16 +654,16 @@
                                                 ?>
                                         </b>
                                     </div>
-                                    <? if ($SITE_VERSION == "v5") { ?>
+                                    <?php if ($SITE_VERSION == "v5") { ?>
                                     <div class="col-lg-4">
                                         <fieldset class="col-md-12 field">
                                             <legend class="lable">
                                                 <h4 class="headind1"> Preferences: </h4>
                                             </legend>
                                             <p>
-                                            <div class=""> <? foreach ($data_driver_pref as $val) { ?>
+                                            <div class=""> <?php foreach ($data_driver_pref as $val) { ?>
                                                 <img data-toggle="tooltip" class="borderClass-aa1 border_class-bb1" title="<?= $val['pref_Title'] ?>" src="<?= $tconfig["tsite_upload_preference_image_panel"] . $val['pref_Image'] ?>">
-                                                <? } ?>
+                                                <?php } ?>
                                             </div>
                                             <span class="col-md-12"><a href="" data-toggle="modal" data-target="#myModal" id="show-edit-language-div" class="hide-language1">
                                             <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -671,7 +671,7 @@
                                             </p>
                                         </fieldset>
                                     </div>
-                                    <? } ?>
+                                    <?php } ?>
                                 </div>
                                 <?php } ?>
                                 <div class="row">
@@ -692,7 +692,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <label>Email <? if($ENABLE_EMAIL_OPTIONAL != "Yes") {?><span class="red"> *</span> <? } ?></label>
+                                        <label>Email <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") {?><span class="red"> *</span> <?php } ?></label>
                                     </div>
                                     <div class="col-lg-6">
                                         <input type="text" class="form-control" name="vEmail"  id="vEmail" value="<?= $vEmail; ?>" placeholder="Email" >
@@ -775,9 +775,9 @@
                                                 if(scount($db_country) > 1){ ?>
                                             <option value="">Select</option>
                                             <?php } ?>
-                                            <? for ($i = 0; $i < scount($db_country); $i++) { ?>
-                                            <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <? if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if ($vCountry == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
-                                            <? } ?>
+                                            <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                            <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?php if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if ($vCountry == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -834,7 +834,7 @@
                                         <label>Service Category<span class="red"> *</span></label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <select onchange="displayStoreList(this.value);"  class="form-control" name = 'iServiceId'  id= 'iServiceId' required="required" <? if($action!="Add") { ?>disabled <? } ?>
+                                        <select onchange="displayStoreList(this.value);"  class="form-control" name = 'iServiceId'  id= 'iServiceId' required="required" <?php if($action!="Add") { ?>disabled <?php } ?>
                                             >
                                             <?php //if($MODULES_OBJ->isRideFeatureAvailable() || $MODULES_OBJ->isDeliveryFeatureAvailable() || $MODULES_OBJ->isUberXFeatureAvailable()) { ?>
                                             <option value="0" <?= ($selectedServiceId == 0) ? 'selected' : '' ?>>General (All Stores)</option>
@@ -852,7 +852,7 @@
                                         <label>Service Category<span class="red"> *</span></label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <select onchange="displayStoreList(this.value);"  class="form-control" name = 'iServiceId'  id= 'iServiceId' required="required" <? if($action!="Add") { ?>disabled <? } ?>
+                                        <select onchange="displayStoreList(this.value);"  class="form-control" name = 'iServiceId'  id= 'iServiceId' required="required" <?php if($action!="Add") { ?>disabled <?php } ?>
                                             >
                                             <?php //if($MODULES_OBJ->isRideFeatureAvailable() || $MODULES_OBJ->isDeliveryFeatureAvailable() || $MODULES_OBJ->isUberXFeatureAvailable()) { ?>
                                             <option value="0" <?= ($selectedServiceId == 0) ? 'selected' : '' ?>>General</option>
@@ -872,7 +872,7 @@
                                         <label>Store Selection<span class="red"> *</span></label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <select class="form-control" name = 'storeId'  id= 'iCompanyIdhtml' required="required"<? if($action!="Add") { ?> disabled <? } ?>>
+                                        <select class="form-control" name = 'storeId'  id= 'iCompanyIdhtml' required="required"<?php if($action!="Add") { ?> disabled <?php } ?>>
                                         </select>
                                     </div>
                                     <?php if($action != "Add") { ?>
@@ -891,19 +891,19 @@
                                     <div class="col-lg-6">
                                         <select  class="form-control" name = 'iCompanyId'  id= 'iCompanyId' required="required" >
                                             <option value="">--select--</option>
-                                            <?
+                                            <?php
                                                 for ($i = 0; $i < scount($db_company); $i++) {
                                                     $status_cmp = ($db_company[$i]['eStatus'] == "Inactive") ? " (Inactive)" : "";
                                                     ?>
                                             <option value = "<?= $db_company[$i]['iCompanyId'] ?>" <?= ($db_company[$i]['iCompanyId'] == $iCompanyId) ? 'selected' : ''; ?>>
                                                 <?= clearCmpName($db_company[$i]['vCompany'] . $status_cmp); ?>
                                             </option>
-                                            <? } ?>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>
-                                <? //} ?>
-                                <? //if($onlyDeliverallModule != 'Yes' && APP_TYPE != "Delivery" && APP_TYPE != "UberX") { ?>
+                                <?php //} ?>
+                                <?php //if($onlyDeliverallModule != 'Yes' && APP_TYPE != "Delivery" && APP_TYPE != "UberX") { ?>
                                 <?php if($MODULES_OBJ->isRideFeatureAvailable()) { ?>
                                 <div class="row" id="gendershown">
                                     <div class="col-lg-12">
@@ -926,7 +926,7 @@
                                         <label for="r5">Female</label>
                                     </div>
                                 </div>
-                                <? } ?>
+                                <?php } ?>
                                 <?php if (scount($db_lang) <= 1) { ?>
                                 <input name="vLang" type="hidden" class="create-account-input" value="<?php echo $db_lang[0]['vCode']; ?>"/>
                                 <?php } else { ?>
@@ -937,18 +937,18 @@
                                     <div class="col-lg-6">
                                         <select  class="form-control" name='vLang' id='vLang'>
                                             <option value="">--select--</option>
-                                            <? for ($i = 0; $i < scount($db_lang); $i++) { ?>
+                                            <?php for ($i = 0; $i < scount($db_lang); $i++) { ?>
                                             <option value = "<?= $db_lang[$i]['vCode'] ?>" <?= ($db_lang[$i]['vCode'] == $vLang) ? 'selected' : ''; ?>>
                                                 <?= $db_lang[$i]['vTitle'] ?>
                                             </option>
-                                            <? } ?>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>
                                 <?php } ?>
                                 <?php if(scount($db_currency) <= 1) { ?>
                                 <input name="vCurrencyDriver" type="hidden" class="create-account-input" value="<?php echo $db_currency[0]['vName']; ?>"/>
-                                <? } else { ?>
+                                <?php } else { ?>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <label>Currency <span class="red"> *</span></label>
@@ -956,13 +956,13 @@
                                     <div class="col-lg-6">
                                         <select class="form-control" name = 'vCurrencyDriver'  id= 'vCurrencyDriver' >
                                             <option value="">--select--</option>
-                                            <? for ($i = 0; $i < scount($db_currency); $i++) { ?>
-                                            <option value = "<?= $db_currency[$i]['vName'] ?>" <? if ($vCurrencyDriver == $db_currency[$i]['vName']) { ?>selected<? } else if ($db_currency[$i]['eDefault'] == "Yes" && $vCurrencyDriver == '') { ?>selected<? } ?>><?= $db_currency[$i]['vName'] ?></option>
-                                            <? } ?>
+                                            <?php for ($i = 0; $i < scount($db_currency); $i++) { ?>
+                                            <option value = "<?= $db_currency[$i]['vName'] ?>" <?php if ($vCurrencyDriver == $db_currency[$i]['vName']) { ?>selected<?php } else if ($db_currency[$i]['eDefault'] == "Yes" && $vCurrencyDriver == '') { ?>selected<?php } ?>><?= $db_currency[$i]['vName'] ?></option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>
-                                <? } ?>
+                                <?php } ?>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <label>Payment Email</label>
@@ -1062,7 +1062,7 @@
                     <div class="modal-body">
                         <span>
                             <form name="frm112" action="" method="POST">
-                                <? if(isset($data_preference) && !empty($data_preference)) {
+                                <?php if(isset($data_preference) && !empty($data_preference)) {
                                     foreach ($data_preference as $value) { ?>
                                     <div class="preferences-chat">
                                         <b class="car-preferences-right-part1"><?= $value['vName'] ?></b>
@@ -1074,7 +1074,7 @@
                                     <input type="radio" name="vChecked_<?= $value['iPreferenceId'] ?>" id="Yes_<?= $value['iPreferenceId'] ?>" value="Yes">
                                     <input type="radio" name="vChecked_<?= $value['iPreferenceId'] ?>" id="No_<?= $value['iPreferenceId'] ?>" value="No">
                                     </span> 
-                                <? }  }?>
+                                <?php }  }?>
                                 <p class="car-preferences-right-part-b">
                                     <input name="btnsubmit" type="submit" value="<?= $langage_lbl_admin['LBL_Save']; ?>" class="save-but1">
                                 </p>
@@ -1106,7 +1106,7 @@
                     vEmail: {
                         <?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>
                             required: true, 
-                        <? } ?>
+                        <?php } ?>
                         email : true
                     },
                     <?php if ($id == '') { ?> 

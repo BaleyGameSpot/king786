@@ -473,7 +473,7 @@ if (isset($_POST['btnsubmitnew'])) {
                                                                     <i class="fa fa-sort"
                                                                        aria-hidden="true"></i> <?php } ?></a>
                                                         </th>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <th width="5%" class="align-center">
                                                         <a href="javascript:void(0);" onClick="Redirect(3,<?php
                                                         if ($sortby == '3') {

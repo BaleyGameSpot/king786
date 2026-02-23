@@ -242,7 +242,7 @@ if (isset($_POST['btnsubmitnew'])) {
                                         echo "selected";
                                     }
                                     ?> >
-                                        <?PHP
+                                        <?php PHP
                                         if ($APP_TYPE == 'UberX') {
                                             echo 'Job';
                                         }
@@ -259,7 +259,7 @@ if (isset($_POST['btnsubmitnew'])) {
                                         echo "selected";
                                     }
                                     ?> >
-                                        <?PHP
+                                        <?php PHP
                                         if ($APP_TYPE == 'UberX') {
                                             echo 'Providers Name';
                                         }
@@ -444,7 +444,7 @@ if (isset($_POST['btnsubmitnew'])) {
                                                                     <i class="fa fa-sort"
                                                                        aria-hidden="true"></i> <?php } ?></a>
                                                         </th>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <th width="5%" class="align-center">
                                                         <a href="javascript:void(0);"
                                                            onClick="Redirect(3,<?php
@@ -536,7 +536,7 @@ if (isset($_POST['btnsubmitnew'])) {
                                                             $vAvgRating = $passangerrate = "0.0";
                                                             if ($reviewtype == 'Driver') {
                                                                 ?>
-                                                                <td><?
+                                                                <td><?php
                                                                     if (isset($data_drv_new[$i]['count']) && $data_drv_new[$i]['count'] > 0) {
                                                                         $vAvgRating = round($data_drv_new[$i]['Totalrating'] / $data_drv_new[$i]['count'], 1);
                                                                     }
@@ -560,7 +560,7 @@ if (isset($_POST['btnsubmitnew'])) {
                                                                     <?php } ?>
                                                                 </td>
                                                             <?php } else { ?>
-                                                                <td><?
+                                                                <td><?php
                                                                     if (isset($data_drv_new[$i]['count']) && $data_drv_new[$i]['count'] > 0) {
                                                                         $passangerrate = round($data_drv_new[$i]['Totalrating'] / $data_drv_new[$i]['count'], 1);
                                                                     }
@@ -586,7 +586,7 @@ if (isset($_POST['btnsubmitnew'])) {
                                                                         </a>
                                                                     <?php } ?>
                                                                 </td>
-                                                            <? } ?>
+                                                            <?php } ?>
                                                             <td align="center"> <?= $data_drv[$i]['vRating1'] ?> </td>
                                                             <td align="center"><?= $get_tDate_format['tDisplayDate'];//DateTime($data_drv[$i]['tDate']); ?></td>
                                                             <td> <?= clearGeneralText($data_drv[$i]['vMessage']); ?></td>

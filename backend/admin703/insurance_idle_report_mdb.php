@@ -258,7 +258,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                             }
                                             ?>
                                             <tr class="gradeA ">
-                                                <td align="center"><?
+                                                <td align="center"><?php
                                                     if (isset($drv_loc['iTripId']) && isset($tripDataArr[$drv_loc['iTripId']])) {
                                                         if ($tripDataArr[$drv_loc['iTripId']]['iActive'] == "Canceled") {
                                                             echo "<a href='trip.php?action=search&serachTripNo=" . $tripDataArr[$drv_loc['iTripId']]['vRideNo'] . "' target='_blank'>" . $tripDataArr[$drv_loc['iTripId']]['vRideNo'] . "</a><br> Canceled";

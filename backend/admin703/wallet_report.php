@@ -268,8 +268,8 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                     <div class="col-lg-3 select001">
                                         <select class="form-control" name='eUserType' id="eUserType" data-text="Select Rider" onChange="return show_hide_user_type(this.value);">
                                             <option value="">Search By User type</option>
-                                            <option value="Driver" <? if (isset($eUserType) && $eUserType == "Driver") { ?>selected <? } ?> > <?php echo $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?> </option>
-                                            <option value="Rider" <? if (isset($eUserType) && $eUserType == "Rider") { ?>selected <? } ?>> <?php echo $langage_lbl_admin['LBL_RIDER_NAME_TXT_ADMIN']; ?> </option>
+                                            <option value="Driver" <?php if (isset($eUserType) && $eUserType == "Driver") { ?>selected <?php } ?> > <?php echo $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?> </option>
+                                            <option value="Rider" <?php if (isset($eUserType) && $eUserType == "Rider") { ?>selected <?php } ?>> <?php echo $langage_lbl_admin['LBL_RIDER_NAME_TXT_ADMIN']; ?> </option>
                                         </select>
                                     </div>
                                     <div class="col-lg-3 select001 showhide-box001" id="sec_driver">
@@ -291,33 +291,33 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                             <div class="col-lg-3">
                                 <select class="form-control" name='searchPaymentType' data-text="Select Rider">
                                     <option value="">Search By Payment type</option>
-                                    <option value="Credit" <? if (isset($Payment_type) && $Payment_type == "Credit") { ?>selected <? } ?> >Credit</option>
-                                    <option value="Debit" <? if (isset($Payment_type) && $Payment_type == "Debit") { ?>selected <? } ?> >Debit</option>
+                                    <option value="Credit" <?php if (isset($Payment_type) && $Payment_type == "Credit") { ?>selected <?php } ?> >Credit</option>
+                                    <option value="Debit" <?php if (isset($Payment_type) && $Payment_type == "Debit") { ?>selected <?php } ?> >Debit</option>
                                 </select>
                             </div>
                             <div class="col-lg-3">
                                 <select class="form-control" name='searchBalanceType' data-text="Select Rider">
                                     <option value="">Search By Balance Type</option>
-                                    <option value="Deposit" <? if ($eFor == "Deposit") { ?>selected <? } ?>>Deposit</option>
+                                    <option value="Deposit" <?php if ($eFor == "Deposit") { ?>selected <?php } ?>>Deposit</option>
                                     <?php if(ONLYDELIVERALL == "Yes") { ?>
-                                    <option value="Booking" <? if ($eFor == "Booking") { ?>selected <? } ?>>Order</option>
+                                    <option value="Booking" <?php if ($eFor == "Booking") { ?>selected <?php } ?>>Order</option>
                                     <?php } else if (DELIVERALL == "Yes") { ?>
-                                        <option value="Booking" <? if ($eFor == "Booking") { ?>selected <? } ?>>Booking/Order</option>
+                                        <option value="Booking" <?php if ($eFor == "Booking") { ?>selected <?php } ?>>Booking/Order</option>
                                     <?php } else { ?>
-                                    <option value="Booking" <? if ($eFor == "Booking") { ?>selected <? } ?>>Booking</option>
+                                    <option value="Booking" <?php if ($eFor == "Booking") { ?>selected <?php } ?>>Booking</option>
                                     <?php } ?>
-                                    <option value="Refund" <? if ($eFor == "Refund") { ?>selected <? } ?>>Refund</option>
-                                    <option value="Withdrawl" <? if ($eFor == "Withdrawl") { ?>selected <? } ?>>Withdrawal</option>
-                                    <option value="Charges" <? if ($eFor == "Charges") { ?>selected <? } ?>>Charges</option>
+                                    <option value="Refund" <?php if ($eFor == "Refund") { ?>selected <?php } ?>>Refund</option>
+                                    <option value="Withdrawl" <?php if ($eFor == "Withdrawl") { ?>selected <?php } ?>>Withdrawal</option>
+                                    <option value="Charges" <?php if ($eFor == "Charges") { ?>selected <?php } ?>>Charges</option>
                                     <?php if($REFERRAL_SCHEME_ENABLE == "Yes") { ?>
-                                    <option value="Referrer"<? if ($eFor == "Referrer") { ?>selected <? } ?>>Referral</option>
+                                    <option value="Referrer"<?php if ($eFor == "Referrer") { ?>selected <?php } ?>>Referral</option>
                                     <?php } ?>
                                     <!-- added by SP For Gopay -->
                                     <?php if($MODULES_OBJ->isGojekGopayModuleAvailable()) { ?>
-                                    <option value="Transfer"<? if ($eFor == "Transfer") { ?>selected <? } ?>>Transfer</option> 
+                                    <option value="Transfer"<?php if ($eFor == "Transfer") { ?>selected <?php } ?>>Transfer</option> 
                                     <?php } ?>
                                     <?php if($MODULES_OBJ->isDriverSubscriptionModuleAvailable()) { ?>
-                                    <option value="Subscription"<? if ($eFor == "Subscription") { ?>selected <? } ?>>Subscription</option> <!-- added by HJ For Subscription -->
+                                    <option value="Subscription"<?php if ($eFor == "Subscription") { ?>selected <?php } ?>>Subscription</option> <!-- added by HJ For Subscription -->
                                     <?php } ?>
                                 </select>
                             </div>
@@ -585,7 +585,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
 </div>
 
 <!--- end popup -->
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 
 <form name="pageForm" id="pageForm" action="action/payment_report.php" method="post" >
     <input type="hidden" name="page" id="page" value="<?php echo $page; ?>">

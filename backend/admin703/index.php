@@ -119,7 +119,7 @@ if (strtoupper(DELIVERALL) == "YES") {
                     <span><?= $langage_lbl_admin['LBL_DRIVER'] ?> Login</span>
                 </a>
             </li>
-            <? if (strtoupper(ONLYDELIVERALL) != "YES" && $cubeDeliverallOnly == false) {
+            <?php if (strtoupper(ONLYDELIVERALL) != "YES" && $cubeDeliverallOnly == false) {
                 $labelCompany = $langage_lbl_admin['LBL_COMPANY_SIGNIN'];
                 if (DELIVERALL == "Yes" && $become_restaurant == "") {
                     $labelCompany = $langage_lbl_admin['LBL_COMPANY'];
@@ -131,7 +131,7 @@ if (strtoupper(DELIVERALL) == "YES") {
                         <span><?= $labelCompany; ?> Login</span>
                     </a>
                 </li>
-            <? }
+            <?php }
             if (!empty($become_restaurant)) {
                 $serviceArray = $serviceIdArray = array();
                 $serviceArray = json_decode(serviceCategories, true);
@@ -153,7 +153,7 @@ if (strtoupper(DELIVERALL) == "YES") {
                         <span><?= $become_restaurant; ?> Login</span>
                     </a>
                 </li>
-            <? } ?>
+            <?php } ?>
         </ul>
     </div>
 </div>
@@ -200,7 +200,7 @@ if (strtoupper(DELIVERALL) == "YES") {
                         </form>
                     </div>
                 </div>
-                <? if (SITE_TYPE == "Demo") { ?>
+                <?php if (SITE_TYPE == "Demo") { ?>
                     <!--<div class="tab-content">
 
                         <div id="super001" class="tab-pane active">
@@ -216,7 +216,7 @@ if (strtoupper(DELIVERALL) == "YES") {
                         </div>
 
                     </div>-->
-                <? } ?>
+                <?php } ?>
                 <div style="clear:both;"></div>
             </div>
         </div>
@@ -292,7 +292,7 @@ if (strtoupper(DELIVERALL) == "YES") {
                             </form>
                         </div>
                     </div>
-                    <? if (SITE_TYPE == "Demo") { ?>
+                    <?php if (SITE_TYPE == "Demo") { ?>
                         <!--<div class="tab-content">
 
                             <div id="super001admin" class="tab-pane active">
@@ -332,7 +332,7 @@ if (strtoupper(DELIVERALL) == "YES") {
                             </div>
 
                         </div>-->
-                    <? } ?>
+                    <?php } ?>
                     <div style="clear:both;"></div>
                 </div>
             </div>
@@ -349,7 +349,7 @@ if (strtoupper(DELIVERALL) == "YES") {
     <?php } ?>
 </div>
 <!--END PAGE CONTENT -->
-<? if (SITE_TYPE == "Demo") { ?>
+<?php if (SITE_TYPE == "Demo") { ?>
     <section class="warning">
         <div class="warning-inner">
             <div class="warning-caption">
@@ -394,7 +394,7 @@ if (strtoupper(DELIVERALL) == "YES") {
             </div>
         </div>
     </section>
-<? } ?>
+<?php } ?>
 <!-- PAGE LEVEL SCRIPTS -->
 <script src="<?= $tsiteUrl; ?>assets/plugins/jquery-2.0.3.min.js"></script>
 <script src="<?= $tsiteUrl; ?>assets/plugins/bootstrap/js/bootstrap.js"></script>

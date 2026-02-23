@@ -188,7 +188,7 @@ if(ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
 <!-- End: Footer Script -->
 </body>
 </html>
-<? } else { ?>
+<?php } else { ?>
 <!DOCTYPE html>
 <html lang="en" dir="<?=(isset($_SESSION['eDirectionCode']) && $_SESSION['eDirectionCode'] != "")?$_SESSION['eDirectionCode']:'ltr';?>">
 <head>
@@ -441,7 +441,7 @@ $tMessage_link2 = str_replace($key_arr, $val_arr, $tMessage_link2);
 </script>
 </body>
 </html>
-<? } ?>
+<?php } ?>
 
 <script>
     $(document).ready(function ()

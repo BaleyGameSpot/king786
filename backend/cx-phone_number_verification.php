@@ -190,9 +190,9 @@ $db_country = $obj->MySQLSelect($sql);
             <div class="profile-caption">
                 <div class="page-heading">
                     <h1><?=ucfirst($langage_lbl['LBL_ACC_INFO']);?></h1>
-                    <? if (SITE_TYPE == 'Demo'){ ?>
+                    <?php if (SITE_TYPE == 'Demo'){ ?>
                         <p><?=$langage_lbl['LBL_SINCE_IT_IS_DEMO'];?></p>
-                    <? } ?>
+                    <?php } ?>
                 </div>
                 <?php
                 if ($success == 1){ ?>
@@ -200,7 +200,7 @@ $db_country = $obj->MySQLSelect($sql);
                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                         <?php echo $_REQUEST['var_msg']; ?>
                     </div>
-                <? } ?>
+                <?php } ?>
                 <form name="resetpassword12" action="" class="form-signin general-form" method="post" id="resetpassword12">
                     <input type="hidden" value="<?=$action;?>" id="action" name="action12">
                     <div class="partation">
@@ -217,11 +217,11 @@ $db_country = $obj->MySQLSelect($sql);
                             <div class="form-group newrow">
                                 <strong><?=$langage_lbl['LBL_COUNTRY_TXT']?></strong>
                                 <select class="select-reset-password" name="vCountry" id="vCountry" onChange="changeCode(this.value);" required>
-                                    <? for ($i = 0;$i < scount($db_country);$i++){ ?>
+                                    <?php for ($i = 0;$i < scount($db_country);$i++){ ?>
                                         <option value="<?=$db_country[$i]['vCountryCode']?>" <?php if ($db_country[$i]['vCountryCode'] == $DEFAULT_COUNTRY_CODE_WEB){
                                             echo "selected";
                                         } ?>><?=$db_country[$i]['vCountry']?></option>
-                                    <? } ?>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>

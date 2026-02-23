@@ -337,28 +337,28 @@ if ($THEME_OBJ->isXThemeActive() == 'Yes') {
                         <div class="profile-caption">
                             <div class="page-heading">
                                 <h1><?= $langage_lbl['LBL_RESET_PASSWORD_TXT']; ?>
-                                    <? if (SITE_TYPE == 'Demo') { ?>
+                                    <?php if (SITE_TYPE == 'Demo') { ?>
                                         <p><?= $langage_lbl['LBL_SINCE_IT_IS_DEMO']; ?></p>
-                                    <? } ?></h1>
+                                    <?php } ?></h1>
                             </div>
                         <?php } else { ?>	
                             <div class="page-contant reset-password">
                                 <div class="page-contant-inner">
                                     <h2 class="header-page"><?= $langage_lbl['LBL_RESET_PASSWORD_TXT']; ?>
-                                        <? if (SITE_TYPE == 'Demo') { ?>
+                                        <?php if (SITE_TYPE == 'Demo') { ?>
                                             <p><?= $langage_lbl['LBL_SINCE_IT_IS_DEMO']; ?></p>
-                                        <? } ?>
+                                        <?php } ?>
                                     </h2>
 
                                     <div class="login-form"><?php } ?>
-                                    <? if ($success == 2) { ?>
+                                    <?php if ($success == 2) { ?>
                                     <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?=$langage_lbl['LBL_RESET_PWD_LINK_EXPIRED']; ?>
-                                    <? //$langage_lbl['LBL_SORRY_TIME_EXPIRED_TXT']; ?>
+                                    <?php //$langage_lbl['LBL_SORRY_TIME_EXPIRED_TXT']; ?>
                                     </div><br/>
-                                    <? } else { ?>
-                                    <? if ($type != '' && $id != '') {
+                                    <?php } else { ?>
+                                    <?php if ($type != '' && $id != '') {
                                         if (scount($deatail) >= 0) {
                                             // $current_date = Date('Y-m-d H:i:s');	
                                             // $total_hours= ((strtotime($current_date) - strtotime($time))/3600);
@@ -369,16 +369,16 @@ if ($THEME_OBJ->isXThemeActive() == 'Yes') {
                                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                                     <?php echo $_REQUEST['var_msg']; ?>
                                                 </div><br/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <?php if ($cubexFlag == 'Yes') { ?>
                                                 <form name="resetpassword" class="general-form" action="" class="form-signin general-form" method = "post" id="resetpassword">
                                                 <?php } else { ?>
                                                     <div class="login-form-left reset-password-page">
                                                         <form name="resetpassword" action="" class="form-signin" method = "post" id="resetpassword" >
                                                         <?php } ?>
-                                                        <input type="hidden" name="type" value="<? echo base64_encode(base64_encode($type)); ?>"/>
-                                                        <input type="hidden" name="id" value="<? echo encrypt($id); ?>"/>
-                                                        <input type="hidden" name="_token" value="<? echo $token; ?>"/>
+                                                        <input type="hidden" name="type" value="<?php echo base64_encode(base64_encode($type)); ?>"/>
+                                                        <input type="hidden" name="id" value="<?php echo encrypt($id); ?>"/>
+                                                        <input type="hidden" name="_token" value="<?php echo $token; ?>"/>
                                                         <?php if ($cubexFlag == 'Yes') { ?>
                                                             <div class="reset-pass-left">
                                                                 <div class="newrow reset-password-img">

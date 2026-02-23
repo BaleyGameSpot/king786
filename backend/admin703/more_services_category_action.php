@@ -169,14 +169,14 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
     <meta charset="UTF-8"/>
     <title>Admin | More Icon <?= $actionSave; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <?
+    <?php
     include_once('header.php');
     include_once('left_menu.php');
     ?>
@@ -363,7 +363,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
             </div>
         </div>
     </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 
 <script type="text/javascript">
     function editCategory(action) {

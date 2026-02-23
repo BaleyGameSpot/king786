@@ -87,7 +87,7 @@ $val_arr = array($SUPPORT_PHONE, $COMPANY_ADDRESS, $SUPPORT_MAIL, $ANDROID_APP_L
     <section class="banner-section taxi-app bannermenu">
         <div class="tab-row-holding">
             <ul class="tab-row">
-                <? if ($THEME_OBJ->isCJXDoctorv2ThemeActive() != 'Yes') { ?>
+                <?php if ($THEME_OBJ->isCJXDoctorv2ThemeActive() != 'Yes') { ?>
                     <li data-src="1" class="tab active">
                         <a href="#how-it-works"><?= $menutitleHow ?></a>
                     </li>
@@ -97,10 +97,10 @@ $val_arr = array($SUPPORT_PHONE, $COMPANY_ADDRESS, $SUPPORT_MAIL, $ANDROID_APP_L
                     <li data-src="4" class="tab">
                         <a href="#our-benefits"><?= $menutitleBenefit ?></a>
                     </li>
-                <? }
+                <?php }
                 if ($emptyData == 1 && $THEME_OBJ->isCJXDoctorv2ThemeActive() == 'Yes') {
                 }
-                else { ?><? } ?>
+                else { ?><?php } ?>
                 <li data-src="6" class="tab">
                     <a href="#download-apps"><?= $menutitleDown ?></a>
                 </li>
@@ -123,7 +123,7 @@ $val_arr = array($SUPPORT_PHONE, $COMPANY_ADDRESS, $SUPPORT_MAIL, $ANDROID_APP_L
             <div class="banner-image" id="1" style="background-image: url(<?php echo $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $banner_section['img_' . $vCode]; ?>); display: block;"></div>
         </div>
     </section><!-- *************banner section end************* -->
-<? if ($THEME_OBJ->isCJXDoctorv2ThemeActive() != 'Yes') { ?>
+<?php if ($THEME_OBJ->isCJXDoctorv2ThemeActive() != 'Yes') { ?>
     <!-- *************hot it works section start************* -->
     <section class="how-it-works-section taxi-variant food-variant page-section" id="how-it-works">
         <div class="how-it-works-section-inner">
@@ -188,12 +188,12 @@ $val_arr = array($SUPPORT_PHONE, $COMPANY_ADDRESS, $SUPPORT_MAIL, $ANDROID_APP_L
             </div>
         </div>
     </section><!-- ************* benefits section section end ************* -->
-<? }
+<?php }
 if ($THEME_OBJ->isCJXDoctorv2ThemeActive() == 'Yes' && $emptyData == 1) {
 }
 else { ?>
     <!-- *************restaurant section start************* --><!-- *************restaurant section End ************* -->
-<? } ?>
+<?php } ?>
     <!-- *************download section section start************* -->
 <?php
 $tMessage_link1 = $download_section['link1_' . $vCode];
@@ -272,4 +272,4 @@ $tMessage_link2 = str_replace($key_arr, $val_arr, $tMessage_link2);
             }
         });
     </script>
-<? //} ?>
+<?php //} ?>

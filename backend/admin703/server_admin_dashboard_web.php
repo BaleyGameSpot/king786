@@ -15,7 +15,7 @@ include_once('../common.php');
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
         <!-- GLOBAL STYLES -->
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/new_main.css" />
         <link rel="stylesheet" href="css/adminLTE/AdminLTE.min.css" />
@@ -41,7 +41,7 @@ include_once('../common.php');
 
         <!-- MAIN WRAPPER --> 
         <div id="wrap">
-            <? include_once('header.php'); ?>
+            <?php include_once('header.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content" class="content_right">
                  <header class="main_header">
@@ -348,7 +348,7 @@ include_once('../common.php');
                         </div>
                     </div>
                 </div>
-                <? include_once('footer.php'); ?>
+                <?php include_once('footer.php'); ?>
             </div>
             <!--END PAGE CONTENT -->
         </div>

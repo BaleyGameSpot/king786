@@ -1,4 +1,4 @@
-<? if(SITE_TYPE=="Demo"){?>
+<?php if(SITE_TYPE=="Demo"){?>
 <div class="row">
 <div class="col-lg-12">
 <div class="alert alert-warning paddiing-10" style="text-align:center">
@@ -6,7 +6,7 @@
 </div>
 </div>
 </div>
-<?}?>
+<?php }?>
 										<!-- FOOTER -->
 <div id="footer">
 	<p>&copy; BlaBla Car Script Demo&nbsp;<?=@date('Y');?> &nbsp;</p>

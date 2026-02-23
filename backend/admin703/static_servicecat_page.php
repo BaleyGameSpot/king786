@@ -128,7 +128,7 @@ if (isset($_POST['btnsubmit_homepage'])) {
         <title>Admin | Service category</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <?
+        <?php
         include_once('global_files.php');
         ?>
         <!-- On OFF switch -->
@@ -140,7 +140,7 @@ if (isset($_POST['btnsubmit_homepage'])) {
     <body class="padTop53 " >
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <?
+            <?php
             include_once('header.php');
             include_once('left_menu.php');
             ?>
@@ -210,10 +210,10 @@ if (isset($_POST['btnsubmit_homepage'])) {
                                         <label>Logo</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if (isset($vHomepageLogo) && $vHomepageLogo != '') { ?>
+                                        <?php if (isset($vHomepageLogo) && $vHomepageLogo != '') { ?>
                                             <img src="<?= $tconfig['tsite_upload_home_page_service_images'] . "/" . $vHomepageLogo; ?>" style="width:100px;height:100px;">
 
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control" name="vHomepageLogo" <?php echo $required_rule; ?> id="vHomepageLogo" placeholder="" style="padding-bottom: 39px;">
                                         <br/>
                                         Note: Upload only png image size of 360px*360px.
@@ -225,10 +225,10 @@ if (isset($_POST['btnsubmit_homepage'])) {
                                         <label>Banner</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if (isset($vHomepageBanner) && $vHomepageBanner != '') { ?>
+                                        <?php if (isset($vHomepageBanner) && $vHomepageBanner != '') { ?>
                                             <img src="<?= $tconfig['tsite_upload_home_page_service_images'] . "/" . $vHomepageBanner; ?>" style="width:200px;">
 
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control" name="vHomepageBanner" <?php echo $required_rule; ?> id="vHomepageBanner" placeholder="" style="padding-bottom: 39px;">
                                         <br/>
                                         Note: Recommended dimension for banner image is 2880 * 1620.

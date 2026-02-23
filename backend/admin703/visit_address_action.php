@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('../common.php');
 
 $AUTH_OBJ->checkMemberAuthentication();
@@ -111,7 +111,7 @@ if($action == 'Edit') {
 
 		<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 		<!-- On OFF switch -->
 		<link href="../assets/css/jquery-ui.css" rel="stylesheet" />
 		
@@ -124,8 +124,8 @@ if($action == 'Edit') {
 
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>
 			<!--PAGE CONTENT -->
 			<div id="content">
 				<div class="inner">
@@ -140,17 +140,17 @@ if($action == 'Edit') {
 					<hr />
 					<div class="body-div">
 						<div class="form-group">
-							<? if($success == 1) { ?>
+							<?php if($success == 1) { ?>
 								<div class="alert alert-success alert-dismissable">
 									<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 									<?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
 								</div><br/>
-								<? }elseif ($success == 2) { ?>
+								<?php }elseif ($success == 2) { ?>
 									<div class="alert alert-danger alert-dismissable">
 											 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 											 <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
 									</div><br/>
-								<? }?>
+								<?php }?>
 							<form method="post" name="_visit_address_form" id="_visit_address_form" action="">
 								<input type="hidden" name="vSourceLatitude" id="vSourceLatitude" value="<?= $vSourceLatitude;?>"/>
 								<input type="hidden" name="vSourceLongitude" id="vSourceLongitude" value="<?= $vSourceLongitude;?>"/>
@@ -174,7 +174,7 @@ if($action == 'Edit') {
                                         <select name="iHotelId" class="form-control" required>
                                             <option value="">Select Hotel</option>
                                             <?php foreach($db_visithotel as $key=>$value) { ?>
-                                            <option value="<?php echo $value['iAdminId'] ?>" <? if ($iHotelId == $value['iAdminId']) { ?>selected <? } ?>><?php echo clearName(" " . $value['vFirstName']." ".$value['vLastName']); ?></option>
+                                            <option value="<?php echo $value['iAdminId'] ?>" <?php if ($iHotelId == $value['iAdminId']) { ?>selected <?php } ?>><?php echo clearName(" " . $value['vFirstName']." ".$value['vLastName']); ?></option>
                                             <?php } ?>
                                         </select>
 										
@@ -240,7 +240,7 @@ if($action == 'Edit') {
 		<!--END MAIN WRAPPER -->
 
 
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 		<script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 	</body>
 	<!-- END BODY-->

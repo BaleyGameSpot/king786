@@ -162,7 +162,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?
+                                            <?php
                                             for ($i = 0; $i < scount($db_trip); $i++) {
                                                 
                                                 if ($db_trip[$i]['iRentalPackageId'] > 0) {
@@ -203,7 +203,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                 ?>
                                                 <tr class="gradeA">
                                                 <?php if ($APP_TYPE != 'UberX' && $APP_TYPE != 'Delivery') { ?>
-                                                        <td ><?
+                                                        <td ><?php
                                                         if ($db_trip[$i]['eHailTrip'] == "Yes" && $db_trip[$i]['iRentalPackageId'] > 0) {
                                                             echo "Rental " . $trip_type . "<br/> ( Hail )";
                                                         } else if ($db_trip[$i]['iRentalPackageId'] > 0) {
@@ -276,11 +276,11 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                                     <img src="<?php echo $canceled_icon; ?>" title="<?= $langage_lbl['LBL_MYTRIP_CANCELED_TXT']; ?>">
                                                                 </a>
                                                             </td> 
-                                                        <? } else { ?>
+                                                        <?php } else { ?>
                                                             <td class="center">
                                                                 <img src="<?php echo $canceled_icon; ?>" title="<?= $langage_lbl['LBL_MYTRIP_CANCELED_TXT']; ?>">
                                                             </td>
-        <? } ?>
+        <?php } ?>
 
                                                 <div class="modal fade" role="dialog" id="uiModal1_<?= $db_trip[$i]['iTripId']; ?>" >
                                                     <div class="modal-dialog">
@@ -292,7 +292,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                             </div>
                                                             <div class="modal-body">
                                                                 <h5><b><?= $langage_lbl['LBL_CANCEL_REASON']; ?> : </b> 
-                                                                    <?
+                                                                    <?php
                                                                     if ($db_trip[$i]['iCancelReasonId'] > 0) {
                                                                         $cancelreasonarray = getCancelReason($db_trip[$i]['iCancelReasonId'], $_SESSION['sess_lang']);
                                                                         $db_trip[$i]['vCancelReason'] = $cancelreasonarray['vCancelReason'];
@@ -320,11 +320,11 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                     </a>
                                                     <div style="font-size: 12px;">Cancelled</div>
                                                 </td>
-    <? } else if ($db_trip[$i]['iActive'] == 'Active' || $db_trip[$i]['iActive'] == 'On Going Trip') { ?>
+    <?php } else if ($db_trip[$i]['iActive'] == 'Active' || $db_trip[$i]['iActive'] == 'On Going Trip') { ?>
                                                 <td class="center">
         <?= $langage_lbl['LBL_ON_RIDES_ADMIN']; ?>
                                                 </td>
-                                            <? } else { ?>	
+                                            <?php } else { ?>	
                                                 <td align="center" width="10%">
                                                     <a target = "_blank" href="<?= $link_page ?>?iTripId=<?= base64_encode(base64_encode($db_trip[$i]['iTripId'])) ?>">
                                                         <img alt="" src="<?php echo $invoice_icon; ?>">
@@ -332,7 +332,7 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
                                                 </td>
     <?php } ?>
                                             </tr>
-                        <? } ?>		
+                        <?php } ?>		
                                         </tbody>
                                     </table>
                                 </div>	</div>

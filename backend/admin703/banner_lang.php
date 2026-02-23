@@ -201,7 +201,7 @@ if($order == 'Yes') {
 
     </select>
 
-<? exit; } 
+<?php exit; } 
 
 $eStatus = ($eStatus_check == 'on') ? 'Active' : 'Inactive';
 

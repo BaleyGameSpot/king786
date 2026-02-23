@@ -1,4 +1,4 @@
-<?
+<?php
 
 include_once("common.php");
 $action_form = $_REQUEST["action"];

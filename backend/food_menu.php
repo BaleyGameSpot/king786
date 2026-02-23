@@ -140,12 +140,12 @@ if ($action == 'view') {
 					<h2 class="header-page-d1 trip-detail driver-detail1"><?=$langage_lbl['LBL_FOOD_CATEOGRIES_FRONT']; ?><a href="javascript:void(0);" onClick="add_food_form();">Add <?=$langage_lbl['LBL_FOOD_CATEGORY_FRONT']; ?></a></h2>
 					<!-- trips page -->
 					<div class="trips-page trips-page1">
-						<? if ($_REQUEST['success']==1) {?>
+						<?php if ($_REQUEST['success']==1) {?>
 							<div class="alert alert-success alert-dismissable">
 								<button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button> 
 								<?= $var_msg ?>
 							</div>
-							<?}else if($_REQUEST['success']==2){ ?>
+							<?php }else if($_REQUEST['success']==2){ ?>
 							<div class="alert alert-danger alert-dismissable">
 								<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 								<?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -156,7 +156,7 @@ if ($action == 'view') {
 								<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> 
 								<?= $var_msg ?>
 							</div>
-							<? }
+							<?php }
 						?>
 						<div class="trips-table trips-table-driver trips-table-driver-res"> 
 							<div class="trips-table-inner">
@@ -174,7 +174,7 @@ if ($action == 'view') {
 											</tr>
 										</thead>
 										<tbody>
-											<? for ($i = 0; $i < scount($data_drv); $i++) { ?>
+											<?php for ($i = 0; $i < scount($data_drv); $i++) { ?>
 												<tr class="gradeA">
 													<td><?= clearName($data_drv[$i]['vMenu_'.$default_lang]) ; ?></td>
 													<td><?= clearName($data_drv[$i]['vCompany']); ?></td>
@@ -204,12 +204,12 @@ if ($action == 'view') {
 														</form>
 													</td>
 												</tr>
-											<? } ?>
+											<?php } ?>
 										</tbody>
 									</table>
 								</div>  </div>
 						</div>
-						<!-- <? if(SITE_TYPE=="Demo"){?>
+						<!-- <?php if(SITE_TYPE=="Demo"){?>
 							<div class="record-feature"> <span><strong>“Edit / Delete Record Feature”</strong> has been disabled on the Demo Admin Version you are viewing now.
 							This feature will be enabled in the main product we will provide you.</span> </div>
 						<?php }?> -->

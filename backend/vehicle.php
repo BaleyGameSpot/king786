@@ -352,7 +352,7 @@ for ($i = 0; $i < scount($db_driver_vehicle); $i++) {
                                     <?= $langage_lbl['LBL_VEHICLE_EDIT_DELETE_RECORD']; ?>
                                 </div>
                             </div>
-                            <?
+                            <?php
                         }
                         ?>
                         <div class="vehicles-page">
@@ -434,12 +434,12 @@ for ($i = 0; $i < scount($db_driver_vehicle); $i++) {
                                                 /* else { */
                                                 ?>
                                                 <!--  <div style=" clear: both;margin: 8px 0 0 10px;font-size: 10px;">
-                                                <? if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') { ?>
+                                                <?php if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') { ?>
                                                                    <strong style="font-size: 15px;"><?= $db_driver_vehicle[$i]['eType'] ?></strong>
-                                                <? }
+                                                <?php }
                                                 ?>
                                                  </div> -->
-                                                <? //}  ?>
+                                                <?php //}  ?>
                                             </div>
                                             <div id="accordion-<?php echo $i; ?>" class="accordion-section-content">
                                                 <div class="driver-vehicles-page-new">
@@ -493,7 +493,7 @@ for ($i = 0; $i < scount($db_driver_vehicle); $i++) {
                                                                         <div class="select-image1">
                                                                             <span class="btn btn-file btn-success">
                                                                                 <span class="fileupload-new"><?php echo $db_userdoc[$s]['doc_name']; ?></span>
-                                                                                <input type="file"  name="file" <? if ($db_userdoc[$s]['doc_file'] == "") { ?>required<? } ?> class="ins" accept="image/*,.doc,.docx,.pdf" onChange="validate_fileextension(<?php echo $s; ?>, this.value)"/>
+                                                                                <input type="file"  name="file" <?php if ($db_userdoc[$s]['doc_file'] == "") { ?>required<?php } ?> class="ins" accept="image/*,.doc,.docx,.pdf" onChange="validate_fileextension(<?php echo $s; ?>, this.value)"/>
                                                                             </span>
                                                                             <div class="fileerror error" style="font-weight: bold;"></div>
                                                                             <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">X</a>

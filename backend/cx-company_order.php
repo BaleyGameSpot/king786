@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 
 $script="Order";
@@ -246,7 +246,7 @@ if($_SESSION['sess_eSystem'] != 'General' && $_SESSION['sess_user'] != 'company'
 									</tr>
 								</thead>
 								<tbody>
-								<? 
+								<?php 
 									for($i=0;$i<scount($db_order_detail);$i++)
 									{
 										$iOrderIdnew = $db_order_detail[$i]['iOrderId'];
@@ -299,7 +299,7 @@ if($_SESSION['sess_eSystem'] != 'General' && $_SESSION['sess_user'] != 'company'
 										<td align="center"><?= clearName($db_order_detail[$i]['Username']);?></td>
 										<td align="center"><?=$db_order_detail[$i]['TotalItem'];?></td>
 										<td align="center">
-											<? if($EarnedAmount > 0) { 
+											<?php if($EarnedAmount > 0) { 
 												echo formateNumAsPerCurrency(($EarnedAmount * $Ratio),$currencycode);
 											} else { 
 												echo $langage_lbl['LBL_PENDING_WEB'];
@@ -312,7 +312,7 @@ if($_SESSION['sess_eSystem'] != 'General' && $_SESSION['sess_user'] != 'company'
 										 </a>
 										</td>		
 									</tr>
-								<? } ?>		
+								<?php } ?>		
 								</tbody>
 								<?php if($TotalResExpectedEarning > 0) { ?>
 								<tfoot>

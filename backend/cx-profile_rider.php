@@ -232,12 +232,12 @@ if($MODULES_OBJ->isOnlyEnableBuySellRentPro())
                 </div>
 
                 <div class="profile-image">
-                    <? if (($db_user[0]['vImgName'] != '') && file_exists($tconfig["tsite_upload_images_passenger_path"] . '/' . $_SESSION['sess_iUserId'] . '/2_' . $db_user[0]['vImgName'])) { ?>
+                    <?php if (($db_user[0]['vImgName'] != '') && file_exists($tconfig["tsite_upload_images_passenger_path"] . '/' . $_SESSION['sess_iUserId'] . '/2_' . $db_user[0]['vImgName'])) { ?>
                         <img src="<?= $tconfig["tsite_upload_images_passenger"] . '/' . $_SESSION['sess_iUserId'] . '/2_' . $db_user[0]['vImgName'] ?>"
                              style="height:150px;"/>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <img src="assets/img/profile-user-img.png" alt="">
-                    <? } ?>
+                    <?php } ?>
 
                     <a data-toggle="modal" data-target="#uiModal_4"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                 </div>
@@ -253,7 +253,7 @@ if($MODULES_OBJ->isOnlyEnableBuySellRentPro())
                         </div>
                     </div>
                     <div class="profile-detail">
-                        <? if ($db_user[0]['vEmail'] != "") { ?>
+                        <?php if ($db_user[0]['vEmail'] != "") { ?>
                             <div class="profile-column">
                                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                 <div class="data_info">
@@ -261,12 +261,12 @@ if($MODULES_OBJ->isOnlyEnableBuySellRentPro())
                                     <span><?= $db_user[0]['vEmail']; ?></span>
                                 </div>
                             </div>
-                        <? } ?>
+                        <?php } ?>
                         <div class="profile-column">
                             <i class="icon-call" aria-hidden="true"></i>
                             <div class="data_info">
                                 <strong><?= $langage_lbl['LBL_PHONE']; ?></strong>
-                                <span dir="ltr"><? if (!empty($db_user[0]['vPhone'])) { ?>(+<?= $db_user[0]['vPhoneCode'] ?>) <?= $db_user[0]['vPhone'] ?><?php } ?></span>
+                                <span dir="ltr"><?php if (!empty($db_user[0]['vPhone'])) { ?>(+<?= $db_user[0]['vPhoneCode'] ?>) <?= $db_user[0]['vPhone'] ?><?php } ?></span>
                             </div>
                         </div>
                         <div class="profile-column">
@@ -305,13 +305,13 @@ if($MODULES_OBJ->isOnlyEnableBuySellRentPro())
                                     <div class="col-lg-12">
                                         <div class="fileupload fileupload-new" data-provides="fileupload">
                                             <div class="fileupload-preview thumbnail" id="fileupload-preview">
-                                                <? if ($db_user[0]['vImgName'] != '' && file_exists($tconfig["tsite_upload_images_passenger_path"] . '/' . $_SESSION['sess_iUserId'] . '/2_' . $db_user[0]['vImgName'])) { ?>
+                                                <?php if ($db_user[0]['vImgName'] != '' && file_exists($tconfig["tsite_upload_images_passenger_path"] . '/' . $_SESSION['sess_iUserId'] . '/2_' . $db_user[0]['vImgName'])) { ?>
                                                     <img class="imagename"
                                                          src="<?= $tconfig["tsite_upload_images_passenger"] . '/' . $_SESSION['sess_iUserId'] . '/2_' . $db_user[0]['vImgName'] ?>"
                                                          alt="<?= $tconfig["tsite_upload_images_passenger"] . '/' . $_SESSION['sess_iUserId'] . '/2_' . $db_user[0]['vImgName'] ?>"/>
-                                                <? } else { ?>
+                                                <?php } else { ?>
                                                     <img class="imagename" src="assets/img/profile-user-img.png" alt="">
-                                                <? } ?>
+                                                <?php } ?>
                                             </div>
                                             <div>
                                                     <span class="btn btn-file btn-success gen-btn"><span
@@ -362,11 +362,11 @@ if($MODULES_OBJ->isOnlyEnableBuySellRentPro())
                                             <div class="fileupload-preview thumbnail" id="fileupload-preview">
                                                 <?php if ($db_user[0]['vImgName'] == '' || !file_exists($tconfig["tsite_upload_images_passenger_path"] . '/' . $_SESSION['sess_iUserId'] . '/2_' . $db_user[0]['vImgName'])) { ?>
                                                     <img class="imagename" src="assets/img/profile-user-img.png" alt="">
-                                                <? } else { ?>
+                                                <?php } else { ?>
                                                     <img class="imagename"
                                                          src="<?= $tconfig["tsite_upload_images_passenger"] . '/' . $_SESSION['sess_iUserId'] . '/2_' . $db_user[0]['vImgName'] ?>"
                                                          alt="<?= $tconfig["tsite_upload_images_passenger"] . '/' . $_SESSION['sess_iUserId'] . '/2_' . $db_user[0]['vImgName'] ?>"/>
-                                                <? } ?>
+                                                <?php } ?>
 
                                             </div>
                                             <div>
@@ -419,26 +419,26 @@ if($MODULES_OBJ->isOnlyEnableBuySellRentPro())
                         <div class="form-group half phone-column newrow">
                             <label><?= $langage_lbl['LBL_RIDER_Phone_Number']; ?><span class="red">*</span></label>
                             <select name="vPhoneCode" id="code" onChange="changeCode(this.value, 'phone');" dir="ltr" readonly style="pointer-events:none;background-image:none;">
-                                <? for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
                                     <option value="<?= $db_country[$i]['vPhoneCode'] ?>"
-                                            <? if ($db_user[0]['vPhoneCode'] == $db_country[$i]['vPhoneCode']) { ?>selected<? } ?>>
+                                            <?php if ($db_user[0]['vPhoneCode'] == $db_country[$i]['vPhoneCode']) { ?>selected<?php } ?>>
                                         <?= $db_country[$i]['vPhoneCode']; ?></option>
-                                <? } ?>
+                                <?php } ?>
                             </select>
                             <input name="phone" type="text" id="phone" required value="<?= $db_user[0]['vPhone'] ?>"
                                    maxlength="15" title="<?= $langage_lbl['LBL_PHONE_VALID_MSG']; ?>"
                                    onkeypress="return isNumberKey(event);" onblur="return isNumberKey(event);"
                                    onKeyUp="return isNumberKey(event);"/>
                         </div>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <div class="form-group half phone-column newrow">
                             <label><?= $langage_lbl['LBL_RIDER_Phone_Number']; ?><span class="red">*</span></label>
                             <select name="vPhoneCode" id="code" onChange="changeCode(this.value, 'phone');" dir="ltr" readonly style="pointer-events:none;background-image:none;">
-                                <? for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
                                     <option value="<?= $db_country[$i]['vPhoneCode'] ?>"
-                                            <? if ($db_user[0]['vPhoneCode'] == $db_country[$i]['vPhoneCode']) { ?>selected<? } ?>>
+                                            <?php if ($db_user[0]['vPhoneCode'] == $db_country[$i]['vPhoneCode']) { ?>selected<?php } ?>>
                                         <?= $db_country[$i]['vPhoneCode']; ?></option>
-                                <? } ?>
+                                <?php } ?>
                             </select>
                             <input name="phone" type="text" id="phone" required value="<?= $db_user[0]['vPhone'] ?>"
                                    maxlength="15" title="<?= $langage_lbl['LBL_PHONE_VALID_MSG']; ?>"
@@ -453,7 +453,7 @@ if($MODULES_OBJ->isOnlyEnableBuySellRentPro())
                                    name="email" <?= isset($db_user[0]['vEmail']) ? '' : ''; ?>  <?php if ($RIDER_EMAIL_VERIFICATION == 'Yes') { ?>  title="<?= $langage_lbl['LBL_EMAIL_VERIFICATION_TITLE']; ?>"<?php } ?>>
                             <div class="required-label" id="emailCheck"></div>
                         </div>
-                    <? } ?>
+                    <?php } ?>
                     <div class="form-group half newrow">
                         <label><?= $langage_lbl['LBL_RIDER_YOUR_FIRST_NAME']; ?><span class="red">*</span></label>
                         <input type="text" value="<?= cleanall(htmlspecialchars($db_user[0]['vName'])) ?>" name="fname"
@@ -477,10 +477,10 @@ if($MODULES_OBJ->isOnlyEnableBuySellRentPro())
                         <select <?= $style ?> name='country' id="country" required
                                               onChange="changeCode(this.value, 'country');">
                             <!-- <option value=""><?= $langage_lbl['LBL_SELECT_CONTRY']; ?></option> -->
-                            <? for ($i = 0; $i < scount($db_country); $i++) { ?>
+                            <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
                                 <option value="<?= $db_country[$i]['vCountryCode'] ?>"
-                                        <? if ($db_user[0]['vCountry'] == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
-                            <? } ?>
+                                        <?php if ($db_user[0]['vCountry'] == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
+                            <?php } ?>
                         </select>
                         <div class="required-label" id="countryCheck"></div>
                     </div>
@@ -493,9 +493,9 @@ if($MODULES_OBJ->isOnlyEnableBuySellRentPro())
                             <label><?= $langage_lbl['LBL_PROFILE_SELECT_LANGUAGE']; ?><span class="red">*</span></label>
                             <select name="lang1" required>
                                 <!-- <option value=""><?= $langage_lbl['LBL_PROFILE_SELECT_LANGUAGE']; ?></option> -->
-                                <? for ($i = 0; $i < scount($db_lang); $i++) { ?>
-                                    <option value="<?= $db_lang[$i]['vCode'] ?>" <? if ($db_lang[$i]['vCode'] == $db_user[0]['vLang']) { ?> selected <? } ?>><?= $db_lang[$i]['vTitle'] ?></option>
-                                <? } ?>
+                                <?php for ($i = 0; $i < scount($db_lang); $i++) { ?>
+                                    <option value="<?= $db_lang[$i]['vCode'] ?>" <?php if ($db_lang[$i]['vCode'] == $db_user[0]['vLang']) { ?> selected <?php } ?>><?= $db_lang[$i]['vTitle'] ?></option>
+                                <?php } ?>
                             </select>
                         </div>
                         <div class="required-label" id="lang1"></div>
@@ -503,15 +503,15 @@ if($MODULES_OBJ->isOnlyEnableBuySellRentPro())
                     if (scount($db_currency) <= 1) { ?>
                         <input name="vCurrencyPassenger" type="hidden" class="create-account-input"
                                value="<?php echo $db_currency[0]['vName']; ?>"/>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <div class="form-group half newrow floating">
                             <label><?= $langage_lbl['LBL_PROFILE_SELECT_CURRENCY']; ?><span class="red">*</span></label>
                             <select name='vCurrencyPassenger' required>
                                 <!-- <option value=""><?= $langage_lbl['LBL_PROFILE_SELECT_CURRENCY']; ?></option> -->
-                                <? for ($i = 0; $i < scount($db_currency); $i++) { ?>
+                                <?php for ($i = 0; $i < scount($db_currency); $i++) { ?>
                                     <option value="<?= $db_currency[$i]['vName'] ?>"
-                                            <? if ($db_user[0]['vCurrencyPassenger'] == $db_currency[$i]['vName']) { ?>selected<? } ?>><?= $db_currency[$i]['vName'] ?></option>
-                                <? } ?>
+                                            <?php if ($db_user[0]['vCurrencyPassenger'] == $db_currency[$i]['vName']) { ?>selected<?php } ?>><?= $db_currency[$i]['vName'] ?></option>
+                                <?php } ?>
                             </select>
                             <div class="required-label" id="vCurrencyPassengerCheck"></div>
                         </div>
@@ -565,7 +565,7 @@ if($MODULES_OBJ->isOnlyEnableBuySellRentPro())
                 <?php }
                 if ($onlyDeliverallModule != 'YES' && !$MODULES_OBJ->isOnlyEnableRideSharingPro()  && !$MODULES_OBJ->isOnlyEnableBuySellRentPro()) { ?>
                     <li>
-                        <?PHP
+                        <?php PHP
                         if ($APP_TYPE == 'UberX') {
                             $link_pro = 'myJobs';
                         }
@@ -707,7 +707,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
 <script type="text/javascript" src="assets/js/validation/jquery.validate.min.js"></script>
 <?php if ($lang != 'en') { ?>
     <!--  <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-    <? include_once('otherlang_validation.php'); ?>
+    <?php include_once('otherlang_validation.php'); ?>
 <?php } ?>
 
 <script type="text/javascript" src="assets/js/validation/additional-methods.js"></script>
@@ -977,7 +977,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
             email: {
                 <?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>
                 required: true,
-                <? } ?>
+                <?php } ?>
                 email: true,
                 remote: {
                     url: 'ajax_validate_email.php',
@@ -1116,7 +1116,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
             valid = validate_password_fb();
             <?php } else { ?>
             valid = true;
-            <? }
+            <?php }
             } ?>
             }
 

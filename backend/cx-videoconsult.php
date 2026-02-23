@@ -421,4 +421,4 @@ $tMessage_link2 = str_replace($key_arr, $val_arr, $tMessage_link2);
 <!-- End: Footer Script -->
 </body>
 </html>
-<? } ?>
+<?php } ?>

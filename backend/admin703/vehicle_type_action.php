@@ -637,7 +637,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
     <title>Admin | <?= $langage_lbl_admin['LBL_VEHICLE_TYPE_SMALL_TXT']; ?> <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <?
+    <?php
     include_once('global_files.php');
     ?>
     <!-- On OFF switch -->
@@ -667,7 +667,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <?
+    <?php
     include_once('header.php');
     include_once('left_menu.php');
     ?>
@@ -690,40 +690,40 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable msgs_hide">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?= $langage_lbl_admin['LBL_VEHICLE_TYPE_SMALL_TXT']; ?> Updated successfully.
                         </div>
                         <br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable ">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             "Edit / Delete Record Feature" has been disabled on the Demo Admin Panel. This feature will
                             be enabled on the main script we will provide you.
                         </div>
                         <br/>
-                    <? } else if ($success == 3) { ?>
+                    <?php } else if ($success == 3) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?= $_REQUEST['varmsg']; ?>
                         </div>
                         <br/>
-                    <? } else if ($success == 4) { ?>
+                    <?php } else if ($success == 4) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             "Please Select Night Start Time less than Night End Time."
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
 
-                    <? if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
+                    <?php if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             Record Not Updated.
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <?php include('valid_msg.php'); ?>
                     <div id="price1"></div>
                     <form id="_vehicleType_form" name="_vehicleType_form" method="post" action=""
@@ -766,7 +766,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                 <div class="col-md-6 col-sm-6">
                                     <select class="form-control" name='iVehicleCategoryId' required>
                                         <option value="">--select--</option>
-                                        <? for ($i = 0; $i < scount($db_data_cat); $i++) { ?>
+                                        <?php for ($i = 0; $i < scount($db_data_cat); $i++) { ?>
                                             <optgroup label="<?= $db_data_cat[$i]['vCategory_' . $default_lang]; ?>">
                                                 
                                                 <?php
@@ -782,9 +782,9 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                         ?>
                                                     >
                                                         <?= "&nbsp;&nbsp;|-- " . $db_data2[$j]['vCategory_' . $default_lang]; ?></option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </optgroup>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                 </div>
                             </div>
@@ -812,12 +812,12 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                         </div>
                                         <div class="col-md-6 col-sm-6">  <?php echo $eType; ?>
                                             <select class="form-control" name='eType' required id='etypedelivery'>
-                                                <? if ($rideTypeEnabled == 'Yes') { ?>
+                                                <?php if ($rideTypeEnabled == 'Yes') { ?>
                                                     <option value="Ride"
                                                             data-vtype="Ride" <?php if ($eType == "Ride") {
                                                         echo 'selected="selected"';
                                                     } ?> ><?= $langage_lbl_admin['LBL_RIDE_TXT_ADMIN_SEARCH']; ?></option>
-                                                <? }
+                                                <?php }
                                                 if ($deliveryTypeEnabled == 'Yes') { ?>
                                                     <option value="Deliver"
                                                             data-vtype="Delivery" <?php if ($eType == "Deliver") {
@@ -825,7 +825,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                     } ?>>
                                                         Delivery
                                                     </option>
-                                                <? }
+                                                <?php }
                                                 if ($MODULES_OBJ->isEnableMedicalServices()) { ?>
                                                     <option value="Ride"
                                                             data-vtype="Ambulance" <?php if ($eType == "Ride" && $eIconType == "Ambulance") {
@@ -833,7 +833,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                     } ?>>
                                                         Ambulance
                                                     </option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -1731,13 +1731,13 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                 </div>
                                 <div class="col-md-6 col-sm-6">
                                     <select <?= ($id != '' && $ePoolStatus == 'Yes') ? 'disabled' : ''; ?> class="form-control" name='eFareCalcModel' id="eFareCalcModel" required>
-                                        <option id="Incremental" value="Incremental" <?
+                                        <option id="Incremental" value="Incremental" <?php
                                         if ($eFareCalcModel == "Incremental") {
                                             echo 'selected="selected"';
                                         }
                                         ?>>Incremental
                                         </option>
-                                        <option id="Fixed" value="Fixed" <?
+                                        <option id="Fixed" value="Fixed" <?php
                                         if ($eFareCalcModel == "Fixed") {
                                             echo 'selected="selected"';
                                         }
@@ -1753,10 +1753,10 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                             <div class="col-lg-12">
                                 <label><?= $langage_lbl_admin['LBL_VEHICLE_TYPE_SMALL_TXT']; ?>
                                     <span class="red"> *</span>
-                                    <? if ($APP_TYPE != "UberX") { ?>
+                                    <?php if ($APP_TYPE != "UberX") { ?>
                                         <i class="icon-question-sign" data-placement="top" data-toggle="tooltip"
                                            data-original-title='Please add type of your vehicle like "Mini/Large MPVs", "Luxury vehicles", "SUVs" etc.'></i>
-                                    <? } ?>
+                                    <?php } ?>
                                 </label>
                             </div>
                             <div class="col-md-6 col-sm-6">
@@ -1774,11 +1774,11 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                 </label>
                             </div>
                             <div class="col-md-6 col-sm-6">
-                                <? //echo "<pre>"; print_R($userObj->locations); ?>
+                                <?php //echo "<pre>"; print_R($userObj->locations); ?>
                                 <select class="form-control" name='iLocationId' id="iLocationId" required=""
                                         onchange="changeCode_distance(this.value);">
                                     <option value="">Select Location</option>
-                                    <option value="-1" <? if ($iLocationId == "-1") { ?>selected<? } ?>>All</option>
+                                    <option value="-1" <?php if ($iLocationId == "-1") { ?>selected<?php } ?>>All</option>
                                     <?php
                                     foreach ($db_location as $i => $row) {
                                         if (scount($userObj->locations) > 0 && !in_array($row['iLocationId'], $userObj->locations)) {
@@ -1786,7 +1786,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                         }
                                         ?>
                                         <option value="<?= $row['iLocationId'] ?>"
-                                                <? if ($iLocationId == $row['iLocationId']) { ?>selected<? } ?>><?= $row['vLocationName'] ?></option>
+                                                <?php if ($iLocationId == $row['iLocationId']) { ?>selected<?php } ?>><?= $row['vLocationName'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -1807,19 +1807,19 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                 <div class="col-md-6 col-sm-6">
                                     <select class="form-control" name='eFareType' id="eFareType" required
                                             onchange="get_faretype(this.value)">
-                                        <option value="Fixed"<?
+                                        <option value="Fixed"<?php
                                         if ($eFareType == "Fixed") {
                                             echo 'selected="selected"';
                                         }
                                         ?>>Fixed
                                         </option>
-                                        <option value="Hourly"<?
+                                        <option value="Hourly"<?php
                                         if ($eFareType == "Hourly") {
                                             echo 'selected="selected"';
                                         }
                                         ?>>Hourly
                                         </option>
-                                        <option value="Regular"<?
+                                        <option value="Regular"<?php
                                         if ($eFareType == "Regular") {
                                             echo 'selected="selected"';
                                         }
@@ -1981,7 +1981,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                            onfocus="checkcancellationfare('iWaitingFeeTimeLimit');">
                                 </div>
                             </div>
-                            <? if (($APP_TYPE == "Ride-Delivery-UberX" || $APP_TYPE == "Ride-Delivery" || $APP_TYPE == "Ride") && $ENABLE_INTRANSIT_SHOPPING_SYSTEM == "Yes") { ?>
+                            <?php if (($APP_TYPE == "Ride-Delivery-UberX" || $APP_TYPE == "Ride-Delivery" || $APP_TYPE == "Ride") && $ENABLE_INTRANSIT_SHOPPING_SYSTEM == "Yes") { ?>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <label> InTransit Waiting Fee per minute (Price
@@ -2000,7 +2000,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
 
                                 </div>
-                            <? } ?>
+                            <?php } ?>
                         </div>
                         <div class="row" id="pool_div">
                             <div class="col-lg-12">
@@ -2507,7 +2507,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                             <div class="input-group clockpicker-with-callbacks">
                                                                 <input type="text" class="form-control"
                                                                        name="<?= $dayStartId; ?>"
-                                                                       id="<?= $dayStartId; ?>" value="<?
+                                                                       id="<?= $dayStartId; ?>" value="<?php
                                                                 if (isset($nightSurgeDataArr[$dayStartId])) {
                                                                     echo $nightSurgeDataArr[$dayStartId];
                                                                 }
@@ -2523,7 +2523,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                             <div class="input-group clockpicker-with-callbacks">
                                                                 <input type="text" class="form-control"
                                                                        name="<?= $dayEndId; ?>" id="<?= $dayEndId; ?>"
-                                                                       value="<?
+                                                                       value="<?php
                                                                        if (isset($nightSurgeDataArr[$dayEndId])) {
                                                                            echo $nightSurgeDataArr[$dayEndId];
                                                                        }
@@ -2538,7 +2538,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                         <td>
                                                             <input type="text" class="form-control surgeChargePrice"
                                                                    name="<?= $priceId; ?>" id="<?= $priceId; ?>"
-                                                                   value="<?
+                                                                   value="<?php
                                                                    if (isset($nightSurgeDataArr[$priceId])) {
                                                                        echo $nightSurgeDataArr[$priceId];
                                                                    }
@@ -2623,12 +2623,12 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                     </label>
                                 </div>
                                 <div class="col-md-6 col-sm-6">
-                                    <?
+                                    <?php
                                     $rand = rand(1000, 9999);
                                     if (!empty($vLogo) && file_exists($tconfig['tsite_upload_images_vehicle_type_path'] . "/" . $id . "/ios/3x_" . $vLogo) ) {
                                         ?>
                                         <img src="<?= $tconfig['tsite_url'] . 'resizeImg.php?h=100&src=' . $tconfig['tsite_upload_images_vehicle_type'] . "/" . $id . "/ios/3x_" . $vLogo; ?>">
-                                    <? } ?>
+                                    <?php } ?>
                                     <input type="file" class="form-control" name="vLogo" id="vLogo" placeholder=""
                                            style="padding-bottom: 4%; height:5%;" <?php if (empty($vLogo)) { ?> required <?php } ?>>
                                     <span class="notes">[Note: Recommended dimension for Upload image(.png) is 360px X 360px. <br> <?= IMAGE_INSTRUCTION_NOTES ?>]</span>
@@ -2643,9 +2643,9 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                     </label>
                                 </div>
                                 <div class="col-md-6 col-sm-6">
-                                    <? if (!empty($vLogo1) && file_exists($tconfig['tsite_upload_images_vehicle_type_path'] . "/" . $id . "/ios/3x_" . $vLogo1) ) { ?>
+                                    <?php if (!empty($vLogo1) && file_exists($tconfig['tsite_upload_images_vehicle_type_path'] . "/" . $id . "/ios/3x_" . $vLogo1) ) { ?>
                                         <img src="<?= $tconfig['tsite_url'] . 'resizeImg.php?h=100&src=' . $tconfig['tsite_upload_images_vehicle_type'] . "/" . $id . "/ios/3x_" . $vLogo1; ?>">
-                                    <? } ?>
+                                    <?php } ?>
                                     <input type="file" class="form-control" name="vLogo1" id="vLogo1" placeholder=""
                                            style="padding-bottom: 4%; height: 5%;" <?php if (empty($vLogo1)) { ?> required <?php } ?>>
                                     <span class="notes">[Note: Recommended dimension for Upload image(.png) is 360px X 360px. <br> <?= IMAGE_INSTRUCTION_NOTES ?>]</span>
@@ -2664,13 +2664,13 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                     <div class="col-md-6 col-sm-6">
                                         <select class="form-control" name='eAllowQty' id="AllowQty"
                                                 onchange="get_AllowQty(this.value)">
-                                            <option value="Yes"<?
+                                            <option value="Yes"<?php
                                             if ($eAllowQty == "Yes") {
                                                 echo 'selected="selected"';
                                             }
                                             ?>>Yes
                                             </option>
-                                            <option value="No"<?
+                                            <option value="No"<?php
                                             if ($eAllowQty == "No") {
                                                 echo 'selected="selected"';
                                             }
@@ -2708,7 +2708,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                 ?>
                                 <select name="iDisplayOrder" class="form-control">
                                     <?php for ($i = 1; $i <= $display_numbers; $i++) { ?>
-                                        <option value="<?= $i ?>" <?
+                                        <option value="<?= $i ?>" <?php
                                         if (isset($iDisplayOrder_db) && $i == $iDisplayOrder_db) {
                                             echo "selected";
                                         }

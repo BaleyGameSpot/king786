@@ -309,12 +309,12 @@ $onlyRideShareEnable = !empty($MODULES_OBJ->isOnlyEnableRideSharingPro()) ? 'Yes
                                                     <?php } ?>
                                                         </td>
                                                         <td>
-                                                            <? if($data_drv[$i]['vFromUserType']=='Passenger') {
+                                                            <?php if($data_drv[$i]['vFromUserType']=='Passenger') {
                                                                 if ($userObj->hasPermission('view-users')) { ?>
                                                             <a href="javascript:void(0);"
                                                                onClick="show_rider_details('<?= $data_drv[$i]['iUserId']; ?>')"
                                                                style="text-decoration: underline;"><?= clearName($data_drv[$i]['userName']); ?></a>
-                                                                    <? echo " (".$langage_lbl_admin['LBL_RIDER'].")";
+                                                                    <?php echo " (".$langage_lbl_admin['LBL_RIDER'].")";
                                                                 } else {
                                                                     echo clearName($data_drv[$i]['userName'])." (".$langage_lbl_admin['LBL_RIDER'].")";
                                                                 }
@@ -323,7 +323,7 @@ $onlyRideShareEnable = !empty($MODULES_OBJ->isOnlyEnableRideSharingPro()) ? 'Yes
                                                                 if ($userObj->hasPermission('view-providers')) { ?>
                                                             <a href="javascript:void(0);"
                                                                onClick="show_driver_details('<?= $data_drv[$i]['iDriverId']; ?>')"
-                                                               style="text-decoration: underline;"><?= clearName($data_drv[$i]['driverName']); ?></a><? echo " (" . $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'] . ")";
+                                                               style="text-decoration: underline;"><?= clearName($data_drv[$i]['driverName']); ?></a><?php echo " (" . $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'] . ")";
                                                                 } else {
                                                                     echo clearName($data_drv[$i]['driverName'])." (".$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'].")";
                                                                 }
@@ -460,7 +460,7 @@ $onlyRideShareEnable = !empty($MODULES_OBJ->isOnlyEnableRideSharingPro()) ? 'Yes
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css" />
 <script src="../assets/js/jquery-ui.min.js"></script>
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script>
     var startDate;
     var endDate;

@@ -486,7 +486,7 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
     <title>Admin | Home Content <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -513,8 +513,8 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -532,17 +532,17 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div><br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div><br/>
-                    <? } ?>
+                    <?php } ?>
                     <form method="post" name="_home_content_form_ms" id="_home_content_form_ms" action=""
                           enctype='multipart/form-data'>
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
@@ -609,10 +609,10 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
                                                     <label>Image#1</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                    <? if ($how_it_work_section['img_first'] != '') { ?>
+                                                    <?php if ($how_it_work_section['img_first'] != '') { ?>
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_first']; ?>"
                                                              class="innerbg_image"/>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="how_it_work_img_first"
                                                            value="<?= $how_it_work_section['img_first']; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px.]</span>
@@ -644,11 +644,11 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
                                                     <label>Image#2</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                    <? if ($how_it_work_section['img_sec'] != '') { ?>
+                                                    <?php if ($how_it_work_section['img_sec'] != '') { ?>
                                                         <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_sec']; ?>" class="innerbg_image"/> -->
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_sec']; ?>"
                                                              class="innerbg_image"/>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="how_it_work_img_sec"
                                                            value="<?= $how_it_work_section['img_sec']; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px.]</span>
@@ -682,11 +682,11 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
                                                     <label>Image#3</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                    <? if ($how_it_work_section['img_third'] != '') { ?>
+                                                    <?php if ($how_it_work_section['img_third'] != '') { ?>
                                                         <!--  <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_third_' . $vCode]; ?>" class="innerbg_image"/> -->
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_third']; ?>"
                                                              class="innerbg_image"/>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="how_it_work_img_third"
                                                            value="<?= $how_it_work_section['img_third']; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px.]</span>
@@ -719,11 +719,11 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
                                                     <label>Image#4</label>
                                                 </div>
                                                 <div class="col-lg-11">
-                                                    <? if ($how_it_work_section['img_third'] != '') { ?>
+                                                    <?php if ($how_it_work_section['img_third'] != '') { ?>
                                                         <!--  <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_four_' . $vCode]; ?>" class="innerbg_image"/> -->
                                                         <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_four']; ?>"
                                                              class="innerbg_image"/>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="file" class="form-control" name="how_it_work_img_four"
                                                            value="<?= $how_it_work_section['img_four']; ?>">
                                                     <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px.]</span>
@@ -779,10 +779,10 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
                                             <label>Image</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($download_section['img'] != '') { ?>
+                                            <?php if ($download_section['img'] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $download_section['img']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader"
                                                    name="download_section_img" id="download_section_img"
                                                    accept=".png,.jpg,.jpeg,.gif">
@@ -849,10 +849,10 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
                                             <label>Image 1</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($register_section['img_first'] != '') { ?>
+                                            <?php if ($register_section['img_first'] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_first']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader"
                                                    name="register_section_img_first" id="register_section_img_first"
                                                    accept=".png,.jpg,.jpeg,.gif">
@@ -875,10 +875,10 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
                                             <label>Image 2</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($register_section['img_sec'] != '') { ?>
+                                            <?php if ($register_section['img_sec'] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_sec']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader"
                                                    name="register_section_img_sec" id="register_section_img_sec"
                                                    accept=".png,.jpg,.jpeg,.gif">
@@ -920,10 +920,10 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
                                             <label>First Image</label>
                                         </div>
                                         <div class="col-lg-6">
-                                            <? if ($general_section['img'] != '') { ?>
+                                            <?php if ($general_section['img'] != '') { ?>
                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $general_section['img']; ?>"
                                                      class="innerbg_image"/>
-                                            <? } ?>
+                                            <?php } ?>
                                             <input type="file" class="form-control FilUploader"
                                                    name="general_section_img" id="general_section_img"
                                                    accept=".png,.jpg,.jpeg,.gif">
@@ -1027,7 +1027,7 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
                                                             <?php if ($vcatdata_main[$i]['vHomepageLogoOurServices'] != '') { ?>
                                                                 <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=70&h=70&src=' . $tconfig["tsite_upload_home_page_service_images"] . '/' . $vcatdata_main[$i]['vHomepageLogoOurServices'] ?>"
                                                                      style="width:35px;height:35px;">
-                                                            <? } ?>
+                                                            <?php } ?>
                                                         </td>
                                                         <td>
                                                             <?= $vcatdata_main[$i]['vCatName']; ?>
@@ -1048,16 +1048,16 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
                                                                         <!--<li class="entypo-twitter entypo-twitter-new" data-network="twitter"><a href="<?php
                                                                         if (!empty($vcatdata_main[$i]['commonadminurl'])) {
                                                                             echo $tconfig["tsite_url_main_admin"] . $vcatdata_main[$i]['commonadminurl'] . "?id=" . $iLanguageMasId; ?>">Edit Common Page
-                                                                        <? } else {
+                                                                        <?php } else {
                                                                             echo $tconfig["tsite_url_main_admin"] . $vcatdata_main[$i]['adminurl'] . "?id=" . $iLanguageMasId; ?>">Edit Inner Page
-                                                                        <? } ?></a></li>-->
-                                                                        <? //if(!empty($vcatdata_main[$i]['commonadminurl'])) { ?>
+                                                                        <?php } ?></a></li>-->
+                                                                        <?php //if(!empty($vcatdata_main[$i]['commonadminurl'])) { ?>
                                                                         <li class="entypo-twitter entypo-twitter-new"
                                                                             data-network="twitter">
                                                                             <a href="<?php echo $tconfig["tsite_url_main_admin"] . $vcatdata_main[$i]['adminurl'] . "&id=" . $iLanguageMasId; ?>">Edit
                                                                                 Inner Page
                                                                             </a></li>
-                                                                        <? //} ?>
+                                                                        <?php //} ?>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -1086,7 +1086,7 @@ if ($THEME_OBJ->isMedicalServicev2ThemeActive() == "Yes") {
                                                             <?php if ($vcatdata[$i]['vHomepageLogo'] != '') { ?>
                                                                 <img src="<?= $tconfig["tsite_upload_home_page_service_images"] . '/' . $vcatdata[$i]['vHomepageLogo'] ?>"
                                                                      style="width:35px;height:35px;">
-                                                            <? } ?>
+                                                            <?php } ?>
                                                         </td>
                                                         <td>
                                                             <?= $vcatdata[$i]['vCategory_EN']; ?>
@@ -1206,7 +1206,7 @@ if (!empty($vcatdata)) {
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script src="../assets/plugins/ckeditor/ckeditor.js"></script>
 <script src="../assets/plugins/ckeditor/config.js"></script>

@@ -113,7 +113,7 @@ foreach ($getStoreList as $value) {
                 <meta charset="UTF-8" />
                 <title>Admin | Store Images</title>
                 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-                <? include_once('global_files.php'); ?>
+                <?php include_once('global_files.php'); ?>
                 <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
                 <script type="text/javascript">
                     function confirm_delete()
@@ -134,8 +134,8 @@ foreach ($getStoreList as $value) {
             <body class="padTop53 " >
                 <!-- MAIN WRAPPER -->
                 <div id="wrap">
-                    <? include_once('header.php'); ?>
-                    <? include_once('left_menu.php'); ?>
+                    <?php include_once('header.php'); ?>
+                    <?php include_once('left_menu.php'); ?>
                     <!--PAGE CONTENT -->
                     <div id="content">
                         <div class="inner">
@@ -169,7 +169,7 @@ foreach ($getStoreList as $value) {
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <?
+                                                            <?php
                                                                 $count_all = scount($db_data);
                                                                 if ($count_all > 0) {
                                                                     for ($i = 0; $i < $count_all; $i++) {
@@ -182,29 +182,29 @@ foreach ($getStoreList as $value) {
                                                                         ?>
                                                             <tr class="gradeA">
                                                                 <td width="10%" align="center">
-                                                                    <? if ($vImage != '' && file_exists($tconfig['tsite_upload_images_panel'] . '/' . $vImage)) { ?>
+                                                                    <?php if ($vImage != '' && file_exists($tconfig['tsite_upload_images_panel'] . '/' . $vImage)) { ?>
                                                                     <!-- <img src="<?= $tconfig['tsite_upload_images'] . $vImage; ?>"  width="50"> -->
                                                                     <img src="<?= $tconfig["tsite_url"].'resizeImg.php?w=100&src='.$tconfig['tsite_upload_images'] . $vImage; ?>"  width="50">
-                                                                    <? } else echo $vImage; ?>
+                                                                    <?php } else echo $vImage; ?>
                                                                 </td>
                                                                 <?php/*<td  align="center"><?= $vTitle; ?></td>*/ ?>
                                                                 <td  align="center">
                                                                     <?= $storeListArr[$iCompanyId] ?>
                                                                 </td>
                                                                 <?php/*<td width="10%" align="center">
-                                                                    <? if ($iDisplayOrder != 1) { ?>
+                                                                    <?php if ($iDisplayOrder != 1) { ?>
                                                                     <a href="store_images.php?id=<?= $iUniqueId; ?>&flag=up<?= ($sid != "") ? '&'.$sid : '' ?>">
                                                                     <button class="btn btn-warning">
                                                                     <i class="icon-arrow-up"></i> 
                                                                     </button>
                                                                     </a>
-                                                                    <? } if ($iDisplayOrder != $count_all) { ?>
+                                                                    <?php } if ($iDisplayOrder != $count_all) { ?>
                                                                     <a href="store_images.php?id=<?= $iUniqueId; ?>&flag=down<?= ($sid != "") ? '&'.$sid : '' ?>">
                                                                     <button class="btn btn-warning">
                                                                     <i class="icon-arrow-down"></i> 
                                                                     </button>
                                                                     </a>
-                                                                    <? } ?>
+                                                                    <?php } ?>
                                                                 </td>*/?>
                                                                 <td width="10%" align="center">
                                                                     <a href="store_images.php?iUniqueId=<?= $iUniqueId; ?>&status=<?= ($eStatus == "Active") ? 'Inactive' : 'Active' ?><?= ($sid != "") ? '&'.$sid : '' ?>">
@@ -231,7 +231,7 @@ foreach ($getStoreList as $value) {
                                                                     </form>
                                                                 </td>
                                                             </tr>
-                                                            <? }
+                                                            <?php }
                                                                 }
                                                                 ?>
                                                         </tbody>
@@ -248,7 +248,7 @@ foreach ($getStoreList as $value) {
                     <!--END PAGE CONTENT -->
                 </div>
                 <!--END MAIN WRAPPER -->
-                <? include_once('footer.php'); ?>
+                <?php include_once('footer.php'); ?>
                 <script src="../assets/plugins/dataTables/jquery.dataTables.js"></script>
                 <script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>
                 <script>

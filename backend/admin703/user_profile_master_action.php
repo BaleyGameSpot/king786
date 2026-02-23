@@ -282,14 +282,14 @@ $rideProfileFieldArr = array(
         <title>Admin | Ride Profile Type <?= $action; ?></title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
     </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
     <body class="padTop53 " >
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <?
+            <?php
             include_once('header.php');
             include_once('left_menu.php');
             ?>
@@ -307,28 +307,28 @@ $rideProfileFieldArr = array(
                     <hr />
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable msgs_hide">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?= $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                 </div><br/>
-                            <? } elseif ($success == 2) { ?>
+                            <?php } elseif ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable ">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } else if ($success == 3) { ?>
+                            <?php } else if ($success == 3) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php echo $_REQUEST['varmsg']; ?> 
                                 </div><br/>	
-                            <? } ?>
-                            <? if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
+                            <?php } ?>
+                            <?php if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     Record  Not Updated .
                                 </div><br/>
-                            <? } ?>                   
+                            <?php } ?>                   
                             <form id="_rideProfile_form" name="_rideProfile_form" method="post" action="" enctype="multipart/form-data">
                                 <input type="hidden" name="id" value="<?= $id; ?>"/>
                                 <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -470,7 +470,7 @@ $rideProfileFieldArr = array(
                                         </div>
                                     <?php } 
                                 } ?>
-                                <?/*
+                                <?php /*
                                 if (scount($db_master) > 0) {
                                     for ($i = 0; $i < scount($db_master); $i++) {
                                         $vCode = $db_master[$i]['vCode'];
@@ -492,13 +492,13 @@ $rideProfileFieldArr = array(
                                                     <input type="text" class="form-control" name="<?= $lableName; ?>" id="<?= $lableName; ?>" value="<?= $userEditDataArr[$lableName]; ?>" placeholder="<?= $vTitle; ?> Value" <?= $required; ?>>
                                                     <div class="text-danger" id="<?= $lableName.'_error'; ?>" style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                                 </div>
-                                                <? if ($vCode == $default_lang && scount($db_master) > 1) { ?>
+                                                <?php if ($vCode == $default_lang && scount($db_master) > 1) { ?>
                                                     <div class="col-md-6 col-sm-6">
-                                                        <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('<? echo $txtBoxNameArr[$l].'_'; ?>', '<?= $default_lang ?>');">Convert To All Language</button>
+                                                        <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('<?php echo $txtBoxNameArr[$l].'_'; ?>', '<?= $default_lang ?>');">Convert To All Language</button>
                                                     </div>
                                                 <?php } ?>
                                             </div>
-                                        <? } ?>
+                                        <?php } ?>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <label>Description (<?= $vTitle; ?>) <?php echo $required_msg; ?></label>
@@ -508,14 +508,14 @@ $rideProfileFieldArr = array(
                                                 <textarea class="form-control" name="<?= $descVal; ?>" id="<?= $descVal; ?>" placeholder="<?= $vTitle; ?> Value" <?= $required; ?>><?= $userEditDataArr[$descVal]; ?></textarea>
                                                 <div class="text-danger" id="<?= $descVal.'_error'; ?>" style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                             </div>
-                                            <? if ($vCode == $default_lang && scount($db_master) > 1) { ?>
+                                            <?php if ($vCode == $default_lang && scount($db_master) > 1) { ?>
                                                 <div class="col-md-6 col-sm-6">
                                                     <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('tDescription_', '<?= $default_lang ?>');">Convert To All Language</button>
                                                 </div>
                                             <?php } ?>
                                         </div>
 
-                                        <?
+                                        <?php
                                     }
                                 }*/
                                 ?>
@@ -525,12 +525,12 @@ $rideProfileFieldArr = array(
                                         <span data-toggle="modal" data-target="#myModal"><i class="icon-question-sign" data-placement="top" data-toggle="tooltip" data-original-title="Click to See,Where it is used?" ></i></span>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
-                                        <?
+                                        <?php
                                         $rand = rand(1000, 9999);
                                         if ($vImage != '') {
                                             ?>
                                             <img src="<?= $tconfig['tsite_upload_images_profile_master'] . "/" . $vImage . "?dm=$rand"; ?>" style="width:100px;height:100px;">
-                                        <? } ?>
+                                        <?php } ?>
                                         <!-- <input type="file" accept="image/jpg, image/jpeg, image/png, image/gif, image/bmp" class="form-control" name="vImage"  id="vImage" placeholder="Name Label" style="padding-bottom: 39px;"> -->
                                         <input type="file" class="form-control" name="vImage"  id="vImage" placeholder="Name Label" style="padding-bottom: 39px;">
                                     </div>
@@ -541,12 +541,12 @@ $rideProfileFieldArr = array(
                                         <span data-toggle="modal" data-target="#myModal"><i class="icon-question-sign" data-placement="top" data-toggle="tooltip" data-original-title="Click to See,Where it is used?" ></i></span>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
-                                        <?
+                                        <?php
                                         $rand = rand(1000, 9999);
                                         if ($welComeImg != '') {
                                             ?>
                                             <img src="<?= $tconfig['tsite_upload_images_profile_master'] . "/" . $welComeImg . "?dm=$rand"; ?>" style="width:100px;height:100px;">
-                                        <? } ?>
+                                        <?php } ?>
                                         <!-- <input type="file" accept="image/jpg, image/jpeg, image/png, image/gif, image/bmp" class="form-control" name="vWelcomeImage"  id="vWelcomeImage" placeholder="Name Label" style="padding-bottom: 39px;"> -->
                                         <input type="file" class="form-control" name="vWelcomeImage"  id="vWelcomeImage" placeholder="Name Label" style="padding-bottom: 39px;">
                                     </div>
@@ -595,7 +595,7 @@ $rideProfileFieldArr = array(
                 </div>
             </div>
         </div>
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <script type="text/javascript" src="js/validation/jquery.validate.min.js" ></script>
         <script type="text/javascript" src="js/validation/additional-methods.min.js" ></script>
         <script type="text/javascript" src="js/form-validation.js" ></script>

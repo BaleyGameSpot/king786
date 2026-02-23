@@ -662,7 +662,7 @@ if ($app_type_service == 'UberX') {
     <title>Admin | <?= $action; ?> <?php echo $langage_lbl_admin['LBL_SERVICE_TXT']; ?> Type</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <?
+    <?php
     include_once('global_files.php');
     ?>
     <!-- On OFF switch -->
@@ -678,7 +678,7 @@ if ($app_type_service == 'UberX') {
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <?
+    <?php
     include_once('header.php');
     include_once('left_menu.php');
     ?>
@@ -699,38 +699,38 @@ if ($app_type_service == 'UberX') {
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable msgs_hide">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?= $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div>
                         <br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable ">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
                         <br/>
-                    <? } else if ($success == 3) { ?>
+                    <?php } else if ($success == 3) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?php echo $_REQUEST['varmsg']; ?>
                         </div>
                         <br/>
-                    <? } else if ($success == 4) { ?>
+                    <?php } else if ($success == 4) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             "Please select night start time less than night end time."
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if (!empty($_REQUEST['var_msg'])) { ?>
+                    <?php } ?>
+                    <?php if (!empty($_REQUEST['var_msg'])) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             Record Not Updated .
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <div id="price1"></div>
                     <form id="_vehicleType_form" name="_vehicleType_form" method="post" action=""
                           enctype="multipart/form-data">
@@ -757,7 +757,7 @@ if ($app_type_service == 'UberX') {
                                     <select class="form-control" name='iVehicleCategoryId' required
                                             onchange="getordering(this.value);">
                                         <option value="">--select--</option>
-                                        <? for ($i = 0; $i < scount($db_data_cat); $i++) { ?>
+                                        <?php for ($i = 0; $i < scount($db_data_cat); $i++) { ?>
                                             <optgroup
                                                     label="<?php echo $db_data_cat[$i]['vCategory_' . $default_lang]; ?>">
                                                 <!--  <option value = "<?php echo $db_data_cat[$i]['iVehicleCategoryId'] ?>" <?php echo ($db_data_cat[$i]['iVehicleCategoryId'] == $iVehicleCategoryId) ? 'selected' : ''; ?>><?php echo $db_data_cat[$i]['vCategory_' . $default_lang]; ?>
@@ -779,9 +779,9 @@ if ($app_type_service == 'UberX') {
                                                         ?> >
                                                         <?php echo "&nbsp;&nbsp;|-- " . $db_data2[$j]['vCategory_' . $default_lang]; ?>
                                                     </option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </optgroup>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                 </div>
                             </div>
@@ -1209,7 +1209,7 @@ if ($app_type_service == 'UberX') {
                                 <select class="form-control" name='iLocationId' id="iLocationId" required=""
                                         onchange="changeCode_distance(this.value);">
                                     <option value="">Select Location</option>
-                                    <option value="-1" <? if ($iLocationId == "-1") { ?>selected<? } ?>>All</option>
+                                    <option value="-1" <?php if ($iLocationId == "-1") { ?>selected<?php } ?>>All</option>
                                     <?php
                                     foreach ($db_location as $i => $row) {
                                         if (scount($userObj->locations) > 0 && !in_array($row['iLocationId'], $userObj->locations)) {
@@ -1217,7 +1217,7 @@ if ($app_type_service == 'UberX') {
                                         }
                                         ?>
                                         <option value="<?= $row['iLocationId'] ?>"
-                                                <? if ($iLocationId == $row['iLocationId']) { ?>selected<? } ?>><?= $row['vLocationName'] ?></option>
+                                                <?php if ($iLocationId == $row['iLocationId']) { ?>selected<?php } ?>><?= $row['vLocationName'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -1239,20 +1239,20 @@ if ($app_type_service == 'UberX') {
                                 <div class="col-md-6 col-sm-6">
                                     <select class="form-control" name='eFareType' id="eFareType" required
                                             onchange="get_faretype(this.value)">
-                                        <option value="Fixed"<?
+                                        <option value="Fixed"<?php
                                         if ($eFareType == "Fixed") {
                                             echo 'selected="selected"';
                                         }
                                         ?>>Fixed
                                         </option>
-                                        <option value="Hourly"<?
+                                        <option value="Hourly"<?php
                                         if ($eFareType == "Hourly") {
                                             echo 'selected="selected"';
                                         }
                                         ?>>Hourly
                                         </option>
                                         <?php if($parent_ufx_catid != 1) { ?>
-                                        <option value="Regular"<?
+                                        <option value="Regular"<?php
                                         if ($eFareType == "Regular") {
                                             echo 'selected="selected"';
                                         }
@@ -1415,7 +1415,7 @@ if ($app_type_service == 'UberX') {
                                     CreditCard.
                                 </div>
                             </div>
-                            <? if ($Vehicle_type_name == "UberX") { ?>
+                            <?php if ($Vehicle_type_name == "UberX") { ?>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <label> Waiting Time Limit ( in minute )<span class="red"></span> <i
@@ -1844,7 +1844,7 @@ if ($app_type_service == 'UberX') {
                                                             <div class="input-group clockpicker-with-callbacks">
                                                                 <input type="text" class="form-control"
                                                                        name="<?= $dayStartId; ?>"
-                                                                       id="<?= $dayStartId; ?>" value="<?
+                                                                       id="<?= $dayStartId; ?>" value="<?php
                                                                 if (isset($nightSurgeDataArr[$dayStartId])) {
                                                                     echo $nightSurgeDataArr[$dayStartId];
                                                                 }
@@ -1860,7 +1860,7 @@ if ($app_type_service == 'UberX') {
                                                             <div class="input-group clockpicker-with-callbacks">
                                                                 <input type="text" class="form-control"
                                                                        name="<?= $dayEndId; ?>" id="<?= $dayEndId; ?>"
-                                                                       value="<?
+                                                                       value="<?php
                                                                        if (isset($nightSurgeDataArr[$dayEndId])) {
                                                                            echo $nightSurgeDataArr[$dayEndId];
                                                                        }
@@ -1874,7 +1874,7 @@ if ($app_type_service == 'UberX') {
                                                     <tr>
                                                         <td><input type="text" class="form-control"
                                                                    name="<?= $priceId; ?>" id="<?= $priceId; ?>"
-                                                                   value="<?
+                                                                   value="<?php
                                                                    if (isset($nightSurgeDataArr[$priceId])) {
                                                                        echo $nightSurgeDataArr[$priceId];
                                                                    }
@@ -1928,13 +1928,13 @@ if ($app_type_service == 'UberX') {
                                                   data-original-title='This is used to represent the vehicle type as a icon in application.'></i></label>
                                 </div>
                                 <div class="col-md-6 col-sm-6">
-                                    <?
+                                    <?php
                                     $rand = rand(1000, 9999);
                                     if ($vLogo != '') {
                                         ?>
                                         <img src="<?= $tconfig['tsite_upload_images_vehicle_type'] . "/" . $id . "/ios/3x_" . $vLogo . "?dm=$rand"; ?>"
                                              style="width:100px;height:100px;">
-                                    <? } ?>
+                                    <?php } ?>
                                     <input type="file" class="form-control" name="vLogo" <?php echo $required_rule; ?>
                                            id="vLogo" placeholder="" style="padding-bottom: 4%; height:5%;">
                                     <br/>
@@ -1948,10 +1948,10 @@ if ($app_type_service == 'UberX') {
                                                   data-original-title='This is used to represent the vehicle type as a icon in application. Oragen icon is used to represent the vehicle type as a selected.'></i></label>
                                 </div>
                                 <div class="col-md-6 col-sm-6">
-                                    <? if ($vLogo1 != '') { ?>
+                                    <?php if ($vLogo1 != '') { ?>
                                         <img src="<?= $tconfig['tsite_upload_images_vehicle_type'] . "/" . $id . "/ios/3x_hover_" . $vLogo1 . "?dm=$rand"; ?>"
                                              style="width:100px;height:100px;">
-                                    <? } ?>
+                                    <?php } ?>
                                     <input type="file" class="form-control" name="vLogo1" <?php echo $required_rule; ?>
                                            id="vLogo1" placeholder="" style="padding-bottom: 4%; height: 5%;">
                                     <br/>
@@ -1968,13 +1968,13 @@ if ($app_type_service == 'UberX') {
                                     <div class="col-md-6 col-sm-6">
                                         <select class="form-control" name='eAllowQty' id="AllowQty"
                                                 onchange="get_AllowQty(this.value)">
-                                            <option value="Yes"<?
+                                            <option value="Yes"<?php
                                             if ($eAllowQty == "Yes") {
                                                 echo 'selected="selected"';
                                             }
                                             ?>>Yes
                                             </option>
-                                            <option value="No"<?
+                                            <option value="No"<?php
                                             if ($eAllowQty == "No") {
                                                 echo 'selected="selected"';
                                             }
@@ -2000,7 +2000,7 @@ if ($app_type_service == 'UberX') {
                                 <div class="col-md-6 col-sm-6">
                                     <input type="hidden" name="temp_order" id="temp_order"
                                            value="<?= ($action == 'Edit') ? $iDisplayOrder_db : '1'; ?>">
-                                    <?
+                                    <?php
                                     $temp = 1;
                                     $select_order = $obj->MySQLSelect("SELECT count(iVehicleTypeId) as maxnumber FROM vehicle_type where eType ='UberX' AND iVehicleCategoryId = '" . $iVehicleCategoryId . "'");
                                     $maxnum = isset($select_order[0]['maxnumber']) ? $select_order[0]['maxnumber'] : 0;
@@ -2011,24 +2011,24 @@ if ($app_type_service == 'UberX') {
                                     }
                                     //$display_numbers = ($action == "Add") ? $iDisplayOrder_max : $iDisplayOrder; ?>
                                     <select name="iDisplayOrder" class="form-control" id="change_order">
-                                        <? foreach ($dataArray as $arr): ?>
+                                        <?php foreach ($dataArray as $arr): ?>
                                             <option <?= $arr == $temp ? ' selected="selected"' : '' ?>
                                                     value="<?= $arr; ?>">
                                                 -- <?= $arr ?> --
                                             </option>
-                                        <? endforeach; ?>
-                                        <? if ($action == "Add") { ?>
+                                        <?php endforeach; ?>
+                                        <?php if ($action == "Add") { ?>
                                             <option value="<?= $temp; ?>">-- <?= $temp ?> --</option>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                     <!--  <select name="iDisplayOrder" class="form-control" >
-                                                    <? for ($i = 1; $i <= $display_numbers; $i++) { ?>
-                                                    <option value="<?= $i ?>" <?
+                                                    <?php for ($i = 1; $i <= $display_numbers; $i++) { ?>
+                                                    <option value="<?= $i ?>" <?php
                                         if ($i == $iDisplayOrder_db) {
                                             echo "selected";
                                         }
                                         ?>> -- <?= $i ?> --</option>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                 </select> -->
                                 </div>
                             </div>
@@ -2074,7 +2074,7 @@ if ($app_type_service == 'UberX') {
 
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script type="text/javascript" src="js/validation/jquery.validate.min.js"></script>
 <script type="text/javascript" src="js/validation/additional-methods.min.js"></script>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>

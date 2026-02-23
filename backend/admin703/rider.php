@@ -488,11 +488,11 @@ if($RIDE_SHARE_OBJ->IsAnyDocumentActive()){
                                                        onClick="show_rider_details('<?= $data_drv[$i]['iUserId']; ?>')"
                                                        style="text-decoration: underline;"><?= clearName($data_drv[$i]['name']); ?></a>
                                                 </td>
-                                                <? if ($data_drv[$i]['vEmail'] != '') { ?>
-                                                    <td><? echo clearEmail($data_drv[$i]['vEmail']); ?></td>
-                                                <? } else { ?>
+                                                <?php if ($data_drv[$i]['vEmail'] != '') { ?>
+                                                    <td><?php echo clearEmail($data_drv[$i]['vEmail']); ?></td>
+                                                <?php } else { ?>
                                                     <td>--</td>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <td data-order="<?= $data_drv[$i]['iUserId']; ?>"><?php 
                                                 echo $get_registration_date_format['tDisplayDate']."<br/>".$get_registration_date_format['tDisplayTime'].$time_zone_difference_text;
                                                 //DateTime($data_drv[$i]['tRegistrationDate'], 7) ?></td>
@@ -542,7 +542,7 @@ if($RIDE_SHARE_OBJ->IsAnyDocumentActive()){
                                                 </td>
                                                 <?php } ?>
                                                 <td width="10%" align="center">
-                                                    <?
+                                                    <?php
                                                     if ($data_drv[$i]['eStatus'] == 'Active') {
                                                         $dis_img = "img/active-icon.png";
                                                     } else if ($data_drv[$i]['eStatus'] == 'Inactive') {
@@ -624,7 +624,7 @@ if($RIDE_SHARE_OBJ->IsAnyDocumentActive()){
 
                                                 <?php } ?>
                                             </tr>
-                                            <?
+                                            <?php
                                         }
                                     } else {
                                         ?>

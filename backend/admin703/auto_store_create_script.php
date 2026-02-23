@@ -240,7 +240,7 @@ if (isset($_POST['submit'])) {
         <title>Admin | Auto Create Store </title>
         <meta content="width = device-width, initial-scale = 1.0" name="viewport" />
         <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <?
+        <?php
         include_once('global_files.php');
         ?>
         <!-- On OFF switch -->
@@ -252,7 +252,7 @@ if (isset($_POST['submit'])) {
     <body class="padTop53 " >
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <?
+            <?php
             include_once('header.php');
             include_once('left_menu.php');
             ?>
@@ -267,7 +267,7 @@ if (isset($_POST['submit'])) {
                     <hr />
                     <div class="body-div">
                         <div class="form-group">
-                            <? if (isset($success) && $success == 1) { ?>
+                            <?php if (isset($success) && $success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">�</button>
                                     <?php
@@ -279,7 +279,7 @@ if (isset($_POST['submit'])) {
                                     ?>
 
                                 </div><br/>
-<? } ?>
+<?php } ?>
                             <div class="col-lg-12">
                                 <form name="_admin_form" id="_admin_form" method="post" action="" enctype="multipart/form-data">
                                     <div class="row">
@@ -305,7 +305,7 @@ if (isset($_POST['submit'])) {
             <!--END PAGE CONTENT -->
         </div>
         <!--END MAIN WRAPPER -->
-        <?
+        <?php
         include_once('footer.php');
         ?>
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>

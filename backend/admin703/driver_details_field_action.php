@@ -124,7 +124,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
 	<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-	<? include_once('global_files.php');?>
+	<?php include_once('global_files.php');?>
 	<!-- On OFF switch -->
 	<link href="../assets/css/jquery-ui.css" rel="stylesheet" />
 	<link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -134,8 +134,8 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 <body class="padTop53 " >
 	<!-- MAIN WRAPPER -->
 	<div id="wrap">
-		<? include_once('header.php'); ?>
-		<? include_once('left_menu.php'); ?>
+		<?php include_once('header.php'); ?>
+		<?php include_once('left_menu.php'); ?>
 		<!--PAGE CONTENT -->
 		<div id="content">
 			<div class="inner">

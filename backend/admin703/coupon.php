@@ -444,7 +444,7 @@ if (isset($cubeDeliverallOnly) && $cubeDeliverallOnly > 0) {
                                                     <?php } ?>
 
                                                 
-                                                            <? if (($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') && $onlyDeliverallModule == "NO") { ?>
+                                                            <?php if (($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') && $onlyDeliverallModule == "NO") { ?>
                                             <th width="">
                                                 <a href="javascript:void(0);" onClick="Redirect(8,<?php
                                                             if ($sortby == '8') {
@@ -463,7 +463,7 @@ if (isset($cubeDeliverallOnly) && $cubeDeliverallOnly > 0) {
                                                         ?>
                                                         <i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a>
                                             </th>
-                                                            <? } ?> 
+                                                            <?php } ?> 
                                         <th width="" align="center" style="text-align:center;">
 
                                             <a href="javascript:void(0);" onClick="Redirect(4,<?php
@@ -523,7 +523,7 @@ if (isset($cubeDeliverallOnly) && $cubeDeliverallOnly > 0) {
                                                 }
                                                 ?>
                                                 <td align="right"><?= $discounts; ?></td>
-                                                <td><?
+                                                <td><?php
                                                     if ($data_drv[$i]['eValidityType'] == "Defined") {
                                                         echo "Custom";
                                                     } else {
@@ -578,7 +578,7 @@ if (isset($cubeDeliverallOnly) && $cubeDeliverallOnly > 0) {
                                                 <?php } ?>
 
                                     
-                                                            <? if (($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') && $onlyDeliverallModule == "NO") { ?>
+                                                            <?php if (($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') && $onlyDeliverallModule == "NO") { ?>
                                                     <td>
                                                                     <?php
                                                                     if($data_drv[$i]['eFly']==1 && $data_drv[$i]['eSystemType']=='Ride') {
@@ -586,10 +586,10 @@ if (isset($cubeDeliverallOnly) && $cubeDeliverallOnly > 0) {
                                                                     } else {
                                                                     echo $data_drv[$i]['eSystemType']; 
                                                                     } ?></td>
-                                                            <? } ?>
+                                                            <?php } ?>
 
                                                 <td width="10%" align="center">
-                                                                <?
+                                                                <?php
                                                                 if ($data_drv[$i]['eStatus'] == 'Active') {
                                                                     $dis_img = "img/active-icon.png";
                                                                 } else if ($data_drv[$i]['eStatus'] == 'Inactive') {

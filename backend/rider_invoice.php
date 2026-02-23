@@ -215,7 +215,7 @@
 	            			<ul>
 	                  			<li>
 	                    			<h3><?=$langage_lbl['LBL_RIDER_RIDER_INVOICE_Car']; ?></h3>
-	                    				<?//=$db_vtype[0]['vehcat'].$car;?>
+	                    				<?php //=$db_vtype[0]['vehcat'].$car;?>
 										<?=$car;?>
 	            				</li>
 	            					<?php if($APP_TYPE != 'UberX'){ ?> 
@@ -226,7 +226,7 @@
 	                			
 	                  			<li>
 	                    			<h3><?=$langage_lbl['LBL_RIDER_Trip_time']; ?></h3>
-	                    			<?echo $diffss;?>
+	                    			<?php echo $diffss;?>
 	                			</li>
 	                			<?php } ?>
 	                		</ul>
@@ -236,11 +236,11 @@
               			<div class="driver-info">
               				<div class="driver-img">
               					<span class="invoice-img">
-													<? if($db_driver[0]['vImage'] != '' && file_exists($tconfig["tsite_upload_images_driver_path"]. '/' . $db_driver[0]['iDriverId'] . '/2_' . $db_driver[0]['vImage'])){?>
+													<?php if($db_driver[0]['vImage'] != '' && file_exists($tconfig["tsite_upload_images_driver_path"]. '/' . $db_driver[0]['iDriverId'] . '/2_' . $db_driver[0]['vImage'])){?>
 													<img src = "<?= $tconfig["tsite_upload_images_driver"]. '/' . $db_driver[0]['iDriverId'] . '/2_' .$db_driver[0]['vImage'] ?>" style="height:150px;"/>
-													<? }else{ ?>
+													<?php }else{ ?>
 													<img src="assets/img/profile-user-img.png" alt="">
-													<? } ?></span>
+													<?php } ?></span>
               				</div>
                 			<h3><?=$langage_lbl['LBL_RIDER_You_ride_with']; ?> <?= clearName($db_driver[0]['vName'].' '.$db_driver[0]['vLastName']);?></h3>
                 			<p><b><?=$langage_lbl['LBL_RIDER_Rate_Your_Ride']; ?>:</b><?=$db_ratings[0]['vRating1'];?></p>
@@ -249,7 +249,7 @@
                 			<div class="fare-breakdown-inner">
                   				<h3><?=$langage_lbl['LBL_RIDER_FARE_BREAK_DOWN_TXT']; ?></h3>
                   				<ul>
-									<?
+									<?php
 									if($db_trip[0]['fCancellationFare'] > 0){ ?>
 										<li><strong><?=$langage_lbl['LBL_CANCELLATION_FEE']; ?></strong><b><?=trip_currency($db_trip[0]['fCancellationFare'],$db_trip[0]['fRatio_'.$tripcurname],$tripcurname);?></b></li>
 									<?php }
@@ -260,7 +260,7 @@
 										<?php if($APP_TYPE == "UberX") {?>
 											<li><strong><?=$langage_lbl['LBL_RIDER_DISTANCE_TXT']; ?></strong><b><?=trip_currency($db_trip[0]['fPricePerKM'],$db_trip[0]['fRatio_'.$tripcurname],$tripcurname);?></b></li>
 											<li><strong><?=$langage_lbl['LBL_RIDER_TIME_TXT']; ?> </strong><b><?=trip_currency($db_trip[0]['fPricePerMin'],$db_trip[0]['fRatio_'.$tripcurname],$tripcurname);?></b></li>
-										<? } else { ?>
+										<?php } else { ?>
 											<li><strong><?=$langage_lbl['LBL_RIDER_DISTANCE_TXT']; ?></strong><b><?=trip_currency($db_trip[0]['fPricePerKM'],$db_trip[0]['fRatio_'.$tripcurname],$tripcurname);?></b></li>
 											<li><strong><?=$langage_lbl['LBL_RIDER_TIME_TXT']; ?></strong><b><?=trip_currency($db_trip[0]['fPricePerMin'],$db_trip[0]['fRatio_'.$tripcurname],$tripcurname);?></b></li>
 										<?php }
@@ -269,7 +269,7 @@
 									{
 										if($db_trip[0]['eFareType'] == 'Hourly') { ?>													
 											<li><strong><?php echo $langage_lbl['LBL_TIME_TXT'];?> (<?php echo $totalTime?>)</strong><b><?=trip_currency($db_trip[0]['fPricePerMin'],$db_trip[0]['fRatio_'.$tripcurname],$tripcurname);?></b></li>
-										<? } else {?>	
+										<?php } else {?>	
 											<li><strong><?=$langage_lbl['LBL_RIDER_Total_Fare']; ?></strong><b>
 												<?php 
 											$vVehicleFare_price = cal_trip_price_details($db_trip[0]['iTripId'],$db_trip[0]['iDriverVehicleId'],$db_trip[0]['iVehicleTypeId']);
@@ -280,25 +280,25 @@
 												<!-- <?=trip_currency($db_trip[0]['iFare'],$db_trip[0]['fRatio_'.$tripcurname],$tripcurname);?> -->
 													
 												</b></li>
-										<? }
+										<?php }
 									}
 									if($db_trip[0]['fWalletDebit'] > 0)
 									{
 										?>
 											<li><strong><?=$langage_lbl['LBL_RIDER_WALLET_DEBIT_MONEY']; ?></strong><b> - <?=trip_currency($db_trip[0]['fWalletDebit'],$db_trip[0]['fRatio_'.$tripcurname],$tripcurname);?> </b></li>
-											<?
+											<?php
 									}
 									if($db_trip[0]['fDiscount'] > 0)
 									{
 										?>
 										<li><strong><?=$langage_lbl['LBL_RIDER_DISCOUNT']; ?> </strong><b> - <?=trip_currency($db_trip[0]['fDiscount'],$db_trip[0]['fRatio_'.$tripcurname],$tripcurname);?></b></li>
-										<?
+										<?php
 									}
 									if($db_trip[0]['fSurgePriceDiff'] > 0)
 										{
 											?>
 											<li><strong><?=$langage_lbl['LBL_RIDER_SURGE_MONEY']; ?></strong><b><?=trip_currency($db_trip[0]['fSurgePriceDiff'],$db_trip[0]['fRatio_'.$tripcurname],$tripcurname);?></b></li>
-											<?
+											<?php
 										}
 									?>
 
@@ -355,7 +355,7 @@
 								<?php if($db_trip[0]['fTipPrice'] > 0)
 								{ ?>
 									<ul><li><strong><?=$langage_lbl['LBL_TIP_GIVEN_TXT']; ?></strong><b> <?=trip_currency($db_trip[0]['fTipPrice']);?></b></li></ul>
-								<?} ?>
+								<?php } ?>
                   				<div style="clear:both;"></div>
 
                   				<?php if($db_trip[0]['eType'] == 'Deliver' && $APP_DELIVERY_MODE != 'Multi'){ ?>
@@ -399,7 +399,7 @@
               			</div>
             		</div>
 					
-					<? if($APP_DELIVERY_MODE == "Multi" && $db_trip[0]['eType'] == 'Deliver'){?>
+					<?php if($APP_DELIVERY_MODE == "Multi" && $db_trip[0]['eType'] == 'Deliver'){?>
 						<div style="clear:both;"></div>
 						<div class="invoice-part-bottom invoice-part-bottom1">	
 							<?php 	
@@ -449,16 +449,16 @@
 								} } ?>
 								<?php } ?>               				 
 						</div>
-					<? } ?>
+					<?php } ?>
 					
                     </div>
             		<!-- -->
-        		 	<? //if(SITE_TYPE=="Demo"){?>
+        		 	<?php //if(SITE_TYPE=="Demo"){?>
             		<!-- <div class="record-feature"> 
             			<span><strong>“Edit / Delete Record Feature”</strong> has been disabled on the Demo Admin Version you are viewing now.
               			This feature will be enabled in the main product we will provide you.</span> 
               		</div> -->
-              		<? //}?>
+              		<?php //}?>
         		<!-- -->
           		</div>
 				<?php

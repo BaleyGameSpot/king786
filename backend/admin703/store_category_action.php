@@ -199,7 +199,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                 <title><?= $SITE_NAME ?> | Store Category <?= $action; ?></title>
                 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
                 <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-                <? include_once('global_files.php'); ?>
+                <?php include_once('global_files.php'); ?>
                 <!-- On OFF switch -->
                 <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
                 <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -221,7 +221,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
             <body class="padTop53 " >
                 <!-- MAIN WRAPPER -->
                 <div id="wrap">
-                    <?
+                    <?php
                         include_once('header.php');
                         include_once('left_menu.php');
                         ?>
@@ -239,32 +239,32 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                             <hr />
                             <div class="body-div">
                                 <div class="form-group">
-                                    <? if ($success == 1) { ?>
+                                    <?php if ($success == 1) { ?>
                                         <div class="alert alert-success alert-dismissable msgs_hide">
                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                         </div>
                                         <br/>
-                                    <? } elseif ($success == 2) { ?>
+                                    <?php } elseif ($success == 2) { ?>
                                         <div class="alert alert-danger alert-dismissable ">
                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                         </div>
                                         <br/>
-                                    <? } else if ($success == 3) { ?>
+                                    <?php } else if ($success == 3) { ?>
                                         <div class="alert alert-danger alert-dismissable">
                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                             <?php echo $_REQUEST['varmsg']; ?> 
                                         </div>
                                         <br/> 
-                                    <? } ?>
-                                    <? if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
+                                    <?php } ?>
+                                    <?php if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
                                         <div class="alert alert-danger alert-dismissable">
                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                             Record  Not Updated .
                                         </div>
                                         <br/>
-                                    <? } ?>                   
+                                    <?php } ?>                   
                                     <form id="_vehicleType_form" name="_vehicleType_form" method="post" action="" enctype="multipart/form-data">
                                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                                         <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -537,9 +537,9 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                 <label>Image</label>
                                             </div>
                                             <div class="col-md-6 col-sm-6">
-                                                <? if ($tCategoryImage != '') { ?>
+                                                <?php if ($tCategoryImage != '') { ?>
                                                     <img src="<?= $tconfig['tsite_upload_images_store_categories'] . "/" . $tCategoryImage; ?>" style="width:100px;height:100px;">
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="tCategoryImage" id="tCategoryImage" value="<?= $tCategoryImage; ?>">
                                             </div>
                                         </div>*/ ?>
@@ -577,7 +577,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                         <span>Language Translation is in Process. Please Wait...</span>                       
                     </div>
                 </div>
-                <?
+                <?php
                     include_once('footer.php');
                     ?>  
                 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>

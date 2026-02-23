@@ -396,7 +396,7 @@ if(empty($eType)){
                     <?php if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <? echo $_REQUEST['var_msg']; ?>
+                            <?php echo $_REQUEST['var_msg']; ?>
                         </div>
                         <br/>
                     <?php } ?>
@@ -427,7 +427,7 @@ if(empty($eType)){
                                        class="form-control"/>
                             </div>
                         </div>
-                        <? if ($MODULES_OBJ->isEnableLocationwiseBanner()) { ?>
+                        <?php if ($MODULES_OBJ->isEnableLocationwiseBanner()) { ?>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <label>Select Location
@@ -439,10 +439,10 @@ if(empty($eType)){
                                 <div class="col-lg-6">
                                     <select class="form-control" name='iLocationId' id="iLocationId" required="">
                                         <option value="">Select Location</option>
-                                        <option value="-1" <? if ($iLocationId == "-1") { ?>selected<? } ?>>All</option>
+                                        <option value="-1" <?php if ($iLocationId == "-1") { ?>selected<?php } ?>>All</option>
                                         <?php
                                         foreach ($db_location as $i => $row) { ?>
-                                            <option value="<?= $row['iLocationId'] ?>" <? if ($iLocationId == $row['iLocationId']) { ?>selected<? } ?>><?= $row['vLocationName'] ?></option>
+                                            <option value="<?= $row['iLocationId'] ?>" <?php if ($iLocationId == $row['iLocationId']) { ?>selected<?php } ?>><?= $row['vLocationName'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -451,7 +451,7 @@ if(empty($eType)){
                                     </a>
                                 </div>
                             </div>
-                        <? } ?>
+                        <?php } ?>
                         <div class="bannerlang">
                             <input type="hidden" name="vCode" value="<?= $vCodeLang ?>">
                             <?php for ($i = 0; $i < $count_all; $i++){ 

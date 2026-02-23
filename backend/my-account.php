@@ -13,8 +13,8 @@
 </head>
 <body class="padTop53 " >
     <div id="wrap">
-		<? include_once('header.php'); ?>
-		<? include_once('left_menu.php'); ?>
+		<?php include_once('header.php'); ?>
+		<?php include_once('left_menu.php'); ?>
         <!--PAGE CONTENT -->
         <div id="content">
 			<div class="inner" style="min-height:1200px;">
@@ -72,7 +72,7 @@
     </div>
     <!--END MAIN WRAPPER -->
 
-   	<? include_once('footer.php');?>
+   	<?php include_once('footer.php');?>
 </body>
     <!-- END BODY-->
     

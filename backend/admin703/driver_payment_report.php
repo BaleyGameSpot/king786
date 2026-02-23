@@ -230,7 +230,7 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3'){
             <div id="add-hide-show-div">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2><?=$langage_lbl_admin['LBL_RESTAURANT_TXT_ADMIN']." ".$langage_lbl_admin['LBL_DRIVER_COMPANY_TXT'];?> Payment Report <? if (!empty($db_drivers[0]['driverName'])){ ?>(<? echo clearName($db_drivers[0]['driverName']); ?>)<?php } ?></h2>
+                        <h2><?=$langage_lbl_admin['LBL_RESTAURANT_TXT_ADMIN']." ".$langage_lbl_admin['LBL_DRIVER_COMPANY_TXT'];?> Payment Report <?php if (!empty($db_drivers[0]['driverName'])){ ?>(<?php echo clearName($db_drivers[0]['driverName']); ?>)<?php } ?></h2>
                     </div>
                 </div>
                 <hr/>
@@ -257,8 +257,8 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3'){
                                 <div class="col-lg-3 select001">
                                     <select class="form-control" name='searchPaymentType' data-text="Select <?php echo $langage_lbl_admin['LBL_PASSANGER_TXT_ADMIN']; ?>">
                                         <option value="">Select Payment Type</option>
-                                        <option value="Cash" <? if ($searchPaymentType == "Cash") { ?>selected <? } ?>>Cash</option>
-                                        <option value="Card" <? if ($searchPaymentType == "Card") { ?>selected <? } ?>><?=$cardText;?></option>
+                                        <option value="Cash" <?php if ($searchPaymentType == "Cash") { ?>selected <?php } ?>>Cash</option>
+                                        <option value="Card" <?php if ($searchPaymentType == "Card") { ?>selected <?php } ?>><?=$cardText;?></option>
                                     </select>
                                 </div>
                                 <div class="col-lg-3 select001">
@@ -275,7 +275,7 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3'){
                     <div class="col-lg-2">
                         <input type="text" id="serachTripNo" name="serachTripNo" placeholder="<?php echo $langage_lbl_admin['LBL_TRIP_TXT_ADMIN_DL']; ?> Number" class="form-control search-trip001" value="<?php echo $serachTripNo; ?>"/>
                     </div>
-                    <? if (scount($allservice_cat_data) > 1){ ?>
+                    <?php if (scount($allservice_cat_data) > 1){ ?>
                         <div class="col-lg-2 select001" style="padding-right:15px;">
                             <select class="form-control filter-by-text" name="searchServiceType" data-text="Select Serivce Type">
                                 <option value="">Select <?php echo $langage_lbl_admin['LBL_RIDER_NAME_TXT_ADMIN']; ?></option>
@@ -300,7 +300,7 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3'){
                                 <?php } ?>
                             </select>
                         </div>
-                    <? } ?>
+                    <?php } ?>
                 </div>
 
                 <div class="tripBtns001"><b>
@@ -322,9 +322,9 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3'){
                                 <table class="table table-bordered" id="dataTables-example123">
                                     <thead>
                                     <tr>
-                                        <? if (scount($allservice_cat_data) > 1){ ?>
+                                        <?php if (scount($allservice_cat_data) > 1){ ?>
                                             <th width="8%">Service Type</th>
-                                        <? } ?>
+                                        <?php } ?>
                                         <th width="6%" style="text-align:center;"><?php echo $langage_lbl_admin['LBL_RIDE_NO_ADMIN_DL']; ?>#</th>
                                         <th width="8%" style="text-align:center;">
                                             <a href="javascript:void(0);" onClick="Redirect(3,<?php
@@ -378,7 +378,7 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3'){
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?
+                                    <?php
                                     $set_unsetarray = array();
                                     if (scount($db_trip) > 0){
                                         $systemTimeZone = date_default_timezone_get();
@@ -427,15 +427,15 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3'){
                                             $DeliveryDate = commonDateFormat($db_trip[$i]['tEndDate'],$db_trip[$i]['vTimeZone'],$default_lang,1,'Yes');
                                             ?>
                                             <tr class="gradeA <?=$class_setteled?>">
-                                                <? if (scount($allservice_cat_data) > 1){ ?>
-                                                    <td><? echo $vServiceName; ?></td>
-                                                <? } ?>
+                                                <?php if (scount($allservice_cat_data) > 1){ ?>
+                                                    <td><?php echo $vServiceName; ?></td>
+                                                <?php } ?>
                                                 <?php if ($userObj->hasPermission('view-invoice')){ ?>
                                                     <td align="center">
-                                                        <a href="order_invoice.php?iOrderId=<?=$db_trip[$i]['iOrderId']?>" target="_blank"><? echo $db_trip[$i]['vOrderNo']; ?></a>
+                                                        <a href="order_invoice.php?iOrderId=<?=$db_trip[$i]['iOrderId']?>" target="_blank"><?php echo $db_trip[$i]['vOrderNo']; ?></a>
                                                     </td>
                                                 <?php }else{ ?>
-                                                    <td align="center"><? echo $db_trip[$i]['vOrderNo']; ?></td>
+                                                    <td align="center"><?php echo $db_trip[$i]['vOrderNo']; ?></td>
                                                 <?php } ?>
                                                 <td align="center"><?=$get_tOrderRequestDate_format['tDisplayDate']."<br/>".$get_tOrderRequestDate_format['tDisplayTime'].$time_zone_difference_text;//DateTime($db_trip[$i]['tOrderRequestDate']); ?></td>
 
@@ -475,7 +475,7 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3'){
                                                     // echo formateNumAsPerCurrency($db_trip[$i]['fDeliveryCharge'],'');
                                                     echo ($db_trip[$i]['fTipAmount'] > 0)?formateNumAsPerCurrency($driverEarning,'')."<br>(Including ".$langage_lbl_admin['LBL_DELIVERY_TIP_TXT'].": ".formateNumAsPerCurrency($db_trip[$i]['fTipAmount'],'').")":formateNumAsPerCurrency($driverEarning,'');
                                                     ?></td>
-                                                <!-- <td align="right"><? echo formateNumAsPerCurrency($driverEarning,''); ?></td> -->
+                                                <!-- <td align="right"><?php echo formateNumAsPerCurrency($driverEarning,''); ?></td> -->
                                                 <td align="center"><?=$db_trip[$i]['vStatus'];?></td>
                                                 <td align="center">
                                                     <?php
@@ -487,16 +487,16 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3'){
                                                     <?=$vTripPaymentMode;?></td>
                                                 <td align="center"><?=$db_trip[$i]['eDriverPaymentStatus'];?></td>
                                                 <td align="center">
-                                                    <?
+                                                    <?php
                                                     if ($db_trip[$i]['eDriverPaymentStatus'] == 'Unsettelled'){
                                                         ?>
                                                         <input class="validate[required]" type="checkbox" value="<?=$db_trip[$i]['iTripId']?>" id="iTripId_<?=$db_trip[$i]['iTripId']?>" name="iTripId[]">
-                                                        <?
+                                                        <?php
                                                     }
                                                     ?>
                                                 </td>
                                             </tr>
-                                        <? } ?>
+                                        <?php } ?>
                                         <tr class="gradeA">
                                             <td colspan="9" align="right">Total <?=$langage_lbl_admin['LBL_RESTAURANT_TXT_ADMIN']." ".$langage_lbl_admin['LBL_DRIVER_COMPANY_TXT'];?> Payment</td>
 
@@ -512,7 +512,7 @@ if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3'){
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <?
+                                            <?php
                                         }
                                     }else{
                                         ?>

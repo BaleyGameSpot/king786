@@ -224,7 +224,7 @@ if ($action == 'Edit') {
                                         <select name = "iYear" id="iYear" class="form-control" >
                                             <option value="">CHOOSE YEAR </option>
                                             <?php for ($j = $start; $j >= $end; $j--) { ?>
-                                                <option value="<?= $j ?>" <? if ($iYear == $j) { ?> selected <? } ?>><?= $j ?></option>
+                                                <option value="<?= $j ?>" <?php if ($iYear == $j) { ?> selected <?php } ?>><?= $j ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -310,7 +310,7 @@ if ($action == 'Edit') {
         <!--END MAIN WRAPPER -->
 
 
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
         <script src="../assets/js/modal_alert.js"></script>
         <script src="js/plugins/select2.min.js"></script>
@@ -545,7 +545,7 @@ if ($action == 'Edit') {
                 window.onload = function () {
                     get_model('<?php echo $db_data[0]['iMakeId']; ?>', '<?php echo $db_data[0]['iModelId']; ?>');
                 };
-            <? } ?>
+            <?php } ?>
 
             $(document).ready(function () {
                 var referrer;

@@ -205,12 +205,12 @@ function getUserInfoForMail($iUserProfileId)
 					<?php echo $langage_lbl['LBL_ORGANIZATION_USERS_WEB']; ?> <!-- <a href="javascript:void(0);" onClick="add_driver_form();"><?=$langage_lbl['LBL_ADD_DRIVER_COMPANY_TXT']; ?></a> --></h2>
 					<!-- driver list page -->
 					<div class="trips-page trips-page1">
-						<? if ($_REQUEST['success']==1) {?>
+						<?php if ($_REQUEST['success']==1) {?>
 						<div class="alert alert-success alert-dismissable">
 							<button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button> 
 							<?= $var_msg ?>
 						</div>
-						<?}else if($_REQUEST['success']==2){ ?>
+						<?php }else if($_REQUEST['success']==2){ ?>
 						<div class="alert alert-danger alert-dismissable">
 							<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 							<?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -221,7 +221,7 @@ function getUserInfoForMail($iUserProfileId)
 						<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> 
 						<?= $var_msg ?>
 					</div>
-					<? }
+					<?php }
 					?>
 
 					<div class="trips-table trips-table-driver trips-table-driver-res"> 
@@ -241,7 +241,7 @@ function getUserInfoForMail($iUserProfileId)
 												<th width="10%"><?php echo $langage_lbl['LBL_PHONE']; ?></th>
 
 												<!-- <th width="15%" style="width: 67px;">
-													<? if($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX"){
+													<?php if($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX"){
 														echo $langage_lbl['LBL_SHORT_LANG_TXT']; 
 													} else {
 														echo $langage_lbl['LBL_SERVICES_WEB'];
@@ -268,7 +268,7 @@ function getUserInfoForMail($iUserProfileId)
 												</tr>
 											</thead>
 											<tbody>
-												<? for ($i = 0; $i < scount($data_drv); $i++) { ?>
+												<?php for ($i = 0; $i < scount($data_drv); $i++) { ?>
 
 												<?php $bgRowColor = ($data_drv[$i]['eStatus'] == 'Pending') ? 'bgRowColor' : ''?>
 
@@ -324,7 +324,7 @@ function getUserInfoForMail($iUserProfileId)
 													</td>
 
 													<!-- <td>
-														<? if($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX"){
+														<?php if($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX"){
 																echo $data_drv[$i]['vLang']; 
 															} else {?>
 															<a href="add_services.php?iDriverId=<?= base64_encode(base64_encode($data_drv[$i]['iDriverId'])); ?>">
@@ -332,7 +332,7 @@ function getUserInfoForMail($iUserProfileId)
 																	<i class="icon-pencil icon-white"></i>
 																	<?=$langage_lbl['LBL_SERVICES_WEB'];?>
 																</button>
-															</a><?
+															</a><?php
 															}
 														 ?>
 														</td> -->
@@ -374,7 +374,7 @@ function getUserInfoForMail($iUserProfileId)
 														</form>
 													</td> -->
 												</tr>
-												<? } ?>
+												<?php } ?>
 											</tbody>
 										</table>
 									</div>  

@@ -105,7 +105,7 @@ if ($error) {
     <?= $var_msg ?>
                             </div>
                         </div>
-                                <?
+                                <?php
                             }
                             ?>
                     <?php
@@ -123,7 +123,7 @@ $label_text = ($_SESSION['sess_user'] == "driver") ? $langage_lbl['LBL_MANAGE_PR
 
                     <h2 class="header-page add-car-vehicle"><?= $label_text ?>
 
-<?
+<?php
 $back_link = ($_SESSION['sess_user'] == "driver") ? "profile.php" : "driver_action.php?id=" . $iDriverId . "&action=edit";
 ?>
                         <a href="<?= $back_link ?>">
@@ -138,7 +138,7 @@ $back_link = ($_SESSION['sess_user'] == "driver") ? "profile.php" : "driver_acti
                             <div class="accordion">
                                 <span>
                                     <form name="frm1" action="" method="POST">
-<? foreach ($data_preference as $value) { ?>
+<?php foreach ($data_preference as $value) { ?>
 
                                             <div class="preferences-chat">
                                                 <b class="car-preferences-right-part"><?= $value['vName'] ?></b>
@@ -153,7 +153,7 @@ $back_link = ($_SESSION['sess_user'] == "driver") ? "profile.php" : "driver_acti
                                                 <input type="radio" name="vChecked_<?= $value['iPreferenceId'] ?>" id="Yes_<?= $value['iPreferenceId'] ?>" value="Yes">
                                                 <input type="radio" name="vChecked_<?= $value['iPreferenceId'] ?>" id="No_<?= $value['iPreferenceId'] ?>" value="No">
                                             </span> 
-<? } ?>
+<?php } ?>
                                         <p class="car-preferences-right-part-b">
                                             <input name="btnsubmit" type="submit" value="<?= $langage_lbl['LBL_Save']; ?>" class="save-but">
 
@@ -204,14 +204,14 @@ $back_link = ($_SESSION['sess_user'] == "driver") ? "profile.php" : "driver_acti
 
 
             $(window).on("load", function () {
-<? if (scount($data_driver_pref_edit) > 0) { ?>
+<?php if (scount($data_driver_pref_edit) > 0) { ?>
                     var dataarr = '<?= json_encode($data_driver_pref_edit) ?>';
                     var arr1 = JSON.parse(dataarr);
 
                     for (var i = 0; i < arr1.length; i++) {
                         checked_val(arr1[i].iPreferenceId, arr1[i].eType)
                     }
-<? } ?>
+<?php } ?>
             });
 
             $(document).ready(function () {

@@ -122,12 +122,12 @@ if ($action == 'view') {
                 <h1><?php echo $langage_lbl['LBL_ORGANIZATION_USERS_WEB']; ?></h1>
             </div>          
 					<div class="trips-page trips-page1" style="width: 100%;">
-						<? if ($success == 1) {?>
+						<?php if ($success == 1) {?>
 						<div class="alert alert-success alert-dismissable">
 							<button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button> 
 							<?= $var_msg ?>
 						</div>
-						<?}else if($success == 2){ ?>
+						<?php }else if($success == 2){ ?>
 						<div class="alert alert-danger alert-dismissable">
 							<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 							<?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -138,7 +138,7 @@ if ($action == 'view') {
 						<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> 
 						<?= $var_msg ?>
 					</div>
-					<? }
+					<?php }
 					?>
 
         </div>
@@ -161,7 +161,7 @@ if ($action == 'view') {
 					<th width="10%"><?php echo $langage_lbl['LBL_PHONE']; ?></th>
 
 					<!-- <th width="15%" style="width: 67px;">
-					<? if($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX"){
+					<?php if($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX"){
 						echo $langage_lbl['LBL_SHORT_LANG_TXT']; 
 					} else {
 						echo $langage_lbl['LBL_SERVICES_WEB'];
@@ -187,7 +187,7 @@ if ($action == 'view') {
                 </tr>
             </thead>
 				<tbody>
-					<? for ($i = 0; $i < scount($data_drv); $i++) { ?>
+					<?php for ($i = 0; $i < scount($data_drv); $i++) { ?>
 
 					<?php $bgRowColor = ($data_drv[$i]['eStatus'] == 'Pending') ? 'bgRowColor' : ''?>
 
@@ -264,7 +264,7 @@ if ($action == 'view') {
 						</td>
 
 						<!-- <td>
-							<? if($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX"){
+							<?php if($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX"){
 									echo $data_drv[$i]['vLang']; 
 								} else {?>
 								<a href="add_services.php?iDriverId=<?= base64_encode(base64_encode($data_drv[$i]['iDriverId'])); ?>">
@@ -272,7 +272,7 @@ if ($action == 'view') {
 										<i class="icon-pencil icon-white"></i>
 										<?=$langage_lbl['LBL_SERVICES_WEB'];?>
 									</button>
-								</a><?
+								</a><?php
 								}
 							 ?>
 							</td> -->
@@ -314,7 +314,7 @@ if ($action == 'view') {
 							</form>
 						</td> -->
 					</tr>
-					<? } ?>
+					<?php } ?>
 				</tbody>
         </table>
     </div>

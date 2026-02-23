@@ -1,4 +1,4 @@
-<?
+<?php
 include '../common.php';
 $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : '';
 

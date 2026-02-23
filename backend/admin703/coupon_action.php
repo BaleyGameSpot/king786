@@ -284,7 +284,7 @@ if(scount($iServiceIdArr) == 1) {
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
         <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <!-- On OFF switch -->
         <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -300,7 +300,7 @@ if(scount($iServiceIdArr) == 1) {
     <body class="padTop53">
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <?
+            <?php
             include_once('header.php');
             include_once('left_menu.php');
             ?>
@@ -318,19 +318,19 @@ if(scount($iServiceIdArr) == 1) {
                             </a> </div>
                     </div>
                     <hr />
-                    <? if ($success == 3) { ?>
+                    <?php if ($success == 3) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?php print_r($error); ?>
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if ($success == 2) {?>
+                    <?php } ?>
+                    <?php if ($success == 2) {?>
                          <div class="alert alert-danger alert-dismissable">
                               <button aria-hidden="true" data-dismiss="alert" class="close" type="button">�</button>
                               <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
                     <div class="body-div coupon-action-part">
                         <div class="form-group"> 
                             <span style="color:red; font-size:small;" id="coupon_status"></span>
@@ -354,7 +354,7 @@ if(scount($iServiceIdArr) == 1) {
                                         if ($action == 'Edit') {
                                             echo "readonly";
                                         } else {
-                                            ?>  <? } ?> id="vCouponCode" value="<?= $vCouponCode; ?>" placeholder="Coupon Code">
+                                            ?>  <?php } ?> id="vCouponCode" value="<?= $vCouponCode; ?>" placeholder="Coupon Code">
                                                <?php
                                                if ($action == 'Edit') {
                                                    
@@ -535,7 +535,7 @@ if(scount($iServiceIdArr) == 1) {
 
                                 </div>
 
-                                <? if (($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') && $onlyDeliverallModule == "NO") { ?>
+                                <?php if (($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') && $onlyDeliverallModule == "NO") { ?>
                                     <div class="row coupon-action-n3">
                                         <div class="col-lg-12">
                                             <label>System Type<span class="red"> *</span></label>
@@ -546,31 +546,31 @@ if(scount($iServiceIdArr) == 1) {
                                             <input type="hidden" name="couponsystem" value="<?= $eSystemType; ?>">
                                         <?php } ?>
                                         <div class="col-md-6 col-sm-6">
-                                            <select <? if ($action == 'Edit') { ?> disabled=""<? } ?> id="eSystemType" name="eSystemType" class="form-control ">
+                                            <select <?php if ($action == 'Edit') { ?> disabled=""<?php } ?> id="eSystemType" name="eSystemType" class="form-control ">
                                                 <option value="General" <?php if ($eSystemType == "General") { ?>selected <?php } ?> >General</option>
-                                                <? if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') {
+                                                <?php if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery') {
                                                     if($rideEnable == "Yes") { ?>
                                                     <option value="Ride" <?php if ($eSystemType == "Ride" && $eFly=='0') { ?>selected <?php } ?> >Ride</option>
-                                                    <? } if($deliveryEnable == "Yes") { ?>
+                                                    <?php } if($deliveryEnable == "Yes") { ?>
                                                     <option value="Delivery" <?php if ($eSystemType == "Delivery") { ?>selected <?php } ?> >Delivery</option>
-                                                <? } } ?>
-                                                <? if ($APP_TYPE == 'Ride-Delivery-UberX' && $ufxEnable == "Yes") { ?>
+                                                <?php } } ?>
+                                                <?php if ($APP_TYPE == 'Ride-Delivery-UberX' && $ufxEnable == "Yes") { ?>
                                                     <option value="UberX" <?php if ($eSystemType == "UberX") { ?>selected <?php } ?> >UberX</option>
-                                                <? } ?>
-                                                <? if (DELIVERALL == "Yes" && $deliverallEnable == "Yes") { ?>
+                                                <?php } ?>
+                                                <?php if (DELIVERALL == "Yes" && $deliverallEnable == "Yes") { ?>
                                                     <option value="DeliverAll" <?php if ($eSystemType == "DeliverAll") { ?>selected <?php } ?> >DeliverAll</option>
-                                                <? } ?>
-                                                    <? if ($flyEnable == "Yes") { ?>
+                                                <?php } ?>
+                                                    <?php if ($flyEnable == "Yes") { ?>
                                                     <option value="Fly" <?php if ($eSystemType == "Ride" && $eFly=='1') { ?>selected <?php } ?> >Fly</option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
-                                <? } else if ($onlyDeliverallModule == "YES") { ?>
+                                <?php } else if ($onlyDeliverallModule == "YES") { ?>
                                     <input type="hidden" name="eSystemType" class="form-control" id="eSystemType" value="DeliverAll">
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <input type="hidden" name="eSystemType" class="form-control" id="eSystemType" value="<?= $APP_TYPE; ?>">
-                                <? } ?>
+                                <?php } ?>
 
                                 <?php if($MODULES_OBJ->isEnableFreeDeliveryOrStoreSpecificPromoCode()) { ?>
                                     <?php if($action == "Add") { ?>
@@ -692,7 +692,7 @@ if(scount($iServiceIdArr) == 1) {
                                             <input type="submit" class="btn btn-default" name="submit" id="submit" value="<?php if ($action == 'Add') { ?><?= $action; ?> PromoCode<?php } else { ?>Update<?php } ?>">
                                             <input type="reset" value="Reset" class="btn btn-default">
                                         <?php } ?>
-                                        <!--                <a href="javascript:void(0);" <?php if ($action == 'Edit') { ?> onClick="reset_form('_coupon_form'),reset_CouponCode();" <?php } else { ?> onClick="reset_form('_coupon_form');"  <? } ?>  class="btn btn-default">Reset</a> -->
+                                        <!--                <a href="javascript:void(0);" <?php if ($action == 'Edit') { ?> onClick="reset_form('_coupon_form'),reset_CouponCode();" <?php } else { ?> onClick="reset_form('_coupon_form');"  <?php } ?>  class="btn btn-default">Reset</a> -->
                                         <a href="coupon.php" class="btn btn-default back_link">Cancel</a>
                                     </div>
                                 </div>
@@ -711,7 +711,7 @@ if(scount($iServiceIdArr) == 1) {
                 <span>Language Translation is in Process. Please Wait...</span>                       
             </div>                                                                                 
         </div>
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
         <script>
             $('[data-toggle="tooltip"]').tooltip();
@@ -752,7 +752,7 @@ if(scount($iServiceIdArr) == 1) {
                     showhidedate('<?php echo $eValidityType; ?>');
                 };
             </script>
-        <? } else { ?>
+        <?php } else { ?>
             <script>
                 window.onload = function () {
                     $('input:radio[name=eValidityType][value=Permanent]').attr('checked', true);

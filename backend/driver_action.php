@@ -535,25 +535,25 @@ if ($action == 'Add') {
                 <div class="page-contant-inner page-trip-detail">
 
                     <h2 class="header-page trip-detail driver-detail1"><?= $action_lbl; ?> <?= $langage_lbl['LBL_VEHICLE_DRIVER_TXT_ADMIN']; ?> <?= $vName; ?>
-<? if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'UberX') { ?>
+<?php if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'UberX') { ?>
                             <a href="providerlist">
                                 <img src="assets/img/arrow-white.png" alt=""> <?= $langage_lbl['LBL_BACK_To_Listing_WEB']; ?>
                             </a>
-            <? } else { ?>
+            <?php } else { ?>
                             <a href="driverlist">
                                 <img src="assets/img/arrow-white.png" alt=""> <?= $langage_lbl['LBL_BACK_To_Listing_WEB']; ?>
                             </a>
-            <? } ?>
+            <?php } ?>
 
                     </h2>
                     <!-- login in page -->
                     <div class="driver-action-page">
-<? if ($success == 1) { ?>
+<?php if ($success == 1) { ?>
                             <div class="alert alert-success alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
     <?php echo $langage_lbl['LBL_Record_Updated_successfully']; ?>
                             </div>
-                        <? } else if ($success == 2) { ?>
+                        <?php } else if ($success == 2) { ?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
     <?php echo $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -569,21 +569,21 @@ if ($action == 'Add') {
                                 <?php if ($vImage != '' && file_exists($tconfig["tsite_upload_images_driver_path"] . '/' . $id . '/3_' . $vImage)) { ?>
                                         <div class="col-lg-2">
                                             <b class="img-b"><img class="img-ipm1" src = "<?php echo $tconfig["tsite_upload_images_driver"] . '/' . $id . '/3_' . $vImage ?>"/></b></div>
-    <? } else { ?>
+    <?php } else { ?>
                                         <img src="assets/img/profile-user-img.png" alt="">
 
-                            <? } ?>
-                        <? } ?>
+                            <?php } ?>
+                        <?php } ?>
 
-                        <? if ($SITE_VERSION == "v5") { ?>
+                        <?php if ($SITE_VERSION == "v5") { ?>
                                     <div class="col-lg-5 col-vs">
                                         <fieldset class="col-md-12 field-a">
                                             <legend class="lable-b"><h4 class="headind-a1"><?= $langage_lbl['LBL_PREFERENCES_TEXT'] ?>: </h4></legend>
 
                                             <div class="div-img1"> 
-                                    <? foreach ($data_driver_pref as $val) { ?>
+                                    <?php foreach ($data_driver_pref as $val) { ?>
                                                     <img data-toggle="tooltip" class="borderClass-aa1 border_class-bb1" title="<?= $val['pref_Title'] ?>" src="<?= $tconfig["tsite_upload_preference_image_panel"] . $val['pref_Image'] ?>">
-                                    <? } ?>
+                                    <?php } ?>
                                             </div>
 
                                             <span class="col-md-12 span-box"><a href="preferences.php?id=<?= $id ?>&d_name=<?= $vName ?>" id="show-edit-language-div" class="hide-language">
@@ -592,7 +592,7 @@ if ($action == 'Add') {
 
                                         </fieldset>
                                     </div>
-<? } ?>
+<?php } ?>
                             </div>
                             <div class="driver-action-page-right validation-form driver-action-new">
                                 <div class="row-a1">
@@ -623,9 +623,9 @@ if (getEditDriverProfileStatus($eStatus) == "No") {
                                     <div class="action-driv">
                                         <div class="col-md-4">
                                             <span>
-                                                <label><?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?><?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?><span class="red">*</span><? } ?></label>
+                                                <label><?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?><?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?><span class="red">*</span><?php } ?></label>
 
-                                                <input type="email" class="driver-action-page-input " name="vEmail"  id="vEmail" value="<?= $vEmail; ?>" placeholder="<?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?>" <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required <? } ?> <?php if (!empty($_REQUEST['id'])) { ?> readonly <?php } ?>>
+                                                <input type="email" class="driver-action-page-input " name="vEmail"  id="vEmail" value="<?= $vEmail; ?>" placeholder="<?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?>" <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required <?php } ?> <?php if (!empty($_REQUEST['id'])) { ?> readonly <?php } ?>>
                                                 <!--onChange="validate_email(this.value)"-->
                                                 <div id="vEmail_validate"></div>
                                                 <div style="float: none;margin-top: 14px;" id="emailCheck"></div>
@@ -665,9 +665,9 @@ if (getEditDriverProfileStatus($eStatus) == "No") {
                                                 <label><?= $langage_lbl['LBL_COUNTRY_TXT']; ?><span class="red">*</span></label>
                                                 <select class="custom-select-new" name = 'vCountry' onChange="changeCode(this.value);setState(this.value, '<?= $vState ?>');" required id="vCountry">
                                                     <option value=""><?= $langage_lbl['LBL_SELECT_TXT'] ?></option>
-                                                <? for ($i = 0; $i < scount($db_country); $i++) { ?>
-                                                        <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <? if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if ($vCountry == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
-                                                <? } ?>
+                                                <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                                        <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?php if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if ($vCountry == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
+                                                <?php } ?>
                                                 </select>
                                                 <div id="vCountry_validate"></div>
                                             </span>
@@ -679,9 +679,9 @@ if (getEditDriverProfileStatus($eStatus) == "No") {
                                                     <label><?= $langage_lbl['LBL_STATE_TXT']; ?></label>
                                                     <select class="custom-select-new" name = 'vState' id="vState" onChange="setCity(this.value, '<?= $vCity ?>');">
                                                         <option value=""><?= $langage_lbl['LBL_SELECT_TXT'] ?></option>
-                                                        <? for ($i = 0; $i < scount($db_state); $i++) { ?>
-                                                            <option value = "<?= $db_state[$i]['iStateId'] ?>" <? if ($vState == $db_state[$i]['iStateId']) { ?> selected <?php } ?>><?= $db_state[$i]['vState'] ?></option>
-                                                        <? } ?>
+                                                        <?php for ($i = 0; $i < scount($db_state); $i++) { ?>
+                                                            <option value = "<?= $db_state[$i]['iStateId'] ?>" <?php if ($vState == $db_state[$i]['iStateId']) { ?> selected <?php } ?>><?= $db_state[$i]['vState'] ?></option>
+                                                        <?php } ?>
                                                     </select>
                                                 </span>
                                             </div>
@@ -692,9 +692,9 @@ if (getEditDriverProfileStatus($eStatus) == "No") {
                                                         <label><?= $langage_lbl['LBL_CITY_TXT']; ?></label>
                                                         <select class="custom-select-new" name = 'vCity' id="vCity" >
                                                             <option value=""><?= $langage_lbl['LBL_SELECT_TXT'] ?></option>
-        <? for ($i = 0; $i < scount($db_city); $i++) { ?>
-                                                                <option value = "<?= $db_city[$i]['iCityId'] ?>" <? if ($vCity == $db_city[$i]['iCityId']) { ?> selected <?php } ?>><?= $db_city[$i]['vcity'] ?></option>
-                                                            <? } ?>
+        <?php for ($i = 0; $i < scount($db_city); $i++) { ?>
+                                                                <option value = "<?= $db_city[$i]['iCityId'] ?>" <?php if ($vCity == $db_city[$i]['iCityId']) { ?> selected <?php } ?>><?= $db_city[$i]['vcity'] ?></option>
+                                                            <?php } ?>
                                                         </select>
                                                     </span>
                                                 </div>
@@ -740,13 +740,13 @@ if (getEditDriverProfileStatus($eStatus) == "No") {
 
                                                         <option value="">--<?= $langage_lbl['LBL_SELECT_LANGUAGE_TXT']; ?>--</option>
 
-    <? for ($i = 0; $i < scount($db_lang); $i++) { ?>
+    <?php for ($i = 0; $i < scount($db_lang); $i++) { ?>
                                                                                                                                 <!-- <option value = "<?= $db_lang[$i]['vCode'] ?>" <?= ($db_lang[$i]['vCode'] == $vLang) ? 'selected' : ''; ?>><?= $db_lang[$i]['vTitle'] ?></option> -->
 
-                                                            <option value = "<?= $db_lang[$i]['vCode'] ?>" <? if ($action == "Add" && $db_lang[$i]['eDefault'] == "Yes") { ?>selected<? } else if ($db_lang[$i]['vCode'] == $vLang) { ?> selected <?php } ?>><?= $db_lang[$i]['vTitle'] ?>
+                                                            <option value = "<?= $db_lang[$i]['vCode'] ?>" <?php if ($action == "Add" && $db_lang[$i]['eDefault'] == "Yes") { ?>selected<?php } else if ($db_lang[$i]['vCode'] == $vLang) { ?> selected <?php } ?>><?= $db_lang[$i]['vTitle'] ?>
                                                             </option>
 
-    <? } ?>
+    <?php } ?>
                                                     </select>
                                                     <div id="vLang_validate"></div>
                                                 </span>
@@ -757,10 +757,10 @@ if (getEditDriverProfileStatus($eStatus) == "No") {
                                                     <label><?= $langage_lbl['LBL_SELECT_CURRENCY_SIGNUP']; ?></label>
                                                     <select class="custom-select-new" name = 'vCurrencyDriver'>
     <?php for ($i = 0; $i < scount($db_currency); $i++) { ?>
-                                                            <option value = "<?= $db_currency[$i]['vName'] ?>" <? if ($action == "Add" && $db_currency[$i]['eDefault'] == "Yes") { ?>selected<? } else if ($db_currency[$i]['vName'] == $vCurrencyDriver) { ?> selected <?php } ?>>
+                                                            <option value = "<?= $db_currency[$i]['vName'] ?>" <?php if ($action == "Add" && $db_currency[$i]['eDefault'] == "Yes") { ?>selected<?php } else if ($db_currency[$i]['vName'] == $vCurrencyDriver) { ?> selected <?php } ?>>
         <?= $db_currency[$i]['vName'] ?>
                                                             </option>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                     </select>
                                                 </span>
                                             </div>
@@ -778,7 +778,7 @@ if (getEditDriverProfileStatus($eStatus) == "No") {
                                                         <?php } ?>
 
 
-                                        <!--                                    <? if ($action == "Add") { ?>
+                                        <!--                                    <?php if ($action == "Add") { ?>
                                                                                                                     <div class="col-md-6 driver-action1" style="margin-top: 25px;"><span>
                                                                                                                             <b id="li_dob">
                                                                                                                                             <strong>
@@ -809,7 +809,7 @@ if (getEditDriverProfileStatus($eStatus) == "No") {
                                                                                                                                             </select>
                                                                                                                                     </b>
                                                                                                                             </span></div>
-                                        <? } ?> -->
+                                        <?php } ?> -->
                                         <div style="clear:both"></div>
 
                                         <div class="panel-group bank-detail1-main" style="margin-top:25px">
@@ -898,7 +898,7 @@ if (getEditDriverProfileStatus($eStatus) == "No") {
             <script type="text/javascript" src="<?php echo $tconfig["tsite_url_main_admin"] ?>js/validation/jquery.validate.min.js" ></script>
     <?php if ($lang != 'en') { ?>
             <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-            <? include_once('otherlang_validation.php');?>
+            <?php include_once('otherlang_validation.php');?>
     <?php } ?>
             <script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
             <script>
@@ -999,14 +999,14 @@ if (getEditDriverProfileStatus($eStatus) == "No") {
                         }
                     });
                 }
-                /*  <? if ($action == "Edit") { ?>
+                /*  <?php if ($action == "Edit") { ?>
                      var country = '<?= $vCountry ?>';
                      var state = '<?= $vState ?>';
                      var city = '<?= $vCity ?>';
                              
                      // setState(country,state);
                      // setCity(state,city);
-<? } ?>   */
+<?php } ?>   */
                 var errormessage;
                 $('.companydriver').validate({
                     ignore: 'input[type=hidden]',
@@ -1019,7 +1019,7 @@ if (getEditDriverProfileStatus($eStatus) == "No") {
                     rules: {
                         vName: {required: true, minlength: 2, maxlength: 30},
                         vLastName: {required: true, minlength: 2, maxlength: 30},
-                        vEmail: {<?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required: true, <? } ?> email: true,
+                        vEmail: {<?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required: true, <?php } ?> email: true,
                             remote: {
                                 url: 'ajax_validate_email.php',
                                 type: "post",

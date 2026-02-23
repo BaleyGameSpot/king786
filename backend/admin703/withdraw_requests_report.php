@@ -171,10 +171,10 @@ $Psunday = date('Y-m-d',strtotime('sunday this week -1 week'));
                             <div class="col-lg-3">
                                 <select class="form-control filter-by-text driver_container" name='searchRequestStatus' data-text="Select Request Status" id="searchRequestStatus">
                                     <option value="">Pending Requests</option>
-                                    <option value="Yes" <? if (!empty($searchRequestStatus) && $searchRequestStatus == "Yes"){
+                                    <option value="Yes" <?php if (!empty($searchRequestStatus) && $searchRequestStatus == "Yes"){
                                         echo "selected";
                                     } ?>>Completed Request</option>
-                                    <option value="No" <? if (!empty($searchRequestStatus) && $searchRequestStatus == "No"){
+                                    <option value="No" <?php if (!empty($searchRequestStatus) && $searchRequestStatus == "No"){
                                         echo "selected";
                                     } ?>>Declined Request</option>
                                 </select>
@@ -222,11 +222,11 @@ $Psunday = date('Y-m-d',strtotime('sunday this week -1 week'));
                                         for ($i = 0;$i < count($data_drv);$i++){ ?>
                                             <tr class="gradeA">
                                                 <td>
-                                                    <? if ($userObj->hasPermission('view-providers')){ ?>
+                                                    <?php if ($userObj->hasPermission('view-providers')){ ?>
                                                         <a href="javascript:void(0);" onClick="show_driver_details('<?=$data_drv[$i]['iDriverId'];?>')" style="text-decoration: underline;"><?=clearName($data_drv[$i]['vName']." ".$data_drv[$i]['vLastName']);?></a>
-                                                    <? }else{ ?>
+                                                    <?php }else{ ?>
                                                         <?=clearName($data_drv[$i]['vName']." ".$data_drv[$i]['vLastName']);?>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <br><?=clearEmail($data_drv[$i]['vEmail']);?><br>
                                                     <?="(+".clearPhone($data_drv[$i]['vCode']).") ".clearPhone($data_drv[$i]['vPhone']);?>
 
@@ -235,8 +235,8 @@ $Psunday = date('Y-m-d',strtotime('sunday this week -1 week'));
                                                 <td align="center">
                                                     Current Balance:
                                                     <a href="wallet_report.php?action=search&eUserType=Driver&iDriverId=<?=$data_drv[$i]['iDriverId']?>"><?=formateNumAsPerCurrency($currentbal[$data_drv[$i]['iDriverId']],'')?></a><br>
-                                                    Balance when requested: <? if ($data_drv[$i]['fAccountBalance'] > 0){ ?>
-                                                        <a href="wallet_report.php?action=search&eUserType=Driver&iDriverId=<?=$data_drv[$i]['iDriverId']?>"><?=formateNumAsPerCurrency($data_drv[$i]['fAccountBalance'],'');?></a><? }else{ ?>--<? } ?>
+                                                    Balance when requested: <?php if ($data_drv[$i]['fAccountBalance'] > 0){ ?>
+                                                        <a href="wallet_report.php?action=search&eUserType=Driver&iDriverId=<?=$data_drv[$i]['iDriverId']?>"><?=formateNumAsPerCurrency($data_drv[$i]['fAccountBalance'],'');?></a><?php }else{ ?>--<?php } ?>
                                                 </td>
                                                 <td align="center">
                                                     <a href="javascript:void(0);" onClick="show_driver_bankdetails('<?=$data_drv[$i]['iDriverId'];?>', '<?=clearCmpName($data_drv[$i]['vName']." ".$data_drv[$i]['vLastName']);?>', '<?=clearCmpName($data_drv[$i]['vBankAccountHolderName']);?>', '<?=$data_drv[$i]['vBankName'];?>', '<?=clearCmpName($data_drv[$i]['vAccountNumber']);?>', '<?=clearCmpName($data_drv[$i]['vBIC_SWIFT_Code']);?>','<?=clearCmpName($data_drv[$i]['vBankLocation']);?>')" style="text-decoration: underline;">View Details</a>
@@ -259,7 +259,7 @@ $Psunday = date('Y-m-d',strtotime('sunday this week -1 week'));
                                                     <input type="hidden" name="iWithdrawRequestsId" id="iWithdrawRequestsId" value="<?=$data_drv[$i]['iWithdrawRequestsId'];?>">
                                                     </td>-->
                                                 <td align="center" class="action-btn001">
-                                                    <? if ($data_drv[$i]['eMarkAsDone'] != ""){
+                                                    <?php if ($data_drv[$i]['eMarkAsDone'] != ""){
                                                         echo "--";
                                                     }else{ ?>
                                                         <div class="share-button openHoverAction-class" style="display: block;">
@@ -277,7 +277,7 @@ $Psunday = date('Y-m-d',strtotime('sunday this week -1 week'));
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <input type="hidden" name="iWithdrawRequestsId" id="iWithdrawRequestsId" value="<?=$data_drv[$i]['iWithdrawRequestsId'];?>">
                                                     <input type="hidden" name="eMarkAsDone" id="eMarkAsDone" value="<?=$data_drv[$i]['eMarkAsDone'];?>">
                                                 </td>
@@ -395,7 +395,7 @@ include_once('footer.php');
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <!--<script src="../assets/js/jquery-ui.min.js"></script> commented bcoz in activate and delete icon tooltip is not shown.-->
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script>
     var startDate;
     var endDate;

@@ -268,7 +268,7 @@ if(!empty($log_report)) {
                     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
             <![endif]-->
             <!-- GLOBAL STYLES -->
-            <? include_once('global_files.php');?>
+            <?php include_once('global_files.php');?>
             <link rel="stylesheet" href="css/style.css" />
             <link rel="stylesheet" href="css/adminLTE/AdminLTE.min.css" />
             <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
@@ -290,8 +290,8 @@ if(!empty($log_report)) {
     <body class="padTop53 " >
             <!-- MAIN WRAPPER -->
             <div id="wrap">
-                <? include_once('header.php'); ?>
-                <? include_once('left_menu.php'); ?>
+                <?php include_once('header.php'); ?>
+                <?php include_once('left_menu.php'); ?>
         <!--PAGE CONTENT -->
         <div id="content">
                     <div class="inner" style="min-height: 700px;">
@@ -338,7 +338,7 @@ if(!empty($log_report)) {
                                         </div>
                                         <div class="col-lg-6">
                                             <h3><?= $langage_lbl_admin['LBL_RIDES_NAME_ADMIN'];?>  Count : <?=(number_format($totalRides[0]['tot_trip']));?></h3>
-                                            <p>Today : <b><? $today = getTripDateStates('today');echo number_format($today); ?></b></p>
+                                            <p>Today : <b><?php $today = getTripDateStates('today');echo number_format($today); ?></b></p>
                                             <p>This Month : <b><?=number_format(getTripDateStates('month'));?></b></p>
                                             <p>This Year : <b><?=number_format(getTripDateStates('year'));?></b></p>
                                             <br />
@@ -406,7 +406,7 @@ if(!empty($log_report)) {
         </div>
         <!--END PAGE CONTENT -->
             </div>
-            <? include_once('footer.php'); ?>
+            <?php include_once('footer.php'); ?>
         </body>
     <!-- END BODY-->
 </html>
@@ -517,10 +517,10 @@ if(!empty($log_report)) {
             element: 'driver-log',
             data: [
             //totalTimecount
-    <? for($i = 0; $i < 5; $i ++ ) {
+    <?php for($i = 0; $i < 5; $i ++ ) {
             if(isset($tmp_log_report[$i]['Name'])) { ?>
             { y: "<?=clearName($tmp_log_report[$i]['Name'])?>", a: '<?= secToHR($tmp_log_report[$i]['totalHourTimecount']);?>'},
-    <? } } ?>
+    <?php } } ?>
 
             ],
             xkey: 'y',

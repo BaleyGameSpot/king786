@@ -122,15 +122,15 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
     <title><?= $SITE_NAME ?> | <?= $langage_lbl_admin['LBL_TRIP_TXT_ADMIN']; ?> Time Variance</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -237,7 +237,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?
+                                    <?php
                                     if (scount($db_trip) > 0) {
                                         for ($i = 0; $i < scount($db_trip); $i++) {
                                             ?>
@@ -246,16 +246,16 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
                                                     <?= $db_trip[$i]['vRideNo']; ?>
                                                     <br>
                                                     <?php if ($userObj->hasPermission('view-invoice')) { ?>
-                                                        <? if ($db_trip[$i]['eSystem'] == 'DeliverAll') { ?>
+                                                        <?php if ($db_trip[$i]['eSystem'] == 'DeliverAll') { ?>
                                                             <a href="order_invoice.php?iOrderId=<?= $db_trip[$i]['iOrderId'] ?>"
                                                                target="_blank">View
                                                             </a>
-                                                        <? } else { ?>
+                                                        <?php } else { ?>
                                                             <a href="invoice.php?iTripId=<?= $db_trip[$i]['iTripId'] ?>"
                                                                target="_blank">View
                                                             </a>
-                                                        <? } ?>
-                                                    <? } ?>
+                                                        <?php } ?>
+                                                    <?php } ?>
                                                 </td>
                                                 <td width="30%"
                                                     data-order="<?= $db_trip[$i]['iTripId'] ?>"><?= $db_trip[$i]['tSaddress'] . ' -> ' . $db_trip[$i]['tDaddress']; ?></td>
@@ -263,7 +263,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
                                                 <td>
                                                     <a href="javascript:void(0);"
                                                        onClick="show_driver_details('<?= $db_trip[$i]['iDriverId']; ?>')"
-                                                       style="text-decoration: underline;"><? echo clearName($db_trip[$i]['name'] . " " . $db_trip[$i]['lname']); ?></a>
+                                                       style="text-decoration: underline;"><?php echo clearName($db_trip[$i]['name'] . " " . $db_trip[$i]['lname']); ?></a>
                                                 </td>
                                                 <!--<td width="8%">
 																	<?= $db_trip[$i]['vCompany']; ?>
@@ -272,7 +272,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
 																	<?= clearName($db_trip[$i]['vName'] . " " . $db_trip[$i]['vLastName']); ?>
 																</td> -->
                                                 <td align="left">
-                                                    <?
+                                                    <?php
                                                     $ans = set_hour_min($db_trip[$i]['fGDtime']);
                                                     if ($ans['hour'] != 0) {
                                                         echo $ans['hour'] . " Hours " . $ans['minute'] . " Minutes";
@@ -285,7 +285,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
                                                     ?>
                                                 </td>
                                                 <td align="left">
-                                                    <?
+                                                    <?php
                                                     $a = strtotime($db_trip[$i]['tStartdate']);
                                                     $b = strtotime($db_trip[$i]['tEndDate']);
                                                     $diff_time = ($b - $a);
@@ -303,7 +303,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
                                                     ?>
                                                 </td>
                                                 <td align="left">
-                                                    <?
+                                                    <?php
                                                     $ori_time = $db_trip[$i]['fGDtime'];
                                                     $tak_time = $diff_time;
                                                     $ori_diff = $ori_time - $tak_time;
@@ -329,24 +329,24 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
                                                     ?>
                                                 </td>
                                                 <!--<td align="center">
-																<? //=trip_currency($db_trip[$i]['iFare']);
+																<?php //=trip_currency($db_trip[$i]['iFare']);
                                                 ?>
 																</td>
 																<td align="center">
-																	<? //=$db_trip[$i]['vVehicleType'];
+																	<?php //=$db_trip[$i]['vVehicleType'];
                                                 ?>
 																</td>
 																<td align="center" width="10%">
 																
-																<? //if($db_trip[$i]['iFare']!=0){
+																<?php //if($db_trip[$i]['iFare']!=0){
                                                 ?>
-																  <a href="invoice.php?iTripId=<? //=$db_trip[$i]['iTripId']
+																  <a href="invoice.php?iTripId=<?php //=$db_trip[$i]['iTripId']
                                                 ?>">
 																	<button class="btn btn-primary">
 																		<i class="icon-th-list  icon-white"> View Invoice</i>
 																	</button>
 																 </a>
-																<? /*}else
+																<?php /*}else
 																{
 																	if($db_trip[$i]['iActive']== "Active" OR $db_trip[$i]['iActive']== "On Going Trip")
 																	{
@@ -365,7 +365,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
                                                 ?>
 																</td>-->
                                             </tr>
-                                        <? }
+                                        <?php }
                                     } else { ?>
                                         <tr class="gradeA">
                                             <td colspan="7" style="text-align:center;"> No Records Found.</td>
@@ -423,7 +423,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <link rel="stylesheet" href="css/select2/select2.min.css"/>
 <script src="js/plugins/select2.min.js"></script>

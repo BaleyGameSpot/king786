@@ -134,15 +134,15 @@ $allservice_cat_data = json_decode($catdata, true);
     <meta content="" name="keywords"/>
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
 <body class="padTop53">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -187,7 +187,7 @@ $allservice_cat_data = json_decode($catdata, true);
                                         <option value="">Select <?= $langage_lbl_admin['LBL_RESTAURANT_TXT_ADMIN'] ?></option>
                                     </select>
                                 </div>
-                                <? if (scount($allservice_cat_data) > 1) { ?>
+                                <?php if (scount($allservice_cat_data) > 1) { ?>
                                     <div class="col-lg-3 select001" style="padding-right:15px;">
 		                            <select class="form-control filter-by-text" name="searchServiceType"
                                             data-text="Select Serivce Type" id="searchServiceType">
@@ -199,7 +199,7 @@ $allservice_cat_data = json_decode($catdata, true);
                                        <?php } ?>
 		                            </select>
 		                        </div>
-                                <? } ?>
+                                <?php } ?>
                                 <div class="tripBtns001">
                                 <b>
 									<input type="submit" value="Search" class="btnalt button11" id="Search"
@@ -228,9 +228,9 @@ $allservice_cat_data = json_decode($catdata, true);
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example123">
                     <thead>
                     <tr>
-                        <? if (scount($allservice_cat_data) > 1) { ?>
+                        <?php if (scount($allservice_cat_data) > 1) { ?>
                             <th>Service type</th>
-                        <? } ?>
+                        <?php } ?>
                         <th>
                             <a href="javascript:void(0);" onClick="Redirect(2,<?php if ($sortby == '2') {
                                 echo $order;
@@ -278,12 +278,12 @@ $allservice_cat_data = json_decode($catdata, true);
                     </tr>
                     </thead>
                     <tbody>
-                    <? if (scount($db_payment) > 0) {
+                    <?php if (scount($db_payment) > 0) {
                         for ($i = 0; $i < scount($db_payment); $i++) { ?>
                             <tr class="gradeA">
-                                <? if (scount($allservice_cat_data) > 1) { ?>
-                                    <td><? echo $db_payment[$i]['vServiceName']; ?></td>
-                                <? } ?>
+                                <?php if (scount($allservice_cat_data) > 1) { ?>
+                                    <td><?php echo $db_payment[$i]['vServiceName']; ?></td>
+                                <?php } ?>
                                 <td>
                                     <?php if ($db_payment[$i]['resturant_phone'] != '') {
                                         ?>
@@ -325,24 +325,24 @@ $allservice_cat_data = json_decode($catdata, true);
                                     </a>
                                 </td>
                                 <td>
-                                    <? if ($db_payment[$i]['eRestaurantPaymentStatus'] == 'Unsettled') { ?>
+                                    <?php if ($db_payment[$i]['eRestaurantPaymentStatus'] == 'Unsettled') { ?>
                                         <input class="validate[required]" type="checkbox"
                                                value="<?= $db_payment[$i]['iCompanyId'] ?>"
                                                id="iTripId_<?= $db_payment[$i]['iCompanyId'] ?>" name="iCompanyId[]">
-                                    <? } ?>
+                                    <?php } ?>
                                 </td>
                             </tr>
-                        <? } ?>
+                        <?php } ?>
                         <tr class="gradeA">
                             <td colspan="9" align="right">
                                 <a href="javascript:void(0);" onClick="PaytoRestaurant();" class="btn btn-primary">Mark As Settled</button></a>
                             </td>
                         </tr>
-                    <? } else { ?>
+                    <?php } else { ?>
                         <tr class="gradeA">
                             <td colspan="9" style="text-align:center;"> No Payment Details Found.</td>
                         </tr>
-                    <? } ?>
+                    <?php } ?>
                     </tbody>
                 </table>
             </form>
@@ -390,7 +390,7 @@ $allservice_cat_data = json_decode($catdata, true);
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <link rel="stylesheet" href="css/select2/select2.min.css"/>
 <script src="js/plugins/select2.min.js"></script>

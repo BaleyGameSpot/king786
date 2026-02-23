@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('../common.php');
 
 require_once(TPATH_CLASS . "Imagecrop.class.php");
@@ -155,7 +155,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
                 <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
                
-                <? include_once('global_files.php'); ?>
+                <?php include_once('global_files.php'); ?>
                 <!-- On OFF switch -->
                 <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
                 <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -177,8 +177,8 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
             <body class="padTop53 " >
                 <!-- MAIN WRAPPER -->
                 <div id="wrap">
-                    <? include_once('header.php'); ?>
-                    <? include_once('left_menu.php'); ?>       
+                    <?php include_once('header.php'); ?>
+                    <?php include_once('left_menu.php'); ?>       
                     <!--PAGE CONTENT -->
                     <div id="content">
                         <div class="inner">
@@ -193,27 +193,27 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                             <hr />
                             <div class="body-div">
                                 <div class="form-group">
-                                    <? if ($success == 0 && !empty($_REQUEST['var_msg'])) { ?>
+                                    <?php if ($success == 0 && !empty($_REQUEST['var_msg'])) { ?>
                                     <div class="alert alert-danger alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                        <? echo $_REQUEST['var_msg']; ?>
+                                        <?php echo $_REQUEST['var_msg']; ?>
                                     </div>
                                     <br/>
-                                    <? } ?>
-                                    <? if ($success == 1) { ?>
+                                    <?php } ?>
+                                    <?php if ($success == 1) { ?>
                                     <div class="alert alert-success alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                         <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                     </div>
                                     <br/>
-                                    <? } ?>
-                                    <? if ($success == 2) { ?>
+                                    <?php } ?>
+                                    <?php if ($success == 2) { ?>
                                     <div class="alert alert-danger alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                         <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                     </div>
                                     <br/>
-                                    <? } ?>
+                                    <?php } ?>
                                     <form method="post" action="" enctype="multipart/form-data" id="order_status_action" name="order_status_action">
                                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                                         <input type="hidden" name="temp_order" id="temp_order" value="1 ">
@@ -454,7 +454,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                 }
                                                 ?>
                                         </div>
-                                        <?
+                                        <?php
                                             }
                                             }
                                             
@@ -488,7 +488,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                 }
                                                 ?>
                                         </div>
-                                        <? }
+                                        <?php }
                                             }*/
                                             ?>
                                         <div class="row">
@@ -516,7 +516,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                         <span>Language Translation is in Process. Please Wait...</span>                       
                     </div>
                 </div>
-                <? include_once('footer.php'); ?>
+                <?php include_once('footer.php'); ?>
                 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
                 <!-- PAGE LEVEL SCRIPTS -->
                 <script src="../assets/plugins/wysihtml5/lib/js/wysihtml5-0.3.0.js"></script>

@@ -336,7 +336,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                     <br>
 
-                                <? } ?>
+                                <?php } ?>
 
 
                                 <h2><?php echo $langage_lbl_admin['LBL_EXPIRED_DOCUMETS']; ?></h2>

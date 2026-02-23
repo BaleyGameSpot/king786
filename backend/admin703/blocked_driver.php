@@ -281,7 +281,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                             </select>
                         </td>
                         <td width="15%" class="searchform">
-                            <input type="Text" id="keyword" name="keyword" value="<?
+                            <input type="Text" id="keyword" name="keyword" value="<?php
                             if (!empty($keyword)) {
                                 echo clearName($keyword);
                             }
@@ -482,7 +482,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                             </thead>
                                             <tbody>
-                                                <?
+                                                <?php
                                                 if (!empty($data_drv)) {
                                                     $serverTimeZone = date_default_timezone_get();
                                                     for ($i = 0; $i < scount($data_drv); $i++) {

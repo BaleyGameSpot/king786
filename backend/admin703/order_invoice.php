@@ -148,7 +148,7 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
     <meta content="" name="keywords"/>
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
     <style>
@@ -169,8 +169,8 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
 
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
 
     <!--PAGE CONTENT -->
     <div id="content">
@@ -194,13 +194,13 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <b>Your <?= $langage_lbl_admin['LBL_TRIP_TXT_ADMIN_DL']; ?> </b> <?
+                                <b>Your <?= $langage_lbl_admin['LBL_TRIP_TXT_ADMIN_DL']; ?> </b> <?php
                                 if ($db_order_data['DeliveryDate'] == "0000-00-00 00:00:00") {
                                     echo "Was Cancelled.";
                                 }
                                 else {
                                     /*echo @date('h:i A', @strtotime($db_order_data['OrderRequestDatenew']));
-                                    ?> on <?
+                                    ?> on <?php
                                     echo @date('d M Y', @strtotime($db_order_data['OrderRequestDatenew']));*/
                                     echo $get_OrderRequestDatenew_format['tDisplayDateTime'];
                                 }
@@ -218,9 +218,9 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                                     <?php } ?>
                                                     <b><?= $get_OrderRequestDatenew_format['tDisplayTimeAbbr'];//@date('h:i A', @strtotime($db_order_data['OrderRequestDatenew'])); ?></b>
                                                     <b><span><?= clearName($db_order_data['CompanyName']); ?></span>
-                                                        <? if (!empty($getratings['CompanyRate'])) { ?>
+                                                        <?php if (!empty($getratings['CompanyRate'])) { ?>
                                                             <span>(<img src="../assets/img/star.jpg" alt=""> <?= $getratings['CompanyRate'] ?>)</span>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                     </b>
 
                                                     <b><p><?= $db_order_data['vRestuarantLocation']; ?></p></b>
@@ -230,9 +230,9 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                                     <b>
                                                 <?= $get_OrderRequestDatenew_format['tDisplayTimeAbbr'];//@date('h:i A', @strtotime($db_order_data['OrderRequestDatenew'])); ?>
                                                         <p><?= clearName($db_order_data['CompanyName']); ?>
-                                                <? if (!empty($getratings['CompanyRate'])) { ?>
+                                                <?php if (!empty($getratings['CompanyRate'])) { ?>
                                                                         (<img src="../assets/img/star.jpg" alt=""> <?= $getratings['CompanyRate'] ?>) 
-                                                <? } ?>
+                                                <?php } ?>
                                                         </p>
                                                         <p><?= $db_order_data['vRestuarantLocation']; ?></p>
                                                     </b>
@@ -241,9 +241,9 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                                     <b><?= $get_DeliveryDate_format['tDisplayTimeAbbr'];//@date('h:i A', @strtotime($db_order_data['DeliveryDate'])); ?>
                                                         <p>
                                                 <?= clearName($db_order_data['UserName']); ?> 
-                                                <? if (!empty($getratings['UserRate'])) { ?>
+                                                <?php if (!empty($getratings['UserRate'])) { ?>
                                                                         (<img src="../assets/img/star.jpg" alt=""> <?= $getratings['UserRate'] ?>) 
-                                                <? } ?>
+                                                <?php } ?>
                                                         </p>
                                                         <p><?= $db_order_data['DeliveryAddress']; ?></p>
                                                     </b>
@@ -263,9 +263,9 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
 
                                                         </span>         
 
-                                                        <? if (!empty($getratings['UserRate'])) { ?>
+                                                        <?php if (!empty($getratings['UserRate'])) { ?>
                                                             <span>(<img src="../assets/img/star.jpg" alt=""> <?= $getratings['UserRate'] ?>)
-                                                            </span><? } ?>
+                                                            </span><?php } ?>
 
                                                     </b>
                                                     <b> <p><?= $db_order_data['DeliveryAddress']; ?></p>
@@ -294,9 +294,9 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                                       <div class="col-sm-4">
                                                       <?= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?> Name<br />
                                                       <b>   <?= $db_order_data['DriverName']; ?>
-                                                      <? if (!empty($getratings['DriverRate'])) { ?>
+                                                      <?php if (!empty($getratings['DriverRate'])) { ?>
                                                       (<img src="../assets/img/star.jpg" alt=""> <?= $getratings['DriverRate'] ?>)
-                                                      <? } ?>
+                                                      <?php } ?>
                                                       </b><br/>
                                                       </div>
                                                       <?php } ?>
@@ -310,9 +310,9 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                                       <div class="col-sm-4">
                                                       Username<br />
                                                       <b><?= clearName($db_order_data['UserName']); ?>
-                                                      <? if (!empty($getratings['UserRate'])) { ?>
+                                                      <?php if (!empty($getratings['UserRate'])) { ?>
                                                       (<img src="../assets/img/star.jpg" alt=""> <?= $getratings['UserRate'] ?>)
-                                                      <? } ?>
+                                                      <?php } ?>
                                                       </b>
                                                       </div>
                                                       <?php } */ ?>
@@ -320,9 +320,9 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                                 <div class="col-sm-4">
                                                     Driver Name<br/>
                                                     <b class="location-username"><span> <?= clearName($db_order_data['DriverName']); ?></span>
-                                                        <? if (!empty($getratings['DriverRate'])) { ?>
+                                                        <?php if (!empty($getratings['DriverRate'])) { ?>
                                                             <span>(<img src="../assets/img/star.jpg" alt=""> <?= $getratings['DriverRate'] ?>)</span>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                     </b><br/>
                                                 </div>
                                             <?php } ?>
@@ -336,9 +336,9 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                                 <div class="col-sm-4">
                                                     Username<br/>
                                                     <b class="location-username"><span><?= clearName($db_order_data['UserName']); ?></span>
-                                                        <? if (!empty($getratings['UserRate'])) { ?>
+                                                        <?php if (!empty($getratings['UserRate'])) { ?>
                                                             <span>(<img src="../assets/img/star.jpg" alt=""> <?= $getratings['UserRate'] ?>)</span>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                     </b>
                                                 </div>
                                             <?php } ?>
@@ -391,14 +391,14 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                             </div>
                                         <?php } ?>
 
-                                        <? if ($takeaway == 'Yes' && $db_order_data['iStatusCode'] == 6) { ?>
+                                        <?php if ($takeaway == 'Yes' && $db_order_data['iStatusCode'] == 6) { ?>
                                             <div class="rider-invoice-bottom">
                                                     <span>
                                                     <b><?= $langage_lbl_admin['LBL_TAKE_AWAY']; ?></b>
                                                     <p><?= str_replace('#RESTAURANT_NAME#', $db_order_data['CompanyName'], $langage_lbl_admin['LBL_TAKE_AWAY_ORDER_NOTE']); ?></p>
                                                    </span>
                                             </div>
-                                        <? } ?>
+                                        <?php } ?>
 
                                         <?php if ($MODULES_OBJ->isEnableMultiOptionsToppings() && !empty($DriverFeedbackDetails)) { ?>
                                             <div class="rider-invoice-bottom row">
@@ -429,45 +429,45 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
 
                                         <div class="fare-breakdown">
                                             <div class="fare-breakdown-inner">
-                                                <? $db_menu_item_list = $db_order_data['itemlist']; ?>
+                                                <?php $db_menu_item_list = $db_order_data['itemlist']; ?>
                                                 <h5><?= $langage_lbl_admin['LBL_TOTAL_ITEM_TXT']; ?> :
                                                     <b><?= $db_order_data['TotalItems']; ?></b></h5>
                                                 <?php if (!empty($db_menu_item_list)) { ?>
                                                     <table style="width:100%" cellpadding="5" cellspacing="0" border="0">
                                                         <tbody>
-                                                        <? foreach ($db_menu_item_list as $key => $val) { ?>
+                                                        <?php foreach ($db_menu_item_list as $key => $val) { ?>
                                                             <tr>
                                                                 <?php if ($db_order_data['eBuyAnyService'] == "Yes") { ?>
                                                                     <td><?= $val['MenuItem']; ?> X <?= $val['iQty']; ?>
-                                                                        <? if (trim($val['SubTitle'], "/") != '') { ?>
+                                                                        <?php if (trim($val['SubTitle'], "/") != '') { ?>
                                                                             <br/>
                                                                             <small style="font-size: 12px;">(<?= trim($val['SubTitle'], "/"); ?>)</small>
-                                                                        <? } ?>
-                                                                        <? if ($val['eDecline'] == "Yes") { ?>
+                                                                        <?php } ?>
+                                                                        <?php if ($val['eDecline'] == "Yes") { ?>
                                                                             <br/>
                                                                             <small style="font-size: 12px;">(<?= $langage_lbl_admin['LBL_USER_DECLINED'] ?>)</small>
-                                                                        <? } ?>
-                                                                        <? if ($val['eExtraPayment'] == "No" && $val['eItemAvailable'] == "Yes") { ?>
+                                                                        <?php } ?>
+                                                                        <?php if ($val['eExtraPayment'] == "No" && $val['eItemAvailable'] == "Yes") { ?>
                                                                             <br/>
                                                                             <small style="font-size: 12px;">(<?= $langage_lbl_admin['LBL_PAYMENT_NOT_REQUIRED'] ?>)</small>
-                                                                        <? } elseif ($val['eItemAvailable'] == "No") { ?>
-                                                                            <? if ($val['eExtraPayment'] == "No") { ?>
+                                                                        <?php } elseif ($val['eItemAvailable'] == "No") { ?>
+                                                                            <?php if ($val['eExtraPayment'] == "No") { ?>
                                                                                 <br/>
                                                                                 <small style="font-size: 12px;">(<?= $langage_lbl_admin['LBL_ITEM_NO_PAYMENT_UNAVAILABLE'] ?>)</small>
                                                                             <?php } else { ?>
                                                                                 <br/>
                                                                                 <small style="font-size: 12px;">(<?= $langage_lbl_admin['LBL_ITEM_NOT_AVAILABLE'] ?>)</small>
-                                                                            <? } ?>
+                                                                            <?php } ?>
                                                                         <?php } ?>
                                                                     </td>
 
                                                                     <td align="right"><?= $val['fTotPrice'] ?></td>
                                                                 <?php } else { ?>
                                                                     <td><?= $val['MenuItem']; ?> X <?= $val['iQty']; ?>
-                                                                        <? if (trim($val['SubTitle'], "/") != '') { ?>
+                                                                        <?php if (trim($val['SubTitle'], "/") != '') { ?>
                                                                             <br/>
                                                                             <small style="font-size: 12px;">(<?= trim($val['SubTitle'], "/"); ?>)</small>
-                                                                        <? } ?>
+                                                                        <?php } ?>
                                                                     </td>
                                                                     <td align="right"><?= $val['fTotPrice'] ?></td>
                                                                 <?php } ?>
@@ -484,7 +484,7 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                                 <?php } ?>
                                                 <table style="width:100%" cellpadding="5" cellspacing="0" border="0">
                                                     <tbody>
-                                                    <?
+                                                    <?php
                                                     foreach ($db_order_data['History_Arr'] as $key => $value) {
                                                         if ($key == $langage_lbl_admin['LBL_BILL_SUB_TOTAL']) {
                                                             ?>
@@ -599,14 +599,14 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                             <div class="panel panel-warning">
                                                 <div class="panel-heading">
                                                     <p><?= $langage_lbl_admin["LBL_ORDER_CANCEL_WEB_TEXT"]; ?></p>
-                                                    <? if ($db_order_data['eCancelledBy'] != '') { 
+                                                    <?php if ($db_order_data['eCancelledBy'] != '') { 
                                                         $cancelledBy = $db_order_data['eCancelledBy'] == 'Passenger' ? 'User' : $db_order_data['eCancelledBy'];
                                                     ?>
                                                         <p>Cancelled By : <?= $cancelledBy; ?></p>
-                                                    <? }
+                                                    <?php }
                                                     if ($db_order_data['vCancelReason'] != '') { ?>
                                                         <p>Cancellation Reason : <?= $db_order_data['vCancelReason']; ?></p>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <p><?= $langage_lbl_admin["LBL_CANCELLATION_CHARGE_WEB"] ?> For
                                                         <?= $langage_lbl_admin['LBL_RIDER']; ?> :
                                                         <?php
@@ -617,7 +617,7 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                                             echo formateNumAsPerCurrency($db_order_data['fDeliveryChargeCancelled'], '');
                                                         }
                                                         ?>
-                                                        <? if ($db_order_data['ePaymentOption'] == 'Cash' && $db_order_data['ePaidByPassenger'] == 'Yes') { ?>
+                                                        <?php if ($db_order_data['ePaymentOption'] == 'Cash' && $db_order_data['ePaidByPassenger'] == 'Yes') { ?>
                                                             <?php if (!empty($db_order_data['vOrderAdjusmentId'])) { ?>
                                                                 ( <?= $langage_lbl_admin["LBL_PAID_IN_ORDER_NO_TXT"] ?># : <?= $db_order_data['vOrderAdjusmentId'] ?>)
                                                             <?php } else { ?>
@@ -625,7 +625,7 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                                             <?php } ?>
                                                         <?php } else if ($db_order_data['ePaymentOption'] == 'Cash') { ?>
                                                             ( <?= $langage_lbl_admin["LBL_UNPAID_WEB_TXT"] ?> )
-                                                            <?
+                                                            <?php
                                                         }
                                                         else if ($db_order_data['ePaymentOption'] == 'Card') {
                                                             if ($db_order_data['eCancelledBy'] != "Admin") {
@@ -647,7 +647,7 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                                             }
                                                             ?>
                                                             ( <?= $ePaymentOption; ?> )
-                                                        <? } ?>
+                                                        <?php } ?>
                                                     </p>
                                                     <?php if ($db_order_data['eBuyAnyService'] == "No") { ?>
                                                         <p><?= $langage_lbl_admin["LBL_ADJUSTMENT_AMOUNT_MESSAGE"] ?> To <?= $langage_lbl_admin["LBL_RESTAURANT_TXT_ADMIN"] ?> : <?= formateNumAsPerCurrency($db_order_data['fRestaurantPaidAmount'], ''); ?></p>
@@ -659,18 +659,18 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                             <div class="panel panel-warning">
                                                 <div class="panel-heading">
                                                     <p><?= $langage_lbl_admin["LBL_ORDER_REFUND_WEB_TEXT"]; ?></p>
-                                                    <? if ($db_order_data['eCancelledBy'] != '') { ?>
+                                                    <?php if ($db_order_data['eCancelledBy'] != '') { ?>
                                                         <p>Cancelled By : <?= $db_order_data['eCancelledBy']; ?></p>
-                                                    <? }
+                                                    <?php }
                                                     if ($db_order_data['vCancelReason'] != '') { ?>
                                                         <p>Cancellation Reason : <?= $db_order_data['vCancelReason']; ?></p>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <p><?= $langage_lbl_admin["LBL_CANCELLATION_CHARGE_WEB"] ?> : <?= formateNumAsPerCurrency($db_order_data['fCancellationCharge'], ''); ?>
-                                                        <? if ($db_order_data['ePaymentOption'] == 'Cash' && $db_order_data['ePaidByPassenger'] == 'Yes') { ?>
+                                                        <?php if ($db_order_data['ePaymentOption'] == 'Cash' && $db_order_data['ePaidByPassenger'] == 'Yes') { ?>
                                                             ( <?= $langage_lbl_admin["LBL_PAID_IN_ORDER_NO_TXT"] ?># : <?= $db_order_data['vOrderAdjusmentId'] ?>)
-                                                        <? } else if ($db_order_data['ePaymentOption'] == 'Cash') { ?>
+                                                        <?php } else if ($db_order_data['ePaymentOption'] == 'Cash') { ?>
                                                             ( <?= $langage_lbl_admin["LBL_UNPAID_WEB_TXT"] ?> )
-                                                            <?
+                                                            <?php
                                                         }
                                                         else if ($db_order_data['ePaymentOption'] == 'Card') {
                                                             $ePaymentOption = $langage_lbl_admin["LBL_PAID_BY_CARD_WEB_TXT"];
@@ -679,7 +679,7 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
                                                             }
                                                             ?>
                                                             ( <?= $ePaymentOption; ?> )
-                                                        <? } ?>
+                                                        <?php } ?>
                                                     </p>
                                                     <p>Refunded Amount To <?= $langage_lbl_admin['LBL_RIDER']; ?> : <?= formateNumAsPerCurrency($db_order_data['fRefundAmount'], ''); ?>
                                                     <p><?= $langage_lbl_admin["LBL_ADJUSTMENT_AMOUNT_MESSAGE"] ?> To Restaurant: <?= formateNumAsPerCurrency($db_order_data['fRestaurantPaidAmount'], ''); ?></p>
@@ -724,7 +724,7 @@ $get_DeliveryDate_format = DateformatCls::getNewDateFormat($date_format_data_arr
 
 <!--END MAIN WRAPPER -->
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="https://maps.google.com/maps/api/js?key=<?= $GOOGLE_SEVER_API_KEY_WEB ?>&libraries=places,geometry" type="text/javascript" async></script>
 <script type="text/javascript" src="<?php echo $tconfig["tsite_url"] ?>assets/js/google_map_init.js"></script>
 <script>

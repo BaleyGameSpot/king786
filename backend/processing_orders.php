@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 
 
@@ -145,7 +145,7 @@ if(file_exists($logogpath."canceled-invoice.png")){
 									</tr>
 								</thead>
 								<tbody>
-								<? 
+								<?php 
 									for($i=0;$i<scount($db_order_detail);$i++)
 									{
 									
@@ -179,13 +179,13 @@ if(file_exists($logogpath."canceled-invoice.png")){
 										 </a>
 										</td>		
 									</tr>
-								<? } ?>		
+								<?php } ?>		
 								</tbody>
 			        		</table>
 			      		</div>	</div>
 			    </div>
 			    <!-- -->
-			    <? //if(SITE_TYPE=="Demo"){?>
+			    <?php //if(SITE_TYPE=="Demo"){?>
 			    <!-- <div class="record-feature"> <span><strong>“Edit / Delete Record Feature”</strong> has been disabled on the Demo Admin Version you are viewing now.
 			      This feature will be enabled in the main product we will provide you.</span> </div>
 			      <?php //}?> -->

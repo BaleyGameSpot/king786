@@ -488,7 +488,7 @@ $currencyDataJson = json_encode($currencyData);
                           </span>
                           </a>
                         <div class="clearfix"></div>
-                        <? }*/ ?>
+                        <?php }*/ ?>
                     <?php //if($db_company[0]['iServiceId'] == 1 || $db_company[0]['iServiceId'] == 2)
                     {
                         if (($db_company[0]['eSafetyPractices'] == 'Yes' && $MODULES_OBJ->isEnableStoreSafetyProcedure()) || ($MODULES_OBJ->isEnableStorePhotoUploadFacility() && $banner_images == 1)){ ?>
@@ -860,7 +860,7 @@ $currencyDataJson = json_encode($currencyData);
                         ?>
                         <div class="flex-row time_info-data">
                             <div><strong><?=$timeSlotArr[$t]['head'];?>:</strong>&nbsp;&nbsp;</div>
-                            <? if (strtoupper($ENABLE_TIMESLOT_ADDON) == "YES"){ ?>
+                            <?php if (strtoupper($ENABLE_TIMESLOT_ADDON) == "YES"){ ?>
                                 <div><?=str_replace(["&",
                                                      "و",
                                                      "और",
@@ -869,7 +869,7 @@ $currencyDataJson = json_encode($currencyData);
                                                      "Y",
                                                      "Və",
                                                      "\n"],"<br />",str_replace("-"," To ",$timeSlotArr[$t]['time']));?></div>
-                            <? }else{ ?>
+                            <?php }else{ ?>
                                 <div><?=str_replace(["&",
                                                      "و",
                                                      "और",
@@ -877,7 +877,7 @@ $currencyDataJson = json_encode($currencyData);
                                                      "E",
                                                      "Y",
                                                      "Və"],"<br />",str_replace("-"," To ",$timeSlotArr[$t]['time']));?></div>
-                            <? } ?>
+                            <?php } ?>
                         </div>
                         <?php
                     }
@@ -903,7 +903,7 @@ $currencyDataJson = json_encode($currencyData);
     <script type="text/javascript" src="assets/js/validation/jquery.validate.min.js"></script>
     <?php if ($lang != 'en'){ ?>
         <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?=$lang;?>.js" ></script> -->
-        <? include_once('otherlang_validation.php'); ?>
+        <?php include_once('otherlang_validation.php'); ?>
     <?php } ?>
     <script type="text/javascript" src="assets/js/validation/additional-methods.js"></script>
     <!-- End:contact page-->

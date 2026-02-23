@@ -147,7 +147,7 @@ if ($vehicleId > 0) {
                                 <b><i class="icon-map-marker"></i>
                                     <?= $langage_lbl['LBL_LOCATIONS_TXT']; ?> </b>
 
-                                <? if ($data_all_details[0]['ePaymentBy'] != "Sender") { ?><em><button type="button" class="btn btn-success" onClick="show_slider()"><?= $langage_lbl['LBL_VIEW_DELIVERY_DETAILS'] ?></button></em><? } ?>
+                                <?php if ($data_all_details[0]['ePaymentBy'] != "Sender") { ?><em><button type="button" class="btn btn-success" onClick="show_slider()"><?= $langage_lbl['LBL_VIEW_DELIVERY_DETAILS'] ?></button></em><?php } ?>
                             </div>
                             <div class="panel-heading location-map" style="background:none;" >
                                 <div class="google-map-wrap" >

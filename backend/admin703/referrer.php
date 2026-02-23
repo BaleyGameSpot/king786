@@ -91,13 +91,13 @@ $success = isset($_REQUEST['success']) ? $_REQUEST['success'] : '';
     <title><?= $SITE_NAME ?> | MLM Referral Report</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <body class="padTop53">
     <!-- MAIN WRAPPER -->
     <div id="wrap">
-        <? include_once('header.php'); ?>
-        <? include_once('left_menu.php'); ?>
+        <?php include_once('header.php'); ?>
+        <?php include_once('left_menu.php'); ?>
         <!--PAGE CONTENT -->
         <div id="content">
             <div class="inner">
@@ -173,7 +173,7 @@ $success = isset($_REQUEST['success']) ? $_REQUEST['success'] : '';
                                                                     </a>
                                                                 </td>
                                                             </tr>
-                                                            <?
+                                                            <?php
                                                             $i++;
                                                         }
                                                     }
@@ -196,7 +196,7 @@ $success = isset($_REQUEST['success']) ? $_REQUEST['success'] : '';
         <!--END PAGE CONTENT -->
     </div>
     <!--END MAIN WRAPPER -->
-    <? include_once('footer.php'); ?>
+    <?php include_once('footer.php'); ?>
 	
 <div class="modal fade " id="detail_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">

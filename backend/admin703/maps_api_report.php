@@ -236,8 +236,8 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
 
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
 
             <!--PAGE CONTENT -->
             <div id="content">

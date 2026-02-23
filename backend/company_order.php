@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 
 $script="Order";
@@ -183,7 +183,7 @@ foreach ($db_order_detail as $key => $value) {
 									</tr>
 								</thead>
 								<tbody>
-								<? 
+								<?php 
 									for($i=0;$i<scount($db_order_detail);$i++)
 									{
 										$iOrderIdnew = $db_order_detail[$i]['iOrderId'];
@@ -225,7 +225,7 @@ foreach ($db_order_detail as $key => $value) {
 										<td align="center"><?=$db_order_detail[$i]['TotalItem'];?></td>
 										<td align="center"><?=formateNumAsPerCurrency($fTotalGenerateFare, $currencycode); ?></td>
 										<td align="center">
-											<? if($EarnedAmount > 0) { 
+											<?php if($EarnedAmount > 0) { 
 										echo	formateNumAsPerCurrency($EarnedAmount, $currencycode);
 											} else { 
 												echo $langage_lbl['LBL_PENDING_WEB'];
@@ -238,7 +238,7 @@ foreach ($db_order_detail as $key => $value) {
 										 </a>
 										</td>		
 									</tr>
-								<? } ?>		
+								<?php } ?>		
 								</tbody>
 								<tfoot>
 									<tr class="last_row_record">
@@ -256,7 +256,7 @@ foreach ($db_order_detail as $key => $value) {
 			      		</div>	</div>
 			    </div>
 			    <!-- -->
-			    <? //if(SITE_TYPE=="Demo"){?>
+			    <?php //if(SITE_TYPE=="Demo"){?>
 			    <!-- <div class="record-feature"> <span><strong>“Edit / Delete Record Feature”</strong> has been disabled on the Demo Admin Version you are viewing now.
 			      This feature will be enabled in the main product we will provide you.</span> </div>
 			      <?php //}?> -->

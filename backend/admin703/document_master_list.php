@@ -215,13 +215,13 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                 ?> >Document For
                                 </option>
                                 <?php } ?>
-                                <!--   <? if ($APP_TYPE == 'Ride-Delivery' || $APP_TYPE == 'Ride-Delivery-UberX') { ?>
+                                <!--   <?php if ($APP_TYPE == 'Ride-Delivery' || $APP_TYPE == 'Ride-Delivery-UberX') { ?>
                                                           <option value="dm.eType" <?php
                                     if ($option == 'dm.eDocServiceType') {
                                         echo "selected";
                                     }
                                     ?> >Service Type</option>
-                                            <? } ?> -->
+                                            <?php } ?> -->
                                 <option value="dm.status" <?php
                                 if ($option == 'dm.status') {
                                     echo "selected";
@@ -315,7 +315,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                 <?php } ?>
                             </select>
                         </td>
-                        <? if ($APP_TYPE == 'Ride-Delivery-UberX') { ?>
+                        <?php if ($APP_TYPE == 'Ride-Delivery-UberX') { ?>
                             <td width="12%" class="eType_options" id="eType_options">
                                 <select name="eType_value" id="eType_value" class="form-control">
                                     <option value="">Select Service Type</option>
@@ -339,7 +339,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                     </option>
                                 </select>
                             </td>
-                        <? } ?>
+                        <?php } ?>
                         <td>
                             <input type="submit" value="Search" class="btnalt button11" id="Search" name="Search"
                                    title="Search"/>
@@ -510,7 +510,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?
+                                    <?php
                                     if (!empty($data_drv)) {
                                         for ($i = 0; $i < scount($data_drv); $i++) { ?>
                                             <tr class="gradeA">
@@ -557,7 +557,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     </td>
                                                 <?php endif; ?>
                                                 <td align="center">
-                                                    <?
+                                                    <?php
                                                     if ($data_drv[$i]['status'] == 'Active') {
                                                         $dis_img = "img/active-icon.png";
                                                     } else if ($data_drv[$i]['status'] == 'Inactive') {

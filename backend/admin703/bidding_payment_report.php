@@ -304,14 +304,14 @@ if(isset($action) && !empty($action) && $action == 'export')
                         <select class="form-control" name='searchPaymentType'
                                 data-text="Select <?php echo $langage_lbl_admin['LBL_PASSANGER_TXT_ADMIN']; ?>">
                             <option value="">Select Payment Types</option>
-                            <option value="Cash" <? if ($searchPaymentType == "Cash") { ?>selected <? } ?>>Cash</option>
+                            <option value="Cash" <?php if ($searchPaymentType == "Cash") { ?>selected <?php } ?>>Cash</option>
                             <?php
                             $payMethod = "Card";
                             if ($SYSTEM_PAYMENT_FLOW == 'Method-2' || $SYSTEM_PAYMENT_FLOW == 'Method-3') {
                                 $payMethod = "Wallet";
                             } ?>
                             <option value="Card"
-                                    <? if ($searchPaymentType == "Card") { ?>selected <? } ?>><?= $payMethod; ?></option>
+                                    <?php if ($searchPaymentType == "Card") { ?>selected <?php } ?>><?= $payMethod; ?></option>
                         </select>
                     </div>
                     <div class="col-lg-3">
@@ -436,7 +436,7 @@ if(isset($action) && !empty($action) && $action == 'export')
                                             <td><?= $data['vTaskStatus']; ?> </td>
                                             <td><?= $data['ePaymentOption']; ?> </td>
                                             <td><?= $data['eDriverPaymentStatus']; ?> </td>
-                                            <td><?
+                                            <td><?php
                                                 if ($data['eDriverPaymentStatus'] == "Settelled") {
                                                 } else if ($data['eDriverPaymentStatus'] == 'Unsettelled') {
                                                     ?>
@@ -444,7 +444,7 @@ if(isset($action) && !empty($action) && $action == 'export')
                                                            value="<?= $data['iBiddingPostId'] ?>"
                                                            id="iBiddingPostId_<?= $data['iBiddingPostId'] ?>"
                                                            name="iBiddingPostId[]">
-                                                    <?
+                                                    <?php
                                                 }
                                                 ?>
                                             </td>
@@ -607,7 +607,7 @@ if(isset($action) && !empty($action) && $action == 'export')
 <?php include_once('footer.php'); ?>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 </body>
 <script>
 

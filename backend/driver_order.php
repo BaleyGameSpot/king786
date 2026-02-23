@@ -154,7 +154,7 @@ for($i=0;$i<scount($db_order_detail);$i++){
 									</tr>
 								</thead>
 								<tbody>
-								<? 
+								<?php 
 									for($i=0;$i<scount($db_order_detail);$i++)
 									{ 
 										$iOrderIdnew = $db_order_detail[$i]['iOrderId'];
@@ -187,7 +187,7 @@ for($i=0;$i<scount($db_order_detail);$i++){
 										<td align="center"><?=$db_order_detail[$i]['vCompany'];?></td>
 										<td align="center"><?= formateNumAsPerCurrency($expectedearning, $currencycode);?></td>
 										<td align="center">
-											<? if($driverEarning > 0) {
+											<?php if($driverEarning > 0) {
 											echo formateNumAsPerCurrency($driverEarning, $currencycode);
 												 } else { 
 												echo $langage_lbl['LBL_PENDING_WEB'];
@@ -200,7 +200,7 @@ for($i=0;$i<scount($db_order_detail);$i++){
 										 </a>
 										</td>		
 									</tr>
-								<? } ?>		
+								<?php } ?>		
 								</tbody>
 								<tfoot>
 									<tr class="last_row_record">

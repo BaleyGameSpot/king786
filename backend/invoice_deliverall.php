@@ -357,7 +357,7 @@ if($MODULES_OBJ->isDeliveryPreferenceEnable()) {
                                                 <?php } ?>
                                             </div>
                                         </div>
-                                        <? if($takeaway=='Yes') { ?>
+                                        <?php if($takeaway=='Yes') { ?>
                                             <?php if(in_array(2, $all_order_status) && !in_array(6, $all_order_status)) { ?>
                                              <div class="new-box-one" style="margin-top:20px">
                                                 <h4><b><?= $langage_lbl['LBL_REST_PREPARATION_TIME']?></b>: <?= $preparetimedata ?></h4>
@@ -369,8 +369,8 @@ if($MODULES_OBJ->isDeliveryPreferenceEnable()) {
                                                 </div>
                                                 
                                              </div>
-                                             <? } ?>
-                                       <? } ?>
+                                             <?php } ?>
+                                       <?php } ?>
                                     </div>
                                 <?php } ?>
                                 

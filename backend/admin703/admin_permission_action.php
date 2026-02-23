@@ -81,7 +81,7 @@ if ($action == 'Edit') {
         <title><?=$SITE_NAME?> | Admin <?= $action; ?></title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <?
+        <?php
         include_once('global_files.php');
         ?>
         <!-- On OFF switch -->
@@ -95,7 +95,7 @@ if ($action == 'Edit') {
 
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <?
+            <?php
             include_once('header.php');
             include_once('left_menu.php');
             ?>
@@ -114,18 +114,18 @@ if ($action == 'Edit') {
 					
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 2) {?>
+                            <?php if ($success == 2) {?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                 <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                             </div><br/>
-                            <?} ?>
-                            <? if ($success == 3) {?>
+                            <?php } ?>
+                            <?php if ($success == 3) {?>
                             <div class="alert alert-danger alert-dismissable">
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
 								<?php print_r($error); ?>
                             </div><br/>
-                            <?} ?>
+                            <?php } ?>
                             <form name="_admin_form" id="_admin_form" method="post" action="" enctype="multipart/form-data">
                                 <input type="hidden" name="actionOf" id="actionOf" value="<?php echo $action; ?>"/>
                                 <input type="hidden" name="id" id="id" value="<?php echo $id; ?>"/>
@@ -172,7 +172,7 @@ if ($action == 'Edit') {
             <!--END PAGE CONTENT -->
         </div>
         <!--END MAIN WRAPPER -->
-        <?
+        <?php
         include_once('footer.php');
         ?>
         <script type="text/javascript" src="js/plugins/select2.min.js"></script>

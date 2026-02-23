@@ -197,7 +197,7 @@ foreach ($vehicle_type_data_new as $key => $value) {
                                 <input type="checkbox" class="chk" name="vRentalCarType[]" <?php if (in_array($value['iVehicleTypeId'], $vRentalCarTyp)) { ?>checked<?php } ?> value="<?= $value['iVehicleTypeId'] ?>"/> Accept rental request for <?php echo $vname; ?> vehicle type?
                             </div>
                         </div>
-                        <?
+                        <?php
                     }
                 }
                 ?>

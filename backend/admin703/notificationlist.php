@@ -254,7 +254,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                 <td>
 
 
-                                                    <a href="<?= $url; ?>?id=<? echo $id; ?>&action=edit" data-toggle="tooltip" title="View">
+                                                    <a href="<?= $url; ?>?id=<?php echo $id; ?>&action=edit" data-toggle="tooltip" title="View">
                                                         <img src="img/edit-icon.png" alt="Edit">
                                                     </a> </td>
 
@@ -380,7 +380,7 @@ include_once('footer.php');
 <link rel="stylesheet" href="css/select2/select2.min.css" />
 <script src="js/plugins/select2.min.js"></script>
 
-<? //include_once('searchfunctions.php'); ?>
+<?php //include_once('searchfunctions.php'); ?>
 <script>
     var startDate;
     var endDate;

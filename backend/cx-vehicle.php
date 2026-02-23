@@ -344,11 +344,11 @@ for ($i = 0;$i < scount($db_driver_vehicle);$i++){
     <!-- Default Top Script and css -->
     <link rel="stylesheet" href="assets/css/bootstrap-fileupload.min.css"/>
     <?php include_once("top/top_script.php"); ?>
-    <? //if ($APP_TYPE == 'Ride-Delivery-UberX') { ?>
+    <?php //if ($APP_TYPE == 'Ride-Delivery-UberX') { ?>
     <!-- <link rel="stylesheet" type="text/css" href="assets/css/vehicles_cubejek.css"> -->
-    <? //} else { ?>
+    <?php //} else { ?>
     <!--<link rel="stylesheet" type="text/css" href="assets/css/vehicles.css">-->
-    <? //} ?>
+    <?php //} ?>
     <style>
         .fileupload-preview {
             line-height: 150px;
@@ -443,7 +443,7 @@ for ($i = 0;$i < scount($db_driver_vehicle);$i++){
                                     <?=$langage_lbl['LBL_VEHICLE_EDIT_DELETE_RECORD'];?>
                                 </div>
                             </div>
-                            <?
+                            <?php
                         }
                         ?>
                         <div class="vehicles-page">
@@ -551,12 +551,12 @@ for ($i = 0;$i < scount($db_driver_vehicle);$i++){
                                                             /* else { */
                                                             ?>
                                                             <!--  <div style=" clear: both;margin: 8px 0 0 10px;font-size: 10px;">
-                                                        <? if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery'){ ?>
+                                                        <?php if ($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery'){ ?>
                                                                            <strong style="font-size: 15px;"><?=$db_driver_vehicle[$i]['eType']?></strong>
-                                                        <? }
+                                                        <?php }
                                                             ?>
                                                          </div> -->
-                                                            <? //}  ?>
+                                                            <?php //}  ?>
                                                     </div>
                                                 </div>
                                                 </td>
@@ -634,9 +634,9 @@ for ($i = 0;$i < scount($db_driver_vehicle);$i++){
                                                                                 </div>
                                                                                 <div class="button-block">
                                                                                     <div class="upload-doc-button">
-                                                                                        <!-- <input type="file" name="file" <? if ($db_userdoc[$s]['doc_file'] == "") { ?>required<? } ?> class="ins" accept="image/*,.doc,.docx,.pdf" onChange="validate_fileextension(<?php echo $db_driver_vehicle[$i]['iDriverVehicleId'].$s; ?>, this.value)"/> -->
+                                                                                        <!-- <input type="file" name="file" <?php if ($db_userdoc[$s]['doc_file'] == "") { ?>required<?php } ?> class="ins" accept="image/*,.doc,.docx,.pdf" onChange="validate_fileextension(<?php echo $db_driver_vehicle[$i]['iDriverVehicleId'].$s; ?>, this.value)"/> -->
 
-                                                                                        <input type="file" name="file" <? if ($db_userdoc[$s]['doc_file'] == "") { ?>required<? } ?> class="ins" onChange="validate_fileextension(<?php echo $db_driver_vehicle[$i]['iDriverVehicleId'].$s; ?>, this.value)"/>
+                                                                                        <input type="file" name="file" <?php if ($db_userdoc[$s]['doc_file'] == "") { ?>required<?php } ?> class="ins" onChange="validate_fileextension(<?php echo $db_driver_vehicle[$i]['iDriverVehicleId'].$s; ?>, this.value)"/>
                                                                                         <button class="gen-btn"><?=$langage_lbl['LBL_UPLOAD'];?> </button>
                                                                                     </div>
                                                                                     <input type="submit" name="Submit" class="save-document gen-btn" value="<?=$langage_lbl['LBL_Save_Documents'];?>">

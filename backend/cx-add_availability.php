@@ -140,17 +140,17 @@ $eDirectionCode = $_SESSION['eDirectionCode'];
 			<div class="card-block">
 	      	<!-- trips detail page -->
 	      	<div class="driver-add-vehicle">
-	      		<? if($success == 1) { ?>
+	      		<?php if($success == 1) { ?>
 					<div class="alert alert-success alert-dismissable">
 						<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 						<?=$langage_lbl['LBL_Record_Updated_successfully']; ?>
 					</div>
-					<? }else if($success == 2){?>
+					<?php }else if($success == 2){?>
 					<div class="alert alert-danger alert-dismissable">
 						<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 						<?= isset($_REQUEST['error_msg']) ? $_REQUEST['error_msg'] : ' '; ?>
 					</div>
-				<?} ?>
+				<?php } ?>
 				
 					<input type="hidden" name="iDriverId" value="<?= $iDriverId; ?>"/>
 	    			<div class="car-type add-car-services-hatch add-services-hatch add-services-taxi colums-view">   

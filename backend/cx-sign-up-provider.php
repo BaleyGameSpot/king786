@@ -34,7 +34,7 @@
                 <input type="email" name="vEmaild" class="create-account-input " id="vEmail_verifyd" value="<?php echo $vEmail; ?>"  Required />
 				<span id="" style="color: Red; font-size: 11px;"><?php echo $pemailErr;?></span>
         </div>
-         <? } else { ?> 
+         <?php } else { ?> 
             <div class="form-group half phone-column newrow">
                 <label><?= $langage_lbl['LBL_SIGNUP_777-777-7777']; ?>  <span class="red">*</span></label>
                 <!--<select name="vCode">
@@ -46,7 +46,7 @@
 				<span id="" style="color: Red; font-size: 11px;"><?php echo isset($pphonecodeErr) ? $pphonecodeErr : '';?></span>
 				<span id="" style="color: Red; font-size: 11px;"><?php echo isset($pphoneErr) ? $pphoneErr : '';?></span>
             </div> 
-        <? } ?>
+        <?php } ?>
             <div class="form-group half newrow">
                 <div class="relative_ele">
                 <label><?= $langage_lbl['LBL_PASSWORD']; ?> <span class="red">*</span></label>
@@ -84,9 +84,9 @@
                 <label><?= $langage_lbl['LBL_SELECT_CONTRY']; ?> <span class="red">*</span></label>
                 <select required name='vCountry' id="vCountryd" onChange="setStated(this.value, '');changeCurrencyDriver(this.value);" >
                    <!--  <option value=""><?= $langage_lbl['LBL_SELECT_TXT']; ?></option> -->
-                    <? for ($i = 0; $i < scount($db_country); $i++) { ?>
-                        <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <? if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
-                    <? } ?>
+                    <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
+                        <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?php if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
+                    <?php } ?>
                 </select>
 			<span id="" style="color: Red; font-size: 11px;"><?php echo isset($pcountryErr) ? $pcountryErr : '';?></span>
         </div>
@@ -127,22 +127,22 @@
 			<span id="" style="color: Red; font-size: 11px;"><?php echo isset($pphonecodeErr) ? $pphonecodeErr : '';?></span>
 			<span id="" style="color: Red; font-size: 11px;"><?php echo isset($pphoneErr) ? $pphoneErr : '';?></span>
         </div>
-        <? } else { ?>
+        <?php } else { ?>
         <div class="form-group half newrow">
             <label><?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?> </label>
             <input type="email" name="vEmaild" class="create-account-input " id="vEmail_verifyd" value="<?php echo $vEmail; ?>"  />
 			<span id="" style="color: Red; font-size: 11px;"><?php echo isset($pemailErr) ? $pemailErr : '';?></span>
         </div>
-        <? } ?>
+        <?php } ?>
         <?php if (scount($db_currency) > 1) { ?>
         <div class="form-group half newrow floating selectcurrencyDriver">
          <label><?= $langage_lbl['LBL_SELECT_CURRENCY_SIGNUP']; ?></label>
             <select required name = 'vCurrencyDriver'>
                 <?php for ($i = 0; $i < scount($db_currency); $i++) { ?>
-                    <option value = "<?= $db_currency[$i]['vName'] ?>" <? if ($defaultCurrency == $db_currency[$i]['vName']) { ?>selected<? } ?>>
+                    <option value = "<?= $db_currency[$i]['vName'] ?>" <?php if ($defaultCurrency == $db_currency[$i]['vName']) { ?>selected<?php } ?>>
                         <?= $db_currency[$i]['vName'] ?>
                     </option>
-                <? } ?>
+                <?php } ?>
             </select>
         </div>
         <?php } else { ?>

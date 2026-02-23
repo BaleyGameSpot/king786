@@ -515,10 +515,10 @@ if ($action == 'Edit') {
                                                 <label>Image#1</label>
                                             </div>
                                             <div class="col-lg-11">
-                                                <? if ($safe_section['img_first'] != '') { ?>
+                                                <?php if ($safe_section['img_first'] != '') { ?>
                                                     <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $safe_section['img_first']; ?>" class="innerbg_image"/> -->
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $safe_section['img_first']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="safe_section_img_first" value="<?= $safe_section['img_first']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px.]</span>
                                             </div>
@@ -546,10 +546,10 @@ if ($action == 'Edit') {
                                                 <label>Image#2</label>
                                             </div>
                                             <div class="col-lg-11">
-                                                <? if ($safe_section['img_sec'] != '') { ?>
+                                                <?php if ($safe_section['img_sec'] != '') { ?>
                                                     <!-- <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $safe_section['img_sec']; ?>" class="innerbg_image"/> -->
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $safe_section['img_sec']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="safe_section_img_sec" value="<?= $safe_section['img_sec']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px.]</span>
                                             </div>
@@ -577,10 +577,10 @@ if ($action == 'Edit') {
                                                 <label>Image#3</label>
                                             </div>
                                             <div class="col-lg-11">
-                                                <? if ($safe_section['img_third'] != '') { ?>
+                                                <?php if ($safe_section['img_third'] != '') { ?>
                                                     <!--  <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $safe_section['img_third_' . $vCode]; ?>" class="innerbg_image"/> -->
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $safe_section['img_third']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="safe_section_img_third" value="<?= $safe_section['img_third']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px.]</span>
                                             </div>
@@ -608,10 +608,10 @@ if ($action == 'Edit') {
                                                 <label>Image#4</label>
                                             </div>
                                             <div class="col-lg-11">
-                                                <? if ($safe_section['img_third'] != '') { ?>
+                                                <?php if ($safe_section['img_third'] != '') { ?>
                                                     <!--  <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $safe_section['img_four_' . $vCode]; ?>" class="innerbg_image"/> -->
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $safe_section['img_four']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="safe_section_img_four" value="<?= $safe_section['img_four']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px.]</span>
                                             </div>
@@ -929,9 +929,9 @@ if ($action == 'Edit') {
                                         <label>Image 1</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($register_section['img_first'] != '') { ?>
+                                        <?php if ($register_section['img_first'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_first']; ?>" class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="register_section_img_first" id="register_section_img_first" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
                                         <span class="notes">[Note: For Better Resolution Upload only image size of 450px * 520px.]</span>
@@ -950,9 +950,9 @@ if ($action == 'Edit') {
                                         <label>Image 2</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($register_section['img_sec'] != '') { ?>
+                                        <?php if ($register_section['img_sec'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_sec']; ?>" class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="register_section_img_sec" id="register_section_img_sec" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
                                         <span class="notes">[Note: For Better Resolution Upload only image size of 450px * 520px.]</span>

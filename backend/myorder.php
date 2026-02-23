@@ -173,9 +173,9 @@ $allservice_cat_data = json_decode($catdata, true);
                                     <table width="100%" border="0" cellpadding="0" cellspacing="1" id="dataTables-example">
                                         <thead>
                                             <tr>
-                                                <? if (scount($allservice_cat_data) > 1) { ?>
+                                                <?php if (scount($allservice_cat_data) > 1) { ?>
                                                     <th style="text-align: center;">Order Type</th>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <th style="text-align: center;"><?= $langage_lbl_admin['LBL_ORDER_NO_TXT']; ?></th>	
                                                 <th width="17%" style="text-align: center;"><?= $langage_lbl['LBL_ORDER_DATE_TXT']; ?></th>
                                                 <th style="text-align: center;"><?= $langage_lbl['LBL_RESTAURANT_TXT_ADMIN']; ?></th>
@@ -187,7 +187,7 @@ $allservice_cat_data = json_decode($catdata, true);
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?
+                                            <?php
                                             for ($i = 0; $i < scount($db_order_detail); $i++) {
                                                 $iOrderIdNew = $db_order_detail[$i]['iOrderId'];
                                                 $getUserCurrencyLanguageDetails = getUserCurrencyLanguageDetailsWeb($_SESSION['sess_iUserId'], $iOrderIdNew);
@@ -232,9 +232,9 @@ $allservice_cat_data = json_decode($catdata, true);
                                                 $fNetTotalratio = trip_currency_payment($fNetTotalratio);
                                                 ?>
                                                 <tr class="gradeA"> 
-                                                    <? if (scount($allservice_cat_data) > 1) { ?>
+                                                    <?php if (scount($allservice_cat_data) > 1) { ?>
                                                         <td><?= $db_order_detail[$i]['vServiceName']; ?></td>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <td align="center" data-order="<?php echo $db_order_detail[$i]['iOrderId']; ?>">
                                                         <?=$db_order_detail[$i]['vOrderNo'];?>
                                                         <?= $db_order_detail[$i]['eTakeaway'] == 'Yes' ? '<br><span class="grey-color">'.$langage_lbl['LBL_TAKE_AWAY'].'</span>' : ''?>
@@ -250,13 +250,13 @@ $allservice_cat_data = json_decode($catdata, true);
                                                         </a>
                                                     </td>		
                                                 </tr>
-                                            <? } ?>		
+                                            <?php } ?>		
                                         </tbody>
                                     </table>
                                 </div>	</div>
                         </div>
                         <!-- -->
-                        <? //if(SITE_TYPE=="Demo"){ ?>
+                        <?php //if(SITE_TYPE=="Demo"){ ?>
                         <!-- <div class="record-feature"> <span><strong>“Edit / Delete Record Feature�?</strong> has been disabled on the Demo Admin Version you are viewing now.
                           This feature will be enabled in the main product we will provide you.</span> </div>
                         <?php //} ?> -->

@@ -194,7 +194,7 @@ $service_cat_data = json_decode($catdata, true);
             <div id="add-hide-show-div">
                 <div class="row">
                     <div class="col-lg-12">
-                        <?
+                        <?php
                         $category_name = ($cmp_name != "") ? " of " . $cmp_name : "";
                         ?>
                         <h2><?php echo 'Items' . $category_name; ?></h2>
@@ -394,7 +394,7 @@ $service_cat_data = json_decode($catdata, true);
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?
+                                    <?php
                                     if (!empty($data_drv)) {
                                         for ($i = 0; $i < scount($data_drv); $i++) {
                                             ?>
@@ -415,7 +415,7 @@ $service_cat_data = json_decode($catdata, true);
                                                     <?php } ?>
                                                 </td>
                                                 <!-- <td align="center">
-                                                                            <?
+                                                                            <?php
                                                 $imgpth = $tconfig["tsite_upload_images_menu_item_path"] . '/' . $data_drv[$i]['vImage'];
                                                 $imgUrl = $tconfig["tsite_upload_images_menu_item"] . '/' . $data_drv[$i]['vImage'];
                                                 if ($data_drv[$i]['vImage'] != "" && file_exists($imgpth)) {
@@ -425,7 +425,7 @@ $service_cat_data = json_decode($catdata, true);
         </td> -->
                                                 <td><?= $data_drv[$i]['iDisplayOrder']; ?></td>
                                                 <td align="center">
-                                                    <?
+                                                    <?php
                                                     if ($data_drv[$i]['eStatus'] == 'Active') {
                                                         $dis_img = "img/active-icon.png";
                                                     } else if ($data_drv[$i]['eStatus'] == 'Inactive') {

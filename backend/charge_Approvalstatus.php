@@ -67,7 +67,7 @@ if ($resultCheck[0]['eApproved'] == '') {
                         </div>
                     </div>
                 </div>
-            <? } else { ?>
+            <?php } else { ?>
                 <div class="page-contant">
                     <div class="page-contant-inner page-trip-detail clearfix">
                         <h2 class="header-page trip-detail">
@@ -83,7 +83,7 @@ if ($resultCheck[0]['eApproved'] == '') {
                         </div>
                     </div>
                 </div>
-            <? } ?>
+            <?php } ?>
             <?php include_once('footer/footer_home.php'); ?>
             <div style="clear:both;"></div>
         </div>

@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 
 $script = "Trips";
@@ -232,7 +232,7 @@ $LBL_ORGANIZATION_TRIP_REASON = $langage_lbl['LBL_ORGANIZATION_TRIP_REASON'];
                 </tr>
             </thead>
                 <tbody>
-                    <?
+                    <?php
                     $fareTotal = 0;
                     for ($i = 0; $i < scount($db_trip); $i++) {
                         $eType = $db_trip[$i]['eType'];
@@ -357,7 +357,7 @@ $LBL_ORGANIZATION_TRIP_REASON = $langage_lbl['LBL_ORGANIZATION_TRIP_REASON'];
                                     </a>
                                     <div style="font-size: 12px;"><?= $langage_lbl['LBL_CANCELED_TXT'] ?></div>
                                 </td>
-                            <? } else { ?>  
+                            <?php } else { ?>  
                                 <td align="center" width="10%">
                                     <a target = "_blank" href="<?= $link_page ?>?iTripId=<?= base64_encode(base64_encode($db_trip[$i]['iTripId'])) ?>">
                                         <img alt="" src="assets/img/<?php echo $invoice_icon; ?>">
@@ -365,7 +365,7 @@ $LBL_ORGANIZATION_TRIP_REASON = $langage_lbl['LBL_ORGANIZATION_TRIP_REASON'];
                                 </td>
                             <?php } ?>
                         </tr>
-                    <? } ?>     
+                    <?php } ?>     
                 </tbody>
                 <tfoot>
                     <?php

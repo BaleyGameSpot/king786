@@ -257,8 +257,8 @@ $db_organization = $obj->MySQLSelect($org_sql);
                             <div class="col-lg-3" style="display: none;">
                                 <select class="form-control" name='searchPaymentType' data-text="Select <?php echo $langage_lbl_admin['LBL_PASSANGER_TXT_ADMIN']; ?>">
                                     <option value="">Select Payment Type</option>
-                                    <option value="Cash" <? if ($searchPaymentType == "Cash") { ?>selected <? } ?>>Cash</option>
-                                    <option value="Card" <? if ($searchPaymentType == "Card") { ?>selected <? } ?>>Card</option>
+                                    <option value="Cash" <?php if ($searchPaymentType == "Cash") { ?>selected <?php } ?>>Cash</option>
+                                    <option value="Card" <?php if ($searchPaymentType == "Card") { ?>selected <?php } ?>>Card</option>
                                 </select>
                             </div>
                             <div class="col-lg-3">
@@ -296,7 +296,7 @@ $db_organization = $obj->MySQLSelect($org_sql);
                                         }
                                         ?>><?php echo $langage_lbl_admin['LBL_RIDE_TXT_ADMIN_SEARCH']; ?> </option>
                       
-                                        <? if (ENABLE_RENTAL_OPTION == 'Yes') { ?>
+                                        <?php if (ENABLE_RENTAL_OPTION == 'Yes') { ?>
                                             <option value="RentalRide" <?php
                                             if ($eType == "RentalRide") {
                                                 echo "selected";
@@ -315,15 +315,15 @@ $db_organization = $obj->MySQLSelect($org_sql);
                                             echo "selected";
                                         }
                                         ?>><?php echo $langage_lbl_admin['LBL_HEADER_RDU_FLY_RIDE']; ?> </option>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                 </div>
                             <?php } ?>
                             <div class="col-lg-2">
                                 <select class="form-control" name='searchPaymentByUser' data-text="Paid By <?php echo $langage_lbl_admin['LBL_PASSANGER_TXT_ADMIN']; ?>">
                                     <option value="">Select <?php echo $langage_lbl_admin['LBL_RIDER']; ?> Payment Status</option>
-                                    <option value="Yes" <? if ($searchPaymentByUser == "Yes") { ?>selected <? } ?>>Paid By <?php echo $langage_lbl_admin['LBL_PASSANGER_TXT_ADMIN']; ?> - Yes</option>
-                                    <option value="No" <? if ($searchPaymentByUser == "No") { ?>selected <? } ?>>Paid By <?php echo $langage_lbl_admin['LBL_PASSANGER_TXT_ADMIN']; ?> -No</option>
+                                    <option value="Yes" <?php if ($searchPaymentByUser == "Yes") { ?>selected <?php } ?>>Paid By <?php echo $langage_lbl_admin['LBL_PASSANGER_TXT_ADMIN']; ?> - Yes</option>
+                                    <option value="No" <?php if ($searchPaymentByUser == "No") { ?>selected <?php } ?>>Paid By <?php echo $langage_lbl_admin['LBL_PASSANGER_TXT_ADMIN']; ?> -No</option>
                                 </select>
                             </div>
                         </div>
@@ -402,7 +402,7 @@ $db_organization = $obj->MySQLSelect($org_sql);
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?
+                                                <?php
                                                 $set_unsetarray = array();
                                                 if (scount($db_trip) > 0) {
                                                      $serverTimeZone = date_default_timezone_get();
@@ -444,7 +444,7 @@ $db_organization = $obj->MySQLSelect($org_sql);
                                                         <tr class="gradeA <?= $class_setteled ?>">
                                                             <?php if ($APP_TYPE != 'UberX' && $APP_TYPE != 'Delivery') { ?> 
                                                                 <td align="left">
-                                                                    <?
+                                                                    <?php
                                                                     if (isset($db_trip[$i]['eHailTrip']) && $db_trip[$i]['eHailTrip'] == "Yes" && $db_trip[$i]['iRentalPackageId'] > 0) {
                                                                         echo "Rental " . $trip_type . "<br/> ( Hail )";
                                                                     } else if ($db_trip[$i]['iRentalPackageId'] > 0) {
@@ -475,15 +475,15 @@ $db_organization = $obj->MySQLSelect($org_sql);
 															<td><?php if ($userObj->hasPermission('view-users')) { ?><a href="javascript:void(0);" onClick="show_rider_details('<?= $db_trip[$i]['iUserId']; ?>')" style="text-decoration: underline;"><?php } ?><?= clearName($db_trip[$i]['riderName']); ?><?php if ($userObj->hasPermission('view-users')) { ?></a><?php } ?></td> 
 														
                                                             <td><?= $get_tTripRequestDate_format['tDisplayDate']."<br/>".$get_tTripRequestDate_format['tDisplayTime'].$time_zone_difference_text; ?></td>
-                                                            <td><?
+                                                            <td><?php
                                                                 $TotalCancelledprice = $db_trip[$i]['fPendingAmount'] > $db_trip[$i]['fWalletDebit'] ? $db_trip[$i]['fPendingAmount'] : $db_trip[$i]['fWalletDebit'];
                                                                 echo formateNumAsPerCurrency($TotalCancelledprice,'');
                                                                 ?></td>
-                                                            <td><? if (!empty($db_bookingno)) { ?> Paid in Trip #<?php if ($userObj->hasPermission('view-invoice')) { ?><a href="invoice.php?iTripId=<?= $db_trip[$i]['vTripAdjusmentId'] ?>" target="_blank"><?php } ?><?= $db_bookingno; ?>
+                                                            <td><?php if (!empty($db_bookingno)) { ?> Paid in Trip #<?php if ($userObj->hasPermission('view-invoice')) { ?><a href="invoice.php?iTripId=<?= $db_trip[$i]['vTripAdjusmentId'] ?>" target="_blank"><?php } ?><?= $db_bookingno; ?>
                                                                         <?php if ($userObj->hasPermission('view-invoice')) { ?>   
                                                                         </a>
                                                                     <?php } ?>
-                                                                    <?
+                                                                    <?php
                                                                 } else if ($db_trip[$i]['ePaidByPassenger'] == 'No') {
                                                                     echo"<b>Not Paid</b>";
                                                                 } else {
@@ -492,7 +492,7 @@ $db_organization = $obj->MySQLSelect($org_sql);
                                                                 ?></td>
 
                                                             <td> 
-                                                                <?
+                                                                <?php
                                                                 if ($db_trip[$i]['ePaidToDriver'] == 'No') {
                                                                     echo "Unsettelled";
                                                                 } else {
@@ -502,16 +502,16 @@ $db_organization = $obj->MySQLSelect($org_sql);
                                                             </td>
 
                                                             <td>
-                                                                <?
+                                                                <?php
                                                                 if ($db_trip[$i]['ePaidToDriver'] == 'No') {
                                                                     ?>
                                                                     <input class="validate[required]" type="checkbox" value="<?= $db_trip[$i]['iTripId'] ?>" id="iTripId_<?= $db_trip[$i]['iTripId'] ?>" name="iTripId[]">
-                                                                    <?
+                                                                    <?php
                                                                 }
                                                                 ?>
                                                             </td>
                                                         </tr>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                     <tr class="gradeA">
                                                         <td colspan="9" align="right">Total Platform Fees</td>
                                                         <td colspan="2"  align="right" colspan="2"><?= formateNumAsPerCurrency($tot_site_commission,''); ?></td>
@@ -526,7 +526,7 @@ $db_organization = $obj->MySQLSelect($org_sql);
                                                                 <a onClick="PaytodriverforCancel()" href="javascript:void(0);" class="btn btn-primary">Mark As Settelled</a>
                                                             </td>
                                                         </tr>
-                                                        <?
+                                                        <?php
                                                     }
                                                 } else {
                                                     ?>

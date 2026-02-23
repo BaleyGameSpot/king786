@@ -157,7 +157,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -174,7 +174,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 <body class="padTop53">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <?
+    <?php
     include_once('header.php');
     include_once('left_menu.php');
     ?>
@@ -190,19 +190,19 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                 </div>
             </div>
             <hr/>
-            <? if ($success == 3) { ?>
+            <?php if ($success == 3) { ?>
                 <div class="alert alert-danger alert-dismissable">
                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                     <?php print_r($error); ?>
                 </div>
                 <br/>
-            <? } ?>
-            <? if ($success == 2) { ?>
+            <?php } ?>
+            <?php if ($success == 2) { ?>
                 <div class="alert alert-danger alert-dismissable">
                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">�</button>
                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                 </div><br/>
-            <? } ?>
+            <?php } ?>
             <div class="body-div coupon-action-part">
                 <div class="form-group">
                     <form name="_gift_card_form" id="_gift_card_form" method="post" action=""
@@ -226,7 +226,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                 if ($action == 'Edit') {
                                     echo "readonly";
                                 } else {
-                                    ?><? } ?> id="vGiftCardCode" value="<?= $vGiftCardCode; ?>"
+                                    ?><?php } ?> id="vGiftCardCode" value="<?= $vGiftCardCode; ?>"
                                        placeholder="Gift Card Code">
                                 <?php
                                 if ($action == 'Edit') {
@@ -364,7 +364,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
         <img src="default.gif">
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script type='text/javascript' src='../assets/js/jquery-ui.min.js'></script>
 <script type="text/javascript" src="js/plugins/select2.min.js"></script>

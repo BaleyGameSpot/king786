@@ -184,7 +184,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                                 </div>
                                                 <div class="<?php echo $class_name; ?>">
                                                     <?php echo $langage_lbl_admin['LBL_DELIVERY']; ?> time<br/>
-                                                    <b><? echo $db_trip_data['TripTimeInMinutes']; ?></b>
+                                                    <b><?php echo $db_trip_data['TripTimeInMinutes']; ?></b>
                                                 </div>
                                             <?php } ?>
                                         </div>
@@ -206,7 +206,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                             </div>
                                         <?php } ?>
 
-                                        <? if ($APP_DELIVERY_MODE != 'Multi') { ?>
+                                        <?php if ($APP_DELIVERY_MODE != 'Multi') { ?>
                                             <div class="rider-invoice-bottom">
                                                 <div class="col-sm-6">
                                                     <div class="left col-sm-3">
@@ -237,7 +237,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                                     </div>
                                                 </div>
                                             </div>
-                                        <? } ?>
+                                        <?php } ?>
                                     </div>
 
                                     <div class="col-sm-6 rider-invoice-new-right">
@@ -246,7 +246,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                         <hr/>
                                         <table style="width:100%" cellpadding="5" cellspacing="0" border="0">
                                             <tbody>
-                                            <?
+                                            <?php
                                             foreach ($db_trip_data['HistoryFareDetailsNewArr'] as $key => $value) {
                                                 foreach ($value as $k => $val) {
                                                     if ($k == $langage_lbl_admin['LBL_EARNED_AMOUNT'] || $k == $langage_lbl['LBL_EARNED_AMOUNT']) {
@@ -261,7 +261,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                                             <td><?= $k; ?></td>
                                                             <td align="right"><?php echo $val; ?></td>
                                                         </tr>
-                                                        <?
+                                                        <?php
                                                     }
                                                 }
                                             }
@@ -272,7 +272,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td><b><?php echo $langage_lbl_admin['LBL_Total_Fare_TXT']; ?> (Via <?
+                                                <td><b><?php echo $langage_lbl_admin['LBL_Total_Fare_TXT']; ?> (Via <?php
                                                         if ($db_trip_data['ePayWallet'] == 'Yes') {
                                                             echo $langage_lbl_admin['LBL_WALLET_TXT'];
                                                         } else {
@@ -285,7 +285,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                                     </b>
                                                 </td>
                                             </tr>
-                                            <?
+                                            <?php
                                             if ($APP_DELIVERY_MODE == 'Multi') {
                                                 foreach ($db_reci_data as $key1 => $value1) {
                                                     foreach ($value1 as $key2 => $value2) {
@@ -294,20 +294,20 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                                             ?>
                                                             <tr>
                                                                 <td><b>Payment By</b></td>
-                                                                <?
+                                                                <?php
                                                                 if ($value2['ePaymentBy'] == "Sender") {
                                                                     ?>
-                                                                    <td align="right"><?= $value2['ePaymentBy']; ?></td><?
+                                                                    <td align="right"><?= $value2['ePaymentBy']; ?></td><?php
                                                                 } else if ($value2['ePaymentBy'] == "Receiver") {
                                                                     ?>
-                                                                    <td align="right"><?= $value2['PaymentPerson']; ?></td><?
+                                                                    <td align="right"><?= $value2['PaymentPerson']; ?></td><?php
                                                                 } else if ($value2['ePaymentBy'] == "Individual") {
                                                                     ?>
-                                                                    <td align="right"><?= $langage_lbl_admin['LBL_EACH_RECIPIENT']; ?></td><?
+                                                                    <td align="right"><?= $langage_lbl_admin['LBL_EACH_RECIPIENT']; ?></td><?php
                                                                 }
                                                                 ?>
                                                             </tr>
-                                                            <?
+                                                            <?php
                                                             break 2;
                                                         }
                                                     }
@@ -331,7 +331,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                         </table>
                                         <br><br><br>
 
-                                        <? if (isset($outstandingamount['fPendingAmount']) && $outstandingamount['fPendingAmount'] > 0) { ?>
+                                        <?php if (isset($outstandingamount['fPendingAmount']) && $outstandingamount['fPendingAmount'] > 0) { ?>
                                             <table style="border:dotted 2px #000000;" cellpadding="5px"
                                                    cellspacing="2px" width="100%">
 
@@ -348,7 +348,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                                 </tr>
 
                                             </table><br>
-                                        <? }
+                                        <?php }
                                         ?>
 
                                         <?php if (($db_trip_data['iActive'] == 'Finished' && $db_trip_data['eCancelled'] == "Yes") || ($db_trip_data['fCancellationFare'] > 0) || ($db_trip_data['iActive'] == 'Canceled' && $db_trip_data['fWalletDebit'] > 0)) {
@@ -376,7 +376,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                                         </b></td>
                                                 </tr>
                                             </table><br>
-                                        <? } ?>
+                                        <?php } ?>
 
                                         <?php
                                         if ($db_trip_data['fTipPrice'] != "" && $db_trip_data['fTipPrice'] != "0" && $db_trip_data['fTipPrice'] != "0.00") {
@@ -391,7 +391,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                                         <td align="right"><b><?= $db_trip_data['fTipPrice']; ?></b></td>
                                                     </tr>
                                                 </table><br>
-                                                <?
+                                                <?php
                                             }
                                         }
                                         ?>
@@ -464,7 +464,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
 
                                     <div class="clear"></div>
 
-                                    <? if ($APP_DELIVERY_MODE == "Multi") { ?>
+                                    <?php if ($APP_DELIVERY_MODE == "Multi") { ?>
                                         <div class="invoice-table">
                                             <?php
                                             if (!empty($db_reci_data)) {
@@ -478,7 +478,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                                         <table style="width:100%" cellpadding="5" cellspacing="0"
                                                                border="0">
 
-                                                            <? foreach ($value1 as $key2 => $value2) { ?>
+                                                            <?php foreach ($value1 as $key2 => $value2) { ?>
 
                                                                 <tr>
                                                                     <td class="label_left"><?php echo $value2['vFieldName']; ?></td>
@@ -491,15 +491,15 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                                                         <td class="detail_right"><?= clearName($value2['vValue']); ?></td>
                                                                     <?php } ?>
                                                                 </tr>
-                                                            <? } ?>
-                                                            <? if (!empty($value2['ePaymentBy']) && $value2['ePaymentBy'] == "Individual") { ?>
+                                                            <?php } ?>
+                                                            <?php if (!empty($value2['ePaymentBy']) && $value2['ePaymentBy'] == "Individual") { ?>
                                                                 <tr>
                                                                     <td class="label_left"><?= $langage_lbl_admin['LBL_AMOUNT_PAID_TXT']; ?></td>
                                                                     <td class="detail_right">
                                                                         <?= $value2['PaymentAmount']; ?>
                                                                     </td>
                                                                 </tr>
-                                                            <? } ?>
+                                                            <?php } ?>
                                                             <?php if (!empty($value2['Receipent_Signature']) && $db_trip_data['vVerificationMethod'] == 'Signature') { ?>
                                                                 <tr>
                                                                     <td class="label_left"><?= $langage_lbl_admin['LBL_RECEIVER_SIGN']; ?></td>
@@ -516,7 +516,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                                                         <?= $value2['vDeliveryConfirmCode'] ?>
                                                                     </td>
                                                                 </tr>
-                                                            <? } ?>
+                                                            <?php } ?>
                                                         </table>
                                                     </div>
                                                     <?php
@@ -525,7 +525,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
                                             ?>
                                         </div>
 
-                                    <? } ?>
+                                    <?php } ?>
 
                                     <div class="row invoice-email-but">
                                                 <span>
@@ -548,7 +548,7 @@ $jsLocationsNew = rtrim($jsLocationsNew, ',') . ']';
 
 <!--END MAIN WRAPPER -->
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="https://maps.google.com/maps/api/js?key=<?= $GOOGLE_SEVER_API_KEY_WEB ?>&libraries=places,geometry" type="text/javascript"></script>
 <script type="text/javascript" src="<?php echo $tconfig["tsite_url"] ?>assets/js/google_map_init.js"></script>
 <script>

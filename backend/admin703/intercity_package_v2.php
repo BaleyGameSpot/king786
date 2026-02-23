@@ -125,7 +125,7 @@ $db_currency = $obj->MySQLSelect($sql);
     <title><?=$SITE_NAME;?> | Rental Packages </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
@@ -146,13 +146,13 @@ $db_currency = $obj->MySQLSelect($sql);
                 </div>
                 <hr/>
             </div>
-            <? if ($success == 3){ ?>
+            <?php if ($success == 3){ ?>
                 <div class="alert alert-danger alert-dismissable">
                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                     <?php print_r($error); ?>
                 </div>
                 <br/>
-            <? } ?>
+            <?php } ?>
             <form name="frmsearch" id="frmsearch" action="javascript:void(0);" method="post">
                 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="admin-nir-table">
                     <tbody>
@@ -306,7 +306,7 @@ $db_currency = $obj->MySQLSelect($sql);
                                                 </td>
 
                                             </tr>
-                                        <? }
+                                        <?php }
                                     }else{ ?>
                                         <tr class="gradeA">
                                             <td colspan="8"> No Records Found.</td>

@@ -1,4 +1,4 @@
-<?
+<?php
     include_once("common.php");
     //$AUTH_OBJ->check_manual_taxi_member_login();
 ?>
@@ -84,7 +84,7 @@
     <!-- End: Top Menu-->
     <!--<div class="page-contant1">-->
        <div class="page-contant-inner1">
-    	   <? include_once('booking/cx-fareestimate.php'); ?>
+    	   <?php include_once('booking/cx-fareestimate.php'); ?>
         </div>
     <!--</div>-->
     <!-- footer part -->

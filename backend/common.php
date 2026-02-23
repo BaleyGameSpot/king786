@@ -1,9 +1,11 @@
 <?php
 
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+$isDev = (isset($_SERVER['APP_ENV']) && $_SERVER['APP_ENV'] === 'development')
+       || (defined('APP_ENV') && APP_ENV === 'development');
+ini_set('display_errors', $isDev ? 1 : 0);
+ini_set('display_startup_errors', $isDev ? 1 : 0);
+error_reporting($isDev ? E_ALL : E_ALL & ~E_DEPRECATED & ~E_NOTICE);
 
 class AuthLogin {
     public function __construct(){

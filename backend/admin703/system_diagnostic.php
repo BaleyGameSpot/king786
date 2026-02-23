@@ -153,7 +153,7 @@ function checkStocketURL($url) {
         <meta charset="UTF-8" />
         <title><?= $SITE_NAME; ?> | System Configuration check</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/new_main.css" />
         <link rel="stylesheet" href="css/adminLTE/AdminLTE.min.css" />
@@ -172,8 +172,8 @@ function checkStocketURL($url) {
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
     <body class="padTop53">
-        <? include_once('header.php'); ?>
-        <? include_once('left_menu.php'); ?>
+        <?php include_once('header.php'); ?>
+        <?php include_once('left_menu.php'); ?>
         <div id="content">
             <div class="inner" style="min-height: 700px;">
                 <div class="row">
@@ -182,7 +182,7 @@ function checkStocketURL($url) {
                     </div>
                 </div>
                 <hr />
-                <? $error = 0; ?>
+                <?php $error = 0; ?>
                 <ul class="list-group">
                     <?php
 // Start check curl
@@ -226,13 +226,13 @@ function checkStocketURL($url) {
                     }
                     // End check 2195 port in gateway.sandbox.push.apple.com
                     ?>
-                    <?
+                    <?php
                     // Start PubNub
                     if ($ENABLE_PUBNUB1 == 'Yes') {
                         if ($PUBNUB_PUBLISH_KEY == '' || $PUBNUB_SUBSCRIBE_KEY == '' || $PUBNUB_SECRET_KEY == '') {
                             ?>
                             <li class="list-group-item list-group-item-warning failli">Please Add Valid Pubnub keys</li>
-                            <?
+                            <?php
                             $error += 1;
                         } else {
                             echo '<li class="list-group-item list-group-item-warning succesli">Pubnub Keys are valid.</li>';
@@ -264,7 +264,7 @@ function checkStocketURL($url) {
                         if ($GOOGLE_SENDER_ID == '' || $GOOGLE_SEVER_GCM_API_KEY == '' || $GOOGLE_SEVER_API_KEY_WEB == '' || $GOOGLE_PLUS_APP_NAME == '' || $GOOGLE_PLUS_OAUTH_CLIENT_ID == '' || $GOOGLE_PLUS_OAUTH_CLIENT_SECRET == '' || $GOOGLE_PLUS_OAUTH_REDIRECT_URI == '' || $GOOGLE_PLUS_OAUTH_REDIRECT_URI == '') {
                             ?>
                             <li class="list-group-item list-group-item-warning failli">Please Add Valid Google keys for App and Web and if you do not want to add Keys then make sure PASSENGER_GOOGLE_LOGIN and DRIVER_GOOGLE_LOGIN option will be set as No.</li>
-                            <?
+                            <?php
                             $error += 1;
                         } else {
                             echo '<li class="list-group-item list-group-item-warning succesli">Google Keys are valid.</li>';
@@ -276,7 +276,7 @@ function checkStocketURL($url) {
                         if ($LINKEDIN_APP_SECRET_KEY == '' || $LINKEDIN_APP_ID == '') {
                             ?>
                             <li class="list-group-item list-group-item-warning failli">Please Add Valid LinkedIn keys for App and Web and if you do not want to add Keys then make sure DRIVER_LINKEDIN_LOGIN and PASSENGER_LINKEDIN_LOGIN option will be set as No.</li>
-                            <?
+                            <?php
                             $error += 1;
                         } else {
                             echo '<li class="list-group-item list-group-item-warning succesli">LinkedIn Keys are valid.</li>';
@@ -287,7 +287,7 @@ function checkStocketURL($url) {
                     if ($MOBILE_VERIFY_TOKEN_TWILIO == '' || $MOBILE_VERIFY_SID_TWILIO == '' || $MOBILE_NO_TWILIO == '') {
                         ?> 
                         <li class="list-group-item list-group-item-warning failli">Please Add Valid Twillio keys otherwise sms for application will not working.</li>
-                        <?
+                        <?php
                         $error += 1;
                     }
                     // End Twillio
@@ -296,7 +296,7 @@ function checkStocketURL($url) {
                         if ($FACEBOOK_APP_SECRET_KEY == '' || $FACEBOOK_APP_ID == '') {
                             ?>
                             <li class="list-group-item list-group-item-warning failli">Please Add Valid Facebook keys for App and Web and if you do not want to add Keys then make sure DRIVER_FACEBOOK_LOGIN and PASSENGER_FACEBOOK_LOGIN option will be set as No.</li>
-                            <?
+                            <?php
                             $error += 1;
                         } else {
                             echo '<li class="list-group-item list-group-item-warning succesli">Facebook Keys are valid.</li>';
@@ -308,7 +308,7 @@ function checkStocketURL($url) {
                         if ($TWITTER_CONSUMER_KEY == '' || $TWITTER_CONSUMER_SECRET == '' || $TWITTER_OAUTH_ACCESS_TOKEN == '' || $TWITTER_OAUTH_ACCESS_TOKEN_SECRET == '') {
                             ?>
                             <li class="list-group-item list-group-item-warning failli">Please Add Valid Twitter keys for App and Web and if you do not want to add Keys then make sure DRIVER_TWITTER_LOGIN and PASSENGER_TWITTER_LOGIN option will be set as No.</li>
-                            <?
+                            <?php
                             $error += 1;
                         } else {
                             echo '<li class="list-group-item list-group-item-warning succesli">Twitter Keys are valid.</li>';
@@ -321,7 +321,7 @@ function checkStocketURL($url) {
                             if ($STRIPE_SECRET_KEY1 == '' || $STRIPE_PUBLISH_KEY1 == '') {
                                 ?>
                                 <li class="list-group-item list-group-item-warning failli">Please Add Valid Stripe keys</li>
-                                <?
+                                <?php
                                 $error += 1;
                             } else {
                                 echo '<li class="list-group-item list-group-item-warning succesli">Stripe Keys are valid.</li>';
@@ -329,7 +329,7 @@ function checkStocketURL($url) {
                             if (strpos($STRIPE_SECRET_KEY1, 'test') !== false || strpos($STRIPE_PUBLISH_KEY1, 'test') !== false) {
                                 ?>
                                 <li class="list-group-item list-group-item-warning failli">Stripe have test keys please add live keys in configuration tabel.</li>	
-                                <?
+                                <?php
                                 $error += 1;
                             } else {
                                 echo '<li class="list-group-item list-group-item-warning succesli">Stripe have live keys.</li>';
@@ -338,7 +338,7 @@ function checkStocketURL($url) {
                             if ($BRAINTREE_TOKEN_KEY1 == '' || $BRAINTREE_ENVIRONMENT1 == '' || $BRAINTREE_MERCHANT_ID1 == '' || $BRAINTREE_PUBLIC_KEY1 == '' || $BRAINTREE_PRIVATE_KEY1 == '' || $BRAINTREE_CHARGE_AMOUNT1 == '') {
                                 ?>
                                 <li class="list-group-item list-group-item-warning failli">Please Add Valid BrainTree keys</li>
-                                <?
+                                <?php
                                 $error += 1;
                             } else {
                                 echo '<li class="list-group-item list-group-item-warning succesli">Braintree keys are valid.</li>';
@@ -346,7 +346,7 @@ function checkStocketURL($url) {
                             if ($BRAINTREE_ENVIRONMENT1 == 'sandbox') {
                                 ?>
                                 <li class="list-group-item list-group-item-warning failli">Braintree have test keys please add live keys in configuration tabel.</li>	
-                                <?
+                                <?php
                                 $error += 1;
                             } else {
                                 echo '<li class="list-group-item list-group-item-warning succesli">Braintree have live keys.</li>';
@@ -355,7 +355,7 @@ function checkStocketURL($url) {
                             if ($PAYMAYA_API_URL1 == '' || $PAYMAYA_SECRET_KEY1 == '' || $PAYMAYA_PUBLISH_KEY1 == '' || $PAYMAYA_ENVIRONMENT_MODE1 == '') {
                                 ?>
                                 <li class="list-group-item list-group-item-warning">Please Add Valid PayMaya keys</li>
-                                <?
+                                <?php
                                 $error += 1;
                             } else {
                                 echo '<li class="list-group-item list-group-item-warning succesli">PayMaya keys are valid.</li>';
@@ -363,7 +363,7 @@ function checkStocketURL($url) {
                             if ($PAYMAYA_ENVIRONMENT_MODE1 == 'Sandbox') {
                                 ?>
                                 <li class="list-group-item list-group-item-warning failli">>Paymaya have test keys please add live keys in configuration tabel.</li>
-                                <?
+                                <?php
                                 $error += 1;
                             } else {
                                 echo '<li class="list-group-item list-group-item-warning succesli">PayMayahave live keys.</li>';
@@ -372,7 +372,7 @@ function checkStocketURL($url) {
                             if ($OMISE_PUBLIC_KEY1 == '' || $OMISE_SECRET_KEY1 == '') {
                                 ?>
                                 <li class="list-group-item list-group-item-warning failli">Please Add Valid Omise keys</li>
-                                <?
+                                <?php
                                 $error += 1;
                             } else {
                                 echo '<li class="list-group-item list-group-item-warning succesli">Omise keys are valid.</li>';
@@ -380,7 +380,7 @@ function checkStocketURL($url) {
                             if (strpos($OMISE_PUBLIC_KEY1, 'test') !== false || strpos($OMISE_SECRET_KEY1, 'test') !== false) {
                                 ?>
                                 <li class="list-group-item list-group-item-warning failli">>Omise have test keys please add live keys in configuration tabel.</li>
-                                <?
+                                <?php
                                 $error += 1;
                             } else {
                                 echo '<li class="list-group-item list-group-item-warning succesli">Omise keys are live.</li>';
@@ -389,7 +389,7 @@ function checkStocketURL($url) {
                             if ($ADYEN_MERCHANT_ACCOUNT1 == '' || $ADYEN_CHARGE_AMOUNT1 == '' || $ADYEN_USER_NAME1 == '' || $ADYEN_PASSWORD1 == '' || $ADYEN_API_URL1 == '') {
                                 ?>
                                 <li class="list-group-item list-group-item-warning failli">Please Add Valid adyen keys</li>
-                                <?
+                                <?php
                                 $error += 1;
                             } else {
                                 echo '<li class="list-group-item list-group-item-warning succesli">Adyen keys are added.</li>';
@@ -398,7 +398,7 @@ function checkStocketURL($url) {
                             if ($XENDIT_PUBLIC_KEY1 == '' || $XENDIT_SECRET_KEY1 == '') {
                                 ?>
                                 <li class="list-group-item list-group-item-warning failli">Please Add Valid Xendit keys</li>
-                                <?
+                                <?php
                                 $error += 1;
                             } else {
                                 echo '<li class="list-group-item list-group-item-warning succesli">Xendit keys are added.</li>';
@@ -406,7 +406,7 @@ function checkStocketURL($url) {
                             if (strpos($XENDIT_PUBLIC_KEY1, 'development') !== false || strpos($XENDIT_SECRET_KEY1, 'development') !== false) {
                                 ?>
                                 <li class="list-group-item list-group-item-warning failli">>Xendit have test keys please add live keys in configuration tabel.</li>
-                                <?
+                                <?php
                                 $error += 1;
                             } else {
                                 echo '<li class="list-group-item list-group-item-warning succesli">Xendit keys are live mode.</li>';
@@ -418,22 +418,22 @@ function checkStocketURL($url) {
                     if (isset($messages[1]) && $messages[1] != 'Sent') {
                         ?>
                         <li class="list-group-item list-group-item-warning failli">Please check pubnub keys are valid or not.</li>
-                        <?
+                        <?php
                         $error += 1;
                     } else {
                         ?>
                         <li class="list-group-item list-group-item-warning succesli">Pubnub working proper.</li>
-                        <?
+                        <?php
                     }
                     if ($google_status == 'OVER_QUERY_LIMIT') {
                         ?>
                         <li class="list-group-item list-group-item-warning failli">google Daily limit has been reached.</li>
-                        <?
+                        <?php
                         $error += 1;
                     } else {
                         ?>
                         <li class="list-group-item list-group-item-warning succesli">google working proper.</li>
-                        <? }
+                        <?php }
                         ?>
                 </ul>
                 <div class="admin-notes">

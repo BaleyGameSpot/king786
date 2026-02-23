@@ -98,11 +98,11 @@ $val_arr = array($SUPPORT_PHONE,$COMPANY_ADDRESS,$SUPPORT_MAIL,$ANDROID_APP_LINK
 <section class="banner-section taxi-app bannermenu">
     <div class="tab-row-holding">
         <ul class="tab-row">
-            <? if($emptyData==1) { } else { ?>
+            <?php if($emptyData==1) { } else { ?>
             <li data-src="3" class="tab">
                 <a href="#our-restaurant"><?= $menutitleService; ?></a>
             </li>
-            <? } ?>
+            <?php } ?>
             <li data-src="6" class="tab">
                 <a href="#download-apps"><?= $menutitleDown ?></a>
             </li>
@@ -128,7 +128,7 @@ $val_arr = array($SUPPORT_PHONE,$COMPANY_ADDRESS,$SUPPORT_MAIL,$ANDROID_APP_LINK
     </div>
 </section>
 <!-- *************banner section end************* -->
-<? if($emptyData == 1) { } else { ?>
+<?php if($emptyData == 1) { } else { ?>
 <!-- *************restaurant section start************* -->
 <section class="restaurant page-section" id="our-restaurant">
     <div class="restaurant-inner">
@@ -184,7 +184,7 @@ $val_arr = array($SUPPORT_PHONE,$COMPANY_ADDRESS,$SUPPORT_MAIL,$ANDROID_APP_LINK
     </div>
 </section>
 <!-- *************restaurant section End ************* -->
-<? } ?>
+<?php } ?>
 <!-- *************download section section start************* -->
 <?php
 $tMessage_link1 = $download_section['link1_'.$vCode];
@@ -265,4 +265,4 @@ $tMessage_sec = str_replace($key_arr, $val_arr, $tMessage_sec); ?>
         }
     });
 </script>
-<? //} ?>
+<?php //} ?>

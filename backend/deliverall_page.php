@@ -60,7 +60,7 @@ $val_arr = array($SUPPORT_PHONE, $COMPANY_ADDRESS, $SUPPORT_MAIL, $ANDROID_APP_L
         </div>
     </section>
     <!-- End -->
-    <? if ($THEME_OBJ->isCJXDoctorv2ThemeActive() != 'Yes') { ?>
+    <?php if ($THEME_OBJ->isCJXDoctorv2ThemeActive() != 'Yes') { ?>
     <?php
     $tMessage_call = $call_section['desc_' . $vCode];
     $tMessage_call = str_replace($key_arr, $val_arr, $tMessage_call); ?>
@@ -79,7 +79,7 @@ $val_arr = array($SUPPORT_PHONE, $COMPANY_ADDRESS, $SUPPORT_MAIL, $ANDROID_APP_L
         </div>
     </section>
 
-<? } ?>
+<?php } ?>
 <script type="text/javascript">
     /*--------------------- when click on order now button redirect with id  --------------------*/
     document.getElementsByClassName("book-btn")[0].addEventListener('click', function (event) {

@@ -410,7 +410,7 @@ $isEnableServiceTypeWiseProviderDocument  = $MODULES_OBJ->isEnableServiceTypeWis
                                         <span style="font-size: 12px;"><?php echo $localization; ?></span>
                                     </b>
                                     <div class="make-switch" data-on="success" data-off="warning">
-                                        <input type="checkbox" class="chk vCarTypeClass" name="vCarType[]" id="vCarType_<?= $val['iVehicleTypeId'] ?>" <? if ($ePricetype == "Provider") { ?>onchange="check_box_value(this.value);" <? } ?> <?php if (in_array($val['iVehicleTypeId'], $vCarTyp)) { ?>checked<?php } ?> value="<?= $val['iVehicleTypeId'] ?>" />
+                                        <input type="checkbox" class="chk vCarTypeClass" name="vCarType[]" id="vCarType_<?= $val['iVehicleTypeId'] ?>" <?php if ($ePricetype == "Provider") { ?>onchange="check_box_value(this.value);" <?php } ?> <?php if (in_array($val['iVehicleTypeId'], $vCarTyp)) { ?>checked<?php } ?> value="<?= $val['iVehicleTypeId'] ?>" />
                                     </div>
                                     <?php
                                     if ($ePricetype == "Provider") {
@@ -421,13 +421,13 @@ $isEnableServiceTypeWiseProviderDocument  = $MODULES_OBJ->isEnableServiceTypeWis
                                         $fAmount_new = $fAmount[$val['iVehicleTypeId']];
                                         $famount_val = (empty($fAmount_new)) ? round($fAmount_old, 2) : round($fAmount_new, 2);
                                     ?>
-                                        <div class="hatchback-search" id="amt1_<?= $val['iVehicleTypeId'] ?>" <? echo $p001; ?>>
+                                        <div class="hatchback-search" id="amt1_<?= $val['iVehicleTypeId'] ?>" <?php echo $p001; ?>>
                                             <input type="hidden" name="desc" id="desc_<?= $val['iVehicleTypeId'] ?>" value="<?= $val['vVehicleType_' . $default_lang] ?>">
                                             <?php if ($val['eFareType'] != 'Regular') { ?>
-                                                <label class="fare_type" style="margin-right:5px;"><? echo $vSymbol; ?></label>
+                                                <label class="fare_type" style="margin-right:5px;"><?php echo $vSymbol; ?></label>
                                                 <input class="form-control" type="text" name="fAmount[<?= $val['iVehicleTypeId'] ?>]" value="<?= $famount_val; ?>" placeholder="Enter Amount for <?= $val['vVehicleType_' . $default_lang] ?>" id="fAmount_<?= $val['iVehicleTypeId'] ?>" maxlength="10"><label class="fare_type"><?php echo $eFareType; ?></label>
                                         </div>
-                                <?
+                                <?php
                                             }
                                         }
                                 ?>
@@ -440,7 +440,7 @@ $isEnableServiceTypeWiseProviderDocument  = $MODULES_OBJ->isEnableServiceTypeWis
             }
             ?>
         </ul>
-        <? if ($emptySubCatData == '0') { ?>
+        <?php if ($emptySubCatData == '0') { ?>
             <div style="margin-bottom: 35px;font-size: 16px;"> <?= $langage_lbl_admin['LBL_NO_SERVICE_AVAIL_WEB']; ?></div>
         <?php } ?>
     </div>

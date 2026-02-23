@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("../common.php");
 
 
@@ -81,17 +81,17 @@ else{
 											?>
 										</td>
 									</tr>
-									<? if($reg_date != ""){?>
+									<?php if($reg_date != ""){?>
 									<tr>
 										<td class="text_design">Registration Date</td>
 										<!-- <td>Tuesday, Aug  22<sup>nd</sup> 2017</td> -->
 										<td><?=$reg_date?></td>
 									</tr>
-									<? } ?>
+									<?php } ?>
 									<tr>
 										<td class="text_design">Status</td>
 										<td>
-											<?
+											<?php
 												$class="";
 												if($data_company[0]['eStatus'] == "Active"){
 													$class = "btn-success";
@@ -111,7 +111,7 @@ else{
 						<tr>
 							<td class="text_design">Organization Address</td>
 							<td>
-								<?
+								<?php
 									$address1 = $data_company[0]['vCaddress'];
 									if($data_company[0]['vCadress2'] != ""){
 										$conc = ($address1 != "") ? ", " : "";
@@ -138,14 +138,14 @@ else{
 								?>	
 							</td>
 						</tr>
-						<? if($data_company[0]['vVat'] != ""){?>
+						<?php if($data_company[0]['vVat'] != ""){?>
 						<tr>
 							<td class="text_design">Vat Number</td>
 							<td>
 								<?=$data_company[0]['vVat'];?>
 							</td>
 						</tr>
-						<? } ?>
+						<?php } ?>
 						<!--
 						<tr>
 							<td>Total Vehicles</td>
@@ -198,11 +198,11 @@ else{
 					</table>
 				</div>
 				<div class="modal-footer">
-                    <? if(!empty($_REQUEST['editTrip'])) {
+                    <?php if(!empty($_REQUEST['editTrip'])) {
                             if($_REQUEST['editTrip']=="Yes") { ?>
-                        <? } } else { ?>
+                        <?php } } else { ?>
                         <a href="organization_action.php?id=<?=$iOrganizationId; ?>" class="btn btn-primary btn-ok" target="blank">Edit Organization</a>
-                    <? } ?>
+                    <?php } ?>
 					<button type="button" class="btn btn-danger btn-ok" data-dismiss="modal">Close</button>
 				</div>
 				

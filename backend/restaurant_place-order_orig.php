@@ -561,7 +561,7 @@
                                             if (strtoupper($APP_PAYMENT_MODE) == 'CASH' || strtoupper($APP_PAYMENT_MODE) == 'CASH-CARD') {?>
                                         <li data-payment="cash-data" class="pay-ico active" disable><?=$langage_lbl['LBL_PAY_VIA_CASH'];?></li>
                                         <?php } if (SITE_TYPE != 'Demo' && (strtoupper($APP_PAYMENT_MODE)=='CARD' || strtoupper($APP_PAYMENT_MODE)=='CASH-CARD')) { ?>
-                                        <li data-payment="card-data" class="card-ico <? if(strtoupper($APP_PAYMENT_MODE)=='CARD') { ?> active<?php } ?>"><? if(strtoupper($SYSTEM_PAYMENT_FLOW)=='METHOD-1') { echo $langage_lbl['LBL_PAY_VIA_CARD']; } else { echo $langage_lbl['LBL_PAY_VIA_WALLET']; } ?></li>
+                                        <li data-payment="card-data" class="card-ico <?php if(strtoupper($APP_PAYMENT_MODE)=='CARD') { ?> active<?php } ?>"><?php if(strtoupper($SYSTEM_PAYMENT_FLOW)=='METHOD-1') { echo $langage_lbl['LBL_PAY_VIA_CARD']; } else { echo $langage_lbl['LBL_PAY_VIA_WALLET']; } ?></li>
                                         <?php
                                             }
                                             }
@@ -582,11 +582,11 @@
                                             </form>
                                         </div>
                                         <?php } if ($maualStoreOrderUser == 'user' && (SITE_TYPE != 'Demo' && (strtoupper($APP_PAYMENT_MODE)=='CARD' || strtoupper($APP_PAYMENT_MODE)=='CASH-CARD'))) { ?>
-                                        <div id="card-data" class="pay-tab-data <? if(strtoupper($APP_PAYMENT_MODE)=='CARD') { ?> active<?php } ?>">
+                                        <div id="card-data" class="pay-tab-data <?php if(strtoupper($APP_PAYMENT_MODE)=='CARD') { ?> active<?php } ?>">
                                             <img src="<?= $siteUrl; ?>assets/img/apptype/<?= $template ?>/credit-card.png" alt="">
                                             <form>
                                                 <div class="pay-cash-caption">
-                                                    <strong><? if(strtoupper($SYSTEM_PAYMENT_FLOW)=='METHOD-1') { echo $langage_lbl['LBL_CARD']; } else { echo $langage_lbl['LBL_WALLET_TXT']; } ?></strong>
+                                                    <strong><?php if(strtoupper($SYSTEM_PAYMENT_FLOW)=='METHOD-1') { echo $langage_lbl['LBL_CARD']; } else { echo $langage_lbl['LBL_WALLET_TXT']; } ?></strong>
                                                     <span><?= $langage_lbl['LBL_MANUAL_STORE_MENU_CREDIT_CARDS_DESCRIPTION']; ?></span>
                                                 </div>
                                                 <?php if ($APP_PAYMENT_METHOD == 'Stripe') {?>

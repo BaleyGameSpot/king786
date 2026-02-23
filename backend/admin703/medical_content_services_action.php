@@ -205,7 +205,7 @@ $db_master = $obj->MySQLSelect($sql);
     <title>Admin | Medical Services Home Content <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -232,7 +232,7 @@ $db_master = $obj->MySQLSelect($sql);
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
+    <?php include_once('header.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -266,19 +266,19 @@ $db_master = $obj->MySQLSelect($sql);
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div>
                         <br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <form method="post" name="_home_content_form" id="_home_content_form" action=""
                           enctype='multipart/form-data'>
                         <input type="hidden" name="eCatType" value="<?= $eFor; ?>"/>
@@ -323,10 +323,10 @@ $db_master = $obj->MySQLSelect($sql);
                                         <label>Background Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($banner_section['img_' . $vCode] != '') { ?>
+                                        <?php if ($banner_section['img_' . $vCode] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $banner_section['img_' . $vCode]; ?>"
                                                  class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="banner_section_img"
                                                id="banner_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
                                         <br/>
@@ -488,7 +488,7 @@ $db_master = $obj->MySQLSelect($sql);
         <img src="default.gif">
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script src="../assets/plugins/ckeditor/ckeditor.js"></script>
 <script src="../assets/plugins/ckeditor/config.js"></script>

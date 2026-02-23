@@ -582,7 +582,7 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                 height: 500px;
             }
         </style>
-    <? } ?>
+    <?php } ?>
 
 </head>
 <body>
@@ -609,22 +609,22 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                 </div>
 
                 <div class="driver-add-vehicle-setting">
-                    <? if (isset($_REQUEST['success'])&&  $_REQUEST['success'] == 1) { ?>
+                    <?php if (isset($_REQUEST['success'])&&  $_REQUEST['success'] == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?= $langage_lbl['LBL_Record_Updated_successfully']; ?>
                         </div>
-                    <? } else if (isset($_REQUEST['success']) && $_REQUEST['success'] == 2) { ?>
+                    <?php } else if (isset($_REQUEST['success']) && $_REQUEST['success'] == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
-                    <? } else if ((isset($_REQUEST['success']) && $_REQUEST['success'] == 0) || $var_msg != "")  { ?>
+                    <?php } else if ((isset($_REQUEST['success']) && $_REQUEST['success'] == 0) || $var_msg != "")  { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?= isset($_REQUEST['error_msg']) ? $_REQUEST['error_msg'] : $var_msg; ?>
                         </div>
-                    <? } ?>
+                    <?php } ?>
 
                     <form method="post" action="" class="company_form general-form" id="company_form" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?= base64_encode(base64_encode($id)); ?>"/>
@@ -638,9 +638,9 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                 <input type="text" id="vCompany" class="" name="vCompany" id="vCompany"    value="<?= $vCompany; ?>" required>
                             </div>
                             <div class="form-group half">
-                                <label><?= $langage_lbl['LBL_PROFILE_YOUR_EMAIL_ID']; ?><?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>    <span class="red"> *</span><? } ?></label>
+                                <label><?= $langage_lbl['LBL_PROFILE_YOUR_EMAIL_ID']; ?><?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>    <span class="red"> *</span><?php } ?></label>
                                 
-				<input type="text" id="vEmail" class="" name="vEmail" id="vEmail"      value="<?= $vEmail; ?>" <?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required <? } ?> >
+				<input type="text" id="vEmail" class="" name="vEmail" id="vEmail"      value="<?= $vEmail; ?>" <?php if ($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required <?php } ?> >
                             </div>
                             <div class="half-column">
                                 <div class="form-group">
@@ -649,10 +649,10 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                     <input type="hidden" name="vRestuarantLocationLat" id="vRestuarantLocationLat"    value="<?= $vRestuarantLocationLat ?>">
                                     <input type="hidden" name="vRestuarantLocationLong" id="vRestuarantLocationLong"  value="<?= $vRestuarantLocationLong ?>">
                                 </div>
-                                <? //added by SP on 14-10-2020 for timeslot changes
+                                <?php //added by SP on 14-10-2020 for timeslot changes
                                 if (strtoupper($ENABLE_TIMESLOT_ADDON) != "YES") { ?>
                                     <div id="map" class="setting-page-map"></div>
-                                <? } ?>
+                                <?php } ?>
                             </div>
                             <div class="half-column">
                                 <div class="partation">
@@ -669,7 +669,7 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                         </div>
                                     </div>
 
-                                    <? //added by SP on 14-10-2020 for timeslot changes
+                                    <?php //added by SP on 14-10-2020 for timeslot changes
                                     if (strtoupper($ENABLE_TIMESLOT_ADDON) != "YES") { ?>
                                         <strong class="slot-label"><?= $langage_lbl['LBL_SLOT1_MONDAY_TO_FRIDAY']; ?>  <span class="red"> *</span></strong>
                                         <div class='form-group half'>
@@ -753,7 +753,7 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                             </span>
                                             </div>
                                         </div>
-                                    <? } ?>
+                                    <?php } ?>
 
                                 </div>
                             </div>
@@ -863,11 +863,11 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                     <select <?= $style ?> class="vCountry" name="vCountry" id="vCountry"
                                                           onChange="changeCode(this.value); setState(this.value, '');"
                                                           required>
-                                        <? for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                        <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
                                             <option
-                                                <? if ($vCountry == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>
+                                                <?php if ($vCountry == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>
                                                 value="<?= $db_country[$i]['vCountryCode'] ?>"><?= $db_country[$i]['vCountry'] ?></option>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                     <div class="required-label" id="vCountryCheck"></div>
                                 </div>
@@ -884,14 +884,14 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                 </div>
                             </div>
 
-                            <? if ($SHOW_CITY_FIELD == 'Yes') { ?>
+                            <?php if ($SHOW_CITY_FIELD == 'Yes') { ?>
                                 <div class="form-group half">
                                     <strong><?= $langage_lbl['LBL_CITY_TXT']; ?></strong>
                                     <select class="" name='vCity' id="vCity">
                                         <option value=""><?= $langage_lbl['LBL_SELECT_CITY']; ?></option>
                                     </select>
                                 </div>
-                            <? } ?>
+                            <?php } ?>
                             <div class="half-column">
                                 <strong>&nbsp;</strong>
                                 <div class="form-group">
@@ -926,11 +926,11 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
 
                                     <select class="" name='vLang' required>
                                         <option value="">--select--</option>
-                                        <? for ($i = 0; $i < scount($db_lang); $i++) { ?>
+                                        <?php for ($i = 0; $i < scount($db_lang); $i++) { ?>
                                             <option value="<?= $db_lang[$i]['vCode'] ?>" <?= ($db_lang[$i]['vCode'] == $vLang) ? 'selected' : ''; ?>>
                                                 <?= $db_lang[$i]['vTitle'] ?>
                                             </option>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                 <?php } ?>
                             </div>
@@ -989,13 +989,13 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                     <strong><?= $langage_lbl['LBL_OFFER_APPLY_ON_TXT']; ?><span
                                                 class="red"> *</span></strong>
                                     <select class="" name="fOfferAppyType" id="fOfferAppyType" required>
-                                        <option value="None" <? if ($fOfferAppyType == 'None') {
+                                        <option value="None" <?php if ($fOfferAppyType == 'None') {
                                             echo 'selected';
                                         } ?>><?= $langage_lbl['LBL_OPTION_NONE']; ?></option>
-                                        <option value="First" <? if ($fOfferAppyType == 'First') {
+                                        <option value="First" <?php if ($fOfferAppyType == 'First') {
                                             echo 'selected';
                                         } ?>><?= $langage_lbl['LBL_FIRST_ORDER']; ?></option>
-                                        <option value="All" <? if ($fOfferAppyType == 'All') {
+                                        <option value="All" <?php if ($fOfferAppyType == 'All') {
                                             echo 'selected';
                                         } ?>><?= $langage_lbl['LBL_ALL_ORDER']; ?></option>
                                     </select>
@@ -1005,10 +1005,10 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                             <div class="form-group half" id="fOfferTypeDiv">
                                 <strong><?= $langage_lbl['LBL_OFFER_TYPE_WEB_TXT'] ?></strong>
                                 <select class="" name="fOfferType" id="fOfferType">
-                                    <option value="Flat" <? if ($fOfferType == 'Flat') {
+                                    <option value="Flat" <?php if ($fOfferType == 'Flat') {
                                         echo 'selected';
                                     } ?>><?= $langage_lbl['LBL_FLAT_OFFER'] ?></option>
-                                    <option value="Percentage" <? if ($fOfferType == 'Percentage') {
+                                    <option value="Percentage" <?php if ($fOfferType == 'Percentage') {
                                         echo 'selected';
                                     } ?>><?= $langage_lbl['LBL_PERCENTAGE_OFFER'] ?></option>
                                 </select>
@@ -1083,7 +1083,7 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                            placeholder="<?= $langage_lbl['LBL_COST_PER_ORDER']; ?> ">
                                 </div>
                             <?php } ?>
-                            <? if ($takeaway == 'Yes') { ?>
+                            <?php if ($takeaway == 'Yes') { ?>
                                 <div class="form-group half">
                                     <strong><?= $langage_lbl['LBL_TAKE_AWAY'] ?></strong>
                                     <select class="" name="eTakeaway">
@@ -1096,7 +1096,7 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                         } ?>><?= $langage_lbl['LBL_BTN_NO_TXT'] ?></option>
                                     </select>
                                 </div>
-                            <? } //if($deliveryAvailable=='Yes') { ?>
+                            <?php } //if($deliveryAvailable=='Yes') { ?>
                             <!--<div class="row">
                                     <div class="col-lg-12">
                                         <label><?= $langage_lbl['LBL_DELIVERY_AVAILABLE'] ?></label>
@@ -1112,7 +1112,7 @@ $isStoreDriver = $MODULES_OBJ->isStorePersonalDriverAvailable(); // Added By HJ 
                                         </select>
                                     </div>
                                 </div>-->
-                            <? //} ?>
+                            <?php //} ?>
 
                             <?php if (strtoupper(ENABLE_ORDER_FROM_STORE_KIOSK) == "YES" && $iServiceId == 1) { ?>
                                 <div class="form-group half">
@@ -1232,13 +1232,13 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode']; ?>
 
     $(function () {
 
-        <? //added by SP on 14-10-2020 for timeslot changes
+        <?php //added by SP on 14-10-2020 for timeslot changes
         if(strtoupper($ENABLE_TIMESLOT_ADDON) == "YES") { ?>
         $('.timepickerField').datetimepicker({
             format: 'hh:mm A',
             ignoreReadonly: true,
         });
-        <? } else { ?>
+        <?php } else { ?>
         $('#vFromMonFriTimeSlot1').datetimepicker({
             format: 'HH:mm A',
             ignoreReadonly: true,
@@ -1320,7 +1320,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode']; ?>
             $('#new-vFromSatSunTimeSlot2-2').val(st);
         });
 
-        <? } ?>
+        <?php } ?>
 
 
         /*Offer Apply Type*/
@@ -1419,7 +1419,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode']; ?>
         $('#js-cuisine-multiple').select2();
 
 
-        <? //added by SP on 14-10-2020 for timeslot changes
+        <?php //added by SP on 14-10-2020 for timeslot changes
         if(strtoupper($ENABLE_TIMESLOT_ADDON) != "YES") { ?>
         var startTime = $('#vToMonFriTimeSlot-1').val();
         var st = minFromMidnight(startTime);
@@ -1428,7 +1428,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode']; ?>
         var vFromMonFriTimeSlot2 = $('#vFromMonFriTimeSlot2-2').val();
         var st2 = minFromMidnight(vFromMonFriTimeSlot2);
         $('#new-vFromMonFriTimeSlot2-2').val(st2);
-        <? } ?>
+        <?php } ?>
 
     });
 
@@ -1527,7 +1527,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode']; ?>
                     vCompany: {required: true, minlength: 2},
                     vContactName: {required: true},
                     vEmail: {
-                        <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>required: true, <? } ?>
+                        <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?>required: true, <?php } ?>
                         email: true,
                         remote: {
                             url: 'ajax_validate_email.php',

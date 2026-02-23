@@ -27,7 +27,7 @@
                 <input type="text" placeholder="" name="vEmailo" class="create-account-input " id="vEmail_verifyo" value="<?php echo $vEmail; ?>" Required />
 				<span id="" style="color: Red; font-size: 11px;"><?php echo $oemailErr;?></span>
             </div>
-        <? } else { ?>
+        <?php } else { ?>
             <div class="form-group half phone-column newrow">
                 <label><?= $langage_lbl['LBL_SIGNUP_777-777-7777']; ?> <span class="red">*</span></label>
                 <!--<select>
@@ -38,7 +38,7 @@
 				<span id="" style="color: Red; font-size: 11px;"><?php echo isset($ophonecodeErr) ? $ophonecodeErr : '';?></span>
                 <span id="" style="color: Red; font-size: 11px;"><?php echo isset($orgphoneErr) ? $orgphoneErr : '';?></span>
             </div>
-        <? } ?>
+        <?php } ?>
             <div class="form-group half newrow">
                 <div class="relative_ele">
                 <label><?= $langage_lbl['LBL_PASSWORD']; ?> <span class="red">*</span></label>
@@ -81,9 +81,9 @@
             <label><?= $langage_lbl['LBL_SELECT_CONTRY']; ?> <span class="red">*</span></label>
                 <select required name='vCountry' id="vCountryo" onChange="setStateo(this.value, '');" >
                     <!-- <option value=""><?= $langage_lbl['LBL_SELECT_TXT'] . " " . $langage_lbl['LBL_COUNTRY_TXT'] ?></option> -->
-                    <? for ($i = 0; $i < scount($db_country); $i++) { ?>
-                        <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <? if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
-                    <? } ?>
+                    <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
+                        <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?php if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
+                    <?php } ?>
                 </select>
 			<span id="" style="color: Red; font-size: 11px;"><?php echo isset($ocountryErr) ? $ocountryErr : '';?></span>
         </div>
@@ -122,13 +122,13 @@
 				<span id="" style="color: Red; font-size: 11px;"><?php echo isset($ophonecodeErr) ? $ophonecodeErr : '';?></span>
 				<span id="" style="color: Red; font-size: 11px;"><?php echo isset($orgphoneErr) ? $orgphoneErr : '';?></span>
             </div>
-        <? } else { ?>
+        <?php } else { ?>
             <div class="form-group half newrow">
                 <label><?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?></label>
                 <input type="text" placeholder="" name="vEmailo" class="create-account-input " id="vEmail_verifyo" value="<?php echo $vEmail; ?>" />
 				<span id="" style="color: Red; font-size: 11px;"><?php echo isset($oemailErr) ? $oemailErr : '';?></span>
             </div>
-        <? } ?>
+        <?php } ?>
         <div class="form-group  captcha-column newrow captchauser">
 <?php //include_once("recaptcha.php");  ?>
         </div>

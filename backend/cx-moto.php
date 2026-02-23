@@ -112,7 +112,7 @@ if(ENABLE_DYNAMIC_CREATE_PAGE!="Yes") {
         <!-- First Section -->
 		<?php include_once("top/header.php");?>
         <!-- End: First Section -->
-        <? } ?>
+        <?php } ?>
 <!-- *************banner section start************* -->
 <section class="banner-section taxi-app bannermenu">
     <div class="tab-row-holding">
@@ -378,11 +378,11 @@ $tMessage_call = str_replace($key_arr, $val_arr, $tMessage_call); */?>
 <?php
 $tMessage_call = $call_section['desc_'.$vCode];
 $tMessage_call = str_replace($key_arr, $val_arr, $tMessage_call); ?>
-<? if(ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
+<?php if(ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
 
 <!-- *************call to section end************* -->
 
-<? } if(ENABLE_DYNAMIC_CREATE_PAGE!="Yes") { ?>
+<?php } if(ENABLE_DYNAMIC_CREATE_PAGE!="Yes") { ?>
 <section class="call-section page-section taxi-variant" id="booktaxi">  
     <div class="call-section-inner">
         <div class="call-section-right">
@@ -408,7 +408,7 @@ $tMessage_call = str_replace($key_arr, $val_arr, $tMessage_call); ?>
 <!-- End: Footer Script -->
 </body>
 </html>
-<? } ?>
+<?php } ?>
 <script>
 	var autocomplete_from;
 	var autocomplete_to;

@@ -204,7 +204,7 @@ if (isset($_POST['submit'])) {
     <title>Admin | Service Home Content <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <style>
@@ -230,9 +230,9 @@ if (isset($_POST['submit'])) {
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
+    <?php include_once('header.php'); ?>
 
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -618,10 +618,10 @@ if (isset($_POST['submit'])) {
                                         <label>Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($banner_section['img_' . $vCode] != '') { ?>
+                                        <?php if ($banner_section['img_' . $vCode] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $banner_section['img_' . $vCode]; ?>"
                                                  class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="banner_section_img"
                                                id="banner_section_img" accept=".png,.jpg,.jpeg,.gif,.svg">
                                                <input type="hidden" name="banner_section_img_old" value="<?= $banner_section['img_' . $vCode] ?>">

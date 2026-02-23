@@ -104,7 +104,7 @@ if($db_vtype[0]['vehcat'] != ""){
 		<meta content="" name="keywords" />
 		<meta content="" name="description" />
 		<meta content="" name="author" />
-		<? include_once('global_files.php');?>		
+		<?php include_once('global_files.php');?>		
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places&key=<?=$GOOGLE_SEVER_API_KEY_WEB?>"></script>
 		<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 	</head>
@@ -114,8 +114,8 @@ if($db_vtype[0]['vehcat'] != ""){
 
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>
 
 			<!--PAGE CONTENT -->
 			<div id="content">
@@ -154,7 +154,7 @@ if($db_vtype[0]['vehcat'] != ""){
 							<div class="col-lg-12">
 								<div class="panel panel-default">
 									<div class="panel-heading">
-										<b>Your <?php echo $langage_lbl_admin['LBL_TRIP_TXT_ADMIN'];?> </b> <? if($db_trip[0]['tStartDate']== "0000-00-00 00:00:00"){ echo "Was Canceled.";}else{echo @date('h:i A',@strtotime($dBookingDate));?> on <?=@date('d M Y',@strtotime($dBookingDate));}?>
+										<b>Your <?php echo $langage_lbl_admin['LBL_TRIP_TXT_ADMIN'];?> </b> <?php if($db_trip[0]['tStartDate']== "0000-00-00 00:00:00"){ echo "Was Canceled.";}else{echo @date('h:i A',@strtotime($dBookingDate));?> on <?=@date('d M Y',@strtotime($dBookingDate));}?>
 									</div>
 									<div class="panel-body rider-invoice-new">
 										<div class="row">
@@ -194,7 +194,7 @@ if($db_vtype[0]['vehcat'] != ""){
 
 
 													<div class="<?php echo $class_name; ?>">
-															<?php echo $langage_lbl_admin['LBL_TRIP_TXT_ADMIN'];?>  time<br /><b><?echo $diff;?></b>
+															<?php echo $langage_lbl_admin['LBL_TRIP_TXT_ADMIN'];?>  time<br /><b><?php echo $diff;?></b>
 													</div>
 													 <?php } ?> 
 												</div>
@@ -225,7 +225,7 @@ if($db_vtype[0]['vehcat'] != ""){
 									<div class="col-sm-6 rider-invoice-new-right">
 									<h4 style="text-align:center;">	Cancellation Fare For Ride No  :<?= $db_trip[0]['vRideNo'];?></h4><hr/>
 												<table style="width:100%" cellpadding="5" cellspacing="0" border="0">
-												<?
+												<?php
 												if($db_trip[0]['eFareType'] != 'Fixed' && $db_trip[0]['eFareType'] != 'Hourly')
 												{
 													?>
@@ -250,7 +250,7 @@ if($db_vtype[0]['vehcat'] != ""){
 															
 															<td align="right"><?=trip_currency($db_trip[0]['fPricePerMin']);?></td>
 													</tr>
-													<?
+													<?php
 												} else {
 													if($db_trip[0]['eFareType'] == 'Hourly') {
 												?>
@@ -259,7 +259,7 @@ if($db_vtype[0]['vehcat'] != ""){
 															<td align="right">
 																<?=trip_currency($db_trip[0]['fPricePerMin']);?></td>
 													</tr>
-													<? } else {?>	
+													<?php } else {?>	
 													<tr>
 														<td><?php echo $langage_lbl_admin['LBL_Total_Fare_TXT'];?> </td>
 														<td align="right">
@@ -270,7 +270,7 @@ if($db_vtype[0]['vehcat'] != ""){
 															echo ($db_trip[0]['iQty'] > 1)?$db_trip[0]['iQty'].' X '. $vVehicleFare : $vVehicleFare;?>
 															</td>
 													</tr>
-													<?}
+													<?php }
 												}
 												if($db_trip[0]['fWalletDebit'] > 0)
 												{
@@ -279,7 +279,7 @@ if($db_vtype[0]['vehcat'] != ""){
 														<td><?=$langage_lbl['LBL_WALLET_DEBIT_MONEY']; ?> </td>
 														<td align="right"> - <?=trip_currency($db_trip[0]['fWalletDebit']);?> </td>
 												</tr>
-													<?
+													<?php
 												}
 												
 												if($db_trip[0]['fDiscount'] > 0)
@@ -289,7 +289,7 @@ if($db_vtype[0]['vehcat'] != ""){
 														<td><?=$langage_lbl['LBL_DISCOUNT']; ?> </td>
 														<td align="right"> - <?=trip_currency($db_trip[0]['fDiscount']);?> </td>
 												</tr>
-													<?
+													<?php
 												}
 												
 												if($db_trip[0]['fSurgePriceDiff'] > 0)
@@ -299,7 +299,7 @@ if($db_vtype[0]['vehcat'] != ""){
 														<td>Surge Money </td>
 														<td align="right"><?=trip_currency($db_trip[0]['fSurgePriceDiff']);?></td>
 													</tr>
-														<?
+														<?php
 													}
 													
 													?>
@@ -365,7 +365,7 @@ if($db_vtype[0]['vehcat'] != ""){
 																	<td align="right"><b><?=trip_currency($db_trip[0]['fTipPrice']);?></b></td>
 																</tr>
 															</table><br><br><br>
-														<?}
+														<?php }
 													}
 													
 														
@@ -377,7 +377,7 @@ if($db_vtype[0]['vehcat'] != ""){
 														<td align="right"><b><?php echo $db_trip[0]['vCancelReason'];?></b></td>
 													</tr>
 												</table><br>
-													<?}?>
+													<?php }?>
 													
 												
 												
@@ -457,7 +457,7 @@ if($db_vtype[0]['vehcat'] != ""){
 							<div class="col-lg-12">
 								<div class="panel panel-default">
 									<div class="panel-heading">
-										<b>Your <?php echo $langage_lbl_admin['LBL_TRIP_TXT_ADMIN'];?> </b> <? if($db_trip[0]['tStartDate']== "0000-00-00 00:00:00"){ echo "Was Canceled.";}else{echo @date('h:i A',@strtotime($dBookingDate));?> on <?=@date('d M Y',@strtotime($dBookingDate));}?>
+										<b>Your <?php echo $langage_lbl_admin['LBL_TRIP_TXT_ADMIN'];?> </b> <?php if($db_trip[0]['tStartDate']== "0000-00-00 00:00:00"){ echo "Was Canceled.";}else{echo @date('h:i A',@strtotime($dBookingDate));?> on <?=@date('d M Y',@strtotime($dBookingDate));}?>
 									</div>
 									<div class="panel-body rider-invoice-new">
 										<div class="row">								
@@ -495,7 +495,7 @@ if($db_vtype[0]['vehcat'] != ""){
 														<td align="right"><b><?=trip_currency($db_trip[0]['fTipPrice']);?></b></td>
 													</tr>
 												</table><br>
-													<?}}?>
+													<?php }}?>
 													
 												
 												
@@ -582,7 +582,7 @@ if($db_vtype[0]['vehcat'] != ""){
 
 		<!--END MAIN WRAPPER -->
 
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 		<script src="../assets/js/gmap3.js"></script>
 		<script>
 			h = window.innerHeight;

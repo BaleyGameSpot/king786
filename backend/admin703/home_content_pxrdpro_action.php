@@ -318,7 +318,7 @@ $db_master = $obj->MySQLSelect($sql);
     <title>Admin | Manage Web Home Page</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -360,8 +360,8 @@ $db_master = $obj->MySQLSelect($sql);
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -397,17 +397,17 @@ $db_master = $obj->MySQLSelect($sql);
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div><br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div><br/>
-                    <? } ?>
+                    <?php } ?>
                     <form method="post" name="_home_content_form" id="_home_content_form" action="" enctype='multipart/form-data'>
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                         <input type="hidden" name="vCode" value="<?= $vCode; ?>">
@@ -443,9 +443,9 @@ $db_master = $obj->MySQLSelect($sql);
                                         <label>First Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($general_section['img'] != '') { ?>
+                                        <?php if ($general_section['img'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $general_section['img']; ?>" class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="general_section_img_sec" id="general_section_img_sec" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
                                         <span class="notes">[Note: For Better Resolution Upload only image size of 609px * 547px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
@@ -499,9 +499,9 @@ $db_master = $obj->MySQLSelect($sql);
                                                 <label>Image#1</label>
                                             </div>
                                             <div class="col-lg-12">
-                                                <? if ($safe_section['img_first'] != '') { ?>
+                                                <?php if ($safe_section['img_first'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $safe_section['img_first']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="safe_section_img_first" value="<?= $safe_section['img_first']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
                                             </div>
@@ -529,9 +529,9 @@ $db_master = $obj->MySQLSelect($sql);
                                                 <label>Image#2</label>
                                             </div>
                                             <div class="col-lg-12">
-                                                <? if ($safe_section['img_sec'] != '') { ?>
+                                                <?php if ($safe_section['img_sec'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $safe_section['img_sec']; ?>" class="innerbg_image"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="safe_section_img_sec" value="<?= $safe_section['img_sec']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
                                             </div>
@@ -588,9 +588,9 @@ $db_master = $obj->MySQLSelect($sql);
                                                 <label>Image#1</label>
                                             </div>
                                             <div class="col-lg-11">
-                                                <? if ($how_it_work_section['img_first'] != '') { ?>
+                                                <?php if ($how_it_work_section['img_first'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_first']; ?>" class="innerbg_image hiw_img"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="how_it_work_img_first" value="<?= $how_it_work_section['img_first']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
                                             </div>
@@ -618,9 +618,9 @@ $db_master = $obj->MySQLSelect($sql);
                                                 <label>Image#2</label>
                                             </div>
                                             <div class="col-lg-11">
-                                                <? if ($how_it_work_section['img_sec'] != '') { ?>
+                                                <?php if ($how_it_work_section['img_sec'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_sec']; ?>" class="innerbg_image hiw_img"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="how_it_work_img_sec" value="<?= $how_it_work_section['img_sec']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
                                             </div>
@@ -648,9 +648,9 @@ $db_master = $obj->MySQLSelect($sql);
                                                 <label>Image#3</label>
                                             </div>
                                             <div class="col-lg-11">
-                                                <? if ($how_it_work_section['img_third'] != '') { ?>
+                                                <?php if ($how_it_work_section['img_third'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_third']; ?>" class="innerbg_image hiw_img"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="how_it_work_img_third" value="<?= $how_it_work_section['img_third']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
                                             </div>
@@ -678,9 +678,9 @@ $db_master = $obj->MySQLSelect($sql);
                                                 <label>Image#4</label>
                                             </div>
                                             <div class="col-lg-11">
-                                                <? if ($how_it_work_section['img_third'] != '') { ?>
+                                                <?php if ($how_it_work_section['img_third'] != '') { ?>
                                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $how_it_work_section['img_four']; ?>" class="innerbg_image hiw_img"/>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <input type="file" class="form-control" name="how_it_work_img_four" value="<?= $how_it_work_section['img_four']; ?>">
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 78px * 78px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
                                             </div>
@@ -721,9 +721,9 @@ $db_master = $obj->MySQLSelect($sql);
                                         <label>Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($secure_section['img'] != '') { ?>
+                                        <?php if ($secure_section['img'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $secure_section['img']; ?>" class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="secure_section_img" id="secure_section_img" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
                                         <span class="notes">[Note: For Better Resolution Upload only image size of 564px * 570px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
@@ -758,9 +758,9 @@ $db_master = $obj->MySQLSelect($sql);
                                         <label>Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($call_section['img'] != '') { ?>
+                                        <?php if ($call_section['img'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $call_section['img']; ?>" class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="call_section_img" id="call_section_img" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
                                         <span class="notes">[Note: For Better Resolution Upload only image size of 609px * 547px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
@@ -813,9 +813,9 @@ $db_master = $obj->MySQLSelect($sql);
                                         <label>Image 1</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($register_section['img_first'] != '') { ?>
+                                        <?php if ($register_section['img_first'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_first']; ?>" class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="register_section_img_first" id="register_section_img_first" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
                                         <span class="notes">[Note: For Better Resolution Upload only image size of 450px * 520px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
@@ -834,9 +834,9 @@ $db_master = $obj->MySQLSelect($sql);
                                         <label>Image 2</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($register_section['img_sec'] != '') { ?>
+                                        <?php if ($register_section['img_sec'] != '') { ?>
                                             <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?h=300&src=' . $tconfig["tsite_upload_apptype_page_images"] . $template . '/' . $register_section['img_sec']; ?>" class="innerbg_image"/>
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" class="form-control FilUploader" name="register_section_img_sec" id="register_section_img_sec" accept=".png,.jpg,.jpeg,.gif">
                                         <br/>
                                         <span class="notes">[Note: For Better Resolution Upload only image size of 450px * 520px. <br> <?= IMAGE_INSTRUCTION_NOTES ?> ]</span>
@@ -861,7 +861,7 @@ $db_master = $obj->MySQLSelect($sql);
 </div>
 <!--END MAIN WRAPPER -->
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script src="../assets/plugins/ckeditor/ckeditor.js"></script>
 <script src="../assets/plugins/ckeditor/config.js"></script>

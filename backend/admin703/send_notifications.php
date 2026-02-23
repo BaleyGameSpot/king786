@@ -543,7 +543,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                             <?php include('valid_msg.php'); ?>
                             <div class="clear"></div>
                             <form id="_notification_form" name="_notification_form" method="post" action="javascript:void(0);" >
-                                <? if($MODULES_OBJ->isEnableCountrywiseNotification()) { ?>
+                                <?php if($MODULES_OBJ->isEnableCountrywiseNotification()) { ?>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <label>Country Name<span class="red"> *</span></label>
@@ -562,17 +562,17 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                         </select>
                                     </div>
                                 </div>
-                                <? } ?>
+                                <?php } ?>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <label>Select Type<? if($MODULES_OBJ->isEnableCountrywiseNotification()) { ?><span class="red"> *</span><? } ?></label>
+                                        <label>Select Type<?php if($MODULES_OBJ->isEnableCountrywiseNotification()) { ?><span class="red"> *</span><?php } ?></label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if($MODULES_OBJ->isEnableCountrywiseNotification()) { ?>
+                                        <?php if($MODULES_OBJ->isEnableCountrywiseNotification()) { ?>
                                         <select class="form-control" name = 'eUserType' id="eUserType" onChange="alluserdata(this.value);showUsers(this.value);" required>
                                             <option value="">Select Type</option>
                                         </select>
-                                        <? } else { ?>
+                                        <?php } else { ?>
                                         <select class="form-control" name = 'eUserType' id="eUserType" onChange="showUsers(this.value);">
                                             <?php if ($onlyRideShareEnable != 'Yes' && $onlyBSREnable != 'Yes') { ?>
                                                 <option value="driver">All <?= $langage_lbl_admin['LBL_DRIVERS_NAME_ADMIN'] ?></option>
@@ -602,10 +602,10 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                 <?php } ?> 
                                             <?php } ?>
                                         </select>
-                                        <? } ?>
+                                        <?php } ?>
                                     </div>
                                 </div>
-                                <div class="row set-dd-css" id="driverRw" <? if($MODULES_OBJ->isEnableCountrywiseNotification()) { ?>style="display:none;"<? } ?>> 
+                                <div class="row set-dd-css" id="driverRw" <?php if($MODULES_OBJ->isEnableCountrywiseNotification()) { ?>style="display:none;"<?php } ?>> 
                                     <div class="col-lg-12">
                                         <label>Select <?= $langage_lbl_admin['LBL_DRIVERS_NAME_ADMIN'] ?><span class="red"> *</span></label>
                                     </div>
@@ -745,7 +745,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
             var inactiveStoreArr,existsinactiveStoreArr  = [];
             var deliverAll = '<?= DELIVERALL; ?>';
             
-            <? if(!$MODULES_OBJ->isEnableCountrywiseNotification()) { ?>
+            <?php if(!$MODULES_OBJ->isEnableCountrywiseNotification()) { ?>
             allDriverArr = <?= json_encode($db_drv_list, JSON_UNESCAPED_UNICODE); ?>;
             allRiderArr = <?= json_encode($db_rdr_list, JSON_UNESCAPED_UNICODE); ?>;
             loggedInDriverArr = <?= json_encode($db_login_drv_list, JSON_UNESCAPED_UNICODE); ?>;
@@ -837,7 +837,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                     }
                 }, 1000);
             });
-            <? } ?>
+            <?php } ?>
             function setDropDownData(dpId, requestType) {
                 notificationArr = [];
                 $(".loader-default").fadeOut("slow");

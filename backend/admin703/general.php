@@ -616,7 +616,7 @@ if(isset($GOOGLE_KEYS_ARR['IOS']['STORE'])){
 <body class="padTop53 " >
     <!-- MAIN WRAPPER -->
     <div id="wrap">
-        <? include_once('header.php'); ?>
+        <?php include_once('header.php'); ?>
         <!--PAGE CONTENT -->
         <div id="content">
             <div class="inner">
@@ -722,13 +722,13 @@ if(isset($GOOGLE_KEYS_ARR['IOS']['STORE'])){
                                                                                         <label><?= $value1['tDescription'] ?><?php if ($value1['tHelp'] != "") { ?> <i class="icon-question-sign" data-placement="auto top" data-toggle="tooltip" data-original-title='<?= htmlspecialchars($value1['tHelp'], ENT_QUOTES, 'UTF-8') ?>'></i><?php } ?></label>
                                                                                     <?php } ?>
                                                                                     <?php if ($value1['eInputType'] == 'Textarea') { ?>
-                                                                                        <textarea class="form-control" rows="5" name="Data[<?= $value1['vName'] ?>]" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <? } ?> ><?= $value1['vValue'] ?></textarea>
+                                                                                        <textarea class="form-control" rows="5" name="Data[<?= $value1['vName'] ?>]" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <?php } ?> ><?= $value1['vValue'] ?></textarea>
                                                                                         <?php
                                                                                     } elseif ($value1['eInputType'] == 'Select') {
                                                                                         $optionArr = explode(',', $value1['tSelectVal']);
                                                                                         if ($value1['vName'] == 'DEFAULT_COUNTRY_CODE_WEB') {
                                                                                             ?>
-                                                                                            <select class="form-control" name="Data[<?= $value1['vName'] ?>]" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <? } ?>
+                                                                                            <select class="form-control" name="Data[<?= $value1['vName'] ?>]" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <?php } ?>
                                                                                             >
                                                                                             <?php
                                                                                             foreach ($country_name as $Value) {
@@ -776,7 +776,7 @@ if(isset($GOOGLE_KEYS_ARR['IOS']['STORE'])){
                                                                             } else if ($value1['vName'] == 'RIDER_EMAIL_VERIFICATION') {
                                                                                 if (ONLYDELIVERALL != "Yes") {
                                                                                     ?>
-                                                                                    <select class="form-control" name="Data[<?= $value1['vName'] ?>]" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <? } ?>
+                                                                                    <select class="form-control" name="Data[<?= $value1['vName'] ?>]" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <?php } ?>
                                                                                     >
                                                                                     <?php
                                                                                     foreach ($optionArr as $oKey => $oValue) {
@@ -790,7 +790,7 @@ if(isset($GOOGLE_KEYS_ARR['IOS']['STORE'])){
                                                                                 <?php
                                                                             }
                                                                         } elseif ($value1['vName'] == 'SYSTEM_TIME_ZONE') { ?>
-                                                                            <select class="form-control" name="Data[<?= $value1['vName'] ?>]" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <? } ?>
+                                                                            <select class="form-control" name="Data[<?= $value1['vName'] ?>]" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <?php } ?>
                                                                                     >
                                                                                     <?php
                                                                                     foreach ($timezoneOptionArr as $oKey => $oValue) {
@@ -807,7 +807,7 @@ if(isset($GOOGLE_KEYS_ARR['IOS']['STORE'])){
                                                                                 $onChangeEvent = 'onchange="showConfimbox(this.value);"';
                                                                             }
                                                                             ?>
-                                                                            <select <?= $onChangeEvent; ?> class="form-control" name="Data[<?= $value1['vName'] ?>]" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <? } ?>
+                                                                            <select <?= $onChangeEvent; ?> class="form-control" name="Data[<?= $value1['vName'] ?>]" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <?php } ?>
                                                                             >
                                                                             <?php
                                                                             foreach ($optionArr as $oKey => $oValue) {
@@ -824,17 +824,17 @@ if(isset($GOOGLE_KEYS_ARR['IOS']['STORE'])){
                                                                     if ($value1['eInputType'] == 'Number') {
                                                                         if ($value1['vName'] == 'MAX_NUMBER_STOP_OVER_POINTS') {
                                                                             ?>
-                                                                            <input type="number" name="Data[<?= $value1['vName'] ?>]" id = "<?= $value1['vName'] ?>" class="form-control numberfield <?= $value1['vName'] ?>" value="<?= $value1['vValue'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <? } ?> <? if ($value1['eZeroAllowed'] == 'Yes') { ?> min="0" <? } else { ?> min="1" <? } ?>  <? if ($value1['eDoubleValueAllowed'] == 'No') { ?> onkeypress="return event.charCode >= 48 && event.charCode <= 57" <? } else { ?> step = 0.01 <? } ?> >    
+                                                                            <input type="number" name="Data[<?= $value1['vName'] ?>]" id = "<?= $value1['vName'] ?>" class="form-control numberfield <?= $value1['vName'] ?>" value="<?= $value1['vValue'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <?php } ?> <?php if ($value1['eZeroAllowed'] == 'Yes') { ?> min="0" <?php } else { ?> min="1" <?php } ?>  <?php if ($value1['eDoubleValueAllowed'] == 'No') { ?> onkeypress="return event.charCode >= 48 && event.charCode <= 57" <?php } else { ?> step = 0.01 <?php } ?> >    
                                                                             <?php } else { ?>
-                                                                                <input type="number" name="Data[<?= $value1['vName'] ?>]" id = "<?= $value1['vName'] ?>" class="form-control numberfield <?= $value1['vName'] ?>" value="<?= $value1['vValue'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <? } ?> <? if ($value1['eZeroAllowed'] == 'Yes') { ?> min="0" <? } else { ?> min="1" <? } ?>  <? if ($value1['eDoubleValueAllowed'] == 'No') { ?> onkeypress="return event.charCode >= 48 && event.charCode <= 57" <? } else { ?> step = 0.01 <? } ?> <?php if($value1['iMaxVal'] > 0) { ?> max="<?= $value1['iMaxVal'] ?>" <?php } ?> >
+                                                                                <input type="number" name="Data[<?= $value1['vName'] ?>]" id = "<?= $value1['vName'] ?>" class="form-control numberfield <?= $value1['vName'] ?>" value="<?= $value1['vValue'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <?php } ?> <?php if ($value1['eZeroAllowed'] == 'Yes') { ?> min="0" <?php } else { ?> min="1" <?php } ?>  <?php if ($value1['eDoubleValueAllowed'] == 'No') { ?> onkeypress="return event.charCode >= 48 && event.charCode <= 57" <?php } else { ?> step = 0.01 <?php } ?> <?php if($value1['iMaxVal'] > 0) { ?> max="<?= $value1['iMaxVal'] ?>" <?php } ?> >
                                                                                     <?php
                                                                                 }
                                                                             } elseif ($value1['eInputType'] == 'Time') {
                                                                                 ?>  
-                                                                                <input type="time" name="Data[<?= $value1['vName'] ?>]" class="form-control date" value="<?= $value1['vValue'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <? } ?>>
-                                                                            <? } else { ?>
-                                                                                <input type="text" name="Data[<?= $value1['vName'] ?>]" class="form-control date" value="<?= $value1['vValue'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <? } ?> <? if ($value1['eSpaceAllowed'] == 'No') { ?> onkeyup="nospaces(this)" <? } ?> >
-                                                                                <?
+                                                                                <input type="time" name="Data[<?= $value1['vName'] ?>]" class="form-control date" value="<?= $value1['vValue'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <?php } ?>>
+                                                                            <?php } else { ?>
+                                                                                <input type="text" name="Data[<?= $value1['vName'] ?>]" class="form-control date" value="<?= $value1['vValue'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <?php } ?> <?php if ($value1['eSpaceAllowed'] == 'No') { ?> onkeyup="nospaces(this)" <?php } ?> >
+                                                                                <?php
                                                                             }
                                                                         }
                                                                         ?>
@@ -893,7 +893,7 @@ if(isset($GOOGLE_KEYS_ARR['IOS']['STORE'])){
                                                                         <div class="col-lg-12">
                                                                             <?php if ($GOOGLE_KEY_CONFIG['eInputType'] == 'Select') { $optionArr = explode(',', $GOOGLE_KEY_CONFIG['tSelectVal']); ?>
 
-                                                                            <select class="form-control" name="Data[<?= $GOOGLE_KEY_CONFIG['vName'] ?>]" <?php if ($GOOGLE_KEY_CONFIG['eConfigRequired'] == 'Yes') { ?> required <? } ?>
+                                                                            <select class="form-control" name="Data[<?= $GOOGLE_KEY_CONFIG['vName'] ?>]" <?php if ($GOOGLE_KEY_CONFIG['eConfigRequired'] == 'Yes') { ?> required <?php } ?>
                                                                             >
                                                                                 <?php
                                                                                 foreach ($optionArr as $oKey => $oValue) {
@@ -1043,12 +1043,12 @@ if(isset($GOOGLE_KEYS_ARR['IOS']['STORE'])){
                                                                                                                                 <?php
                                                                                                                                 if ($pay_method['eInputType'] == 'Textarea') {
                                                                                                                                     ?>
-                                                                                                                                    <textarea class="form-control" rows="5" name="Data[<?= $pay_method['vName'] ?>]" <?php if ($pay_method['eConfigRequired'] == 'Yes') { ?> required="required" <? } ?>><?= $pay_method['vValue'] ?></textarea>
+                                                                                                                                    <textarea class="form-control" rows="5" name="Data[<?= $pay_method['vName'] ?>]" <?php if ($pay_method['eConfigRequired'] == 'Yes') { ?> required="required" <?php } ?>><?= $pay_method['vValue'] ?></textarea>
                                                                                                                                     <?php
                                                                                                                                 } elseif ($pay_method['eInputType'] == 'Select') {
                                                                                                                                     $optionArr = explode(',', $pay_method['tSelectVal']);
                                                                                                                                     ?>
-                                                                                                                                    <select class="form-control <?= $pay_method['vName'] ?>" name="Data[<?= $pay_method['vName'] ?>]" id="<?= $pay_method['vName'] ?>" <?php if ($pay_method['eConfigRequired'] == 'Yes') { ?> required <? } ?>>
+                                                                                                                                    <select class="form-control <?= $pay_method['vName'] ?>" name="Data[<?= $pay_method['vName'] ?>]" id="<?= $pay_method['vName'] ?>" <?php if ($pay_method['eConfigRequired'] == 'Yes') { ?> required <?php } ?>>
                                                                                                                                         <?php
                                                                                                                                         foreach ($optionArr as $oKey => $oValue) {
                                                                                                                                             $selected = $oValue == $pay_method['vValue'] ? 'selected' : '';
@@ -1060,10 +1060,10 @@ if(isset($GOOGLE_KEYS_ARR['IOS']['STORE'])){
                                                                                                                                     </select>
                                                                                                                                 <?php } elseif ($pay_method['eInputType'] == 'Number') {
                                                                                                                                     ?>
-                                                                                                                                        <input type="number" <?php if ($pay_method['eConfigRequired'] == 'Yes') { ?> required <? } ?> name="Data[<?= $pay_method['vName'] ?>]"<? if ($pay_method['eZeroAllowed'] == 'Yes') { ?> min="0" <? } else { ?> min="1" <? } ?>  id = "<?= $pay_method['vName'] ?>" class="form-control numberfield <?= $pay_method['vName'] ?>" value="<?= $pay_method['vValue'] ?>" <? if ($pay_method['eDoubleValueAllowed'] == 'No') { ?> onkeypress="return event.charCode >= 48 && event.charCode <= 57" <? } ?> <?php if($pay_method['iMaxVal'] > 0) { ?> max="<?= $pay_method['iMaxVal'] ?>" <?php } ?>>
+                                                                                                                                        <input type="number" <?php if ($pay_method['eConfigRequired'] == 'Yes') { ?> required <?php } ?> name="Data[<?= $pay_method['vName'] ?>]"<?php if ($pay_method['eZeroAllowed'] == 'Yes') { ?> min="0" <?php } else { ?> min="1" <?php } ?>  id = "<?= $pay_method['vName'] ?>" class="form-control numberfield <?= $pay_method['vName'] ?>" value="<?= $pay_method['vValue'] ?>" <?php if ($pay_method['eDoubleValueAllowed'] == 'No') { ?> onkeypress="return event.charCode >= 48 && event.charCode <= 57" <?php } ?> <?php if($pay_method['iMaxVal'] > 0) { ?> max="<?= $pay_method['iMaxVal'] ?>" <?php } ?>>
                                                                                                                                     <?php } else {
                                                                                                                                         ?>
-                                                                                                                                        <input type="text" name="Data[<?= $pay_method['vName'] ?>]" id = "<?= $pay_method['vName'] ?>" class="form-control <?= $pay_method['vName'] ?>" value="<?= $pay_method['vValue'] ?>" <?php if ($pay_method['eConfigRequired'] == 'Yes') { ?> required <? } ?> <? if ($pay_method['eSpaceAllowed'] == 'No') { ?>onkeyup="nospaces(this)" <? } ?> >
+                                                                                                                                        <input type="text" name="Data[<?= $pay_method['vName'] ?>]" id = "<?= $pay_method['vName'] ?>" class="form-control <?= $pay_method['vName'] ?>" value="<?= $pay_method['vValue'] ?>" <?php if ($pay_method['eConfigRequired'] == 'Yes') { ?> required <?php } ?> <?php if ($pay_method['eSpaceAllowed'] == 'No') { ?>onkeyup="nospaces(this)" <?php } ?> >
                                                                                                                                         <?php
                                                                                                                                     }
                                                                                                                                     ?>
@@ -1098,7 +1098,7 @@ if(isset($GOOGLE_KEYS_ARR['IOS']['STORE'])){
                                                                                     <?php
                                                                                     if ($value1['eInputType'] == 'Textarea') {
                                                                                         ?>
-                                                                                        <textarea class="form-control" rows="5" name="Data[<?= $value1['vName'] ?>]" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required="required" <? } ?>><?= $value1['vValue'] ?></textarea>
+                                                                                        <textarea class="form-control" rows="5" name="Data[<?= $value1['vName'] ?>]" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required="required" <?php } ?>><?= $value1['vValue'] ?></textarea>
                                                                                         <?php
                                                                                     } elseif ($value1['eInputType'] == 'Select') {
                                                                                         $optionArr = explode(',', $value1['tSelectVal']);
@@ -1109,7 +1109,7 @@ if(isset($GOOGLE_KEYS_ARR['IOS']['STORE'])){
                                                                                             $paymentEnvMode = $value1['vValue'];
                                                                                         }
                                                                                         ?>
-                                                                                        <select class="form-control <?= $value1['vName'] ?>" name="Data[<?= $value1['vName'] ?>]" id="<?= $value1['vName'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <? } ?> <?= $onChangedEvent ?>>
+                                                                                        <select class="form-control <?= $value1['vName'] ?>" name="Data[<?= $value1['vName'] ?>]" id="<?= $value1['vName'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <?php } ?> <?= $onChangedEvent ?>>
                                                                                             <?php
                                                                                             foreach ($optionArr as $oKey => $oValue) {
                                                                                                 $selected = $oValue == $value1['vValue'] ? 'selected' : '';
@@ -1122,11 +1122,11 @@ if(isset($GOOGLE_KEYS_ARR['IOS']['STORE'])){
                                                                                         <?php
                                                                                     } elseif ($value1['eInputType'] == 'Number') {
                                                                                         ?>
-                                                                                        <input type="number" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <? } ?> name="Data[<?= $value1['vName'] ?>]"<? if ($value1['eZeroAllowed'] == 'Yes') { ?> min="0" <? } else { ?> min="1" <? } ?>  id = "<?= $value1['vName'] ?>" class="form-control numberfield <?= $value1['vName'] ?>" value="<?= $value1['vValue'] ?>" <? if ($value1['eDoubleValueAllowed'] == 'No') { ?> onkeypress="return event.charCode >= 48 && event.charCode <= 57" <? } ?> <?php if($value1['iMaxVal'] > 0) { ?> max="<?= $value1['iMaxVal'] ?>" <?php } ?> >
+                                                                                        <input type="number" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <?php } ?> name="Data[<?= $value1['vName'] ?>]"<?php if ($value1['eZeroAllowed'] == 'Yes') { ?> min="0" <?php } else { ?> min="1" <?php } ?>  id = "<?= $value1['vName'] ?>" class="form-control numberfield <?= $value1['vName'] ?>" value="<?= $value1['vValue'] ?>" <?php if ($value1['eDoubleValueAllowed'] == 'No') { ?> onkeypress="return event.charCode >= 48 && event.charCode <= 57" <?php } ?> <?php if($value1['iMaxVal'] > 0) { ?> max="<?= $value1['iMaxVal'] ?>" <?php } ?> >
                                                                                         <?php } elseif ($value1['eInputType'] == 'Time') {
                                                                                             ?>
-                                                                                            <input type="time" name="Data[<?= $value1['vName'] ?>]" id = "<?= $value1['vName'] ?>" class="form-control <?= $value1['vName'] ?>" value="<?= $value1['vValue'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <? } ?> >
-                                                                                        <? } elseif ($value1['eInputType'] == 'Checkbox') {
+                                                                                            <input type="time" name="Data[<?= $value1['vName'] ?>]" id = "<?= $value1['vName'] ?>" class="form-control <?= $value1['vName'] ?>" value="<?= $value1['vValue'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <?php } ?> >
+                                                                                        <?php } elseif ($value1['eInputType'] == 'Checkbox') {
                                                                                             $optionArr = explode(',', $value1['tSelectVal']);
                                                                                             $valueArr = explode(',', $value1['vValue']);
                                                                                             $onChangedEvent = "";
@@ -1154,7 +1154,7 @@ if(isset($GOOGLE_KEYS_ARR['IOS']['STORE'])){
                                                                                             </div>
                                                                                         <?php } else {
                                                                                             ?>
-                                                                                            <input type="text" name="Data[<?= $value1['vName'] ?>]" id = "<?= $value1['vName'] ?>" class="form-control <?= $value1['vName'] ?>" value="<?= $value1['vValue'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <? } ?> <? if ($value1['eSpaceAllowed'] == 'No') { ?>onkeyup="nospaces(this)" <? } ?> >
+                                                                                            <input type="text" name="Data[<?= $value1['vName'] ?>]" id = "<?= $value1['vName'] ?>" class="form-control <?= $value1['vName'] ?>" value="<?= $value1['vValue'] ?>" <?php if ($value1['eConfigRequired'] == 'Yes') { ?> required <?php } ?> <?php if ($value1['eSpaceAllowed'] == 'No') { ?>onkeyup="nospaces(this)" <?php } ?> >
                                                                                             <?php
                                                                                         }
                                                                                         ?>

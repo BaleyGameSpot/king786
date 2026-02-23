@@ -524,7 +524,7 @@ if ($db_code[$i]['vCountryCode'] == $vCountry) {
 
                                 <span class="col4" style="margin: 0px;">
 
-                                    <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" class="form-control" name="vEmail" id="vEmail" value="<?=$vEmail;?>" placeholder="Email" <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required <? }?> >
+                                    <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" class="form-control" name="vEmail" id="vEmail" value="<?=$vEmail;?>" placeholder="Email" <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required <?php }?> >
 
                                     <div id="emailCheck"></div>
 
@@ -1852,7 +1852,7 @@ if ($APP_TYPE != 'UberX') {
 
                                     //                     data1 = data.split("|");
 
-                                    //                     var CDE = '<? //$MODULES_OBJ->autoDeductDriverCommision("Ride"); ?>';
+                                    //                     var CDE = '<?php //$MODULES_OBJ->autoDeductDriverCommision("Ride"); ?>';
 
                                     //                     var Min_Bal = '<?= $WALLET_MIN_BALANCE; ?>';
 
@@ -3394,7 +3394,7 @@ if ($APP_TYPE != 'UberX') {
 
                                     //         $("#change_eUnit").text(dataHTML.eUnit);
 
-                                    //         var substr = <? //json_encode($radius_driver);?>;
+                                    //         var substr = <?php //json_encode($radius_driver);?>;
 
                                     //         substr.forEach(function (item) {
 

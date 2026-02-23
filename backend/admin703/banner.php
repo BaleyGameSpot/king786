@@ -316,9 +316,9 @@ $db_langdata = $obj->MySQLSelect("SELECT vCode,vTitle FROM language_master WHERE
                             <div class="form-group">
                                 <label>Select Language: </label>
                                 <select name="langSearch" class="form-control" style="width: auto; margin-right: 5px;">
-                                    <? foreach ($db_langdata as $key => $value) { ?>
-                                        <option value="<?= $value['vCode'] ?>" <? if ($value['vCode'] == $langSearch) echo "selected"; ?>><?= $value['vTitle'] ?></option>
-                                    <? } ?>
+                                    <?php foreach ($db_langdata as $key => $value) { ?>
+                                        <option value="<?= $value['vCode'] ?>" <?php if ($value['vCode'] == $langSearch) echo "selected"; ?>><?= $value['vTitle'] ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                             <button type="submit" name="btn_search" id="btn_search" class="btn btn-default">Search</button>
@@ -448,7 +448,7 @@ $db_langdata = $obj->MySQLSelect("SELECT vCode,vTitle FROM language_master WHERE
                                                     </td>
                                                    
                                                     <td width="10%"  align="center">
-                                                        <?
+                                                        <?php
                                                         if ($eStatus == 'Active') {
                                                             $dis_img = "img/active-icon.png";
                                                         } else if ($eStatus == 'Inactive') {

@@ -156,9 +156,9 @@ if ($action == 'delete' && $hdn_del_id != '') {
 										<th><?=$langage_lbl['LBL_COMPANY_TRIP_RIDER']; ?></th>
 										<th><?=$langage_lbl['LBL_COMPANY_TRIP_Trip_Date']; ?></th>
 	        							<th><?=$langage_lbl['LBL_Pick_Up']; ?></th>
-	        							<? if($APP_TYPE != "UberX"){ ?>
+	        							<?php if($APP_TYPE != "UberX"){ ?>
 	        							<th><?=$langage_lbl['LBL_ADMIN_DROPOFF']; ?></th>
-	        							<? } ?>
+	        							<?php } ?>
 										<th><?=$langage_lbl['LBL_COMPANY_TRIP_DRIVER']; ?></th>
 										<th><?=$langage_lbl['LBL_TRIP_DETAILS']; ?></th>
 										<th><?=$langage_lbl['LBL_COMPANY_TRIP_Car_Type']; ?></th>
@@ -198,7 +198,7 @@ if ($action == 'delete' && $hdn_del_id != '') {
                            ?>
                         	<tr>
                            		<?php if($APP_TYPE == 'Ride-Delivery-UberX' || $APP_TYPE == 'Ride-Delivery'){ ?> 
-		                        <td><? echo $trip_type; ?></td>
+		                        <td><?php echo $trip_type; ?></td>
 		                        <?php } ?>
                             	<td><?= $data_drv[$i]['vBookingNo']; ?></td>
 								<td><?= clearName($data_drv[$i]['rider']); ?></td>
@@ -209,15 +209,15 @@ if ($action == 'delete' && $hdn_del_id != '') {
                               	}
                               	echo DateTime($dBookingDate,7); ?></td>
 							  	<td><?= $data_drv[$i]['vSourceAddresss']; ?></td>
-							  	<?if($APP_TYPE != "UberX"){?>
+							  	<?php if($APP_TYPE != "UberX"){?>
 								<td><?= $data_drv[$i]['tDestAddress']; ?></td>
-							  	<? } ?>
+							  	<?php } ?>
 							  	<?php if ($data_drv[$i]['eAutoAssign'] == "Yes" && $data_drv[$i]['iRentalPackageId'] > 0  ) { ?>
 								<td>
 									<?=$langage_lbl['LBL_DRIVER_TXT_ADMIN'];?> : <?=$langage_lbl['LBL_AUTO_ASSIGN_WEB'];?> </b><br />( <?=$langage_lbl['LBL_Car_Type'];?> : <?= $data_drv[$i]['vRentalVehicleTypeName']; ?>)<br/>
-									<? if($rental_data[0]['pkgName'] != ''  ) { ?>
+									<?php if($rental_data[0]['pkgName'] != ''  ) { ?>
 									(<?=$langage_lbl['LBL_VEHICLE_TYPE_RENTAL_TXT'];?> : <?= $rental_data[0]['pkgName'];?>)
-									<? } ?>
+									<?php } ?>
 								</td>
                             	<?php } else if ($data_drv[$i]['eAutoAssign'] == "Yes" && $data_drv[$i]['eType'] == "Deliver" && $data_drv[$i]['iDriverId'] == 0 && $data_drv[$i]['eStatus'] != 'Cancel' && $APP_DELIVERY_MODE == "Multi") { ?>
 								<td><?=$langage_lbl['LBL_DRIVER_TXT_ADMIN'];?> :  <?=$langage_lbl['LBL_AUTO_ASSIGN_WEB'];?> </b><br />( <?= ucfirst(strtolower($langage_lbl['LBL_VEHICLE_TYPE_TXT']));?> : <?= $data_drv[$i]['vVehicleType']; ?>)<br/><?php if(strtotime($data_drv[$i]['dBooking_date'])>strtotime(date('Y-m-d'))){ ?><a class="btn btn-info" href="javascript:void(0);" onclick="assignDriver('<?= $data_drv[$i]['iCabBookingId']; ?>');" data-tooltip="tooltip" title="Edit"><i class="icon-edit icon-flip-horizontal icon-white"></i> <?=$langage_lbl['LBL_ASSIGN_DRIVER_BUTTON'];?></a><?php } ?></td>
@@ -227,24 +227,24 @@ if ($action == 'delete' && $hdn_del_id != '') {
                                 	<a class="btn btn-info" href="userbooking.php?userType1=company&booking_id=<?= $data_drv[$i]['iCabBookingId']; ?>" data-tooltip="tooltip" title="Edit"><i class="icon-edit icon-flip-horizontal icon-white"></i></a>
                               		<?php } else { ?>
                                		<a class="btn btn-info" href="create_request.php?booking_id=<?= $data_drv[$i]['iCabBookingId']; ?>" data-tooltip="tooltip" title="Edit"><i class="icon-edit icon-flip-horizontal icon-white"></i></a>
-                              		<? }
+                              		<?php }
                             		} ?>
                             	</td>
                             	<?php } else if ($data_drv[$i]['eStatus'] == "Pending" && (strtotime($data_drv[$i]['dBooking_date'])>strtotime(date('Y-m-d'))) && $data_drv[$i]['iDriverId'] == 0) { ?>
 								<td width="10%">
-	                                <? if($_SESSION['SessionUserType'] != 'hotel') {?>
+	                                <?php if($_SESSION['SessionUserType'] != 'hotel') {?>
 	                                <a class="btn btn-info" href="userbooking.php?userType1=company&booking_id=<?= $data_drv[$i]['iCabBookingId']; ?>"><i class="icon-shield icon-flip-horizontal icon-white"></i> Assign <?=$langage_lbl['LBL_DRIVER_TXT_ADMIN'];?></a>
-	                                <? } else { ?>
+	                                <?php } else { ?>
 	                                <a class="btn btn-info" href="create_request.php?booking_id=<?= $data_drv[$i]['iCabBookingId']; ?>"><i class="icon-shield icon-flip-horizontal icon-white"></i> Assign <?=$langage_lbl['LBL_DRIVER_TXT_ADMIN'];?></a>
-	                                <? } ?>
+	                                <?php } ?>
                                 <br>( <?=$service_type;?> : <?= $data_drv[$i]['vVehicleType']; ?>)</td>
                                 <?php } else if($data_drv[$i]['eCancelBy'] == "Driver" && $data_drv[$i]['eStatus'] == "Cancel" && $data_drv[$i]['iDriverId'] == 0) { ?>
 								<td width="10%">
-	                                <? if($_SESSION['SessionUserType'] != 'hotel') {?> 
+	                                <?php if($_SESSION['SessionUserType'] != 'hotel') {?> 
 	                                <a class="btn btn-info" href="userbooking.php?userType1=company&booking_id=<?= $data_drv[$i]['iCabBookingId']; ?>"><i class="icon-shield icon-flip-horizontal icon-white"></i> Assign <?=$langage_lbl['LBL_DRIVER_TXT_ADMIN'];?></a>
-	                                <? } else { ?>
+	                                <?php } else { ?>
 	                                <a class="btn btn-info" href="create_request.php?booking_id=<?= $data_drv[$i]['iCabBookingId']; ?>"><i class="icon-shield icon-flip-horizontal icon-white"></i> Assign <?=$langage_lbl['LBL_DRIVER_TXT_ADMIN'];?></a>
-	                                <? } ?><br>( <?=$service_type;?> : <?= $data_drv[$i]['vVehicleType']; ?>)
+	                                <?php } ?><br>( <?=$service_type;?> : <?= $data_drv[$i]['vVehicleType']; ?>)
 	                            </td>
 	                            <?php } else if ($data_drv[$i]['driver'] != "" && $data_drv[$i]['driver'] != "0") { ?>
 								<td width="10%"><b><?= clearName($data_drv[$i]['driver']); ?></b><br>( <?=$service_type;?> : <?= $data_drv[$i]['vVehicleType']; ?>) </td>
@@ -325,11 +325,11 @@ if ($action == 'delete' && $hdn_del_id != '') {
 							}
 						}
 						?>
-													<?
+													<?php
 														if ($data_drv[$i]['eStatus'] == "Cancel") {
 													?>
 														<br /><a href="javascript:void(0);" class="btn btn-info" data-toggle="modal" data-target="#uiModal_<?=$data_drv[$i]['iCabBookingId'];?>"><?php echo $langage_lbl['LBL_CANCEL_REASON'];?></a>
-													<?           
+													<?php           
 														}
                             if(($bookingdatecmp >  time()) && ($data_drv[$i]['eStatus'] == 'Pending' || $data_drv[$i]['eStatus'] == "Assign" || $data_drv[$i]['eStatus'] == "Accepted") ) {
 													?>
@@ -380,7 +380,7 @@ if ($action == 'delete' && $hdn_del_id != '') {
         								<?php if(!empty($data_drv[$i]['eCancelBy'])) { ?> 
 
 									  <h4><?= $langage_lbl['LBL_CANCEL_BY'] ?>: 
-                                        <? if($APP_TYPE != "UberX"){
+                                        <?php if($APP_TYPE != "UberX"){
 										
     										if($data_drv[$i]['eCancelBy'] == "Driver"){
                                                 echo $langage_lbl['LBL_DRIVER_TXT_ADMIN'];
@@ -473,22 +473,22 @@ if ($action == 'delete' && $hdn_del_id != '') {
     <script type="text/javascript">
          $(document).ready(function () {
             //$('#dataTables-example').dataTable();
-            <? if($APP_TYPE == 'Ride-Delivery-UberX'){ ?>
+            <?php if($APP_TYPE == 'Ride-Delivery-UberX'){ ?>
             	$('#dataTables-example').dataTable({
                     "oLanguage": langData,
 				  "order": [[ 3, "desc" ]],
 				});
-			<? } else if($APP_TYPE == 'Ride-Delivery'){ ?>
+			<?php } else if($APP_TYPE == 'Ride-Delivery'){ ?>
             	$('#dataTables-example').dataTable({
                     "oLanguage": langData,
 				  "order": [[ 3, "desc" ]],
  				});
-            <? } else { ?>
+            <?php } else { ?>
             	$('#dataTables-example').dataTable({
                     "oLanguage": langData,
 				  "order": [[ 2, "desc" ]],
 				});
-            <? } ?>
+            <?php } ?>
 
          });
          function assignDriver(bookingId) {

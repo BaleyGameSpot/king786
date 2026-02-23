@@ -194,7 +194,7 @@ $onlyRideShareEnable = !empty($MODULES_OBJ->isOnlyEnableRideSharingPro()) ? 'Yes
                                         </select>
                                     </td>
                                     <td width="15%"><input type="Text" id="keyword" name="keyword" value="<?php echo $keyword; ?>"  class="form-control" /></td>
-                                    <?
+                                    <?php
                                     if ($APP_TYPE == 'Ride' || $APP_TYPE == 'Delivery' || $APP_TYPE == 'UberX') {
                                         
                                     } else if (ONLYDELIVERALL == "Yes") {
@@ -223,13 +223,13 @@ $onlyRideShareEnable = !empty($MODULES_OBJ->isOnlyEnableRideSharingPro()) ? 'Yes
                                                     }
                                                     ?> >Service</option>
                                                         <?php } ?>
-                                                        <? if (DELIVERALL == 'Yes' && $deliverallEnable == "Yes") { ?>
+                                                        <?php if (DELIVERALL == 'Yes' && $deliverallEnable == "Yes") { ?>
                                                     <option value="DeliverAll" <?php
                                                     if ($eType == 'DeliverAll') {
                                                         echo "selected";
                                                     }
                                                     ?> ><?= $optionName; ?></option>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                     <?php if($MODULES_OBJ->isAirFlightModuleAvailable()) {  //added by SP for fly on 27-9-2019 ?>
                                                     <option value="Fly" <?php if ($eType == "Ride" && $eFly==1) echo 'selected="selected"'; ?>>Fly</option>
                                                     <?php } ?>

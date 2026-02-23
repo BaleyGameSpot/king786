@@ -1,4 +1,4 @@
-<?
+<?php
 	include_once('../common.php');
 	
 	
@@ -151,7 +151,7 @@
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 		<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 		
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 		<!-- On OFF switch -->
 		<link href="../assets/css/jquery-ui.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -175,8 +175,8 @@
 		
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>       
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>       
 			<!--PAGE CONTENT -->
 			<div id="content">
 				<div class="inner">
@@ -191,24 +191,24 @@
 					<hr />	
 					<div class="body-div">
 						<div class="form-group">
-							<? if($success == 1) { ?>
+							<?php if($success == 1) { ?>
 								<div class="alert alert-success alert-dismissable">
 									<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 									<?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
 								</div><br/>
-							<? } ?>
+							<?php } ?>
 							
-							<? if ($success == 2) {?>
+							<?php if ($success == 2) {?>
                  <div class="alert alert-danger alert-dismissable">
                       <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                       <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                  </div><br/>
-               <?} ?>
+               <?php } ?>
 
 							<form method="post" action="" enctype="multipart/form-data">
 								<input type="hidden" name="id" value="<?=$id;?>"/>
 								<input type="hidden" name="temp_order" id="temp_order" value="1	">
-								<? 
+								<?php 
 								$sql = "SELECT * FROM language_master WHERE vCode = '".$default_lang."' ORDER BY iDisplayOrder";
 								$db_cat = $obj->MySQLSelect($sql);
 								//echo "<pre>";print_r($db_cat);exit;
@@ -233,15 +233,15 @@
 												<input type="text" class="form-control" name="<?=$vTitle_val;?>"  id="<?=$vTitle_val;?>" value="<?=$$vTitle_val;?>" placeholder="Cancel Reason" <?=$required;?>>
 											</div>
 										</div>
-										<? } 
+										<?php } 
 									} ?>
-								<? if($action == 'Edit') { ?>
+								<?php if($action == 'Edit') { ?>
 								<div class="row">
 									<div class="col-lg-12">
 										<label>Order</label>
 									</div>
 									<div class="col-lg-6">
-										<?
+										<?php
 											$temp = 1;
 											
 											$dataArray = array();
@@ -257,27 +257,27 @@
 										?>
 										<input type="hidden" name="temp_order" id="temp_order" value="<?=$temp?>">
 										<select name="iDisplayOrder" class="form-control">
-											<? foreach($dataArray as $arr):?>
+											<?php foreach($dataArray as $arr):?>
 											<option <?= $arr == $temp ? ' selected="selected"' : '' ?> value="<?=$arr;?>" >
 												-- <?= $arr ?> --
 											</option>
-											<? endforeach; ?>
-											<?if($action=="Add") {?>
+											<?php endforeach; ?>
+											<?php if($action=="Add") {?>
 												<option value="<?=$temp;?>" >
 													-- <?= $temp ?> --
 												</option>
-											<? }?>
+											<?php }?>
 										</select>
 										
 									</div>
 								</div>
-								<? } else{ ?>
+								<?php } else{ ?>
 										<div class="row">
 											<div class="col-lg-12">
 												<label>Order</label>
 											</div>
 											<div class="col-lg-6">
-												<?
+												<?php
 												$temp = 1;
 												
 												$dataArray = array();
@@ -327,9 +327,9 @@
 										<?php } ?>
 										</div>
 									</div>
-								<? } else { ?>
+								<?php } else { ?>
 									Please enter Cancelation reason 
-								<? } ?>
+								<?php } ?>
 							</form>
 						</div>
 					</div>
@@ -341,7 +341,7 @@
 		<!--END MAIN WRAPPER -->
 		
 		
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 		<script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 
 		<!-- GLOBAL SCRIPTS -->

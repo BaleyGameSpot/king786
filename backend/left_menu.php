@@ -55,7 +55,7 @@ if ($user == 'rider') {
           <br />
      </div>
      <ul id="menu" class="collapse">
-          <? if($user == 'company') {?>
+          <?php if($user == 'company') {?>
          <li class="panel <?=(isset($script) && $script == 'Profile')?'active':'';?>">
                <a href="profile.php" >
                     <i class="icon-table"></i> Profile
@@ -90,7 +90,7 @@ if ($user == 'rider') {
                     <i class="icon-table"></i> Logout
                </a>
           </li>
-          <? } if($user == 'driver'){?>
+          <?php } if($user == 'driver'){?>
 
          <li class="panel <?=(isset($script) && $script == 'Profile')?'active':'';?>">
                <a href="profile.php" >
@@ -109,13 +109,13 @@ if ($user == 'rider') {
                     <i class="icon-table"></i> Trips
                </a>
           </li>
-		 <?if($PAYMENT_ENABLED=='Yes'){?>
+		 <?php if($PAYMENT_ENABLED=='Yes'){?>
 		 <li class="panel <?=(isset($script) && $script == 'payment_request')?'active':'';?>">
                <a href="payment_request.php" >
                     <i class="icon-table"></i> Payment
                </a>
           </li>
-		  <? }?>
+		  <?php }?>
           <li class="panel <?php
           if ($curr_url == "logout.php") {
                echo "active";
@@ -125,7 +125,7 @@ if ($user == 'rider') {
                     <i class="icon-table"></i> Logout
                </a>
           </li>
-          <? }  if($user == 'rider'){?>
+          <?php }  if($user == 'rider'){?>
             <li class="panel <?=(isset($script) && $script == 'Profile')?'active':'';?>">
                <a href="profile_rider.php">
                     <i class="icon-user"></i> Profile
@@ -147,7 +147,7 @@ if ($user == 'rider') {
                     <i class="icon-off"></i> Logout
                </a>
           </li>
-          <? } ?>
+          <?php } ?>
      </ul>
 
 </div>

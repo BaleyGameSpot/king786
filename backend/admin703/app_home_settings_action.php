@@ -466,14 +466,14 @@ foreach ($labelsarray as $k => $val) {
       <meta charset="UTF-8" />
       <title><?=$SITE_NAME?> | App Main Screen Settings </title>
       <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-      <?  include_once('global_files.php'); ?>
+      <?php  include_once('global_files.php'); ?>
  </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
 <body class="padTop53">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-  <? include_once('header.php');
+  <?php include_once('header.php');
   include_once('left_menu.php'); ?>
   <!--PAGE CONTENT -->
   <div id="content">
@@ -490,12 +490,12 @@ foreach ($labelsarray as $k => $val) {
       <div class="body-div">
         <div class="row">
           <div class="col-lg-12">
-          <? if ($_REQUEST['success']==1) {?>
+          <?php if ($_REQUEST['success']==1) {?>
             <div class="alert alert-success alert-dismissable">
               <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button> 
               <?= $var_msg ?>
             </div>
-            <?}else if($_REQUEST['success']==2){ ?>
+            <?php }else if($_REQUEST['success']==2){ ?>
             <div class="alert alert-danger alert-dismissable">
               <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
               <?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -506,7 +506,7 @@ foreach ($labelsarray as $k => $val) {
               <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button> 
               <?= $var_msg ?>
             </div>
-            <? }
+            <?php }
           ?>
           </div>
         </div>
@@ -514,9 +514,9 @@ foreach ($labelsarray as $k => $val) {
           <form id="app_main_screen_form" name="app_main_screen_form" method="post" action="" enctype="multipart/form-data">
           <div class="row">
             <div class="col-lg-6">
-              <? foreach ($db_gen as $key => $value) { ?>
+              <?php foreach ($db_gen as $key => $value) { ?>
                   <input type="hidden" name="frm_type" value="<?=$key?>">
-                  <? foreach ($value as $key1 => $value1) { 
+                  <?php foreach ($value as $key1 => $value1) { 
                       if($value1['vName'] == 'FOOD_APP_DETAIL_GRID_ICON_NAME' || $value1['vName'] == 'FOOD_APP_DETAIL_BANNER_IMG_NAME' || $value1['vName'] == 'FOOD_APP_PACKAGE_NAME' || $value1['vName'] == 'FOOD_APP_IOS_APP_ID' || $value1['vName'] == 'GROCERY_APP_DETAIL_GRID_ICON_NAME' || $value1['vName'] == 'GROCERY_APP_DETAIL_BANNER_IMG_NAME' || $value1['vName'] == 'GROCERY_APP_PACKAGE_NAME' || $value1['vName'] == 'GROCERY_APP_IOS_APP_ID' || $value1['vName'] == 'FOOD_APP_IOS_PACKAGE_NAME' || $value1['vName'] == 'GROCERY_APP_IOS_PACKAGE_NAME' ||  $value1['vName'] == 'DELIVER_ALL_APP_DETAIL_GRID_ICON_NAME' || $value1['vName'] == 'DELIVER_ALL_APP_DETAIL_BANNER_IMG_NAME' || $value1['vName'] == 'DELIVER_ALL_APP_PACKAGE_NAME' || $value1['vName'] == 'DELIVER_ALL_APP_IOS_APP_ID' || $value1['vName'] == 'DELIVER_ALL_APP_IOS_PACKAGE_NAME'){ 
                               continue;
                       }
@@ -537,31 +537,31 @@ foreach ($labelsarray as $k => $val) {
                         } ?>
                         </select>
                         [Note : Option Disable/Hide - The service won't available for apps]
-                    <? } else if($value1['eInputType'] == 'Textarea') { ?>
+                    <?php } else if($value1['eInputType'] == 'Textarea') { ?>
                         <textarea class="form-control" rows="5" name="<?=$value1['vName']?>"><?=$value1['vValue']?></textarea>
-                    <? } else { 
+                    <?php } else { 
                           if($value1['vName'] == $CPageType.'_GRID_ICON_NAME' || $value1['vName'] == $CPageType.'_BANNER_IMG_NAME') {
                             ?>
-                              <? if($value1['vValue'] != '') { ?>  
+                              <?php if($value1['vValue'] != '') { ?>  
                                 <div style="margin: 5px 0;" id="<?=$value1['vName']?>_IMG">
                                 <img src="<?=$tconfig['tsite_upload_images_vehicle_category']."/".$value1['vValue'];?>" style="height:100px;"></div>
-                              <?}?>
+                              <?php }?>
                               <input type="file" name="<?=$value1['vName']?>" class="form-control" value="<?=$value1['vValue']?>" id="<?=$value1['vName']?>">
                               <?php if($value1['vName'] ==  $CPageType.'_GRID_ICON_NAME') { ?>
                                 <div class="note_icon">[Note: Upload only png image size of 360px*360px.]</div>
                               <?php } else { ?>
                                 <div class="note_banner">[Note: Recommended dimension for banner image is 2880 * 1620.]</div>
                               <?php } ?>
-                            <?  }  else {?>
+                            <?php  }  else {?>
                           <input type="text" name="<?=$value1['vName']?>" class="form-control" value="<?=$value1['vValue']?>" >
-                    <?  }
+                    <?php  }
                       } ?>
                   </div>
-                <?  }
+                <?php  }
               } ?>
             </div>
           </div>
-          <?  if($count_all > 0) {
+          <?php  if($count_all > 0) {
             foreach ($vValue1 as $k1 => $v1) {
               $vLabel_vTitle = $k1;
               if (strpos($vLabel_vTitle, 'ON_DEMAND') !== false) {
@@ -580,7 +580,7 @@ foreach ($labelsarray as $k => $val) {
                 <input type="text" class="form-control" name="vLabel[]"  id="vTitle" value="<?=$vLabel_vTitle;?>" placeholder="Language Label" disabled>
               </div>
             </div>
-            <? foreach ($v1 as $key => $db_data) {
+            <?php foreach ($v1 as $key => $db_data) {
                 $vCode = $db_data['vCode'];
                 $vTitle = $db_data['vTitle'];
                 $eDefault = $db_data['eDefault'];
@@ -610,20 +610,20 @@ foreach ($labelsarray as $k => $val) {
                   </div>
                 <?php } ?>
               </div>
-              <? }
+              <?php }
             }
           } ?>
           <?php if($PageType == 'food_app' || $PageType == 'grocery_app'  || $PageType == 'deliver_all_app'){  ?>
             <div>
               <div class="form-group">
-                <? if($PageType == 'food_app'){?>
+                <?php if($PageType == 'food_app'){?>
                   <h4>FoodApp Page Settings</h4>
                 <?php } else if($PageType == 'grocery_app'){ ?>
                   <h4>GroceryApp Page Settings</h4>
                 <?php } else if($PageType == 'deliver_all_app'){ ?>
                   <h4>Deliver All APP Page Settings</h4>
                 <?php } ?>
-                  <?  if($count_all > 0) {
+                  <?php  if($count_all > 0) {
                     foreach ($landingpagelabels as $k1 => $v1) {
                        $vLabel_vTitle = $k1;
                     ?>
@@ -635,7 +635,7 @@ foreach ($labelsarray as $k => $val) {
                         <input type="text" class="form-control" name="vLabel[]"  id="vTitle" value="<?=$vLabel_vTitle;?>" placeholder="Language Label" disabled>
                       </div>
                     </div>
-                    <?  foreach ($v1 as $key => $db_data) {
+                    <?php  foreach ($v1 as $key => $db_data) {
                         $vCode = $db_data['vCode'];
                         $vTitle = $db_data['vTitle'];
                         $eDefault = $db_data['eDefault'];
@@ -672,14 +672,14 @@ foreach ($labelsarray as $k => $val) {
                           </div>
                         <?php } ?>
                       </div>
-                      <? }
+                      <?php }
                     }
                   } ?>
                   <div class="row">
                     <div class="col-lg-6">
-                      <? foreach ($db_gen as $key => $value) { ?>
+                      <?php foreach ($db_gen as $key => $value) { ?>
                           <input type="hidden" name="frm_type" value="<?=$key?>">
-                          <? foreach ($value as $key1 => $val) { 
+                          <?php foreach ($value as $key1 => $val) { 
                               if($val['vName'] == 'FOOD_APP_SHOW_SELECTION' || $val['vName'] == 'FOOD_APP_BANNER_IMG_NAME' || $val['vName'] == 'FOOD_APP_GRID_ICON_NAME' || $val['vName'] == 'GROCERY_APP_SHOW_SELECTION' || $val['vName'] == 'GROCERY_APP_BANNER_IMG_NAME' || $val['vName'] == 'GROCERY_APP_GRID_ICON_NAME' || $val['vName'] == 'DELIVER_ALL_APP_SHOW_SELECTION' || $val['vName'] == 'DELIVER_ALL_APP_BANNER_IMG_NAME' || $val['vName'] == 'DELIVER_ALL_APP_GRID_ICON_NAME'){ 
                                       continue;
                               }
@@ -700,9 +700,9 @@ foreach ($labelsarray as $k => $val) {
                                 } ?>
                                 </select>
                                 [Note : Option Disable/Hide - The service won't available for apps]
-                            <? } else if($val['eInputType'] == 'Textarea') { ?>
+                            <?php } else if($val['eInputType'] == 'Textarea') { ?>
                                 <textarea class="form-control" rows="5" name="<?=$val['vName']?>"><?=$val['vValue']?></textarea>
-                            <? } else {
+                            <?php } else {
                               if($PageType == 'food_app'){
                                 $CPageTypenew = 'FOOD_APP_DETAIL';
                               } else if($PageType == 'grocery_app'){
@@ -712,20 +712,20 @@ foreach ($labelsarray as $k => $val) {
                               }
                                   if($val['vName'] == $CPageTypenew.'_GRID_ICON_NAME' || $val['vName'] == $CPageTypenew.'_BANNER_IMG_NAME') {
                                     ?>
-                                      <? if($val['vValue'] != '') { ?>  
+                                      <?php if($val['vValue'] != '') { ?>  
                                         <div style="margin: 5px 0;" id="<?=$val['vName']?>_IMG">
                                         <img src="<?=$tconfig['tsite_upload_images_vehicle_category']."/".$val['vValue'];?>" style="height:100px;"></div>
-                                      <?}?>
+                                      <?php }?>
                                       <input type="file" name="<?=$val['vName']?>" class="form-control" value="<?=$val['vValue']?>" id="<?=$val['vName']?>">
                                       <?php if($val['vName'] ==  $CPageTypenew.'_BANNER_IMG_NAME') { ?>
                                          <div class="note_banner">[Note: Recommended dimension for banner image is 2880 * 2160.]</div>
                                       <?php } ?>
-                                    <?  }  else {?>
+                                    <?php  }  else {?>
                                   <input type="text" name="<?=$val['vName']?>" class="form-control" value="<?=$val['vValue']?>" >
-                            <?  }
+                            <?php  }
                               } ?>
                           </div>
-                        <? }
+                        <?php }
                       } ?>
                     </div>
                   </div>

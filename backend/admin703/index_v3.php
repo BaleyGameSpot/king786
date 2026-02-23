@@ -163,7 +163,7 @@ if(strtoupper(DELIVERALL) == "YES") {
                                 </form>
                             </div>
                         </div>
-                        <? if (SITE_TYPE == "Demo") { ?>
+                        <?php if (SITE_TYPE == "Demo") { ?>
                                 <!--<div class="tab-content">
                                     <div id="super001" class="tab-pane active">
                                         <h3> Use below Detail for Demo Version</h3>
@@ -172,7 +172,7 @@ if(strtoupper(DELIVERALL) == "YES") {
                                         <p>Hotel Administrator can book taxi.</p>
                                     </div>
                                 </div>-->
-                            <? } ?>
+                            <?php } ?>
                             <div style="clear:both;"></div>
                         </div>
                     </div>
@@ -229,7 +229,7 @@ if(strtoupper(DELIVERALL) == "YES") {
                                             </form>
                                         </div>
                                     </div>
-                                    <? if (SITE_TYPE == "Demo") { ?>
+                                    <?php if (SITE_TYPE == "Demo") { ?>
                                     <!--<div class="tab-content">
                                         <div id="super001admin" class="tab-pane active">
                                             <h3> Use below Detail for Demo Version</h3>
@@ -250,7 +250,7 @@ if(strtoupper(DELIVERALL) == "YES") {
                                             <p>This use will have access to reports only. Will be used by Accounts Team to manage finances and see profits/revenue.</p>
                                         </div>
                                     </div>-->
-                                <? } ?>
+                                <?php } ?>
                                 <div style="clear:both;"></div>
                             </div>
                         </div>
@@ -309,7 +309,7 @@ if(strtoupper(DELIVERALL) == "YES") {
                     <!-- forgot_sec_2023 -->
                     </div>
                 <?php } ?>
-                <? if (SITE_TYPE == "Demo") { ?>
+                <?php if (SITE_TYPE == "Demo") { ?>
                     <section class="warning" style="margin-top: 0;">
                         <div class="warning-inner">
                             <div class="warning-caption">
@@ -328,7 +328,7 @@ if(strtoupper(DELIVERALL) == "YES") {
                             </div>
                         </div>
                     </section>
-                <? } else { ?>
+                <?php } else { ?>
                     <div class="topNavbar">
                         <div class="userNavbar">
                             <ul>
@@ -337,14 +337,14 @@ if(strtoupper(DELIVERALL) == "YES") {
                                 <?php if ($onlyRideShareEnable != 'Yes' && $onlyBSREnable != 'Yes' && $onlyFETEnable != 'Yes') { ?>
 
                                     <li><a href="<?= $tsiteUrl . $cjDriverLogin; ?>" title="" target="_blank"><i class="ri-steering-line"></i><span><?= $langage_lbl_admin['LBL_DRIVER'] ?> Login</span></a></li>
-                                    <? if(strtoupper(ONLYDELIVERALL) != "YES" && $cubeDeliverallOnly == false) {
+                                    <?php if(strtoupper(ONLYDELIVERALL) != "YES" && $cubeDeliverallOnly == false) {
                                         $labelCompany = $langage_lbl_admin['LBL_COMPANY_SIGNIN'];
                                         if (DELIVERALL == "Yes" && $become_restaurant == "") {
                                             $labelCompany = $langage_lbl_admin['LBL_COMPANY'];
                                         }
                                         ?>
                                         <li><a href="<?= $tsiteUrl . $cjCompanyLogin; ?>" title="" target="_blank"><i class="ri-building-line"></i><span><?= $labelCompany; ?> Login</span></a></li>
-                                    <? } if (!empty($become_restaurant)) {
+                                    <?php } if (!empty($become_restaurant)) {
                                         $serviceArray = $serviceIdArray = array();
                                         $serviceArray = json_decode(serviceCategories, true);
                                         $serviceIdArray = array_column($serviceArray, 'iServiceId');
@@ -360,7 +360,7 @@ if(strtoupper(DELIVERALL) == "YES") {
                                         }
                                         ?>
                                         <li><a href="<?= $tsiteUrl . $slink; ?>" title="" target="_blank"><i class="ri-store-2-line"></i><span><?= $become_restaurant; ?> Login</span></a></li>
-                                    <? } ?>
+                                    <?php } ?>
 
                                 <?php } ?>
                             </ul>
@@ -566,7 +566,7 @@ return false;
 function forgotPass() {
     $('.error-login-v').hide();
     $("#btn_submit").val("<?= $langage_lbl['LBL_PLEASE_WAIT'] ?> ...");
-    var site_type = '<? echo SITE_TYPE; ?>';
+    var site_type = '<?php echo SITE_TYPE; ?>';
     var id = document.getElementById("femail").value;
     if (id == '') {
         document.getElementById("errmsg").style.display = '';

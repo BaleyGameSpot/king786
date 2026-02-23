@@ -90,7 +90,7 @@ foreach ($referrerData as $referrer)
           <meta content="width=device-width, initial-scale=1.0" name="viewport" />
           <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-          <? include_once('global_files.php');?>
+          <?php include_once('global_files.php');?>
 		  <style type="text/css">
 		  	/* Style the tab */
 		    .tab {
@@ -133,8 +133,8 @@ foreach ($referrerData as $referrer)
 
           <!-- MAIN WRAPPER -->
           <div id="wrap">
-               <? include_once('header.php'); ?>
-               <? include_once('left_menu.php'); ?>
+               <?php include_once('header.php'); ?>
+               <?php include_once('left_menu.php'); ?>
 
                <!--PAGE CONTENT -->
                <div id="content">
@@ -339,7 +339,7 @@ foreach ($referrerData as $referrer)
           <!--END MAIN WRAPPER -->
 
 
-          <? include_once('footer.php');?>
+          <?php include_once('footer.php');?>
           <script>
 			function confirm_delete(action,id)
 			{

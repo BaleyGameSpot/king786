@@ -1,4 +1,4 @@
-<?
+<?php
    include_once("common.php");
    $success = (isset($_REQUEST['success'])) ? $_REQUEST['success'] : '0';    // Facebook,Twitter,Google
    if($success == 1){ 

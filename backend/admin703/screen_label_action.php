@@ -148,7 +148,7 @@ $required_msg = '<span class="red"> *</span>';
 
         <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-        <?
+        <?php
         include_once('global_files.php');
         ?>
 
@@ -170,7 +170,7 @@ $required_msg = '<span class="red"> *</span>';
 
         <div id="wrap">
 
-            <?
+            <?php
             include_once('header.php');
 
             include_once('left_menu.php');
@@ -204,7 +204,7 @@ $required_msg = '<span class="red"> *</span>';
 
                         <div class="form-group">
 
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
 
                                 <div class="alert alert-success alert-dismissable">
 
@@ -214,7 +214,7 @@ $required_msg = '<span class="red"> *</span>';
 
                                 </div><br/>
 
-                            <? } elseif ($success == 2) { ?>
+                            <?php } elseif ($success == 2) { ?>
 
                                 <div class="alert alert-danger alert-dismissable">
 
@@ -222,7 +222,7 @@ $required_msg = '<span class="red"> *</span>';
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
 
-                                <?
+                                <?php
                             }
 
                             if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != "") {
@@ -269,7 +269,7 @@ $required_msg = '<span class="red"> *</span>';
                                              <option value="0" <?php if($db_data[0]['lPage_id']=="0"){ ?>selected <?php } ?>>Page Name</option>
                                              <?php foreach ($select_boxinfo as $sinfo) { ?>
                                                 <option value="<?= $sinfo['lPage_id'] ?>" 
-                                                    <? if (isset($db_data[0]['lPage_id']) && $db_data[0]['lPage_id'] == $sinfo['lPage_id']) { ?>selected<? } ?>    
+                                                    <?php if (isset($db_data[0]['lPage_id']) && $db_data[0]['lPage_id'] == $sinfo['lPage_id']) { ?>selected<?php } ?>    
                                                     ><?= $sinfo['vScreenName'] ?></option>    
                                              <?php }  ?>
                                             
@@ -330,9 +330,9 @@ $required_msg = '<span class="red"> *</span>';
 
                                             <select  class="form-control" name = 'eStatus'  id= 'eStatus' required>                                   
 
-                                                <option value="Active" <? if (isset($db_data[0]['eStatus']) && $db_data[0]['eStatus'] == "Active") { ?>selected<? } ?>>Active</option>
+                                                <option value="Active" <?php if (isset($db_data[0]['eStatus']) && $db_data[0]['eStatus'] == "Active") { ?>selected<?php } ?>>Active</option>
 
-                                                <option value="Inactive" <? if (isset($db_data[0]['eStatus']) && $db_data[0]['eStatus'] == "Inactive") { ?>selected<? } ?>>Inactive</option>                                                      
+                                                <option value="Inactive" <?php if (isset($db_data[0]['eStatus']) && $db_data[0]['eStatus'] == "Inactive") { ?>selected<?php } ?>>Inactive</option>                                                      
 
                                                 </option>                                                    
 
@@ -392,7 +392,7 @@ $required_msg = '<span class="red"> *</span>';
 
         </div>
 
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
 
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 

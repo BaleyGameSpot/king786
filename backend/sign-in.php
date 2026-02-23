@@ -132,12 +132,12 @@ if ($tab == "true") {
                         <?php } ?>     
                         <?php $msg1 = $_REQUEST['msg1']; ?>
 
-                        <? if (!empty($msg1)) { ?>
+                        <?php if (!empty($msg1)) { ?>
                         <div class="alert alert-danger alert-dismissable msgs_hide">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             Invalid Tokens
                         </div><br/>
-                        <? } ?>
+                        <?php } ?>
                         <div class="login-holder-main">
                             <div class="sign-in-driver" id="COMPANY">
                                 <h3><?= $langage_lbl[$lbl_cmp]; ?></h3>

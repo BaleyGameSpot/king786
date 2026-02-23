@@ -378,7 +378,7 @@ if ($action == 'Edit') {
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <label>Email<? if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?><span class="red"> *</span><? } ?></label>
+                                        <label>Email<?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?><span class="red"> *</span><?php } ?></label>
                                     </div>
                                     <div class="col-lg-6">
                                         <input autocomplete="new-email" type="text" class="form-control" name="vEmail" id="vEmail" value="<?= $vEmail; ?>" placeholder="Email">
@@ -555,7 +555,7 @@ if ($action == 'Edit') {
             vEmail: {
                 <?php if ($ENABLE_EMAIL_OPTIONAL != 'Yes') { ?>
                 required: true, 
-                <? } ?>
+                <?php } ?>
                 email: true
             },
             <?php if ($id == '') { ?>

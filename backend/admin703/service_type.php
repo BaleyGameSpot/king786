@@ -213,7 +213,7 @@ if ($Vehicle_type_name == 'UberX') {
     <title><?= $SITE_NAME; ?> | <?= $langage_lbl_admin['LBL_SERVICE_TXT']; ?> Type</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
@@ -276,7 +276,7 @@ if ($Vehicle_type_name == 'UberX') {
                                             }
                                           ?>
                                         </option>
-                                    <? }
+                                    <?php }
                                 } else {
                                     for ($i = 0; $i < scount($db_data_cat); $i++) { ?>
                                         <optgroup label="<?= $db_data_cat[$i]['vCategory_' . $default_lang]; ?>">
@@ -296,10 +296,10 @@ if ($Vehicle_type_name == 'UberX') {
                                                     }
                                                     ?> >
                                                     <?= "&nbsp;&nbsp;|-- " . $db_data2[$j]['vCategory_' . $default_lang]; ?></option>
-                                            <? } ?>
+                                            <?php } ?>
                                         </optgroup>
 
-                                    <? }
+                                    <?php }
                                 } ?>
                             </select>
                         </td>
@@ -367,14 +367,14 @@ if ($Vehicle_type_name == 'UberX') {
                                                             echo "selected";
                                                         }
                                                         ?> >Deactivate</option>
-                                                    <? } ?>
-                                                    <? if ($eStatus != 'Deleted') { ?>
+                                                    <?php } ?>
+                                                    <?php if ($eStatus != 'Deleted') { ?>
                                                         <option value="Deleted" <?php
                                                         if ($option == 'Delete') {
                                                             echo "selected";
                                                         }
                                                         ?> >Delete</option>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                 </select>
                                             <?php } ?>
                                         </span>
@@ -500,7 +500,7 @@ if ($Vehicle_type_name == 'UberX') {
                                                     <td style="text-transform: capitalize;"><?= $data_drv[$i]['vLocationName']; ?></td>
                                                 <?php } ?>
                                                 <td align="center">
-                                                    <?
+                                                    <?php
                                                     if ($data_drv[$i]['eStatus'] == 'Active') {
                                                         $dis_img = "img/active-icon.png";
                                                     } else if ($data_drv[$i]['eStatus'] == 'Inactive') {
@@ -575,7 +575,7 @@ if ($Vehicle_type_name == 'UberX') {
 
                                                 <?php } ?>
                                             </tr>
-                                            <?
+                                            <?php
                                         }
                                     } else {
                                         ?>

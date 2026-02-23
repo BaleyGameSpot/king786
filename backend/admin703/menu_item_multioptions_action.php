@@ -647,7 +647,7 @@ $count = 0;
     <title>Admin | Item <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <!--<link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />-->
-    <?
+    <?php
     include_once('global_files.php');
     ?>
     <!-- On OFF switch -->
@@ -685,7 +685,7 @@ $count = 0;
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <?
+    <?php
     include_once('header.php');
     include_once('left_menu.php');
     ?>
@@ -703,36 +703,36 @@ $count = 0;
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable msgs_hide">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div><br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable ">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div><br/>
-                    <? } elseif ($success == 3) { ?>
+                    <?php } elseif ($success == 3) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo  !empty($_REQUEST['var_msg']) ? $_REQUEST['var_msg'] : $_SESSION['var_msg']; ?>
                         </div><br/>
-                    <? } ?>
-                    <? if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
+                    <?php } ?>
+                    <?php if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             Record Not Updated .
                         </div><br/>
-                    <? } ?>
+                    <?php } ?>
                     <form name="menuItem_form" id="menuItem_form" method="post" action="" enctype="multipart/form-data">
                         <input type="hidden" name="id" id="iMenuItemIdedit" value="<?= $id; ?>"/>
                         <input type="hidden" name="oldImage" value="<?php echo $oldImage; ?>">
                         <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
                         <input type="hidden" name="backlink" id="backlink" value="menu_item.php"/>
-                        <? if ($action == 'Edit') { ?>
+                        <?php if ($action == 'Edit') { ?>
                             <input name="iServiceId" id="iServiceId" type="hidden" class="create-account-input" value="<?php echo $service_cat_list[0]['iServiceId']; ?>"/>
-                        <? } ?>
+                        <?php } ?>
                         <div class="row">
                             <div class="col-lg-6">
                                 <?php
@@ -749,9 +749,9 @@ $count = 0;
                                                 <select class="form-control" name='iServiceId' id="iServiceId" required onchange="changeserviceCategory(this.value)" id="iServiceId">
                                                     <option value="">Select</option>
                                                     <?php //foreach($db_company as $dbcm) {   ?>
-                                                    <? for ($i = 0; $i < scount($service_cat_list); $i++) { ?>
-                                                        <option value="<?= $service_cat_list[$i]['iServiceId'] ?>" <? if ($iServiceIdNew == $service_cat_list[$i]['iServiceId'] && $action == 'Add') { ?> selected <?php } else if ($iServiceIdNew == $service_cat_list[$i]['iServiceId']) { ?>selected<? } ?>><?= $service_cat_list[$i]['servicename'] ?></option>
-                                                    <? } ?>
+                                                    <?php for ($i = 0; $i < scount($service_cat_list); $i++) { ?>
+                                                        <option value="<?= $service_cat_list[$i]['iServiceId'] ?>" <?php if ($iServiceIdNew == $service_cat_list[$i]['iServiceId'] && $action == 'Add') { ?> selected <?php } else if ($iServiceIdNew == $service_cat_list[$i]['iServiceId']) { ?>selected<?php } ?>><?= $service_cat_list[$i]['servicename'] ?></option>
+                                                    <?php } ?>
                                                     <?php //}      ?>
                                                 </select>
                                             </div>
@@ -766,11 +766,11 @@ $count = 0;
                                             <span class="red"> *</span></label>
                                     </div>
                                     <div class="col-md-12 col-sm-12">
-                                        <select name="iCompanyId" class="form-control" id="iCompanyId" required onchange="changeMenuCategory(this.value)" <? if ($action == 'Edit') { ?> disabled <? } ?>
+                                        <select name="iCompanyId" class="form-control" id="iCompanyId" required onchange="changeMenuCategory(this.value)" <?php if ($action == 'Edit') { ?> disabled <?php } ?>
                                         >
                                             <option value="">Select <?php echo $langage_lbl_admin['LBL_RESTAURANT_TXT_ADMIN']; ?></option>
                                             <?php foreach ($db_company as $dbc) { ?>
-                                                <option value="<?php echo $dbc['iCompanyId']; ?>"<? if ($dbc['iCompanyId'] == $iCompanyId) { ?> selected<? } ?>><?php echo clearName($dbc['vCompany']); ?> - ( <?php echo clearEmail($dbc['vEmail']); ?> )</option>
+                                                <option value="<?php echo $dbc['iCompanyId']; ?>"<?php if ($dbc['iCompanyId'] == $iCompanyId) { ?> selected<?php } ?>><?php echo clearName($dbc['vCompany']); ?> - ( <?php echo clearEmail($dbc['vEmail']); ?> )</option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -785,7 +785,7 @@ $count = 0;
                                             <option value=""><?php echo $langage_lbl_admin['LBL_SELECT_CATEGORY'] ?></option>
                                             <?php foreach ($db_menu as $dbmenu) { ?>
                                                 <option value="<?= $dbmenu['iFoodMenuId'] ?>" <?= ($dbmenu['iFoodMenuId'] == $iFoodMenuId) ? 'selected' : ''; ?> <?php if (!empty($dbmenu['menuItems']) && scount($dbmenu['menuItems']) > 0) { ?><?php } ?> ><?= $dbmenu['vMenu_' . $_SESSION['sess_lang']]; ?></option>
-                                            <? } ?>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -1105,13 +1105,13 @@ $count = 0;
                                     <div class="col-md-12 col-sm-12">
                                         <select class="form-control" name="eFoodType" id="eFoodType">
                                             <option value="">--Select--</option>
-                                            <option value="Veg" <?
+                                            <option value="Veg" <?php
                                             if ($eFoodType == 'Veg') {
                                                 echo 'selected';
                                             }
                                             ?>>Veg Food
                                             </option>
-                                            <option value="NonVeg" <?
+                                            <option value="NonVeg" <?php
                                             if ($eFoodType == 'NonVeg') {
                                                 echo 'selected';
                                             }
@@ -1150,17 +1150,17 @@ $count = 0;
                                     <div class="col-md-12 col-sm-12">
                                         <select class="form-control" name="vHighlightName" id="vHighlightName">
                                             <option value="">Select Tag</option>
-                                            <option value="LBL_BESTSELLER" <?
+                                            <option value="LBL_BESTSELLER" <?php
                                             if ($vHighlightName == 'LBL_BESTSELLER') {
                                                 echo 'selected';
                                             }
                                             ?>><?php echo $langage_lbl_admin['LBL_BESTSELLER'] ?></option>
-                                            <option value="LBL_NEWLY_ADDED" <?
+                                            <option value="LBL_NEWLY_ADDED" <?php
                                             if ($vHighlightName == 'LBL_NEWLY_ADDED') {
                                                 echo 'selected';
                                             }
                                             ?>><?php echo $langage_lbl_admin['LBL_NEWLY_ADDED'] ?></option>
-                                            <option value="LBL_PROMOTED" <?
+                                            <option value="LBL_PROMOTED" <?php
                                             if ($vHighlightName == 'LBL_PROMOTED') {
                                                 echo 'selected';
                                             }
@@ -1493,7 +1493,7 @@ $count = 0;
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script src="../assets/js/modal_alert.js"></script>
 <!--<link href="../assets/css/imageUpload/bootstrap-imageupload.css" rel="stylesheet">-->
@@ -1606,7 +1606,7 @@ $count = 0;
     $(document).ready(function () {
         changeMenuCategory('<?php echo $iCompanyId; ?>', '<?php echo $iFoodMenuId; ?>');
         changeDisplayOrder('<?php echo $iFoodMenuId; ?>', '<?php echo $id; ?>', '<?php echo $menuiParentId; ?>');
-        var servicecounts = '<? echo scount($service_cat_list) ?>';
+        var servicecounts = '<?php echo scount($service_cat_list) ?>';
         <?php if($action == "Add") { ?>
         if (servicecounts > '1') {
             changeserviceCategory(iServiceIdNew);
@@ -1724,11 +1724,11 @@ $count = 0;
         $(".remove_main").show();
     }
 
-    <? if (scount($db_optionsdata) > 0) { ?>
+    <?php if (scount($db_optionsdata) > 0) { ?>
     var optionid = '<?= scount($db_optionsdata) ?>';
-    <? } else { ?>
+    <?php } else { ?>
     var optionid = 0;
-    <? } ?>
+    <?php } ?>
     var category_id;
 
     $('#tOptionNameLang_<?= $default_lang ?>, #item_option_topping_price').on('keyup change', function () {
@@ -2101,11 +2101,11 @@ $count = 0;
             $('.removeclass' + rid).remove();
         }
     }
-    <? if (scount($db_addonsdata) > 0) { ?>
+    <?php if (scount($db_addonsdata) > 0) { ?>
     var addonid = '<?= scount($db_addonsdata) ?>';
-    <? } else { ?>
+    <?php } else { ?>
     var addonid = 0;
-    <? } ?>
+    <?php } ?>
     function addon_fields(category_id = "") {
         $('#option_addon_title').html("<?= $langage_lbl_admin['LBL_ADD_ADDON_TOPPING'] ?>");
         $('#option_addon_type').val("addons");

@@ -233,7 +233,7 @@ $db_location = $obj->MySQLSelect($sql_location);
                     <?php if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <? echo $_REQUEST['var_msg']; ?>
+                            <?php echo $_REQUEST['var_msg']; ?>
                         </div>
                         <br/>
                     <?php } ?>
@@ -266,12 +266,12 @@ $db_location = $obj->MySQLSelect($sql_location);
                                         <?php } ?>
                                     </select>
                                 </div>
-                            <? } else { ?>
+                            <?php } else { ?>
                                 <div class="col-lg-12">
                                     <label>Language: <?= $vCodeLang ?></label>
                                 </div>
                                 <input type="hidden" name="vCode" value="<?= $vCodeLang ?>">
-                            <? } ?>
+                            <?php } ?>
                         </div>
                         <div class="bannerlang">
                             <div class="row">

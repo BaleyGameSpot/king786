@@ -65,11 +65,11 @@
                 $(".driverlists").show();
                 $(".autoassignbtn").hide();
                 $("#iDriverId").removeAttr('disabled');
-    <? if ($action != 'Edit') { ?>
+    <?php if ($action != 'Edit') { ?>
                     $("#iDriverId").attr('required', 'required');
-    <? } else { ?>
+    <?php } else { ?>
                     $("#iDriverId").removeAttr("required");
-    <? } ?>
+    <?php } ?>
             }
         } else if(eType == 'Deliver') {
             if ($('input[name=eDeliveryType]:checked').val() == 'now') {
@@ -84,11 +84,11 @@
                 $(".driverlists").show();
                 $(".autoassignbtn").show();
                 $("#iDriverId").removeAttr('disabled');
-    <? if ($action != 'Edit') { ?>
+    <?php if ($action != 'Edit') { ?>
                     $("#iDriverId").attr('required', 'required');
-    <? } else { ?>
+    <?php } else { ?>
                     $("#iDriverId").removeAttr("required");
-    <? } ?>
+    <?php } ?>
             }
         } 
 

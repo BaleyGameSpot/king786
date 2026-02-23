@@ -1,4 +1,4 @@
-<?
+<?php
 /* ****************** NOTE FOR THIS SCRIPT START ****************** */
 // When $ALL_DATABASE_MAIN this is not set then all dbs taken from bbcsproducts.net which starts with bbcsprod_
 // When $ALL_TABLES_MAIN is set or not it will taken tables which starts with language_label and not language_label_other, but when this is not set then all tables chk in loop
@@ -719,7 +719,7 @@ if ((isset($_POST['submit']) && $action == "Edit") || (!empty($DeleteLabel) && $
         <title>Admin | Language <?= $action; ?></title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
     </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
@@ -727,8 +727,8 @@ if ((isset($_POST['submit']) && $action == "Edit") || (!empty($DeleteLabel) && $
 
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -743,22 +743,22 @@ if ((isset($_POST['submit']) && $action == "Edit") || (!empty($DeleteLabel) && $
                     <hr />
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     Record Updated successfully.
                                 </div><br/>
-                            <? } elseif ($success == 2) { ?>
+                            <?php } elseif ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     "Edit / Delete Record Feature" has been disabled on the Demo Admin Panel. This feature will be enabled on the main script we will provide you.
                                 </div><br/>
-                            <? } elseif ($success == 0 && $var_msg != '') { ?>
+                            <?php } elseif ($success == 0 && $var_msg != '') { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?= $var_msg; ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
                             <form method="post" name="_languages_form" id="_languages_form" action="">
                                 <input type="hidden" name="id" value="<?= $id; ?>"/>
                                 <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -840,7 +840,7 @@ if ((isset($_POST['submit']) && $action == "Edit") || (!empty($DeleteLabel) && $
         </div>
 
 
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
     </body>
     <!-- END BODY-->
 </html>

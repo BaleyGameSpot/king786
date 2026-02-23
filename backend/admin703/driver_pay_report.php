@@ -349,15 +349,15 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
     <meta content="" name="keywords"/>
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 </head>
 <!-- END  HEAD-->
 <!-- BEGIN BODY-->
 <body class="padTop53">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -468,11 +468,11 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                         <th style="text-align:center;">Total <?=$langage_lbl_admin['LBL_TRIP_TXT_ADMIN']?> Outstanding Amount Take
                             From <?=$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']?> For
                             Cash <?=$langage_lbl_admin['LBL_TRIPS_TXT_ADMIN']?>  <?php $totalC += 1; ?> </th>
-                        <? if ($hotelPanel > 0 || $kioskPanel > 0){ ?>
+                        <?php if ($hotelPanel > 0 || $kioskPanel > 0){ ?>
                             <th style="text-align:center;">Total <?=$langage_lbl_admin['LBL_TRIP_TXT_ADMIN']?> Booking Fee Take
                                 From <?=$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']?> For
                                 Cash <?=$langage_lbl_admin['LBL_TRIPS_TXT_ADMIN']?> <?php $totalC += 1; ?> </th>
-                        <? } ?>
+                        <?php } ?>
                         <th style="text-align:center;">Final Amount Pay to <?=$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']?> <?php $totalC += 1; ?> </th>
                         <th style="text-align:center;">Final Amount to take back from <?=$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']?> <?php $totalC += 1; ?> </th>
                         <th style="text-align:center;"><?=$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'];?> Payment Status <?php $totalC += 1; ?></th>
@@ -480,7 +480,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                     </tr>
                     </thead>
                     <tbody>
-                    <?
+                    <?php
                     if (scount($db_payment) > 0){
                         for ($i = 0;$i < scount($db_payment);$i++){
                             ?>
@@ -510,9 +510,9 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                                 <td align="center"><?=formateNumAsPerCurrency($db_payment[$i]['totalTaxAmt'],'');?></td>
 
                                 <td align="center"><?=formateNumAsPerCurrency($db_payment[$i]['tripoutstandingAmount'],'');?></td>
-                                <? if ($hotelPanel > 0 || $kioskPanel > 0){ ?>
+                                <?php if ($hotelPanel > 0 || $kioskPanel > 0){ ?>
                                     <td align="center"><?=formateNumAsPerCurrency($db_payment[$i]['bookingfees'],'');?></td>
-                                <? } ?>
+                                <?php } ?>
 
                                 <td align="center">
                                     <?php
@@ -533,7 +533,7 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                                     ?>
                                 </td>
                                 <td align="center">
-                                    <?
+                                    <?php
                                     if ($db_payment[$i]['eDriverPaymentStatus'] == "Unsettelled"){
                                         echo "Unsettled";
                                     }else{
@@ -547,26 +547,26 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
                                         </a>
                                     <?php } ?></td>
                                 <td>
-                                    <? if ($db_payment[$i]['eDriverPaymentStatus'] == 'Unsettelled'){ ?>
+                                    <?php if ($db_payment[$i]['eDriverPaymentStatus'] == 'Unsettelled'){ ?>
                                         <input class="validate[required]" type="checkbox"
                                                 value="<?=$db_payment[$i]['iDriverId']?>"
                                                 id="iTripId_<?=$db_payment[$i]['iDriverId']?>" name="iDriverId[]">
-                                    <? } ?>
+                                    <?php } ?>
                                 </td>
                             </tr>
-                        <? } ?>
+                        <?php } ?>
                         <tr class="gradeA">
                             <td colspan="<?php echo $totalC; ?>" align="right">
                                 <a href="javascript:void(0);" onClick="Paytodriver();" class="btn btn-primary">Mark As Settled</a>
                             </td>
                         </tr>
-                    <? }else{ ?>
+                    <?php }else{ ?>
                         <tr class="gradeA">
                             <td colspan="14" align="center">
                                 No <?=$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'];?> Payment Details Found.
                             </td>
                         </tr>
-                    <? } ?>
+                    <?php } ?>
                     </tbody>
                 </table>
             </form>
@@ -689,13 +689,13 @@ $kioskPanel = $MODULES_OBJ->isEnableKioskPanel('Yes');
         </div>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <!-- <link rel="stylesheet" href="css/select2/select2.min.css" />
 <script src="js/plugins/select2.min.js"></script> -->
 <!-- <script src="../assets/js/jquery-ui.min.js"></script> -->
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script>
     $('#dp4').datepicker()
         .on('changeDate', function (ev) {

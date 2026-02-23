@@ -1,4 +1,4 @@
-<?
+<?php
 	include_once('../common.php');
 
 	
@@ -153,7 +153,7 @@
 
 		<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 		<!-- On OFF switch -->
 		<link href="../assets/css/jquery-ui.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -164,8 +164,8 @@
 
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>
 			<!--PAGE CONTENT -->
 			<div id="content">
 				<div class="inner">
@@ -180,17 +180,17 @@
 					<hr />
 					<div class="body-div">
 						<div class="form-group">
-							<? if($success == 1) { ?>
+							<?php if($success == 1) { ?>
 								<div class="alert alert-success alert-dismissable">
 									<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 									<?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
 								</div><br/>
-								<? }elseif ($success == 2) { ?>
+								<?php }elseif ($success == 2) { ?>
 									<div class="alert alert-danger alert-dismissable">
 											 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 											 <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
 									</div><br/>
-								<? }?>
+								<?php }?>
 							<form method="post" name="_make_form" id="_make_form" action="">
 								<input type="hidden" name="id" value="<?=$id;?>"/>
 								<input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -226,7 +226,7 @@
 										</div>
 
 										
-										<? }
+										<?php }
 									} ?>
 								<div class="row">
 									<div class="col-lg-12">
@@ -243,13 +243,13 @@
 									<div class="col-lg-6">
 										
 										<input type="hidden" name="temp_order" id="temp_order" value="<?=($action == 'Edit') ? $iOrder_db : '1';?>">
-										<?
+										<?php
 											$display_numbers = ($action=="Add") ? $iDisplayOrder_max : $iOrder;
 										?>
 										<select name="iOrder" class="form-control">
-											<? for($i=1; $i <= $display_numbers; $i++){ ?>
-												<option value="<?=$i?>" <?if($i == $iOrder_db){echo "selected";}?>> -- <?=$i?> --</option>
-											<? } ?>
+											<?php for($i=1; $i <= $display_numbers; $i++){ ?>
+												<option value="<?=$i?>" <?php if($i == $iOrder_db){echo "selected";}?>> -- <?=$i?> --</option>
+											<?php } ?>
 										</select>
 										
 									</div>
@@ -337,7 +337,7 @@
 		<!--END MAIN WRAPPER -->
 
 
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 		<script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 	</body>
 	<!-- END BODY-->

@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("../common.php");
 $iCompanyId = isset($_REQUEST['iCompanyId'])?$_REQUEST['iCompanyId']:'';
 // $sql="select cmp.* from company where iCompanyId = '$iCompanyId'";
@@ -88,17 +88,17 @@ if (!empty($data_company[0]['vAvgRating']) && $data_company[0]['vAvgRating'] > 0
                         <td class="text_design">Rating</td>
                         <td><?=$Rating?></td>
                     </tr>
-                    <? if ($reg_date != ""){ ?>
+                    <?php if ($reg_date != ""){ ?>
                         <tr>
                             <td class="text_design">Registration Date</td>
                             <!-- <td>Tuesday, Aug  22<sup>nd</sup> 2017</td> -->
                             <td><?=$reg_date?></td>
                         </tr>
-                    <? } ?>
+                    <?php } ?>
                     <tr>
                         <td class="text_design">Status</td>
                         <td>
-                            <?
+                            <?php
                             $class = "";
                             if ($data_company[0]['eStatus'] == "Active"){
                                 $class = "btn-success";
@@ -117,7 +117,7 @@ if (!empty($data_company[0]['vAvgRating']) && $data_company[0]['vAvgRating'] > 0
                     <tr>
                         <td class="text_design"><?php echo $langage_lbl_admin['LBL_RESTAURANT_TXT_ADMIN']; ?> Address</td>
                         <td>
-                            <?
+                            <?php
                             $address1 = $data_company[0]['vCaddress'];
                             if ($data_company[0]['vCadress2'] != ""){
                                 $conc = ($address1 != "")?", ":"";
@@ -158,7 +158,7 @@ if (!empty($data_company[0]['vAvgRating']) && $data_company[0]['vAvgRating'] > 0
     <tr>
         <td class="text_design"><?php echo $langage_lbl_admin['LBL_RESTAURANT_TXT_ADMIN']; ?> Address</td>
         <td>
-            <?
+            <?php
             $address1 = $data_company[0]['vCaddress'];
             if ($data_company[0]['vCadress2'] != ""){
                 $conc = ($address1 != "")?", ":"";
@@ -186,35 +186,35 @@ if (!empty($data_company[0]['vAvgRating']) && $data_company[0]['vAvgRating'] > 0
     </tr>
 
     <?php } ?>
-    <? if ($data_company[0]['vVat'] != ""){ ?>
+    <?php if ($data_company[0]['vVat'] != ""){ ?>
         <tr>
             <td class="text_design">Vat Number</td>
             <td>
                 <?=$data_company[0]['vVat'];?>
             </td>
         </tr>
-    <? } ?>
+    <?php } ?>
 
     </tbody>
 </table>
 </div>
 <div style="margin-top: 20px; text-align: right;">
 
-    <? if (!empty($_REQUEST['editTrip'])){
+    <?php if (!empty($_REQUEST['editTrip'])){
         if ($_REQUEST['editTrip'] == "Yes"){ ?>
-        <? }
+        <?php }
     }else if (!empty($_REQUEST['editOrder'])){
         if ($_REQUEST['editOrder'] == "Yes"){ ?>
             <a href="allorders.php?action=search&type=allorders&searchCompany=<?=$iUserId;?>" class="btn btn-primary btn-ok" target="blank">View Order Details</a>
-        <? }
+        <?php }
     }else{ ?>
         <?php if ($eBuyAnyService == "No"){ ?>
 
             <a href="store_action.php?id=<?=$iCompanyId;?>" class="btn btn-primary btn-ok" target="blank">Edit</a>
 
-        <? } ?>
+        <?php } ?>
 
-    <? } ?>
+    <?php } ?>
 
     <button type="button" class="btn btn-danger btn-ok" data-dismiss="modal">Close</button>
 </div>

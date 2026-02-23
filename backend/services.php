@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("common.php");
 $meta_arr = $STATIC_PAGE_OBJ->FetchSeoSetting(2);
 $sql = "SELECT * from language_master where eStatus = 'Active'";
@@ -15,7 +15,7 @@ $vcatdata = $obj->MySQLSelect($catquery);
 <?php if ($APP_TYPE == 'Ride-Delivery-UberX') { ?>
     <link rel="stylesheet" type="text/css" href="assets/css/home-new/home-new.css">
     <link rel="stylesheet" type="text/css" href="assets/css/home-new/home-new-media.css">
-<? } ?>
+<?php } ?>
 <script type="text/javascript" src="assets/js/amazingcarousel.js"></script>
 <script type="text/javascript" src="assets/js/initcarousel.js"></script>
 

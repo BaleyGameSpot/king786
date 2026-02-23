@@ -285,7 +285,7 @@ $db_select_data = $obj->MySQLSelect($vehicle_type_sql);
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="css/bootstrap-select.css" rel="stylesheet" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <!-- On OFF switch -->
         <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -312,8 +312,8 @@ $db_select_data = $obj->MySQLSelect($vehicle_type_sql);
     <body class="padTop53">
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -327,20 +327,20 @@ $db_select_data = $obj->MySQLSelect($vehicle_type_sql);
                     </div>
                     <hr />
                     <?php include('valid_msg.php'); ?>
-                    <? if ($success == 2) { ?>
+                    <?php if ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable msgs_hide">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div><br/>
-                    <? } ?>
+                    <?php } ?>
                     <div class="body-div">
                         <div class="form-group location-wise-box">
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable msgs_hide">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
                             <form method="post" action="" enctype="multipart/form-data" id="deliveryChargeForm">
                                 <input type="hidden" name="id" value="<?= $id; ?>"/>
                                 <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -361,8 +361,8 @@ $db_select_data = $obj->MySQLSelect($vehicle_type_sql);
                                                 </div>
                                                 
                                                 <div class="col-lg-3">
-                                                    <input type="text" class="form-control distance-range-input" name="iDistanceRangeTo"  id="iDistanceRangeTo"  required="required" placeholder="<?= 'Distance To ('.$DEFAULT_DISTANCE_UNIT.')' ?>" <?php if($iDistanceRangeTo == '100000000'){ ?> value="&#8734" readonly<? } else { ?> value="<?=
-                                                    $iDistanceRangeTo; ?>" <? } ?> <?= ($action == "Edit") ? 'disabled="disabled"' : '' ?>>
+                                                    <input type="text" class="form-control distance-range-input" name="iDistanceRangeTo"  id="iDistanceRangeTo"  required="required" placeholder="<?= 'Distance To ('.$DEFAULT_DISTANCE_UNIT.')' ?>" <?php if($iDistanceRangeTo == '100000000'){ ?> value="&#8734" readonly<?php } else { ?> value="<?=
+                                                    $iDistanceRangeTo; ?>" <?php } ?> <?= ($action == "Edit") ? 'disabled="disabled"' : '' ?>>
                                                 </div>
                                             </div>
                                             <div class="distance-range" style="align-items: unset;">
@@ -399,10 +399,10 @@ $db_select_data = $obj->MySQLSelect($vehicle_type_sql);
                                     <div class="col-lg-6">
                                         <select class="form-control selectpicker"  name='iVehicleTypeId' id="iVehicleTypeId" required="required" data-live-search="true" <?= ($action == "Edit") ? 'disabled' : '' ?>>
                                             <option value="">Select Vehicle Type</option>
-                                            <? foreach ($db_select_data as $k => $val) { ?>
+                                            <?php foreach ($db_select_data as $k => $val) { ?>
                                                     <option value="<?= $val['iVehicleTypeId']; ?>"
                                                     <?php if ($val['iVehicleTypeId'] == $iVehicleTypeId) { echo "selected"; } ?>><?= $val['vVehicleType_'.$_SESSION['sess_lang']] . ' (' . $val['vLocationName'] . ')' ?></option>
-                                            <? } ?>
+                                            <?php } ?>
                                         </select>
                                         <div class="iVehicleTypeId-error"></div>
                                     </div>
@@ -465,7 +465,7 @@ $db_select_data = $obj->MySQLSelect($vehicle_type_sql);
             <!--END PAGE CONTENT -->
         </div>
         <!--END MAIN WRAPPER -->
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
         <script src="js/bootstrap-select.js"></script>
         <script>

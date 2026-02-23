@@ -247,37 +247,37 @@ if ($action = 'document' && isset($_POST['doc_type'])) {
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?= $var_msg; ?>
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
 
-                    <? if ($success == 2) { ?>
+                    <?php if ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if ($success == 3) { ?>
+                    <?php } ?>
+                    <?php if ($success == 3) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                             <?= $var_msg; ?>
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
 
 
-                    <? if ($success == 4) { ?>
+                    <?php if ($success == 4) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             Document Approved Successfully..
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <input type="hidden" name="id" value="<?= $id; ?>"/>
                     <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
                     <input type="hidden" name="backlink" id="backlink" value="company.php"/>
@@ -455,7 +455,7 @@ if ($action = 'document' && isset($_POST['doc_type'])) {
         });
     }
 </script>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <link rel="stylesheet" type="text/css" media="screen"
       href="css/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
 <script type="text/javascript" src="js/moment.min.js"></script>

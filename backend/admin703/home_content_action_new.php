@@ -390,9 +390,9 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
                                                         <label>Home First Left DeliveryAll Image<span class="red"> *</span></label>
                                                 </div>
                                                 <div class="col-lg-6">
-                                        <? //if($third_mid_image_three1 != '') {   ?>
+                                        <?php //if($third_mid_image_three1 != '') {   ?>
                                                         <img src="<?= $tconfig["tsite_upload_apptype_page_images"] . $template . "/" . $third_mid_image_three1; ?>" class="innerbg_image"/>
-                                        <? //}   ?>
+                                        <?php //}   ?>
                                                         <input type="file" class="form-control" name="third_mid_image_three1"  id="third_mid_image_three1" accept=".png,.jpg,.jpeg,.gif">
                                                         <br/>
                                                         <span class="notes">[Note: For Better Resolution Upload only image size of 1920px * 844px.]</span>

@@ -1,4 +1,4 @@
-<?
+<?php
 	include_once('../common.php');
 
 	$AUTH_OBJ->checkMemberAuthentication();
@@ -111,7 +111,7 @@
 		<link href="css/bootstrap-select.css" rel="stylesheet" />
 		<link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-		<? include_once('global_files.php');?>
+		<?php include_once('global_files.php');?>
 		<!-- On OFF switch -->
 		<link href="../assets/css/jquery-ui.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -122,8 +122,8 @@
 
 		<!-- MAIN WRAPPER -->
 		<div id="wrap">
-			<? include_once('header.php'); ?>
-			<? include_once('left_menu.php'); ?>
+			<?php include_once('header.php'); ?>
+			<?php include_once('left_menu.php'); ?>
 			<!--PAGE CONTENT -->
 			<div id="content">
 				<div class="inner">
@@ -138,17 +138,17 @@
 					<hr />
 					<div class="body-div">
 						<div class="form-group">
-							<? if($success == 1) { ?>
+							<?php if($success == 1) { ?>
 								<div class="alert alert-success alert-dismissable">
 									<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 									Record Updated successfully.
 								</div><br/>
-								<? }elseif ($success == 2) { ?>
+								<?php }elseif ($success == 2) { ?>
 									<div class="alert alert-danger alert-dismissable">
 											 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 											 "Edit / Delete Record Feature" has been disabled on the Demo Admin Panel. This feature will be enabled on the main script we will provide you.
 									</div><br/>
-								<? }?>
+								<?php }?>
 							<form method="post" action="">
 								<input type="hidden" name="id" value="<?=$id;?>"/>
 								<div class="row">
@@ -253,7 +253,7 @@
 		<!--END MAIN WRAPPER -->
 
 
-		<? include_once('footer.php');?>
+		<?php include_once('footer.php');?>
 		<script type="text/javascript">
 
 

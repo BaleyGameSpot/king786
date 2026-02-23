@@ -195,7 +195,7 @@ if(scount($WebValues) > 0 || scount($AndroidUserValues) > 0 || scount($AndroidDr
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
     <!-- GLOBAL STYLES -->
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/new_main.css"/>
     <link rel="stylesheet" href="css/admin_new/dashboard.css">

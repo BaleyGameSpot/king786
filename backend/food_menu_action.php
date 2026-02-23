@@ -205,12 +205,12 @@ if($action == 'Add'){
           </a></h2>
           <!-- login in page -->
           <div class="food-action-page">
-            <? if ($success == 1) {?>
+            <?php if ($success == 1) {?>
               <div class="alert alert-success alert-dismissable">
                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                 <?php echo $langage_lbl['LBL_Record_Updated_successfully']; ?>
               </div>
-              <?}else if($success == 2){ ?>
+              <?php }else if($success == 2){ ?>
               <div class="alert alert-danger alert-dismissable">
                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                 <?php echo $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
@@ -233,7 +233,7 @@ if($action == 'Add'){
                   <select name="iCompanyId" class="form-control" id="iCompanyId" required  onchange="changeDisplayOrderCompany(this.value,'<?php  echo $id; ?>')">
                       <option value="" >Select Restaurant</option>
                        <?php foreach($db_company as $dbc) { ?>
-                       <option value="<?php echo $dbc['iCompanyId']; ?>"<?if($dbc['iCompanyId'] == $iCompanyId){?>selected<? } ?>><?php echo $dbc['vCompany'] ?></option>
+                       <option value="<?php echo $dbc['iCompanyId']; ?>"<?php if($dbc['iCompanyId'] == $iCompanyId){?>selected<?php } ?>><?php echo $dbc['vCompany'] ?></option>
                        <?php } ?>
                   </select>
                 </div>
@@ -241,7 +241,7 @@ if($action == 'Add'){
               <?php } else { ?>
                 <input type="hidden" id="iCompanyId" name="iCompanyId" value="<?php echo $sessioniCompanyId; ?>" />
               <?php } ?>
-              <? if($count_all > 0) {
+              <?php if($count_all > 0) {
               for($i=0;$i<$count_all;$i++) {
               $vCode = $db_master[$i]['vCode'];
               $vTitle = $db_master[$i]['vTitle'];
@@ -259,7 +259,7 @@ if($action == 'Add'){
                   <input type="text" class="form-control" name="<?=$vValue;?>" id="<?=$vValue;?>" value="<?=$$vValue;?>" <?=$required;?>> 
                 </div>
               </div>
-            <? }
+            <?php }
             } ?>
             <div class="row">
               <div class="col-xs-12">
@@ -318,7 +318,7 @@ if($action == 'Add'){
     <script type="text/javascript" src="<?php echo $tconfig["tsite_url_main_admin"]?>js/validation/jquery.validate.min.js" ></script>
     <?php if($lang != 'en') { ?>
       <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-      <? include_once('otherlang_validation.php');?>
+      <?php include_once('otherlang_validation.php');?>
     <?php } ?>
     <script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
     <script>

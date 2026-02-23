@@ -264,15 +264,15 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                     <td align="center" width="10%"><img src="<?= $tconfig["tsite_url"].'resizeImg.php?w=40&src='.$tconfig["tsite_upload_genie_package_type_images"] . $data_drv[$i]['vImage']; ?>"></td>
                                                     <td><?= $data_drv[$i]['tTitle']; ?></td>
                                                     <td width="10%" align="center">
-                                                        <? if ($iDisplayOrder != 1 && $i > 0) { ?>
+                                                        <?php if ($iDisplayOrder != 1 && $i > 0) { ?>
                                                             <a href="genie_package_type.php?id=<?= $iPackageTypeId; ?>&flag=up&eBuyAnyService=<?= $eBuyAnyService ?>" class="btn btn-warning">
                                                                 <i class="icon-arrow-up"></i>
                                                             </a>
-                                                        <? } if ($iDisplayOrder != scount($data_drv) && $i < scount($data_drv) - 1) { ?>
+                                                        <?php } if ($iDisplayOrder != scount($data_drv) && $i < scount($data_drv) - 1) { ?>
                                                             <a href="genie_package_type.php?id=<?= $iPackageTypeId; ?>&flag=down&eBuyAnyService=<?= $eBuyAnyService ?>" class="btn btn-warning">
                                                                 <i class="icon-arrow-down"></i>
                                                             </a>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                     </td>
                                                     <td align="center" style="text-align:center;">
                                                         <?php

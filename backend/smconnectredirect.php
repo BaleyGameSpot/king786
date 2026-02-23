@@ -22,13 +22,13 @@ $eSignUpType = (isset($_REQUEST['eSignUpType'])) ? $_REQUEST['eSignUpType'] : 'G
 			//alert("Hellosdd");return false;
       <?php if($eSignUpType == "Facebook"){?>
       checklogin();
-      <?}?>
+      <?php }?>
        <?php if($eSignUpType == "Google"){?>
       checkgooglelogin();
-      <?}?>
+      <?php }?>
       <?php if($eSignUpType == "Twitter"){?>
       checktwitterlogin();
-      <?}?>
+      <?php }?>
 	 });
 </script>
   </head>

@@ -101,7 +101,7 @@ $script = "booking";
             <!-- End: Top Menu-->
             <!--<div class="page-contant1">-->
             <div class="page-contant-inner1">
-                <? include_once('booking/cx-add_booking.php'); ?>
+                <?php include_once('booking/cx-add_booking.php'); ?>
             </div>
             <!--</div>-->
             <!-- footer part -->

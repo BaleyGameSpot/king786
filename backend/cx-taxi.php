@@ -121,7 +121,7 @@ if(ENABLE_DYNAMIC_CREATE_PAGE!="Yes") {
         <!-- First Section -->
 		<?php include_once("top/header.php");?>
         <!-- End: First Section -->
-        <? } ?>
+        <?php } ?>
 <!-- *************banner section start************* -->
 <section class="banner-section taxi-app bannermenu">
     <div class="tab-row-holding">
@@ -360,7 +360,7 @@ $tMessage_link2 = str_replace($key_arr, $val_arr, $tMessage_link2);
     </div>
 </article>
 <!-- *************earn section section end************* -->
-<?  if(ENABLE_DYNAMIC_CREATE_PAGE!="Yes") { ?>
+<?php  if(ENABLE_DYNAMIC_CREATE_PAGE!="Yes") { ?>
  <!-- home page end-->
     <!-- footer part -->
     <?php include_once('footer/footer_home.php');?>
@@ -375,7 +375,7 @@ $tMessage_link2 = str_replace($key_arr, $val_arr, $tMessage_link2);
 <!-- End: Footer Script -->
 </body>
 </html>
-<? } ?>
+<?php } ?>
 <script>
 	var autocomplete_from;
 	var autocomplete_to;

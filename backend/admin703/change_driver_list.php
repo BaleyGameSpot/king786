@@ -65,7 +65,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<? for ($i = 0; $i < scount($data_drv); $i++) { ?>
+				<?php for ($i = 0; $i < scount($data_drv); $i++) { ?>
 					<tr class="gradeA" >
 						<td width="10%"><?= clearName($data_drv[$i]['vName'] . ' ' . $data_drv[$i]['vLastName']); ?></td>
 						<td width="10%"><?= $data_drv[$i]['vCompany']; ?></td>
@@ -77,7 +77,7 @@
 						<td width="8%" align="center">
 							 <?php if($data_drv[$i]['eDefault']!='Yes'){?>
 							
-								<? if($data_drv[$i]['eStatus'] == 'active') {
+								<?php if($data_drv[$i]['eStatus'] == 'active') {
 										$dis_img = "img/active-icon.png";
 									}else if($data_drv[$i]['eStatus'] == 'inactive'){
 										 $dis_img = "img/inactive-icon.png";
@@ -89,7 +89,7 @@
 								  }
 								  else
 								  {
-									?><img src="img/active-icon.png" alt="image"><?
+									?><img src="img/active-icon.png" alt="image"><?php
 									}
 								  ?>
 						</td>
@@ -104,7 +104,7 @@
 								<a href="<?= $newUrl2; ?>" data-toggle="tooltip" title="Edit <?=$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'];?> Document">
 									<img src="img/edit-doc.png" alt="Edit Document" >
 								</a>
-							<? }?>
+							<?php }?>
 						</td>
 						
 						<td width="20%">
@@ -118,7 +118,7 @@
 								<a href="<?= $newUrl; ?>" data-toggle="tooltip" title="Edit <?=$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'];?>">
 									<img src="img/edit-icon.png" alt="Edit">
 								</a>
-							<? }?>
+							<?php }?>
 							
 							<a href="driver.php?iDriverId=<?= $data_drv[$i]['iDriverId']; ?>&status=inactive" data-toggle="tooltip" title="Active <?=$langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'];?>">
 								<img src="img/active-icon.png" alt="<?php echo $data_drv[$i]['eStatus']; ?>" >
@@ -135,9 +135,9 @@
 											<img src="img/delete-icon.png" alt="Delete">
 										</button>
 								</form>
-							<? }else{?>
+							<?php }else{?>
 									<label></label>
-							<? } ?>	
+							<?php } ?>	
 							
 							<?php if($data_drv[$i]['eStatus']!="Deleted"){?>
 								<form name="reset_form" id="reset_form" method="post" action="" onSubmit="return confirm('Are you sure ? You want to reset <?= clearName($data_drv[$i]['vName']." ".$data_drv[$i]['vLastName']); ?> account?')" class="margin0">
@@ -147,13 +147,13 @@
 										<img src="img/reset-icon.png" alt="Reset">
 									</button>
 								</form>
-							<? }else{?>
+							<?php }else{?>
 									<label></label>
-							<? } ?>
+							<?php } ?>
 						</td>
 						
 					</tr>
-				<? } ?>
+				<?php } ?>
 			</tbody>
 		</table>
 <script>

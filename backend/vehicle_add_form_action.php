@@ -73,7 +73,7 @@ if($action == 'Edit') {
 	<meta content="" name="author" />
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-    <? include_once('global_files.php');?>
+    <?php include_once('global_files.php');?>
 	<!-- On OFF switch -->
 	<link href="assets/css/jquery-ui.css" rel="stylesheet" />
 	<link rel="stylesheet" href="assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />	
@@ -84,8 +84,8 @@ if($action == 'Edit') {
 
     <!-- MAIN WRAPPER -->
     <div id="wrap">
-		<? include_once('header.php'); ?>
-		<? include_once('left_menu.php'); ?>       
+		<?php include_once('header.php'); ?>
+		<?php include_once('left_menu.php'); ?>       
         <!--PAGE CONTENT -->
          <div id="content">
             <div class="inner">
@@ -100,12 +100,12 @@ if($action == 'Edit') {
 				<hr />	
                 <div class="body-div">
 					<div class="form-group">
-						<? if($success == 1) { ?>
+						<?php if($success == 1) { ?>
 						<div class="alert alert-success alert-dismissable">
 							<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 							Record Updated successfully.
 						</div><br/>
-						<? } ?>
+						<?php } ?>
 						<form method="post" action="">
 							<input type="hidden" name="id" value="<?=$id;?>"/>
 							<div class="row">
@@ -115,9 +115,9 @@ if($action == 'Edit') {
 								<div class="col-lg-6">
 									<select class="form-control" name="iMakeId" onchange="get_model(this.value);">
 										<option>CHOOSE VEHICLE MAKE</option>
-										<? for($j=0;$j<scount($db_make);$j++){ ?>
+										<?php for($j=0;$j<scount($db_make);$j++){ ?>
 										  <option value="<?=$db_make[$j]['iMakeId'];?>"><?=$db_make[$j]['vMake'];?></option>
-										<? } ?>
+										<?php } ?>
 									</select>
 									<input type="text" class="form-control" name="vMake"  id="vMake" value="<?=$vMake;?>" placeholder="Make Label" required>
 								</div>
@@ -147,7 +147,7 @@ if($action == 'Edit') {
      <!--END MAIN WRAPPER -->
      
 
-	<? include_once('footer.php');?>
+	<?php include_once('footer.php');?>
 	<script src="assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 </body>
 	<!-- END BODY-->    

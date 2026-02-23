@@ -543,11 +543,11 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                     <?php if ($data_drv[$i]['eRedeemed'] == 'Yes' || ($data_drv[$i]['eCreatedBy'] == 'Admin' && in_array($data_drv[$i]['eUserType'], ['DriverSpecific', 'UserSpecific']))) { ?>
                                                         <!-- <a href="javascript:void(0);"
                                                            onclick="viewReceiverDetails(this)" class="btn btn-info"
-                                                           data-vReceiverPhoneCode="<? /*= $tReceiverDetails['vReceiverPhoneCode']; */ ?>"
-                                                           data-vReceiverPhone="<? /*= $tReceiverDetails['vReceiverPhone']; */ ?>"
-                                                           data-tReceiverMessage="<? /*= $tReceiverDetails['tReceiverMessage']; */ ?>"
-                                                           data-tReceiverEmail="<? /*= $tReceiverDetails['tReceiverEmail']; */ ?>"
-                                                           data-tReceiverName="<? /*= $tReceiverDetails['tReceiverName']; */ ?>">
+                                                           data-vReceiverPhoneCode="<?php /*= $tReceiverDetails['vReceiverPhoneCode']; */ ?>"
+                                                           data-vReceiverPhone="<?php /*= $tReceiverDetails['vReceiverPhone']; */ ?>"
+                                                           data-tReceiverMessage="<?php /*= $tReceiverDetails['tReceiverMessage']; */ ?>"
+                                                           data-tReceiverEmail="<?php /*= $tReceiverDetails['tReceiverEmail']; */ ?>"
+                                                           data-tReceiverName="<?php /*= $tReceiverDetails['tReceiverName']; */ ?>">
                                                             Redeemed By
                                                         </a>-->
                                                         <?php if ($tReceiverDetails['usertype'] == 'User') {
@@ -780,7 +780,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
 <?php
 include_once('footer.php');
 ?>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script src="../assets/js/modal_alert.js"></script>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>

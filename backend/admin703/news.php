@@ -180,12 +180,12 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                 <option value="rider" <?php if ($searchusertype == 'rider') {
                                     echo 'selected';
                                 } ?>><?php echo $langage_lbl_admin['LBL_RIDER']; ?></option>
-                                <? if (DELIVERALL == "Yes") { ?>
+                                <?php if (DELIVERALL == "Yes") { ?>
                                     <option value="company" <?php if ($searchusertype == 'company') {
                                         echo 'selected';
                                     } ?>>Store/ Restaurant
                                     </option>
-                                <? } ?>
+                                <?php } ?>
                             </select>
                         </td>
                         <td width="12%" class="estatus_options" id="eStatus_options">

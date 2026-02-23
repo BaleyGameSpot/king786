@@ -260,12 +260,12 @@ foreach ($TotalOrderData as $key => $value) {
 						<p><?= $langage_lbl['LBL_STEP2_DL']; ?></p>
 						<p><?= $langage_lbl['LBL_HOWEVER_IN_REAL_SYSTEM']; ?></p>
 					</div>
-				<? } else { ?>
+				<?php } else { ?>
 					<!--<div class="demo-warning">
 						<p><?= $langage_lbl['LBL_WE_SEE_YOU_HAVE_REGISTERED_AS_A_COMPANY_DL']; ?>
-						<? if ($db_user[0]['vCerti'] == '' || $db_user[0]['vNoc'] == ''){ ?>
+						<?php if ($db_user[0]['vCerti'] == '' || $db_user[0]['vNoc'] == ''){ ?>
 							<?= $langage_lbl['LBL_KINDLY_PROVIDE_BELOW']; ?>
-						<? } ?></p>
+						<?php } ?></p>
 						<p><?= $langage_lbl['LBL_STEP1_DL']; ?></p>
 						<p><?= $langage_lbl['LBL_STEP3_DL']; ?></p>
 						<p><?= $langage_lbl['LBL_STEP2_DL']; ?></p>
@@ -273,9 +273,9 @@ foreach ($TotalOrderData as $key => $value) {
 					<?php if ((scount($db_userdoc[0]['masterid'])!=scount($db_userdoc[0]['masterid_list'])) || $TotalItems==0 || $db_user[0]['eLogout']=="Yes") { ?>
 					<div class="demo-warning">
 						<p><?= $langage_lbl['LBL_WE_SEE_YOU_HAVE_REGISTERED_AS_A_COMPANY_DL']; ?>
-						<? if ($db_user[0]['vCerti'] == '' || $db_user[0]['vNoc'] == ''){ ?>
+						<?php if ($db_user[0]['vCerti'] == '' || $db_user[0]['vNoc'] == ''){ ?>
 							<?= $langage_lbl['LBL_KINDLY_PROVIDE_BELOW']; ?>
-						<? } ?></p>
+						<?php } ?></p>
 						<?php if (scount($db_userdoc[0]['masterid'])!=scount($db_userdoc[0]['masterid_list'])) { ?><p><?= $langage_lbl['LBL_STEP1_DL']; ?></p><?php }  ?>
 						<?php if ($TotalItems==0 && scount($db_userdoc[0]['masterid'])!=scount($db_userdoc[0]['masterid_list'])) { ?>
 							<p><?= $langage_lbl['LBL_STEP3_DL']; ?></p>
@@ -322,7 +322,7 @@ foreach ($TotalOrderData as $key => $value) {
 								<b><a data-toggle="modal" data-target="#uiModal_4"><i class="fa fa-pencil" aria-hidden="true"></i></a></b>
 							</div>
 							<div class="driver-profile-info">
-								<h3><?= cleanall(htmlspecialchars($db_user[0]['vCompany']));?>&nbsp;&nbsp;<?if($db_user[0]['vAvgRating'] != 0){?><b style="font-size: 14px;"><?= $db_user[0]['vAvgRating']?> (<img src="assets/img/star.jpg" alt="">)</b><?php } ?></h3>
+								<h3><?= cleanall(htmlspecialchars($db_user[0]['vCompany']));?>&nbsp;&nbsp;<?php if($db_user[0]['vAvgRating'] != 0){?><b style="font-size: 14px;"><?= $db_user[0]['vAvgRating']?> (<img src="assets/img/star.jpg" alt="">)</b><?php } ?></h3>
 								
 								<p><?= $db_user[0]['vEmail'] ?></p>
 								<?php if($db_user[0]['vCode'] != '') {?>
@@ -347,7 +347,7 @@ foreach ($TotalOrderData as $key => $value) {
 									<div class="driver-profile-mid-inner-a">
 										<div class="profile-icon"><i class="fa fa-dot-circle-o" aria-hidden="true"></i></div>
 										<h3><?= $langage_lbl['LBL_TOTAL_ORDERS']; ?></h3>
-										<p style="font-size: 20px;font-weight: bold;"><? echo $TotalOrderscount;?></p>
+										<p style="font-size: 20px;font-weight: bold;"><?php echo $TotalOrderscount;?></p>
 									</div>
 								</li>
 								<li class='company-profile-mid-part-details'>
@@ -441,7 +441,7 @@ foreach ($TotalOrderData as $key => $value) {
 												<?php $img_path = $tconfig["tsite_upload_images_compnay"]; 
 												if (($db_user[0]['vImage'] == 'NONE' || $db_user[0]['vImage'] == '') || !file_exists($tconfig["tsite_upload_images_compnay_path"]. '/' . $_SESSION['sess_iUserId'] . '/2_' . $db_user[0]['vImage'])) { ?>
 													<img src="assets/img/profile-user-img.png" alt="">
-													<? } else { ?>
+													<?php } else { ?>
 														<img src = "<?= $img_path . '/' . $_SESSION['sess_iUserId'] . '/2_' . $db_user[0]['vImage'] ?>" style="height:150px;"/>
 												<?php } ?>
 											</div>
@@ -514,7 +514,7 @@ foreach ($TotalOrderData as $key => $value) {
 	<script type="text/javascript" src="<?= $tconfig["tsite_url_main_admin"]?>js/validation/jquery.validate.min.js" ></script>
 	<?php if($lang != 'en') { ?>
 	<!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-	<? include_once('otherlang_validation.php');?>
+	<?php include_once('otherlang_validation.php');?>
 	<?php } ?>
 	<script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
 	<!-- End: Footer Script -->

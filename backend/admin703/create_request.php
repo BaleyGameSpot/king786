@@ -176,8 +176,8 @@ if ($action == 'Edit') {
     </style>
     <body class="padTop53">
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <div id="content">
                 <div class="inner" style="min-height: 700px;">
                     <div class="row">
@@ -255,7 +255,7 @@ if ($action == 'Edit') {
                                 <span class="col0">
                                     <select name="vCountry" id="vCountry" class="form-control form-control-select" onChange="changeCode(this.value);" required>
                                         <!-- <option value="">Select Country</option> -->
-                                        <? for ($i = 0; $i < scount($db_countryData); $i++) { ?>
+                                        <?php for ($i = 0; $i < scount($db_countryData); $i++) { ?>
                                             <option value="<?= $db_countryData[$i]['vCountryCode'] ?>" 
                                             <?php
                                             if ($db_countryData[$i]['vCountryCode'] == $vCountry_rider) {
@@ -264,7 +264,7 @@ if ($action == 'Edit') {
                                             ?> >
                                                         <?= $db_countryData[$i]['vCountry']; ?>
                                             </option>
-                                        <? } ?>
+                                        <?php } ?>
                                     </select>
                                 </span>
                                 <span class="col6">
@@ -381,7 +381,7 @@ if ($action == 'Edit') {
                 <!--END PAGE CONTENT -->
 
             </div>
-            <? include_once('footer.php'); ?>
+            <?php include_once('footer.php'); ?>
             <div style="clear:both;"></div>
 
             <!--Wallet Low Balance-->
@@ -947,11 +947,11 @@ if ($action == 'Edit') {
                                             // }
                                         });
 
-<? if ($iVehicleTypeId != "") { ?>
+<?php if ($iVehicleTypeId != "") { ?>
                                             var iVehicleTypeId = '<?= $iVehicleTypeId ?>';
                                             getFarevalues(iVehicleTypeId);
                                             showAsVehicleType(iVehicleTypeId);
-<? } ?>
+<?php } ?>
 
                                     }
                                 }

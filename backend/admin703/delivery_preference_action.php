@@ -152,7 +152,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                 <title><?= $SITE_NAME ?> |  <?=  $langage_lbl_admin['LBL_DELIVERY_PREF'].' '.$action; ?></title>
                 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
                 <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-                <? include_once('global_files.php'); ?>
+                <?php include_once('global_files.php'); ?>
                 <!-- On OFF switch -->
                 <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
                 <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -174,7 +174,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
             <body class="padTop53 " >
                 <!-- MAIN WRAPPER -->
                 <div id="wrap">
-                    <?
+                    <?php
                         include_once('header.php');
                         include_once('left_menu.php');
                         ?>
@@ -192,32 +192,32 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                             <hr />
                             <div class="body-div">
                                 <div class="form-group">
-                                    <? if ($success == 1) { ?>
+                                    <?php if ($success == 1) { ?>
                                         <div class="alert alert-success alert-dismissable msgs_hide">
                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                         </div>
                                         <br/>
-                                    <? } elseif ($success == 2) { ?>
+                                    <?php } elseif ($success == 2) { ?>
                                         <div class="alert alert-danger alert-dismissable ">
                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                         </div>
                                         <br/>
-                                    <? } else if ($success == 3) { ?>
+                                    <?php } else if ($success == 3) { ?>
                                         <div class="alert alert-danger alert-dismissable">
                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                             <?php echo $_REQUEST['varmsg']; ?> 
                                         </div>
                                         <br/> 
-                                    <? } ?>
-                                    <? if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
+                                    <?php } ?>
+                                    <?php if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != Null) { ?>
                                         <div class="alert alert-danger alert-dismissable">
                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                             Record  Not Updated .
                                         </div>
                                         <br/>
-                                    <? } ?>                   
+                                    <?php } ?>                   
                                     <form id="_delivery_preference" name="_delivery_preference" method="post" action="" enctype="multipart/form-data">
                                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                                         <input type="hidden" name="eContactLess" value="<?= $eContactLess; ?>"/>
@@ -460,8 +460,8 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                         <input type="text" class="form-control" name="<?= $lableName; ?>" id="<?= $lableName; ?>" value="<?= $userEditDataArr[$lableName]; ?>" placeholder="<?= $vTitle; ?> Value" <?= $required; ?>>
                                                         <div class="text-danger" id="<?= $lableName.'_error'; ?>" style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                                     </div>
-                                                    <? if ($vCode == $default_lang && scount($db_master) > 1) { ?>
-                                                    <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('<? echo $txtBoxNameArr[$l].'_'; ?>', '<?= $default_lang ?>');">Convert To All Language</button>
+                                                    <?php if ($vCode == $default_lang && scount($db_master) > 1) { ?>
+                                                    <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('<?php echo $txtBoxNameArr[$l].'_'; ?>', '<?= $default_lang ?>');">Convert To All Language</button>
                                                     <?php } ?>
                                                 </div>
                                             <?php } ?>
@@ -474,7 +474,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                                                     <div class="text-danger pull-left" id="<?= $descVal.'_error'; ?>" style="display: none;"><?= $langage_lbl_admin['LBL_REQUIRED'] ?></div>
                                                     <div class="desc_counter pull-right" style="margin-top: 5px">250/250</div>
                                                 </div>
-                                                <? if ($vCode == $default_lang && scount($db_master) > 1) { ?>
+                                                <?php if ($vCode == $default_lang && scount($db_master) > 1) { ?>
                                                 <div class="col-md-6 col-sm-6">
                                                     <button type ="button" name="allLanguage" id="allLanguage" class="btn btn-primary" onClick="getAllLanguageCode('tDescription_', '<?= $default_lang ?>');">Convert To All Language</button>
                                                 </div>
@@ -581,7 +581,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                         <span>Language Translation is in Process. Please Wait...</span>                       
                     </div>
                 </div>
-                <?
+                <?php
                     include_once('footer.php');
                     ?>  
                 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>

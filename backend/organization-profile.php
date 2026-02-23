@@ -165,13 +165,13 @@ for ($i = 0; $i < scount($db_lang); $i++) {
                                             <!--onChange="validate_email(this.value,'<?php echo $id; ?>')"-->
                                             <div class="required-label" id="emailCheck"></div>
                                         </span>
-                                    <? } else { ?>
+                                    <?php } else { ?>
                                         <span>
                                             <label><?= $langage_lbl['LBL_Phone_Number']; ?><span class="red">*</span></label>
                                             <input type="text" class="input-phNumber1" id="code" name="vCode" value="<?= $db_user[0]['vCode'] ?>" readonly >
                                             <input name="vPhone" id="vPhone" type="text" value="<?= $db_user[0]['vPhone'] ?>" class="edit-profile-detail-form-input input-phNumber2" placeholder="<?= $langage_lbl['LBL_Phone_Number']; ?>"  title="Please enter proper phone number." required/>
                                         </span>
-                                    <? } ?>
+                                    <?php } ?>
                                     <span>
                                         <label><?= $langage_lbl['LBL_SELECT_CONTRY']; ?><span class="red">*</span></label>
                                          <?php 
@@ -196,14 +196,14 @@ for ($i = 0; $i < scount($db_lang); $i++) {
                                             <input type="text" class="input-phNumber1" id="code" name="vCode" value="<?= $db_user[0]['vCode'] ?>" readonly >
                                             <input name="vPhone" id="vPhone" type="text" value="<?= $db_user[0]['vPhone'] ?>" class="edit-profile-detail-form-input input-phNumber2" placeholder="<?= $langage_lbl['LBL_Phone_Number']; ?>"  title="Please enter proper phone number." required/>
                                         </span>
-                                    <? } else { ?>
+                                    <?php } else { ?>
                                         <span>
                                             <label><?= $langage_lbl['LBL_PROFILE_YOUR_EMAIL_ID']; ?></label>
                                             <input type="email" id="in_email" class="edit-profile-detail-form-input" placeholder="<?= $langage_lbl['LBL_PROFILE_YOUR_EMAIL_ID']; ?>" value = "<?= $db_user[0]['vEmail'] ?>" name="email" <?= isset($db_user[0]['vEmail']) ? '' : ''; ?> >
                                             <!--onChange="validate_email(this.value,'<?php echo $id; ?>')"-->
                                             <div class="required-label" id="emailCheck"></div>
                                         </span>
-                                    <? } ?>
+                                    <?php } ?>
                                  
                                     <span>
                                         <label><?= $langage_lbl['LBL_SELECT_CURRENCY']; ?><span class="red">*</span></label>
@@ -243,7 +243,7 @@ for ($i = 0; $i < scount($db_lang); $i++) {
                                     <div class="driver-profile-mid-inner-a">
                                         <div class="profile-icon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></div>
                                         <h3><?= $langage_lbl['LBL_PROFILE_PASSWORD_LBL_TXT']; ?></h3>
-                                        <?php /* <p><? for ($i = 0; $i < strlen(decrypt($db_user[0]['vPassword'])); $i++) echo '*'; ?></p> */ ?>
+                                        <?php /* <p><?php for ($i = 0; $i < strlen(decrypt($db_user[0]['vPassword'])); $i++) echo '*'; ?></p> */ ?>
                                         <span><a id="show-edit-password-div" class="hide-password-div hidev"><i class="fa fa-pencil" aria-hidden="true"></i><?= $langage_lbl['LBL_PROFILE_EDIT']; ?></a></span>
                                     </div>
                                 </li>
@@ -371,7 +371,7 @@ for ($i = 0; $i < scount($db_lang); $i++) {
                                             <?php
                                             for ($i = 0; $i < scount($db_lang); $i++) {
                                                 ?>
-                                                <option value="<?= $db_lang[$i]['vCode'] ?>" <? if ($db_user[0]['vLang'] == $db_lang[$i]['vCode']) { ?> selected <? } ?> ><? echo $db_lang[$i]['vTitle']; ?></option>
+                                                <option value="<?= $db_lang[$i]['vCode'] ?>" <?php if ($db_user[0]['vLang'] == $db_lang[$i]['vCode']) { ?> selected <?php } ?> ><?php echo $db_lang[$i]['vTitle']; ?></option>
                                             <?php } ?>
                                         </select>
                                     </span>
@@ -574,12 +574,12 @@ for ($i = 0; $i < scount($db_lang); $i++) {
                                         <p><?= $langage_lbl['LBL_SINCE_IT_IS_DEMO_VERSION_ADDVEHICLE']; ?></p>
 
                                         <p><?= $langage_lbl['LBL_HOWEVER_IN_REAL_SYSTEM_DRIVER']; ?></p>
-                                        <? } else { ?>
+                                        <?php } else { ?>
                                         <p><?= $langage_lbl['LBL_WE_SEE_YOU_HAVE_REGISTERED_AS_A_COMPANY']; ?></p>
                                         <p><?= $langage_lbl['LBL_SINCE_IT_IS_DEMO_VERSION']; ?></p>
 
                                         <p><?= $langage_lbl['LBL_STEP1']; ?></p>
-                                        <!--p><? //= $langage_lbl['LBL_STEP2'];         ?></p-->
+                                        <!--p><?php //= $langage_lbl['LBL_STEP2'];         ?></p-->
                                         <p><?= $langage_lbl['LBL_STEP3']; ?></p>
 
                                         <p><?= $langage_lbl['LBL_HOWEVER_IN_REAL_SYSTEM']; ?></p>
@@ -623,7 +623,7 @@ for ($i = 0; $i < scount($db_lang); $i++) {
         <script type="text/javascript" src="<?php echo $tconfig["tsite_url_main_admin"] ?>js/validation/jquery.validate.min.js" ></script>
         <?php if ($lang != 'en') { ?>
           <!--   <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-          <? include_once('otherlang_validation.php');?>
+          <?php include_once('otherlang_validation.php');?>
         <?php } ?>
         <script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
         <!-- End: Footer Script -->
@@ -1130,7 +1130,7 @@ for ($i = 0; $i < scount($db_lang); $i++) {
                     }
                 },
                 rules: {
-                    email: {<?php if($ENABLE_EMAIL_OPTIONAL != "Yes") {?> required: true, <? } ?>
+                    email: {<?php if($ENABLE_EMAIL_OPTIONAL != "Yes") {?> required: true, <?php } ?>
                      email: true,
                         remote: {
                             url: 'ajax_validate_email.php',

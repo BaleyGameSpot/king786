@@ -299,7 +299,7 @@ $db_location = $obj->MySQLSelect($sql_location);
                             <?php if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                    <? echo $_REQUEST['var_msg']; ?>
+                                    <?php echo $_REQUEST['var_msg']; ?>
                                 </div><br/>
                             <?php } ?>
                             <?php if ($success == 1) { ?>
@@ -343,12 +343,12 @@ $db_location = $obj->MySQLSelect($sql_location);
                                             <?php } ?>
                                         </select>
                                     </div>
-                                    <? } else { ?>
+                                    <?php } else { ?>
                                     <div class="col-lg-12">
                                         <label>Language: <?= $vCodeLang ?></label>
                                     </div>
                                     <input type="hidden" name="vCode" value="<?= $vCodeLang ?>">
-                                    <? } ?>
+                                    <?php } ?>
                                 </div> -->
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -402,30 +402,30 @@ $db_location = $obj->MySQLSelect($sql_location);
                                             <select class="form-control" name = 'iServiceId' id="iServiceId" required onchange="changeDisplayOrder(this.value)">
                                                <option value="">Select</option>
                                                <?php /*<option value="0" <?= $iServiceIdNew == 0 ? "selected" : "" ?>>General</option>*/ ?>
-                                               <? for($i=0;$i<scount($service_cat_list);$i++){ ?>
-                                               <option value = "<?= $service_cat_list[$i]['iServiceId'] ?>" <?if($iServiceIdNew == $service_cat_list[$i]['iServiceId']) { ?> selected <?php } else if($iServiceIdNew==$service_cat_list[$i]['iServiceId']){?>selected<? } ?>><?= $service_cat_list[$i]['servicename'] ?></option>
-                                               <? } ?>
+                                               <?php for($i=0;$i<scount($service_cat_list);$i++){ ?>
+                                               <option value = "<?= $service_cat_list[$i]['iServiceId'] ?>" <?php if($iServiceIdNew == $service_cat_list[$i]['iServiceId']) { ?> selected <?php } else if($iServiceIdNew==$service_cat_list[$i]['iServiceId']){?>selected<?php } ?>><?= $service_cat_list[$i]['servicename'] ?></option>
+                                               <?php } ?>
                                             </select>
                                          </div>
                                     </div>
                                 <?php } ?>
-                                <? if($MODULES_OBJ->isEnableLocationwiseBanner()) { ?>
+                                <?php if($MODULES_OBJ->isEnableLocationwiseBanner()) { ?>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <label>Select Location <span class="red"> *</span> <i class="icon-question-sign" data-placement="top" data-toggle="tooltip" data-original-title='Select the location in which you would like to appear this banner. For example banner to appear for any specific city or state or may be for whole country. You can define these locations from "Manage Locations >> Geo Fence Location" section'></i></label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? //echo "<pre>"; print_R($userObj->locations); ?>
+                                        <?php //echo "<pre>"; print_R($userObj->locations); ?>
                                         <select class="form-control" name = 'iLocationId' id="iLocationId" required="">
                                             <option value="">Select Location</option>
-                                            <option value="-1" <? if ($iLocationId == "-1") { ?>selected<? } ?>>All</option>
+                                            <option value="-1" <?php if ($iLocationId == "-1") { ?>selected<?php } ?>>All</option>
                                             <?php
                                             foreach ($db_location as $i => $row) {
                                                 //if (scount($userObj->locations) > 0 && !in_array($row['iLocationId'], $userObj->locations)) {
                                                 //    continue;
                                                 //}
                                                 ?>
-                                                <option value = "<?= $row['iLocationId'] ?>" <? if ($iLocationId == $row['iLocationId']) { ?>selected<? } ?>><?= $row['vLocationName'] ?></option>
+                                                <option value = "<?= $row['iLocationId'] ?>" <?php if ($iLocationId == $row['iLocationId']) { ?>selected<?php } ?>><?= $row['vLocationName'] ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -433,7 +433,7 @@ $db_location = $obj->MySQLSelect($sql_location);
                                         <a class="btn btn-primary" href="location.php" target="_blank">Enter New Location</a>
                                     </div>
                                 </div>
-                                <? } ?>
+                                <?php } ?>
                                 <?php if($MODULES_OBJ->isEnableAppHomeScreenLayoutV2() && !$MODULES_OBJ->isEnableAppHomeScreenLayoutV3()) { ?>
                                 <div class="row">
                                     <div class="col-lg-12">

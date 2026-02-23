@@ -1,4 +1,4 @@
-<?
+<?php
 	include_once("common.php");
 	//error_reporting(E_ALL);
 	global $obj;

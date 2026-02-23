@@ -181,7 +181,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
         <title><?= $SITE_NAME ?> | <?= $langage_lbl_admin['LBL_DRIVER_SUBSCRIPTION_PLAN'] ?></title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <?
+        <?php
         include_once('global_files.php');
         ?>
         <!-- On OFF switch -->
@@ -194,7 +194,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <?
+            <?php
             include_once('header.php');
             include_once('left_menu.php');
             ?>
@@ -212,18 +212,18 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
                     <hr />
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 2) { ?>
+                            <?php if ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } ?>
-                            <? if ($success == 3) { ?>
+                            <?php } ?>
+                            <?php if ($success == 3) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php print_r($error); ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
                             <form name="_subscription_form" id="_subscription_form" method="post" action="" enctype="multipart/form-data">
                                 <input type="hidden" name="actionOf" id="actionOf" value="<?php echo $action; ?>"/>
                                 <input type="hidden" name="id" id="id" value="<?php echo isset($iDriverSubscriptionPlanId) ? $iDriverSubscriptionPlanId : ''; ?>"/>
@@ -524,7 +524,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
             </div>                                                                                 
         </div>
         
-        <?
+        <?php
         include_once('footer.php');
         ?>
     </body>

@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('../common.php');
 
 require_once(TPATH_CLASS . "Imagecrop.class.php");
@@ -184,7 +184,7 @@ if($onlyRideShareEnable == 'Yes'){
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
         
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <!-- On OFF switch -->
         <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -208,8 +208,8 @@ if($onlyRideShareEnable == 'Yes'){
 
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>       
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>       
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -224,26 +224,26 @@ if($onlyRideShareEnable == 'Yes'){
                     <hr />  
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 0 && !empty($_REQUEST['var_msg'])) { ?>
+                            <?php if ($success == 0 && !empty($_REQUEST['var_msg'])) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                    <? echo $_REQUEST['var_msg']; ?>
+                                    <?php echo $_REQUEST['var_msg']; ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
 
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
 
-                            <? if ($success == 2) { ?>
+                            <?php if ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
 
                             <form method="post" action="" enctype="multipart/form-data" id="_cancel_reason">
                                 <input type="hidden" name="id" value="<?= $id; ?>"/>
@@ -263,15 +263,15 @@ if($onlyRideShareEnable == 'Yes'){
                                         </div>
                                         <div class="col-md-6 col-sm-6">
                                             <select name="eType" id="eType" class="form-control" onchange="changeeForCompany(this.value);">
-                                                <? if ($rideEnable == "Yes") { ?>
+                                                <?php if ($rideEnable == "Yes") { ?>
                                                     <option value="Ride" <?php if ($eType == "Ride") echo 'selected="selected"'; ?> ><?= $langage_lbl_admin['LBL_RIDE_TXT'] ?></option>
-                                                <? } if ($deliveryEnable == "Yes") { ?>
+                                                <?php } if ($deliveryEnable == "Yes") { ?>
                                                     <option value="Deliver" <?php if ($eType == "Deliver") echo 'selected="selected"'; ?> >Delivery</option>
-                                                <? } if ($APP_TYPE == 'Ride-Delivery-UberX' && strtoupper($ufxEnable) == "YES") { ?>
+                                                <?php } if ($APP_TYPE == 'Ride-Delivery-UberX' && strtoupper($ufxEnable) == "YES") { ?>
                                                     <option value="UberX" <?php if ($eType == "UberX") echo 'selected="selected"'; ?> >Service</option>
-                                                <? } if (DELIVERALL == 'Yes' && $deliverallEnable == "Yes") { ?>
+                                                <?php } if (DELIVERALL == 'Yes' && $deliverallEnable == "Yes") { ?>
                                                     <option value="DeliverAll" <?php if ($eType == "DeliverAll") echo 'selected="selected"'; ?> >DeliverAll</option>
-                                                <? } ?>
+                                                <?php } ?>
                                                <?php if($MODULES_OBJ->isAirFlightModuleAvailable()) {  //added by SP for fly on 27-9-2019 ?>
                                                     <option value="Fly" <?php if ($eType == "Ride" && $eFly==1) echo 'selected="selected"'; ?> >Fly</option>
                                                 <?php  } if ($MODULES_OBJ->isEnableBiddingServices()) { ?>
@@ -310,49 +310,49 @@ if($onlyRideShareEnable == 'Yes'){
                                 <?php } else { ?>
                                     <input type="hidden" name="eFor" value="<?= $eFor; ?>"/>
                                 <?php } ?>
-                                <? /*if (($APP_TYPE == 'Ride-Delivery' || $APP_TYPE == 'Ride-Delivery-UberX') && DELIVERALL != 'Yes') { ?>
+                                <?php /*if (($APP_TYPE == 'Ride-Delivery' || $APP_TYPE == 'Ride-Delivery-UberX') && DELIVERALL != 'Yes') { ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <label>Cancel Reason Service Type</label>
                                         </div>
                                         <div class="col-md-6 col-sm-6">
                                             <select name="eType" class="form-control">
-                                                <? if ($APP_TYPE == 'Ride' || $APP_TYPE == 'Ride-Delivery' || $APP_TYPE == 'Ride-Delivery-UberX') { ?>
+                                                <?php if ($APP_TYPE == 'Ride' || $APP_TYPE == 'Ride-Delivery' || $APP_TYPE == 'Ride-Delivery-UberX') { ?>
                                                     <option value="Ride" <?php if ($eType == "Ride") echo 'selected="selected"'; ?> >Ride</option>
-                                                <? } if ($APP_TYPE == 'Delivery' || $APP_TYPE == 'Ride-Delivery' || $APP_TYPE == 'Ride-Delivery-UberX') { ?>
+                                                <?php } if ($APP_TYPE == 'Delivery' || $APP_TYPE == 'Ride-Delivery' || $APP_TYPE == 'Ride-Delivery-UberX') { ?>
                                                     <option value="Deliver" <?php if ($eType == "Deliver") echo 'selected="selected"'; ?> >Delivery</option>
-                                                <? } if ($APP_TYPE == 'UberX' || $APP_TYPE == 'Ride-Delivery-UberX') { ?>
+                                                <?php } if ($APP_TYPE == 'UberX' || $APP_TYPE == 'Ride-Delivery-UberX') { ?>
                                                     <option value="UberX" <?php if ($eType == "UberX") echo 'selected="selected"'; ?> >Service</option>
-                                                <? } if (DELIVERALL == 'Yes') { ?>
+                                                <?php } if (DELIVERALL == 'Yes') { ?>
                                                     <option value="DeliverAll" <?php if ($eType == "DeliverAll") echo 'selected="selected"'; ?> >DeliverAll</option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
-                                <? } else if (DELIVERALL == 'Yes' && ($APP_TYPE != 'Ride-Delivery' || $APP_TYPE != 'Ride-Delivery-UberX')) {  ?>
+                                <?php } else if (DELIVERALL == 'Yes' && ($APP_TYPE != 'Ride-Delivery' || $APP_TYPE != 'Ride-Delivery-UberX')) {  ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <label>Cancel Reason Service Type</label>
                                         </div>
                                         <div class="col-md-6 col-sm-6">
                                             <select name="eType" class="form-control">
-                                                <? if (($APP_TYPE == 'Ride' || $APP_TYPE == 'Ride-Delivery-UberX')) { ?>
+                                                <?php if (($APP_TYPE == 'Ride' || $APP_TYPE == 'Ride-Delivery-UberX')) { ?>
                                                     <option value="Ride" <?php if ($eType == "Ride") echo 'selected="selected"'; ?> >Ride</option>
-                                                <? } if (($APP_TYPE == 'Delivery' || $APP_TYPE == 'Ride-Delivery-UberX')) { ?>
+                                                <?php } if (($APP_TYPE == 'Delivery' || $APP_TYPE == 'Ride-Delivery-UberX')) { ?>
                                                     <option value="Deliver" <?php if ($eType == "Deliver") echo 'selected="selected"'; ?> >Delivery</option>
-                                                <? } if (($APP_TYPE == 'UberX' || $APP_TYPE == 'Ride-Delivery-UberX')) {
+                                                <?php } if (($APP_TYPE == 'UberX' || $APP_TYPE == 'Ride-Delivery-UberX')) {
                                                     ?>
                                                     <option value="UberX" <?php if ($eType == "UberX") echo 'selected="selected"'; ?> >Service</option>
-                                                    <?
+                                                    <?php
                                                 }
                                                 if (DELIVERALL == 'Yes') {
                                                     ?>
                                                     <option value="DeliverAll" <?php if ($eType == "DeliverAll") echo 'selected="selected"'; ?> >DeliverAll</option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
-                                    <?
+                                    <?php
                                 } else {
                                     if ($APP_TYPE == 'Ride') {
                                         $apptype = 'Ride';
@@ -365,7 +365,7 @@ if($onlyRideShareEnable == 'Yes'){
                                     }
                                     ?>
                                     <input type="hidden" name="eType" value="<?= $apptype; ?>">
-                                <? } ?>
+                                <?php } ?>
                                 <?php if ($onlyDeliverallModule == "NO") { ?>
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -378,7 +378,7 @@ if($onlyRideShareEnable == 'Yes'){
                                                 <option value="Driver" <?php if ($eFor == "Driver") echo 'selected="selected"'; ?> ><?= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'] ?></option>
                                                 <?php if (DELIVERALL == "Yes" || $onlyDeliverallModule == "YES") { ?>
                                                     <option value="Company" <?php if ($eFor == "Company") echo 'selected="selected"'; ?> ><?= $langage_lbl_admin['LBL_COMPANY'] ?></option>
-                                                <? } ?>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -508,7 +508,7 @@ if($onlyRideShareEnable == 'Yes'){
                                         <label>Order</label>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
-                                        <?
+                                        <?php
                                         $temp = 1;
                                         $query1 = $obj->MySQLSelect("SELECT max(iDisplayOrder) as maxnumber FROM " . $tbl_name . " ORDER BY iDisplayOrder");
                                         $maxnum = isset($query1[0]['maxnumber']) ? $query1[0]['maxnumber'] : 0;
@@ -525,16 +525,16 @@ if($onlyRideShareEnable == 'Yes'){
                                         ?>
                                         <input type="hidden" name="temp_order" id="temp_order" value="<?= $temp ?>">
                                         <select name="iDisplayOrder" class="form-control">
-<? foreach ($dataArray as $arr): ?>
+<?php foreach ($dataArray as $arr): ?>
                                                 <option <?= $arr == $temp ? ' selected="selected"' : '' ?> value="<?= $arr; ?>" >
                                                     -- <?= $arr ?> --
                                                 </option>
-                                            <? endforeach; ?>
-<? if ($action == "Add") { ?>
+                                            <?php endforeach; ?>
+<?php if ($action == "Add") { ?>
                                                 <option value="<?= $temp; ?>" >
                                                     -- <?= $temp ?> --
                                                 </option>
-<? } ?>
+<?php } ?>
                                         </select>
 
                                     </div>
@@ -580,7 +580,7 @@ if($onlyRideShareEnable == 'Yes'){
             </div>                                                                                 
         </div>
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
         <script>
             $(function () {
                 /* added by SP on 16-7-2019 start */

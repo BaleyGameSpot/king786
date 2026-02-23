@@ -171,7 +171,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
                                                 <td><?= $data['Title']; ?></td>
                                                 <td><?= $data['categoryTitle']; ?></td>
-                                               <!-- <td><?/*= $data['iDisplayOrder']; */?></td>-->
+                                               <!-- <td><?php /*= $data['iDisplayOrder']; */?></td>-->
 
                                                 <td align="center" style="text-align:center;">
                                                     <?php

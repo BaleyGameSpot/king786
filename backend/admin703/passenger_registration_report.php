@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('../common.php');
 //$tbl_name 	= 'user_wallet';
 
@@ -29,7 +29,7 @@ $ssql='';
 	<meta content="" name="keywords" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
-    <? include_once('global_files.php');?>
+    <?php include_once('global_files.php');?>
 
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
@@ -38,8 +38,8 @@ $ssql='';
 <body class="padTop53 " >
     <!-- MAIN WRAPPER -->
     <div id="wrap">
-		<? include_once('header.php'); ?>
-		<? include_once('left_menu.php'); ?>
+		<?php include_once('header.php'); ?>
+		<?php include_once('left_menu.php'); ?>
         <!--PAGE CONTENT -->
         <div id="content">
             <div class="inner">
@@ -76,7 +76,7 @@ $ssql='';
     </div>
     <!--END MAIN WRAPPER -->
 	
-	<? include_once('footer.php');?>
+	<?php include_once('footer.php');?>
 	<link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css" />
 	<script src="../assets/plugins/dataTables/jquery.dataTables.js"></script>
 	<script src="../assets/plugins/dataTables/dataTables.bootstrap.js"></script>

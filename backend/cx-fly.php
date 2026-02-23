@@ -100,7 +100,7 @@ if(ENABLE_DYNAMIC_CREATE_PAGE!="Yes") {
             <!-- First Section -->
             <?php include_once("top/header.php"); ?>
             <!-- End: First Section -->
-            <? } ?>
+            <?php } ?>
             <!-- *************banner section start************* -->
             <section class="banner-section taxi-app">
                 <div class="tab-row-holding">
@@ -301,7 +301,7 @@ if(ENABLE_DYNAMIC_CREATE_PAGE!="Yes") {
             if(ENABLE_DYNAMIC_CREATE_PAGE=="Yes") { ?>
             
             <!-- *************call to section end************* -->
-<? } if(ENABLE_DYNAMIC_CREATE_PAGE!="Yes") { ?> 
+<?php } if(ENABLE_DYNAMIC_CREATE_PAGE!="Yes") { ?> 
             <!-- home page end-->
             <!-- footer part -->
             <?php include_once('footer/footer_home.php'); ?>
@@ -316,4 +316,4 @@ if(ENABLE_DYNAMIC_CREATE_PAGE!="Yes") {
         <!-- End: Footer Script -->
     </body>
 </html>
-<? } ?>
+<?php } ?>

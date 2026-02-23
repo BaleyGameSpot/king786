@@ -168,7 +168,7 @@ if ($action == 'Edit') {
         <!-- MAIN WRAPPER -->
         <div id="wrap">
             <?php include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>       
+            <?php include_once('left_menu.php'); ?>       
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -183,24 +183,24 @@ if ($action == 'Edit') {
                     <hr />	
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
+                            <?php if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                    <? echo $_REQUEST['var_msg']; ?>
+                                    <?php echo $_REQUEST['var_msg']; ?>
                                 </div><br/>
-                            <? } ?>
-                            <? if ($success == 1) { ?>
+                            <?php } ?>
+                            <?php if ($success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                 </div><br/>
-                            <? } ?>
-                            <? if ($success == 2) { ?>
+                            <?php } ?>
+                            <?php if ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
                             <form method="post" action="" enctype="multipart/form-data" id="home_driver_action" name="home_driver_action">
                                 <input type="hidden" name="id" value="<?= $id; ?>"/>
                                 <input type="hidden" name="temp_order" id="temp_order" value="1	">
@@ -211,9 +211,9 @@ if ($action == 'Edit') {
                                         <label>Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if ($vImage != '') { ?>
+                                        <?php if ($vImage != '') { ?>
                                             <img src="<?= $tconfig['tsite_upload_images'] . $vImage; ?>" style="height:100px;">
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" name="vImage" id="vImage" value="<?= $vImage; ?>"/>
                                         <br/>
                                         [Note: Upload only png image size of 290px * 270px.]
@@ -227,7 +227,7 @@ if ($action == 'Edit') {
                                         <select name="iCompanyId" class="form-control" id="iCompanyId" required  onchange="changeDisplayOrderCompany(this.value, '<?php echo $id; ?>')">
                                             <option value="" >Select Restaurant</option>
                                             <?php foreach ($db_company as $dbc) { ?>
-                                                <option value="<?php echo $dbc['iCompanyId']; ?>"<? if ($dbc['iCompanyId'] == $iCompanyId) { ?>selected<? } ?>><?php echo clearCmpName($dbc['vCompany']); ?></option>
+                                                <option value="<?php echo $dbc['iCompanyId']; ?>"<?php if ($dbc['iCompanyId'] == $iCompanyId) { ?>selected<?php } ?>><?php echo clearCmpName($dbc['vCompany']); ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>

@@ -308,14 +308,14 @@ $ufxService = $MODULES_OBJ->isUfxFeatureAvailable();
  												<td> <?php if ($userObj->hasPermission('view-track-service-company')) { ?><a href="javascript:void(0);" onClick="show_track_company_details('<?= $data_drv[$i]['iTrackServiceCompanyId']; ?>')" style="text-decoration: underline;"><?php } ?><?= clearCmpName($data_drv[$i]['vCompany']); ?><?php if ($userObj->hasPermission('view-track-service-company')) { ?></a><?php } ?></td>
                                                  <?php if ($data_drv[$i]['count'] > 0) { ?>
                                                     <td align="center">
-                                                        <a href="track_service_driver.php?iTrackServiceCompanyId=<?php echo $data_drv[$i]['iTrackServiceCompanyId']; ?>" target="_blank"><? echo $data_drv[$i]['count']; ?></a>
+                                                        <a href="track_service_driver.php?iTrackServiceCompanyId=<?php echo $data_drv[$i]['iTrackServiceCompanyId']; ?>" target="_blank"><?php echo $data_drv[$i]['count']; ?></a>
                                                     </td>
                                                 <?php } else { ?>
-                                                    <td align="center"><? echo $data_drv[$i]['count']; ?></td>
+                                                    <td align="center"><?php echo $data_drv[$i]['count']; ?></td>
                                                 <?php } ?>
                                                 <td>
                                                     <?php if ($data_drv[$i]['vEmail'] != '') { ?>
-                                                        <?= clearEmail($data_drv[$i]['vEmail']); ?><? } else {
+                                                        <?= clearEmail($data_drv[$i]['vEmail']); ?><?php } else {
                                                         echo '--';
                                                     } ?>
                                                 </td>
@@ -343,7 +343,7 @@ $ufxService = $MODULES_OBJ->isUfxFeatureAvailable();
                                                     <img src="<?= $dis_img; ?>" alt="image" data-toggle="tooltip" title="<?php echo $data_drv[$i]['eStatus']; ?>">
                                                 </td>
                                                 <td align="center" style="text-align:center;" class="action-btn001">
-                                                    <? if ($data_drv[$i]['iCompanyId'] != 1) { ?>
+                                                    <?php if ($data_drv[$i]['iCompanyId'] != 1) { ?>
                                                         <div class="share-button share-button4 openHoverAction-class" style="display:block;">
                                                             <label class="entypo-export"><span>
                                                                     <img src="images/settings-icon.png" alt="">

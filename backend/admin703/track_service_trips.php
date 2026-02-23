@@ -452,12 +452,12 @@ for ($r = 0; $r < scount($getVehicleTypes); $r++) {
     </div>
 </div>
 
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 <script src="../assets/js/jquery-ui.min.js"></script>
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
 <script src="../assets/js/modal_alert.js"></script>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script>
     var startDate;
     var endDate;

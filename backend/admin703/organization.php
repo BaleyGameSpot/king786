@@ -474,12 +474,12 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                                  <?php if ($userObj->hasPermission('view-organization')) { ?><a href="javascript:void(0);" onClick="show_org_details('<?= $data_drv[$i]['iOrganizationId']; ?>')" style="text-decoration: underline;"><?php } ?><?= clearCmpName($data_drv[$i]['vCompany']); ?><?php if ($userObj->hasPermission('view-organization')) { ?></a><?php } ?>
                                                                 
                                                             </td>
-                                                            <td><? echo $orgType; ?></td>
-                                                            <td>Pay By <? echo $payByName; ?></td>
+                                                            <td><?php echo $orgType; ?></td>
+                                                            <td>Pay By <?php echo $payByName; ?></td>
                                                             <!--  <?php if ($data_drv[$i]['count'] == 0) { ?>
-                                                                                             <td align="center"><? echo $data_drv[$i]['count']; ?></td>
+                                                                                             <td align="center"><?php echo $data_drv[$i]['count']; ?></td>
                                                             <?php } else { ?>
-                                                                                             <td align="center"><a href="driver.php?iCompanyId=<?= $data_drv[$i]['iCompanyId']; ?>" target="_blank"><? echo $data_drv[$i]['count']; ?></a></td>
+                                                                                             <td align="center"><a href="driver.php?iCompanyId=<?= $data_drv[$i]['iCompanyId']; ?>" target="_blank"><?php echo $data_drv[$i]['count']; ?></a></td>
                                                             <?php } ?> -->
                                                             <td><?php if($data_drv[$i]['vEmail'] != ''){
                                                                 echo clearEmail($data_drv[$i]['vEmail']);

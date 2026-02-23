@@ -179,7 +179,7 @@
 
             </div>
 
-        <? } else { ?>
+        <?php } else { ?>
 
             <div class="form-group half phone-column newrow ">
 
@@ -207,7 +207,7 @@
 
             </div>
 
-        <? } ?>
+        <?php } ?>
 
         <div class="form-group half newrow">
 
@@ -331,13 +331,13 @@
 
                     <!-- <option value=""><?= $langage_lbl['LBL_SELECT_TXT']; ?></option> -->
 
-                    <? for ($i = 0; $i < scount($db_country); $i++) { ?>
+                    <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
 
                         <option value="<?= $db_country[$i]['vCountryCode'] ?>"
 
-                                <? if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
+                                <?php if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
 
-                    <? } ?>
+                    <?php } ?>
 
                 </select>
 			<span id="" style="color: Red; font-size: 11px;"><?php echo isset($ccountryErr) ? $ccountryErr : ''; ?></span>
@@ -445,7 +445,7 @@
                        <span id="" style="color: Red; font-size: 11px;"><?php echo isset($cphoneErr) ? $cphoneErr : ''; ?></span>
             </div>
 
-        <? } else { ?>
+        <?php } else { ?>
 
             <div class="form-group half newrow">
 
@@ -458,7 +458,7 @@
 
             </div>
 
-        <? } ?>
+        <?php } ?>
 
         <div class="form-group  captcha-column newrow captchauser">
 

@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('../common.php');
 
 
@@ -147,7 +147,7 @@ if ($action == 'Edit') {
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />	
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
         
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
     </head>
     <!-- END  HEAD-->
     <!-- BEGIN BODY-->
@@ -155,8 +155,8 @@ if ($action == 'Edit') {
 
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -171,22 +171,22 @@ if ($action == 'Edit') {
                     <hr />
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 1) { ?>
+                            <?php if ($success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                                 </div><br/>
-                            <? } elseif ($success == 2) { ?>
+                            <?php } elseif ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } elseif ($success == 0 && $var_msg != '') { ?>
+                            <?php } elseif ($success == 0 && $var_msg != '') { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                     <?= $var_msg; ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
                             <form method="post" name="_languages_form" id="_languages_form" action="">
                                 <input type="hidden" name="id" value="<?= $id; ?>"/>
                                 <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -196,7 +196,7 @@ if ($action == 'Edit') {
                                     </div>
                                 </div>
 
-                                <?
+                                <?php
                                 if ($count_all > 0) {
                                     for ($i = 0; $i < $count_all; $i++) {
                                         $vCode = $db_master[$i]['vCode'];
@@ -227,7 +227,7 @@ if ($action == 'Edit') {
                                             }
                                             ?>
                                         </div>
-                                    <? }
+                                    <?php }
                                 }
                                 ?>
                                 <!--<div class="row">
@@ -236,8 +236,8 @@ if ($action == 'Edit') {
                                     </div>
                                     <div class="col-lg-6">
                                         <select name="eAllowedCharge" class="form-control" >
-                                            <option value="Yes" <? if ($db_data_reason[0]['eAllowedCharge'] == "Yes") { ?>selected<? } ?>>Yes</option>
-                                            <option value="No" <? if ($db_data_reason[0]['eAllowedCharge'] == "No") { ?>selected<? } ?>>No</option>
+                                            <option value="Yes" <?php if ($db_data_reason[0]['eAllowedCharge'] == "Yes") { ?>selected<?php } ?>>Yes</option>
+                                            <option value="No" <?php if ($db_data_reason[0]['eAllowedCharge'] == "No") { ?>selected<?php } ?>>No</option>
                                         </select>
                                     </div>
                                 </div>
@@ -288,7 +288,7 @@ if ($action == 'Edit') {
         </div>
 
 
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
     </body>
     <!-- END BODY-->
 </html>

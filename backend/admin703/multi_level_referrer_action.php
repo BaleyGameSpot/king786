@@ -239,7 +239,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
 
-    <? include_once( 'global_files.php' ); ?>
+    <?php include_once( 'global_files.php' ); ?>
     <style type="text/css">
         .full-width {
             width: 100%
@@ -297,8 +297,8 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once( 'header.php' ); ?>
-    <? include_once( 'left_menu.php' ); ?>
+    <?php include_once( 'header.php' ); ?>
+    <?php include_once( 'left_menu.php' ); ?>
 
     <!--PAGE CONTENT -->
     <div id="content">
@@ -673,7 +673,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                         <div class="col-lg-12">
                             <div class="panel panel-default" style="border: 0;margin-bottom: 0">
                                 <div class="panel-body" style="padding:0">
-                                    <? include_once('mlm_chart_view.php'); ?>
+                                    <?php include_once('mlm_chart_view.php'); ?>
                                 </div>
                             </div>
                         </div>
@@ -700,7 +700,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
 </div>
 <!--END MAIN WRAPPER -->
 
-<? include_once( 'footer.php' ); ?>
+<?php include_once( 'footer.php' ); ?>
 
 <div class="modal fade " id="detail_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">

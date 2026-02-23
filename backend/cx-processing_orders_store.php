@@ -243,13 +243,13 @@ $driverId = $Datadriver[0]['iDriverId'];
                         <th><?=$langage_lbl['LBL_ORDER_EARNING_TXT']; ?></th>
                         <th><?=$langage_lbl['LBL_ORDER_STATUS_TXT']; ?></th>
                         <th><?=$langage_lbl['LBL_VIEW_DETAIL_TXT']; ?></th>
-                        <? if(!empty($orderinventorystore)) { ?>
+                        <?php if(!empty($orderinventorystore)) { ?>
                         <th><?=$langage_lbl['LBL_ACTION_WEB']; ?></th>
-                        <? } ?>
+                        <?php } ?>
                     </tr>
                     </thead>
                     <tbody>
-                    <? for($i=0;$i<scount($db_order_detail);$i++) {
+                    <?php for($i=0;$i<scount($db_order_detail);$i++) {
                         $getUserCurrencyLanguageDetails = getCompanyCurrencyLanguageDetailsWeb($_SESSION['sess_iUserId'],$db_order_detail[$i]['iOrderId']);
                         $Ratio = $getUserCurrencyLanguageDetails['Ratio'];
                         $currencycode = $getUserCurrencyLanguageDetails['currencycode'];
@@ -278,7 +278,7 @@ $driverId = $Datadriver[0]['iDriverId'];
                                     <img alt="" src="<?php echo $invoice_icon;?>">
                              </a>
                             </td>
-                            <? if(!empty($orderinventorystore)) { ?>
+                            <?php if(!empty($orderinventorystore)) { ?>
                             <td align="center" data-col="action">
                                 <?php 
                                 if(($db_order_detail[$i]['iStatusCode'] == 2) && ($db_order_detail[$i]['iCronStage'] >= 5)){ ?>
@@ -301,7 +301,7 @@ $driverId = $Datadriver[0]['iDriverId'];
                                         if ($corder == 0) { 
                                             if($db_order_detail[$i]['eTakeaway']=="Yes") { ?>
                                                 <button onclick="acceptorder('<?= $db_order_detail[$i]['iOrderId'] ?>','<?= $db_order_detail[$i]['iCompanyId'] ?>','Yes','<?= $db_order_detail[$i]['vTimeZone'] ?>')" class="btn btn-sm gen-btn"><?php echo $langage_lbl['LBL_PICKEDUP_ORDER']; ?></button>
-                                            <? } else if ($db_order_detail[$i]['eOrderplaced_by'] != "Kiosk") { ?>
+                                            <?php } else if ($db_order_detail[$i]['eOrderplaced_by'] != "Kiosk") { ?>
                                             <button onclick="return openDriverTypeModal('<?php echo $db_order_detail[$i]["iOrderId"]; ?>','<?php echo $db_order_detail[$i]['iCompanyId'] ?>','<?php echo $db_order_detail[$i]['iGcmRegId'] ?>','<?php echo $db_order_detail[$i]['iUserId'] ?>');" class="btn btn-sm gen-btn"><?php echo $langage_lbl['LBL_ASSIGN_TO_DRIVER']; ?></button>
                                             <?php } else {
                                                 echo "-";
@@ -330,15 +330,15 @@ $driverId = $Datadriver[0]['iDriverId'];
                                     //reassign driver - for that reset current driver
                                     if(strtoupper($REASSIGN_DRIVER_AFTER_ACCEPTING_REQUEST)=='YES' && $db_order_detail[$i]['iStatusCode'] == 4 && $db_order_detail[$i]["iDriverId"] > 0 && $db_order_detail[$i]['eTakeaway'] == "No" && $db_order_detail[$i]['eCancelledbyDriver'] == "No") { ?>
                                         <button href="#" onclick="openResetDriverTypeModal(this);" class="btn btn-sm gen-btn" data-id="<?= $db_order_detail[$i]['iOrderId']; ?>" type="button" style="margin-top: 10px"><?= $langage_lbl['LBL_RESET_DRIVER']; ?></button>
-                                    <? } else {
+                                    <?php } else {
                                         echo "-";
                                     }
                                 } } ?>
                                 
                             </td>
-                            <? } ?>
+                            <?php } ?>
                         </tr>
-                    <? } ?>		
+                    <?php } ?>		
                     </tbody>
                     </table>
                     </div></div></div>

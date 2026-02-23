@@ -895,7 +895,7 @@ if ($MODULES_OBJ->isEnableOutstandingRestriction()) {
                                             <li data-payment="card-data" class="card-ico <?php if (strtoupper($CASH_AVAILABLE) == 'NO' || $CONFIG_OBJ->isOnlyCardPaymentModeAvailable()) { ?> active <?php } ?>"><?= $langage_lbl['LBL_PAY_VIA_CARD']; ?></li>
                                         <?php }
                                         if (strtoupper($WALLET_AVAILABLE) == "YES") { ?>
-                                            <li data-payment="wallet-data" class="wallet-ico <? if ($CONFIG_OBJ->isOnlyWalletPaymentModeAvailable()) { ?> active<?php } ?>"><?= $langage_lbl['LBL_PAY_VIA_WALLET']; ?></li>
+                                            <li data-payment="wallet-data" class="wallet-ico <?php if ($CONFIG_OBJ->isOnlyWalletPaymentModeAvailable()) { ?> active<?php } ?>"><?= $langage_lbl['LBL_PAY_VIA_WALLET']; ?></li>
                                         <?php }
                                     }
                                     else {
@@ -936,7 +936,7 @@ if ($MODULES_OBJ->isEnableOutstandingRestriction()) {
                                             </div>
                                         <?php }
                                         if (strtoupper($WALLET_AVAILABLE) == 'YES') { ?>
-                                            <div id="wallet-data" class="pay-tab-data <? if ($CONFIG_OBJ->isOnlyWalletPaymentModeAvailable()) { ?> active<?php } ?>">
+                                            <div id="wallet-data" class="pay-tab-data <?php if ($CONFIG_OBJ->isOnlyWalletPaymentModeAvailable()) { ?> active<?php } ?>">
                                                 <img src="<?= $siteUrl; ?>assets/img/apptype/<?= $template ?>/wallet.svg" alt="">
                                                 <form>
                                                     <div class="pay-cash-caption">
@@ -1287,7 +1287,7 @@ if ($eShowTermsServiceCategories == "Yes") {
 <script src="assets/js/modal_alert.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
-<? include_once('firebasephoneverify.php'); ?>
+<?php include_once('firebasephoneverify.php'); ?>
 <script>
     <?php if($eShowTermsServiceCategories == "Yes") { ?>
     $(document).ready(function () {
@@ -2100,9 +2100,9 @@ if ($eShowTermsServiceCategories == "Yes") {
                 //newDiv = $('<div id="recaptcha-container"></div>');
                 <?php if ($maualStoreOrderUser == 'admin' || $maualStoreOrderUser == 'store') { ?>
                 var skipbutton = languagedata['LBL_SKIP_SMALL'];
-                <? } else { ?>
+                <?php } else { ?>
                 var skipbutton = "";
-                <? } ?>
+                <?php } ?>
                 show_alert(languagedata['LBL_SIGNUP_PHONE_VERI'], verifysms_continue, languagedata['LBL_CONTINUE_BTN'], languagedata['LBL_CANCEL_TXT'], skipbutton, function (btn_id) {
                     if (btn_id == 0) {
                         //$("body").append(newDiv);
@@ -2137,9 +2137,9 @@ if ($eShowTermsServiceCategories == "Yes") {
                 // show_alert(languagedata['LBL_SIGNUP_PHONE_VERI'],verifysmscontent);
                 <?php if ($maualStoreOrderUser == 'admin' || $maualStoreOrderUser == 'store') { ?>
                 var skipbutton = languagedata['LBL_SKIP_SMALL'];
-                <? } else { ?>
+                <?php } else { ?>
                 var skipbutton = "";
-                <? } ?>
+                <?php } ?>
                 show_alert(languagedata['LBL_SIGNUP_PHONE_VERI'], verifysmscontent, languagedata['LBL_BTN_VERIFY_TXT'], languagedata['LBL_CANCEL_TXT'], skipbutton, function (btn_id) {
                     if (btn_id == 0) {
                         verifyphonenumber();
@@ -2167,9 +2167,9 @@ if ($eShowTermsServiceCategories == "Yes") {
                 $('.site-loader').removeClass('active');
                 <?php if ($maualStoreOrderUser == 'admin' || $maualStoreOrderUser == 'store') { ?>
                 var skipbutton = languagedata['LBL_SKIP_SMALL'];
-                <? } else { ?>
+                <?php } else { ?>
                 var skipbutton = "";
-                <? } ?>
+                <?php } ?>
                 show_alert(languagedata['LBL_SIGNUP_PHONE_VERI'], verificationmsg, languagedata['LBL_BTN_OK_TXT'], "", skipbutton, function (btn_id) {
                     if (btn_id == 2) {
                         adminSkip = "Yes";

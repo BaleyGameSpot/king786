@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 
 
@@ -71,9 +71,9 @@ $getratings = getrating($iOrderId);
                     <div class="overview-data">
                         <strong><?= $langage_lbl['LBL_PASSENGER_NAME_TEXT_DL']; ?></strong>
                         <span><?= $db_order_data['UserName'] ?>
-                        <? if (!empty($getratings['UserRate'])) { ?>
+                        <?php if (!empty($getratings['UserRate'])) { ?>
                             (<img src="<?= $siteUrl; ?>assets/img/star.jpg" alt=""> <?= $getratings['UserRate'] ?>) 
-                        <? } ?>
+                        <?php } ?>
                         </span>
                     </div>
                 </li>
@@ -108,7 +108,7 @@ $getratings = getrating($iOrderId);
                                     <div class="fare-breakdown">
                                         <div class="fare-breakdown-inner">
                                             <ul>
-                                                <? foreach ($db_order_data['History_Arr'] as $key => $value) { ?>
+                                                <?php foreach ($db_order_data['History_Arr'] as $key => $value) { ?>
                                                     <li>
                                                         <strong style="font-weight: bold;background: # !important;"><?= $key; ?></strong>
                                                         <b><?= $value; ?></b>
@@ -127,20 +127,20 @@ $getratings = getrating($iOrderId);
                                 $db_menu_item_list = $db_order_data['itemlist']; 
                                 if (!empty($db_menu_item_list)) { ?>
                                 <li class="item-list">
-                                    <? foreach ($db_menu_item_list as $key => $val) { ?>
+                                    <?php foreach ($db_menu_item_list as $key => $val) { ?>
                                     <div class="itme-row">
-                                        <span><?= $val['MenuItem']; ?> X <?= $val['iQty']; ?><? if ($val['SubTitle'] != '') { ?><strong style="font-size: 10px;">(<?= $val['SubTitle']; ?>)</strong><? } ?></span>
+                                        <span><?= $val['MenuItem']; ?> X <?= $val['iQty']; ?><?php if ($val['SubTitle'] != '') { ?><strong style="font-size: 10px;">(<?= $val['SubTitle']; ?>)</strong><?php } ?></span>
                                         <b><?= $val['fTotPrice'] ?></b>		
                                     </div>
                                     <?php } ?>
                                 </li>
                                 <?php } ?>
-                                <? foreach ($db_order_data['History_Arr'] as $key => $value) { ?>
+                                <?php foreach ($db_order_data['History_Arr'] as $key => $value) { ?>
                                 <li><span><?= $key; ?></span><b><?= $value; ?></b></li>
                                 <?php } ?>
-                                <? foreach ($db_order_data['History_Arr_first'] as $key => $value) { ?>
+                                <?php foreach ($db_order_data['History_Arr_first'] as $key => $value) { ?>
                                 <li><span><?= $key; ?></span><b><?= $value; ?></b></li>
-                                <? } ?>
+                                <?php } ?>
                             </ul>
                             <?php } else { ?>
                             <strong><?= $langage_lbl['LBL_YOUR_ORDER']; ?></strong>
@@ -150,23 +150,23 @@ $getratings = getrating($iOrderId);
                                 $db_menu_item_list = $db_order_data['itemlist']; 
                                 if (!empty($db_menu_item_list)) { ?>
                                 <li class="item-list">
-                                    <? foreach ($db_menu_item_list as $key => $val) { ?>
+                                    <?php foreach ($db_menu_item_list as $key => $val) { ?>
                                     <div class="itme-row">
-                                        <span><?= $val['MenuItem']; ?> X <?= $val['iQty']; ?><? if ($val['SubTitle'] != '') { ?><strong style="font-size: 10px;">(<?= $val['SubTitle']; ?>)</strong><? } ?></span>
+                                        <span><?= $val['MenuItem']; ?> X <?= $val['iQty']; ?><?php if ($val['SubTitle'] != '') { ?><strong style="font-size: 10px;">(<?= $val['SubTitle']; ?>)</strong><?php } ?></span>
                                         <b><?= $val['fTotPrice'] ?></b>		
                                     </div>
                                     <?php } ?>
                                 </li>
                                 <?php } ?>
-                                <? foreach ($db_order_data['History_Arr'] as $key => $value) { ?>
+                                <?php foreach ($db_order_data['History_Arr'] as $key => $value) { ?>
                                 <li><span><?= $key; ?></span><b><?= $value; ?></b></li>
                                 <?php } ?>
-                                <? foreach ($db_order_data['History_Arr_first'] as $key => $value) { ?>
+                                <?php foreach ($db_order_data['History_Arr_first'] as $key => $value) { ?>
                                 <li><span><?= $key; ?></span><b><?= $value; ?></b></li>
-                                <? } ?>
-                                <? foreach ($db_order_data['History_Arr_second'] as $key => $value) { ?>
+                                <?php } ?>
+                                <?php foreach ($db_order_data['History_Arr_second'] as $key => $value) { ?>
                                 <li><span><?= $key; ?></span><b><?= $value; ?></b></li>
-                                <? } ?>
+                                <?php } ?>
                             </ul>
                             <?php } ?>
                             
@@ -200,13 +200,13 @@ $getratings = getrating($iOrderId);
 
                                                 <?php if ($_SESSION['sess_user'] == 'rider') { ?>
                                                     <div><?= $langage_lbl["LBL_CANCELLATION_CHARGE_WEB"] ?> : <?= $db_order_data['CancellationCharge']; ?>
-                                                        <? if ($db_order_data['ePaymentOption'] == 'Cash' && $db_order_data['ePaidByPassenger'] == 'Yes') { ?>
+                                                        <?php if ($db_order_data['ePaymentOption'] == 'Cash' && $db_order_data['ePaidByPassenger'] == 'Yes') { ?>
                                                             ( <?= $langage_lbl["LBL_PAID_IN_ORDER_NO_TXT"] ?># : <?= $db_order_data['vOrderAdjusmentId'] ?>)
-                                                        <? } else if ($db_order_data['ePaymentOption'] == 'Cash') { ?>
+                                                        <?php } else if ($db_order_data['ePaymentOption'] == 'Cash') { ?>
                                                             ( <?= $langage_lbl["LBL_UNPAID_WEB_TXT"] ?> )
-                                                        <? } else if ($db_order_data['ePaymentOption'] == 'Card') { ?>
+                                                        <?php } else if ($db_order_data['ePaymentOption'] == 'Card') { ?>
                                                             ( <?= $langage_lbl["LBL_PAID_BY_CARD_WEB_TXT"] ?> )
-                                                        <? } ?>
+                                                        <?php } ?>
                                                     </div>
                                                 <?php } ?> 
                                             </div>
@@ -241,13 +241,13 @@ $getratings = getrating($iOrderId);
 
                                                 <?php if ($_SESSION['sess_user'] == 'rider') { ?>
                                                     <div> <?= $langage_lbl["LBL_CANCELLATION_CHARGE_WEB"] ?> : <?= $db_order_data['CancellationCharge']; ?>
-                                                        <? if ($db_order_data['ePaymentOption'] == 'Cash' && $db_order_data['ePaidByPassenger'] == 'Yes') { ?>
+                                                        <?php if ($db_order_data['ePaymentOption'] == 'Cash' && $db_order_data['ePaidByPassenger'] == 'Yes') { ?>
                                                             ( <?= $langage_lbl["LBL_PAID_IN_ORDER_NO_TXT"] ?># : <?= $db_order_data['vOrderAdjusmentId'] ?>)
-                                                        <? } else if ($db_order_data['ePaymentOption'] == 'Cash') { ?>
+                                                        <?php } else if ($db_order_data['ePaymentOption'] == 'Cash') { ?>
                                                             ( <?= $langage_lbl["LBL_UNPAID_WEB_TXT"] ?> )
-                                                        <? } else if ($db_order_data['ePaymentOption'] == 'Card') { ?>
+                                                        <?php } else if ($db_order_data['ePaymentOption'] == 'Card') { ?>
                                                             ( <?= $langage_lbl["LBL_PAID_BY_CARD_WEB_TXT"] ?> )
-                                                        <? } ?>
+                                                        <?php } ?>
                                                     </div>
                                                     <div> <?= $langage_lbl["LBL_REFUND_WEB_TXT"] ?> : <?= $db_order_data['RefundAmount']; ?></div>
                                                 <?php } ?>
@@ -293,22 +293,22 @@ $getratings = getrating($iOrderId);
                         <i><img src="assets/img/apptype/<?php echo $template;?>/restaurant.svg" alt=""></i>
                         <strong><?= $langage_lbl["LBL_RESTAURANT_NAME_TXT"] ?>:</strong>
                         <p><?= $db_order_data['CompanyName']; ?>
-                        <? if (!empty($getratings['CompanyRate'])) { ?>
+                        <?php if (!empty($getratings['CompanyRate'])) { ?>
                             (<img src="<?= $siteUrl; ?>assets/img/star.jpg" alt=""> <?= $getratings['CompanyRate'] ?>) 
-                        <? } ?>
+                        <?php } ?>
                         </p>
                     </div>
-                    <? if ($db_order_data['DriverName'] != '') { ?>
+                    <?php if ($db_order_data['DriverName'] != '') { ?>
                     <div class="rest-name-holder">
                         <i><img src="assets/img/apptype/<?php echo $template;?>/scooter_driver.svg" alt=""></i>
                         <strong><?= $langage_lbl['LBL_ORDER_DELIVERED_BY_DRIVER']; ?> : </strong>
                         <p><?= $db_order_data['DriverName']; ?>
-                        <? if (!empty($getratings['DriverRate'])) { ?>
+                        <?php if (!empty($getratings['DriverRate'])) { ?>
                             (<img src="<?= $siteUrl; ?>assets/img/star.jpg" alt=""> <?= $getratings['DriverRate'] ?>) 
-                        <? } ?>
+                        <?php } ?>
                         </p>
                     </div>
-                     <? } ?>
+                     <?php } ?>
                     <?php if ($UserType == 'Passenger') { ?>
                     <ul id="orderstatusall">
                     <?php

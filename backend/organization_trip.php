@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('common.php');
 
 
@@ -197,7 +197,7 @@ if ($host_system == 'cubetaxiplus') {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?
+                                            <?php
                                             $fareTotal = 0;
                                             for ($i = 0; $i < scount($db_trip); $i++) {
                                                 $eType = $db_trip[$i]['eType'];
@@ -294,7 +294,7 @@ if ($host_system == 'cubetaxiplus') {
                                                             </a>
                                                             <div style="font-size: 12px;">Cancelled</div>
                                                         </td>
-                                                    <? } else { ?>	
+                                                    <?php } else { ?>	
                                                         <td align="center" width="10%">
                                                             <a target = "_blank" href="<?= $link_page ?>?iTripId=<?= base64_encode(base64_encode($db_trip[$i]['iTripId'])) ?>">
                                                                 <img alt="" src="assets/img/<?php echo $invoice_icon; ?>">
@@ -302,7 +302,7 @@ if ($host_system == 'cubetaxiplus') {
                                                         </td>
                                                     <?php } ?>
                                                 </tr>
-                                            <? } ?>		
+                                            <?php } ?>		
                                         </tbody>
                                         <tfoot>
                                             <tr class="last_row_record">

@@ -126,7 +126,7 @@ if ($action == 'Edit') {
           <title>Admin | <?php echo $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN'];?> <?= $action; ?></title>
           <meta content="width=device-width, initial-scale=1.0" name="viewport" />
           <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-          <?
+          <?php
           include_once('global_files.php');
           ?>
           <!-- On OFF switch -->
@@ -139,7 +139,7 @@ if ($action == 'Edit') {
 
           <!-- MAIN WRAPPER -->
           <div id="wrap">
-               <?
+               <?php
                include_once('header.php');
                include_once('left_menu.php');
                ?>
@@ -158,7 +158,7 @@ if ($action == 'Edit') {
                          <hr />
                          <div class="body-div">
                               <div class="form-group">
-                                   <? if ($success == 1) {?>
+                                   <?php if ($success == 1) {?>
                                    <div class="alert alert-success alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                         <?php
@@ -170,19 +170,19 @@ if ($action == 'Edit') {
                                           } ?>
                                         
                                    </div><br/>
-                                   <?} ?>
-                                   <? if ($success == 2) {?>
+                                   <?php } ?>
+                                   <?php if ($success == 2) {?>
                                    <div class="alert alert-danger alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                         <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                    </div><br/>
-                                   <?} ?>
-                                   <? if ($success == 3) {?>
+                                   <?php } ?>
+                                   <?php if ($success == 3) {?>
                                    <div class="alert alert-danger alert-dismissable">
                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                                         Email already Exists.
                                    </div><br/>
-                                   <?} ?>
+                                   <?php } ?>
                                    <form method="post" action="" enctype="multipart/form-data">
                                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                                        <?php if($id){?>
@@ -266,10 +266,10 @@ if ($action == 'Edit') {
                                              <div class="col-lg-6">
                                                   <select  class="form-control" name = 'iGroupId' required>
                                                        <option value="">--select--</option>
-                                                       <? for ($i = 0; $i < scount($db_group); $i++) { ?>
+                                                       <?php for ($i = 0; $i < scount($db_group); $i++) { ?>
                                                        <option value = "<?= $db_group[$i]['iGroupId'] ?>" <?= ($db_group[$i]['iGroupId'] == $iGroupId) ? 'selected' : ''; ?>><?= $db_group[$i]['vGroup'] ?>
                                                        </option>
-                                                       <? } ?>
+                                                       <?php } ?>
                                                   </select>
                                              </div>
                                         </div>
@@ -290,7 +290,7 @@ if ($action == 'Edit') {
           <!--END MAIN WRAPPER -->
 
 
-          <?
+          <?php
           include_once('footer.php');
           ?>
           <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>

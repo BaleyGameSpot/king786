@@ -177,7 +177,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages.$var_filter;
                                     </td>
                                     <td width="6%" id="exactcheckbox">
                                         <div class="checkbox" style="margin-left:5px;">
-                                        <input type="checkbox" name="checktext" value="Yes" id="exactcheckbox_val" <? if($checktext == 'Yes'){echo 'checked';}?> >Exact Value
+                                        <input type="checkbox" name="checktext" value="Yes" id="exactcheckbox_val" <?php if($checktext == 'Yes'){echo 'checked';}?> >Exact Value
                                         </div>
                                     </td>
                                     <td width="12%">

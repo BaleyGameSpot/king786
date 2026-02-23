@@ -126,7 +126,7 @@ if($_REQUEST["vRefCode"] != ''){
 <?php /* <h3><?=$langage_lbl['LBL_Contact_Info']; ?></h3> */ ?>
                             <p><?= $langage_lbl['LBL_IF_YOU_ARE_AN_INDIVIDUAL']; ?></p>
                             <p><?= $langage_lbl['LBL_IF_YOU_ARE_A_COMPANY']; ?></p>
-<? //if(ONLYDELIVERALL != 'Yes') {  ?>
+<?php //if(ONLYDELIVERALL != 'Yes') {  ?>
                             <div class="individual-driver">
                                 <h4><?= $langage_lbl['LBL_ARE_YOU_AN_INDIVIDUAL']; ?></h4>
                                 <span>
@@ -151,7 +151,7 @@ if($_REQUEST["vRefCode"] != ''){
                                     </div>
                                 </span> 
                             </div>
-<? // }    ?>
+<?php // }    ?>
                             <div class="create-account">
                                 <h3><?= $langage_lbl['LBL_SIGN_UP_CREATE_ACCOUNT']; ?></h3>
                                 <input type="hidden" placeholder="" name="userType" id="userType" class="create-account-input" value="" />
@@ -159,12 +159,12 @@ if($_REQUEST["vRefCode"] != ''){
                                 <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> 
                                     <strong id="emailCheck"><label><?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?> <span class="red">*</span> </label>
                                         <input type="text" Required placeholder="<?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?>" name="vEmail" class="create-account-input " id="vEmail_verify" value="<?php echo $vEmail; ?>" /></strong>
-                                <? } else {  ?>        
+                                <?php } else {  ?>        
                                         <strong><label><?= $langage_lbl['LBL_SIGNUP_777-777-7777']; ?><span class="red">*</span></label>
                                         <strong class="ph_no newrow" id="mobileCheck"><input required type="text"  id="vPhone" value="<?php echo $vPhone; ?>" placeholder="<?= $langage_lbl['LBL_SIGNUP_777-777-7777']; ?>" class="create-account-input create-account-input1 vPhone_verify" name="vPhone"/></strong>
 
                                         <strong class="c_code"><input type="text"  name="vCode" readonly  class="create-account-input " value="<?php echo $vCode; ?>" id="code" /></strong></strong>
-                                <? } ?>
+                                <?php } ?>
                                     <!-- <div class="relative_ele"> -->
                                         <strong>
                                             <label><?= $langage_lbl['LBL_PASSWORD']; ?> <span class="red">*</span> </label>
@@ -183,13 +183,13 @@ if($_REQUEST["vRefCode"] != ''){
                             <strong>
                                 <select name="vCountry" class="custom-select-new" onChange="changeCode(this.value); ">
                                     
-                                <? for ($i = 0; $i < scount($db_code); $i++) { ?>
-                                                <option value="<?= $db_code[$i]['vCountryCode'] ?>" <?
+                                <?php for ($i = 0; $i < scount($db_code); $i++) { ?>
+                                                <option value="<?= $db_code[$i]['vCountryCode'] ?>" <?php
                                     if ($db_code[$i]['vCountryCode'] == $DEFAULT_COUNTRY_CODE_WEB) {
                                         echo 'selected';
                                     }
                                     ?>><?= $db_code[$i]['vCountry'] ?></option>
-<? } ?>
+<?php } ?>
                                 </select>
                             </strong>
                         </span> -->
@@ -223,9 +223,9 @@ if($_REQUEST["vRefCode"] != ''){
                                     <strong><label><?= $langage_lbl['LBL_COUNTRY_TXT'] ?> <span class="red">*</span>  </label>
                                         <select  class="custom-select-new" required name='vCountry' id="vCountry" onChange="setState(this.value, '');" >
                                             <option value=""><?= $langage_lbl['LBL_SELECT_TXT'] ?></option>
-                                            <? for ($i = 0; $i < scount($db_country); $i++) { ?>
-                                                <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <? if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
-<? } ?>
+                                            <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                                <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?php if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
+<?php } ?>
                                         </select>
                                     </strong>   
                                     <strong><label><?= $langage_lbl['LBL_STATE_TXT'] ?></label>
@@ -253,12 +253,12 @@ if($_REQUEST["vRefCode"] != ''){
                                     <?php if($ENABLE_EMAIL_OPTIONAL == "Yes") { ?> 
                                         <strong id="emailCheck"><label><?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?></label>
                                             <input type="text" placeholder="<?= $langage_lbl['LBL_EMAIL_TEXT_SIGNUP']; ?>" name="vEmail" class="create-account-input " id="vEmail_verify" value="<?php echo $vEmail; ?>" /></strong>
-                                    <? } else {  ?>       
+                                    <?php } else {  ?>       
                                         <strong><label><?= $langage_lbl['LBL_SIGNUP_777-777-7777']; ?><span class="red">*</span></label>
                                             <strong class="ph_no newrow" id="mobileCheck"><input required type="text"  id="vPhone" value="<?php echo $vPhone; ?>" placeholder="<?= $langage_lbl['LBL_SIGNUP_777-777-7777']; ?>" class="create-account-input create-account-input1 vPhone_verify" name="vPhone"/></strong>
 
                                             <strong class="c_code"><input type="text"  name="vCode" readonly  class="create-account-input " value="<?php echo $vCode; ?>" id="code" /></strong></strong>
-                                    <? } ?>                           
+                                    <?php } ?>                           
                                 </span> 
 
                                 <span class="newrow">
@@ -270,10 +270,10 @@ if($_REQUEST["vRefCode"] != ''){
                                             <label><?= $langage_lbl['LBL_SELECT_CURRENCY_SIGNUP']; ?> <span class="red">*</span> </label>
                                             <select class="custom-select-new" required name = 'vCurrencyDriver'>
                                                     <?php for ($i = 0; $i < scount($db_currency); $i++) { ?>
-                                                    <option value = "<?= $db_currency[$i]['vName'] ?>" <? if ($db_currency[$i]['eDefault'] == "Yes") { ?>selected<? } ?>>
+                                                    <option value = "<?= $db_currency[$i]['vName'] ?>" <?php if ($db_currency[$i]['eDefault'] == "Yes") { ?>selected<?php } ?>>
                                                     <?= $db_currency[$i]['vName'] ?>
                                                     </option>
-    <? } ?>
+    <?php } ?>
                                             </select>
                                         </strong>
 <?php } ?>
@@ -389,7 +389,7 @@ if($_REQUEST["vRefCode"] != ''){
         <script type="text/javascript" src="assets/js/validation/jquery.validate.min.js" ></script>
         <?php if ($lang != 'en') { ?>
             <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-            <? include_once('otherlang_validation.php');?>
+            <?php include_once('otherlang_validation.php');?>
 <?php } ?>
         <script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
 
@@ -448,7 +448,7 @@ if($_REQUEST["vRefCode"] != ''){
                                                 },
                                                 rules: {
                                                     vEmail: {
-                                                        <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") {?> required: true, <? } ?>
+                                                        <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") {?> required: true, <?php } ?>
                                                         email: true,
                                                         /*remote: {
                                                          url: 'ajax_validate_email_new.php',
@@ -643,11 +643,11 @@ if($_REQUEST["vRefCode"] != ''){
 
                                             $(document).ready(function () {
 
-<? if (ONLYDELIVERALL == 'Yes') { ?>
+<?php if (ONLYDELIVERALL == 'Yes') { ?>
                                                     $(".individual-driver").hide();
-<? } else { ?>
+<?php } else { ?>
                                                     $(".individual-driver").show();
-<? } ?>
+<?php } ?>
 
 
                                                 /*jQuery.validator.addMethod("noSpace", function(value, element) { 

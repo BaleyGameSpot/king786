@@ -388,16 +388,16 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                     <input type="checkbox" id="checkbox" name="checkbox[]" <?php echo $default; ?> value="<?php echo $data_drv[$i]['iTrackServiceUserId']; ?>"/>&nbsp;
                                                 </td>
                                                 <td> <?php if ($userObj->hasPermission('view-track-service-users')) { ?><a href="javascript:void(0);" onClick="show_track_rider_details('<?= $data_drv[$i]['iTrackServiceUserId']; ?>')" style="text-decoration: underline;"><?php } ?><?= clearName($data_drv[$i]['name']); ?><?php if ($userObj->hasPermission('view-track-service-users')) { ?></a><?php } ?></td>
-                                                <? if ($data_drv[$i]['vEmail'] != '') { ?>
-                                                    <td><? echo clearEmail($data_drv[$i]['vEmail']); ?></td>
-                                                <? } else { ?>
+                                                <?php if ($data_drv[$i]['vEmail'] != '') { ?>
+                                                    <td><?php echo clearEmail($data_drv[$i]['vEmail']); ?></td>
+                                                <?php } else { ?>
                                                     <td>--</td>
-                                                <? } ?>
+                                                <?php } ?>
 												
                                                 <td><?php if ($userObj->hasPermission('view-providers')) { ?><a href="javascript:void(0);" onClick="show_driver_details('<?= $data_drv[$i]['iDriverId']; ?>')" style="text-decoration: underline;"><?php } ?><?= clearName($data_drv[$i]['vProviderName']); ?><?php if ($userObj->hasPermission('view-providers')) { ?></a> <?php } ?></td>
                                                 <td> <?php if ($userObj->hasPermission('view-track-service-company')) { ?><a href="javascript:void(0);" onClick="show_track_company_details('<?= $data_drv[$i]['iTrackServiceCompanyId']; ?>')" style="text-decoration: underline;"><?php } ?><?= clearCmpName($data_drv[$i]['vCompany']); ?><?php if ($userObj->hasPermission('view-track-service-company')) { ?></a><?php } ?></td>
                                                 <td>   <a href="javascript:void(0);" onClick="show_rider_details('<?= $data_drv[$i]['iUserId']; ?>')" style="text-decoration: underline;"><?= clearName($data_drv[$i]['vRiderName']); ?></a></td>
-                                                <td  style="text-align:center;" data-order="<?= $data_drv[$i]['iTrackServiceUserId']; ?>"><? echo DateTime($data_drv[$i]['dAddedDate']) ?></td>
+                                                <td  style="text-align:center;" data-order="<?= $data_drv[$i]['iTrackServiceUserId']; ?>"><?php echo DateTime($data_drv[$i]['dAddedDate']) ?></td>
                                                 <td class="center">
                                                     <?php if (!empty($data_drv[$i]['mobile'])) { ?>
                                                         (+<?= $data_drv[$i]['vPhoneCode'] ?>) <?= clearPhone($data_drv[$i]['mobile']); ?><?php } ?>
@@ -411,7 +411,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                     else { echo '--'; } ?>
                                                 </td>
                                                 <td   align="center">
-                                                    <?
+                                                    <?php
                                                     if ($data_drv[$i]['eStatus'] == 'Active') {
                                                         $dis_img = "img/active-icon.png";
                                                     }
@@ -461,7 +461,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <?
+                                            <?php
                                         }
                                     }
                                     else {
@@ -601,7 +601,7 @@ $reload = $_SERVER['PHP_SELF'] . "?tpages=" . $tpages . $var_filter;
     </div>
 </div>
 <?php include_once('footer.php'); ?>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script src="../assets/js/jquery-ui.min.js"></script>
 <script src="../assets/js/modal_alert.js"></script>
 <script>

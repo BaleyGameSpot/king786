@@ -160,19 +160,19 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
     <div class="inner">
         <div class="row">
             <div class="col-lg-8">
-                <? if ($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX") { ?>
+                <?php if ($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX") { ?>
                     <h1> Manual <?php echo $langage_lbl['LBL_TEXI_ADMIN']; ?> Dispatch </h1>
                 <?php } else { ?>
                     <h1> <?php echo $langage_lbl['LBL_MANUAL_TAXI_DISPATCH']; ?> </h1>
                 <?php } ?>
             </div>
             <div class="col-lg-4 helpbutton">
-                <? if ($APP_TYPE != "UberX") { ?>
+                <?php if ($APP_TYPE != "UberX") { ?>
                     <h1 class="float-right"><a class="btn btn-primary how_it_work_btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-question-circle" style="font-size: 18px;"></i> <?php echo $langage_lbl['LBL_DIS_HOW_IT_WORKS']; ?></a></h1>
-                <? } else { ?>
+                <?php } else { ?>
                     <h1 class="float-right"><a class="btn btn-primary how_it_work_btn" data-toggle="modal" data-target="#myModalufx"><i class="fa fa-question-circle" style="font-size: 18px;"></i> <?php echo $langage_lbl['LBL_DIS_HOW_IT_WORKS']; ?></a></h1>
 
-<? } ?>
+<?php } ?>
             </div>
         </div>
         <hr />
@@ -236,14 +236,14 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                 <div class="add-booking-form-taxi add-booking-form-taxi1 col-lg-12" id="add-booking-form-taxi1"> <span class="col0">
                         <select name="vCountry" id="vCountry" class="form-control form-control-select" onChange="changeCode(this.value, '<?php echo $iVehicleTypeId; ?>');setDriverListing();" required>
                             <!-- <option value="">Select Country</option> -->
-                                    <? for ($i = 0; $i < scount($db_code); $i++) { ?>
+                                    <?php for ($i = 0; $i < scount($db_code); $i++) { ?>
                                 <option value="<?= $db_code[$i]['vCountryCode'] ?>" 
                                 <?php if ($db_code[$i]['vCountryCode'] == $vCountry) {
                                     echo "selected";
                                 } ?> >
     <?= $db_code[$i]['vCountry']; ?>
                                 </option>
-<? } ?>
+<?php } ?>
                         </select>
                     </span> 
                     <span class="col6">
@@ -278,13 +278,13 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
         echo 'checked';
     } ?> onChange="show_type(this.value), showVehicleCountryVise($('#vCountry option:selected').val(), '<?php echo $iVehicleTypeId; ?>', this.value);">
                                     <label for="r2"><?php echo $langage_lbl['LBL_DELIVERY']; ?></label></div> 
-                            <? if ($APP_TYPE == 'Ride-Delivery-UberX') { ?>
+                            <?php if ($APP_TYPE == 'Ride-Delivery-UberX') { ?>
                                     <div class="add-booking-radiobut radio-inline">
                                         <input class="add-booking" id="r3" name="eType" type="radio" value="UberX" <?php if ($etype == 'UberX') {
                                     echo 'checked';
                                 } ?> onChange="show_type(this.value), showVehicleCountryVise($('#vCountry option:selected').val(), '<?php echo $iVehicleTypeId; ?>', this.value);">
                                         <label for="r3"><?php echo $langage_lbl['LBL_OTHER']; ?></label></div>
-                                        <? } ?>
+                                        <?php } ?>
                             </div>	
                                     <?php } ?>
                     </div>
@@ -295,9 +295,9 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                                 <span>
                                     <select class="form-control form-control-select form-control14" name="iPackageTypeId"  id="iPackageTypeId">  
                                         <option value=""><?php echo $langage_lbl['LBL_SELECT_PACKAGE_TYPE']; ?></option>
-    <? foreach ($db_PackageType as $val) { ?>
-                                            <option value="<?= $val['iPackageTypeId'] ?>" <? if ($val['iPackageTypeId'] == $iPackageTypeId && $action == "Edit") { ?>selected<? } ?>><?= $val['vName']; ?></option>
-    <? } ?>
+    <?php foreach ($db_PackageType as $val) { ?>
+                                            <option value="<?= $val['iPackageTypeId'] ?>" <?php if ($val['iPackageTypeId'] == $iPackageTypeId && $action == "Edit") { ?>selected<?php } ?>><?= $val['vName']; ?></option>
+    <?php } ?>
                                     </select>
                                 </span> 
                                 <span>
@@ -319,15 +319,15 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                                 <input type="text" class="ride-location1 highalert txt_active form-control first-name1" name="vSourceAddresss"  id="from" value="<?= $vSourceAddresss; ?>" placeholder="<?= ucfirst(strtolower($langage_lbl['LBL_PICKUP_LOCATION_HEADER_TXT'])); ?>" required onpaste="checkrestrictionfrom('from');">
                             </div>
 
-<? if ($APP_TYPE != "UberX") { ?>
+<?php if ($APP_TYPE != "UberX") { ?>
                                 <div class="pickup-location">
                                     <h3 class="tolabel" ><?= ucfirst(strtolower($langage_lbl['LBL_DROP_OFF_LOCATION_TXT'])); ?></h3>
                                     <input type="text" class="ride-location1 highalert txt_active form-control last-name1" name="tDestAddress"  id="to" value="<?= $tDestAddress; ?>" placeholder="<?= ucfirst(strtolower($langage_lbl['LBL_DROP_OFF_LOCATION_TXT'])); ?>" required onpaste="checkrestrictionto('to');">
                                 </div>
-                                    <? } ?>
+                                    <?php } ?>
                         </span>
                         <span>
-                                    <? if ($userType1 != 'rider') { ?>
+                                    <?php if ($userType1 != 'rider') { ?>
                                 <div class="vehicle-type">
                                     <h3 ><?php echo $langage_lbl['LBL_VEHICLE_TYPE_SMALL_TXT']; ?></h3>
                                     <select class="form-control form-control-select form-control14" name='iVehicleTypeId' id="iVehicleTypeId" required onChange="showAsVehicleType(this.value)">
@@ -343,8 +343,8 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                                   <?php } */ ?>
                                     </select>
                                 </div>
-                                    <? } ?>
-                                    <? if ($userType1 == 'rider') { ?>
+                                    <?php } ?>
+                                    <?php if ($userType1 == 'rider') { ?>
 
                                 <div class="vehicle-type">
                                     <h3 ><?php echo $langage_lbl['LBL_VEHICLE_TYPE_SMALL_TXT']; ?></h3>
@@ -369,7 +369,7 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                                                 <label for="r5_<?php echo $vehilceval['iVehicleTypeId']; ?>" style="display: block;"><em><img src="<?php echo $tconfig["tsite_upload_images_vehicle_type"] . "/" . $vehilceval['iVehicleTypeId'] . '/android/' . $logo; ?>" alt="" data-id="<?php echo $vehilceval['iVehicleTypeId']; ?>"  style="width: 60px;height: 60px;"></em><?php echo $vehilceval['vVehicleType']; ?><p style="float: right" class="tootltipclass"><img src="assets/img/question-icon.jpg" id="tooltip_<?= $vehilceval['iVehicleTypeId']; ?>" alt="Question" onClick="showEstimateFareDisplayFare(<?= $vehilceval['iVehicleTypeId']; ?>);"></p>
                                                 </label>
                                             </b>
-                                        <? } ?>
+                                        <?php } ?>
                                     </div>
                                     <!-- Delivery Vehicles -->
                                     <div class="radio-vehicle-type deliveryShow" style="display:none;"> 
@@ -406,28 +406,28 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                                     </div>
                                 </div>
 
-<? } ?>
+<?php } ?>
                         </span>
                         <span class="service-pickup-type">
                             <h3 ><?php echo $langage_lbl['LBL_SELECT_YOUR_PICKUP_TYPE_WEB']; ?></h3>
                             <!-- For Ride Options -->
                             <div class="radio-but-type rideShow"> 
                                 <b>
-                                    <input id="r3_eRideType" name="eRideType" type="radio" value="now" <? if ($eRideType != 'later') { ?> checked="" <? } ?>>
+                                    <input id="r3_eRideType" name="eRideType" type="radio" value="now" <?php if ($eRideType != 'later') { ?> checked="" <?php } ?>>
                                     <label for="r3_eRideType"><?php echo $langage_lbl['LBL_RIDE_NOW']; ?></label>
                                 </b> 
                                 <b>
-                                    <input id="r4_eRideType" name="eRideType" type="radio" value="later" <? if ($eRideType == 'later') { ?> checked="" <? } ?>>
+                                    <input id="r4_eRideType" name="eRideType" type="radio" value="later" <?php if ($eRideType == 'later') { ?> checked="" <?php } ?>>
                                     <label for="r4_eRideType"><?php echo $langage_lbl['LBL_RIDE_LATER']; ?></label>
                                 </b>
                             </div>
 
                             <!-- For Delivery Options -->
                             <div class="radio-but-type deliveryShow" style="display:none;">
-                                <b><input id="r3_eDeliveryType" name="eDeliveryType" type="radio" checked='checked' value="now" <? if ($eDeliveryType != 'later') { ?> checked="" <? } ?>>
+                                <b><input id="r3_eDeliveryType" name="eDeliveryType" type="radio" checked='checked' value="now" <?php if ($eDeliveryType != 'later') { ?> checked="" <?php } ?>>
                                     <label for="r3_eDeliveryType"><?php echo $langage_lbl['LBL_DELIVER_NOW_WEB']; ?></label>
                                 </b><b>
-                                    <input id="r4_eDeliveryType" name="eDeliveryType" type="radio" value="later" <? if ($eDeliveryType == 'later') { ?> checked="" <? } ?>>
+                                    <input id="r4_eDeliveryType" name="eDeliveryType" type="radio" value="later" <?php if ($eDeliveryType == 'later') { ?> checked="" <?php } ?>>
                                     <label for="r4_eDeliveryType"><?php echo $langage_lbl['LBL_DELIVER_LATER_WEB']; ?></label></b>
                             </div>
                         </span>
@@ -442,7 +442,7 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                             <b class='promocode-btn002'><a href="javascript:void(0);" id="myButton" class="submit" onclick="checkPromoCode();"><?php echo $langage_lbl['LBL_APPLY']; ?></a></b>
                         </div>
 
-                            <? if ($APP_TYPE != 'UberX') { ?>
+                            <?php if ($APP_TYPE != 'UberX') { ?>
                                 <?php if ($APP_TYPE == 'Ride' || $APP_TYPE == 'Ride-Delivery' || $APP_TYPE == 'Ride-Delivery-UberX') { ?>
                                 <div id="ride-type" style="display:block;">
                                     <span class="auto_assign001">
@@ -542,8 +542,8 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                         </div>
                     </div>
                 </div>
-<? if ($userType1 != 'rider') { ?>
-                                <?
+<?php if ($userType1 != 'rider') { ?>
+                                <?php
                                 if ($APP_TYPE != 'UberX') {
                                     if ($userType1 == 'company') {
                                         $class = 'total-price total-price1 new';
@@ -570,7 +570,7 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                                     <em id="fix_fare_price">0</em>
                                 </li>
                                 <li id="DistanceFare">
-                                    <b><?php echo $langage_lbl['LBL_DISTANCE_TXT']; ?> (<em id="dist_fare">0</em> <em id="change_eUnit"><? echo $DEFAULT_DISTANCE_UNIT; ?></em>)</b> :
+                                    <b><?php echo $langage_lbl['LBL_DISTANCE_TXT']; ?> (<em id="dist_fare">0</em> <em id="change_eUnit"><?php echo $DEFAULT_DISTANCE_UNIT; ?></em>)</b> :
         <?php echo symbol_currency(); ?>
                                     <em id="dist_fare_price">0</em>
                                 </li>
@@ -596,7 +596,7 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                             <span><?php echo $langage_lbl['LBL_Total_Fare']; ?><b>
         <?php echo symbol_currency(); ?>
                                     <em id="total_fare_price">0</em></b></span> </div>
-    <? }
+    <?php }
 }
 ?>
 
@@ -780,9 +780,9 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                                         if (etype == 'Ride') {
                                             $('#ride-delivery-type').hide();
                                             $('#ride-type').show();
-<? if ($userType1 != 'rider' && $userType1 != 'company') { ?>
+<?php if ($userType1 != 'rider' && $userType1 != 'company') { ?>
                                                 $('.auto_assign001').show();
-<? } ?>
+<?php } ?>
                                             $('#iPackageTypeId').removeAttr('required');
                                             $('#vReceiverMobile').removeAttr('required');
                                             $('#vReceiverName').removeAttr('required');
@@ -803,9 +803,9 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                                         } else if (etype == 'Deliver') {
                                             $('#ride-delivery-type').show();
                                             $('#ride-type').hide();
-<? if ($userType1 != 'rider') { ?>
+<?php if ($userType1 != 'rider') { ?>
                                                 $('.auto_assign001').show();
-<? } ?>
+<?php } ?>
                                             $('#iPackageTypeId').attr('required', 'required');
                                             $('#vReceiverMobile').attr('required', 'required');
                                             $('#vReceiverName').attr('required', 'required');
@@ -828,9 +828,9 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                                             $('#ride-delivery-type').hide();
                                             $('#to').hide();
                                             $('#ride-type').hide();
-<? if ($userType1 != 'rider') { ?>
+<?php if ($userType1 != 'rider') { ?>
                                                 $('.auto_assign001').hide();
-<? } ?>
+<?php } ?>
 
                                             $('#iPackageTypeId').removeAttr('required');
                                             $('#to').removeAttr('required');
@@ -1428,11 +1428,11 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                                                 }
                                             });
 
-<? if ($iVehicleTypeId != "") { ?>
+<?php if ($iVehicleTypeId != "") { ?>
                                                 var iVehicleTypeId = '<?= $iVehicleTypeId ?>';
                                                 //getFarevalues(iVehicleTypeId);
                                                 showAsVehicleType(iVehicleTypeId);
-<? } ?>
+<?php } ?>
 
                                         }
                                     }
@@ -1706,9 +1706,9 @@ $db_delivery_vehicles = $obj->MySQLSelect($sql);
                                                         if (result[4] == "Inactive" || result[4] == "Deleted") {
                                                             $('#inactiveModal').modal('show');
                                                         }
-<? if ($action == 'Add') { ?>
+<?php if ($action == 'Add') { ?>
                                                             $("#promocode").val('');
-<? } ?>
+<?php } ?>
 
                                                     } else {
                                                         $("#user_type").val('');

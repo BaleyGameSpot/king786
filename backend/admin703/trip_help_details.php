@@ -235,11 +235,11 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                         <a href="<?= $link_page ?>?<?= $id_pro; ?>=<?= $data_drv[$i]['iTripId'] ?>" target="_blank"><?= $data_drv[$i]['vRideNo']; ?></a>
                                                     </td>
                                                     <td>
-                                                        <? if ($userObj->hasPermission('view-users')) { ?>
+                                                        <?php if ($userObj->hasPermission('view-users')) { ?>
                                                         <a href="javascript:void(0);" onClick="show_rider_details('<?= $data_drv[$i]['iUserId']; ?>')" style="text-decoration: underline;"><?= clearName($data_drv[$i]['vName']." ".$data_drv[$i]['vLastName']); ?></a>
-                                                        <? } else { ?>
+                                                        <?php } else { ?>
                                                         <?= clearName($data_drv[$i]['vName']." ".$data_drv[$i]['vLastName']); ?>
-                                                        <? } ?>
+                                                        <?php } ?>
                                                         <br><?= clearEmail($data_drv[$i]['vEmail']); ?><br>
                                                     <?= clearPhone("(+".$data_drv[$i]['vPhoneCode'].") ".$data_drv[$i]['vPhone']); ?></td>
                                                     <td><?= clearName($data_drv[$i]['vTitle_'.$default_lang]); ?></td>
@@ -330,7 +330,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css" />
 <script src="../assets/js/jquery-ui.min.js"></script>
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script>
 var startDate;
 var endDate;

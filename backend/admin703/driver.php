@@ -273,7 +273,7 @@ $ufxEnable = $MODULES_OBJ->isUfxFeatureAvailable();
             <div id="add-hide-show-div">
                 <div class="row">
                     <div class="col-lg-12">
-                        <?
+                        <?php
                         $company_name = ($cmp_name != "") ? " of " . $cmp_name : "";
                         ?>
                         <h2><?= $langage_lbl_admin['LBL_DRIVERS_SERVICE_PROVIDERS'] . $company_name; ?></h2>
@@ -301,15 +301,15 @@ $ufxEnable = $MODULES_OBJ->isUfxFeatureAvailable();
                                 }
                                 ?> ><?= $langage_lbl_admin['LBL_DRIVER_TXT_ADMIN']; ?> Name
                                 </option>
-                                <? if (ONLYDELIVERALL != 'Yes') { ?>
+                                <?php if (ONLYDELIVERALL != 'Yes') { ?>
                                     <option value="c.vCompany" <?php
                                     if ($option == "c.vCompany" || ($iCompanyId != "" && $cmp_name != "")) {
                                         echo "selected";
                                     }
-                                    ?> ><? if ($MODULES_OBJ->isStorePersonalDriverAvailable() > 0) { ?>Company/Store<? } else { ?>Company <? } ?>
+                                    ?> ><?php if ($MODULES_OBJ->isStorePersonalDriverAvailable() > 0) { ?>Company/Store<?php } else { ?>Company <?php } ?>
                                         Name
                                     </option>
-                                <? } ?>
+                                <?php } ?>
                                 <option value="rd.vEmail" <?php
                                 if ($option == 'rd.vEmail') {
                                     echo "selected";
@@ -325,7 +325,7 @@ $ufxEnable = $MODULES_OBJ->isUfxFeatureAvailable();
                             </select>
                         </td>
                         <td width="15%" class="searchform">
-                            <input type="Text" id="keyword" name="keyword" value="<?
+                            <input type="Text" id="keyword" name="keyword" value="<?php
                             if (!empty($keyword)) {
                                 echo $keyword;
                             }
@@ -453,13 +453,13 @@ $ufxEnable = $MODULES_OBJ->isUfxFeatureAvailable();
                                                     ?>
                                                     <i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a>
                                         </th>
-                                        <? if (ONLYDELIVERALL == 'No') { ?>
+                                        <?php if (ONLYDELIVERALL == 'No') { ?>
                                             <th width="18%">
                                                 <a href="javascript:void(0);" onClick="Redirect(2,<?php
                                                 if ($sortby == '2') {
                                                     echo $order;
                                                 } else {
-                                                    ?>0<?php } ?>)"><? if ($MODULES_OBJ->isStorePersonalDriverAvailable() > 0) { ?>Company/Store<? } else { ?>Company <? } ?>
+                                                    ?>0<?php } ?>)"><?php if ($MODULES_OBJ->isStorePersonalDriverAvailable() > 0) { ?>Company/Store<?php } else { ?>Company <?php } ?>
                                                     Name <?php
                                                     if ($sortby == 2) {
                                                         if ($order == 0) {
@@ -473,7 +473,7 @@ $ufxEnable = $MODULES_OBJ->isUfxFeatureAvailable();
                                                         ?>
                                                         <i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a>
                                             </th>
-                                        <? } ?>
+                                        <?php } ?>
                                         <th width="18%">
                                             <a href="javascript:void(0);" onClick="Redirect(3,<?php
                                             if ($sortby == '3') {
@@ -570,7 +570,7 @@ $ufxEnable = $MODULES_OBJ->isUfxFeatureAvailable();
                                                     ?>
                                                     <i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a>
                                         </th>
-                                        <? if (ONLYDELIVERALL == 'No' && ($APP_TYPE == 'UberX' || $APP_TYPE == 'Ride-Delivery-UberX') && $ufxEnable == "Yes") { ?>
+                                        <?php if (ONLYDELIVERALL == 'No' && ($APP_TYPE == 'UberX' || $APP_TYPE == 'Ride-Delivery-UberX') && $ufxEnable == "Yes") { ?>
                                             <?php if ($userObj->hasPermission('edit-providers')) { ?>
                                                 <th width="12%" class="align-center">
                                                     <a href="javascript:void(0);" onClick="Redirect(7,<?php
@@ -589,7 +589,7 @@ $ufxEnable = $MODULES_OBJ->isUfxFeatureAvailable();
                                                             <i class="fa fa-sort" aria-hidden="true"></i> <?php } ?></a>
                                                 </th>
                                             <?php } ?>
-                                        <? } ?>
+                                        <?php } ?>
 
                                         <?php if($MODULES_OBJ->isEnablePremiumDriverPreference()) { ?>
                                             <?php if ($userObj->hasPermission('edit-providers')) { ?>
@@ -614,7 +614,7 @@ $ufxEnable = $MODULES_OBJ->isUfxFeatureAvailable();
 
                                         <?php if($userObj->hasPermission(['edit-providers' , 'update-status-providers' , 'delete-providers']) ){ ?>
                                         <th width="8%" class="align-center">Action</th>
-                                        <? } ?>
+                                        <?php } ?>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -680,14 +680,14 @@ $ufxEnable = $MODULES_OBJ->isUfxFeatureAvailable();
                                                        onClick="show_driver_details('<?= $driverId; ?>')"
                                                        style="text-decoration: underline;"><?= clearName($data_drv[$i]['driverName']); ?></a>
                                                 </td>
-                                                <? if (ONLYDELIVERALL == 'No') { ?>
+                                                <?php if (ONLYDELIVERALL == 'No') { ?>
                                                     <td><?= clearCmpName($data_drv[$i]['vCompany'] . $status_cmp); ?></td>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <td style="word-break: break-all;">
                                                     <?php if ($data_drv[$i]['vEmail'] != '') { ?>
 
                                                         <?= clearEmail($data_drv[$i]['vEmail']); ?>
-                                                    <? } else {
+                                                    <?php } else {
                                                         echo '--';
                                                     } ?></td>
                                                 <?php
@@ -802,7 +802,7 @@ $ufxEnable = $MODULES_OBJ->isUfxFeatureAvailable();
                                                 }
                                                 ?>
                                                 <td align="center">
-                                                    <?
+                                                    <?php
                                                     if ($data_drv[$i]['eStatus'] == 'active') {
                                                         $dis_img = "img/active-icon.png";
                                                     } else if ($data_drv[$i]['eStatus'] == 'inactive') {
@@ -814,7 +814,7 @@ $ufxEnable = $MODULES_OBJ->isUfxFeatureAvailable();
                                                     <img src="<?= $dis_img; ?>" alt="image" data-toggle="tooltip"
                                                          title="<?= $data_drv[$i]['eStatus']; ?>">
                                                 </td>
-                                                <? if (ONLYDELIVERALL == 'No' && ($APP_TYPE == 'UberX' || $APP_TYPE == 'Ride-Delivery-UberX') && $ufxEnable == "Yes") { ?>
+                                                <?php if (ONLYDELIVERALL == 'No' && ($APP_TYPE == 'UberX' || $APP_TYPE == 'Ride-Delivery-UberX') && $ufxEnable == "Yes") { ?>
                                                     <?php if ($userObj->hasPermission('edit-providers')) { ?>
                                                         <td>
                                                             <?php if ($hideUfxColumn > 0) { ?>
@@ -834,7 +834,7 @@ $ufxEnable = $MODULES_OBJ->isUfxFeatureAvailable();
                                                             <?php } ?>
                                                         </td>
                                                     <?php } ?>
-                                                <? } ?>
+                                                <?php } ?>
 
                                                 <?php if($MODULES_OBJ->isEnablePremiumDriverPreference()) { ?>
                                                     <?php if ($userObj->hasPermission('edit-providers')) { ?>

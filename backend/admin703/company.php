@@ -800,7 +800,7 @@ $ufxService = $MODULES_OBJ->isUfxFeatureAvailable();
 
                                                 <td> 
 
-                                                    <? if ($APP_TYPE == "Ride") { ?>
+                                                    <?php if ($APP_TYPE == "Ride") { ?>
 
                                                         <a href="javascript:void(0);"
 
@@ -808,7 +808,7 @@ $ufxService = $MODULES_OBJ->isUfxFeatureAvailable();
 
                                                            style="text-decoration: underline;"><?= clearCmpName($data_drv[$i]['vCompany']); ?></a>
 
-                                                    <? } else { ?>
+                                                    <?php } else { ?>
 
                                                          <a href="javascript:void(0);"
 
@@ -816,7 +816,7 @@ $ufxService = $MODULES_OBJ->isUfxFeatureAvailable();
 
                                                            style="text-decoration: underline;"><?= clearCmpName($data_drv[$i]['vCompany']); ?></a>
 
-                                                    <? } ?>
+                                                    <?php } ?>
 
                                                 </td>
 
@@ -826,13 +826,13 @@ $ufxService = $MODULES_OBJ->isUfxFeatureAvailable();
 
                                                         <a href="driver.php?iCompanyId=<?= $data_drv[$i]['iCompanyId']; ?>"
 
-                                                           target="_blank"><? echo $data_drv[$i]['count']; ?></a>
+                                                           target="_blank"><?php echo $data_drv[$i]['count']; ?></a>
 
                                                     </td>
 
                                                 <?php } else { ?>
 
-                                                    <td align="center"><? echo $data_drv[$i]['count']; ?></td>
+                                                    <td align="center"><?php echo $data_drv[$i]['count']; ?></td>
 
                                                 <?php } ?>
 
@@ -840,7 +840,7 @@ $ufxService = $MODULES_OBJ->isUfxFeatureAvailable();
 
                                                     <?php if ($data_drv[$i]['vEmail'] != '') { ?>
 
-                                                        <?= clearEmail($data_drv[$i]['vEmail']); ?><? } else {
+                                                        <?= clearEmail($data_drv[$i]['vEmail']); ?><?php } else {
 
                                                         echo '--';
 
@@ -906,7 +906,7 @@ $ufxService = $MODULES_OBJ->isUfxFeatureAvailable();
 
                                                 <td align="center" style="text-align:center;" class="action-btn001">
 
-                                                    <? if ($data_drv[$i]['iCompanyId'] != 1) { ?>
+                                                    <?php if ($data_drv[$i]['iCompanyId'] != 1) { ?>
 
                                                         <div class="share-button share-button4 openHoverAction-class"
 
@@ -1076,7 +1076,7 @@ $ufxService = $MODULES_OBJ->isUfxFeatureAvailable();
 
                         <li>This module will list all the companies registered
 
-                            as <? if ($THEME_OBJ->isServiceXThemeActive() != 'Yes' && $THEME_OBJ->isServiceXv2ThemeActive() != 'Yes' && $THEME_OBJ->isProSPThemeActive() != 'Yes') { ?>a Taxi/Ride, Common Delivery, and<? } ?>
+                            as <?php if ($THEME_OBJ->isServiceXThemeActive() != 'Yes' && $THEME_OBJ->isServiceXv2ThemeActive() != 'Yes' && $THEME_OBJ->isProSPThemeActive() != 'Yes') { ?>a Taxi/Ride, Common Delivery, and<?php } ?>
 
                             Other Services.
 

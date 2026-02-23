@@ -163,7 +163,7 @@
                </div>
                <div id="loadstore"> </div>
                <div class="static-page">
-                  <? // =$meta['page_desc']; 
+                  <?php // =$meta['page_desc']; 
                      ?>
                </div>
             </div>

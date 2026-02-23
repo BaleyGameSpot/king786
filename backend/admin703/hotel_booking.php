@@ -393,7 +393,7 @@ if (isset($_POST['submitbuttonvalue'])) {
         echo json_encode($dataArray);
         exit;
 ?>
-        <?
+        <?php
 
     }
 } else {

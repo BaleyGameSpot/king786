@@ -231,7 +231,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
 
     <!-- On OFF switch -->
 
@@ -253,9 +253,9 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
     <div id="wrap">
 
-        <? include_once('header.php'); ?>
+        <?php include_once('header.php'); ?>
 
-        <? include_once('left_menu.php'); ?>
+        <?php include_once('left_menu.php'); ?>
 
         <!--PAGE CONTENT -->
 
@@ -285,21 +285,21 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
                     <div class="form-group">
 
-                        <? if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
+                        <?php if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
 
                             <div class="alert alert-danger alert-dismissable">
 
                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 
-                                <? echo $_REQUEST['var_msg']; ?>
+                                <?php echo $_REQUEST['var_msg']; ?>
 
                             </div>
 
                             <br />
 
-                        <? } ?>
+                        <?php } ?>
 
-                        <? if ($success == 1) { ?>
+                        <?php if ($success == 1) { ?>
 
                             <div class="alert alert-success alert-dismissable">
 
@@ -311,9 +311,9 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
                             <br />
 
-                        <? } ?>
+                        <?php } ?>
 
-                        <? if ($success == 2) { ?>
+                        <?php if ($success == 2) { ?>
 
                             <div class="alert alert-danger alert-dismissable">
 
@@ -325,7 +325,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
                             <br />
 
-                        <? } ?>
+                        <?php } ?>
 
                         <form method="post" action="" enctype="multipart/form-data" id="rentItem_category_form">
 
@@ -961,7 +961,7 @@ $db_master = $LANG_OBJ->getLangDataDefaultFirst($db_master);
 
 
 
-    <? include_once('footer.php'); ?>
+    <?php include_once('footer.php'); ?>
 
 
 

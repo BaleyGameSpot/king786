@@ -228,7 +228,7 @@ $required_msg = '<span class="red"> *</span>';
     <title>Admin | <?= $langage_lbl_admin['LBL_ADVERTISEMENT_BANNERS_TXT_ADMIN']; ?> <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <?
+    <?php
     include_once('global_files.php');
     ?>
     <!-- On OFF switch -->
@@ -240,7 +240,7 @@ $required_msg = '<span class="red"> *</span>';
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <?
+    <?php
     include_once('header.php');
     include_once('left_menu.php');
     ?>
@@ -258,17 +258,17 @@ $required_msg = '<span class="red"> *</span>';
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 1) { ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?= $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div><br/>
-                    <? } elseif ($success == 2) { ?>
+                    <?php } elseif ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div><br/>
-                        <?
+                        <?php
                     }
                     // if (isset($_REQUEST['var_msg']) && $_REQUEST['var_msg'] != "") {
                     if(!empty($_SESSION['var_msg'])){
@@ -302,7 +302,7 @@ $required_msg = '<span class="red"> *</span>';
                                 <label>Banner Image <?php echo $required_msg; ?></label>
                             </div>
                             <div class="col-lg-6">
-                                <?
+                                <?php
                                 $requireImg = 'required="required"';
                                 if (isset($vBannerImage) && $vBannerImage != '') {
                                     $requireImg = '';
@@ -310,7 +310,7 @@ $required_msg = '<span class="red"> *</span>';
                                     <!--  <img src="<?= $tconfig['tsite_upload_advertise_banner'] . "/" . $vBannerImage; ?>" style="width:200px;"> -->
                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=400&src=' . $tconfig['tsite_upload_advertise_banner'] . "/" . $vBannerImage; ?>"
                                          style="width:200px;">
-                                <? } ?>
+                                <?php } ?>
                                 <input value="<?= $vBannerImage; ?>" type="file" class="form-control"
                                        name="vBannerImage" <?php //echo $required_rule; ?> id="vBannerImage"
                                        placeholder="" style="padding-bottom: 39px;" <?= $requireImg; ?>>
@@ -433,11 +433,11 @@ $required_msg = '<span class="red"> *</span>';
                                 <div class="col-lg-6">
                                     <select class="form-control" name='eStatus' id='eStatus' required>
                                         <option value="Active"
-                                                <? if (isset($db_data[0]['eStatus']) && $db_data[0]['eStatus'] == "Active") { ?>selected<? } ?>>
+                                                <?php if (isset($db_data[0]['eStatus']) && $db_data[0]['eStatus'] == "Active") { ?>selected<?php } ?>>
                                             Active
                                         </option>
                                         <option value="Inactive"
-                                                <? if (isset($db_data[0]['eStatus']) && $db_data[0]['eStatus'] == "Inactive") { ?>selected<? } ?>>
+                                                <?php if (isset($db_data[0]['eStatus']) && $db_data[0]['eStatus'] == "Inactive") { ?>selected<?php } ?>>
                                             Inactive
                                         </option>
                                         </option>
@@ -470,7 +470,7 @@ $required_msg = '<span class="red"> *</span>';
         <span>Language Translation is in Process. Please Wait...</span>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script type='text/javascript' src='../assets/js/jquery-ui.min.js'></script>
 <script>

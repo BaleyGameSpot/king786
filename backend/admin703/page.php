@@ -342,7 +342,7 @@ exit;*/
                                                         echo $data_drv[$i]['vPageTitle_' . $default_lang];
                                                     } ?></td>
                                                 <td align="center" width="5%">
-                                                    <?
+                                                    <?php
                                                     if ($data_drv[$i]['eStatus'] == 'Active') {
                                                         $dis_img = "img/active-icon.png";
                                                     } else if ($data_drv[$i]['eStatus'] == 'Inactive') {
@@ -389,7 +389,7 @@ exit;*/
                                                         <?php } else { ?>
                                                             --
                                                         <?php } ?>
-                                                    <? } else { ?>
+                                                    <?php } else { ?>
                                                         <?php if ($userObj->hasPermission([
                                                             'edit-pages',
                                                             'update-status-pages'
@@ -439,7 +439,7 @@ exit;*/
                                                             </div>
                                                         <?php } else { ?>
                                                             --
-                                                        <? }
+                                                        <?php }
                                                     } ?>
                                                 </td>
                                             </tr>
@@ -471,11 +471,11 @@ exit;*/
                     <li>
                         The page status and display order will only work for website footer, not for the application.
                     </li>
-                    <? if ($note_shown_safety == 1) { ?>
+                    <?php if ($note_shown_safety == 1) { ?>
                         <li>
                             Safety Measure page would be applicable for the food and grocery only.
                         </li>
-                    <? } ?>
+                    <?php } ?>
                 </ul>
             </div>
         </div>

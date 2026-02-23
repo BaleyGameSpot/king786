@@ -293,7 +293,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
         <title>Admin | Country <?= $action; ?></title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <!-- On OFF switch -->
         <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -303,8 +303,8 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
     <body class="padTop53 " >
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -320,18 +320,18 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                     <hr />
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 2) { ?>
+                            <?php if ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } ?>
-                            <? if ($success == 3) { ?>
+                            <?php } ?>
+                            <?php if ($success == 3) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php print_r($error); ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
                             <form method="post" name="_country_form" id="_country_form" action="" enctype="multipart/form-data">
                                 <input type="hidden" name="id" value="<?= $id; ?>"/> 
                                 <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
@@ -370,8 +370,8 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                     </div>
                                     <div class="col-lg-6">
                                         <select class="form-control" name = 'eUnit' required>
-                                            <option value = "KMs" <? if ($eUnit == "KMs") { ?>selected<?php } ?>>KMs</option>
-                                            <option value = "Miles" <? if ($eUnit == "Miles") { ?>selected<?php } ?>>Miles</option>
+                                            <option value = "KMs" <?php if ($eUnit == "KMs") { ?>selected<?php } ?>>KMs</option>
+                                            <option value = "Miles" <?php if ($eUnit == "Miles") { ?>selected<?php } ?>>Miles</option>
                                         </select>
                                     </div>
                                 </div>
@@ -434,8 +434,8 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                         </div>
                                         <div class="col-lg-6">
                                             <select class="form-control" name = 'eEnableToll' required>
-                                                <option value = "No" <? if ($eEnableToll == "No") { ?>selected<?php } ?>>No</option>
-                                                <option value = "Yes" <? if ($eEnableToll == "Yes") { ?>selected<?php } ?>>Yes</option>
+                                                <option value = "No" <?php if ($eEnableToll == "No") { ?>selected<?php } ?>>No</option>
+                                                <option value = "Yes" <?php if ($eEnableToll == "Yes") { ?>selected<?php } ?>>Yes</option>
                                             </select>
                                             <br/>
                                             <div>[Note: Please make sure that your application must have the currency available for the country you are going to enable the Toll feature.]</div>
@@ -462,11 +462,11 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                         <label>Round Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if (!empty($vRImage)) { ?>
+                                        <?php if (!empty($vRImage)) { ?>
 
                                     <img src="<?= $tconfig['tsite_url'].'resizeImg.php?w=150&src='.$tconfig['tsite_upload_country_images'] . '/' . $vRImage; ?>" >
 
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" name="vRImage" class="form-control" style="margin-top: 10px">
                                     </div>
                                 </div>
@@ -475,11 +475,11 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                         <label>Square Image</label>
                                     </div>
                                     <div class="col-lg-6">
-                                        <? if (!empty($vSImage)) { ?>
+                                        <?php if (!empty($vSImage)) { ?>
 
                                             <img src="<?= $tconfig['tsite_url'].'resizeImg.php?w=150&src='.$tconfig['tsite_upload_country_images'] . '/' . $vSImage; ?>" >
 
-                                        <? } ?>
+                                        <?php } ?>
                                         <input type="file" name="vSImage" class="form-control" style="margin-top: 10px">
                                     </div>
                                 </div>
@@ -520,14 +520,14 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     if($fMiddleRangeValue === floatval($fMiddleRangeValue)){
                                                     ?>
                                                     <option value=''>-- Select Value --</option>
-                                                    <option value='0' <? if ($iFirstRangeValue == "0") { ?>selected<?php } ?>>0</option>
-                                                    <option value = "0.50" <? if ($iFirstRangeValue == "0.50") { ?>selected<?php } ?>>0.5</option>
-                                                    <option value = "1" <? if ($iFirstRangeValue == "1") { ?>selected<?php } ?>>1</option> 
+                                                    <option value='0' <?php if ($iFirstRangeValue == "0") { ?>selected<?php } ?>>0</option>
+                                                    <option value = "0.50" <?php if ($iFirstRangeValue == "0.50") { ?>selected<?php } ?>>0.5</option>
+                                                    <option value = "1" <?php if ($iFirstRangeValue == "1") { ?>selected<?php } ?>>1</option> 
                                                 <?php }else{ ?>
                                                     <option value=''>-- Select Value --</option>
-                                                    <option value='0' <? if ($iFirstRangeValue == "0") { ?>selected<?php } ?>>0</option>
-                                                    <option value = "50" <? if ($iFirstRangeValue == "50") { ?>selected<?php } ?>>0.5</option>
-                                                    <option value = "100" <? if ($iFirstRangeValue == "100") { ?>selected<?php } ?>>1</option>  
+                                                    <option value='0' <?php if ($iFirstRangeValue == "0") { ?>selected<?php } ?>>0</option>
+                                                    <option value = "50" <?php if ($iFirstRangeValue == "50") { ?>selected<?php } ?>>0.5</option>
+                                                    <option value = "100" <?php if ($iFirstRangeValue == "100") { ?>selected<?php } ?>>1</option>  
                                                 <?php } ?>
                                             </select>
                                             
@@ -557,14 +557,14 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
                                                     if($fMiddleRangeValue === floatval($fMiddleRangeValue)){ 
                                                     ?>
                                                     <option value=''>-- Select Value --</option>
-                                                    <option value='0' <? if ($iSecRangeValue == "0") { ?>selected<?php } ?>>0</option>
-                                                    <option value = "0.50" <? if ($iSecRangeValue == "0.50") { ?>selected<?php } ?>>0.5</option>
-                                                    <option value = "1" <? if ($iSecRangeValue == "1") { ?>selected<?php } ?>>1</option>
+                                                    <option value='0' <?php if ($iSecRangeValue == "0") { ?>selected<?php } ?>>0</option>
+                                                    <option value = "0.50" <?php if ($iSecRangeValue == "0.50") { ?>selected<?php } ?>>0.5</option>
+                                                    <option value = "1" <?php if ($iSecRangeValue == "1") { ?>selected<?php } ?>>1</option>
                                                 <?php }else{ ?>
                                                     <option value=''>-- Select Value --</option>
-                                                    <option value='0' <? if ($iSecRangeValue == "0") { ?>selected<?php } ?>>0</option>
-                                                    <option value = "50" <? if ($iSecRangeValue == "1") { ?>selected<?php } ?>>50</option>
-                                                    <option value = "100" <? if ($iSecRangeValue == "100") { ?>selected<?php } ?>>100</option>
+                                                    <option value='0' <?php if ($iSecRangeValue == "0") { ?>selected<?php } ?>>0</option>
+                                                    <option value = "50" <?php if ($iSecRangeValue == "1") { ?>selected<?php } ?>>50</option>
+                                                    <option value = "100" <?php if ($iSecRangeValue == "100") { ?>selected<?php } ?>>100</option>
                                                 <?php } ?>
                                                 
                                             </select>
@@ -601,7 +601,7 @@ $onlyBSREnable = !empty($MODULES_OBJ->isOnlyEnableBuySellRentPro()) ? 'Yes' : 'N
             <!--END PAGE CONTENT -->
         </div>
         <!--END MAIN WRAPPER -->
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
     </body>
     <!-- END BODY-->

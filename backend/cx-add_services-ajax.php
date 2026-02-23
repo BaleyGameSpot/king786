@@ -388,17 +388,17 @@ foreach ($ReqServices as $key => $ReqService) {
    <div class="general-form">
       <!-- Service detail page -->
       <div class="driver-add-vehicle"> 
-      <? if ($success == 1) { ?>
+      <?php if ($success == 1) { ?>
       <div class="form-err">
       <span class="msg_close">✕</span>
       <p style="background-color: #14b368;" class="btn-block btn btn-rect btn-success error-login-v" id="success"> <?= $langage_lbl['LBL_SERVICE_UPDATE_SUCCESS']; ?></p>
       </div>
-      <? } else if ($success == 2) { ?>
+      <?php } else if ($success == 2) { ?>
       <div class="form-err">
       <span class="msg_close">✕</span>
       <p id="errmsg" class="text-muted btn-block btn btn-danger btn-rect error-login-v"> <?= isset($_REQUEST['error_msg']) ? $_REQUEST['error_msg'] : ' '; ?></p>
       </div>
-      <? } ?>
+      <?php } ?>
       <?php if (!empty($vehicle_type_data)) { ?>
      <!--  <form name="frm1" method="post" action="" > -->
          <input type="hidden" name="iDriverIdNew"  value="<?= $iDriverId ?>"/>
@@ -481,7 +481,7 @@ foreach ($ReqServices as $key => $ReqService) {
                               </label>
                               <span class="toggle-switch">
                                  <!-- <div class="make-switch" data-on="success" data-off="warning" data-on-label='Yes' data-off-label='No'> -->
-                                 <input type="checkbox" <? if ($ePricetype == "Provider") { ?>onchange="check_box_value(this.value);" <? }else{ ?>onchange="cTrig('vCarType1_<?= $val['iVehicleTypeId'] ?>')"  <?php } ?> id="vCarType1_<?= $val['iVehicleTypeId'] ?>" class="chk" name="vCarType[]" <?php if (in_array($val['iVehicleTypeId'], $vCarTyp)) { ?>checked<?php } ?> value="<?= $val['iVehicleTypeId'] ?>" <?=$disStat?> />
+                                 <input type="checkbox" <?php if ($ePricetype == "Provider") { ?>onchange="check_box_value(this.value);" <?php }else{ ?>onchange="cTrig('vCarType1_<?= $val['iVehicleTypeId'] ?>')"  <?php } ?> id="vCarType1_<?= $val['iVehicleTypeId'] ?>" class="chk" name="vCarType[]" <?php if (in_array($val['iVehicleTypeId'], $vCarTyp)) { ?>checked<?php } ?> value="<?= $val['iVehicleTypeId'] ?>" <?=$disStat?> />
                                  <span class="toggle-base"></span>
                                  <!-- </div> -->
                               </span>
@@ -505,16 +505,16 @@ foreach ($ReqServices as $key => $ReqService) {
                                  $fAmount_new = $fAmount[$val['iVehicleTypeId']];
                                  $famount_val = (empty($fAmount_new)) ? round($fAmount_old, 2) : round($fAmount_new, 2);
                                  ?>
-                                 <div class="hatchback-search" id="amt1_<?= $val['iVehicleTypeId'] ?>" <? echo $p001; ?>>
+                                 <div class="hatchback-search" id="amt1_<?= $val['iVehicleTypeId'] ?>" <?php echo $p001; ?>>
                                     <input type="hidden" name="desc" id="desc_<?= $val['iVehicleTypeId'] ?>" value="<?= $val[$VehicleName1] ?>">
                                     <?php if ($val['eFareType'] != 'Regular') { ?>
-                                    <span><? echo $vSymbol; ?></span>
+                                    <span><?php echo $vSymbol; ?></span>
                                     <input class="form-control" type="text" name="fAmount[<?= $val['iVehicleTypeId'] ?>]" value="<?= $famount_val; ?>" placeholder="Enter Amount for <?= $val[$VehicleName1] ?>" id="fAmount_<?= $val['iVehicleTypeId'] ?>" maxlength="10">
                                     <span><?php echo $eFareType; ?></span>
                                  </div>
                               
-                                 <label id="ServiceText_<?= $val['iVehicleTypeId'] ?>" <? echo $p001Lbl; ?> class="ServiceText"><?= $langage_lbl['LBL_ENABLE_SERVICE_PRICE_TXT']; ?></label>
-                                 <?
+                                 <label id="ServiceText_<?= $val['iVehicleTypeId'] ?>" <?php echo $p001Lbl; ?> class="ServiceText"><?= $langage_lbl['LBL_ENABLE_SERVICE_PRICE_TXT']; ?></label>
+                                 <?php
                                  }
                               }else{?>
                                  <label id="defaultText_<?= $val['iVehicleTypeId'] ?>" ><?= $langage_lbl['LBL_PRICE_FEATURE_APPLICABLE_SERVICE_TXT']; ?></label>

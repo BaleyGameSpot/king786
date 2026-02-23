@@ -459,7 +459,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
 <link rel="stylesheet" href="../assets/plugins/datepicker/css/datepicker.css"/>
 
 <script src="../assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
-<? include_once('searchfunctions.php'); ?>
+<?php include_once('searchfunctions.php'); ?>
 <script>
     $('#dp4').datepicker().on('changeDate', function (ev) {
         var endDate = $('#dp5').val();

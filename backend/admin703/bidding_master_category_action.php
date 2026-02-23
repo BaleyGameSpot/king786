@@ -212,7 +212,7 @@ if ($action == 'Add') {
     <title>Admin | Bidding Service <?= $action; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
-    <? include_once('global_files.php'); ?>
+    <?php include_once('global_files.php'); ?>
     <!-- On OFF switch -->
     <link href="../assets/css/jquery-ui.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css"/>
@@ -223,8 +223,8 @@ if ($action == 'Add') {
 <body class="padTop53 ">
 <!-- MAIN WRAPPER -->
 <div id="wrap">
-    <? include_once('header.php'); ?>
-    <? include_once('left_menu.php'); ?>
+    <?php include_once('header.php'); ?>
+    <?php include_once('left_menu.php'); ?>
     <!--PAGE CONTENT -->
     <div id="content">
         <div class="inner">
@@ -242,27 +242,27 @@ if ($action == 'Add') {
             <hr/>
             <div class="body-div">
                 <div class="form-group">
-                    <? if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
+                    <?php if ($success == 0 && $_REQUEST['var_msg'] != "") { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                            <? echo $_REQUEST['var_msg']; ?>
+                            <?php echo $_REQUEST['var_msg']; ?>
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if ($success == 1) { ?>
+                    <?php } ?>
+                    <?php if ($success == 1) { ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_Record_Updated_successfully']; ?>
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if ($success == 2) { ?>
+                    <?php } ?>
+                    <?php if ($success == 2) { ?>
                         <div class="alert alert-danger alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
                     <form method="post" action="" enctype="multipart/form-data" id="bid_category_form">
                         <input type="hidden" name="id" value="<?= $id; ?>"/>
                         <input type="hidden" name="parentid" value="<?= $parentid; ?>"/>
@@ -303,12 +303,12 @@ if ($action == 'Add') {
                                     <?= ($vIconImage1 == '') ? '<span class="red"> *</span>' : ''; ?></label>
                             </div>
                             <div class="col-lg-6">
-                                <? if ($vIconImage1 != '') { ?>
+                                <?php if ($vIconImage1 != '') { ?>
                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=400&src=' . $tconfig['tsite_upload_images_bidding'] . $vIconImage1; ?>" style="height:150px">
                                     <input type="file" class="form-control" name="vImage1" id="vImage1" value=""/>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <input type="file" class="form-control" name="vImage1" id="vImage1" value="" required/>
-                                <? } ?>
+                                <?php } ?>
                                 <br>
                                 <div>Note: Upload only png image size of 360px X 360px.</div>
                             </div>
@@ -321,12 +321,12 @@ if ($action == 'Add') {
                                     <?= ($vIconImage == '') ? '<span class="red"> *</span>' : ''; ?></label>
                             </div>
                             <div class="col-lg-6">
-                                <? if ($vIconImage != '') { ?>
+                                <?php if ($vIconImage != '') { ?>
                                     <img src="<?= $tconfig["tsite_url"] . 'resizeImg.php?w=400&src=' . $tconfig['tsite_upload_images_bidding'] . $vIconImage; ?>" style="height:150px">
                                     <input type="file" class="form-control" name="vImage" id="vImage" value=""/>
-                                <? } else { ?>
+                                <?php } else { ?>
                                     <input type="file" class="form-control" name="vImage" id="vImage" value="" required/>
-                                <? } ?>
+                                <?php } ?>
                                 <br>
                                 <div>Note: Upload only png image size of 360px X 360px.</div>
                             </div>
@@ -692,7 +692,7 @@ if ($action == 'Add') {
         <span>Language Translation is in Process. Please Wait...</span>
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <script src="../assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
 <script type="text/javascript">
     function editCategoryName(action) {

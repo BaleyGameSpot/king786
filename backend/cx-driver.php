@@ -229,13 +229,13 @@ if ($action == 'view') {
                     <div class="page-contant-inner">
                         <!-- driver list page -->
                         <div class="trips-page trips-page1">
-                            <? if (isset($success) && $success == 1) { ?>
+                            <?php if (isset($success) && $success == 1) { ?>
                                 <div class="alert alert-success alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x
                                     </button>
                                     <?= $var_msg ?>
                                 </div>
-                            <? } else if (isset($success) && $success == 2) { ?>
+                            <?php } else if (isset($success) && $success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×
                                     </button>
@@ -248,7 +248,7 @@ if ($action == 'view') {
                                     </button>
                                     <?= $var_msg ?>
                                 </div>
-                            <? }
+                            <?php }
                             ?>
                             <div class="trips-table trips-table-driver trips-table-driver-res">
                                 <div class="trips-table-inner">
@@ -268,7 +268,7 @@ if ($action == 'view') {
                                                 <th><?= $langage_lbl['LBL_MOBILE_NUMBER_HEADER_TXT']; ?></th>
                                                 <?php if ($MODULES_OBJ->isUfxFeatureAvailable() != 'No' && $_SESSION['sess_eSystem'] == "General") { ?>
                                                     <th>
-                                                        <?
+                                                        <?php
                                                         if ($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX") {
                                                             echo $langage_lbl['LBL_SHORT_LANG_TXT'];
                                                         } else {
@@ -291,7 +291,7 @@ if ($action == 'view') {
                                                     <th><?php echo $langage_lbl['LBL_EDIT_DOCUMENTS_TXT']; ?></th>
                                                 <?php } ?>
                                                 <?php if ($TRACKING_COMPANY == 1) { ?>
-                                                    <!--  <th width="15%"><? /*= $langage_lbl['LBL_Status']; */ ?></th>-->
+                                                    <!--  <th width="15%"><?php /*= $langage_lbl['LBL_Status']; */ ?></th>-->
                                                 <?php } ?>
                                                 <th><?= $langage_lbl['LBL_DRIVER_EDIT']; ?></th>
                                                 <th><?= $langage_lbl['LBL_DRIVER_DELETE']; ?></th>
@@ -312,7 +312,7 @@ if ($action == 'view') {
                                                     </td>
                                                     <?php if ($MODULES_OBJ->isUfxFeatureAvailable() != 'No' && $_SESSION['sess_eSystem'] == "General") { ?>
                                                         <td valign="top">
-                                                            <?
+                                                            <?php
                                                             if ($APP_TYPE != "UberX" && $APP_TYPE != "Ride-Delivery-UberX") {
                                                                 echo $data_drv[$i]['vLang'];
                                                             } else {
@@ -324,7 +324,7 @@ if ($action == 'view') {
                                                                 <?php if (checkServicesIsSelectedByProvider($data_drv[$i]['iDriverId']) > 0 && $SHOW_PROVIDER_FILL_DETAILS_TICK_MARK_TO_ADMIN == "Yes") { ?>
                                                                     <img src="<?= $tconfig["tsite_url_main_admin"] ?>img/active-icon-c.png"
                                                                          alt="">
-                                                                <?php } ?><? } ?>
+                                                                <?php } ?><?php } ?>
                                                         </td>
                                                         <?php if ($APP_TYPE == "UberX" || $APP_TYPE == "Ride-Delivery-UberX") { ?>
                                                             <td valign="top">
@@ -363,14 +363,14 @@ if ($action == 'view') {
 
                                                     <?php if ($TRACKING_COMPANY == 1) { ?>
                                                         <!--<td width="10%" align="center">
-                                                            <a href="providerlist?hdn_del_id=<? /*= $data_drv[$i]['iDriverId']; */ ?>&Status=<? /*= ($data_drv[$i]['eStatus'] == "active") ? 'inactive' : 'active' */ ?>" class="gen-btn small-btn">
+                                                            <a href="providerlist?hdn_del_id=<?php /*= $data_drv[$i]['iDriverId']; */ ?>&Status=<?php /*= ($data_drv[$i]['eStatus'] == "active") ? 'inactive' : 'active' */ ?>" class="gen-btn small-btn">
                                                                 <?php /*if (strtolower($data_drv[$i]['eStatus']) == "active") {
                                                                     $statusLabel = $langage_lbl['LBL_ACTIVE'];
                                                                 }
                                                                 else {
                                                                     $statusLabel = $langage_lbl['LBL_INACTIVE'];
                                                                 } */ ?>
-                                                                <? /*= $statusLabel; */ ?></a>
+                                                                <?php /*= $statusLabel; */ ?></a>
                                                         </td>-->
                                                     <?php } ?>
                                                     <td valign="top">
@@ -401,7 +401,7 @@ if ($action == 'view') {
                                                         </form>
                                                     </td>
                                                 </tr>
-                                            <? } ?>
+                                            <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>

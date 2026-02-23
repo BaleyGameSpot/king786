@@ -146,13 +146,13 @@ $eSignUpType = (isset($_REQUEST['eSignUpType'])) ? $_REQUEST['eSignUpType'] : ''
 	  toggleSignIn();
 		  }
 	 toggleSignIn();
-      <?}?>
+      <?php }?>
        <?php if($eSignUpType == "Google"){?>
       checkgooglelogin();
-      <?}?>
+      <?php }?>
       <?php if($eSignUpType == "Twitter"){?>
       checktwitterlogin();
-      <?}?>
+      <?php }?>
 	 });
 </script>
 

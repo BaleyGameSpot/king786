@@ -274,7 +274,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                             echo "selected";
                                         }
                                         ?>><?php echo $langage_lbl_admin['LBL_HEADER_RDU_FLY_RIDE']; ?> </option>
-                                    <? } ?>
+                                    <?php } ?>
                                 </select>
                             </div>
                         <?php } ?>
@@ -294,10 +294,10 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                         <select class="form-control" name='searchPaymentType'
                                 data-text="Select <?php echo $langage_lbl_admin['LBL_PASSANGER_TXT_ADMIN']; ?>">
                             <option value="">Select Payment Type</option>
-                            <option value="Cash" <? if ($searchPaymentType == "Cash") { ?>selected <? } ?>>Cash</option>
-                            <option value="Card" <? if ($searchPaymentType == "Card") { ?>selected <? } ?>>Card</option>
+                            <option value="Cash" <?php if ($searchPaymentType == "Cash") { ?>selected <?php } ?>>Cash</option>
+                            <option value="Card" <?php if ($searchPaymentType == "Card") { ?>selected <?php } ?>>Card</option>
                             <option value="Organization"
-                                    <? if ($searchPaymentType == "Organization") { ?>selected <? } ?>>Organization
+                                    <?php if ($searchPaymentType == "Organization") { ?>selected <?php } ?>>Organization
                             </option>
                         </select>
                     </div>
@@ -412,7 +412,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                         <?php } else { ?>
                                             <th>F=<?= $langage_lbl_admin['LBL_TRIP_TXT_ADMIN']; ?> Outstanding Amount
                                             </th>
-                                        <? } ?>
+                                        <?php } ?>
                                         <th style="text-align:center;"><?= $langage_lbl_admin['LBL_ORGANIZATION']; ?> pay
                                             Amount
                                         </th>
@@ -423,7 +423,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?
+                                    <?php
                                     $set_unsetarray = array();
                                     
                                     if (scount($db_trip) > 0) {
@@ -495,7 +495,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                             <tr class="gradeA <?= $class_setteled ?>">
                                                 <?php if ($APP_TYPE != 'UberX' && $APP_TYPE != 'Delivery') { ?>
                                                     <td align="left">
-                                                        <?
+                                                        <?php
                                                         if ($db_trip[$i]['eHailTrip'] == "Yes" && $db_trip[$i]['iRentalPackageId'] > 0) {
                                                             echo "Rental " . $trip_type . "<br/> ( Hail )";
                                                         } else if ($db_trip[$i]['iRentalPackageId'] > 0) {
@@ -594,7 +594,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                     }
                                                     ?>
                                                 </td>
-                                                <td align="center"><?
+                                                <td align="center"><?php
                                                     if ($db_trip[$i]['eOrganizationPaymentStatus'] == "Settelled") {
                                                         echo "Settled";
                                                     } else if ($db_trip[$i]['eOrganizationPaymentStatus'] == "Unsettelled") {
@@ -605,19 +605,19 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                     ?>
                                                 </td>
                                                 <td align="center">
-                                                    <?
+                                                    <?php
                                                     if ($db_trip[$i]['eOrganizationPaymentStatus'] == 'Unsettelled') {
                                                         ?>
                                                         <input class="validate[required]" type="checkbox"
                                                                value="<?= $db_trip[$i]['iTripId'] ?>"
                                                                id="iTripId_<?= $db_trip[$i]['iTripId'] ?>"
                                                                name="iTripId[]">
-                                                        <?
+                                                        <?php
                                                     }
                                                     ?>
                                                 </td>
                                             </tr>
-                                        <? } ?>
+                                        <?php } ?>
                                         <tr class="gradeA">
                                             <td colspan="12" align="right">Total Fare</td>
                                             <td align="right"
@@ -659,7 +659,7 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                 <td align="right"
                                                     colspan="3"><?= formateNumAsPerCurrency(setTwoDecimalValue($tot_driver_refund), '') ?></td>
                                             </tr>
-                                        <? } else { ?>
+                                        <?php } else { ?>
                                             <tr class="gradeA">
                                                 <td colspan="12" align="right">Total Trip Outstanding Amount</td>
                                                 <td align="right"
@@ -670,14 +670,14 @@ $Psunday = date('Y-m-d', strtotime('sunday this week -1 week'));
                                                 <td align="right"
                                                     colspan="3"><?= formateNumAsPerCurrency(setTwoDecimalValue($tot_driver_refund), '') ?></td>
                                             </tr>
-                                        <? } ?>
+                                        <?php } ?>
                                         <?php if (in_array("Unsettelled", $set_unsetarray)) { ?>
                                             <tr class="gradeA">
                                                 <td colspan="14" align="right">
                                                     <a onClick="PaytoorganizationforCancel()" href="javascript:void(0);" class="btn btn-primary">Mark As Settled</a>
                                                 </td>
                                             </tr>
-                                            <?
+                                            <?php
                                         }
                                     } else {
                                         ?>

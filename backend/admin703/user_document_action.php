@@ -227,24 +227,24 @@ if (!empty($documents)) {
             <div class="body-div">
                 <div class="form-group">
                     <input type="hidden" name="iUserId" value="<?= $iUserId; ?>"/>
-                    <? if ($success == 4) {
+                    <?php if ($success == 4) {
                         $_SESSION['msg_code'] = ''; ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             Document Approved Successfully..
                         </div>
                         <br/>
-                    <? } ?>
-                    <? if ($success == 3) {
+                    <?php } ?>
+                    <?php if ($success == 3) {
                         $_SESSION['msg_code'] = ''; ?>
                         <div class="alert alert-success alert-dismissable">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
                             The approval for the document has been successfully revoked.
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
 
-                    <? if ($_SESSION['msg_code'] == 6) {
+                    <?php if ($_SESSION['msg_code'] == 6) {
                             $_SESSION['msg_code'] = ''; ?>
 
                         <div class="alert alert-success alert-dismissable">
@@ -252,7 +252,7 @@ if (!empty($documents)) {
                             Document Details Updated Successfully.
                         </div>
                         <br/>
-                    <? } ?>
+                    <?php } ?>
 
                     <?php if(isset($documents) && !empty($documents)){ ?>
                     <div class="row">
@@ -426,7 +426,7 @@ if (!empty($documents)) {
         <img src="default.gif">
     </div>
 </div>
-<? include_once('footer.php'); ?>
+<?php include_once('footer.php'); ?>
 <link rel="stylesheet" type="text/css" media="screen"
       href="css/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
 <script type="text/javascript" src="js/moment.min.js"></script>

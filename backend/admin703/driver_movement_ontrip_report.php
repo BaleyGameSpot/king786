@@ -197,7 +197,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?
+                                                <?php
                                                 if (scount($db_trip) > 0) {
                                                     for ($i = 0; $i < scount($db_trip); $i++) {
                                                         ?>
@@ -215,7 +215,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
                                                             <td><?= $fDistance; ?></td>
                                                             <td><?= DateTime($db_trip[$i]['tDate']); ?></td>
                                                             <td>
-                                                                <?
+                                                                <?php
                                                                 echo TimeDifference($db_trip[$i]['dStartTime'], $db_trip[$i]['dEndTime']);
                                                                 ?></td>
                                                             <?php
@@ -241,7 +241,7 @@ $Psunday = date('Y-m-d', strtotime('saturday this week -1 week'));
                                                                 <td> <?php echo "--"; ?></td>
                                                             <?php } ?>
                                                         </tr>
-                                                    <? } ?>
+                                                    <?php } ?>
                                                 <?php } else { ?>
                                                     <tr><td colspan="7" style="text-align: center;">Trip Data not found</td></tr>
                                                 <?php } ?>

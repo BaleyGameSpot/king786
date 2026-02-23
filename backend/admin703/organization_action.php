@@ -570,7 +570,7 @@ if ($action == 'Edit') {
 
         <link href="assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-<?
+<?php
 
 include_once('global_files.php');
 
@@ -596,7 +596,7 @@ include_once('global_files.php');
 
         <div id="wrap">
 
-<?
+<?php
 
 include_once('header.php');
 
@@ -632,7 +632,7 @@ include_once('left_menu.php');
 
                         <div class="form-group">
 
-<? if ($success == 2) { ?>
+<?php if ($success == 2) { ?>
 
                                 <div class="alert alert-danger alert-dismissable">
 
@@ -642,9 +642,9 @@ include_once('left_menu.php');
 
                                 </div><br/>
 
-                                <? } ?>
+                                <?php } ?>
 
-                            <? if ($success == 3) { ?>
+                            <?php if ($success == 3) { ?>
 
                                 <div class="alert alert-danger alert-dismissable">
 
@@ -654,7 +654,7 @@ include_once('left_menu.php');
 
                                 </div><br/>
 
-                                <? } ?>
+                                <?php } ?>
 
                             <form name="_organization_form" id="_organization_form" method="post" action="" enctype="multipart/form-data">
 
@@ -676,7 +676,7 @@ include_once('left_menu.php');
 
                                       <div class= "row col-md-12" id="hide-profile-div">
 
-    <? $class = ($SITE_VERSION == "v5") ? "col-lg-3" : "col-lg-4"; ?>
+    <?php $class = ($SITE_VERSION == "v5") ? "col-lg-3" : "col-lg-4"; ?>
 
                                           <div class="<?= $class ?>">
 
@@ -686,7 +686,7 @@ include_once('left_menu.php');
 
                                                   <img src="../assets/img/profile-user-img.png" alt="" >
 
-                                    <? } else {
+                                    <?php } else {
 
                                         if (file_exists('../webimages/upload/Organization/' . $id . '/3_' . $oldImage)) {
 
@@ -708,7 +708,7 @@ include_once('left_menu.php');
 
                                       </div>
 
-                                    <? if ($SITE_VERSION == "v5") { ?>
+                                    <?php if ($SITE_VERSION == "v5") { ?>
 
                                           <div class="col-lg-4">
 
@@ -718,11 +718,11 @@ include_once('left_menu.php');
 
                                                  <p>
 
-                                                  <div class=""> <? foreach ($data_driver_pref as $val) { ?>
+                                                  <div class=""> <?php foreach ($data_driver_pref as $val) { ?>
 
                                                           <img data-toggle="tooltip" class="borderClass-aa1 border_class-bb1" title="<?= $val['pref_Title'] ?>" src="<?= $tconfig["tsite_upload_preference_image_panel"] . $val['pref_Image'] ?>">
 
-                                        <? } ?>
+                                        <?php } ?>
 
                                                   </div>
 
@@ -740,7 +740,7 @@ include_once('left_menu.php');
 
                                       </div>
 
-                                    <? } ?>
+                                    <?php } ?>
 
                               </div>
 
@@ -772,13 +772,13 @@ include_once('left_menu.php');
 
                                     <div class="col-lg-12">
 
-                                        <label>Email <?if($ENABLE_EMAIL_OPTIONAL != "Yes") {?><span class="red"> *</span><? } ?></label>
+                                        <label>Email <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") {?><span class="red"> *</span><?php } ?></label>
 
                                     </div>
 
                                     <div class="col-lg-6">
 
-                                        <input type="text" class="form-control" name="vEmail" id="vEmail" value="<?= $vEmail; ?>" placeholder="Email" <? if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required <? } ?>>
+                                        <input type="text" class="form-control" name="vEmail" id="vEmail" value="<?= $vEmail; ?>" placeholder="Email" <?php if($ENABLE_EMAIL_OPTIONAL != "Yes") { ?> required <?php } ?>>
 
                                     </div>
 
@@ -846,11 +846,11 @@ include_once('left_menu.php');
 
                                             <option value="">Select</option>
 
-                                            <? for ($i = 0; $i < scount($db_country); $i++) { ?>
+                                            <?php for ($i = 0; $i < scount($db_country); $i++) { ?>
 
-                                                <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <? if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if ($vCountry == $db_country[$i]['vCountryCode']) { ?>selected<? } ?>><?= $db_country[$i]['vCountry'] ?></option>
+                                                <option value = "<?= $db_country[$i]['vCountryCode'] ?>" <?php if ($DEFAULT_COUNTRY_CODE_WEB == $db_country[$i]['vCountryCode'] && $action == 'Add') { ?> selected <?php } else if ($vCountry == $db_country[$i]['vCountryCode']) { ?>selected<?php } ?>><?= $db_country[$i]['vCountry'] ?></option>
 
-                                            <? } ?>
+                                            <?php } ?>
 
                                         </select>
 
@@ -984,7 +984,7 @@ include_once('left_menu.php');
 
                                                 <option value="">--select--</option>
 
-                                                <? for ($i = 0; $i < scount($db_lang); $i++) { ?>
+                                                <?php for ($i = 0; $i < scount($db_lang); $i++) { ?>
 
                                                     <option value = "<?= $db_lang[$i]['vCode'] ?>" <?= ($db_lang[$i]['vCode'] == $vLang) ? 'selected' : ''; ?>>
 
@@ -992,7 +992,7 @@ include_once('left_menu.php');
 
                                                     </option>
 
-                                                <? } ?>
+                                                <?php } ?>
 
                                             </select>
 

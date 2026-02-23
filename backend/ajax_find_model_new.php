@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("common.php");
 $iMakeId = isset($_REQUEST['model'])?$_REQUEST['model']:'';
 $iModelId = isset($_REQUEST['iModelId'])?$_REQUEST['iModelId']:'';

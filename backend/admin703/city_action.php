@@ -139,7 +139,7 @@ $db_data_state = $obj->MySQLSelect($sql_state);
         <link href="css/bootstrap-select.css" rel="stylesheet" />
         <link href="../assets/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-        <? include_once('global_files.php'); ?>
+        <?php include_once('global_files.php'); ?>
         <!-- On OFF switch -->
         <link href="../assets/css/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="../assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
@@ -150,8 +150,8 @@ $db_data_state = $obj->MySQLSelect($sql_state);
 
         <!-- MAIN WRAPPER -->
         <div id="wrap">
-            <? include_once('header.php'); ?>
-            <? include_once('left_menu.php'); ?>
+            <?php include_once('header.php'); ?>
+            <?php include_once('left_menu.php'); ?>
             <!--PAGE CONTENT -->
             <div id="content">
                 <div class="inner">
@@ -166,18 +166,18 @@ $db_data_state = $obj->MySQLSelect($sql_state);
                     <hr />
                     <div class="body-div">
                         <div class="form-group">
-                            <? if ($success == 2) { ?>
+                            <?php if ($success == 2) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php echo $langage_lbl_admin['LBL_EDIT_DELETE_RECORD']; ?>
                                 </div><br/>
-                            <? } ?>
-                            <? if ($success == 3) { ?>
+                            <?php } ?>
+                            <?php if ($success == 3) { ?>
                                 <div class="alert alert-danger alert-dismissable">
                                     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
                                     <?php print_r($error); ?>
                                 </div><br/>
-                            <? } ?>
+                            <?php } ?>
                             <form method="post" name="_city_form" id="_city_form" action="">
                                 <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
                                 <input type="hidden" name="backlink" id="backlink" value="city.php"/>
@@ -262,7 +262,7 @@ $db_data_state = $obj->MySQLSelect($sql_state);
         <!--END MAIN WRAPPER -->
 
 
-        <? include_once('footer.php'); ?>
+        <?php include_once('footer.php'); ?>
         <script src="https://maps.google.com/maps/api/js?sensor=true&key=<?= $GOOGLE_SEVER_API_KEY_WEB ?>&libraries=places" type="text/javascript"></script>
 
         <script type="text/javascript">

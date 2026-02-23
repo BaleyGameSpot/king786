@@ -285,7 +285,7 @@ if ($action == 'Edit') {
                                                         <textarea class="form-control ckeditor" rows="10" name="third_mid_desc_one"  id="third_mid_desc_one"  placeholder=">Home First Section Second Button Description" required><?= $third_mid_desc_one; ?></textarea>
                                                 </div>
                                         </div>-->
-                                        <? if($enable_banner_image==1) { ?>
+                                        <?php if($enable_banner_image==1) { ?>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <label>Home First Left DeliveryAll Image<span class="red"> *</span></label>
@@ -299,7 +299,7 @@ if ($action == 'Edit') {
                                                 <span class="notes">[Note: For Better Resolution Upload only image size of 1920px * 844px.]</span>
                                             </div>
                                         </div>
-                                        <? } ?>
+                                        <?php } ?>
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <label>Home First Section Banner Image<span class="red"> *</span></label>

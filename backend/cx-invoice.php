@@ -227,12 +227,12 @@ if ($db_trip_data['eType'] == 'UberX'){
                         }
                         $subclass = ($printCategory == "")?'subdata':'';
                         ?>
-                        <div class="overview-data <? echo $subclass; ?> ">
-                            <? if ($db_trip_data['eType'] == 'UberX'){ ?>
+                        <div class="overview-data <?php echo $subclass; ?> ">
+                            <?php if ($db_trip_data['eType'] == 'UberX'){ ?>
                                 <strong><?=$langage_lbl['LBL_MYTRIP_TRIP_TYPE'];?></strong>
-                            <? }else{ ?>
+                            <?php }else{ ?>
                                 <strong><?=$langage_lbl['LBL_VEHICLE_TITLE'];?></strong>
-                            <? } ?>
+                            <?php } ?>
                             <span>
                                     <?php
                                     if ($MODULES_OBJ->isEnableVideoConsultingService() && $db_trip_data['isVideoCall'] == 'Yes'){
@@ -296,29 +296,29 @@ if ($db_trip_data['eType'] == 'UberX'){
 
                                     <?php } else if ($_SESSION['sess_user'] == "driver") { ?>
                                     <div class="profile-image">
-                                        <? if ($db_trip_data['PassengerDetails']['vImgName'] != '' && file_exists($tconfig["tsite_upload_images_passenger_path"].'/'.$db_trip_data['PassengerDetails']['iUserId'].'/2_'.$db_trip_data['PassengerDetails']['vImgName'])){
+                                        <?php if ($db_trip_data['PassengerDetails']['vImgName'] != '' && file_exists($tconfig["tsite_upload_images_passenger_path"].'/'.$db_trip_data['PassengerDetails']['iUserId'].'/2_'.$db_trip_data['PassengerDetails']['vImgName'])){
                                             ?>
                                             <img src="<?=$tconfig["tsite_upload_images_passenger"].'/'.$db_trip_data['PassengerDetails']['iUserId'].'/2_'.$db_trip_data['PassengerDetails']['vImgName']?>"/><!-- style="height:150px;" -->
-                                        <? }else{ ?>
+                                        <?php }else{ ?>
                                             <img src="assets/img/profile-user-img.png" alt="">
-                                        <? } ?>
+                                        <?php } ?>
                                     </div>
                                     <div class="inv-data">
                                         <strong><?=$langage_lbl['LBL_You_ride_with'];?> <?=clearName($db_trip_data['PassengerDetails']['vName'].' '.$db_trip_data['PassengerDetails']['vLastName']);?>
                                             <?php } else { ?>
                                             <div class="profile-image">
-                                                <? if ($db_trip_data['DriverDetails']['vImage'] != '' && file_exists($tconfig["tsite_upload_images_driver_path"].'/'.$db_trip_data['DriverDetails']['iDriverId'].'/2_'.$db_trip_data['DriverDetails']['vImage'])){ ?>
+                                                <?php if ($db_trip_data['DriverDetails']['vImage'] != '' && file_exists($tconfig["tsite_upload_images_driver_path"].'/'.$db_trip_data['DriverDetails']['iDriverId'].'/2_'.$db_trip_data['DriverDetails']['vImage'])){ ?>
                                                     <img src="<?=$tconfig["tsite_upload_images_driver"].'/'.$db_trip_data['DriverDetails']['iDriverId'].'/2_'.$db_trip_data['DriverDetails']['vImage']?>" style="height:150px;"/>
-                                                <? }else{ ?>
+                                                <?php }else{ ?>
                                                     <img src="assets/img/profile-user-img.png" alt="">
-                                                <? } ?>
+                                                <?php } ?>
                                             </div>
                                             <div class="inv-data">
                                                 <strong><?=$langage_lbl['LBL_You_ride_with'];?> <?=clearName($db_trip_data['DriverDetails']['vName'].' '.$db_trip_data['DriverDetails']['vLastName']);?>
                                                     <?php } ?>
                                                 </strong>
                                                 <ul>
-                                                    <?
+                                                    <?php
                                                     //added by SP for rounding off currency wise on 26-8-2019 start
                                                     $roundoff = 0;
                                                     if (array_key_exists($langage_lbl['LBL_ROUNDING_DIFF_TXT'],$db_trip_data['FareDetailsArr']) && !empty($db_trip_data['FareDetailsArr'][$langage_lbl['LBL_ROUNDING_DIFF_TXT']])){
@@ -340,9 +340,9 @@ if ($db_trip_data['eType'] == 'UberX'){
                                                             }else if ($k == $langage_lbl['LBL_NORMAL_FARE']){ ?>
                                                                 <li style="border-top: 1px dashed #000">
                                                                     <span><?=$k;?></span><b><?php echo $val; ?></b></li>
-                                                            <? }else{ ?>
+                                                            <?php }else{ ?>
                                                                 <li><span><?=$k;?></span><b><?php echo $val; ?></b></li>
-                                                                <?
+                                                                <?php
                                                             }
                                                         }
                                                     }
@@ -364,7 +364,7 @@ if ($db_trip_data['eType'] == 'UberX'){
                                                     <ul style="margin-top: 10px;">
                                                         <li style="border:dotted 2px #000000;background: none;">
                                                             <strong style="font-weight: bold;padding: 2px;">
-                                                                <?
+                                                                <?php
                                                                 if ($db_trip_data['eCancelledBy'] == 'Driver'){
                                                                     echo $langage_lbl['LBL_TRIP_CANCELLED_BY_DRIVER_ADMIN'];
                                                                     echo '<br/>';
@@ -385,7 +385,7 @@ if ($db_trip_data['eType'] == 'UberX'){
                                                         </li>
                                                     </ul>
                                                     <div style="clear:both;"></div>
-                                                <? } ?>
+                                                <?php } ?>
                                                 <?php
                                                 if ($db_trip_data['fTipPrice'] != "" && $db_trip_data['fTipPrice'] != "0" && $db_trip_data['fTipPrice'] != "0.00"){
                                                     ?>
@@ -394,7 +394,7 @@ if ($db_trip_data['eType'] == 'UberX'){
                                                             <strong><?=$langage_lbl['LBL_TIP_RS_TXT'];?></strong><b> <?=$db_trip_data['fTipPrice'];?></b>
                                                         </li>
                                                     </ul>
-                                                    <?
+                                                    <?php
                                                 } ?>
                                                 <div style="clear:both;"></div>
                                                 <?php
@@ -598,7 +598,7 @@ if ($db_trip_data['eType'] == 'UberX'){
                                         <?php } ?>
                                     <?php } ?>
 
-                                    <? $orgReason = "";
+                                    <?php $orgReason = "";
                                     if ($db_trip_data['eTripReason'] == 'Yes' && $db_trip_data['iTripReasonId'] > 0 && ($_SESSION['sess_user'] == "rider" || $_SESSION['sess_user'] == "organization")){
                                         $tripreason = "SELECT if(vReasonTitle != '',JSON_UNQUOTE(JSON_VALUE(`vReasonTitle`, '$.vReasonTitle_EN')),'') AS vReasonTitle FROM `trip_reason` where iTripReasonId = '".$db_trip_data['iTripReasonId']."'";
                                         $tripreasonData = $obj->MySQLSelect($tripreason);
@@ -617,7 +617,7 @@ if ($db_trip_data['eType'] == 'UberX'){
                                                 <span><?=$orgReason;?></span>
                                             </div>
                                         </li>
-                                    <? }
+                                    <?php }
                                     if ($db_trip_data['eType'] == 'UberX'){
                                         if (!empty($printCategory) && !empty($db_trip_data['tUserCommentNew'])){ ?>
                                             <li>
@@ -656,7 +656,7 @@ if ($db_trip_data['eType'] == 'UberX'){
                                     </div>
                                 <?php } ?>
                             </div>
-                            <? if ($APP_DELIVERY_MODE == "Multi" && $db_trip_data['eType'] == 'Deliver'){ ?>
+                            <?php if ($APP_DELIVERY_MODE == "Multi" && $db_trip_data['eType'] == 'Deliver'){ ?>
                                 <div class="invoice-part-bottom invoice-part-bottom1">
                                     <?php
                                     $sql1 = "SELECT * FROM trips_delivery_locations AS tdl WHERE iTripId = '".$iTripId."'";
@@ -718,7 +718,7 @@ if ($db_trip_data['eType'] == 'UberX'){
                                     }
                                     ?>
                                 </div>
-                            <? } ?>
+                            <?php } ?>
                             <div class="invoice-pay-type">
                                 <strong><?=$langage_lbl['LBL_PAYMENT_TYPE_CAPS'];?> :</strong>
                                 <strong><?php
@@ -765,7 +765,7 @@ $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
 ?>
 <?php if ($lang != 'en'){ ?>
     <!--  <script type="text/javascript" src="assets/js/validation/localization/messages_<?=$lang;?>.js" ></script> -->
-    <? include_once('otherlang_validation.php'); ?>
+    <?php include_once('otherlang_validation.php'); ?>
 <?php } ?>
 <script type="text/javascript" src="assets/js/validation/additional-methods.js"></script>
 <!-- home page end-->
