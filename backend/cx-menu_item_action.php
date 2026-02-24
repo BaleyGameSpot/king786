@@ -33,7 +33,7 @@
         $currencyData['Ratio'] = $vSystemDefaultCurrencyRatio;
         $db_currency[] = $currencyData;
     } else {
-        $db_currency = $obj->MySQLSelect("select vName,vSymbol from currency where eDefault = 'Yes'");
+        $db_currency = $obj->MySQLSelect("select vName,vSymbol,Ratio from currency where eDefault = 'Yes'");
     }
     $iCompanyId = $_SESSION['sess_iUserId'];
     
@@ -125,27 +125,30 @@
     $vMenuItemOptionImage = isset($_POST['vMenuItemOptionImage']) ? $_POST['vMenuItemOptionImage'] : '';
     $menu_itemid = isset($_REQUEST['menu_itemid']) ? $_REQUEST['menu_itemid'] : "";
     
-    foreach ($BaseOptions as $key => $value) {
-    
-        if (trim($value) != "") {
-    
-            $base_array[$key]['vOptionName'] = $value;
-    
-            $base_array[$key]['fPrice'] = $OptPrice[$key];
-    
-            $base_array[$key]['eOptionType'] = $optType[$key];
-    
-            $base_array[$key]['iOptionId'] = $OptionId[$key];
-    
-            $base_array[$key]['eDefault'] = $eDefault[$key];
-    
-            $base_array[$key]['eStatus'] = 'Active';
-    
-            $base_array[$key]['tOptionNameLang'] = addslashes(stripslashes($options_lang_all[$key]));
-            $base_array[$key]['vImage'] = $vMenuItemOptionImage[$key];
-    
+    $base_array = array();
+    if (is_array($BaseOptions)) {
+        foreach ($BaseOptions as $key => $value) {
+
+            if (trim($value) != "") {
+
+                $base_array[$key]['vOptionName'] = $value;
+
+                $base_array[$key]['fPrice'] = isset($OptPrice[$key]) ? $OptPrice[$key] : 0;
+
+                $base_array[$key]['eOptionType'] = isset($optType[$key]) ? $optType[$key] : 'Options';
+
+                $base_array[$key]['iOptionId'] = isset($OptionId[$key]) ? $OptionId[$key] : '';
+
+                $base_array[$key]['eDefault'] = isset($eDefault[$key]) ? $eDefault[$key] : 'No';
+
+                $base_array[$key]['eStatus'] = 'Active';
+
+                $base_array[$key]['tOptionNameLang'] = isset($options_lang_all[$key]) ? addslashes(stripslashes($options_lang_all[$key])) : '';
+                $base_array[$key]['vImage'] = isset($vMenuItemOptionImage[$key]) ? $vMenuItemOptionImage[$key] : '';
+
+            }
+
         }
-    
     }
     
     $AddonOptions = isset($_POST['AddonOptions']) ? $_POST['AddonOptions'] : '';
@@ -160,21 +163,24 @@
     $vMenuItemAddonImage = isset($_POST['vMenuItemAddonImage']) ? $_POST['vMenuItemAddonImage'] : '';
     
     
-    foreach ($AddonOptions as $key => $value) {
-    
-        $addon_array[$key]['vOptionName'] = $value;
-    
-        $addon_array[$key]['fPrice'] = $AddonPrice[$key];
-    
-        $addon_array[$key]['eOptionType'] = $optTypeaddon[$key];
-    
-        $addon_array[$key]['iOptionId'] = $addonId[$key];
-    
-        $addon_array[$key]['eStatus'] = 'Active';
-    
-        $addon_array[$key]['tOptionNameLang'] = addslashes(stripslashes($addons_lang_all[$key]));
-        $addon_array[$key]['vImage'] = $vMenuItemAddonImage[$key];
-    
+    $addon_array = array();
+    if (is_array($AddonOptions)) {
+        foreach ($AddonOptions as $key => $value) {
+
+            $addon_array[$key]['vOptionName'] = $value;
+
+            $addon_array[$key]['fPrice'] = isset($AddonPrice[$key]) ? $AddonPrice[$key] : 0;
+
+            $addon_array[$key]['eOptionType'] = isset($optTypeaddon[$key]) ? $optTypeaddon[$key] : 'Addon';
+
+            $addon_array[$key]['iOptionId'] = isset($addonId[$key]) ? $addonId[$key] : '';
+
+            $addon_array[$key]['eStatus'] = 'Active';
+
+            $addon_array[$key]['tOptionNameLang'] = isset($addons_lang_all[$key]) ? addslashes(stripslashes($addons_lang_all[$key])) : '';
+            $addon_array[$key]['vImage'] = isset($vMenuItemAddonImage[$key]) ? $vMenuItemAddonImage[$key] : '';
+
+        }
     }
     
     $vTitle_store = $vItemDesc_store = array();
@@ -755,8 +761,13 @@
     
     
     
+    // Initialize arrLang for Add action (prevents undefined variable errors in form)
+    $arrLang = array();
+    $db_optionsdata = array();
+    $db_addonsdata = array();
+
     // for Edit
-    
+
     if ($action == 'Edit') {
     
         $sql = "SELECT * FROM " . $tbl_name . " WHERE iMenuItemId = '" . $id . "'";

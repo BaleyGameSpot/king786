@@ -72,14 +72,17 @@ $optType = isset($_POST['optType']) ? $_POST['optType'] : '';
 $OptionId = isset($_POST['OptionId']) ? $_POST['OptionId'] : '';
 $eDefault = isset($_POST['eDefault']) ? $_POST['eDefault'] : '';
 
-foreach ($BaseOptions as $key => $value) {
-    if (trim($value) != "") {
-        $base_array[$key]['vOptionName'] = $value;
-        $base_array[$key]['fPrice'] = $OptPrice[$key];
-        $base_array[$key]['eOptionType'] = $optType[$key];
-        $base_array[$key]['iOptionId'] = $OptionId[$key];
-        $base_array[$key]['eDefault'] = $eDefault[$key];
-        $base_array[$key]['eStatus'] = 'Active';
+$base_array = array();
+if (is_array($BaseOptions)) {
+    foreach ($BaseOptions as $key => $value) {
+        if (trim($value) != "") {
+            $base_array[$key]['vOptionName'] = $value;
+            $base_array[$key]['fPrice'] = isset($OptPrice[$key]) ? $OptPrice[$key] : 0;
+            $base_array[$key]['eOptionType'] = isset($optType[$key]) ? $optType[$key] : 'Options';
+            $base_array[$key]['iOptionId'] = isset($OptionId[$key]) ? $OptionId[$key] : '';
+            $base_array[$key]['eDefault'] = isset($eDefault[$key]) ? $eDefault[$key] : 'No';
+            $base_array[$key]['eStatus'] = 'Active';
+        }
     }
 }
 
@@ -88,12 +91,15 @@ $AddonPrice = isset($_POST['AddonPrice']) ? $_POST['AddonPrice'] : '';
 $optTypeaddon = isset($_POST['optTypeaddon']) ? $_POST['optTypeaddon'] : '';
 $addonId = isset($_POST['addonId']) ? $_POST['addonId'] : '';
 
-foreach ($AddonOptions as $key => $value) {
-    $addon_array[$key]['vOptionName'] = $value;
-    $addon_array[$key]['fPrice'] = $AddonPrice[$key];
-    $addon_array[$key]['eOptionType'] = $optTypeaddon[$key];
-    $addon_array[$key]['iOptionId'] = $addonId[$key];
-    $addon_array[$key]['eStatus'] = 'Active';
+$addon_array = array();
+if (is_array($AddonOptions)) {
+    foreach ($AddonOptions as $key => $value) {
+        $addon_array[$key]['vOptionName'] = $value;
+        $addon_array[$key]['fPrice'] = isset($AddonPrice[$key]) ? $AddonPrice[$key] : 0;
+        $addon_array[$key]['eOptionType'] = isset($optTypeaddon[$key]) ? $optTypeaddon[$key] : 'Addon';
+        $addon_array[$key]['iOptionId'] = isset($addonId[$key]) ? $addonId[$key] : '';
+        $addon_array[$key]['eStatus'] = 'Active';
+    }
 }
 $vTitle_store = $vItemDesc_store = array();
 $sql = "SELECT * FROM `language_master` where eStatus='Active' ORDER BY `iDispOrder`";
@@ -396,437 +402,511 @@ if ($iServiceId > 1) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title><?= $SITE_NAME ?> | <?= $langage_lbl['LBL_MENU_ITEM_FRONT']; ?> <?= $action; ?></title>
-        <!-- Default Top Script and css -->
         <?php include_once("top/top_script.php"); ?>
-        <!-- End: Default Top Script and css-->
         <link rel="stylesheet" href="assets/plugins/switch/static/stylesheets/bootstrap-switch.css" />
+        <style>
+            /* ===== Menu Item Action - Professional UI ===== */
+            .mia-hero {
+                background: linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);
+                padding: 26px 28px;
+                position: relative; overflow: hidden;
+            }
+            .mia-hero::before {
+                content:''; position:absolute; top:-50px; right:-50px;
+                width:200px; height:200px; border-radius:50%;
+                background:rgba(255,255,255,0.04);
+            }
+            .mia-hero-inner {
+                display:flex; align-items:center;
+                justify-content:space-between; flex-wrap:wrap; gap:12px;
+                position:relative; z-index:1;
+            }
+            .mia-hero-title { color:#fff; font-size:22px; font-weight:700; margin:0 0 3px; }
+            .mia-hero-sub   { color:rgba(255,255,255,.6); font-size:13px; margin:0; }
+            .mia-back-btn {
+                display:inline-flex; align-items:center; gap:7px;
+                background:rgba(255,255,255,.1); color:#fff!important;
+                border:1px solid rgba(255,255,255,.2); border-radius:8px;
+                padding:9px 16px; font-size:13px; font-weight:500;
+                text-decoration:none!important; transition:background .2s;
+            }
+            .mia-back-btn:hover { background:rgba(255,255,255,.18); }
+            /* Form card */
+            .mia-card {
+                background:#fff; border-radius:0;
+                padding: 28px 28px 32px;
+            }
+            .mia-section-title {
+                font-size:15px; font-weight:700; color:#1a1a2e;
+                margin:0 0 18px; padding-bottom:10px;
+                border-bottom:2px solid #f0f2f7;
+                display:flex; align-items:center; gap:8px;
+            }
+            .mia-section-title .mia-sec-icon {
+                width:28px; height:28px; border-radius:7px;
+                display:inline-flex; align-items:center; justify-content:center;
+                font-size:14px;
+            }
+            .mia-row { display:flex; gap:20px; flex-wrap:wrap; margin-bottom:18px; }
+            .mia-field { flex:1; min-width:220px; }
+            .mia-field.full { flex:0 0 100%; }
+            .mia-label {
+                display:block; font-size:12.5px; font-weight:600;
+                color:#5a6478; margin-bottom:6px; text-transform:uppercase;
+                letter-spacing:.4px;
+            }
+            .mia-label .req { color:#e94560; }
+            .mia-input, .mia-select, .mia-textarea {
+                width:100%; border:1.5px solid #dde1e7; border-radius:8px;
+                padding:10px 13px; font-size:14px; color:#3d4451;
+                background:#fafbff; outline:none; box-sizing:border-box;
+                transition:border-color .2s, box-shadow .2s, background .2s;
+                font-family:inherit;
+            }
+            .mia-input:focus,.mia-select:focus,.mia-textarea:focus {
+                border-color:#e94560; background:#fff;
+                box-shadow:0 0 0 3px rgba(233,69,96,.08);
+            }
+            .mia-textarea { min-height:80px; resize:vertical; }
+            .mia-select { appearance:none; -webkit-appearance:none;
+                background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23aab0bc'/%3E%3C/svg%3E");
+                background-repeat:no-repeat; background-position:right 12px center;
+                padding-right:32px; cursor:pointer;
+            }
+            .mia-note {
+                font-size:11.5px; color:#aab0bc; margin-top:5px; display:block;
+            }
+            /* Image upload */
+            .mia-img-preview {
+                display:block; max-width:180px; max-height:180px;
+                border-radius:12px; border:2px solid #e8ecf0;
+                object-fit:cover; margin-bottom:10px;
+            }
+            .mia-file-area {
+                border:2px dashed #dde1e7; border-radius:10px;
+                padding:18px; text-align:center;
+                background:#fafbff; cursor:pointer;
+                transition:border-color .2s;
+            }
+            .mia-file-area:hover { border-color:#e94560; }
+            .mia-file-area input[type=file] {
+                display:block; width:100%; cursor:pointer; font-size:13px;
+            }
+            /* Options / Addons panel */
+            .mia-panel {
+                border:1.5px solid #e8ecf0; border-radius:12px;
+                overflow:hidden; margin-bottom:18px;
+            }
+            .mia-panel-head {
+                background:#f4f6fb; padding:14px 18px;
+                display:flex; align-items:center; justify-content:space-between;
+                border-bottom:1.5px solid #e8ecf0;
+            }
+            .mia-panel-head-title {
+                font-size:13.5px; font-weight:700; color:#1a1a2e;
+                display:flex; align-items:center; gap:6px;
+            }
+            .mia-panel-body { padding:18px; }
+            .mia-opt-row {
+                display:flex; gap:10px; align-items:center;
+                margin-bottom:10px; flex-wrap:wrap;
+            }
+            .mia-opt-row .mia-input { flex:1; min-width:120px; }
+            .mia-add-btn {
+                display:inline-flex; align-items:center; gap:6px;
+                background:#eafaf1; color:#27ae60; border:1.5px solid #c3e6cb;
+                border-radius:8px; padding:8px 14px; font-size:13px; font-weight:600;
+                cursor:pointer; transition:background .2s;
+            }
+            .mia-add-btn:hover { background:#d4efdf; }
+            .mia-rem-btn {
+                display:inline-flex; align-items:center; justify-content:center;
+                width:32px; height:32px; border-radius:8px;
+                background:#fdf2f2; color:#e74c3c; border:1.5px solid #fad7d7;
+                cursor:pointer; transition:background .2s; flex-shrink:0;
+            }
+            .mia-rem-btn:hover { background:#fce8e8; }
+            /* Toggle switches */
+            .mia-toggle-row {
+                display:flex; align-items:center; justify-content:space-between;
+                padding:14px 0; border-bottom:1px solid #f0f2f7;
+            }
+            .mia-toggle-row:last-child { border-bottom:none; }
+            .mia-toggle-label {
+                font-size:13.5px; color:#3d4451; font-weight:500;
+            }
+            .mia-toggle-sublabel {
+                font-size:11.5px; color:#aab0bc; margin-top:2px;
+            }
+            /* Alert */
+            .mia-alert {
+                display:flex; align-items:flex-start; gap:10px;
+                padding:13px 16px; border-radius:8px; font-size:13.5px;
+                margin-bottom:20px; animation: fadeIn .3s ease;
+            }
+            @keyframes fadeIn { from{opacity:0;transform:translateY(-5px)} to{opacity:1;transform:translateY(0)} }
+            .mia-alert.success { background:#eafaf1; border-left:4px solid #27ae60; color:#1d6b3d; }
+            .mia-alert.danger  { background:#fdf2f2; border-left:4px solid #e74c3c; color:#962d2d; }
+            .mia-alert-close { margin-left:auto; background:none; border:none; cursor:pointer; opacity:.5; font-size:16px; color:inherit; }
+            .mia-alert-close:hover { opacity:1; }
+            /* Submit button */
+            .mia-submit-area { padding-top:20px; border-top:1px solid #f0f2f7; margin-top:10px; }
+            .mia-submit-btn {
+                display:inline-flex; align-items:center; gap:8px;
+                background:linear-gradient(135deg,#e94560,#c73652);
+                color:#fff; border:none; border-radius:10px;
+                padding:13px 32px; font-size:15px; font-weight:700;
+                cursor:pointer; letter-spacing:.2px;
+                box-shadow:0 4px 15px rgba(233,69,96,.35);
+                transition:box-shadow .2s, transform .15s;
+            }
+            .mia-submit-btn:hover {
+                box-shadow:0 6px 20px rgba(233,69,96,.45);
+                transform:translateY(-1px);
+            }
+            /* Food type badge select */
+            .mia-badge-row {
+                display:flex; gap:10px; flex-wrap:wrap;
+            }
+            .mia-badge-opt {
+                display:none;
+            }
+            .mia-badge-opt + label {
+                padding:7px 16px; border:1.5px solid #dde1e7;
+                border-radius:20px; font-size:13px; font-weight:500;
+                color:#5a6478; cursor:pointer; transition:all .2s;
+            }
+            .mia-badge-opt:checked + label {
+                background:#e94560; border-color:#e94560; color:#fff;
+            }
+            span.help-block { margin:0; padding:0; }
+            @media(max-width:768px) {
+                .mia-row { flex-direction:column; }
+                .mia-field { min-width:100%; }
+            }
+        </style>
     </head>
     <body>
-        <!-- home page -->
         <div id="main-uber-page">
-            <!-- Left Menu -->
             <?php include_once("top/left_menu.php"); ?>
-            <!-- End: Left Menu-->
-            <!-- Top Menu -->
             <?php include_once("top/header_topbar.php"); ?>
-            <!-- End: Top Menu-->
-            <!-- contact page-->
-            <div class="page-contant ">
-                <div class="page-contant-inner page-trip-detail">
-                    <h2 class="header-page trip-detail food-detail1"><?= $action_lbl; ?> <?= $langage_lbl['LBL_MENU_ITEM_FRONT']; ?> <?= $vName; ?>
-                        <a href="menuitems.php">
-                            <img src="assets/img/arrow-white.png" alt=""> <?= $langage_lbl['LBL_BACK_To_Listing_WEB']; ?>
-                        </a>
-                    </h2>
-                    <!-- login in page -->
-                    <div class="food-action-page">
-                        <?php if ($success == 1) { ?>
-                            <div class="alert alert-success alert-dismissable">
-                                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                <?php echo $langage_lbl['LBL_Record_Updated_successfully']; ?>
-                            </div>
-                        <?php } else if ($success == 2) { ?>
-                            <div class="alert alert-danger alert-dismissable">
-                                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                <?php echo $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?>
-                            </div>
-                        <?php } ?>
-                        <div style="clear:both;"></div>
-                        <form id="menuItem_form" name="menuItem_form" class="menuItemFormFront" method="post" action="" enctype="multipart/form-data">
-                            <input type="hidden" name="id" value="<?= $id; ?>"/>
-                            <input  type="hidden" name="oldImage" value="<?php echo $oldImage; ?>">
-                            <input type="hidden" name="previousLink" id="previousLink" value="<?php echo $previousLink; ?>"/>
-                            <input type="hidden" name="backlink" id="backlink" value="menuitems.php"/>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <label><?php echo $langage_lbl['LBL_MENU_CATEGORY_WEB_TXT'] ?><span class="red"> *</span></label>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <select  class="form-control" name = 'iFoodMenuId' required onChange="changeDisplayOrder(this.value, '<?php echo $id; ?>');" >
-                                                    <option value=""><?php echo $langage_lbl['LBL_SELECT_CATEGORY'] ?></option>
-                                                    <?php foreach ($db_menu as $dbmenu) { ?>
-                                                        <option value = "<?= $dbmenu['iFoodMenuId'] ?>" <?= ($dbmenu['iFoodMenuId'] == $iFoodMenuId) ? 'selected' : ''; ?> <?php if (scount($dbmenu['menuItems']) > 0) { ?> <?php } ?> ><?= $dbmenu['vMenu_' . $_SESSION['sess_lang']]; ?></option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-                                        </div>
 
-                                        <?php
-                                        if ($count_all > 0) {
-                                            for ($i = 0; $i < $count_all; $i++) {
-                                                $vCode = $db_master[$i]['vCode'];
-                                                $vTitle = $db_master[$i]['vTitle'];
-                                                $eDefault = $db_master[$i]['eDefault'];
-
-                                                $vValue = 'vItemType_' . $vCode;
-                                                $vValue_desc = 'vItemDesc_' . $vCode;
-
-                                                $required = ($eDefault == 'Yes') ? 'required' : '';
-                                                $required_msg = ($eDefault == 'Yes') ? '<span class="red"> *</span>' : '';
-                                                ?>
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <label><?php echo $langage_lbl['LBL_MENU_ITEM_FRONT'] ?> (<?= $vTitle; ?>) <?= $required_msg; ?></label>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <input type="text" class="form-control" name="<?= $vValue; ?>" id="<?= $vValue; ?>" value="<?= $$vValue; ?>" placeholder="<?= $vTitle; ?>Value" <?= $required; ?>>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <label><?php echo $langage_lbl['LBL_MENU_ITEM_DESCRIPTION'] ?>(<?= $vTitle; ?>)</label>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <textarea class="form-control" name="<?= $vValue_desc; ?>" id="<?= $vValue_desc; ?>" ><?= $$vValue_desc; ?></textarea>
-                                                    </div>
-                                                </div>
-                                                <?php
-                                            }
-                                        }
-                                        ?>
-
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <label><?php echo $langage_lbl['LBL_DISPLAY_ORDER_FRONT'] ?><span class="red"> *</span></label>
-                                            </div>
-                                            <div class="col-lg-12" id="showDisplayOrder001">
-                                                <?php if ($action == 'Add') { ?>
-                                                    <input type="hidden" name="total" value="<?php echo $count + 1; ?>" >
-                                                    <select name="iDisplayOrder" id="iDisplayOrder" class="form-control" required>
-                                                        <?php for ($i = 1; $i <= $count + 1; $i++) { ?>
-                                                            <option value="<?php echo $i ?>" 
-                                                            <?php
-                                                            if ($i == $count + 1)
-                                                                echo 'selected';
-                                                            ?>> <?php echo $i ?> </option>
-                                                                <?php } ?>
-                                                    </select>
-                                                <?php }else { ?>
-                                                    <input type="hidden" name="total" value="<?php echo $iDisplayOrder; ?>">
-                                                    <select name="iDisplayOrder" id="iDisplayOrder" class="form-control" required>
-                                                        <option value="">Display Order</option>
-                                                        <?php for ($i = 1; $i <= $count; $i++) { ?>
-                                                            <option value="<?php echo $i ?>"
-                                                            <?php
-                                                            if ($i == $iDisplayOrder)
-                                                                echo 'selected';
-                                                            ?>
-                                                                    > <?php echo $i ?> </option>
-                                                                <?php } ?>
-                                                    </select>
-                                                <?php } ?>
-                                            </div>
-                                        </div>
-
-                                        <!--    <div class="row">
-                                            <div class="col-lg-12">
-                                              <label>Status</label>
-                                            </div>
-                                            <div class="col-lg-12">
-                                              <div class="make-switch" data-on="success" data-off="warning" id="mySwitch">
-                                                <input type="checkbox" name="eStatus" <?= ($id != '' && $eStatus == 'Inactive') ? '' : 'checked'; ?> id="eStatus"/>
-                                              </div>
-                                            </div>
-                                            </div> -->
-
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <label><?php echo $langage_lbl['LBL_MENU_ITEM_IMAGE'] ?><span class="red" id="req_recommended"> *</span></label>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="imageupload">
-                                                    <div class="file-tab">
-                                                        <span id="single_img001">
-                                                            <?php
-                                                            $imgpth = $tconfig["tsite_upload_images_menu_item_path"] . '/' . $oldImage;
-                                                            $imgUrl = $tconfig["tsite_upload_images_menu_item"] . '/' . $oldImage;
-                                                            if ($oldImage != "" && file_exists($imgpth)) {
-                                                                ?>
-                                                                <img src="<?php echo $imgUrl; ?>" alt="Image preview" class="thumbnail" style="max-width: 250px; max-height: 250px">
-                                                            <?php } ?>
-                                                        </span>
-                                                        <div>
-                                                            <input type="hidden" name="vImageTest" value="" >
-                                                            <input type="hidden" id="imgnameedit" value="<?= trim($oldImage); ?>">
-                                                            <input name="vImage" onchange="preview_mainImg(event);" type="file" class="form-control">
-                                                            <b>[Note: Recommended dimension is 2048px * 2048px and if this item is set as recommended then the item image is required.]</b><!--added by SP for required validation add in menu item image when recommended is on on 26-07-2019 -->]</b>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6">
-                                        <div class="row" style="">
-                                            <div class="col-lg-12">
-                                                <label><?php echo $langage_lbl['LBL_PRICE_FOR_MENU_ITEM'] ?> (In <?= $db_currency[0]['vName'] ?>) <span class="red"> *</span></label>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <input type="text" onkeyup="updateOptionPrice();" class="form-control" name="fPrice"  id="fPrice" value="<?= $fPrice; ?>" required>
-                                                <small>[<?php echo $langage_lbl['LBL_NOTE_FRONT'] ?> <?php echo $langage_lbl['LBL_NOTE_FOR_PRICE_MENU_ITEM'] ?> ]</small>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="panel panel-default">
-                                                    <div class="panel-heading">
-                                                        <div class="row">
-                                                            <div class="col-lg-6"><h5><b><?php echo $langage_lbl['LBL_OPTIONS_MENU_ITEM'] ?></b> <i class="icon-question-sign" data-placement="top" data-toggle="tooltip" data-original-title='<?= $helpText; ?>'></i></h5></div>
-                                                            <div class="col-lg-6 text-right"><button class="btn btn-success" type="button"  onclick="options_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="panel-body" style="padding: 25px;">
-                                                        <div id="options_fields"> 
-                                                            <?php
-                                                            if (scount($db_optionsdata) > 0) {
-                                                                $opt = 0;
-                                                                foreach ($db_optionsdata as $k => $option) {
-                                                                    $opt++;
-                                                                    ?>
-                                                                    <?php if ($option['eDefault'] == 'Yes') { ?>
-                                                                        <div class="form-group eDefault"> 
-                                                                            <div class="col-sm-5">
-                                                                                <div class="form-group"> 
-                                                                                    <input type="text" class="form-control" id="BaseOptions" name="BaseOptions[]" required="required" value="<?= $option['vOptionName'] ?>" placeholder="Option Name" >
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-5">
-                                                                                <div class="form-group"> 
-                                                                                    <input type="text" class="form-control" id="OptPrice" name="OptPrice[]"  value="<?= $option['fPrice'] ?>" placeholder="Price" readonly required="required">
-                                                                                    <input type="hidden" name="optType[]" value="Options" />
-                                                                                    <input type="hidden" name="OptionId[]" value="<?= $option['iOptionId'] ?>" /><input type="hidden" name="eDefault[]" value="Yes"/>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="clear"></div>
-                                                                        </div>
-                                                                    <?php } else { ?>
-                                                                        <div class="form-group removeclass<?= $opt ?>"> 
-                                                                            <div class="col-sm-5">
-                                                                                <div class="form-group"> 
-                                                                                    <input type="text" class="form-control" id="BaseOptions" name="BaseOptions[]" required="required" value="<?= $option['vOptionName'] ?>" placeholder="Option Name" >
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-5">
-                                                                                <div class="form-group"> 
-                                                                                    <input type="text" class="form-control" id="OptPrice" name="OptPrice[]" required="required" value="<?= $option['fPrice'] ?>" placeholder="Price">
-                                                                                    <input type="hidden" name="optType[]" value="Options" />
-                                                                                    <input type="hidden" name="OptionId[]" value="<?= $option['iOptionId'] ?>" /><input type="hidden" name="eDefault[]" value="No"/>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-2">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="input-group-btn"> 
-                                                                                            <button class="btn btn-danger" type="button" onclick="remove_options_fields('<?= $opt ?>');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="clear"></div>
-                                                                        </div>
-                                                                        <?php
-                                                                    }
-                                                                }
-                                                            }
-                                                            ?>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="panel panel-default" <?php if ($iServiceId != '1') { ?> style="display:none;" <?php } ?>>
-                                                    <div class="panel-heading">
-                                                        <div class="row">
-                                                            <div class="col-lg-6"><h5><b><?php echo $langage_lbl['LBL_ADDON_FRONT'] ?> <i class="icon-question-sign" data-placement="top" data-toggle="tooltip" data-original-title='Addon/Topping Price will be additional amount which will added in base price'></i></b></h5></div>
-                                                            <div class="col-lg-6 text-right"><button class="btn btn-success" type="button"  onclick="addon_fields();"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="panel-body" style="padding: 25px;">
-                                                        <div id="addon_fields">
-                                                            <?php
-                                                            if (scount($db_addonsdata) > 0) {
-                                                                $a = 0;
-                                                                foreach ($db_addonsdata as $k => $addon) {
-                                                                    $a++;
-                                                                    ?>
-                                                                    <div class="form-group removeclassaddon<?= $a ?>"> 
-                                                                        <div class="col-sm-5">
-                                                                            <div class="form-group"> 
-                                                                                <input type="text" class="form-control" id="AddonOptions" name="AddonOptions[]" value="<?= $addon['vOptionName'] ?>" placeholder="Topping Name" required>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-5">
-                                                                            <div class="form-group"> 
-                                                                                <input type="text" class="form-control" id="AddonPrice" name="AddonPrice[]" value="<?= $addon['fPrice'] ?>" placeholder="Price" required>
-                                                                                <input type="hidden" name="optTypeaddon[]" value="Addon" />
-                                                                                <input type="hidden" name="addonId[]" value="<?= $addon['iOptionId'] ?>" />
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-2">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="input-group-btn"> 
-                                                                                        <button class="btn btn-danger" type="button" onclick="remove_addon_fields('<?= $a ?>');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="clear"></div>
-                                                                    </div>
-                                                                    <?php
-                                                                }
-                                                            }
-                                                            ?>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row" >
-                                            <div class="col-lg-12">
-                                                <label><?php echo $langage_lbl['LBL_OFFER_AMOUNT_MENU_ITEM'] ?>(%) <i class="icon-question-sign" data-placement="top" data-toggle="tooltip" data-original-title='Set Offer amount on an item, if you want to show discounted/strikeout amount. E.g If Item Price is $100 but you want to sell it for $80, then set Offer Amount = 20%, hence the final price of this item is $80'></i></label>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <input type="text" class="form-control" name="fOfferAmt"  id="fOfferAmt" value="<?= $fOfferAmt; ?>" />
-                                                <small><?php echo $langage_lbl['LBL_NOTE_FRONT']." ".$langage_lbl['LBL_DISCOUNT_NOTE'] ?></small>
-                                            </div>
-                                        </div>
-                                        <div class="row servicecatresponsive" <?php if ($iServiceId != '1') { ?> style="display:none;" <?php } ?>>
-                                            <div class="col-lg-12">
-                                                <label><?= $langage_lbl['LBL_FOOD_TYPE'] ?><span class="red">*</span></label>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <select class="form-control" name="eFoodType"  id="eFoodType">
-                                                    <option value="">--Select--</option>										
-                                                    <option value="Veg" <?php
-                                                    if ($eFoodType == 'Veg') {
-                                                        echo 'selected';
-                                                    }
-                                                    ?>><?= $langage_lbl['LBL_VEG_FOOD'] ?></option>
-                                                    <option value="NonVeg" <?php
-                                                    if ($eFoodType == 'NonVeg') {
-                                                        echo 'selected';
-                                                    }
-                                                    ?>><?= $langage_lbl['LBL_NON_VEG_FOOD'] ?></option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <label> <label><?php echo $langage_lbl['LBL_ITEM_IN_STOCK_WEB'] ?> <i class="icon-question-sign" data-placement="top" data-toggle="tooltip" data-original-title="If this item is set On by the restaurant then it will be available for user\'s to order it, Set it off when the item is out of stock"></i></label></label>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="make-switch" data-on="success" data-off="warning">
-                                                    <input type="checkbox" name="eAvailable" <?= ($id != '' && $eAvailable == 'No') ? '' : 'checked'; ?> id="eAvailable" />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <label><?php echo $langage_lbl['LBL_IS_ITEM_RECOMMENDED'] ?> <i class="icon-question-sign" data-placement="top" data-toggle="tooltip" data-original-title="Suggest the user's to order this item. The recommended items will be highlighted in the user app with the image and display at the top section"></i></label>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="make-switch" data-on="success" data-off="warning">
-                                                    <input type="checkbox" name="eRecommended" <?= ($id != '' && $eRecommended == 'No') ? '' : 'checked'; ?> id="eRecommended" />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <label><?php echo $langage_lbl['LBL_ITEM_TAG_NAME'] ?> <i class="icon-question-sign" data-placement="top" data-toggle="tooltip" data-original-title="Set the tag name to this item. Like, Best Seller, Most Popular"></i></label>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <select class="form-control" name="vHighlightName"  id="vHighlightName">
-                                                    <option value="">Select Tag</option>
-                                                    <option value="LBL_BESTSELLER" <?php
-                                                    if ($vHighlightName == 'LBL_BESTSELLER') {
-                                                        echo 'selected';
-                                                    }
-                                                    ?>><?php echo $langage_lbl['LBL_BESTSELLER'] ?></option>
-                                                    <option value="LBL_NEWLY_ADDED" <?php
-                                                    if ($vHighlightName == 'LBL_NEWLY_ADDED') {
-                                                        echo 'selected';
-                                                    }
-                                                    ?>><?php echo $langage_lbl['LBL_NEWLY_ADDED'] ?></option>
-                                                    <option value="LBL_PROMOTED" <?php
-                                                    if ($vHighlightName == 'LBL_PROMOTED') {
-                                                        echo 'selected';
-                                                    }
-                                                    ?>><?php echo $langage_lbl['LBL_PROMOTED'] ?></option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <!-- For Prescription required start added by sneha  -->
-                                        <?php
-                                        if ($id == "" && $prescription_required == "No") {
-                                            $checked_prescription = "";
-                                        } else if ($id != "" && $prescription_required == "No") {
-                                            $checked_prescription = "";
-                                        } else if ($prescription_required == "Yes") {
-                                            $checked_prescription = "checked";
-                                        }
-                                        ?>
-                                        <div class="row" id="prescription_div" style="display:<?php if ($prescriptionchkbox_required == 'Yes') { ?>block<?php } else { ?>none<?php } ?>">
-                                            <div class="col-lg-12">
-                                                <label><?php echo $langage_lbl_admin['LBL_IS_PRESCRIPTION_REQUIRED'] ?> <i class="icon-question-sign" data-placement="top" data-toggle="tooltip" data-original-title="This will allow user to upload the precription while placing the order"></i></label>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="make-switch" data-on="success" data-off="warning" data-on-text="Yes" data-off-text="No" id="mySwitch1" >
-                                                    <input type="checkbox" name="prescription_required" <?php echo $checked_prescription; ?> id="prescription_required" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- For Prescription required end added by sneha  -->
-
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <input type="submit" class="save-but" name="btnsubmit" id="btnsubmit" value="<?= $action; ?> <?php echo $langage_lbl['LBL_MENU_ITEM_FRONT']; ?>" >
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+            <!-- Hero Header -->
+            <div class="mia-hero">
+                <div class="mia-hero-inner">
+                    <div>
+                        <h1 class="mia-hero-title">
+                            <?= ($action == 'Add') ? $langage_lbl['LBL_ACTION_ADD'] : $langage_lbl['LBL_EDIT']; ?>
+                            <?= $langage_lbl['LBL_MENU_ITEM_FRONT']; ?>
+                        </h1>
+                        <p class="mia-hero-sub"><?= ($action == 'Add') ? 'Add a new item to your menu' : 'Update the details of this menu item'; ?></p>
                     </div>
+                    <a href="menuitems.php" class="mia-back-btn">
+                        <span class="icon-arrow-left"></span>
+                        <?= $langage_lbl['LBL_BACK_To_Listing_WEB']; ?>
+                    </a>
                 </div>
-                <div style="clear:both;"></div>
             </div>
+
+            <div class="mia-card">
+                <!-- Alerts -->
+                <?php if ($success == 1) { ?>
+                <div class="mia-alert success" id="mia-alert">
+                    <span>&#10003;</span>
+                    <span><?= $langage_lbl['LBL_Record_Updated_successfully']; ?></span>
+                    <button class="mia-alert-close" onclick="this.parentElement.style.display='none'">&times;</button>
+                </div>
+                <?php } else if ($success == 2) { ?>
+                <div class="mia-alert danger" id="mia-alert">
+                    <span>&#9888;</span>
+                    <span><?= $langage_lbl['LBL_EDIT_DELETE_RECORD']; ?></span>
+                    <button class="mia-alert-close" onclick="this.parentElement.style.display='none'">&times;</button>
+                </div>
+                <?php } ?>
+
+                <form id="menuItem_form" name="menuItem_form" class="menuItemFormFront" method="post" action="" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<?= $id; ?>"/>
+                    <input type="hidden" name="oldImage" value="<?= $oldImage; ?>">
+                    <input type="hidden" name="previousLink" id="previousLink" value="<?= $previousLink; ?>"/>
+                    <input type="hidden" name="backlink" id="backlink" value="menuitems.php"/>
+
+                    <!-- Section 1: Basic Info -->
+                    <div class="mia-section-title">
+                        <span class="mia-sec-icon" style="background:#e8f4fd;color:#2980b9;">&#9776;</span>
+                        Basic Information
+                    </div>
+                    <div class="mia-row">
+                        <div class="mia-field">
+                            <label class="mia-label"><?= $langage_lbl['LBL_MENU_CATEGORY_WEB_TXT'] ?> <span class="req">*</span></label>
+                            <select class="mia-select" name="iFoodMenuId" required onchange="changeDisplayOrder(this.value, '<?= $id; ?>');">
+                                <option value=""><?= $langage_lbl['LBL_SELECT_CATEGORY'] ?></option>
+                                <?php foreach ($db_menu as $dbmenu) { ?>
+                                <option value="<?= $dbmenu['iFoodMenuId'] ?>" <?= ($dbmenu['iFoodMenuId'] == $iFoodMenuId) ? 'selected' : ''; ?>>
+                                    <?= $dbmenu['vMenu_' . $_SESSION['sess_lang']]; ?>
+                                </option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="mia-field">
+                            <label class="mia-label"><?= $langage_lbl['LBL_DISPLAY_ORDER_FRONT'] ?> <span class="req">*</span></label>
+                            <span id="showDisplayOrder001">
+                                <?php if ($action == 'Add') { ?>
+                                <input type="hidden" name="total" value="<?= $count + 1; ?>">
+                                <select name="iDisplayOrder" id="iDisplayOrder" class="mia-select" required>
+                                    <?php for ($i = 1; $i <= $count + 1; $i++) { ?>
+                                    <option value="<?= $i ?>" <?= ($i == $count + 1) ? 'selected' : ''; ?>><?= $i ?></option>
+                                    <?php } ?>
+                                </select>
+                                <?php } else { ?>
+                                <input type="hidden" name="total" value="<?= $iDisplayOrder; ?>">
+                                <select name="iDisplayOrder" id="iDisplayOrder" class="mia-select" required>
+                                    <?php for ($i = 1; $i <= $count; $i++) { ?>
+                                    <option value="<?= $i ?>" <?= ($i == $iDisplayOrder) ? 'selected' : ''; ?>><?= $i ?></option>
+                                    <?php } ?>
+                                </select>
+                                <?php } ?>
+                            </span>
+                        </div>
+                    </div>
+
+                    <?php
+                    if ($count_all > 0) {
+                        for ($i = 0; $i < $count_all; $i++) {
+                            $vCode  = $db_master[$i]['vCode'];
+                            $vTitle = $db_master[$i]['vTitle'];
+                            $eDefault_lang = $db_master[$i]['eDefault'];
+                            $vValue      = 'vItemType_' . $vCode;
+                            $vValue_desc = 'vItemDesc_' . $vCode;
+                            $required     = ($eDefault_lang == 'Yes') ? 'required' : '';
+                            $required_msg = ($eDefault_lang == 'Yes') ? '<span class="req">*</span>' : '';
+                    ?>
+                    <div class="mia-row">
+                        <div class="mia-field">
+                            <label class="mia-label"><?= $langage_lbl['LBL_MENU_ITEM_FRONT'] ?> (<?= $vTitle ?>) <?= $required_msg ?></label>
+                            <input type="text" class="mia-input" name="<?= $vValue ?>" id="<?= $vValue ?>" value="<?= $$vValue ?>" placeholder="<?= $vTitle ?>" <?= $required ?>>
+                        </div>
+                        <div class="mia-field">
+                            <label class="mia-label"><?= $langage_lbl['LBL_MENU_ITEM_DESCRIPTION'] ?> (<?= $vTitle ?>)</label>
+                            <textarea class="mia-textarea" name="<?= $vValue_desc ?>" id="<?= $vValue_desc ?>"><?= $$vValue_desc ?></textarea>
+                        </div>
+                    </div>
+                    <?php } } ?>
+
+                    <!-- Section 2: Pricing -->
+                    <div class="mia-section-title" style="margin-top:10px;">
+                        <span class="mia-sec-icon" style="background:#eafaf1;color:#27ae60;">&#36;</span>
+                        Pricing
+                    </div>
+                    <div class="mia-row">
+                        <div class="mia-field">
+                            <label class="mia-label"><?= $langage_lbl['LBL_PRICE_FOR_MENU_ITEM'] ?> (<?= $db_currency[0]['vName'] ?>) <span class="req">*</span></label>
+                            <input type="text" class="mia-input" name="fPrice" id="fPrice" value="<?= $fPrice; ?>" onkeyup="updateOptionPrice();" required>
+                            <span class="mia-note"><?= $langage_lbl['LBL_NOTE_FOR_PRICE_MENU_ITEM'] ?></span>
+                        </div>
+                        <div class="mia-field">
+                            <label class="mia-label"><?= $langage_lbl['LBL_OFFER_AMOUNT_MENU_ITEM'] ?> (%)</label>
+                            <input type="text" class="mia-input" name="fOfferAmt" id="fOfferAmt" value="<?= $fOfferAmt; ?>" placeholder="0">
+                            <span class="mia-note"><?= $langage_lbl['LBL_DISCOUNT_NOTE'] ?></span>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Item Image -->
+                    <div class="mia-section-title" style="margin-top:10px;">
+                        <span class="mia-sec-icon" style="background:#fef9e7;color:#f39c12;">&#128247;</span>
+                        <?= $langage_lbl['LBL_MENU_ITEM_IMAGE'] ?> <span style="color:#e94560;margin-left:3px;" id="req_recommended">*</span>
+                    </div>
+                    <div class="mia-row">
+                        <div class="mia-field">
+                            <span id="single_img001">
+                                <?php
+                                $imgpth = $tconfig["tsite_upload_images_menu_item_path"] . '/' . $oldImage;
+                                $imgUrl = $tconfig["tsite_upload_images_menu_item"] . '/' . $oldImage;
+                                if ($oldImage != "" && file_exists($imgpth)) { ?>
+                                <img src="<?= $imgUrl ?>" alt="Item Image" class="mia-img-preview">
+                                <?php } ?>
+                            </span>
+                            <div class="mia-file-area">
+                                <input type="hidden" name="vImageTest" value="">
+                                <input type="hidden" id="imgnameedit" value="<?= trim($oldImage); ?>">
+                                <input name="vImage" type="file" onchange="preview_mainImg(event);" style="margin:auto;">
+                            </div>
+                            <span class="mia-note">Recommended: 2048x2048px. Required when item is marked as recommended.</span>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Options & Addons -->
+                    <div class="mia-section-title" style="margin-top:10px;">
+                        <span class="mia-sec-icon" style="background:#eef2ff;color:#3d5af1;">&#9881;</span>
+                        Options &amp; Addons
+                    </div>
+
+                    <!-- Options Panel -->
+                    <div class="mia-panel">
+                        <div class="mia-panel-head">
+                            <div class="mia-panel-head-title">
+                                <?= $langage_lbl['LBL_OPTIONS_MENU_ITEM'] ?>
+                                <i class="icon-question-sign" data-placement="top" data-toggle="tooltip" data-original-title="<?= $helpText ?>"></i>
+                            </div>
+                            <button type="button" class="mia-add-btn" onclick="options_fields();">
+                                <span class="glyphicon glyphicon-plus"></span> Add Option
+                            </button>
+                        </div>
+                        <div class="mia-panel-body">
+                            <div id="options_fields">
+                                <?php
+                                if (scount($db_optionsdata) > 0) {
+                                    $opt = 0;
+                                    foreach ($db_optionsdata as $k => $option) {
+                                        $opt++;
+                                        if ($option['eDefault'] == 'Yes') { ?>
+                                        <div class="mia-opt-row eDefault">
+                                            <input type="text" class="mia-input" name="BaseOptions[]" value="<?= $option['vOptionName'] ?>" placeholder="Option Name" required>
+                                            <input type="text" class="mia-input" name="OptPrice[]" value="<?= $option['fPrice'] ?>" placeholder="Price" readonly required>
+                                            <input type="hidden" name="optType[]" value="Options">
+                                            <input type="hidden" name="OptionId[]" value="<?= $option['iOptionId'] ?>">
+                                            <input type="hidden" name="eDefault[]" value="Yes">
+                                        </div>
+                                        <?php } else { ?>
+                                        <div class="mia-opt-row removeclass<?= $opt ?>">
+                                            <input type="text" class="mia-input" name="BaseOptions[]" value="<?= $option['vOptionName'] ?>" placeholder="Option Name" required>
+                                            <input type="text" class="mia-input" name="OptPrice[]" value="<?= $option['fPrice'] ?>" placeholder="Price" required>
+                                            <input type="hidden" name="optType[]" value="Options">
+                                            <input type="hidden" name="OptionId[]" value="<?= $option['iOptionId'] ?>">
+                                            <input type="hidden" name="eDefault[]" value="No">
+                                            <button type="button" class="mia-rem-btn" onclick="remove_options_fields('<?= $opt ?>');">
+                                                <span class="glyphicon glyphicon-minus"></span>
+                                            </button>
+                                        </div>
+                                        <?php }
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Addon Panel -->
+                    <div class="mia-panel" <?= ($iServiceId != '1') ? 'style="display:none;"' : '' ?>>
+                        <div class="mia-panel-head">
+                            <div class="mia-panel-head-title">
+                                <?= $langage_lbl['LBL_ADDON_FRONT'] ?>
+                                <i class="icon-question-sign" data-placement="top" data-toggle="tooltip" data-original-title="Addon/Topping Price will be additional amount which will added in base price"></i>
+                            </div>
+                            <button type="button" class="mia-add-btn" onclick="addon_fields();">
+                                <span class="glyphicon glyphicon-plus"></span> Add Topping
+                            </button>
+                        </div>
+                        <div class="mia-panel-body">
+                            <div id="addon_fields">
+                                <?php
+                                if (scount($db_addonsdata) > 0) {
+                                    $a = 0;
+                                    foreach ($db_addonsdata as $k => $addon) {
+                                        $a++;
+                                        ?>
+                                        <div class="mia-opt-row removeclassaddon<?= $a ?>">
+                                            <input type="text" class="mia-input" name="AddonOptions[]" value="<?= $addon['vOptionName'] ?>" placeholder="Topping Name" required>
+                                            <input type="text" class="mia-input" name="AddonPrice[]" value="<?= $addon['fPrice'] ?>" placeholder="Price" required>
+                                            <input type="hidden" name="optTypeaddon[]" value="Addon">
+                                            <input type="hidden" name="addonId[]" value="<?= $addon['iOptionId'] ?>">
+                                            <button type="button" class="mia-rem-btn" onclick="remove_addon_fields('<?= $a ?>');">
+                                                <span class="glyphicon glyphicon-minus"></span>
+                                            </button>
+                                        </div>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 5: Settings -->
+                    <div class="mia-section-title" style="margin-top:10px;">
+                        <span class="mia-sec-icon" style="background:#fdf2f2;color:#e74c3c;">&#9878;</span>
+                        Item Settings
+                    </div>
+                    <div class="mia-row">
+                        <!-- Food Type -->
+                        <div class="mia-field servicecatresponsive" <?= ($iServiceId != '1') ? 'style="display:none;"' : '' ?>>
+                            <label class="mia-label"><?= $langage_lbl['LBL_FOOD_TYPE'] ?> <span class="req">*</span></label>
+                            <select class="mia-select" name="eFoodType" id="eFoodType">
+                                <option value=""><?= $langage_lbl['LBL_SELECT_TXT'] ?? '--Select--' ?></option>
+                                <option value="Veg" <?= ($eFoodType == 'Veg') ? 'selected' : '' ?>><?= $langage_lbl['LBL_VEG_FOOD'] ?></option>
+                                <option value="NonVeg" <?= ($eFoodType == 'NonVeg') ? 'selected' : '' ?>><?= $langage_lbl['LBL_NON_VEG_FOOD'] ?></option>
+                            </select>
+                        </div>
+                        <!-- Tag -->
+                        <div class="mia-field">
+                            <label class="mia-label"><?= $langage_lbl['LBL_ITEM_TAG_NAME'] ?></label>
+                            <select class="mia-select" name="vHighlightName" id="vHighlightName">
+                                <option value="">-- <?= $langage_lbl['LBL_SELECT_TXT'] ?? 'Select' ?> --</option>
+                                <option value="LBL_BESTSELLER" <?= ($vHighlightName == 'LBL_BESTSELLER') ? 'selected' : '' ?>><?= $langage_lbl['LBL_BESTSELLER'] ?></option>
+                                <option value="LBL_NEWLY_ADDED" <?= ($vHighlightName == 'LBL_NEWLY_ADDED') ? 'selected' : '' ?>><?= $langage_lbl['LBL_NEWLY_ADDED'] ?></option>
+                                <option value="LBL_PROMOTED" <?= ($vHighlightName == 'LBL_PROMOTED') ? 'selected' : '' ?>><?= $langage_lbl['LBL_PROMOTED'] ?></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Toggles -->
+                    <div style="border:1.5px solid #e8ecf0; border-radius:12px; padding:0 18px; margin-bottom:20px;">
+                        <div class="mia-toggle-row">
+                            <div>
+                                <div class="mia-toggle-label"><?= $langage_lbl['LBL_ITEM_IN_STOCK_WEB'] ?></div>
+                                <div class="mia-toggle-sublabel">Set off when item is out of stock</div>
+                            </div>
+                            <div class="make-switch" data-on="success" data-off="warning">
+                                <input type="checkbox" name="eAvailable" <?= ($id != '' && $eAvailable == 'No') ? '' : 'checked'; ?> id="eAvailable">
+                            </div>
+                        </div>
+                        <div class="mia-toggle-row">
+                            <div>
+                                <div class="mia-toggle-label"><?= $langage_lbl['LBL_IS_ITEM_RECOMMENDED'] ?></div>
+                                <div class="mia-toggle-sublabel">Highlighted in user app at top section</div>
+                            </div>
+                            <div class="make-switch" data-on="success" data-off="warning">
+                                <input type="checkbox" name="eRecommended" <?= ($id != '' && $eRecommended == 'No') ? '' : 'checked'; ?> id="eRecommended">
+                            </div>
+                        </div>
+                        <?php
+                        $checked_prescription = "";
+                        if ($prescription_required == "Yes") $checked_prescription = "checked";
+                        ?>
+                        <div class="mia-toggle-row" id="prescription_div" style="display:<?= ($prescriptionchkbox_required == 'Yes') ? 'flex' : 'none'; ?>;">
+                            <div>
+                                <div class="mia-toggle-label"><?= $langage_lbl_admin['LBL_IS_PRESCRIPTION_REQUIRED'] ?></div>
+                                <div class="mia-toggle-sublabel">User uploads prescription at order time</div>
+                            </div>
+                            <div class="make-switch" data-on="success" data-off="warning" data-on-text="Yes" data-off-text="No">
+                                <input type="checkbox" name="prescription_required" <?= $checked_prescription ?> id="prescription_required">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="mia-submit-area">
+                        <button type="submit" class="mia-submit-btn" name="btnsubmit" id="btnsubmit">
+                            <span class="icon-ok"></span>
+                            <?= $langage_lbl['LBL_Save'] ?? $action; ?> <?= $langage_lbl['LBL_MENU_ITEM_FRONT']; ?>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <?php include_once('footer/footer_home.php'); ?>
+            <div style="clear:both;"></div>
         </div>
-        <!-- footer part -->
-        <?php include_once('footer/footer_home.php'); ?>
-        <!-- footer part end -->
-        <!-- End:contact page-->
-        <div style="clear:both;"></div>
-        <!-- home page end-->
-        <!-- Footer Script -->
+
         <?php
         include_once('top/footer_script.php');
         $lang = $LANG_OBJ->getLanguageData($_SESSION['sess_lang'])['vLangCode'];
         ?>
-        <style>
-            span.help-block{
-                margin:0;
-                padding: 0;
-            }
-        </style>
-        <script type="text/javascript" src="<?php echo $tconfig["tsite_url_main_admin"] ?>js/validation/jquery.validate.min.js" ></script>
-        <?php if ($lang != 'en') { ?>
-            <!-- <script type="text/javascript" src="assets/js/validation/localization/messages_<?= $lang; ?>.js" ></script> -->
-            <?php include_once('otherlang_validation.php');?>
-        <?php } ?>
-        <script type="text/javascript" src="assets/js/validation/additional-methods.js" ></script>
-        <script src="assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
         <link href="assets/css/imageUpload/bootstrap-imageupload.css" rel="stylesheet">
+        <script src="assets/plugins/switch/static/js/bootstrap-switch.min.js"></script>
+        <script type="text/javascript" src="<?= $tconfig["tsite_url_main_admin"] ?>js/validation/jquery.validate.min.js"></script>
+        <?php if ($lang != 'en') { include_once('otherlang_validation.php'); } ?>
+        <script type="text/javascript" src="assets/js/validation/additional-methods.js"></script>
+        <style>span.help-block{margin:0;padding:0;}</style>
         <script>
         function changeDisplayOrder(foodId, menuId, parentId)
         {
