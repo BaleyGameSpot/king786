@@ -1,28 +1,127 @@
 <?php
+
+// ============================================================
+// LOGGING SYSTEM - menu_item_action.php
+// Log file: logs/menu_item_action_YYYY-MM-DD.log
+// ============================================================
+define('MIA_LOG_DIR', __DIR__ . '/logs');
+define('MIA_LOG_FILE', MIA_LOG_DIR . '/menu_item_action_' . date('Y-m-d') . '.log');
+
+if (!is_dir(MIA_LOG_DIR)) {
+    @mkdir(MIA_LOG_DIR, 0755, true);
+}
+
+function mia_log($step, $data = null) {
+    $timestamp = date('Y-m-d H:i:s');
+    $entry = "[$timestamp] [STEP: $step]";
+    if ($data !== null) {
+        if (is_array($data) || is_object($data)) {
+            $entry .= " " . json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        } else {
+            $entry .= " " . $data;
+        }
+    }
+    @file_put_contents(MIA_LOG_FILE, $entry . PHP_EOL, FILE_APPEND | LOCK_EX);
+}
+
+// Custom error handler - PHP errors bhi log hogi
+set_error_handler(function($errno, $errstr, $errfile, $errline) {
+    $types = [E_ERROR=>'ERROR', E_WARNING=>'WARNING', E_NOTICE=>'NOTICE',
+              E_PARSE=>'PARSE', E_DEPRECATED=>'DEPRECATED', E_USER_ERROR=>'USER_ERROR',
+              E_USER_WARNING=>'USER_WARNING', E_USER_NOTICE=>'USER_NOTICE'];
+    $type = isset($types[$errno]) ? $types[$errno] : "UNKNOWN($errno)";
+    mia_log("PHP_$type", "$errstr in $errfile on line $errline");
+    return false; // default handler bhi chalaye
+});
+
+// Fatal errors (500 cause) bhi catch karo
+register_shutdown_function(function() {
+    $error = error_get_last();
+    if ($error && in_array($error['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR])) {
+        mia_log("FATAL_ERROR", $error['message'] . " in " . $error['file'] . " on line " . $error['line']);
+    }
+    mia_log("SCRIPT_END", "Script finished");
+});
+
+// Log script start
+mia_log("SCRIPT_START", [
+    'method'     => $_SERVER['REQUEST_METHOD'] ?? 'UNKNOWN',
+    'uri'        => $_SERVER['REQUEST_URI'] ?? '',
+    'ip'         => $_SERVER['REMOTE_ADDR'] ?? '',
+    'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? '',
+]);
+
+// GET params log karo
+mia_log("GET_PARAMS", [
+    'id'      => $_GET['id'] ?? 'NOT_SET',
+    'success' => $_GET['success'] ?? 'NOT_SET',
+]);
+
+// POST params log karo (sensitive values mask karke)
+$post_log = $_POST;
+unset($post_log['vImageTest']);
+mia_log("POST_PARAMS", $post_log);
+
+// SESSION key values log karo
+mia_log("SESSION_DATA", [
+    'sess_iUserId'  => $_SESSION['sess_iUserId'] ?? 'NOT_SET',
+    'sess_eSystem'  => $_SESSION['sess_eSystem'] ?? 'NOT_SET',
+    'sess_lang'     => $_SESSION['sess_lang'] ?? 'NOT_SET',
+    'sess_signin'   => $_SESSION['sess_signin'] ?? 'NOT_SET',
+]);
+
+mia_log("INCLUDE_COMMON_START", "Loading common.php");
 include_once('common.php');
+mia_log("INCLUDE_COMMON_END", "common.php loaded successfully");
+
 //added by SP for cubex changes on 07-11-2019
 
+mia_log("XTHEME_CHECK_START", "Checking isXThemeActive");
 if ($THEME_OBJ->isXThemeActive() == 'Yes') {
+    mia_log("XTHEME_ACTIVE", "XTheme is active - loading cx-menu_item_action.php");
     include_once("cx-menu_item_action.php");
     exit;
 }
+mia_log("XTHEME_CHECK_END", "XTheme not active, continuing");
 
+mia_log("REQUIRE_IMAGECROP_START", "Loading Imagecrop.class.php from: " . TPATH_CLASS . "/Imagecrop.class.php");
 require_once(TPATH_CLASS . "/Imagecrop.class.php");
+mia_log("REQUIRE_IMAGECROP_END", "Imagecrop.class.php loaded");
+
 $thumb = new thumbnail();
+mia_log("AUTH_CHECK_START", "Calling checkMemberAuthentication");
 $AUTH_OBJ->checkMemberAuthentication();
+mia_log("AUTH_CHECK_END", "Authentication passed");
+
 $abc = 'company';
 $url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+mia_log("SETROLE", "setRole('company', '$url')");
 setRole($abc,$url);
+
+mia_log("ESYSTEM_CHECK", [
+    'sess_eSystem' => $_SESSION['sess_eSystem'] ?? 'NOT_SET',
+    'required'     => 'DeliverAll',
+    'match'        => (($_SESSION['sess_eSystem'] ?? '') == 'DeliverAll') ? 'YES' : 'NO',
+]);
 if($_SESSION["sess_eSystem"] != "DeliverAll")
 {
+    mia_log("ESYSTEM_REDIRECT", "sess_eSystem is not DeliverAll - redirecting to profile.php");
     header('Location:profile.php');
 }
 $script = 'MenuItems';
 $tbl_name = 'menu_items';
 $tbl_name1 = 'menuitem_options';
+
+mia_log("DB_QUERY_CURRENCY", "Fetching default currency");
 $sql = "select vName,vSymbol from currency where eDefault = 'Yes'";
 $db_currency = $obj->MySQLSelect($sql);
+mia_log("DB_RESULT_CURRENCY", [
+    'row_count' => count($db_currency),
+    'data'      => $db_currency,
+]);
+
 $iCompanyId = $_SESSION['sess_iUserId'];
+mia_log("COMPANY_ID", "iCompanyId = $iCompanyId");
 
 function check_diff($arr1, $arr2) {
     $check = (is_array($arr1) && scount($arr1) > 0) ? true : false;
@@ -44,6 +143,7 @@ $success = isset($_REQUEST['success']) ? $_REQUEST['success'] : 0;
 $action = ($id != '') ? 'Edit' : 'Add';
 $backlink = isset($_POST['backlink']) ? $_POST['backlink'] : '';
 $previousLink = isset($_POST['backlink']) ? $_POST['backlink'] : '';
+mia_log("ACTION_DETERMINED", "id='$id', action='$action', success='$success'");
 
 $iFoodMenuId = isset($_POST['iFoodMenuId']) ? $_POST['iFoodMenuId'] : '0';
 $fPrice = isset($_POST['fPrice']) ? $_POST['fPrice'] : '';
@@ -102,9 +202,11 @@ if (is_array($AddonOptions)) {
     }
 }
 $vTitle_store = $vItemDesc_store = array();
+mia_log("DB_QUERY_LANG_MASTER", "Fetching active languages");
 $sql = "SELECT * FROM `language_master` where eStatus='Active' ORDER BY `iDispOrder`";
 $db_master = $obj->MySQLSelect($sql);
 $count_all = scount($db_master);
+mia_log("DB_RESULT_LANG_MASTER", ['count' => $count_all]);
 if ($count_all > 0) {
     for ($i = 0; $i < $count_all; $i++) {
         $vValue = 'vItemType_' . $db_master[$i]['vCode'];
@@ -119,32 +221,52 @@ if ($count_all > 0) {
 }
 
 if (isset($_POST['btnsubmit'])) {
+    mia_log("FORM_SUBMIT_START", "btnsubmit detected - form submission starting");
     $img_path = $tconfig["tsite_upload_images_menu_item_path"];
     $temp_gallery = $img_path . '/';
-    $image_object = $_FILES['vImage']['tmp_name'];
-    $image_name = $_FILES['vImage']['name'];
+    $image_object = $_FILES['vImage']['tmp_name'] ?? '';
+    $image_name = $_FILES['vImage']['name'] ?? '';
+    $file_error = $_FILES['vImage']['error'] ?? -1;
     $vImgName = "";
+    mia_log("IMAGE_UPLOAD_DATA", [
+        'img_path'    => $img_path,
+        'path_exists' => is_dir($img_path) ? 'YES' : 'NO',
+        'path_writable' => is_writable($img_path) ? 'YES' : 'NO',
+        'image_name'  => $image_name,
+        'file_error'  => $file_error,
+        'tmp_name'    => $image_object,
+        'oldImage'    => $oldImage,
+    ]);
     if ($image_name != "") {
+        mia_log("IMAGE_PROCESS_START", "Processing new image: $image_name");
         $oldFilePath = $temp_gallery . $oldImage;
         if ($oldImage != '' && file_exists($oldFilePath)) {
+            mia_log("IMAGE_DELETE_OLD", "Deleting old image: $oldFilePath");
             unlink($img_path . '/' . $oldImage);
         }
         $filecheck = basename($_FILES['vImage']['name']);
         $fileextarr = explode(".", $filecheck);
         $ext = strtolower($fileextarr[scount($fileextarr) - 1]);
+        mia_log("IMAGE_EXTENSION_CHECK", "Extension: $ext");
         $flag_error = 0;
         if ($ext != "jpg" && $ext != "gif" && $ext != "png" && $ext != "jpeg" && $ext != "bmp") {
             $flag_error = 1;
             $var_msg = "Not valid image extension of .jpg, .jpeg, .gif, .png";
+            mia_log("IMAGE_EXTENSION_INVALID", "Invalid extension: $ext");
         }
         if ($flag_error == 1) {
+            mia_log("IMAGE_ERROR_REDIRECT", "Image error - redirecting");
             getPostForm($_POST, $var_msg, "menu_item_action.php?success=0&var_msg=" . $var_msg);
             exit;
         } else {
             $Photo_Gallery_folder = $img_path . '/';
+            mia_log("IMAGE_UPLOAD_START", "Calling GeneralUploadImage");
             $img1 = $UPLOAD_OBJ->GeneralUploadImage($image_object, $image_name, $Photo_Gallery_folder, '', '', '', '', '', '', 'Y', '', $Photo_Gallery_folder);
+            mia_log("IMAGE_UPLOAD_RESULT", "Uploaded filename: $img1");
             $oldImage = $img1;
         }
+    } else {
+        mia_log("IMAGE_SKIP", "No new image uploaded - keeping existing: '$oldImage'");
     }
 
     if ($id != "") {
@@ -190,10 +312,17 @@ if (isset($_POST['btnsubmit'])) {
             }
         }
     }
+    mia_log("BUILD_QUERY_START", "Building main INSERT/UPDATE query");
     $editItemDesc = $where = "";
     for ($i = 0; $i < scount($vTitle_store); $i++) {
         $vValue = 'vItemType_' . $db_master[$i]['vCode'];
         $vValue_desc = 'vItemDesc_' . $db_master[$i]['vCode'];
+        if (!isset($_POST[$vItemDesc_store[$i]])) {
+            mia_log("MISSING_POST_KEY", "POST key not set: " . $vItemDesc_store[$i]);
+        }
+        if (!isset($_POST[$vTitle_store[$i]])) {
+            mia_log("MISSING_POST_KEY", "POST key not set: " . $vTitle_store[$i]);
+        }
         $strItemDesc = $obj->SqlEscapeString(htmlspecialchars_decode(html_entity_decode($_POST[$vItemDesc_store[$i]]), ENT_QUOTES));
         $strItemTitle = $obj->SqlEscapeString(htmlspecialchars_decode(html_entity_decode($_POST[$vTitle_store[$i]]), ENT_QUOTES));
         //echo $vValue_desc;die;
@@ -220,8 +349,10 @@ if (isset($_POST['btnsubmit'])) {
            `eRecommended`= '" . $eRecommended . "',
            `prescription_required` = '" . $prescription_required . "', " . $editItemDesc . ""
             . $where;
+    mia_log("DB_QUERY_MAIN", "Executing main query: " . substr($query, 0, 500));
     $obj->sql_query($query);
     $id = ($id != '') ? $id : $obj->GetInsertId();
+    mia_log("DB_QUERY_MAIN_RESULT", "id after insert/update: '$id'");
     if (!empty($id)) {
         $baseOptionOldData = $obj->MySQLSelect("SELECT * FROM menuitem_options WHERE iMenuItemId ='" . $id . "' AND eOptionType='Options'");
         if (scount($baseOptionOldData) > 0) {
@@ -345,14 +476,17 @@ if (isset($_POST['btnsubmit'])) {
     } else {
         $var_msg = 'Item Updated Successfully.';
     }
+    mia_log("FORM_SUBMIT_SUCCESS", "Redirecting to menuitems.php - action='$action', id='$id'");
     header("Location:menuitems.php?success=1&var_msg=" . $var_msg);
     //header("Location:".$backlink);exit;
 }
 
 // for Edit
 if ($action == 'Edit') {
+    mia_log("EDIT_FETCH_START", "Fetching menu item data for id='$id'");
     $sql = "SELECT * FROM " . $tbl_name . " WHERE iMenuItemId = '" . $id . "'";
     $db_data = $obj->MySQLSelect($sql);
+    mia_log("EDIT_FETCH_RESULT", ['row_count' => scount($db_data)]);
 
     $sql1 = "SELECT * FROM " . $tbl_name1 . " WHERE iMenuItemId = '" . $id . "' AND eOptionType = 'Options' AND eStatus = 'Active'";
     $db_optionsdata = $obj->MySQLSelect($sql1);
@@ -383,18 +517,26 @@ if ($action == 'Edit') {
         }
     }
 }
+mia_log("DB_QUERY_MENU_CAT", "Fetching menu categories for iCompanyId=$iCompanyId");
 $sql_cat = "SELECT fm.*,c.vCompany,c.iServiceId FROM food_menu AS fm LEFT JOIN `company` as c ON c.iCompanyId=fm.iCompanyId WHERE fm.iCompanyId = $iCompanyId AND fm.eStatus = 'Active'";
 $db_menu = $obj->MySQLSelect($sql_cat);
+mia_log("DB_RESULT_MENU_CAT", ['row_count' => scount($db_menu)]);
+
 if (!empty($db_menu[0]['iServiceId'])) {
     $iServiceId = $db_menu[0]['iServiceId'];
+    mia_log("SERVICE_ID", "iServiceId = $iServiceId");
     $sql = "SELECT prescription_required FROM `service_categories` WHERE iServiceId = '" . $iServiceId . "'";
     $db_prescription = $obj->MySQLSelect($sql);
     $prescriptionchkbox_required = $db_prescription[0]['prescription_required'];
+    mia_log("PRESCRIPTION_CHECK", "prescriptionchkbox_required = " . ($prescriptionchkbox_required ?? 'NOT_SET'));
+} else {
+    mia_log("SERVICE_ID_MISSING", "db_menu[0]['iServiceId'] is empty - iServiceId not set");
 }
 $helpText = "This feature can be used when you want to provide different options for the same product. The price would be added to the base price.For E.G.: Regular Pizza, Double Cheese Pizza etc.";
 if ($iServiceId > 1) {
     $helpText = "This feature can be used when you want to provide different options for the same product.";
 }
+mia_log("RENDER_START", "Starting HTML render. iServiceId=" . ($iServiceId ?? 'NOT_SET'));
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="<?= (isset($_SESSION['eDirectionCode']) && $_SESSION['eDirectionCode'] != "") ? $_SESSION['eDirectionCode'] : 'ltr'; ?>">
