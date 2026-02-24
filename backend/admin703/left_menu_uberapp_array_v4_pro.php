@@ -1884,11 +1884,32 @@ $menu = [
     ],
     [
         'parent_menu' => 'CMS',
-        'title'   => "Cancel Reason",
-        "url"     => "cancellation_reason.php",
-        "icon"    => "ri-chat-delete-line",
-        "active"  => "cancel_reason",
-        "visible" => $userObj->hasPermission('view-cancel-reasons'),
+        'title'    => "Cancellation",
+        "icon"     => "ri-chat-delete-line",
+        "visible"  => $userObj->hasPermission(['view-cancel-reasons', 'manage-cancel-reasons']),
+        'children' => [
+            [
+                'title'   => "Cancel Reasons",
+                "url"     => "cancellation_reason.php",
+                "icon"    => "ri-checkbox-blank-circle-line",
+                "active"  => "cancel_reason",
+                "visible" => $userObj->hasPermission('view-cancel-reasons'),
+            ],
+            [
+                'title'   => "Proportional Fee Settings",
+                "url"     => "proportional_cancellation_settings.php",
+                "icon"    => "ri-checkbox-blank-circle-line",
+                "active"  => "Proportional_Cancellation_Fee",
+                "visible" => $userObj->hasPermission('manage-cancel-reasons'),
+            ],
+            [
+                'title'   => "No-Show Fee",
+                "url"     => "no_show_fee.php",
+                "icon"    => "ri-checkbox-blank-circle-line",
+                "active"  => "No_Show_Fee",
+                "visible" => $userObj->hasPermission('manage-cancel-reasons'),
+            ],
+        ]
     ],
     [
         'parent_menu' => 'CMS',
