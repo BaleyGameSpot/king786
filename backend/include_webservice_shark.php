@@ -20795,5 +20795,26 @@ if ($type == "UpdateRideStatus") {
 
 /*------------------Later Booking-----------------*/
 
+// ============================================================
+// NEW FEATURES INTEGRATION (Ride Bidding, Franchise, etc.)
+// ============================================================
+$_FEATURES_TYPES = [
+    'rideBidding', 'bookForOthers', 'cancelFee', 'noShow',
+    'lostFound', 'facialRecognition', 'notification',
+    'receipt', 'franchise', 'pagarme', 'efiBilling', 'penalty'
+];
+if (in_array($type, $_FEATURES_TYPES)) {
+    $featuresWebservice = $tconfig['tpanel_path'] . 'features/features_webservice.php';
+    if (file_exists($featuresWebservice)) {
+        header('Content-Type: application/json; charset=UTF-8');
+        require_once $featuresWebservice;
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Features module not installed.']);
+    }
+    $obj->MySQLClose();
+    exit;
+}
+// ============================================================
+
 $obj->MySQLClose();
 ?>
