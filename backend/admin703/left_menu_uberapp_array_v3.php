@@ -1711,6 +1711,66 @@ $menu = [
             ]
         ],
     ],
+    // =============================================
+    // NEW FEATURES MENU (added by features module)
+    // =============================================
+    [
+        'title'    => "Franchise Ecosystem",
+        "icon"     => "ri-building-line",
+        "visible"  => true,
+        'children' => [
+            [
+                'title'   => "Franchise List",
+                "url"     => "franchise_list.php",
+                "icon"    => "ri-checkbox-blank-circle-line",
+                "active"  => "franchise",
+                "visible" => true,
+            ],
+            [
+                'title'   => "Add Franchise",
+                "url"     => "franchise_add.php",
+                "icon"    => "ri-checkbox-blank-circle-line",
+                "active"  => "franchise_add",
+                "visible" => true,
+            ],
+        ],
+    ],
+    [
+        'title'    => "Ride Features",
+        "icon"     => "ri-car-line",
+        "visible"  => true,
+        'children' => [
+            [
+                'title'   => "No-Show Review",
+                "url"     => "no_show_review.php",
+                "icon"    => "ri-checkbox-blank-circle-line",
+                "active"  => "noShow",
+                "visible" => true,
+            ],
+            [
+                'title'   => "Lost & Found",
+                "url"     => "lost_found_admin.php",
+                "icon"    => "ri-checkbox-blank-circle-line",
+                "active"  => "lostFound",
+                "visible" => true,
+            ],
+        ],
+    ],
+    [
+        'title'    => "Smart Notifications",
+        "icon"     => "ri-notification-3-line",
+        "visible"  => true,
+        'children' => [
+            [
+                'title'   => "Push Notifications",
+                "url"     => "smart_notifications_admin.php",
+                "icon"    => "ri-checkbox-blank-circle-line",
+                "active"  => "notifications",
+                "visible" => true,
+            ],
+        ],
+    ],
+    // =============================================
     [
         'title' => "Logout",
         "url"   => "logout.php",
