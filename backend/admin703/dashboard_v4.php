@@ -1928,6 +1928,154 @@ if ($isFranchiseAdmin) {
             </div>
         <?php } ?>
 
+        <!-- ============================================================
+             NEW FEATURES PANEL – Quick Access & Testing
+        ============================================================ -->
+        <div class="admin_card_row" id="new-features-panel" style="margin-top:24px;">
+          <div class="admin_column" style="width:100%">
+            <div class="card_body" style="padding:0">
+
+              <!-- Header -->
+              <div style="background:linear-gradient(135deg,#0f3460,#16213e);border-radius:8px 8px 0 0;
+                           padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+                <div style="display:flex;align-items:center;gap:12px">
+                  <span style="font-size:26px">🚀</span>
+                  <div>
+                    <div style="color:#fff;font-size:18px;font-weight:700">New Features Panel</div>
+                    <div style="color:rgba(255,255,255,.65);font-size:12px">Click any button below to open and test each feature</div>
+                  </div>
+                </div>
+                <span style="background:#e94560;color:#fff;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700">12 Features Active</span>
+              </div>
+
+              <!-- Feature groups -->
+              <div style="padding:20px 24px;background:#fff;border-radius:0 0 8px 8px">
+
+                <?php
+                $featureGroups = [
+                  [
+                    'icon'  => '🚗',
+                    'title' => 'Core Ride Features',
+                    'color' => '#2563eb',
+                    'items' => [
+                      ['🏷️','Ride Bidding (InDrive)',   'taxi_bid_info.php',              'View & manage auction bids between driver and passenger'],
+                      ['👥','Book for Others',           'features/test_book_for_others.php','Book a ride on behalf of a third party'],
+                      ['📏','Cancellation Fee Test',     'features/test_cancel_fee.php',   'Test proportional GPS-based cancellation fee calculation'],
+                    ],
+                  ],
+                  [
+                    'icon'  => '🛡️',
+                    'title' => 'Safety & Verification',
+                    'color' => '#dc2626',
+                    'items' => [
+                      ['📍','No-Show Review',     'no_show_review.php',             'GPS-verified no-show incidents – approve or reject'],
+                      ['🤖','Facial Recognition', 'features/test_face_verify.php',  'Test AI face identity verification for drivers/passengers'],
+                    ],
+                  ],
+                  [
+                    'icon'  => '💬',
+                    'title' => 'Communication',
+                    'color' => '#059669',
+                    'items' => [
+                      ['🔍','Lost & Found',         'lost_found_admin.php',              'Manage lost item tickets and create return trips'],
+                      ['🔔','Smart Notifications',  'smart_notifications_admin.php',     'Schedule push notifications with recurring settings'],
+                      ['🧾','In-App Receipts',      'features/test_receipts.php',        'Generate and view trip/order receipts'],
+                    ],
+                  ],
+                  [
+                    'icon'  => '🏙️',
+                    'title' => 'Franchise Ecosystem',
+                    'color' => '#7c3aed',
+                    'items' => [
+                      ['🏙️','Franchise List',    'franchise_list.php',               'View and manage all city franchise territories'],
+                      ['➕','Add Franchise',      'franchise_add.php',                'Create a new franchise for a city'],
+                      ['💰','Franchise Billing',  'franchise_billing.php',            'Configure billing plans and view invoices'],
+                    ],
+                  ],
+                  [
+                    'icon'  => '💳',
+                    'title' => 'Finance & Payments',
+                    'color' => '#d97706',
+                    'items' => [
+                      ['💳','Pagar.me Split Pay',  'features/test_pagarme.php',       'Test real-time 3-way split payment via Pagar.me'],
+                      ['📊','EfiPay B2B Billing',  'features/test_efi_billing.php',   'Test fixed monthly & tiered overage billing'],
+                      ['⚡','Penalty Transfers',   'features/test_penalty.php',       'View penalty transfer logs and driver wallet credits'],
+                    ],
+                  ],
+                ];
+                foreach ($featureGroups as $group): ?>
+
+                <div style="margin-bottom:20px">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+                    <span style="font-size:18px"><?= $group['icon'] ?></span>
+                    <span style="font-size:14px;font-weight:700;color:<?= $group['color'] ?>;text-transform:uppercase;letter-spacing:.5px"><?= $group['title'] ?></span>
+                    <div style="flex:1;height:1px;background:<?= $group['color'] ?>22;margin-left:6px"></div>
+                  </div>
+                  <div style="display:flex;flex-wrap:wrap;gap:10px">
+                    <?php foreach ($group['items'] as $item): ?>
+                    <a href="<?= htmlspecialchars($item[2]) ?>"
+                       title="<?= htmlspecialchars($item[3]) ?>"
+                       style="display:flex;align-items:center;gap:8px;padding:10px 16px;
+                              background:#f8faff;border:2px solid <?= $group['color'] ?>22;
+                              border-radius:8px;text-decoration:none;color:#1e293b;
+                              font-size:13px;font-weight:600;transition:all .2s;min-width:170px"
+                       onmouseover="this.style.background='<?= $group['color'] ?>11';this.style.borderColor='<?= $group['color'] ?>';this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px <?= $group['color'] ?>33'"
+                       onmouseout="this.style.background='#f8faff';this.style.borderColor='<?= $group['color'] ?>22';this.style.transform='';this.style.boxShadow=''">
+                      <span style="font-size:18px;line-height:1"><?= $item[0] ?></span>
+                      <span><?= htmlspecialchars($item[1]) ?></span>
+                    </a>
+                    <?php endforeach; ?>
+                  </div>
+                </div>
+
+                <?php endforeach; ?>
+
+                <!-- Quick API Test Box -->
+                <div style="margin-top:8px;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px 18px">
+                  <div style="font-size:13px;font-weight:700;color:#15803d;margin-bottom:8px">
+                    ⚡ Quick API Test – Feature Webservice
+                  </div>
+                  <div style="display:flex;flex-wrap:wrap;gap:8px">
+                    <?php
+                    $apiTests = [
+                      ['Ride Bidding',  'rideBidding&bid_action=getActiveBids&iUserId=1'],
+                      ['Franchise List','franchise&franchise_action=getList'],
+                      ['Notifications', 'notification&notif_action=getList'],
+                      ['Receipts',      'receipt&receipt_action=getMyReceipts&iUserId=1'],
+                      ['Penalty Logs',  'penalty&penalty_action=getStats'],
+                    ];
+                    foreach ($apiTests as $t): ?>
+                    <a href="../webservice_shark.php?type=<?= $t[1] ?>&vAuthToken=test"
+                       target="_blank"
+                       style="padding:6px 14px;background:#15803d;color:#fff;border-radius:6px;
+                              font-size:12px;font-weight:600;text-decoration:none;
+                              display:inline-flex;align-items:center;gap:5px">
+                      <span>🔌</span> <?= htmlspecialchars($t[0]) ?>
+                    </a>
+                    <?php endforeach; ?>
+                  </div>
+                  <div style="font-size:11px;color:#6b7280;margin-top:8px">
+                    ℹ️ API test links open webservice_shark.php directly in a new tab so you can see the JSON response.
+                  </div>
+                </div>
+
+                <!-- DB Migration reminder -->
+                <div style="margin-top:12px;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 16px;
+                             display:flex;align-items:flex-start;gap:10px">
+                  <span style="font-size:20px">⚠️</span>
+                  <div style="font-size:12px;color:#92400e">
+                    <strong>First Time Setup:</strong> If you haven't run the database migration yet, some pages may show errors.
+                    Run: <code style="background:#fef3c7;padding:2px 6px;border-radius:4px;font-family:monospace">
+                    mysql -u root -p ridey_dudeapps &lt; backend/features/features_migration.sql</code>
+                  </div>
+                </div>
+
+              </div><!-- /padding -->
+            </div><!-- /card_body -->
+          </div><!-- /admin_column -->
+        </div><!-- /admin_card_row -->
+        <!-- ============================================================ -->
+
         <?php include_once('footer.php'); ?>
     </div>
 </div>
