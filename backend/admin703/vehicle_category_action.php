@@ -804,7 +804,7 @@ if (!empty($_POST['btnsubmit_homepage']) && $cubexthemeon == 1) {
             }
 
             $eServiceTypeParam = "";
-            if($_REQUEST['eServiceType'] != ""){
+            if(isset($_REQUEST['eServiceType']) && $_REQUEST['eServiceType'] != ""){
                 $eServiceTypeParam = "&eServiceType=".$_REQUEST['eServiceType'];
             }
 
@@ -910,7 +910,7 @@ if (!empty($_POST['btnsubmit_homepage']) && $cubexthemeon == 1) {
                 $setlanguage .= "`" . $key . "`= '" . $value . "',";
             }*/
             //Added By HJ On 09-01-2019 For Update Data Into service_categories Table When Upadte Vehicle Category As Per Discuss With KS Sir Start
-            $iServiceIdEdit = $_POST['iServiceIdEdit'];
+            $iServiceIdEdit = isset($_POST['iServiceIdEdit']) ? $_POST['iServiceIdEdit'] : 0;
             if ($iServiceIdEdit > 0) {
                 foreach ($serviceNameArr as $key1 => $value1) {
                     $setServiceLanguage .= "`" . $key1 . "`= '" . $value1 . "',";
@@ -1689,12 +1689,17 @@ if (!empty($_POST['btnsubmit_homepage']) && $cubexthemeon == 1) {
                 $vImageTaxiBid = $vImageOldTaxiBid;
             }
             $db_data_taxibid = $obj->MySQLSelect("SELECT tServiceDetails FROM app_home_screen_view WHERE eServiceType IN ('TaxiBid', 'Other') ");
-            $tServiceDetails = json_decode($db_data_taxibid[0]['tServiceDetails'], true);
-            $tServiceDetails['TaxiBid']['vInfoImage'] = $vImageTaxiBid;
-            $Data_update_taxibid = array();
-            $Data_update_taxibid['tServiceDetails'] = json_encode($tServiceDetails, JSON_UNESCAPED_UNICODE);
-            $where = " eServiceType IN ('TaxiBid', 'Other') ";
-            $obj->MySQLQueryPerform('app_home_screen_view', $Data_update_taxibid, 'update', $where);
+            if (!empty($db_data_taxibid) && isset($db_data_taxibid[0]['tServiceDetails'])) {
+                $tServiceDetails = json_decode($db_data_taxibid[0]['tServiceDetails'], true);
+                if (!is_array($tServiceDetails)) {
+                    $tServiceDetails = [];
+                }
+                $tServiceDetails['TaxiBid']['vInfoImage'] = $vImageTaxiBid;
+                $Data_update_taxibid = array();
+                $Data_update_taxibid['tServiceDetails'] = json_encode($tServiceDetails, JSON_UNESCAPED_UNICODE);
+                $where = " eServiceType IN ('TaxiBid', 'Other') ";
+                $obj->MySQLQueryPerform('app_home_screen_view', $Data_update_taxibid, 'update', $where);
+            }
             $oCache->flushData();
             $GCS_OBJ->updateGCSData();
         }
@@ -1712,8 +1717,8 @@ if (!empty($_POST['btnsubmit_homepage']) && $cubexthemeon == 1) {
             $id = $vId;
         }else {
             // header("Location:" . $backlink);
-            if($_REQUEST['eServiceSettings'] == 'MedicalServices'){
-            $current_link = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+            if(isset($_REQUEST['eServiceSettings']) && $_REQUEST['eServiceSettings'] == 'MedicalServices'){
+                $current_link = 'https://'.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '').$_SERVER['REQUEST_URI'];
             } else {
                 $current_link = $backlink;
             }
