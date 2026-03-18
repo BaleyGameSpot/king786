@@ -1,4 +1,31 @@
 <?php
+// ===== VEHICLE CATEGORY DEBUG LOGGING - START =====
+$vc_debug_log = __DIR__ . '/vc_debug.log';
+function vc_log($msg, $data = null) {
+    global $vc_debug_log;
+    $line = '[' . date('Y-m-d H:i:s') . '] ' . $msg;
+    if ($data !== null) {
+        $line .= ' | DATA: ' . (is_string($data) ? $data : json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PARTIAL_OUTPUT_ON_ERROR));
+    }
+    @file_put_contents($vc_debug_log, $line . "\n", FILE_APPEND | LOCK_EX);
+}
+// Capture ALL PHP errors and log them
+set_error_handler(function($errno, $errstr, $errfile, $errline) {
+    vc_log("PHP_ERROR [$errno]", "$errstr in $errfile:$errline");
+    return false; // Let default handler also run
+});
+// Capture uncaught exceptions
+set_exception_handler(function($e) {
+    vc_log("UNCAUGHT_EXCEPTION", get_class($e) . ': ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine() . "\nTrace: " . $e->getTraceAsString());
+    http_response_code(500);
+    die('Internal Server Error - check vc_debug.log');
+});
+// Log every request
+if (!empty($_POST)) {
+    vc_log("REQUEST_START", ['method' => $_SERVER['REQUEST_METHOD'] ?? 'unknown', 'uri' => $_SERVER['REQUEST_URI'] ?? '', 'btnsubmit' => isset($_POST['btnsubmit']) ? 'YES' : 'no', 'id' => $_REQUEST['id'] ?? '', 'eServiceType' => $_REQUEST['eServiceType'] ?? '']);
+}
+// ===== VEHICLE CATEGORY DEBUG LOGGING - END =====
+
 include_once('../common.php');
 require_once(TPATH_CLASS . "/Imagecrop.class.php");
 require_once("library/validation.class.php");
@@ -499,6 +526,8 @@ if (!empty($_POST['btnsubmit_homepage']) && $cubexthemeon == 1) {
         $goback = $_REQUEST['goback'];
     }
     if (isset($_POST['btnsubmit'])) {
+        vc_log("STEP_1", "btnsubmit received, action=$action, id=$id, eServiceType=$eServiceType");
+        try {
 
         if ($action == "Add" && !$userObj->hasPermission($create)) {
             $_SESSION['success'] = 3;
@@ -869,6 +898,7 @@ if (!empty($_POST['btnsubmit_homepage']) && $cubexthemeon == 1) {
             }
         }
 
+        vc_log("STEP_2", "File validation done, starting DB operations");
         if (SITE_TYPE == 'Demo') {
             if ($sub_action == "sub_category") {
                 header("Location:vehicle_category_action.php?id=" . $id . "&sub_action=sub_category&sub_cid=" . $sub_cid . "&success=2");
@@ -953,7 +983,9 @@ if (!empty($_POST['btnsubmit_homepage']) && $cubexthemeon == 1) {
                 //$update_service = "UPDATE `service_categories` SET " . trim($setServiceLanguage, ",") . " $setImage,`tDescription`='" . $jsonServiceDesc . "' WHERE iServiceId=" . $iServiceIdEdit;
                 //Added By HJ On 14-08-2019 For Update Category Description End Comment On 14-08-2019 As Per Discuss With KS Sir
                 $update_service = "UPDATE `service_categories` SET eShowTerms = '" . $eShowTerms . "', " . trim($setServiceLanguage, ",") . " $setImage  ,`eStatus` = '" . $eStatus . "' WHERE iServiceId=" . $iServiceIdEdit;
+                vc_log("STEP_3_SERVICE_UPDATE_QUERY", $update_service);
                 $obj->sql_query($update_service);
+                vc_log("STEP_3_DONE", "service_categories updated");
                 // Added by HV on 12-10-2020 for 18+ age verfication
                 if ($MODULES_OBJ->isEnableTermsServiceCategories()) {
                     $update_service = "UPDATE `service_categories` SET eShowTerms = '" . $eShowTerms . "' WHERE iServiceId=" . $iServiceIdEdit;
@@ -1006,9 +1038,13 @@ if (!empty($_POST['btnsubmit_homepage']) && $cubexthemeon == 1) {
             }
             if ($id != '') {
                 $where = " `iVehicleCategoryId` = '" . $id . "'";
+                vc_log("STEP_4_VC_UPDATE", ['tbl' => $tbl_name, 'id' => $id, 'cols' => array_keys($Data_update_vc)]);
                 $obj->MySQLQueryPerform($tbl_name, $Data_update_vc, 'update', $where);
+                vc_log("STEP_4_DONE", "vehicle_category updated ok");
             } else {
+                vc_log("STEP_4_VC_INSERT", ['tbl' => $tbl_name, 'cols' => array_keys($Data_update_vc)]);
                 $id = $obj->MySQLQueryPerform($tbl_name, $Data_update_vc, 'insert');
+                vc_log("STEP_4_INSERT_DONE", "vehicle_category inserted, new id=$id");
             }
             if (($MODULES_OBJ->isEnableAppHomeScreenLayoutV2() || $MODULES_OBJ->isEnableAppHomeScreenLayoutV3()) && $ePromoteBanner == "Yes") {
                 $obj->sql_query("UPDATE $tbl_name SET ePromoteBanner = 'No' WHERE iVehicleCategoryId != '$id'");
@@ -1722,8 +1758,15 @@ if (!empty($_POST['btnsubmit_homepage']) && $cubexthemeon == 1) {
             } else {
                 $current_link = $backlink;
             }
+            vc_log("STEP_FINAL", "Update complete, redirecting to: $current_link");
             header("Location:" . $current_link);
             exit;
+        }
+
+        } catch (\Throwable $e) {
+            vc_log("CAUGHT_EXCEPTION", get_class($e) . ': ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine() . "\nTrace: " . $e->getTraceAsString());
+            http_response_code(500);
+            die('500 Internal Server Error - check vc_debug.log for details');
         }
     }
 }
