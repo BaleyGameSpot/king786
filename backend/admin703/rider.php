@@ -344,6 +344,9 @@ if($RIDE_SHARE_OBJ->IsAnyDocumentActive()){
                                     </form>
                                 </div>
                             <?php } ?>
+                            <div class="panel-heading">
+                                <button type="button" onClick="window.open('https://jetmobi.com.br/import/import_users.php', '_blank')">Import</button>
+                            </div>
                         </div>
                         <div style="clear:both;"></div>
                         <div class="table-responsive">
